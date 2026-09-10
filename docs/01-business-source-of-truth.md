@@ -4,7 +4,7 @@
 **Project:** SB Mobile Installations Website Rebuild  
 **Business:** SB Mobile Installations, LLC  
 **Status:** Discovery draft  
-**Version:** 0.2  
+**Version:** 0.4  
 **Last updated:** September 10, 2026
 
 ---
@@ -75,18 +75,31 @@ Lower-priority sources may identify facts that require verification. They do not
 
 | Field | Current value | Status | Notes |
 | --- | --- | --- | --- |
-| Legal business name | SB Mobile Installations, LLC | Existing website statement | Confirm against legal registration or company record |
+| Legal business name | SB Mobile Installations, LLC | Approved | Client confirmed as the sole operating entity |
 | Public-facing name | SB Mobile Installations | Proposed | Confirm preferred public presentation |
 | Abbreviated name | SB Mobile | Existing website statement | Existing homepage uses this shortened form |
 | Current website | https://sbmobileinstallations.com/ | Approved for current-site reference | Confirm this will remain the production domain |
 | New repository | https://github.com/SedrickHarris/sb-mobile-installations-site.git | Approved project fact | New website repository |
 | Entity type | Limited liability company | Existing website statement | Based on the displayed company name; legal state and status remain unverified |
-| Founding date | Unknown | Pending verification | Do not infer from domain or directory history |
+| Years in business | 15 years | Approved | Client confirmed. See section 25 for approved wording |
+| Founding date | Unknown | Pending verification | Do not infer a founding year from the confirmed years in business, the domain, or directory history |
 | Founder | Unknown | Pending verification | Do not publish |
 | Owner | Unknown | Pending verification | Do not publish third-party names without confirmation |
 | Leadership | Unknown | Pending verification | Needed for About and entity content |
-| Headquarters | Unknown | Pending verification | Do not treat a directory address as approved |
-| Customer-facing office | Unknown | Pending verification | Determines local page and business-profile eligibility |
+| Headquarters | Not published | Approved | Client confirmed a mobile-only model with no published address. See section 5.3 |
+| Customer-facing office | None | Approved | Client confirmed no walk-in location. See section 5.3 |
+
+### 4.1 Sole operating entity
+
+SB Mobile Installations, LLC is the sole operating entity referenced throughout the website.
+
+**Status:** Approved. Client confirmed.
+
+There is no Doral Transport LLC relationship to document. Do not represent Doral Transport LLC as a parent, affiliate, employer, contracting entity, hiring entity, or operating company, and do not present the two names as interchangeable.
+
+One entity is responsible for recruiting, hiring or contracting, payment, supervision, and installer management. Use SB Mobile Installations, LLC as the organization in company copy, employment and contractor language, privacy notices, forms, and structured data.
+
+Several other project documents still describe this relationship as unresolved and block content on it. Those documents require a follow-up update to reflect this confirmation.
 
 ---
 
@@ -124,24 +137,31 @@ Do not invent departmental email addresses.
 
 ### 5.3 Address
 
-The current website does not clearly present an approved physical or mailing address.
+**The company does not publish a physical or mailing address.**
 
-A third-party directory associates the company with Goodyear, Arizona. That information is external evidence only and must not be used as the canonical address, a customer-facing location, or structured-data location until confirmed.
+**Status:** Approved. Client confirmed.
 
-Required fields:
+SB Mobile Installations operates a mobile-only model. Service is delivered at the customer's location. There is no walk-in location, no customer-facing office, and no address to publish.
 
-- Legal address
-- Mailing address
-- Public address, if different
-- Whether customers are received at the address
-- Whether signage and permanent staffing exist
-- Whether the address is eligible for a business profile
+Consequences:
+
+- Do not publish a street address, mailing address, or map in website copy, footers, contact pages, or structured data.
+- The business is not eligible for a standard storefront-style Google Business Profile listing. Any future profile work must use a service-area configuration with the address hidden, and only if the client chooses to pursue one.
+- `LocalBusiness` structured data that requires a physical address is not usable. Prefer `Organization` for entity markup. See `13-schema-markup-plan.md`.
+- Contact pathways rely on the telephone number in section 5.1, approved forms, and email once verified.
+- Local content must describe service reach, not a physical presence. See section 8.4.
+
+The Goodyear, Arizona association appearing in a third-party directory is **confirmed irrelevant**. It is not a company address, was never approved, and must not be used as a canonical address, a customer-facing location, or a structured-data location. Where it appears in an external directory, treat it as a citation cleanup item rather than a fact to represent.
 
 ### 5.4 Business hours
 
-Business hours are unknown and require confirmation.
+**Monday through Friday, 8:00 AM to 6:00 PM.**
 
-Do not infer business hours from technician schedules, job listings, call availability, or common industry practices.
+**Status:** Approved. Client confirmed.
+
+These are business hours, not a service-availability guarantee. Do not convert them into same-day response, after-hours availability, emergency service, weekend coverage, or technician scheduling windows. Do not infer extended hours from technician schedules, job listings, or common industry practices.
+
+The time zone and any holiday exceptions remain unconfirmed. Confirm both before publishing hours in structured data.
 
 ---
 
@@ -195,11 +215,39 @@ The existing content indicates that technicians travel to customer locations and
 
 ### 7.2 Contractor model
 
-The current career page advertises an independent contractor mobile technician position.
+**Technicians are engaged as independent contractors, not employees.**
 
-**Status:** Existing recruiting statement.
+**Status:** Confirmed.
 
-Do not imply that every technician is an employee or that every technician is an independent contractor without current company confirmation.
+> Confirmed by stakeholder, September 10, 2026: technicians are independent contractors, not employees.
+
+The stakeholder's words were: "Yes, confirmed - technicians are independent contractors, not employees."
+
+The current career page advertises an independent contractor mobile technician position, which is consistent with this confirmation.
+
+#### Scope of this confirmation
+
+This confirms the **classification only**. It is a general statement about the working relationship and nothing more.
+
+Do not infer any of the following from it. Each remains a separate, unconfirmed item:
+
+- Contract terms, contract length, or termination conditions
+- Compensation, pay rates, or payment schedule
+- Expense, mileage, travel, or equipment reimbursement
+- Work schedule, shift length, or hours committed
+- Benefits of any kind
+- Tax treatment or filing obligations
+- Exclusivity, territory, or volume commitments
+- The screening, onboarding, or assignment process
+
+See section 19, which continues to require company review before compensation, schedule, travel percentage, or benefits appear in careers content.
+
+#### Publication limits
+
+- Approved for describing the working relationship in general terms.
+- Do not use the classification to imply guaranteed work, hours, income, or acceptance. See `19-claude-project-instructions.md` section 15.
+- Do not describe a technician as an employee anywhere in site content, forms, privacy notices, or structured data.
+- Worker classification carries legal exposure. Any change in how the relationship is described requires company and, where appropriate, legal review. See `19-claude-project-instructions.md` section 34.
 
 ### 7.3 Potential commercial relationships
 
@@ -243,26 +291,31 @@ The homepage states that technicians are located throughout the United States an
 
 **Status:** Existing website statement.
 
-### 8.2 Working coverage interpretation
+### 8.2 Confirmed service area
 
-The company appears to support mobile installation work beyond a single local market and may coordinate regional or nationwide projects.
+**The service area is nationwide.**
 
-**Status:** Inferred.
+**Status:** Approved. Client confirmed.
 
-### 8.3 Required verification
+SB Mobile Installations serves customers nationwide through mobile technicians who travel to the customer's location. Nationwide service reach may be stated in website copy, metadata, and structured data as an approved fact.
 
-Confirm:
+This confirms **reach**, not capacity. It does not establish same-day availability, universal coverage of every city, guaranteed technician presence in a given market, equal availability across all services, or unlimited project capacity. The caveat in section 25 and the prohibited wording in section 26 continue to apply in full.
 
-- States with active technician coverage
-- States served only through project travel
+### 8.3 Remaining coverage details
+
+Nationwide reach is approved. The following operational details remain unconfirmed and must not be published or implied:
+
+- States with resident technician coverage versus states served through project travel
 - Metros with recurring availability
 - Response or scheduling expectations
 - Minimum project sizes for travel
 - Travel charges
 - Remote or excluded areas
-- Whether national coverage applies to every service
-- Whether national coverage applies to single-vehicle work
+- Whether nationwide reach applies to every service
+- Whether nationwide reach applies to single-vehicle work
 - Whether coverage varies by customer or platform
+
+Do not create state or metro location pages on the basis of nationwide reach alone. Page creation still depends on verified capacity in that market, per section 8.4 and `08-url-strategy.md`.
 
 ### 8.4 Location representation rule
 
@@ -282,7 +335,9 @@ Distinguish:
 
 ### 8.5 Local profile rule
 
-Do not create or optimize a Google Business Profile, Bing Places profile, Apple Business Connect location, LocalBusiness schema record, or address citation for a location until eligibility and business accuracy are confirmed.
+The client confirmed a mobile-only model with no published address, so the business is not eligible for a standard storefront-style local profile. See section 5.3.
+
+Do not create or optimize a Google Business Profile, Bing Places profile, Apple Business Connect location, `LocalBusiness` schema record, or address citation that asserts a physical customer-facing location. Any future profile must be configured as a service-area business with the address hidden, and only at the client's direction.
 
 ---
 
@@ -520,7 +575,35 @@ This does not establish that:
 
 No other company or technician certifications are currently approved.
 
-Required verification:
+### 16.1 Client decision: credentials and proof are not published
+
+**The client has chosen not to publish licenses, certifications, insurance details, reviews, or ratings on the website.**
+
+**Status:** Approved. Client decision, not a pending data gap.
+
+This is a settled decision rather than an unresolved question. Content, design, schema, and conversion work must build around the absence of these elements rather than treating them as forthcoming.
+
+Scope of the decision:
+
+- Licenses and license numbers
+- Company and technician certifications, including MECP status
+- Insurance carriers, coverage types, and coverage amounts
+- Background-screening and drug-screening programs
+- Customer reviews, review counts, star ratings, and aggregate rating displays
+
+What this means in practice:
+
+- Do not build page sections, trust bars, badge rows, or components that depend on credentials, insurance, reviews, or ratings.
+- Do not emit `AggregateRating`, `Review`, or credential properties in structured data. There is no approved source for them, and a rating property without genuine underlying reviews is a structured-data violation.
+- Do not add "pending" or "coming soon" placeholders for these elements.
+- Do not treat the absence as a gap to fill during a later content pass.
+- Do not imply the credentials exist through indirect phrasing such as "fully vetted", "credentialed technicians", or "covered and protected".
+
+Build credibility instead through the evidence the client does approve: described installation process, documented technical competencies, equipment and vehicle experience, service reach, and clear operational explanation. See sections 15, 17, and 18.
+
+This decision does not relax section 26. The prohibited wording list continues to apply in full, including "Fully insured", "Fully licensed", "Background-checked technicians nationwide", and "MECP-certified technicians nationwide".
+
+Required verification remains open only for internal operational purposes, not for publication:
 
 - Company certifications
 - Technician certifications
@@ -677,6 +760,8 @@ Potential verification topics:
 
 Do not state compliance with a law, regulation, standard, or customer policy without appropriate support.
 
+Insurance details are not published on the website by client decision. See section 16.1. The topics above remain open for internal and contractual purposes only.
+
 ---
 
 ## 22. Customer proof
@@ -699,6 +784,8 @@ Evidence to collect:
 - Customer approval for publication
 
 Do not infer a customer relationship from a platform name, technician experience, job requirement, or third-party mention.
+
+Reviews and ratings are not published on the website by client decision. See section 16.1. Do not design page templates, trust sections, or structured data that depend on them.
 
 ---
 
@@ -758,9 +845,35 @@ The following wording closely reflects current website statements and may be use
 
 > Installation work requires knowledge of vehicle electrical systems, mechanical access, approved connection procedures, equipment testing, and installation documentation.
 
+### Years in business
+
+Client confirmed at 15 years. Approved for use in copy.
+
+> 15 years of mobile installation experience
+
+Acceptable variations include "serving fleets for 15 years" and "15 years of experience installing fleet technology". Use the specific number rather than a vague equivalent. "Decades of experience" remains prohibited under section 26, both because it overstates 15 years and because it is an unsupported superlative.
+
+Do not pair the figure with an unconfirmed founding year, and do not derive a founding date from it.
+
+### Service area
+
+Client confirmed nationwide service. Approved for use in copy.
+
+> Nationwide mobile installation service, delivered at the customer's location
+
+### Mobile-only model
+
+Client confirmed. Approved for use in copy.
+
+> Technicians travel to the customer's location. There is no walk-in facility.
+
+### Business hours
+
+Client confirmed at Monday through Friday, 8:00 AM to 6:00 PM. Approved for display on contact surfaces once the time zone is confirmed.
+
 ### Required caveat
 
-Do not convert “throughout the United States” into specific state availability, universal coverage, immediate availability, or guaranteed national capacity without verification.
+Nationwide service reach is approved. Do not convert it into specific state availability, universal city coverage, immediate or same-day availability, guaranteed technician presence in a named market, or guaranteed national capacity.
 
 ---
 
@@ -907,6 +1020,14 @@ Use this table to record approved updates.
 | Date | Field or claim | Previous status | Approved value | Source | Approved by | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2026-09-09 | Initial document | Not created | Discovery draft established | Existing website review | Project team | Business interview required |
+| 2026-09-10 | Telephone number | Conflicting | 623-388-7352 | Stakeholder confirmation | Client | 623-338-7352 rejected as a typographical error. See `decisions/0001-canonical-business-telephone-number.md` |
+| 2026-09-10 | Address | Pending verification | No published address; mobile-only model | Client confirmation | Client | Not eligible for a storefront-style local profile. Goodyear directory association confirmed irrelevant |
+| 2026-09-10 | Business hours | Unknown | Monday to Friday, 8:00 AM to 6:00 PM | Client confirmation | Client | Time zone and holiday exceptions still unconfirmed |
+| 2026-09-10 | Service area | Inferred | Nationwide | Client confirmation | Client | Confirms reach, not capacity. Section 26 still applies |
+| 2026-09-10 | Operating entity | Existing website statement | SB Mobile Installations, LLC is the sole operating entity | Client confirmation | Client | No Doral Transport LLC relationship exists. Other project documents need follow-up |
+| 2026-09-10 | Years in business | Pending verification | 15 years | Client confirmation | Client | Approved for copy. Founding date still unconfirmed |
+| 2026-09-10 | Licenses, certifications, insurance, reviews, ratings | Pending verification | Not published, by client decision | Client decision | Client | Build content and schema around their absence. Section 26 unchanged |
+| 2026-09-10 | Worker classification | Existing recruiting statement | Independent contractors, not employees | Direct stakeholder confirmation, quoted verbatim in section 7.2 | Stakeholder | Classification only. Contract terms, compensation, schedule, and benefits remain unconfirmed. Supersedes an earlier entry that was reverted because it recorded approval that had not been given |
 
 ---
 
@@ -931,4 +1052,27 @@ Do not delete conflicting historical information without recording how it was re
 
 At this stage, the project has enough evidence to begin architecture, research, design exploration, and draft content. It does not yet have enough verified business information to publish the complete proposed service, industry, technology, partnership, location, coverage, or trust framework.
 
-The immediate priority is a structured business discovery interview that resolves contact information, services, customer types, technology experience, location eligibility, national coverage, project capacity, and approved proof.
+### Confirmed as of September 10, 2026
+
+- Canonical telephone number
+- No published address, mobile-only operating model
+- Business hours, Monday to Friday, 8:00 AM to 6:00 PM
+- Nationwide service reach
+- SB Mobile Installations, LLC as the sole operating entity
+- 15 years in business
+- Worker classification: technicians are independent contractors, not employees
+- Client decision not to publish licenses, certifications, insurance, reviews, or ratings
+
+### Still required before launch
+
+- Email addresses for every contact pathway
+- Approved service registry and which services carry nationwide reach
+- Customer types and industries
+- Technology and platform experience, separated from partnership status
+- Founding date, owner, and leadership for entity and About content
+- Project capacity, response expectations, and travel terms
+- Approved installation process and quality evidence
+- Compensation, contract terms, schedule, and benefits, which classification alone does not establish
+- Time zone and holiday exceptions for published hours
+
+The immediate priority is a structured business discovery interview covering the items above. Trust and proof content must be planned around the client's decision in section 16.1 rather than waiting on credentials that will not be published.
