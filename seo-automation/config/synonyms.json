@@ -1,0 +1,7 @@
+{
+  "note": "Synonym groups for cluster-keywords.mjs. The first word in each group is the canonical token used when merging clusters. This is a deterministic helper, not a semantic model. Add domain-specific groups per client when useful. No fake data: synonyms only normalize wording, they never invent keywords or metrics.",
+  "groups": [
+    ["breaks", "getaway", "retreat", "escape", "stay", "holiday", "vacation"],
+    ["cheap", "affordable", "budget", "low-cost"]
+  ]
+}
