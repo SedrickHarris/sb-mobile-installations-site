@@ -26,18 +26,63 @@ priority:
 **Conflict rule.** Never silently pick one side. State what conflicts, which source
 has authority, what stays uncertain, what is safe to draft, and what needs approval.
 
-## 2. Plugin boundaries
+## 2. Plugin responsibilities
 
-| Plugin | Use for | Never for |
-| --- | --- | --- |
-| `ui-ux-pro-max` | Design-system analysis, palette and typography review | Replacing the tokens in `docs/21-design-system.md` |
-| `frontend-design` | Visual implementation of approved design decisions | Choosing an aesthetic direction the design system did not approve |
-| `superpowers` | Planning, testing, debugging, review, Git workflow | Overriding `docs/18-github-workflow.md` |
+Three plugins are installed. Each has a defined lane.
+
+### `ui-ux-pro-max`
+
+Design-system analysis. Typography and font pairing. Color and contrast review.
+Spacing and layout systems. Responsive design patterns. Component usability.
+Conversion-focused UX. Accessibility-aware interaction patterns. Design
+consistency reviews.
+
+### `frontend-design`
+
+Visual direction. Polished page composition. Hero sections. Navigation. Cards.
+Forms. Responsive layouts. Tailwind styling. Visual hierarchy. Screenshot-based
+design review.
+
+### `superpowers`
+
+Implementation planning. Task decomposition. Test-driven development. Debugging.
+Code review. Regression checks. Git workflow. Safe implementation execution.
+
+## 2.1 Decision priority
+
+Project documentation overrides plugin recommendations. When deciding anything a
+plugin has an opinion about, this order governs:
+
+1. Stakeholder approval
+2. Business source of truth, `docs/01-business-source-of-truth.md`
+3. Project overview and governing strategy documents
+4. Page brief
+5. Component inventory, `docs/20-component-inventory.md`
+6. Design system, `docs/21-design-system.md`
+7. Accessibility and performance standards, `docs/23` and `docs/24`
+8. Installed plugin recommendations
+
+**Plugins rank last.** When a plugin recommendation conflicts with a project
+document, stop and report the conflict. Follow the project document unless the
+user explicitly approves a change.
 
 No plugin recommendation may override verified business facts, recruitment-first
 conversion priorities, active-job data rules, installer-network disclosures,
 commercial and recruitment separation, accessibility requirements, performance
 budgets, schema eligibility, privacy rules, or launch and indexation controls.
+
+Never use a plugin to invent business facts, jobs, locations, services,
+compensation, classifications, testimonials, customers, partnerships, or
+performance claims. A plugin generates design and code, never facts.
+
+## 2.2 Before using a design skill
+
+State four things first:
+
+1. Which skill is being used
+2. What question it is helping answer
+3. Which project documents constrain the result
+4. What output it will produce
 
 ## 3. Never invent
 
