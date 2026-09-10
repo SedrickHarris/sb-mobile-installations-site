@@ -4,8 +4,8 @@
 **Project:** SB Mobile Installations Website Rebuild  
 **Business:** SB Mobile Installations, LLC  
 **Status:** Discovery draft  
-**Version:** 0.1  
-**Last updated:** September 9, 2026
+**Version:** 0.2  
+**Last updated:** September 10, 2026
 
 ---
 
@@ -96,10 +96,18 @@ Lower-priority sources may identify facts that require verification. They do not
 
 | Number | Source observation | Status | Required action |
 | --- | --- | --- | --- |
-| 623-388-7352 | Displayed on the homepage, contact page, career page, and external recruiting listing | Pending verification | Confirm whether this is the primary business number |
-| 623-338-7352 | Displayed on the current contact page | Conflicting information | Determine whether this is valid, secondary, or a typographical error |
+| 623-388-7352 | Displayed on the homepage, contact page, career page, and external recruiting listing | Verified | Approved as the canonical business telephone number |
+| 623-338-7352 | Displayed on the current contact page | Rejected | Do not publish. Treat as a typographical error and correct wherever it appears |
 
-No phone number is approved as canonical until the company confirms it.
+**623-388-7352 is the canonical business telephone number.** Stakeholder confirmed
+on September 10, 2026.
+
+Use this number consistently across website copy, metadata, structured data,
+business profiles, directory citations, and recruiting listings. Name, address, and
+phone consistency depends on a single canonical value.
+
+623-338-7352 is rejected. Where it appears on the current site or in any third-party
+listing, correct it as part of citation cleanup.
 
 ### 5.2 Email addresses
 

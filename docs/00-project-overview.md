@@ -7,8 +7,8 @@
 **Business:** SB Mobile Installations, LLC  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Status:** Foundational draft  
-**Version:** 0.1  
-**Last updated:** September 9, 2026
+**Version:** 0.2  
+**Last updated:** September 10, 2026
 
 ---
 
@@ -97,14 +97,14 @@ The current site does not provide dedicated customer-facing pages for individual
 
 Much of the most useful capability information is located on the career page rather than on customer-facing service pages.
 
-### Known data inconsistency
+### Resolved data inconsistency
 
-The current contact content displays two telephone numbers:
+The current contact content displays two telephone numbers. The stakeholder confirmed the canonical number on September 10, 2026.
 
-- 623-338-7352
-- 623-388-7352
+- 623-388-7352 is the verified business telephone number.
+- 623-338-7352 is rejected as a typographical error and must not be published.
 
-The correct primary number must be confirmed before the new website, structured data, citations, analytics, directories, or business profiles are configured.
+See `01-business-source-of-truth.md` section 5.1. Correct the rejected number wherever it appears in current site content, structured data, citations, directories, and business profiles.
 
 ---
 
@@ -125,7 +125,7 @@ Primary problems include:
 - There are no service, industry, audience, technology, or verified location content systems.
 - The site cannot currently build meaningful topical authority.
 - The site does not provide enough structured information for search engines and answer systems.
-- Existing contact information may be inconsistent.
+- Existing contact information is inconsistent across the current site and third-party listings. The canonical telephone number is now verified, so this is a cleanup task rather than an open question.
 
 ---
 
