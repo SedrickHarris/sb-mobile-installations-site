@@ -24,3 +24,7 @@ coverage/
 .DS_Store
 Thumbs.db
 .vscode/*.local.json
+
+# TypeScript build artifacts (generated)
+*.tsbuildinfo
+next-env.d.ts
