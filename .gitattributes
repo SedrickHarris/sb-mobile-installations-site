@@ -1,0 +1,52 @@
+# Normalize line endings. Text files are stored as LF in the repository and
+# checked out as LF on every platform, so Windows, macOS, Linux, and the
+# Cloudflare Pages build agent all see identical content.
+* text=auto eol=lf
+
+# Source
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.mjs   text eol=lf
+*.cjs   text eol=lf
+*.json  text eol=lf
+*.css   text eol=lf
+*.scss  text eol=lf
+*.html  text eol=lf
+*.svg   text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.toml  text eol=lf
+
+# Shell scripts must stay LF or they fail to execute
+*.sh    text eol=lf
+
+# Windows scripts require CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# Cloudflare Pages configuration files
+_headers    text eol=lf
+_redirects  text eol=lf
+
+# Binary assets. Never convert, never diff as text.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.avif  binary
+*.ico   binary
+*.pdf   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.eot   binary
+*.mp4   binary
+*.webm  binary
+
+# Lockfiles are generated. Collapse them in pull request diffs.
+package-lock.json linguist-generated=true -diff
