@@ -39,7 +39,7 @@ export default function HomePage() {
     <>
       <JsonLd schema={homepageSchema()} />
 
-      <main id="main">
+      <>
         <HomeHero content={homepageContent.hero} />
 
         <AnswerBlock content={homepageContent.directAnswer} />
@@ -78,7 +78,7 @@ export default function HomePage() {
         />
 
         <FinalCta id="final-cta" content={homepageContent.finalCta} />
-      </main>
+      </>
     </>
   );
 }
