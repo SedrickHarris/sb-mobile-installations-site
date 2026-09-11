@@ -26,7 +26,7 @@ const toneClasses: Record<Tone, string> = {
 
 /**
  * Horizontal padding is constant at 20px mobile and 24px from medium up.
- * Vertical padding varies by density, drawn from the 4px scale in section 4.3.
+ * Vertical padding varies by density, drawn from the 4px scale in section 4.4.
  */
 const densityClasses: Record<Density, string> = {
   compact: "py-10 md:py-14",

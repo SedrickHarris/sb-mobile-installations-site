@@ -12,13 +12,20 @@
   --color-surface: #ffffff;
   --color-surface-subtle: #f5f7fa;
   --color-surface-dark: #111827;
-  --color-brand: #1468ff;
-  --color-brand-dark: #0b4db8;
-  --color-brand-soft: #e8f0ff;
-  --color-accent: #f2ea00;
+  /* Brand red, stakeholder confirmed 2026-09-10. Replaced blue #1468ff. */
+  --color-brand: #b40000;
+  --color-brand-dark: #8a0000;
+  --color-brand-soft: #fceaea;
   --color-success: #166534;
   --color-warning: #92400e;
-  --color-error: #b42318;
+  /*
+    Deep rose, not a pure red. The brand is now red, and an error token in the
+    same hue family was indistinguishable from it: the previous #b42318 sat
+    3.3 dE2000 from --color-brand. This value sits 22.1 from brand and 20.3
+    from brand-dark, so an error never reads as a brand element. See section
+    4.1 of 21-design-system.md.
+  */
+  --color-error: #9d174d;
   --color-border: #d9e0ea;
 
   /* 4.2 Typography scale. Headings scale with clamp and stay readable narrow. */
@@ -41,26 +48,33 @@
   --text-label: 0.8125rem;
   --text-label--line-height: 1.3;
 
-  /* 4.3 Spacing, 4px base scale */
+  /* 4.4 Spacing, 4px base scale */
   --spacing: 0.25rem;
 
-  /* 4.4 Radius and shadow */
+  /* 4.5 Radius and shadow */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --shadow-card: 0 8px 28px rgb(17 24 39 / 0.08);
 
-  /* Layout maxima from section 4.3 */
+  /* Layout maxima from section 4.4 */
   --container-content: 720px;
   --container-site: 1280px;
 
   /*
-    Highly legible sans-serif with a system fallback. No web font is loaded.
-    The final family is recorded in the implementation PR after performance
-    and licensing review, per 21-design-system.md section 4.2.
+    Body face. The brand kit asks for Inter, Arial, or Helvetica. Arial and
+    Helvetica are both in this stack and load no font file, so the kit is
+    satisfied at zero cost against the font budget in section 9 of
+    24-performance-budget.md. Inter was considered and declined: it would add
+    a network request and a swap on the critical path for no legibility gain
+    over the system grotesques.
+
+    The headline face remains undecided. The kit asks for Anton, Bebas Neue,
+    or Oswald Bold, and that choice is deferred to its own performance and
+    licensing review. Headings currently use this same stack.
   */
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 @layer base {

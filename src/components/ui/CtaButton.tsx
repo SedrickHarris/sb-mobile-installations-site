@@ -31,9 +31,14 @@ const emphasisClasses: Record<Emphasis, string> = {
     /*
       The border is this button's visual boundary, so it must meet the 3:1
       non-text contrast requirement in WCAG 1.4.11. The color-border token
-      measures 1.33:1 against surface and fails; color-brand measures 4.72:1
-      and passes. Label uses brand-dark: it reaches 6.63:1 on brand-soft,
-      where brand itself would fail body contrast at 4.12:1.
+      measures 1.24:1 against surface-subtle and fails; color-brand measures
+      7.14:1 on surface and passes.
+
+      Label uses brand-dark at 10.09:1 on surface and 8.70:1 on the brand-soft
+      hover. Under the former blue palette brand-dark was required, because
+      brand itself fell to 4.12:1 on brand-soft. Red clears that bar on its own
+      at 6.15:1, so brand-dark is now a hierarchy choice rather than a contrast
+      necessity. It is kept so the label stays darker than the border.
     */
     "bg-surface text-brand-dark border border-brand",
     "hover:bg-brand-soft hover:border-brand-dark",

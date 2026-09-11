@@ -11,7 +11,9 @@ interface FinalCtaProps {
  * Closing call to action.
  *
  * A brand-soft band signals the end of the page. The tint is used rather than
- * solid brand because body text on solid brand would fail contrast.
+ * solid brand because body text on solid brand would fail contrast. That still
+ * holds for the red palette: ink on solid brand measures 2.48:1. On the tint it
+ * measures 15.29:1.
  *
  * Both journeys repeat with the recruitment CTA first, matching the hero.
  */

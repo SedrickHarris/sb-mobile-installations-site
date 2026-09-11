@@ -8,7 +8,7 @@
 **Hosting:** Cloudflare Pages static export  
 **Primary objective:** Make qualified installer opportunities easy to understand and easy to pursue.  
 **Status:** Working design standard  
-**Version:** 0.2  
+**Version:** 0.3  
 **Last updated:** September 10, 2026
 
 ---
@@ -85,26 +85,87 @@ Tokens are the single source for recurring visual decisions. Use CSS variables o
 | color-surface | #FFFFFF | Cards and primary page surface |
 | color-surface-subtle | #F5F7FA | Alternating sections and form backgrounds |
 | color-surface-dark | #111827 | Footer and high-contrast panels |
-| color-brand | #1468FF | Primary links, buttons, and focus accents |
-| color-brand-dark | #0B4DB8 | Hover and pressed states |
-| color-brand-soft | #E8F0FF | Tinted panels and selected states |
-| color-accent | #F2EA00 | Small emphasis details only |
+| color-brand | #B40000 | Primary links, buttons, and focus accents |
+| color-brand-dark | #8A0000 | Hover and pressed states, and the secondary button label |
+| color-brand-soft | #FCEAEA | Tinted panels, selected states, and the closing CTA band |
 | color-success | #166534 | Confirmed success state |
 | color-warning | #92400E | Caution or incomplete information |
-| color-error | #B42318 | Validation and submission errors |
+| color-error | #9D174D | Validation and submission errors |
 | color-border | #D9E0EA | Borders and dividers |
 
 ### Color rules
 
-- Blue is the primary action color.
-- Yellow is an accent, never the only indicator of meaning and never a full-page background behind small text.
+- Red is the primary action color.
+- The error color is a deep rose, deliberately outside the brand's hue. See section 4.1.2.
+- Red carries no meaning on its own. An error, a warning, or a success state always pairs color with text, and with an icon or a shape where one is available.
+
+### 4.1.1 Brand color change, blue to red
+
+**Status:** Approved. Stakeholder confirmed September 10, 2026.
+
+Red #B40000 replaces blue #1468FF as the primary brand and action color. The value comes from the brand kit supplied on September 10, 2026, which names it "SB Red" and assigns it to the monogram, emphasis, and calls to action.
+
+Derived values, generated for this change:
+
+| Token | Old | New | Role |
+| --- | --- | --- | --- |
+| color-brand | #1468FF | #B40000 | Fills, borders, focus ring |
+| color-brand-dark | #0B4DB8 | #8A0000 | Hover and pressed fills, secondary button label |
+| color-brand-soft | #E8F0FF | #FCEAEA | Closing CTA band, secondary button hover fill |
+
+Every contrast pairing improved or held. Nothing regressed below its threshold. The two pairings that moved down, the closing CTA heading and body text on the tint, fell by less than 0.2 and stay above 6:1.
+
+The brand kit's black #111111 differs from `color-ink` #111827 by 1.06:1 and 2.1 dE2000. The difference is immaterial and `color-ink` is unchanged.
+
+### 4.1.2 Error color, re-picked
+
+**Status:** Approved. Changed as a direct consequence of the brand change.
+
+The previous error token #B42318 sat **3.3 dE2000** from the new brand red and **1.09:1** in contrast. The two were the same color to the eye. An error message and a primary button would have been indistinguishable by color.
+
+Two strategies were evaluated.
+
+**Separate by lightness, stay in pure red.** Rejected. The darkest usable variants stayed within 8.5 to 14.3 dE2000 of `color-brand-dark`, and `color-brand-dark` is the exact color the secondary button label uses, so error text and button text would still have collided. Below L\* 21 the candidates also began reading as near-black body text.
+
+**Separate by hue, shift to deep rose.** Adopted. **#9D174D** clears every requirement:
+
+| Measure | Value | Requirement |
+| --- | --- | --- |
+| dE2000 from color-brand | 22.1 | clearly distinguishable |
+| dE2000 from color-brand-dark | 20.3 | clearly distinguishable |
+| dE2000 from color-warning | 27.3 | clearly distinguishable |
+| Contrast on surface | 7.88:1 | 4.5:1 |
+| Contrast on surface-subtle | 7.35:1 | 4.5:1 |
+| Contrast on brand-soft | 6.79:1 | 4.5:1 |
+| White text on an error fill | 7.88:1 | 4.5:1 |
+
+It stays in the red family, so it still reads as an alarm state, and it is measurably more legible than the token it replaces, which reached only 6.57:1 on surface.
+
+### 4.1.3 Accent yellow removed
+
+`color-accent` #F2EA00 is gone, along with the rule that governed it.
+
+The token was never referenced by any component, page, or stylesheet. The brand kit defines a three-color palette of red, black, and white, and instructs against unauthorized colors. Keeping an unused token that no approved source sanctions invites a future pass to reach for it.
+
+Reintroducing an accent requires stakeholder approval and a contrast check, not a token restore.
 - Dark surfaces require tested text contrast and restrained use.
 - Error, success, and warning states require text and an accessible status, not color alone.
 - Do not use brand colors to imply that an unverified claim is approved.
 
 ### 4.2 Typography tokens
 
-Use a highly legible sans-serif family with a system fallback. The final font choice is recorded in the implementation PR after performance and licensing review.
+Use a highly legible sans-serif family with a system fallback.
+
+**Body face: decided September 10, 2026.** The brand kit asks for Inter, Arial, or Helvetica. The body stack is the system grotesque stack, which already contains Helvetica and Arial:
+
+```
+ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+"Helvetica Neue", Helvetica, Arial, sans-serif
+```
+
+No font file is loaded, so the cost against the font budget in section 9 of `24-performance-budget.md` is zero bytes and zero requests. Inter was considered and declined: it satisfies the kit equally but adds a request and a swap on the critical path for no legibility gain over the system faces.
+
+**Headline face: still open.** The kit asks for Anton, Bebas Neue, or Oswald Bold. That decision is deferred to its own performance and licensing review and is not resolved here. Headings currently use the body stack. A display face would be the first web font on the project and must be measured against the LCP target before adoption.
 
 | Token | Suggested size | Line height | Use |
 |---|---:|---:|---|
@@ -120,7 +181,28 @@ Use a highly legible sans-serif family with a system fallback. The final font ch
 
 Responsive headings should scale with clamp() but remain readable at narrow widths. Do not use all-caps for long headings.
 
-### 4.3 Spacing tokens
+### 4.3 Favicon and app icons
+
+**Source:** `sb-mobile-installations-monogram-white.png`, composited on a solid `color-brand` tile. The brand kit assigns the monogram to favicon use.
+
+The file named `sb-mobile-installations-favicon-512.png` is **not used and must not be used**. Despite the name it is 512x202, not square, and is one of the lossy exports that carries 176 shades of what is a one-color mark.
+
+**Treatment.** White mark on a red tile, not black on white. The tile is opaque, so the icon holds its shape on light and dark browser chrome alike; a white tile disappears into light chrome. Red and white is also the kit's stated preference for high-contrast applications. At 32px the white-on-red counters survive downsampling marginally better than black-on-white.
+
+**Square crop.** The monogram is 2.54:1 with zero baked-in clear space. The kit sets clear space at the height of the "M" in MOBILE, which measures 158px against the lockup's 1662px width, or 9.5% of the mark's width. That unit is applied horizontally. Vertically, squaring a 2.54:1 mark leaves far more room than the rule requires. Padding is the only faithful option, because cropping or stretching the mark is prohibited.
+
+**Known limitation.** Squaring leaves the glyph at roughly a third of the tile height. It resolves cleanly from 32px up. At 16px the mark renders about 13x5px and is not legible, and no color, crop, or clear-space choice fixes that. A legible 16px icon needs a square-format mark, such as a stacked or single-letter monogram, which does not exist in the current asset set and would require new artwork. Flagged for the stakeholder.
+
+**Generated set.**
+
+| File | Size | Use |
+| --- | --- | --- |
+| `public/favicon.ico` | 16, 32, 48 | Browser tab |
+| `public/icons/apple-touch-icon.png` | 180 | iOS home screen |
+| `public/icons/icon-192.png` | 192 | Android and PWA |
+| `public/icons/icon-512.png` | 512 | Install and splash |
+
+### 4.4 Spacing tokens
 
 Use a 4px base scale:
 
@@ -138,7 +220,7 @@ Recommended defaults:
 
 Use whitespace to separate intent groups. Do not compress headings, descriptions, cards, and forms until they become visually indistinguishable.
 
-### 4.4 Radius, border, and shadow
+### 4.5 Radius, border, and shadow
 
 | Token | Value | Use |
 |---|---|---|
