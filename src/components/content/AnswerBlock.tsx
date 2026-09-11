@@ -8,14 +8,17 @@ interface AnswerBlockProps {
 /**
  * Direct answer block.
  *
- * A single self-contained paragraph that answers "what is this company" without
- * surrounding context. It carries no heading by design, so answer engines can
- * lift it whole. See 12-aeo-geo-llm-optimization.md.
+ * Continuous editorial text directly under the hero. No card, no border, no
+ * heading. The subtle background creates a soft break from the hero without
+ * a hard divider.
+ *
+ * The paragraph is self-contained so an answer engine can lift it whole.
+ * See 12-aeo-geo-llm-optimization.md.
  */
 export function AnswerBlock({ content }: AnswerBlockProps) {
   return (
-    <Section>
-      <p className="text-[length:var(--text-body-lg)] leading-relaxed text-ink">
+    <Section tone="subtle">
+      <p className="text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink">
         {content.body}
       </p>
     </Section>

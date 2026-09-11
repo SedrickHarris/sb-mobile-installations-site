@@ -1,4 +1,4 @@
-import { CtaButton } from "@/components/ui/CtaButton";
+import { CtaPair } from "@/components/ui/CtaPair";
 import type { HeroContent } from "@/types/content";
 
 interface HomeHeroProps {
@@ -8,26 +8,38 @@ interface HomeHeroProps {
 /**
  * Homepage hero.
  *
- * Carries the single H1. The recruitment CTA is primary and appears first in
- * both DOM and visual order, preserving the recruitment-first hierarchy in
- * 00-project-overview.md.
+ * Centered column capped at 780px, the upper bound of the long-form reading
+ * range in 21-design-system.md section 5.2. Solid surface rather than a
+ * full-bleed image: no photography is approved yet, and section 20 of the
+ * image strategy leaves the homepage hero image an open decision.
+ *
+ * The media slot below is reserved, not rendered. A later pass can place an
+ * approved image there without restructuring the section.
+ *
+ * The H1 uses the h1 scale rather than display. The headline runs eleven
+ * words, and display would break it across four lines at desktop widths.
  */
 export function HomeHero({ content }: HomeHeroProps) {
   return (
-    <section className="bg-surface-subtle px-5 py-16 md:px-6 md:py-24">
-      <div className="mx-auto max-w-[1280px]">
-        <h1 className="max-w-[20ch] text-[length:var(--text-h1)] leading-[1.08] font-bold text-balance text-ink">
+    <section className="bg-surface px-5 py-16 md:px-6 md:py-24">
+      <div className="mx-auto max-w-[780px] text-center">
+        <h1 className="text-[length:var(--text-h1)] leading-[1.08] font-bold text-balance text-ink">
           {content.h1}
         </h1>
 
-        <p className="mt-6 max-w-[60ch] text-[length:var(--text-body-lg)] leading-relaxed text-ink-muted">
+        <p className="mx-auto mt-6 max-w-[62ch] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
           {content.subhead}
         </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-          <CtaButton cta={content.primaryCta} emphasis="primary" />
-          <CtaButton cta={content.secondaryCta} emphasis="secondary" />
+        <div className="mt-10">
+          <CtaPair
+            primary={content.primaryCta}
+            secondary={content.secondaryCta}
+            center
+          />
         </div>
+
+        {/* Reserved media slot. Intentionally empty until an image is approved. */}
       </div>
     </section>
   );

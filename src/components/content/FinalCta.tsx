@@ -1,5 +1,5 @@
 import { Section } from "@/components/layout/Section";
-import { CtaButton } from "@/components/ui/CtaButton";
+import { CtaPair } from "@/components/ui/CtaPair";
 import type { FinalCtaContent } from "@/types/content";
 
 interface FinalCtaProps {
@@ -10,24 +10,29 @@ interface FinalCtaProps {
 /**
  * Closing call to action.
  *
- * Repeats both journeys with the recruitment CTA first, matching the hero
- * hierarchy. Destinations and analytics events stay distinct.
+ * A brand-soft band signals the end of the page. The tint is used rather than
+ * solid brand because body text on solid brand would fail contrast.
+ *
+ * Both journeys repeat with the recruitment CTA first, matching the hero.
  */
 export function FinalCta({ content, id }: FinalCtaProps) {
   const headingId = `${id}-heading`;
 
   return (
-    <Section labelledBy={headingId}>
+    <Section tone="brandSoft" width="wide" labelledBy={headingId} center>
       <h2
         id={headingId}
-        className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-ink"
+        className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
       >
         {content.h2}
       </h2>
 
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-        <CtaButton cta={content.primaryCta} emphasis="primary" />
-        <CtaButton cta={content.secondaryCta} emphasis="secondary" />
+      <div className="mt-8">
+        <CtaPair
+          primary={content.primaryCta}
+          secondary={content.secondaryCta}
+          center
+        />
       </div>
     </Section>
   );

@@ -17,6 +17,21 @@ export const metadata = homepageMetadata;
  * FAQ, final CTA. The order encodes search intent sequencing and the
  * dual-audience conversion flow. Do not reorder, merge, or split sections.
  *
+ * Background rhythm alternates surface and subtle so sections separate
+ * without dividers, closing on a brand-soft band:
+ *
+ *   hero            surface
+ *   direct answer   subtle
+ *   recruiting      surface
+ *   commercial      subtle
+ *   trust           surface
+ *   faq             subtle
+ *   final cta       brand-soft
+ *
+ * Recruiting and commercial share structure, spacing, and density so the two
+ * journeys read as parallel. Trust is deliberately more compact, because it
+ * is a closing statement rather than a third conversion module.
+ *
  * All copy comes from the homepage content object. No literal copy here.
  */
 export default function HomePage() {
@@ -32,17 +47,25 @@ export default function HomePage() {
         <ContentSection
           id="recruiting"
           content={homepageContent.recruiting}
-          tone="subtle"
+          tone="default"
+          density="spacious"
           ctaEmphasis="primary"
         />
 
         <ContentSection
           id="commercial"
           content={homepageContent.commercial}
+          tone="subtle"
+          density="spacious"
           ctaEmphasis="secondary"
         />
 
-        <ContentSection id="trust" content={homepageContent.trust} tone="subtle" />
+        <ContentSection
+          id="trust"
+          content={homepageContent.trust}
+          tone="default"
+          density="compact"
+        />
 
         {/*
           The locked content gives no visible heading for this section. The
