@@ -4,7 +4,7 @@
 **Project:** SB Mobile Installations Website Rebuild  
 **Business:** SB Mobile Installations, LLC  
 **Status:** Discovery draft  
-**Version:** 0.4  
+**Version:** 0.9  
 **Last updated:** September 10, 2026
 
 ---
@@ -75,8 +75,8 @@ Lower-priority sources may identify facts that require verification. They do not
 
 | Field | Current value | Status | Notes |
 | --- | --- | --- | --- |
-| Legal business name | SB Mobile Installations, LLC | Approved | Client confirmed as the sole operating entity |
-| Public-facing name | SB Mobile Installations | Proposed | Confirm preferred public presentation |
+| Legal business name | SB Mobile Installations, LLC | Approved, internal only | Client confirmed as the sole operating entity. Never published. See section 4.2 |
+| Public-facing name | SB Mobile Installations | Approved | Stakeholder confirmed September 10, 2026 as the only name used publicly. See section 4.2 |
 | Abbreviated name | SB Mobile | Existing website statement | Existing homepage uses this shortened form |
 | Current website | https://sbmobileinstallations.com/ | Approved for current-site reference | Confirm this will remain the production domain |
 | New repository | https://github.com/SedrickHarris/sb-mobile-installations-site.git | Approved project fact | New website repository |
@@ -100,6 +100,28 @@ There is no Doral Transport LLC relationship to document. Do not represent Doral
 One entity is responsible for recruiting, hiring or contracting, payment, supervision, and installer management. Use SB Mobile Installations, LLC as the organization in company copy, employment and contractor language, privacy notices, forms, and structured data.
 
 Several other project documents still describe this relationship as unresolved and block content on it. Those documents require a follow-up update to reflect this confirmation.
+
+### 4.2 "LLC" is never published
+
+**The public company name is SB Mobile Installations. It never carries "LLC".**
+
+**Status:** Approved. Stakeholder confirmed September 10, 2026.
+
+> Remove "LLC" from the company name on all customer facing content. "LLC" will not be included in the company name in this project. Hard rule.
+
+**Provenance.** This instruction came directly from the stakeholder on September 10, 2026, delivered outside the build thread and relayed into it verbatim. It was not inferred from the brand kit, not derived from the existing copy, and not proposed by the build. The quotation above is the stakeholder's own wording.
+
+This note exists so a future review does not re-flag the change as unauthorized. The removal touched legal pages and structured data, which normally carry the registered entity, and that is exactly the kind of edit a reviewer should challenge without a recorded source. The source is recorded here.
+
+This is a project-wide content rule, not a page-level preference. It applies to every customer-facing surface, which includes page copy, headings, navigation, footers, legal pages, metadata, structured data values, alt text, form labels, error messages, email templates, and job postings.
+
+The registered entity remains SB Mobile Installations, LLC, and section 4 records it as a business fact. That form stays internal. Do not publish it, and do not reintroduce it through a schema `legalName` property, an Open Graph `siteName`, or a copyright line.
+
+Internal project documents in `docs/` are not customer-facing and may name the registered entity where the legal fact is the point, as this section does.
+
+The brand kit supplied on September 10, 2026 gives the same instruction under its do-not list. The two agree.
+
+**Note for review, not a blocker.** Privacy and terms pages conventionally identify the registered legal entity, and both pages previously did. They no longer do. The pages already carry a notice that they have not been reviewed by an attorney. Confirm with counsel whether the entity form is required in those two documents specifically before launch.
 
 ---
 
@@ -150,6 +172,14 @@ Consequences:
 - `LocalBusiness` structured data that requires a physical address is not usable. Prefer `Organization` for entity markup. See `13-schema-markup-plan.md`.
 - Contact pathways rely on the telephone number in section 5.1, approved forms, and email once verified.
 - Local content must describe service reach, not a physical presence. See section 8.4.
+
+#### Retired shop-location language
+
+A prior company-authored job posting on Glassdoor, expired January 2026, referenced a "possibility of shop locations." The stakeholder confirmed on September 10, 2026 that this language was outdated and inaccurate. **No physical office or shop exists.**
+
+**Status:** Retired. Do not reintroduce shop-location language in any customer-facing or recruiting content.
+
+This is recorded here so the expired posting does not resurface as an unresolved conflict in a future content pass. See sections 7.1 and 17, which were corrected to remove the same language.
 
 The Goodyear, Arizona association appearing in a third-party directory is **confirmed irrelevant**. It is not a company address, was never approved, and must not be used as a canonical address, a customer-facing location, or a structured-data location. Where it appears in an external directory, treat it as a citation cleanup item rather than a fact to represent.
 
@@ -209,9 +239,11 @@ Requirements before approval:
 
 ### 7.1 Observed operating model
 
-The existing content indicates that technicians travel to customer locations and may also work at shop locations.
+Technicians travel to the customer's location. All work is performed on-site.
 
-**Status:** Recruiting evidence.
+**Status:** Approved. Stakeholder confirmed September 10, 2026.
+
+An earlier version of this section recorded that technicians "may also work at shop locations," drawn from an expired Glassdoor posting. The stakeholder confirmed that language was outdated and inaccurate. See the retired shop-location note in section 5.3.
 
 ### 7.2 Contractor model
 
@@ -299,6 +331,8 @@ The homepage states that technicians are located throughout the United States an
 
 SB Mobile Installations serves customers nationwide through mobile technicians who travel to the customer's location. Nationwide service reach may be stated in website copy, metadata, and structured data as an approved fact.
 
+**This is a geographic fact only.** Project capacity is a separate confirmed fact recorded in section 11.1. The two are independent and must not be conflated. Confirming one says nothing about the other, and a future content pass should check each against its own section rather than re-flagging one while verifying the other.
+
 This confirms **reach**, not capacity. It does not establish same-day availability, universal coverage of every city, guaranteed technician presence in a given market, equal availability across all services, or unlimited project capacity. The caveat in section 25 and the prohibited wording in section 26 continue to apply in full.
 
 ### 8.3 Remaining coverage details
@@ -356,6 +390,21 @@ The current customer-facing website explicitly presents the following:
 | Mechanical insight | Homepage | Existing website statement | Keep language limited until qualifications are confirmed |
 | Customer service | Homepage | Existing website statement | Avoid unsupported guarantees or response-time claims |
 
+### 9.1 Confirmed equipment and service scope
+
+**Status:** Approved. Stakeholder confirmed September 10, 2026.
+
+> Confirmed by stakeholder, September 10, 2026. SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment. Technicians work with platforms including Lytx/DriveCam, SmartDrive, Zonar, LoJack, Interlock, PeopleNet, Trimble, Omnitracs, Samsara, Geotab, CalAmp, and Verizon Connect, plus dashcam and windshield-mounted video recorder installations. Source: stakeholder confirmation of a company-authored Glassdoor job posting's accuracy to current operations.
+
+This supersedes the narrower GPS-only scope that previously constrained public copy and structured data. The equipment categories above may now be stated as current services in customer-facing copy, metadata, and structured data.
+
+Limits that survive this confirmation:
+
+- Platform names are experience context, not a service taxonomy. The usage restrictions in section 14 remain in force in full. Never use a platform name as a structured-data taxonomy value.
+- Equipment scope is not capacity. Project capacity was confirmed separately on the same date and is recorded in section 11.1.
+- Compensation was not asked about and was not confirmed. See section 19.
+- Installation process details were not part of this confirmation. Photo documentation was confirmed separately on the same date and is recorded in section 17.1. The rest of section 17 stays unconfirmed.
+
 ---
 
 ## 10. Recruiting-supported installation capabilities
@@ -378,9 +427,13 @@ It also seeks experience with:
 - Tire-pressure monitoring systems
 - Mobile electronics
 
-**Status:** Recruiting evidence.
+**Status:** Approved as current service scope for the equipment categories listed in section 9.1. Stakeholder confirmed September 10, 2026.
 
-These items demonstrate the experience expected of applicants. They do not independently prove that each item is a currently marketed, universally available, or standalone customer service.
+The categories confirmed in section 9.1 are GPS tracking, ELD, AOBRD, TPMS, fleet management equipment, dashcams, and windshield-mounted video recorders. These are current services, not applicant qualifications only.
+
+EOBR devices and "mobile electronics" as a general category were not named in the confirmation and remain recruiting evidence.
+
+A confirmed category is still not proof that the item is a universally available or separately marketed standalone service page.
 
 Before creating a service page, confirm:
 
@@ -413,9 +466,30 @@ The following are candidates for `06-service-registry.md`:
 | Installation troubleshooting and service | Electrical diagnostic requirements | Verify scope |
 | Fleet equipment upgrades | Not clearly stated | Proposed |
 | Multi-location fleet installations | Travel and scheduling context | Proposed |
-| Nationwide fleet deployments | Nationwide technician statement | Verify project capacity |
+| Nationwide fleet deployments | Reach confirmed in section 8.2, capacity range confirmed in section 11.1 | Approved as the conjunction of two distinct confirmed facts. Simultaneous multi-market volume is still unconfirmed |
 
 No proposed service is approved merely because it appears in this table.
+
+### 11.1 Confirmed project capacity range
+
+**SB Mobile Installations handles projects ranging from a single vehicle to an entire fleet.**
+
+**Status:** Approved. Stakeholder confirmed September 10, 2026.
+
+> This claim is true. Include in the content, do not remove.
+
+The confirmation establishes a **project capacity range**: the company will take a one-vehicle job and will take a full-fleet job. Approved for customer-facing copy.
+
+This is a different claim from the nationwide geographic reach confirmed in section 8.2. Reach answers where work happens. Capacity range answers how large a single project can be. **Record, cite, and verify them separately.** A future content pass must not treat a confirmation of one as covering the other, and must not re-flag one while checking the other.
+
+What this confirmation does not establish:
+
+- Simultaneous multi-market deployment volume
+- Technician availability in a named market on a named date
+- Turnaround time for a fleet of any given size
+- A guarantee that any specific project will be accepted
+
+Those remain unconfirmed. The general guardrail in section 25 is unchanged and still governs every capacity claim that has not been confirmed the way this one was.
 
 ---
 
@@ -425,10 +499,16 @@ No proposed service is approved merely because it appears in this table.
 
 | Vehicle or asset category | Evidence | Status |
 | --- | --- | --- |
-| Fleet vehicles | Career page | Recruiting evidence |
-| Construction-type vehicles | Career page | Recruiting evidence |
+| Fleet vehicles | Stakeholder confirmation, September 10, 2026 | Approved |
+| Commercial vehicles | Stakeholder confirmation, September 10, 2026 | Approved |
+| Construction vehicles | Stakeholder confirmation, September 10, 2026 | Approved |
 | Passenger vehicles | Career qualification language | Recruiting evidence |
-| Commercial vehicles | Career qualification language | Recruiting evidence |
+
+**Status:** Approved for fleet, commercial, and construction vehicles.
+
+> Confirmed by stakeholder, September 10, 2026: SB Mobile Installations serves fleet, commercial, and construction vehicles.
+
+Passenger vehicles were not named in the confirmation and stay unverified. Do not widen the published vehicle list beyond fleet, commercial, and construction.
 
 ### 12.2 Potential categories requiring verification
 
@@ -498,7 +578,9 @@ The career page asks applicants about experience with the following systems or b
 
 ### Status
 
-Recruiting evidence only.
+Approved as installation experience. Stakeholder confirmed September 10, 2026. See section 9.1 for the confirmation text.
+
+The confirmation establishes that technicians work with these platforms. It establishes nothing about partnership, authorization, or certification, and the usage restrictions below are unchanged by it.
 
 ### Usage restrictions
 
@@ -515,13 +597,20 @@ Do not state or imply that SB Mobile is:
 
 Do not use a platform logo until permission and brand guidelines have been confirmed.
 
-### Approved language pending verification
+### Approved language
 
-Potential language after company confirmation:
+Approved framing, stakeholder confirmed September 10, 2026:
 
+- “We work with the platforms fleets already run on, including [platforms]”
 - “Installation experience with [platform] equipment”
 - “Technicians familiar with [platform] hardware”
 - “Support for deployments involving [platform] devices”
+
+All four forms describe experience. None asserts a relationship with the platform vendor.
+
+Platform names are approved for visible copy. **Do not use a platform name as a structured-data taxonomy value.** A platform name placed in `serviceType`, `brand`, `provider`, `makesOffer`, or a similar property reads as a formal classification claim and can imply a partnership that is not confirmed.
+
+A platform name may appear inside a structured-data text value that mirrors visible copy, such as an `FAQPage` `acceptedAnswer` whose text must match the rendered answer word for word. The distinction is prose against taxonomy, not presence against absence.
 
 The exact approved wording should be stored in `09-technology-platform-registry.md`.
 
@@ -622,7 +711,7 @@ The career page suggests the following workflow:
 
 1. A project or installation is assigned.
 2. The technician receives installation guidelines and approved connection procedures.
-3. The technician travels to a customer or shop location.
+3. The technician travels to the customer's location. Shop-location language from an expired job posting was removed on September 10, 2026. See section 5.3.
 4. The vehicle is accessed and required panels are disassembled when necessary.
 5. The equipment is installed.
 6. The technician confirms that installed equipment is functional.
@@ -641,11 +730,26 @@ This workflow is a strong candidate for customer-facing content after the compan
 - Equipment shipping and custody
 - Installation standards
 - Quality-control review
-- Photo requirements
 - Data submission platform
 - Customer acceptance process
 - Issue escalation
 - Closeout documentation
+
+### 17.1 Confirmed photo documentation
+
+**Every customer is sent installation photo documentation automatically.**
+
+**Status:** Approved. Stakeholder confirmed September 10, 2026.
+
+> Photo documentation is sent to every customer automatically, without being requested.
+
+Photographs are not only an internal technician submission duty under section 18. They are a delivered customer deliverable, and delivery is unprompted.
+
+Approved for customer-facing copy, including a delivery promise. See section 25 for the approved wording.
+
+This supersedes an earlier confirmation on the same date that read "customers receive or can request installation photo documentation." That wording left automatic delivery unestablished, and the copy written against it described documentation the customer could request. The stakeholder then confirmed the stronger claim directly. **Automatic delivery is the correct claim. On-request is not.** Do not reintroduce conditional or on-request phrasing.
+
+Every other item in the section 17 list stays unconfirmed. Confirming the documentation deliverable does not confirm the intake process, scheduling, equipment custody, installation standards, quality-control review, acceptance, escalation, or closeout.
 
 ---
 
@@ -668,7 +772,7 @@ The recruiting content expects technicians to:
 
 ### Status
 
-Existing website statement and recruiting evidence.
+Existing website statement and recruiting evidence, except photograph submission, which was confirmed on September 10, 2026 as a customer-facing deliverable. See section 17.1.
 
 ### Unverified quality claims
 
@@ -855,6 +959,42 @@ Acceptable variations include "serving fleets for 15 years" and "15 years of exp
 
 Do not pair the figure with an unconfirmed founding year, and do not derive a founding date from it.
 
+### Equipment and service scope
+
+Stakeholder confirmed September 10, 2026. Approved for use in copy. See section 9.1.
+
+> SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment on fleet, commercial, and construction vehicles.
+
+### Vehicle scope
+
+Stakeholder confirmed September 10, 2026. Approved for use in copy. See section 12.1.
+
+> fleet, commercial, and construction vehicles
+
+Do not extend the list. Passenger vehicles are not confirmed.
+
+### Platform experience
+
+Stakeholder confirmed September 10, 2026. Approved for visible copy. Never as a structured-data taxonomy value. See section 14.
+
+> We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, and others our technicians already know.
+
+### Project capacity range
+
+Stakeholder confirmed September 10, 2026. Approved for use in copy. See section 11.1.
+
+> one vehicle or an entire fleet
+
+Use it to describe project size only. Do not extend it into turnaround time, simultaneous multi-market volume, or a guarantee that a given project will be accepted.
+
+### Photo documentation
+
+Stakeholder confirmed September 10, 2026. Approved for use in copy. See section 17.1.
+
+> Every installation is photo documented, and you'll receive that documentation automatically.
+
+The confirmation establishes automatic, unprompted delivery to every customer, so a delivery promise is accurate. Do not weaken it into on-request phrasing, and do not extend it into a delivery timeframe, a file format, a delivery channel, or a retention period. None of those was confirmed.
+
 ### Service area
 
 Client confirmed nationwide service. Approved for use in copy.
@@ -875,9 +1015,15 @@ Client confirmed at Monday through Friday, 8:00 AM to 6:00 PM. Approved for disp
 
 Nationwide service reach is approved. Do not convert it into specific state availability, universal city coverage, immediate or same-day availability, guaranteed technician presence in a named market, or guaranteed national capacity.
 
+Project-size language is part of this caveat. Phrasing such as “one vehicle or an entire fleet” describes capacity, not reach, and the two must never be derived from each other.
+
+**The rule above is unchanged and still governs every unconfirmed capacity claim.** One narrow exception is documented: the project capacity range in section 11.1 was confirmed directly by the stakeholder on September 10, 2026 and is approved on its own evidence. It is not an inference from nationwide reach, and it does not license any further capacity claim. Anything beyond a single vehicle through a full fleet still requires its own confirmation.
+
 ---
 
 ## 26. Prohibited wording until supported
+
+**"SB Mobile Installations, LLC" in any customer-facing content.** The public name never carries "LLC". This is a hard rule with no approval path, not a claim awaiting support. See section 4.2.
 
 Do not use the following claims without documentation and approval:
 
@@ -1028,6 +1174,16 @@ Use this table to record approved updates.
 | 2026-09-10 | Years in business | Pending verification | 15 years | Client confirmation | Client | Approved for copy. Founding date still unconfirmed |
 | 2026-09-10 | Licenses, certifications, insurance, reviews, ratings | Pending verification | Not published, by client decision | Client decision | Client | Build content and schema around their absence. Section 26 unchanged |
 | 2026-09-10 | Worker classification | Existing recruiting statement | Independent contractors, not employees | Direct stakeholder confirmation, quoted verbatim in section 7.2 | Stakeholder | Classification only. Contract terms, compensation, schedule, and benefits remain unconfirmed. Supersedes an earlier entry that was reverted because it recorded approval that had not been given |
+| 2026-09-10 | Equipment and service scope | Recruiting evidence | GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment, plus dashcam and windshield-mounted video recorder installation | Stakeholder confirmation of a company-authored Glassdoor posting's accuracy to current operations, quoted in section 9.1 | Stakeholder | Supersedes the GPS-only public scope. EOBR devices and generic "mobile electronics" were not named and stay recruiting evidence |
+| 2026-09-10 | Vehicle scope | Recruiting evidence | Fleet, commercial, and construction vehicles | Stakeholder confirmation, quoted in section 12.1 | Stakeholder | Passenger vehicles not named, status unchanged |
+| 2026-09-10 | Technology and platform experience | Recruiting evidence | Technicians work with the platforms listed in section 14 | Stakeholder confirmation, quoted in section 9.1 | Stakeholder | Experience only. Partnership, authorization, certification, and reseller restrictions in section 14 are unchanged. Approved for visible copy. Never a structured-data taxonomy value |
+| 2026-09-10 | Shop locations | Recruiting evidence | No physical office or shop exists | Stakeholder confirmation that the expired Glassdoor "possibility of shop locations" language was outdated and inaccurate | Stakeholder | Retired. Sections 7.1 and 17 corrected. Recorded in section 5.3 so it does not resurface as an unresolved conflict |
+| 2026-09-10 | Compensation | Existing recruiting statement | No change | Not asked, not confirmed | Not approved | Explicitly excluded from the scope confirmation above. The $1,600 per week figure from the expired posting must not be treated as current. Section 19 unchanged |
+| 2026-09-10 | Project capacity range | Pending verification | Projects from a single vehicle to an entire fleet | Direct stakeholder confirmation, quoted verbatim in section 11.1 | Stakeholder | Capacity range only, and a distinct fact from the nationwide reach in section 8.2. Do not conflate the two or derive either from the other. Simultaneous multi-market volume, turnaround time, and project acceptance remain unconfirmed. The general guardrail in section 25 is unchanged |
+| 2026-09-10 | Photo documentation | Pending verification | Customers receive or can request installation photo documentation | Direct stakeholder confirmation | Stakeholder | Superseded the same day by the row below. Recorded so the narrowing is traceable rather than silently overwritten |
+| 2026-09-10 | Public company name | Proposed | SB Mobile Installations, with "LLC" never published | Direct stakeholder instruction received outside the build thread and relayed verbatim, quoted in section 4.2 | Stakeholder | Not inferred or proposed by the build. See the provenance note in section 4.2. Hard project-wide rule. Removed from the footer, mobile navigation, privacy policy, terms of use, Open Graph siteName, and the Organization schema name. The registered entity is unchanged and stays internal |
+| 2026-09-10 | Brand and action color | Design-system default | Red #B40000 replaces blue #1468FF. Error re-picked to #9D174D. Accent yellow removed | Direct stakeholder confirmation, recorded in sections 4.1.1 to 4.1.3 of `21-design-system.md` | Stakeholder | Source is the brand kit supplied the same day. The error token was changed as a forced consequence: the previous #B42318 sat 3.3 dE2000 from the new brand red. Logo and headline typography remain unresolved |
+| 2026-09-10 | Photo documentation | Confirmed as on-request, above | Photo documentation is sent to every customer automatically, without being requested | Direct stakeholder confirmation, quoted verbatim in section 17.1 | Stakeholder | Supersedes the on-request wording. Automatic delivery is the correct claim and a delivery promise is accurate in copy. Delivery timeframe, format, channel, and retention remain unconfirmed. Every other section 17 process item stays unconfirmed |
 
 ---
 
@@ -1062,17 +1218,34 @@ At this stage, the project has enough evidence to begin architecture, research, 
 - 15 years in business
 - Worker classification: technicians are independent contractors, not employees
 - Client decision not to publish licenses, certifications, insurance, reviews, or ratings
+- Equipment and service scope: GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment, plus dashcam and windshield-mounted video recorder installation
+- Vehicle scope: fleet, commercial, and construction vehicles
+- Technology and platform experience, as experience only, with the section 14 restrictions intact
+- No physical office or shop exists; the expired posting's shop-location language is retired
+- Project capacity range: a single vehicle through an entire fleet, a fact distinct from nationwide reach
+- Photo documentation sent to every customer automatically, without being requested
+- Public company name: SB Mobile Installations, with "LLC" never published
 
 ### Still required before launch
 
 - Email addresses for every contact pathway
-- Approved service registry and which services carry nationwide reach
+- Which confirmed services carry nationwide reach, and the service registry built from section 9.1
 - Customer types and industries
-- Technology and platform experience, separated from partnership status
 - Founding date, owner, and leadership for entity and About content
-- Project capacity, response expectations, and travel terms
-- Approved installation process and quality evidence
+- Response expectations, travel terms, turnaround time, and simultaneous multi-market deployment volume, none of which the confirmed capacity range establishes
+- The rest of the installation process and quality evidence in section 17, photo documentation excepted
 - Compensation, contract terms, schedule, and benefits, which classification alone does not establish
 - Time zone and holiday exceptions for published hours
+
+### Resolved: the two homepage About claims
+
+Both claims flagged during the September 10, 2026 content update were raised with the stakeholder and confirmed on the same date. Neither blocks publication.
+
+| Claim | Outcome | Record |
+| --- | --- | --- |
+| Project capacity, “one vehicle or an entire fleet” | Confirmed accurate. Retained in the copy as drafted | Section 11.1 |
+| Photo documentation | Confirmed accurate as a customer-facing deliverable, then confirmed again as automatic and unprompted. The copy states a delivery promise | Section 17.1 |
+
+The homepage carries no unverified claim. The remaining launch blockers are the missing `/careers/` and `/services/` routes and the unconfirmed production domain, recorded in `qa/homepage-verification-record.md`.
 
 The immediate priority is a structured business discovery interview covering the items above. Trust and proof content must be planned around the client's decision in section 16.1 rather than waiting on credentials that will not be published.
