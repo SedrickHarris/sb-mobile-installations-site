@@ -95,6 +95,22 @@ Use precise language for uncertainty: "the current project record confirms",
 fact", "publication is blocked until", "I could not verify". Do not disguise
 uncertainty with confident phrasing.
 
+## 3.1 No em dashes in customer-facing content
+
+**Hard rule, project wide.** Em dashes must never appear in customer-facing
+content: page copy, headings, CTA labels, metadata, structured data values,
+alt text, form labels, error messages, email templates, or job postings.
+
+Use a hyphen instead. Existing em dashes are replaced with a spaced hyphen
+rather than reworded, so approved copy keeps its exact words.
+
+This applies to the whole project, not one page. Check any new or supplied
+copy before it reaches a content file, including copy that arrives as
+approved and locked.
+
+Internal project documents in `docs/` are not customer-facing and are not
+covered by this rule.
+
 ## 4. Journey separation
 
 Active job applications, installer-network registration, referrals, and commercial

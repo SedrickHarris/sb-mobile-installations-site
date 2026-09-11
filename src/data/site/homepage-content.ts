@@ -44,13 +44,13 @@ export const homepageContent: HomepageContent = {
   hero: {
     h1: "Mobile Installation Technicians for Fleet Technology, Nationwide",
     subhead:
-      "SB Mobile Installations connects fleet operators with mobile technicians who travel on-site to install GPS and fleet electronics — and connects skilled installers with nationwide contract work. 15 years in the field — technicians travel to you, wherever you are.",
+      "SB Mobile Installations connects fleet operators with mobile technicians who travel on-site to install GPS and fleet electronics - and connects skilled installers with nationwide contract work. 15 years in the field - technicians travel to you, wherever you are.",
     primaryCta: APPLY_CTA,
     secondaryCta: QUOTE_CTA,
   },
 
   directAnswer: {
-    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS and fleet electronics installation for commercial vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has operated for 15 years and works entirely on-site — there is no physical office location.",
+    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS and fleet electronics installation for commercial vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has operated for 15 years and works entirely on-site - there is no physical office location.",
   },
 
   recruiting: {
@@ -61,13 +61,13 @@ export const homepageContent: HomepageContent = {
 
   commercial: {
     h2: "Installation Services for Fleet and Commercial Vehicles",
-    body: "SB Mobile Installations provides mobile GPS installation and related fleet electronics services for commercial vehicles nationwide, coordinated on-site at your location. We've been doing this for 15 years — straightforward pricing conversations and technicians who show up ready to work.",
+    body: "SB Mobile Installations provides mobile GPS installation and related fleet electronics services for commercial vehicles nationwide, coordinated on-site at your location. We've been doing this for 15 years - straightforward pricing conversations and technicians who show up ready to work.",
     cta: QUOTE_CTA,
   },
 
   trust: {
     h2: "Why SB Mobile Installations",
-    body: "Nationwide reach. 15 years in the field. A mobile-first model built around showing up where the work is — not a storefront. We work directly with fleet operators and technicians, without unnecessary layers.",
+    body: "Nationwide reach. 15 years in the field. A mobile-first model built around showing up where the work is - not a storefront. We work directly with fleet operators and technicians, without unnecessary layers.",
   },
 
   faq: {
@@ -101,7 +101,7 @@ export const homepageContent: HomepageContent = {
       {
         question: "Do you have a physical office?",
         answer:
-          "SB Mobile Installations operates as a mobile-only company with no physical office — technicians travel directly to each job site.",
+          "SB Mobile Installations operates as a mobile-only company with no physical office - technicians travel directly to each job site.",
       },
     ],
   },
