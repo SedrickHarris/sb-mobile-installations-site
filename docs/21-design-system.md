@@ -8,7 +8,7 @@
 **Hosting:** Cloudflare Pages static export  
 **Primary objective:** Make qualified installer opportunities easy to understand and easy to pursue.  
 **Status:** Working design standard  
-**Version:** 0.1  
+**Version:** 0.2  
 **Last updated:** September 10, 2026
 
 ---
@@ -214,13 +214,15 @@ Heroes should not contain multiple competing forms. A page can introduce a form 
 
 | Variant | Primary use | CTA |
 |---|---|---|
-| Home hero | Company context and audience routing | View Current Openings |
+| Home hero | Company context and audience routing | Apply as a Mobile Installation Technician |
 | Careers hero | Employer and installer opportunity | View Current Openings |
 | Job hero | One active or closed opening | Apply for This Opening |
 | Role hero | Evergreen role education | Explore Current Openings |
 | Commercial hero | Service or buyer context | Discuss a Project |
 | Article hero | Answer/resource content | Contextual next step |
 | Utility hero | Contact, About, legal | Page-specific action |
+
+The home hero CTA was corrected on September 10, 2026. It previously read "View Current Openings," which conflicted with the approved homepage content. The approved copy is canonical. See `01-business-source-of-truth.md` and the homepage content record.
 
 ### 7.3 Hero image placement
 
