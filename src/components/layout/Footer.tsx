@@ -62,7 +62,7 @@ export function Footer() {
         </div>
 
         <p className="mt-12 border-t border-border pt-6 text-[length:var(--text-small)] text-ink-muted">
-          {`\u00a9 ${year} ${business.legalName}. All rights reserved.`}
+          {`\u00a9 ${year} ${business.name}. All rights reserved.`}
         </p>
       </div>
     </footer>

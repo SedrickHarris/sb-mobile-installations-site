@@ -6,6 +6,9 @@ import { homepageContent } from "@/data/site/homepage-content";
  *
  * Only four types are emitted: Organization, Service, WebPage, and FAQPage.
  *
+ * serviceType carries the confirmed equipment categories from section 9.1 and
+ * no third-party platform names. See the note on business.serviceTypes.
+ *
  * Deliberately absent, and not to be added:
  *   LocalBusiness   no physical address exists to satisfy required fields
  *   AggregateRating no reviews exist
@@ -23,7 +26,7 @@ function organization() {
   return {
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
-    name: business.legalName,
+    name: business.name,
     url: business.url,
     telephone: business.telephone,
   };
@@ -32,8 +35,8 @@ function organization() {
 function service() {
   return {
     "@type": "Service",
-    name: business.serviceType,
-    serviceType: business.serviceType,
+    name: business.serviceName,
+    serviceType: [...business.serviceTypes],
     provider: { "@id": ORGANIZATION_ID },
     areaServed: {
       "@type": "Country",

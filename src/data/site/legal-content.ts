@@ -29,7 +29,7 @@ export const privacyPolicy: LegalPageContent = {
   title: "Privacy Policy",
   lastUpdated: LAST_UPDATED,
   paragraphs: [
-    "SB Mobile Installations, LLC operates this website. This page describes, in general terms, how information may be handled when you visit.",
+    "SB Mobile Installations operates this website. This page describes, in general terms, how information may be handled when you visit.",
     "At this time, this website does not include forms that collect personal information. If that changes - for example, if an application or contact form is added - this policy will be updated to describe what information is collected, how it is used, and how it can be corrected or removed.",
     "Standard web server logs may be created automatically by our hosting provider as part of normal website operation. We do not currently use this website to sell personal information.",
     "If you have questions about this policy, please contact SB Mobile Installations directly.",
@@ -40,7 +40,7 @@ export const termsOfUse: LegalPageContent = {
   title: "Terms of Use",
   lastUpdated: LAST_UPDATED,
   paragraphs: [
-    "These terms govern your use of this website, operated by SB Mobile Installations, LLC.",
+    "These terms govern your use of this website, operated by SB Mobile Installations.",
     "This website provides general information about SB Mobile Installations and its work. Information on this site is provided as-is and may be updated at any time without notice.",
     "This website does not currently process job applications, purchases, or binding agreements. Any business arrangement with SB Mobile Installations is governed separately by the specific agreement made directly with the company, not by this page.",
     "Contact SB Mobile Installations with questions about these terms.",

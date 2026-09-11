@@ -33,7 +33,12 @@ export interface DirectAnswerContent {
 
 export interface SectionContent {
   readonly h2: string;
-  readonly body: string;
+  /**
+   * Section body copy. An array renders as one paragraph per entry, in order.
+   * A single string renders as one paragraph. Paragraph breaks are structure,
+   * not copy, so the strings themselves stay verbatim.
+   */
+  readonly body: string | readonly string[];
   readonly cta?: Cta;
 }
 
@@ -55,6 +60,7 @@ export interface FinalCtaContent {
 export interface HomepageContent {
   readonly hero: HeroContent;
   readonly directAnswer: DirectAnswerContent;
+  readonly about: SectionContent;
   readonly recruiting: SectionContent;
   readonly commercial: SectionContent;
   readonly trust: SectionContent;

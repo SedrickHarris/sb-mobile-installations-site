@@ -15,12 +15,12 @@ export const homepageMetadata: Metadata = {
   title: homepageContent.hero.h1,
   // Derived from the Direct Answer Block, trimmed at a sentence boundary.
   description:
-    "SB Mobile Installations is a mobile installation company that provides on-site GPS and fleet electronics installation for commercial vehicles nationwide, and connects independent contractor technicians with installation work across the country.",
+    "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for commercial and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "/",
-    siteName: business.legalName,
+    siteName: business.name,
     title: homepageContent.hero.h1,
     description: homepageContent.directAnswer.body,
   },

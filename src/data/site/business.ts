@@ -5,8 +5,19 @@
  * appear here. Never add an unverified value to this file.
  */
 export const business = {
-  /** Section 4. Sole operating entity. */
-  legalName: "SB Mobile Installations, LLC",
+  /**
+   * Section 4. Sole operating entity.
+   *
+   * The public company name never carries "LLC". That is a hard project rule,
+   * recorded in section 4 of 01-business-source-of-truth.md and in section 26
+   * as prohibited wording. It applies to every customer-facing surface: page
+   * copy, legal pages, metadata, and structured data values.
+   *
+   * The registered entity is still SB Mobile Installations, LLC. That form is
+   * not published here and is not emitted in structured data. Do not add a
+   * legalName property to the Organization graph to carry it.
+   */
+  name: "SB Mobile Installations",
 
   /**
    * Production domain. Section 4 records this as approved for current-site
@@ -38,8 +49,26 @@ export const business = {
   },
 
   /**
-   * Section 9. GPS equipment installation is the only verified service scope
-   * for public copy and schema. Do not widen without a content update.
+   * Section 9.1, confirmed by stakeholder 2026-09-10. The service name mirrors
+   * the approved Direct Answer wording rather than introducing a new label.
    */
-  serviceType: "Mobile GPS Installation",
+  serviceName: "Mobile GPS, ELD, and Fleet Electronics Installation",
+
+  /**
+   * Section 9.1. The confirmed equipment categories, as a formal service
+   * taxonomy. Do not widen without a content update.
+   *
+   * Third-party platform names are deliberately absent. Section 14 approves
+   * them for visible copy only. A platform name used as a schema value reads
+   * as a formal taxonomy claim and can imply a partnership, authorization, or
+   * certification that is not confirmed.
+   */
+  serviceTypes: [
+    "GPS tracking installation",
+    "ELD installation",
+    "AOBRD installation",
+    "TPMS installation",
+    "Fleet dashcam installation",
+    "Fleet management equipment installation",
+  ] as const,
 } as const;

@@ -26,6 +26,10 @@ interface ContentSectionProps {
  *
  * When the media column is enabled, the text column comes first in the DOM,
  * so reading order survives the collapse to a single column.
+ *
+ * A body supplied as an array renders one paragraph per entry. Paragraph
+ * spacing matches the gap between the heading and the first paragraph, so a
+ * multi-paragraph section keeps the same vertical rhythm as a single one.
  */
 export function ContentSection({
   content,
@@ -36,6 +40,8 @@ export function ContentSection({
   withMediaColumn = false,
 }: ContentSectionProps) {
   const headingId = `${id}-heading`;
+  const paragraphs =
+    typeof content.body === "string" ? [content.body] : content.body;
 
   return (
     <Section
@@ -59,9 +65,14 @@ export function ContentSection({
             {content.h2}
           </h2>
 
-          <p className="mt-5 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-            {content.body}
-          </p>
+          {paragraphs.map((paragraph) => (
+            <p
+              key={paragraph}
+              className="mt-5 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
+            >
+              {paragraph}
+            </p>
+          ))}
 
           {content.cta ? (
             <div className="mt-8">

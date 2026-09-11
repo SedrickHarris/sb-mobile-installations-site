@@ -13,8 +13,8 @@ export const metadata = homepageMetadata;
 /**
  * Homepage.
  *
- * Section order is fixed: hero, direct answer, recruiting, commercial, trust,
- * FAQ, final CTA. The order encodes search intent sequencing and the
+ * Section order is fixed: hero, direct answer, about, recruiting, commercial,
+ * trust, FAQ, final CTA. The order encodes search intent sequencing and the
  * dual-audience conversion flow. Do not reorder, merge, or split sections.
  *
  * Background rhythm alternates surface and subtle so sections separate
@@ -22,15 +22,26 @@ export const metadata = homepageMetadata;
  *
  *   hero            surface
  *   direct answer   subtle
+ *   about           subtle
  *   recruiting      surface
  *   commercial      subtle
  *   trust           surface
  *   faq             subtle
  *   final cta       brand-soft
  *
- * Recruiting and commercial share structure, spacing, and density so the two
- * journeys read as parallel. Trust is deliberately more compact, because it
- * is a closing statement rather than a third conversion module.
+ * Direct answer and about deliberately share one subtle band. The FAQ tone is
+ * fixed in its own component, which leaves four slots between two subtle
+ * sections, and four slots cannot alternate cleanly. Pairing the two company
+ * sections puts the single repeat where it helps: the answer block is an
+ * unheaded lead paragraph and about expands it, so they read as one editorial
+ * opening before the page breaks to the two journeys. The about H2 still
+ * separates them. No existing section tone changed.
+ *
+ * About, recruiting, and commercial share density, measure, and type scale, so
+ * the company section carries the same visual weight as the two conversion
+ * sections. About carries no CTA: it is informational only. Trust is
+ * deliberately more compact, because it is a closing statement rather than a
+ * third conversion module.
  *
  * All copy comes from the homepage content object. No literal copy here.
  */
@@ -43,6 +54,13 @@ export default function HomePage() {
         <HomeHero content={homepageContent.hero} />
 
         <AnswerBlock content={homepageContent.directAnswer} />
+
+        <ContentSection
+          id="about"
+          content={homepageContent.about}
+          tone="subtle"
+          density="spacious"
+        />
 
         <ContentSection
           id="recruiting"

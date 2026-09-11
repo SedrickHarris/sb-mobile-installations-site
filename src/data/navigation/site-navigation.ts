@@ -40,7 +40,7 @@ export const footerColumns: readonly FooterColumn[] = [
   {
     heading: "Company",
     lines: [
-      business.legalName,
+      business.name,
       "15 years in the field",
       "Monday–Friday, 8:00 AM–6:00 PM",
     ],

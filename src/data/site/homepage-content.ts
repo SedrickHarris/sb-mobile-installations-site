@@ -12,8 +12,30 @@ import type { Cta, HomepageContent } from "@/types/content";
  *   Nationwide service      Approved, section 8.2
  *   No physical office      Approved, section 5.3
  *   Mon-Fri 8:00 AM-6:00 PM Approved, section 5.4
- *   GPS equipment scope     Verified service, section 9
+ *   Equipment scope         Approved by stakeholder 2026-09-10, section 9.1
+ *   Vehicle scope           Approved by stakeholder 2026-09-10, section 12.1
+ *   Platform experience     Approved by stakeholder 2026-09-10, section 14
  *   Contractor engagement   Approved by stakeholder 2026-09-10, section 7.2
+ *
+ *   Project capacity range  Approved by stakeholder 2026-09-10, section 11.1
+ *   Photo documentation     Approved by stakeholder 2026-09-10, section 17.1
+ *
+ * The last two were flagged as unverified during the 2026-09-10 content pass
+ * and were confirmed by the stakeholder the same day. Section 31 records the
+ * resolution. No string in this file carries an unverified claim.
+ *
+ * Capacity and reach are separate confirmed facts. "one vehicle or an entire
+ * fleet" rests on section 11.1, not on the nationwide reach in section 8.2.
+ * Neither may be derived from the other. See the guardrail in section 25.
+ *
+ * The photo documentation sentence is a delivery promise, which the 2026-09-10
+ * confirmation supports: documentation is sent to every customer automatically,
+ * without being requested. Do not weaken it into on-request phrasing. Do not
+ * add a timeframe, format, channel, or retention period. See section 17.1.
+ *
+ * No em dash appears in any string in this file. Section 3.1 of CLAUDE.md is
+ * project wide and applies to supplied copy. Where the supplied copy used an
+ * em dash, it carries a spaced hyphen instead, with the wording unchanged.
  */
 
 /**
@@ -50,7 +72,16 @@ export const homepageContent: HomepageContent = {
   },
 
   directAnswer: {
-    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS and fleet electronics installation for commercial vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has operated for 15 years and works entirely on-site - there is no physical office location.",
+    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for commercial and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has operated for 15 years and works entirely on-site - there is no physical office location.",
+  },
+
+  about: {
+    h2: "About SB Mobile Installations",
+    body: [
+      "For 15 years, SB Mobile Installations has installed GPS, ELD, AOBRD, and fleet management equipment on fleet, commercial, and construction vehicles nationwide. Our independent contractor technicians travel directly to each customer's location - there's no physical office, no shop visit required, and no waiting for equipment to come to you.",
+      "We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, LoJack, Lytx/DriveCam, SmartDrive, and CalAmp, along with TPMS and dashcam installations. Every installation is photo documented, and you'll receive that documentation automatically.",
+      "We operate Monday through Friday, 8:00 AM to 6:00 PM, and coordinate projects across the country - one vehicle or an entire fleet.",
+    ],
   },
 
   recruiting: {
@@ -61,7 +92,7 @@ export const homepageContent: HomepageContent = {
 
   commercial: {
     h2: "Installation Services for Fleet and Commercial Vehicles",
-    body: "SB Mobile Installations provides mobile GPS installation and related fleet electronics services for commercial vehicles nationwide, coordinated on-site at your location. We've been doing this for 15 years - straightforward pricing conversations and technicians who show up ready to work.",
+    body: "SB Mobile Installations provides mobile GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, coordinated on-site at your location. We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, and others our technicians already know. We've been doing this for 15 years - straightforward pricing conversations and technicians who show up ready to work.",
     cta: QUOTE_CTA,
   },
 
@@ -91,7 +122,7 @@ export const homepageContent: HomepageContent = {
       {
         question: "What equipment do you install?",
         answer:
-          "SB Mobile Installations installs GPS tracking equipment for commercial vehicles.",
+          "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment on fleet, commercial, and construction vehicles, working with platforms including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, LoJack, and dashcam systems.",
       },
       {
         question: "What are your hours?",
