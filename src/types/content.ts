@@ -124,22 +124,16 @@ export interface WhoWeServeContent {
   };
 }
 
-export interface DifferentiatorItem {
-  readonly title: string;
-  readonly body: string;
-}
-
 /**
- * Why-choose-us block: eyebrow, heading, intro, four benefit cards, a
- * fleet-manager value list, a commercial CTA panel, and one visually
- * secondary Installer Network link. The customer CTA and the technician link
- * are separate journeys and never share a route or event.
+ * "Why SB Mobile Installations" block: h2, intro, four benefit blocks, a
+ * fleet-manager list, a commercial CTA panel, and one visually secondary
+ * Installer Network link. Customer and technician journeys never share a
+ * route or analytics event.
  */
-export interface WhyChooseUsContent {
-  readonly eyebrow: string;
+export interface TrustContent {
   readonly h2: string;
   readonly intro: string;
-  readonly items: readonly DifferentiatorItem[];
+  readonly benefits: readonly DifferentiatorItem[];
   readonly fleetManagers: {
     readonly heading: string;
     readonly items: readonly string[];
@@ -154,6 +148,23 @@ export interface WhyChooseUsContent {
     readonly prompt: string;
     readonly link: Cta;
   };
+}
+
+export interface DifferentiatorItem {
+  readonly title: string;
+  readonly body: string;
+}
+
+/**
+ * Compact proof strip of confirmed facts. The benefit headings live in the
+ * "Why SB Mobile Installations" section (`TrustContent`), so they appear once
+ * on the homepage.
+ */
+export interface WhyChooseUsContent {
+  /** Visually hidden h2 that names the strip for assistive technology. */
+  readonly heading: string;
+  /** Short fact labels. Confirmed facts only; no benefit headings. */
+  readonly items: readonly string[];
 }
 
 export interface ProcessStep {
@@ -213,7 +224,7 @@ export interface HomepageContent {
   readonly commercial: SectionContent;
   readonly recruitingBanner: RecruitingBannerContent;
   readonly proof: ProofMetricsContent;
-  readonly trust: SectionContent;
+  readonly trust: TrustContent;
   readonly faq: FaqContent;
   readonly finalCta: FinalCtaContent;
 }

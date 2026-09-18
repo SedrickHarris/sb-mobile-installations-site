@@ -149,7 +149,7 @@ export const homepageContent: HomepageContent = {
       {
         title: "Fleet Vehicles",
         description:
-          "We install fleet electronics on work vans, service vehicles, delivery vehicles, utility trucks, and other vehicles managed as part of a commercial fleet. On-site installation helps fleet operators coordinate equipment deployments at their own location.",
+          "We install fleet electronics on work vans, service vehicles, delivery vehicles, utility vehicles, and other vehicles managed as part of a commercial fleet. On-site installation helps fleet operators coordinate equipment deployments at their own location.",
         useCases: [
           "GPS tracking installation",
           "ELD installation",
@@ -167,7 +167,7 @@ export const homepageContent: HomepageContent = {
       {
         title: "Commercial Vehicles",
         description:
-          "Our mobile installation services support delivery vehicles, box trucks, work trucks, utility vehicles, and other commercial vehicles that depend on connected fleet technology. Equipment can be installed on-site to help fleet operators coordinate vehicle technology projects at their own location.",
+          "Our mobile installation services support delivery vehicles, work trucks, utility vehicles, and other commercial vehicles that depend on connected fleet technology. Equipment can be installed on-site to help fleet operators coordinate vehicle technology projects at their own location.",
         useCases: [
           "Delivery and service fleets",
           "Commercial truck electronics",
@@ -190,7 +190,7 @@ export const homepageContent: HomepageContent = {
         useCases: [
           "Construction fleet tracking",
           "Heavy-duty truck electronics",
-          "Excavator and equipment monitoring",
+          "Construction and vocational equipment installation support",
           "Vocational vehicle installations",
           "Jobsite fleet coordination",
           "Equipment deployment projects",
@@ -210,56 +210,17 @@ export const homepageContent: HomepageContent = {
     },
   },
 
+  // Compact proof strip. Distinct from the "Why SB Mobile Installations"
+  // section (`trust`), which owns the benefit headings. Each item restates a
+  // confirmed fact only. See docs/_claims-inventory.md items 10, 11, 12, 16.
   whyChooseUs: {
-    eyebrow: "Why SB Mobile Installations",
-    h2: "Why Fleet Managers Choose SB Mobile Installations",
-    intro:
-      "SB Mobile Installations provides on-site GPS, ELD, dashcam, TPMS, and fleet-electronics installation for fleet, commercial, and construction vehicles nationwide. Since 2011, the company has operated around the realities of fleet work: vehicles are distributed across locations, downtime matters, and installation projects need to be coordinated where the vehicles are already working.",
+    heading: "SB Mobile Installations at a glance",
     items: [
-      {
-        title: "Nationwide mobile service",
-        body: "Technicians travel directly to customer locations across the United States, supporting fleet operators at yards, facilities, and other approved installation locations.",
-      },
-      {
-        title: "Established fleet-electronics experience",
-        body: "In business since 2011, SB Mobile Installations supports installation work involving GPS tracking, ELDs, dashcams, TPMS, and other vehicle electronics used in commercial fleet operations.",
-      },
-      {
-        title: "Built around on-site fleet work",
-        body: "The mobile-first model helps customers coordinate installation at the vehicle location instead of moving every vehicle to a separate installation facility.",
-      },
-      {
-        title: "Direct project coordination",
-        body: "SB Mobile Installations works directly with fleet operators and independent contractor technicians to coordinate equipment requirements, vehicle details, locations, and deployment logistics.",
-      },
+      "In business since 2011",
+      "Every installation photo documented",
+      "Fleet, commercial, and construction vehicles",
+      "Independent contractor technicians",
     ],
-    fleetManagers: {
-      heading: "What this means for fleet managers",
-      items: [
-        "Coordinate installation work at your location",
-        "Support one vehicle or a multi-vehicle deployment",
-        "Plan around vehicle types, equipment, and site logistics",
-        "Work with approved fleet-electronics equipment and provider requirements",
-        "Receive installation documentation when included in the project",
-        "Communicate directly about scheduling and field requirements",
-      ],
-    },
-    cta: {
-      heading: "Planning a fleet-electronics installation project?",
-      body: "Share your vehicle types, equipment requirements, fleet size, and service location to start the conversation with SB Mobile Installations.",
-      primary: QUOTE_CTA,
-      servicesLink: { label: "Explore Installation Services", href: SERVICES_ROUTE },
-    },
-    installerNetwork: {
-      prompt:
-        "Are you an experienced vehicle-electronics installer?",
-      link: {
-        label: "Learn how to join the independent installer network",
-        href: TECHNICIAN_ROLE_ROUTE,
-        journey: "recruitment",
-        event: "cta_installer_network_click",
-      },
-    },
   },
 
   // Narrowly factual, non-promissory summary. This is deliberately not a
@@ -297,8 +258,8 @@ export const homepageContent: HomepageContent = {
     ],
     cta: JOIN_NETWORK_CTA,
     secondaryLink: {
-      label: "Learn how the installer network works.",
-      href: "/careers/how-assignments-work/",
+      label: "Learn about the Installer Network",
+      href: TECHNICIAN_ROLE_ROUTE,
     },
     disclosure:
       "Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
@@ -315,7 +276,55 @@ export const homepageContent: HomepageContent = {
 
   trust: {
     h2: "Why SB Mobile Installations",
-    body: "Nationwide reach. In business since 2011. A mobile-first model built around showing up where the work is - not a storefront. We work directly with fleet operators and technicians, without unnecessary layers.",
+    intro:
+      "SB Mobile Installations provides on-site GPS, ELD, dashcam, TPMS, and fleet-electronics installation for fleet, commercial, and construction vehicles nationwide. SB Mobile Installations provides mobile fleet installation and commercial vehicle electronics installation for GPS, ELD, dashcam, TPMS, and other fleet equipment. In business since 2011, the company is built around the practical needs of distributed fleets: vehicles operate across multiple locations, installation work must be coordinated carefully, and equipment needs to be installed where the vehicles are located.",
+    benefits: [
+      {
+        title: "Nationwide mobile service",
+        body: "Technicians travel directly to fleet yards, commercial facilities, construction locations, and other approved installation sites across the United States.",
+      },
+      {
+        title: "Experience with fleet electronics",
+        body: "SB Mobile Installations supports installation projects involving GPS tracking, ELDs, AOBRD equipment, fleet dashcams, TPMS, and other connected vehicle electronics.",
+      },
+      {
+        title: "On-site installation coordination",
+        body: "Customers can coordinate installation at their own location instead of moving every vehicle to a separate installation facility. Projects may involve one vehicle, several vehicles, or a larger fleet deployment.",
+      },
+      {
+        title: "Direct project communication",
+        body: "Installation requirements are coordinated around the vehicle type, equipment, location, fleet needs, and deployment plan. Every installation is photo documented, and you'll receive that documentation automatically.",
+      },
+    ],
+    fleetManagers: {
+      heading: "What this means for fleet managers",
+      items: [
+        "Coordinate installations at your location",
+        "Support individual vehicles or multi-vehicle deployments",
+        "Plan around vehicle types, equipment, and site logistics",
+        "Technicians may work with platforms and equipment the fleet already uses, based on the requirements of the equipment provider and deployment project",
+        "Coordinate GPS, ELD, dashcam, TPMS, and fleet-electronics projects",
+        "Every installation is photo documented, and you'll receive that documentation automatically",
+      ],
+    },
+    cta: {
+      heading: "Planning a fleet-electronics installation project?",
+      body: "Share your vehicle types, equipment requirements, fleet size, and service location to begin the conversation.",
+      primary: QUOTE_CTA,
+      servicesLink: {
+        label: "Explore mobile fleet installation services",
+        href: SERVICES_ROUTE,
+      },
+    },
+    installerNetwork: {
+      prompt: "Are you an experienced vehicle-electronics installer? Learn how to join the independent installer network.",
+      link: {
+        label: "Join the Installer Network",
+        href: TECHNICIAN_ROLE_ROUTE,
+        journey: "recruitment",
+        event: "cta_installer_network_click",
+      },
+    },
   },
 
   faq: {

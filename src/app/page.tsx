@@ -10,6 +10,7 @@ import { FaqGroup } from "@/components/content/FaqGroup";
 import { FinalCta } from "@/components/content/FinalCta";
 import { LargeRolloutCallout } from "@/components/content/LargeRolloutCallout";
 import { ProofMetrics } from "@/components/content/ProofMetrics";
+import { TrustSection } from "@/components/content/TrustSection";
 import { WhatWeInstallGrid } from "@/components/content/WhatWeInstallGrid";
 import { WhoWeServeGrid } from "@/components/content/WhoWeServeGrid";
 import { WhyChooseUsSplit } from "@/components/content/WhyChooseUsSplit";
@@ -39,7 +40,7 @@ export const metadata = homepageMetadata;
  *   8.  ContentSection id="commercial"    ctaEmphasis flipped to primary
  *   9.  RecruitingBanner                  visually distinct secondary journey
  *   10. ProofMetrics                      renders null while content is empty
- *   11. ContentSection id="trust"
+ *   11. TrustSection id="trust"          two-column intro, benefits, fleet-manager list, CTA
  *   12. FaqGroup
  *   13. FinalCta                          commercial CTA leads
  *
@@ -82,14 +83,7 @@ export default function HomePage() {
 
         <ProofMetrics id="proof" content={homepageContent.proof} />
 
-        <ContentSection
-          id="trust"
-          content={homepageContent.trust}
-          tone="default"
-          density="standard"
-          withMediaColumn
-          image={trustImage}
-        />
+        <TrustSection id="trust" content={homepageContent.trust} image={trustImage} />
 
         <FaqGroup
           id="faq"
