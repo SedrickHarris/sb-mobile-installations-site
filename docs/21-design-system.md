@@ -615,6 +615,46 @@ Approved during Sprint 1 planning, recorded here per the plan's documentation-de
 
 **Typography.** The zero-cost system-font decision is replaced. Body copy uses Inter; headings use Rajdhani (condensed, geometric, distinct from body at a glance), both loaded via `next/font/google` in `src/lib/fonts.ts`. Estimated added weight is approximately 55-75KB woff2, recorded against the font budget in `docs/24-performance-budget.md`.
 
+## 27b. Approved refinement, September 18, 2026: SB red identity accent
+
+Restores continuity with the SB logo, whose measured dominant fill is `#B40000` (`logo-red.webp`). Scope is a brand-recognition accent only. Priority, journeys, CTAs, schema, and routes are unchanged.
+
+**Color roles.**
+
+| Role | Token | Value |
+| --- | --- | --- |
+| Primary structural color | `--color-surface-dark` and navy family | `#0B1220`, `#121B2E`, `#1F2A3D` |
+| Commercial conversion color | `--color-accent-blue-strong` | `#00688A` (white text) |
+| Controlled secondary identity accent | `--color-brand-red` | `#B40000` |
+| Accessible dark red variant | `--color-brand-red-strong` | `#8F0000` |
+| Soft red surface | `--color-brand-red-soft` | `#FDEAEA` |
+| Utility/status only | `--color-accent-amber`, `--color-accent-green` | `#F59E0B`, `#22C55E` |
+
+The removed `--color-brand`, `--color-brand-dark`, `--color-brand-soft` names are not reintroduced. Section 4 rows and the "red is the primary action color" statements above remain superseded.
+
+**Approved red uses (use a few, not all).** Thin header top rule; active desktop and mobile navigation underline (light surfaces only, with `aria-current`); footer top rule; opt-in `Card accent="red"` top rule; RecruitingBanner left rail; small decorative graphics; section-label marker.
+
+**Prohibited red uses.** The default commercial CTA or any button fill; large hero backgrounds; body or paragraph text; error messaging (use `--color-error`); repeated card backgrounds; fake urgency or status; focus rings.
+
+**Navy rule.** `#B40000` on `#0B1220` is 2.62:1 and on `#121B2E` is 2.41:1, so both reds fail. On navy-family surfaces red may not be meaningful text, interactive iconography, an active-state or status indicator, a focus ring, or the sole cue for any state. Decorative rules only, where all meaning stays clear without red. `Card accent="red"` is ignored on `tone="dark"`.
+
+**Verified contrast pairs (WCAG 2.x ratio).**
+
+| Pair | Use | Ratio | Result |
+| --- | --- | --- | --- |
+| `#B40000` on `#FFFFFF` | nav underline, header rail, RecruitingBanner rail | 7.14 | passes AA text and 3:1 non-text |
+| `#B40000` on `#F5F7FA` | footer rule | 6.65 | passes |
+| `#8F0000` on `#FFFFFF` | dark-on-light variant | 9.69 | passes |
+| `#B40000` on `#FDEAEA` | soft surface | 6.17 | passes |
+| `#FFFFFF` on `#B40000` | white on red fill | 7.14 | passes (not used for buttons) |
+| `#0B1220` on `#B40000` | navy on red fill | 2.62 | fails, do not use |
+| `#B40000` on `#0B1220` | red on navy | 2.62 | fails, decorative only |
+| `#B40000` on `#121B2E` | red on raised navy | 2.41 | fails, do not use |
+| `#FFFFFF` on `#00688A` | primary CTA (unchanged) | 6.27 | passes |
+| `#9D174D` on `#FFFFFF` | error token (unchanged) | 7.88 | passes |
+
+**Logo.** Header uses `public/images/brand/logos/sb-mobile-installations-logo-red.webp` on the light header row via a plain `img` with intrinsic 1662x841 dimensions, displayed at 120 px (mobile) and 150 px (desktop). It is oversized for that display. Follow-up: request an approved SVG or roughly 400 px-wide WebP from the stakeholder. No reverse logo is deployed; the red logo is never placed on navy. The brand-kit PDF, PNG exports, white reverse, preview renders, and `primary-logo` (red on a black backing) are not used and stay untracked. The PDF could not be rendered in this environment, so no claim rests on it.
+
 ## 28. Maintenance
 
 Update this document when brand tokens, typography, image rules, component variants, accessibility requirements, or conversion priorities change. Record material changes in Git and the project decision log.

@@ -401,6 +401,10 @@ Approved during Sprint 1 planning, recorded here per the plan's documentation-de
 
 The prior zero-font-cost assumption (system-font stack only) is replaced. `src/lib/fonts.ts` loads Inter (body, weights 400/500/600/700) and Rajdhani (headings, weights 600/700) via `next/font/google`, both with `display: "swap"`. Estimated added weight is approximately 55-75KB woff2, subset to `latin`. This is measured against the first-party JavaScript budget (150KB target, 200KB hard ceiling) and the LCP/FCP budgets in section 1 during each build; font-loading strategy (`swap`) is chosen specifically to avoid a render-blocking penalty against the FCP 1.8s target.
 
+## 23b. Logo asset, September 18, 2026
+
+The header now loads one image: `sb-mobile-installations-logo-red.webp`, 1662x841 px, 82 KB, displayed at 120-150 px wide with explicit width and height (no layout shift). It is oversized for its display size and is the largest single asset on each page. Follow-up: an approved SVG or roughly 400 px-wide WebP would cut this to a small fraction. Fonts and JavaScript are unchanged (shared first-load JS 103 kB).
+
 ## 24. Maintenance
 
 Update this document when route families, image formats, fonts, client components, third-party scripts, Cloudflare settings, browser support, or performance targets change. Record material changes in Git and the project decision log.

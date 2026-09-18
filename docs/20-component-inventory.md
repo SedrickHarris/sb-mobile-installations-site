@@ -2668,6 +2668,17 @@ The site architecture defines page families. This document defines their reusabl
 
 ---
 
+## 104a. Visual variants added, September 18, 2026 (SB red identity accent)
+
+See `21-design-system.md` section 27b for rules and contrast.
+
+- **Header:** red logo `img` replaces the text wordmark on the light row; thin red top border (decorative). Navy utility bar unchanged. Primary CTA stays `#00688A`.
+- **NavLink:** active underline is SB red on light surfaces only, with `aria-current`.
+- **Footer:** thin red top border (decorative).
+- **Card:** optional `accent` prop, `"none"` (default) or `"red"`. Red adds a decorative top rule on `tone="light"` only and is ignored on dark cards. Currently unused by any page.
+- **RecruitingBanner:** left rail changes from amber to SB red. CTA remains secondary.
+- **CtaButton, CtaPair, FinalCta, MobileNavigation, ProofMetrics, CardGrid:** no change. ProofMetrics stays empty-safe.
+
 ## 105. Maintenance Standard
 
 Update this inventory when:
