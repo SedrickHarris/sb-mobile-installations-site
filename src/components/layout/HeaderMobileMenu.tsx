@@ -94,7 +94,7 @@ export function HeaderMobileMenu({ items, phone }: HeaderMobileMenuProps) {
             href={phone.href}
             label={phone.label}
             location="header-menu"
-            className="mt-4 w-full border-border text-ink hover:bg-surface-subtle"
+            className="mt-4 w-full border-transparent bg-[var(--color-brand-red)] text-white hover:bg-[var(--color-brand-red-strong)]"
           />
         </div>
       ) : null}

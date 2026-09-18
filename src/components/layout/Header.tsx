@@ -78,7 +78,7 @@ export function Header() {
             href={utilityBar.phoneHref}
             label={utilityBar.phoneLabel}
             location="header"
-            className="hidden border-border text-ink hover:bg-surface-subtle md:inline-flex"
+            className="hidden border-transparent bg-[var(--color-brand-red)] text-white hover:bg-[var(--color-brand-red-strong)] md:inline-flex"
           />
 
           <Link

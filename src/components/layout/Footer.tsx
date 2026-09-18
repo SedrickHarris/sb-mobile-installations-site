@@ -70,7 +70,7 @@ export function Footer() {
               href={utilityBar.phoneHref}
               label={utilityBar.phoneLabel}
               location="footer"
-              className="mt-4 border-transparent bg-[var(--color-accent-blue-strong)] text-white hover:brightness-110"
+              className="mt-4 border-transparent bg-[var(--color-brand-red)] text-white hover:bg-[var(--color-brand-red-strong)]"
             />
           </div>
 
