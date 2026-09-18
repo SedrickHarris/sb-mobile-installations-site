@@ -11,32 +11,73 @@ import type { ServicePageContent } from "@/types/service-content";
  * this file; a spaced hyphen is used instead.
  */
 
+/**
+ * Hub h1, metadata, intro, and FAQ. Section copy for the rest of the page
+ * lives in `servicesHubPageContent` (services-hub-content.ts). `body` is
+ * unused on the hub: the answer block carries the body copy. The FAQ here is
+ * distinct from the four service-page FAQs and also feeds `/faq/`.
+ */
 export const servicesHubContent: ServicePageContent = {
-  h1: "Mobile Installation Services for Fleet and Commercial Vehicles",
+  h1: "Mobile Fleet Technology Installation Services",
   metaDescription:
-    "SB Mobile Installations provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide. Technicians travel directly to your location.",
+    "On-site GPS tracking, ELD, dashcam, and fleet management equipment installation for fleet, commercial, and construction vehicles nationwide. Request a quote.",
   intro:
-    "SB Mobile Installations provides on-site installation of GPS, ELD, and fleet electronics equipment for fleet, commercial, and construction vehicles nationwide. Technicians travel directly to your location - one vehicle or an entire fleet.",
-  body: [
-    "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment. We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, LoJack, Lytx/DriveCam, SmartDrive, and CalAmp.",
-    "Every installation is photo documented, and you'll receive that documentation automatically.",
-    "We operate Monday through Friday, 8:00 AM to 6:00 PM, and coordinate installation projects nationwide - one vehicle or an entire fleet. In business since 2011.",
-  ],
+    "SB Mobile Installations provides on-site installation of GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment for fleet, commercial, and construction vehicles nationwide. Technicians travel directly to your location - one vehicle or an entire fleet.",
+  body: [],
   faq: [
     {
-      question: "What equipment do you install?",
+      question:
+        "What types of fleet technology installation services does SB Mobile Installations provide?",
       answer:
-        "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment on fleet, commercial, and construction vehicles, working with platforms including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, LoJack, and dashcam systems.",
+        "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on fleet, commercial, and construction vehicles. Service pages cover fleet telematics, GPS tracking, ELD, dashcam and camera installation, and fleet rollouts.",
     },
     {
-      question: "What areas do you serve?",
+      question:
+        "Is SB Mobile Installations the platform vendor for the equipment it installs?",
       answer:
-        "SB Mobile Installations serves fleet and commercial vehicle customers nationwide, with technicians traveling directly to each project location.",
+        "No. SB Mobile Installations installs and deploys hardware for the platforms fleets already run on. We are an installation and deployment partner, not the platform vendor.",
     },
     {
-      question: "Do you document completed installations?",
+      question: "Where does installation take place?",
       answer:
-        "Every installation is photo documented, and you'll receive that documentation automatically.",
+        "Installation is on-site. Technicians travel directly to your location, so include your project location in your request.",
+    },
+    {
+      question:
+        "What information should we provide when requesting an installation quote?",
+      answer:
+        "Share the equipment you need installed, your approximate vehicle count, your project locations, your preferred timeline, and any fleet, vehicle, or deployment details that affect the work.",
+    },
+    {
+      question:
+        "Can SB Mobile Installations help with multi-vehicle installation projects?",
+      answer:
+        "Yes. SB Mobile Installations coordinates installation projects of any size, from one vehicle to an entire fleet.",
+    },
+    {
+      question: "Can installations be coordinated across multiple locations?",
+      answer:
+        "Yes. SB Mobile Installations coordinates multi-location projects nationwide, with technicians traveling directly to each location.",
+    },
+    {
+      question:
+        "Which service page should we use for GPS tracking, ELD, or camera hardware?",
+      answer:
+        "Use the GPS Tracking Installation page for GPS tracking hardware, the ELD Installation page for ELD and AOBRD equipment, and the Dashcam & Camera Installation page for fleet dashcam and video recorder hardware. For a project that spans several equipment types, start with Fleet Telematics Installation, or describe the project in your quote request.",
+    },
+    {
+      question: "How do we discuss a nationwide fleet installation project?",
+      answer:
+        "Submit an installation quote request with your equipment, vehicle count, and project locations, or call during business hours, Monday through Friday, 8:00 AM to 6:00 PM. SB Mobile Installations will follow up to coordinate scheduling.",
+    },
+    {
+      question: "How can installation technicians join the Installer Network?",
+      answer:
+        "Technicians can learn about the Installer Network and register interest on the Installer Network page. The Installer Network is a pathway for future opportunities. It does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+      link: {
+        label: "Join the Installer Network",
+        href: "/careers/mobile-installation-technician/",
+      },
     },
   ],
 };

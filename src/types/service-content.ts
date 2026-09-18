@@ -1,4 +1,4 @@
-import type { FaqItem } from "@/types/content";
+import type { Cta, FaqItem, SectionContent } from "@/types/content";
 
 /** Shared content shape for the services hub and each service detail page. */
 export interface ServicePageContent {
@@ -8,6 +8,88 @@ export interface ServicePageContent {
   /** Body paragraphs, confirmed facts only. */
   readonly body: readonly string[];
   readonly faq?: readonly FaqItem[];
+}
+
+/** One card in the services hub navigation grid. */
+export interface HubServiceCard {
+  readonly category: string;
+  readonly title: string;
+  readonly scope: string;
+  readonly commonUse: string;
+  readonly linkLabel: string;
+  readonly href: string;
+  /** Decorative SB red top rule. Use on one or two cards at most. */
+  readonly accent?: boolean;
+}
+
+/** One row of the "which service do I need" decision guide. */
+export interface HubDecisionRow {
+  readonly situation: string;
+  readonly destination: string;
+  readonly linkLabel: string;
+  readonly href: string;
+}
+
+export interface HubList {
+  readonly heading?: string;
+  readonly items: readonly string[];
+  readonly style?: "bullets" | "checklist";
+}
+
+export interface HubLink {
+  readonly label: string;
+  readonly href: string;
+}
+
+/** Heading, paragraphs, optional lists and links, rendered by SplitFeature. */
+export interface HubSplitSection {
+  readonly h2: string;
+  readonly body: readonly string[];
+  readonly lists?: readonly HubList[];
+  readonly links?: readonly HubLink[];
+}
+
+export interface HubRelatedCard {
+  readonly title: string;
+  readonly description: string;
+  readonly linkLabel: string;
+  readonly href: string;
+}
+
+/**
+ * Section content for the `/services/` hub, beside the shared
+ * `ServicePageContent` (h1, intro, metadata, FAQ) in `servicesHubContent`.
+ */
+export interface ServicesHubPageContent {
+  readonly hero: {
+    readonly primaryCta: Cta;
+    readonly callLabel: string;
+    readonly qualifier: string;
+  };
+  readonly answer: SectionContent;
+  readonly services: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly cards: readonly HubServiceCard[];
+  };
+  readonly decisionGuide: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly rows: readonly HubDecisionRow[];
+  };
+  readonly capability: HubSplitSection;
+  readonly nationwide: HubSplitSection;
+  readonly intake: HubSplitSection;
+  readonly faqHeading: string;
+  readonly related: {
+    readonly h2: string;
+    readonly cards: readonly HubRelatedCard[];
+  };
+  readonly quote: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly phoneLead: string;
+  };
 }
 
 export interface CareersPageContent {

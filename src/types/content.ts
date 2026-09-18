@@ -49,6 +49,11 @@ export interface SectionContent {
 export interface FaqItem {
   readonly question: string;
   readonly answer: string;
+  /**
+   * Optional restrained link shown under the answer. The answer text stays
+   * complete without it, so the visible text and any FAQ markup still match.
+   */
+  readonly link?: { readonly label: string; readonly href: string };
 }
 
 export interface FaqContent {

@@ -1,5 +1,23 @@
+import Link from "next/link";
+
 import { Section } from "@/components/layout/Section";
-import type { FaqContent } from "@/types/content";
+import type { FaqContent, FaqItem } from "@/types/content";
+
+/** Restrained inline link after an answer. The answer text stands alone without it. */
+function FaqLink({ link }: { readonly link: FaqItem["link"] }) {
+  if (!link) return null;
+  return (
+    <>
+      {" "}
+      <Link
+        href={link.href}
+        className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+      >
+        {link.label}
+      </Link>
+    </>
+  );
+}
 
 interface FaqGroupProps {
   readonly content: FaqContent;
@@ -105,6 +123,7 @@ export function FaqGroup({
                     className="px-4 pb-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted md:px-4.5"
                   >
                     {item.answer}
+                    <FaqLink link={item.link} />
                   </p>
                 </details>
               );
@@ -143,6 +162,7 @@ export function FaqGroup({
                 className="pr-14 pb-6 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
               >
                 {item.answer}
+                <FaqLink link={item.link} />
               </p>
             </details>
           );

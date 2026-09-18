@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
+import { ContentSection } from "@/components/content/ContentSection";
+import { DecisionGuide } from "@/components/content/DecisionGuide";
+import { FaqGroup } from "@/components/content/FaqGroup";
+import { ServiceNavGrid } from "@/components/content/ServiceNavGrid";
+import { ServicesHero } from "@/components/content/ServicesHero";
+import { SplitFeature } from "@/components/content/SplitFeature";
+import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { CardGrid } from "@/components/layout/CardGrid";
+import { PhoneButton } from "@/components/layout/PhoneButton";
 import { Section } from "@/components/layout/Section";
-import { Card } from "@/components/ui/Card";
-import { PageBody } from "@/components/content/PageBody";
-import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
 import { JsonLd } from "@/components/schema/JsonLd";
+import { Card } from "@/components/ui/Card";
+import { utilityBar } from "@/data/navigation/site-navigation";
 import { business } from "@/data/site/business";
 import { servicesHubContent } from "@/data/site/services-content";
+import { servicesHubImages } from "@/data/site/services-hub-images";
+import { servicesHubPageContent as hub } from "@/data/site/services-hub-content";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { servicePageSchema } from "@/lib/schema/service-page";
 
@@ -21,13 +31,11 @@ export const metadata: Metadata = buildPageMetadata({
   pathname: PATHNAME,
 });
 
-const SERVICE_LINKS = [
-  { label: "Fleet Telematics Installation", href: "/services/fleet-telematics-installation/" },
-  { label: "GPS Tracking Installation", href: "/services/gps-tracking-installation/" },
-  { label: "ELD Installation", href: "/services/eld-installation/" },
-  { label: "Dashcam & Camera Installation", href: "/services/dashcam-camera-installation/" },
-] as const;
-
+/**
+ * Services hub: commercial decision page and topical hub for the five
+ * service pages. Section order follows the approved plan. Schema is
+ * WebPage + one umbrella Service + BreadcrumbList; FAQPage is not emitted.
+ */
 export default function ServicesPage() {
   return (
     <>
@@ -41,37 +49,124 @@ export default function ServicesPage() {
       />
       <Breadcrumbs items={BREADCRUMBS} />
 
-      <PageBody id="services-hub" content={servicesHubContent}>
-        <h2 className="text-[length:var(--text-h3)] font-bold text-ink">
-          Request an Installation Quote
-        </h2>
-        <p className="mt-3 text-[length:var(--text-small)] text-ink-muted">
-          Tell us about your project and we&apos;ll follow up.
-        </p>
-        <div className="mt-6">
-          <CommercialInquiryForm />
-        </div>
-      </PageBody>
+      <ServicesHero
+        id="services-hub"
+        h1={servicesHubContent.h1}
+        intro={servicesHubContent.intro}
+        primaryCta={hub.hero.primaryCta}
+        qualifier={hub.hero.qualifier}
+        phone={{
+          href: utilityBar.phoneHref,
+          label: `${hub.hero.callLabel} ${utilityBar.phoneLabel}`,
+        }}
+        image={servicesHubImages.hero}
+      />
 
-      <Section tone="subtle" width="site">
-        <h2 className="text-[length:var(--text-h2)] font-bold text-ink">
-          Browse Services
+      <ContentSection id="services-answer" content={hub.answer} />
+
+      <ServiceNavGrid
+        id="services-grid"
+        h2={hub.services.h2}
+        intro={hub.services.intro}
+        cards={hub.services.cards}
+      />
+
+      <DecisionGuide
+        id="services-decision"
+        h2={hub.decisionGuide.h2}
+        intro={hub.decisionGuide.intro}
+        rows={hub.decisionGuide.rows}
+      />
+
+      <SplitFeature
+        id="services-capability"
+        content={hub.capability}
+        slot={servicesHubImages.capability}
+        mediaSide="left"
+      />
+
+      <SplitFeature
+        id="services-nationwide"
+        tone="dark"
+        content={hub.nationwide}
+        slot={servicesHubImages.nationwide}
+      />
+
+      <SplitFeature id="services-intake" tone="subtle" content={hub.intake} />
+
+      <FaqGroup
+        id="services-faq"
+        accessibleHeading={hub.faqHeading}
+        content={{ h2: hub.faqHeading, items: servicesHubContent.faq ?? [] }}
+      />
+
+      <Section tone="default" width="site" labelledBy="services-related-heading">
+        <h2
+          id="services-related-heading"
+          className="text-[length:var(--text-h3)] font-bold text-ink"
+        >
+          {hub.related.h2}
         </h2>
-        <div className="mt-8">
+        <div className="mt-6">
           <CardGrid columns={2}>
-            {SERVICE_LINKS.map((link) => (
-              <Card key={link.href} tone="light" hover>
-                <a
-                  href={link.href}
-                  className="block min-h-11 text-[length:var(--text-h4)] font-semibold text-ink no-underline hover:underline"
+            {hub.related.cards.map((card) => (
+              <Card
+                key={card.href}
+                as="div"
+                hover
+                padding="compact"
+                className="relative flex flex-col"
+              >
+                <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-[length:var(--text-body)] text-ink-muted">
+                  {card.description}
+                </p>
+                <Link
+                  href={card.href}
+                  className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
                 >
-                  {link.label}
-                </a>
+                  {card.linkLabel}
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
               </Card>
             ))}
           </CardGrid>
         </div>
       </Section>
+
+      <div id="request-quote" className="scroll-mt-24">
+        <Section
+          tone="subtle"
+          density="spacious"
+          labelledBy="services-quote-heading"
+        >
+          <h2
+            id="services-quote-heading"
+            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+          >
+            {hub.quote.h2}
+          </h2>
+          <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+            {hub.quote.intro}
+          </p>
+          <div className="mt-8">
+            <CommercialInquiryForm />
+          </div>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <p className="text-[length:var(--text-body)] text-ink-muted">
+              {hub.quote.phoneLead}
+            </p>
+            <PhoneButton
+              href={utilityBar.phoneHref}
+              label={utilityBar.phoneLabel}
+              location="services-quote"
+              className="border-ink bg-surface text-ink hover:bg-surface-subtle"
+            />
+          </div>
+        </Section>
+      </div>
     </>
   );
 }
