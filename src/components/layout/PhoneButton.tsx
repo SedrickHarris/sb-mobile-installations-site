@@ -5,6 +5,14 @@ interface PhoneButtonProps {
   readonly location: string;
   /** Color and layout classes; the base button shape is applied here. */
   readonly className?: string;
+  /** Analytics journey. Defaults to commercial; the careers page passes recruitment. */
+  readonly journey?: "commercial" | "recruitment";
+  /**
+   * Analytics event. Defaults to the commercial call event. Pass `null` to
+   * emit no event, so a journey with no approved call event never reports
+   * under another journey's event name.
+   */
+  readonly event?: string | null;
 }
 
 /**
@@ -19,12 +27,14 @@ export function PhoneButton({
   label,
   location,
   className = "",
+  journey = "commercial",
+  event = "cta_call_click",
 }: PhoneButtonProps) {
   return (
     <a
       href={href}
-      data-journey="commercial"
-      data-event="cta_call_click"
+      data-journey={journey}
+      data-event={event ?? undefined}
       data-cta-location={location}
       className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-4 py-2 font-semibold no-underline transition-[background-color,filter,box-shadow,transform] duration-[var(--duration-fast)] ease-[var(--ease-out-soft)] hover:-translate-y-px hover:shadow-card active:translate-y-0 ${className}`}
     >

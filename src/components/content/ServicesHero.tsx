@@ -25,6 +25,12 @@ interface ServicesHeroProps {
    * fallback renders no `img`, so it never needs this.
    */
   readonly priorityImage?: boolean;
+  /** Analytics location for the phone button. Defaults to the services hero. */
+  readonly phoneLocation?: string;
+  /** Journey for the phone button. Defaults to commercial. */
+  readonly phoneJourney?: "commercial" | "recruitment";
+  /** Event for the phone button. `null` emits none. Defaults to the commercial call event. */
+  readonly phoneEvent?: string | null;
 }
 
 /**
@@ -47,6 +53,9 @@ export function ServicesHero({
   secondaryLink,
   scopeItems,
   priorityImage = false,
+  phoneLocation = "services-hero",
+  phoneJourney,
+  phoneEvent,
 }: ServicesHeroProps) {
   const headingId = `${id}-heading`;
 
@@ -73,7 +82,9 @@ export function ServicesHero({
             <PhoneButton
               href={phone.href}
               label={phone.label}
-              location="services-hero"
+              location={phoneLocation}
+              journey={phoneJourney}
+              event={phoneEvent}
               className="w-full border-white/60 bg-transparent text-white hover:bg-white/10 sm:w-auto"
             />
           </div>

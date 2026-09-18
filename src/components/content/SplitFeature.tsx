@@ -14,6 +14,11 @@ interface SplitFeatureProps {
   /** Image slot for the media column. Omit for a single reading-width column. */
   readonly slot?: HubImageSlot;
   readonly mediaSide?: "left" | "right";
+  /**
+   * Small chapter label above the heading. Not a heading. Rendered on light
+   * tones only: SB red on navy is 2.62:1, so it is dropped on dark surfaces.
+   */
+  readonly eyebrow?: string;
 }
 
 /**
@@ -31,6 +36,7 @@ export function SplitFeature({
   tone = "default",
   slot,
   mediaSide = "right",
+  eyebrow,
 }: SplitFeatureProps) {
   const headingId = `${id}-heading`;
   const dark = tone === "dark";
@@ -53,6 +59,11 @@ export function SplitFeature({
         }
       >
         <div className={slot && mediaSide === "left" ? "md:order-2" : ""}>
+          {eyebrow && !dark ? (
+            <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-brand-red)] uppercase">
+              {eyebrow}
+            </p>
+          ) : null}
           <h2
             id={headingId}
             className={`text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance ${heading}`}
@@ -73,6 +84,10 @@ export function SplitFeature({
             <div
               className={`mt-6 grid gap-6 ${
                 content.lists.length > 1 ? "sm:grid-cols-2" : ""
+              }${
+                content.listPanel
+                  ? " rounded-lg border border-border bg-surface p-6"
+                  : ""
               }`}
             >
               {content.lists.map((list) => (
@@ -84,6 +99,17 @@ export function SplitFeature({
               ))}
             </div>
           ) : null}
+
+          {content.footnotes?.map((note) => (
+            <p
+              key={note}
+              className={`mt-4 text-[length:var(--text-small)] leading-relaxed text-pretty ${
+                dark ? "text-[var(--color-text-on-dark)]/80" : "text-ink-muted"
+              }`}
+            >
+              {note}
+            </p>
+          ))}
 
           {content.links && content.links.length > 0 ? (
             <ul className="mt-6 flex list-none flex-col gap-1 p-0">

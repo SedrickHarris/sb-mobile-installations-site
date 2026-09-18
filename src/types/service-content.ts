@@ -49,7 +49,63 @@ export interface HubSplitSection {
   readonly h2: string;
   readonly body: readonly string[];
   readonly lists?: readonly HubList[];
+  /** Render the lists inside a bordered panel, to set soft guidance apart from facts. */
+  readonly listPanel?: boolean;
+  /** Small muted notes shown after the lists and before the links. */
+  readonly footnotes?: readonly string[];
   readonly links?: readonly HubLink[];
+}
+
+export interface CareersEquipmentCard {
+  readonly title: string;
+  readonly description: string;
+}
+
+/**
+ * Section content for the `/careers/` Installer Network page, beside
+ * `careersHubContent` (h1, intro, metadata description, FAQ). No compensation,
+ * schedule, hours, certification, platform-brand, or active-opening language.
+ */
+export interface CareersHubPageContent {
+  /** Document title, without the site-name suffix the layout appends. */
+  readonly metaTitle: string;
+  readonly hero: {
+    readonly primaryCta: Cta;
+    readonly callLabel: string;
+    readonly qualifier: string;
+    readonly scopeItems: readonly string[];
+  };
+  /** Small chapter labels shown above each chapter's first section. */
+  readonly chapters: {
+    readonly network: string;
+    readonly work: string;
+    readonly prepare: string;
+    readonly join: string;
+  };
+  readonly answer: HubSplitSection;
+  readonly fit: HubSplitSection;
+  readonly requirements: HubSplitSection;
+  readonly equipment: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly cards: readonly CareersEquipmentCard[];
+  };
+  readonly fieldWork: HubSplitSection;
+  readonly information: HubSplitSection;
+  readonly where: HubSplitSection;
+  readonly after: HubSplitSection;
+  readonly join: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly noGuarantee: string;
+    readonly phoneLead: string;
+  };
+  readonly faqHeading: string;
+  readonly handoff: {
+    readonly h2: string;
+    readonly body: string;
+    readonly links: readonly HubLink[];
+  };
 }
 
 export interface HubRelatedCard {
