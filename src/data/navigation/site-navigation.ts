@@ -61,22 +61,34 @@ export const mobileNavigationCta: NavItem = {
 };
 
 /**
- * Footer columns.
+ * Footer brand block. Plain text lines shown under the logo, above the phone
+ * button. Hours and founding year are confirmed facts.
  *
  * No address, because the company publishes none and operates a mobile-only
  * model. No email, because none is verified for display. No social profiles,
  * because none are verified. See 01-business-source-of-truth.md sections 5.2
  * and 5.3.
  */
+export const footerBrandLines: readonly string[] = [
+  "In business since 2011",
+  "Monday" + "–" + "Friday, 8:00 AM" + "–" + "6:00 PM",
+];
+
+/**
+ * Footer navigation groups, rendered as four horizontal columns beside the
+ * brand block on desktop. Only built routes appear. There is no About route,
+ * so Company holds Our Process, Quality & Safety, and Resources. Installer
+ * Network and commercial contact routes stay separate. No Apply link, because
+ * no active opening exists.
+ */
 export const footerColumns: readonly FooterColumn[] = [
   {
     heading: "Company",
-    lines: [
-      business.name,
-      "In business since 2011",
-      "Monday" + "–" + "Friday, 8:00 AM" + "–" + "6:00 PM",
+    items: [
+      { label: "Our Process", href: "/our-process/" },
+      { label: "Quality & Safety", href: "/quality-safety/" },
+      { label: "Resources", href: "/resources/" },
     ],
-    items: [],
   },
   {
     heading: "Services",
@@ -103,24 +115,16 @@ export const footerColumns: readonly FooterColumn[] = [
     items: [
       { label: "All Industries", href: "/industries/" },
       { label: "Coverage", href: "/coverage/" },
-      { label: "Our Process", href: "/our-process/" },
-      { label: "Quality & Safety", href: "/quality-safety/" },
-      { label: "Resources", href: "/resources/" },
     ],
   },
   {
-    heading: "Careers",
+    heading: "Careers & Legal",
     items: [
       { label: "Careers Overview", href: "/careers/" },
       {
         label: "Mobile Installation Technician",
         href: "/careers/mobile-installation-technician/",
       },
-    ],
-  },
-  {
-    heading: "Legal",
-    items: [
       { label: "Contact", href: "/contact/" },
       { label: "FAQ", href: "/faq/" },
       { label: "Privacy Policy", href: "/privacy-policy/" },

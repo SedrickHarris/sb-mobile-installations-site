@@ -5,8 +5,8 @@ import type { RecruitingBannerContent } from "@/types/content";
 interface RecruitingBannerProps {
   readonly content: RecruitingBannerContent;
   readonly id: string;
-  /** Decorative image path. Null renders the gradient panel, no request. */
-  readonly image: string | null;
+  /** Decorative video and still. Null renders the gradient panel, no request. */
+  readonly media: { readonly video: string; readonly poster: string } | null;
 }
 
 /**
@@ -22,10 +22,12 @@ interface RecruitingBannerProps {
  * decorative only (red on navy fails text contrast), never carries meaning.
  * The disclosure sits in its own in-flow panel, not fine print.
  *
- * The image is decorative (empty alt, hidden from the accessibility tree).
- * With no image the panel falls back to a gradient and makes no request.
+ * The media is decorative: a muted, looping video over its still frame, both
+ * hidden from the accessibility tree (empty alt on the still). Reduced-motion
+ * users get the still frame. With no media the panel falls back to a gradient
+ * and makes no request.
  */
-export function RecruitingBanner({ content, id, image }: RecruitingBannerProps) {
+export function RecruitingBanner({ content, id, media }: RecruitingBannerProps) {
   const headingId = `${id}-heading`;
 
   return (
@@ -101,16 +103,31 @@ export function RecruitingBanner({ content, id, image }: RecruitingBannerProps) 
           aria-hidden="true"
           className="relative isolate min-h-64 overflow-hidden rounded-xl border border-[var(--color-border-dark)] bg-gradient-to-br from-[var(--color-surface-dark-raised)] to-[var(--color-surface-dark)] md:min-h-[26rem]"
         >
-          {image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={image}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              className="absolute inset-0 h-full w-full object-cover object-right"
-            />
+          {media ? (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={media.poster}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover object-right"
+              />
+              <video
+                aria-hidden="true"
+                tabIndex={-1}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={media.poster}
+                className="absolute inset-0 h-full w-full object-cover object-right motion-reduce:hidden"
+              >
+                <source src={media.video} type="video/mp4" />
+              </video>
+            </>
           ) : null}
         </div>
       </div>

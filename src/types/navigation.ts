@@ -4,10 +4,8 @@ export interface NavItem {
   readonly href: string;
 }
 
-/** A footer column. `items` may be empty when the column is text only. */
+/** A footer navigation column. */
 export interface FooterColumn {
   readonly heading: string;
   readonly items: readonly NavItem[];
-  /** Plain text lines rendered above any links. Used by the company column. */
-  readonly lines?: readonly string[];
 }

@@ -2,7 +2,7 @@ import { RecruitingBanner } from "@/components/careers/RecruitingBanner";
 import { AnswerBlock } from "@/components/content/AnswerBlock";
 import { commercialSectionImage } from "@/data/site/commercial-section-image";
 import { introImage } from "@/data/site/intro-image";
-import { recruitingSectionImage } from "@/data/site/recruiting-image";
+import { recruitingSectionMedia } from "@/data/site/recruiting-image";
 import { trustImage } from "@/data/site/trust-image";
 import { ContentSection } from "@/components/content/ContentSection";
 import { DeploymentProcessSteps } from "@/components/content/DeploymentProcessSteps";
@@ -77,7 +77,7 @@ export default function HomePage() {
         <RecruitingBanner
           id="recruiting-banner"
           content={homepageContent.recruitingBanner}
-          image={recruitingSectionImage}
+          media={recruitingSectionMedia}
         />
 
         <ProofMetrics id="proof" content={homepageContent.proof} />
@@ -94,6 +94,7 @@ export default function HomePage() {
         <FaqGroup
           id="faq"
           density="compact"
+          layout="columns"
           accessibleHeading="Frequently Asked Questions"
           content={homepageContent.faq}
         />

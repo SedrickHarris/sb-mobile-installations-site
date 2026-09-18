@@ -677,6 +677,10 @@ This should be a small client component responsible only for menu state and focu
 - Do not add social profiles until verified.
 - Preserve crawlable HTML links.
 
+### Layout (approved 2026-09-18)
+
+Compact horizontal columns. Desktop (lg): brand block (logo, company lines, click-to-call) plus four groups (Company, Services, Industries & Coverage, Careers & Legal) in one row. Tablet: brand block above four columns. Mobile: brand block, then a two-column grid with Careers & Legal spanning the full width. Links are 44px high on mobile and compact on desktop. There is no About route, so Company holds Our Process, Quality & Safety, and Resources.
+
 ---
 
 ## 22. Section and Content Layout Components
@@ -1348,6 +1352,10 @@ type FaqGroupProps = {
 - Important terms are not hidden only in FAQ.
 - JSON-LD, when eligible, uses the same source data.
 - Accordion behavior meets accessibility requirements.
+
+### Layout (approved 2026-09-18)
+
+`layout="list"` (default) is the single-column ruled list used on inner pages. `layout="columns"` (homepage) is a compact card grid: two columns from md up, one column on mobile, capped at about 1100px. DOM and reading order are unchanged, so keyboard and screen-reader order matches the visual order. Built on native `details` and `summary`, which expose expanded state and keyboard activation without JavaScript. Each answer has a stable id referenced by `aria-controls` on its summary, and every answer stays in the rendered HTML to match the FAQPage JSON-LD. Summary rows are at least 64px high (44px minimum target) with a 32px plus icon; the icon rotation is disabled under reduced motion.
 
 ---
 

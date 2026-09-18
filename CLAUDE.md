@@ -193,8 +193,8 @@ Tailwind theme values, never scattered hex literals.
 
 ## 10. Git
 
-`main` is the default and production branch. Work on feature branches, merge by
-pull request. Commit format is `type(scope): imperative summary` using the allowed
+`main` is the default and production branch. Work and commit directly on `main`;
+feature branches and pull requests are not required. Commit format is `type(scope): imperative summary` using the allowed
 types in `docs/18-github-workflow.md` section 13.
 
 **State Git authorization explicitly in every task.** Claude Code commits, pushes,
