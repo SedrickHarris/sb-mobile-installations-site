@@ -2,6 +2,7 @@ import { CardGrid } from "@/components/layout/CardGrid";
 import { Section } from "@/components/layout/Section";
 import { Card } from "@/components/ui/Card";
 import { business } from "@/data/site/business";
+import { serviceImages } from "@/data/site/service-images";
 import type { WhatWeInstallContent } from "@/types/content";
 
 interface WhatWeInstallGridProps {
@@ -38,8 +39,18 @@ export function WhatWeInstallGrid({ content, id }: WhatWeInstallGridProps) {
       <div className="mt-10">
         <CardGrid columns={3}>
           {business.serviceTypes.map((service) => (
-            <Card key={service} tone="light" padding="default">
-              <h3 className="text-[length:var(--text-h4)] font-semibold text-ink">
+            <Card key={service} tone="light" padding="none">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={serviceImages[service].src}
+                alt=""
+                width={serviceImages[service].width}
+                height={serviceImages[service].height}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[4/3] h-auto w-full object-cover"
+              />
+              <h3 className="p-6 text-[length:var(--text-h4)] font-semibold text-ink">
                 {service}
               </h3>
             </Card>
