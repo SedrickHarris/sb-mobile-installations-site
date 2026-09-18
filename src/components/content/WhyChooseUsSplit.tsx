@@ -51,7 +51,7 @@ export function WhyChooseUsSplit({ content, id }: WhyChooseUsSplitProps) {
             const image = whyChooseUsImages[item.title];
 
             return (
-              <Card key={item.title} tone="light" padding="none">
+              <Card key={item.title} tone="light" padding="none" hover>
                 {image ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -61,7 +61,7 @@ export function WhyChooseUsSplit({ content, id }: WhyChooseUsSplitProps) {
                     height={image.height}
                     loading="lazy"
                     decoding="async"
-                    className="aspect-[4/3] h-auto w-full object-cover"
+                    className="card-image-zoom aspect-[4/3] h-auto w-full object-cover"
                   />
                 ) : null}
                 <div className="p-6">

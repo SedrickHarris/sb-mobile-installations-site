@@ -37,7 +37,7 @@ export function RecruitingBanner({ content, id, media }: RecruitingBannerProps) 
       aria-labelledby={headingId}
       className="bg-[var(--color-surface-dark)] px-5 py-12 text-[var(--color-text-on-dark)] md:px-6 md:py-20"
     >
-      <div className="mx-auto grid max-w-[1280px] gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-14">
+      <div data-reveal-group className="mx-auto grid max-w-[1280px] gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-14">
         <div>
           <p className="flex items-center gap-3 text-[length:var(--text-small)] font-semibold tracking-widest uppercase">
             <span

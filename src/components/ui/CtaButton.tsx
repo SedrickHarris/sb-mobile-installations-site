@@ -64,7 +64,7 @@ export function CtaButton({
         "inline-flex min-h-12 items-center justify-center text-center",
         "rounded-md px-6 py-3",
         "text-base font-semibold no-underline",
-        "transition-[background-color,box-shadow,transform,border-color,filter] duration-150",
+        "transition-[background-color,box-shadow,transform,border-color,filter] duration-[var(--duration-fast)] ease-[var(--ease-out-soft)]",
         "hover:-translate-y-px active:translate-y-0",
         blockOnMobile ? "w-full sm:w-auto" : "",
         emphasisClasses[emphasis],

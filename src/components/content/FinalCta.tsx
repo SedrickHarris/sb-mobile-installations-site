@@ -54,7 +54,7 @@ export function FinalCta({ content, id }: FinalCtaProps) {
       </video>
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
 
-      <div className="mx-auto w-full max-w-[780px] text-center">
+      <div data-reveal className="mx-auto w-full max-w-[780px] text-center">
         <h2
           id={headingId}
           className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"

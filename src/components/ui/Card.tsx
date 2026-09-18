@@ -59,11 +59,11 @@ export function Card({
     <Tag
       data-tone={tone === "dark" ? "dark" : undefined}
       className={[
-        "rounded-lg",
+        "group rounded-lg",
         toneClasses[tone],
         paddingClasses[padding],
         hover
-          ? "transition-[transform,box-shadow] duration-150 hover:-translate-y-1 hover:shadow-card"
+          ? "transition-[transform,box-shadow,border-color] duration-[var(--duration-base)] ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-card"
           : "",
         tone === "dark" ? "shadow-none hover:shadow-card-dark" : "",
         accent === "red" && tone === "light"

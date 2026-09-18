@@ -52,6 +52,7 @@ export function WhatWeInstallGrid({ content, id }: WhatWeInstallGridProps) {
               key={service}
               tone="light"
               padding="none"
+              hover
               className="flex h-full flex-col"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -62,7 +63,7 @@ export function WhatWeInstallGrid({ content, id }: WhatWeInstallGridProps) {
                 height={serviceImages[service].height}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/3] h-auto w-full object-cover"
+                className="card-image-zoom aspect-[4/3] h-auto w-full object-cover"
               />
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-[length:var(--text-h4)] font-semibold text-ink">

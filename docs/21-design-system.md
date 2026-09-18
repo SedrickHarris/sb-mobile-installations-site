@@ -490,6 +490,16 @@ Motion should explain change, not decorate the page.
 - do not delay access to application or inquiry forms; and
 - avoid parallax that harms readability or mobile performance.
 
+Motion tokens (section 4, `globals.css`): `--duration-fast` 150ms for hover and press, `--duration-base` 300ms for card lift, `--duration-slow` 500ms for card image zoom, `--duration-reveal` 600ms for scroll reveal, `--ease-out-soft` for all easing, and `--reveal-distance` 16px.
+
+Approved patterns (2026-09-18):
+
+- one-time scroll reveal, a fade and 16px rise with a stagger capped at about 400ms, on section content and card grids, run by `RevealObserver`;
+- card hover lift of 4px with a shadow, and a 1.04 image zoom on hover;
+- reveal animates opacity and transform only, so it causes no layout shift;
+- content is visible by default and stays visible without JavaScript or under prefers-reduced-motion; and
+- hero and background media are not animated by this pattern.
+
 ---
 
 ## 20. SEO and Rendering Requirements

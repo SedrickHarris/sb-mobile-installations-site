@@ -81,6 +81,7 @@ export function Section({
       className={`px-5 md:px-6 ${toneClasses[tone]} ${densityClasses[density]}`}
     >
       <div
+        data-reveal-group
         className={`mx-auto ${widthClasses[width]} ${center ? "text-center" : ""}`}
       >
         {children}

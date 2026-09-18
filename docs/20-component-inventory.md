@@ -2087,6 +2087,7 @@ All content modules, cards, heroes, templates, metadata, schema, and link lists 
 - CommercialInquiryForm;
 - ContactRouter when it uses interactive reveal;
 - TurnstileField;
+- RevealObserver (approved 2026-09-18, scroll reveal, renders no markup, about 1 KB, mounted once in the root layout; content stays visible without JavaScript or under reduced motion, and only opacity and transform animate);
 - analytics/consent boundary; and
 - any narrowly scoped progressive enhancement.
 

@@ -26,7 +26,7 @@ export function PhoneButton({
       data-journey="commercial"
       data-event="cta_call_click"
       data-cta-location={location}
-      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-4 py-2 font-semibold no-underline transition-[filter,box-shadow,transform] duration-150 hover:-translate-y-px hover:shadow-card active:translate-y-0 ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-4 py-2 font-semibold no-underline transition-[background-color,filter,box-shadow,transform] duration-[var(--duration-fast)] ease-[var(--ease-out-soft)] hover:-translate-y-px hover:shadow-card active:translate-y-0 ${className}`}
     >
       <svg
         aria-hidden="true"

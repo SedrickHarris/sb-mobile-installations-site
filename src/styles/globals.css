@@ -111,6 +111,18 @@
   --shadow-card: 0 8px 28px rgb(17 24 39 / 0.08);
   --shadow-card-dark: 0 8px 28px rgb(0 0 0 / 0.45);
 
+  /*
+    Motion tokens. Motion explains change and never decorates: short hover
+    and disclosure transitions, plus a one-time scroll reveal. See
+    21-design-system.md section 19.
+  */
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --duration-reveal: 600ms;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-distance: 16px;
+
   /* Layout maxima from section 4.4 */
   --container-content: 720px;
   --container-site: 1280px;
@@ -217,5 +229,52 @@
   */
   #main:focus {
     outline: none;
+  }
+}
+
+/*
+  Scroll reveal and card-image zoom.
+
+  Content is fully visible by default. The hidden starting state applies only
+  when RevealObserver has run (html.js-reveal) and the user has not asked for
+  reduced motion, so no JavaScript or reduced motion means no hidden content.
+  A reveal is a one-shot keyframe that animates opacity and transform only
+  (no layout shift) and ends on the element's natural styles, so it never
+  conflicts with hover transforms. See 21-design-system.md section 19.
+
+  Revealable targets: an element with data-reveal, or a direct child of a
+  data-reveal-group that neither is a group nor contains one (so a grid's
+  cards stagger individually instead of their wrapper fading as well).
+  data-revealed="animate" plays the animation; "static" marks content already
+  in view at load, which is shown with no animation.
+*/
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js-reveal [data-reveal]:not([data-revealed]),
+  html.js-reveal
+    [data-reveal-group]
+    > :not([data-reveal-group]):not(:has([data-reveal-group])):not(
+      [data-revealed]
+    ) {
+    opacity: 0;
+  }
+
+  [data-revealed="animate"] {
+    animation: reveal-up var(--duration-reveal) var(--ease-out-soft) backwards;
+    animation-delay: calc(var(--reveal-index, 0) * 80ms);
+  }
+
+  .card-image-zoom {
+    transition: transform var(--duration-slow) var(--ease-out-soft);
+  }
+
+  .group:hover .card-image-zoom {
+    transform: scale(1.04);
   }
 }

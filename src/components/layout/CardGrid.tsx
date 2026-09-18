@@ -24,6 +24,7 @@ const columnClasses: Record<Columns, string> = {
 export function CardGrid({ children, columns = 3, className = "" }: CardGridProps) {
   return (
     <div
+      data-reveal-group
       className={`grid grid-cols-1 gap-6 ${columnClasses[columns]} ${className}`}
     >
       {children}

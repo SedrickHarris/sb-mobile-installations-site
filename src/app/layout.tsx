@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
+import { RevealObserver } from "@/components/motion/RevealObserver";
 import { bodyFont, headingFont } from "@/lib/fonts";
 import "@/styles/globals.css";
 
@@ -65,6 +66,8 @@ export default function RootLayout({
         <Footer />
 
         <MobileNavigation />
+
+        <RevealObserver />
       </body>
     </html>
   );

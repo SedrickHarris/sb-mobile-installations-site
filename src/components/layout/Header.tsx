@@ -86,7 +86,7 @@ export function Header() {
             data-journey="commercial"
             data-event="cta_request_service_click"
             data-cta-location="header"
-            className="inline-flex min-h-11 items-center justify-center rounded-md border border-transparent bg-[var(--color-accent-blue-strong)] px-4 py-2 font-semibold text-white no-underline transition-[filter,box-shadow,transform] duration-150 hover:-translate-y-px hover:brightness-110 hover:shadow-card active:translate-y-0"
+            className="inline-flex min-h-11 items-center justify-center rounded-md border border-transparent bg-[var(--color-accent-blue-strong)] px-4 py-2 font-semibold text-white no-underline transition-[filter,box-shadow,transform] duration-[var(--duration-fast)] ease-[var(--ease-out-soft)] hover:-translate-y-px hover:brightness-110 hover:shadow-card active:translate-y-0"
           >
             {headerCta.label}
           </Link>
