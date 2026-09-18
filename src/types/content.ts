@@ -83,9 +83,15 @@ export interface ProcessStep {
   readonly body: string;
 }
 
+/**
+ * Narrowly factual, non-promissory process summary. This is intentionally
+ * NOT a claimed multi-step company process (scope/schedule/install/QA/
+ * closeout) - that fuller description is pending stakeholder confirmation.
+ * See docs/_claims-inventory.md and CLAUDE.md section 3 (never invent).
+ */
 export interface DeploymentProcessContent {
   readonly h2: string;
-  readonly steps: readonly ProcessStep[];
+  readonly body: string;
 }
 
 export interface LargeRolloutContent {
@@ -129,15 +135,28 @@ export interface HomepageContent {
   readonly finalCta: FinalCtaContent;
 }
 
+/** Confirmed-facts content for the single nationwide coverage page (Sprint 2). */
+export interface NationwideCoverageContent {
+  readonly h1: string;
+  readonly metaDescription: string;
+  readonly intro: string;
+  readonly body: readonly string[];
+  readonly faq?: readonly FaqItem[];
+}
+
 /**
  * Reusable data model for future geo expansion (Sprint 2+), added to the
  * shared content types now per plan section "Reusable data model for future
  * geo expansion", so Sprint 3+ is additive data entry against an existing
- * schema rather than a new architecture. Not populated or routed on in
- * Sprint 1.
+ * schema rather than a new architecture.
+ *
+ * `regions`, `states`, and `metros` stay empty objects until their evidence
+ * gates (docs/_claims-inventory.md, the plan's Sprint 3+ scoring rubric) are
+ * met. Route generation reads only populated keys, so an empty object
+ * publishes nothing - see src/app/coverage/ for how this is consumed.
  */
 export interface CoverageData {
-  readonly nationwide: Record<string, unknown>;
+  readonly nationwide: NationwideCoverageContent;
   readonly regions: Record<string, unknown>;
   readonly states: Record<string, unknown>;
   readonly metros: Record<string, unknown>;

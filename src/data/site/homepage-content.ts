@@ -94,26 +94,13 @@ export const homepageContent: HomepageContent = {
     ],
   },
 
+  // Narrowly factual, non-promissory summary. This is deliberately not a
+  // claimed multi-step company process - the fuller process description
+  // (any additional stages beyond what is confirmed here) is pending
+  // stakeholder confirmation. See docs/_claims-inventory.md.
   process: {
     h2: "How a Deployment Works",
-    steps: [
-      {
-        title: "Tell Us What You Need",
-        body: "Share your equipment needs, vehicle count, and project locations so we can scope your installation project.",
-      },
-      {
-        title: "We Schedule the Installation",
-        body: "Scheduling is coordinated with your fleet, Monday through Friday, 8:00 AM to 6:00 PM.",
-      },
-      {
-        title: "A Technician Installs On-Site",
-        body: "An independent contractor technician travels directly to your location to complete the installation - one vehicle or an entire fleet.",
-      },
-      {
-        title: "You Receive Photo Documentation",
-        body: "Every installation is photo documented, and you'll receive that documentation automatically.",
-      },
-    ],
+    body: "We coordinate project details, schedule on-site installation, and document completed installation work. An independent contractor technician travels directly to your location to complete the installation, one vehicle or an entire fleet, Monday through Friday, 8:00 AM to 6:00 PM.",
   },
 
   largeRollout: {
