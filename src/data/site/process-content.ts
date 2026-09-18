@@ -32,7 +32,7 @@ export const ourProcessContent: InformationalPageContent = {
     "SB Mobile Installations coordinates project details, schedules on-site installation, and documents completed installation work for fleet, commercial, and construction vehicle customers nationwide.",
   body: [
     "Technicians travel directly to the customer's location to complete installation work; there is no walk-in facility. Installation is coordinated on-site, Monday through Friday, 8:00 AM to 6:00 PM.",
-    "Projects range in size from one vehicle to an entire fleet. SB Mobile Installations has 15 years of mobile installation experience coordinating installation projects for fleet, commercial, and construction vehicle customers.",
+    "Projects range in size from one vehicle to an entire fleet. SB Mobile Installations has been in business since 2011, coordinating installation projects for fleet, commercial, and construction vehicle customers.",
     "Every installation is photo documented, and you'll receive that documentation automatically, without needing to request it.",
     "A more detailed, stage-by-stage description of intake, scheduling, and closeout is pending further confirmation and is not published here until it is available.",
   ],

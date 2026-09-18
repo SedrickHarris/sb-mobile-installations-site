@@ -30,6 +30,6 @@ export const qualitySafetyContent: InformationalPageContent = {
     "Installation work at SB Mobile Installations requires knowledge of vehicle electrical systems, mechanical access, approved connection procedures, equipment testing, and installation documentation.",
   body: [
     "Every installation is photo documented, and you'll receive that documentation automatically, without needing to request it.",
-    "SB Mobile Installations has 15 years of mobile installation experience installing GPS, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on fleet, commercial, and construction vehicles.",
+    "SB Mobile Installations has been in business since 2011, installing GPS, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on fleet, commercial, and construction vehicles.",
   ],
 };

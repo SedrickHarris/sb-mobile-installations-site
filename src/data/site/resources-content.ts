@@ -6,7 +6,7 @@ import type { ResourceArticleContent } from "@/types/service-content";
  * General operational guidance for fleet managers and technicians planning
  * an installation project - not claims about SB Mobile Installations' own
  * stats, history, or performance beyond what docs/01 already confirms
- * (15 years, photo documentation, nationwide reach, project capacity range).
+ * (in business since 2011, photo documentation, nationwide reach, project capacity range).
  * Every article carries `editorialNote`, rendered verbatim near the top of
  * the article body: "This is educational operational guidance, not legal,
  * regulatory, safety, compliance, device-manufacturer, or

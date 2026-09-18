@@ -20,7 +20,7 @@ export const servicesHubContent: ServicePageContent = {
   body: [
     "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment. We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, LoJack, Lytx/DriveCam, SmartDrive, and CalAmp.",
     "Every installation is photo documented, and you'll receive that documentation automatically.",
-    "We operate Monday through Friday, 8:00 AM to 6:00 PM, and coordinate installation projects nationwide - one vehicle or an entire fleet. 15 years of mobile installation experience.",
+    "We operate Monday through Friday, 8:00 AM to 6:00 PM, and coordinate installation projects nationwide - one vehicle or an entire fleet. In business since 2011.",
   ],
   faq: [
     {
@@ -166,7 +166,7 @@ export const fleetRolloutsContent: ServicePageContent = {
     "SB Mobile Installations coordinates multi-vehicle and multi-location installation projects nationwide, from one vehicle to an entire fleet, with technicians traveling directly to each site.",
   body: [
     "SB Mobile Installations coordinates installation projects of any size nationwide, from a single vehicle to a full fleet rollout across multiple locations, installing GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment.",
-    "Installation is coordinated on-site at each location, Monday through Friday, 8:00 AM to 6:00 PM. SB Mobile Installations has 15 years of mobile installation experience coordinating projects for fleet, commercial, and construction vehicle customers.",
+    "Installation is coordinated on-site at each location, Monday through Friday, 8:00 AM to 6:00 PM. SB Mobile Installations has been in business since 2011, coordinating projects for fleet, commercial, and construction vehicle customers.",
     "Every installation is photo documented, and you'll receive that documentation automatically for each vehicle.",
     "Share your equipment needs, vehicle count, and project locations, and SB Mobile Installations will follow up to coordinate scheduling.",
   ],

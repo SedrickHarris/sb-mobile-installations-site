@@ -9,7 +9,7 @@ import type { Cta, HomepageContent } from "@/types/content";
  * there appears below.
  *
  * Facts used here and their source-of-truth status:
- *   15 years in business    Approved, section 4 and 25
+ *   In business since 2011  Approved, section 4 and 25
  *   Nationwide service      Approved, section 8.2
  *   No physical office      Approved, section 5.3
  *   Mon-Fri 8:00 AM-6:00 PM Approved, section 5.4
@@ -57,13 +57,13 @@ export const homepageContent: HomepageContent = {
   hero: {
     h1: "Mobile Installation of GPS, ELD, and Fleet Electronics, Nationwide",
     subhead:
-      "SB Mobile Installations sends technicians directly to your location to install GPS, ELD, and fleet electronics on fleet, commercial, and construction vehicles - one vehicle or an entire fleet. 15 years in the field, nationwide.",
+      "SB Mobile Installations sends technicians directly to your location to install GPS, ELD, and fleet electronics on fleet, commercial, and construction vehicles - one vehicle or an entire fleet. In business since 2011, nationwide.",
     primaryCta: QUOTE_CTA,
     secondaryCta: JOIN_NETWORK_CTA,
   },
 
   directAnswer: {
-    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has operated for 15 years and works entirely on-site - there is no physical office location.",
+    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has been in business since 2011 and works entirely on-site - there is no physical office location.",
   },
 
   whatWeInstall: {
@@ -84,8 +84,8 @@ export const homepageContent: HomepageContent = {
         body: "Technicians travel directly to your location, wherever you operate in the United States.",
       },
       {
-        title: "15 Years in the Field",
-        body: "15 years of mobile installation experience installing GPS, ELD, and fleet electronics equipment.",
+        title: "In Business Since 2011",
+        body: "SB Mobile Installations has been in business since 2011, installing GPS, ELD, and fleet electronics equipment.",
       },
       {
         title: "A Contractor Network Built for the Work",
@@ -111,7 +111,7 @@ export const homepageContent: HomepageContent = {
 
   commercial: {
     h2: "Installation Services for Fleet and Commercial Vehicles",
-    body: "SB Mobile Installations provides mobile GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, coordinated on-site at your location. We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, and others our technicians already know. 15 years of mobile installation experience, and technicians who travel directly to you.",
+    body: "SB Mobile Installations provides mobile GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, coordinated on-site at your location. We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, and others our technicians already know. In business since 2011, with technicians who travel directly to you.",
     cta: QUOTE_CTA,
   },
 
@@ -132,7 +132,7 @@ export const homepageContent: HomepageContent = {
 
   trust: {
     h2: "Why SB Mobile Installations",
-    body: "Nationwide reach. 15 years in the field. A mobile-first model built around showing up where the work is - not a storefront. We work directly with fleet operators and technicians, without unnecessary layers.",
+    body: "Nationwide reach. In business since 2011. A mobile-first model built around showing up where the work is - not a storefront. We work directly with fleet operators and technicians, without unnecessary layers.",
   },
 
   faq: {

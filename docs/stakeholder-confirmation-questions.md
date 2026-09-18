@@ -60,16 +60,12 @@ umbrella term.
   in the confirmed list (GPS tracking, ELD, AOBRD, TPMS, dashcam/video,
   fleet management equipment)?
 
-## 4. The "15 years" experience claim's referent
+## 4. The years-in-business claim's referent (answered 2026-09-18)
 
-Claims inventory item 11. Confirmed as a publishable claim, but its precise
-referent (the business's operating history vs. an individual technician's or
-founder's personal experience) is not specified in the source document.
-
-- Does "15 years of mobile installation experience" refer to the business's
-  operating history, a specific individual's career experience, or combined
-  team experience? This determines whether the claim can ever be paired
-  with a founding year or team-size statement in future copy.
+Claims inventory item 11. The stakeholder confirmed the founding year directly
+(2011), superseding the earlier "15 years" duration figure and this question's
+original open referent ambiguity. Site copy now publishes "in business since
+2011" rather than a recomputed duration. No further confirmation needed here.
 
 ## 5. Photo-documentation workflow
 

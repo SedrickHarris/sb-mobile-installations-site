@@ -81,8 +81,8 @@ Lower-priority sources may identify facts that require verification. They do not
 | Current website | https://sbmobileinstallations.com/ | Approved for current-site reference | Confirm this will remain the production domain |
 | New repository | https://github.com/SedrickHarris/sb-mobile-installations-site.git | Approved project fact | New website repository |
 | Entity type | Limited liability company | Existing website statement | Based on the displayed company name; legal state and status remain unverified |
-| Years in business | 15 years | Approved | Client confirmed. See section 25 for approved wording |
-| Founding date | Unknown | Pending verification | Do not infer a founding year from the confirmed years in business, the domain, or directory history |
+| Years in business | In business since 2011 | Approved | Client confirmed 2026-09-18, superseding the prior "15 years" duration phrasing. See section 25 for approved wording |
+| Founding date | 2011 | Approved | Client confirmed 2026-09-18. May be published as "in business since 2011" |
 | Founder | Unknown | Pending verification | Do not publish |
 | Owner | Unknown | Pending verification | Do not publish third-party names without confirmation |
 | Leadership | Unknown | Pending verification | Needed for About and entity content |
@@ -951,13 +951,13 @@ The following wording closely reflects current website statements and may be use
 
 ### Years in business
 
-Client confirmed at 15 years. Approved for use in copy.
+Client confirmed the founding year as 2011 on 2026-09-18, superseding the earlier "15 years" duration phrasing (which is no longer used, since a duration claim would require yearly upkeep to stay accurate, while a founding year does not). Approved for use in copy.
 
-> 15 years of mobile installation experience
+> In business since 2011
 
-Acceptable variations include "serving fleets for 15 years" and "15 years of experience installing fleet technology". Use the specific number rather than a vague equivalent. "Decades of experience" remains prohibited under section 26, both because it overstates 15 years and because it is an unsupported superlative.
+Acceptable variations include "SB Mobile Installations has been in business since 2011" and "serving fleets since 2011". Use the specific year rather than a vague equivalent. "Decades of experience" remains prohibited under section 26 as an unsupported superlative.
 
-Do not pair the figure with an unconfirmed founding year, and do not derive a founding date from it.
+Do not also state a duration figure (e.g. "15 years") alongside the founding year without recomputing it against the current date - prefer the founding-year form alone.
 
 ### Equipment and service scope
 
@@ -1177,6 +1177,7 @@ Use this table to record approved updates.
 | 2026-09-10 | Equipment and service scope | Recruiting evidence | GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment, plus dashcam and windshield-mounted video recorder installation | Stakeholder confirmation of a company-authored Glassdoor posting's accuracy to current operations, quoted in section 9.1 | Stakeholder | Supersedes the GPS-only public scope. EOBR devices and generic "mobile electronics" were not named and stay recruiting evidence |
 | 2026-09-10 | Vehicle scope | Recruiting evidence | Fleet, commercial, and construction vehicles | Stakeholder confirmation, quoted in section 12.1 | Stakeholder | Passenger vehicles not named, status unchanged |
 | 2026-09-10 | Technology and platform experience | Recruiting evidence | Technicians work with the platforms listed in section 14 | Stakeholder confirmation, quoted in section 9.1 | Stakeholder | Experience only. Partnership, authorization, certification, and reseller restrictions in section 14 are unchanged. Approved for visible copy. Never a structured-data taxonomy value |
+| 2026-09-18 | Founding date / years in business | Approved as "15 years" (2026-09-10), founding date pending | Founding year 2011; publish as "in business since 2011," not as a "15 years" duration figure | Client confirmation | Client | Supersedes the 2026-09-10 "15 years" entry above. See section 25 for updated approved wording |
 | 2026-09-10 | Shop locations | Recruiting evidence | No physical office or shop exists | Stakeholder confirmation that the expired Glassdoor "possibility of shop locations" language was outdated and inaccurate | Stakeholder | Retired. Sections 7.1 and 17 corrected. Recorded in section 5.3 so it does not resurface as an unresolved conflict |
 | 2026-09-10 | Compensation | Existing recruiting statement | No change | Not asked, not confirmed | Not approved | Explicitly excluded from the scope confirmation above. The $1,600 per week figure from the expired posting must not be treated as current. Section 19 unchanged |
 | 2026-09-10 | Project capacity range | Pending verification | Projects from a single vehicle to an entire fleet | Direct stakeholder confirmation, quoted verbatim in section 11.1 | Stakeholder | Capacity range only, and a distinct fact from the nationwide reach in section 8.2. Do not conflate the two or derive either from the other. Simultaneous multi-market volume, turnaround time, and project acceptance remain unconfirmed. The general guardrail in section 25 is unchanged |
@@ -1215,9 +1216,12 @@ At this stage, the project has enough evidence to begin architecture, research, 
 - Business hours, Monday to Friday, 8:00 AM to 6:00 PM
 - Nationwide service reach
 - SB Mobile Installations, LLC as the sole operating entity
-- 15 years in business
 - Worker classification: technicians are independent contractors, not employees
 - Client decision not to publish licenses, certifications, insurance, reviews, or ratings
+
+### Confirmed as of September 18, 2026
+
+- Founding year 2011; publish as "in business since 2011" (supersedes the "15 years" duration figure above)
 - Equipment and service scope: GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment, plus dashcam and windshield-mounted video recorder installation
 - Vehicle scope: fleet, commercial, and construction vehicles
 - Technology and platform experience, as experience only, with the section 14 restrictions intact

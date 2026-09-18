@@ -10,7 +10,7 @@ interface WhyChooseUsSplitProps {
 
 /**
  * Confirmed differentiators only: photo-documented installs, nationwide
- * reach, 15 years, contractor network. See plan section 7.
+ * reach, in business since 2011, contractor network. See plan section 7.
  */
 export function WhyChooseUsSplit({ content, id }: WhyChooseUsSplitProps) {
   const headingId = `${id}-heading`;

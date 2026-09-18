@@ -29,7 +29,7 @@ export const coverage = {
       "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on fleet, commercial, and construction vehicles, with technicians traveling directly to your location nationwide.",
       "Project size ranges from one vehicle to an entire fleet. Project size describes capacity, not guaranteed reach into a specific city or state, and this page does not list individual states, metros, or cities as separately confirmed service areas.",
       "Installation is coordinated on-site, Monday through Friday, 8:00 AM to 6:00 PM. Every installation is photo documented, and you'll receive that documentation automatically.",
-      "SB Mobile Installations has 15 years of mobile installation experience coordinating projects for fleet, commercial, and construction vehicle customers.",
+      "SB Mobile Installations has been in business since 2011, coordinating projects for fleet, commercial, and construction vehicle customers.",
     ],
     faq: [
       {
