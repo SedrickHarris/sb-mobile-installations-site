@@ -3,10 +3,12 @@
 import { useEffect, useId, useRef, useState } from "react";
 
 import { NavLink } from "@/components/layout/NavLink";
+import { PhoneButton } from "@/components/layout/PhoneButton";
 import type { NavItem } from "@/types/navigation";
 
 interface HeaderMobileMenuProps {
   readonly items: readonly NavItem[];
+  readonly phone: { readonly href: string; readonly label: string };
 }
 
 /**
@@ -26,7 +28,7 @@ interface HeaderMobileMenuProps {
  * This is distinct from MobileNavigation, which is the persistent bottom
  * click-to-call / "Request Service" bar, not a full-nav disclosure.
  */
-export function HeaderMobileMenu({ items }: HeaderMobileMenuProps) {
+export function HeaderMobileMenu({ items, phone }: HeaderMobileMenuProps) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -87,6 +89,13 @@ export function HeaderMobileMenu({ items }: HeaderMobileMenuProps) {
               </li>
             ))}
           </ul>
+
+          <PhoneButton
+            href={phone.href}
+            label={phone.label}
+            location="header-menu"
+            className="mt-4 w-full border-border text-ink hover:bg-surface-subtle"
+          />
         </div>
       ) : null}
     </div>
