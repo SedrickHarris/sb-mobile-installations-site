@@ -1,5 +1,6 @@
 import { RecruitingBanner } from "@/components/careers/RecruitingBanner";
 import { AnswerBlock } from "@/components/content/AnswerBlock";
+import { commercialSectionImage } from "@/data/site/commercial-section-image";
 import { ContentSection } from "@/components/content/ContentSection";
 import { DeploymentProcessSteps } from "@/components/content/DeploymentProcessSteps";
 import { FaqGroup } from "@/components/content/FaqGroup";
@@ -63,6 +64,7 @@ export default function HomePage() {
           tone="default"
           density="spacious"
           ctaEmphasis="primary"
+          backgroundImage={commercialSectionImage}
         />
 
         <RecruitingBanner id="recruiting-banner" content={homepageContent.recruitingBanner} />
@@ -72,7 +74,7 @@ export default function HomePage() {
         <ContentSection
           id="trust"
           content={homepageContent.trust}
-          tone="subtle"
+          tone="default"
           density="compact"
         />
 
@@ -82,6 +84,7 @@ export default function HomePage() {
         */}
         <FaqGroup
           id="faq"
+          density="compact"
           accessibleHeading="Frequently Asked Questions"
           content={homepageContent.faq}
         />

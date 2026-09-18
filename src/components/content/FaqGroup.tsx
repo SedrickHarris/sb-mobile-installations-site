@@ -4,6 +4,8 @@ import type { FaqContent } from "@/types/content";
 interface FaqGroupProps {
   readonly content: FaqContent;
   readonly id: string;
+  /** Vertical padding. Defaults to the standard section density. */
+  readonly density?: "compact" | "standard" | "spacious";
   /**
    * Accessible name for the section, rendered for assistive technology only.
    *
@@ -37,11 +39,16 @@ interface FaqGroupProps {
  * (separate from this DOM) still carries the question/answer structure for
  * search engines.
  */
-export function FaqGroup({ content, id, accessibleHeading }: FaqGroupProps) {
+export function FaqGroup({
+  content,
+  id,
+  density = "standard",
+  accessibleHeading,
+}: FaqGroupProps) {
   const headingId = `${id}-heading`;
 
   return (
-    <Section tone="subtle" labelledBy={headingId}>
+    <Section tone="subtle" density={density} labelledBy={headingId}>
       <h2 id={headingId} className="sr-only">
         {accessibleHeading}
       </h2>
