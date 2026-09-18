@@ -73,7 +73,7 @@ export function WhatWeInstallGrid({ content, id }: WhatWeInstallGridProps) {
                 </p>
 
                 {content.cards[service].note ? (
-                  <p className="mt-3 border-l-2 border-border pl-3 text-[length:var(--text-small)] leading-relaxed text-ink-muted">
+                  <p className="mt-3 border-l-2 border-border pl-3 italic text-[length:var(--text-small)] leading-relaxed text-ink-muted">
                     {content.cards[service].note}
                   </p>
                 ) : null}

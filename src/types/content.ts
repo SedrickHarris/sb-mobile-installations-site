@@ -84,21 +84,44 @@ export interface WhatWeInstallContent {
   readonly cards: Readonly<Record<ServiceType, WhatWeInstallCardContent>>;
 }
 
+/**
+ * Optional card link. `event` is omitted for plain navigation links that have
+ * no approved analytics event; a new event name is never invented here.
+ */
+export interface WhoWeServeCardLink {
+  readonly label: string;
+  readonly href: string;
+  readonly event?: string;
+}
+
 export interface WhoWeServeCard {
   readonly title: string;
+  readonly description: string;
+  readonly useCases: readonly string[];
+  readonly link?: WhoWeServeCardLink;
   readonly image: {
     readonly src: string;
+    readonly alt: string;
     readonly width: number;
     readonly height: number;
   };
 }
 
-/** Audience block: label, heading, intro paragraph, and three image cards. */
+/**
+ * Audience block: label, heading, intro paragraph, three vehicle-type cards
+ * (image, description, use cases, optional link), and a closing support
+ * paragraph with one commercial CTA.
+ */
 export interface WhoWeServeContent {
   readonly eyebrow: string;
   readonly h2: string;
   readonly intro: string;
   readonly cards: readonly WhoWeServeCard[];
+  readonly support: {
+    readonly heading: string;
+    readonly body: string;
+    readonly cta: Cta;
+  };
 }
 
 export interface DifferentiatorItem {
@@ -106,9 +129,31 @@ export interface DifferentiatorItem {
   readonly body: string;
 }
 
+/**
+ * Why-choose-us block: eyebrow, heading, intro, four benefit cards, a
+ * fleet-manager value list, a commercial CTA panel, and one visually
+ * secondary Installer Network link. The customer CTA and the technician link
+ * are separate journeys and never share a route or event.
+ */
 export interface WhyChooseUsContent {
+  readonly eyebrow: string;
   readonly h2: string;
+  readonly intro: string;
   readonly items: readonly DifferentiatorItem[];
+  readonly fleetManagers: {
+    readonly heading: string;
+    readonly items: readonly string[];
+  };
+  readonly cta: {
+    readonly heading: string;
+    readonly body: string;
+    readonly primary: Cta;
+    readonly servicesLink: { readonly label: string; readonly href: string };
+  };
+  readonly installerNetwork: {
+    readonly prompt: string;
+    readonly link: Cta;
+  };
 }
 
 export interface ProcessStep {
