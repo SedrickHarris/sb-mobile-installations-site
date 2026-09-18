@@ -7,8 +7,17 @@ export type ImageSlotMode =
 
 interface ImageSlotProps {
   readonly slot: HubImageSlot;
-  /** Above-the-fold image: load eagerly. */
+  /**
+   * Load the image eagerly. Only meaningful in `image` mode, and only for an
+   * image that is the real above-the-fold LCP candidate. The fallback modes
+   * never render an `img`, so they never preload or prioritise anything.
+   */
   readonly priority?: boolean;
+  /**
+   * Render nothing unless an approved image exists. For optional thumbnails
+   * where a row of identical decorative panels would look worse than none.
+   */
+  readonly omitFallback?: boolean;
   readonly className?: string;
 }
 
@@ -33,8 +42,15 @@ export function resolveImageSlotMode(slot: HubImageSlot): ImageSlotMode {
  * Image position with reserved dimensions, so supplying the real file later
  * changes no layout (no layout shift). See docs/24-performance-budget.md.
  */
-export function ImageSlot({ slot, priority = false, className = "" }: ImageSlotProps) {
+export function ImageSlot({
+  slot,
+  priority = false,
+  omitFallback = false,
+  className = "",
+}: ImageSlotProps) {
   const mode = resolveImageSlotMode(slot);
+  if (omitFallback && mode !== "image") return null;
+
   const frame = `w-full overflow-hidden rounded-[var(--radius-lg)] ${className}`;
   const style = { aspectRatio: slot.aspectRatio };
 

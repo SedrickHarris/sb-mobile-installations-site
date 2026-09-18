@@ -1,3 +1,4 @@
+import type { HubImageSlot } from "@/data/site/services-hub-images";
 import type { Cta, FaqItem, SectionContent } from "@/types/content";
 
 /** Shared content shape for the services hub and each service detail page. */
@@ -20,6 +21,8 @@ export interface HubServiceCard {
   readonly href: string;
   /** Decorative SB red top rule. Use on one or two cards at most. */
   readonly accent?: boolean;
+  /** Optional thumbnail. Rendered only once an approved image exists. */
+  readonly slot?: HubImageSlot;
 }
 
 /** One row of the "which service do I need" decision guide. */
@@ -54,6 +57,47 @@ export interface HubRelatedCard {
   readonly description: string;
   readonly linkLabel: string;
   readonly href: string;
+}
+
+/**
+ * Section content for the `/industries/` hub, beside `industriesHubContent`
+ * (h1, metadata, intro, FAQ). Cards reuse `HubServiceCard`: `category` is the
+ * industry label and `commonUse` the installation context.
+ */
+export interface IndustriesHubPageContent {
+  /** Document title, without the site-name suffix the layout appends. */
+  readonly metaTitle: string;
+  readonly hero: {
+    readonly primaryCta: Cta;
+    readonly callLabel: string;
+    readonly qualifier: string;
+    readonly secondaryLink: HubLink;
+    readonly scopeItems: readonly string[];
+  };
+  readonly answer: SectionContent;
+  readonly industries: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly cards: readonly HubServiceCard[];
+  };
+  readonly decisionGuide: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly rows: readonly HubDecisionRow[];
+  };
+  readonly capability: HubSplitSection;
+  readonly intake: HubSplitSection;
+  readonly nationwide: HubSplitSection;
+  readonly services: {
+    readonly h2: string;
+    readonly cards: readonly HubRelatedCard[];
+  };
+  readonly faqHeading: string;
+  readonly quote: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly phoneLead: string;
+  };
 }
 
 /**

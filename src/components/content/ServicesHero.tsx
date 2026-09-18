@@ -1,8 +1,11 @@
+import Link from "next/link";
+
 import { PhoneButton } from "@/components/layout/PhoneButton";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import type { HubImageSlot } from "@/data/site/services-hub-images";
 import type { Cta } from "@/types/content";
+import type { HubLink } from "@/types/service-content";
 
 interface ServicesHeroProps {
   readonly id: string;
@@ -12,15 +15,26 @@ interface ServicesHeroProps {
   readonly qualifier: string;
   readonly phone: { readonly href: string; readonly label: string };
   readonly image: HubImageSlot;
+  /** Low-emphasis text link under the buttons, e.g. a rollout route. */
+  readonly secondaryLink?: HubLink;
+  /** Short scope strip below the hero columns. Confirmed claims only. */
+  readonly scopeItems?: readonly string[];
+  /**
+   * Load the hero image eagerly. Off by default: set it only once an approved
+   * image exists and is the real above-the-fold LCP candidate. The decorative
+   * fallback renders no `img`, so it never needs this.
+   */
+  readonly priorityImage?: boolean;
 }
 
 /**
- * Services hub hero: navy surface, two columns from md up.
+ * Commercial hub hero: navy surface, two columns from md up. Used by the
+ * services and industries hubs.
  *
  * Text comes first in the DOM, so on mobile the H1, intro, and both CTAs sit
- * above the image and the primary action stays near the fold. The commercial
- * CTA leads; the phone button is the fallback. Phone details arrive as
- * props, never embedded here.
+ * above the image and the primary action stays near the fold, whether or not
+ * an image exists. The commercial CTA leads; the phone button is the
+ * fallback. Phone details arrive as props, never embedded here.
  */
 export function ServicesHero({
   id,
@@ -30,6 +44,9 @@ export function ServicesHero({
   qualifier,
   phone,
   image,
+  secondaryLink,
+  scopeItems,
+  priorityImage = false,
 }: ServicesHeroProps) {
   const headingId = `${id}-heading`;
 
@@ -61,13 +78,35 @@ export function ServicesHero({
             />
           </div>
 
-          <p className="mt-4 text-[length:var(--text-small)] text-[var(--color-text-on-dark)]/80">
+          {secondaryLink ? (
+            <p className="mt-4">
+              <Link
+                href={secondaryLink.href}
+                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-text-on-dark)] underline underline-offset-4"
+              >
+                {secondaryLink.label}
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </p>
+          ) : null}
+
+          <p
+            className={`${secondaryLink ? "mt-2" : "mt-4"} text-[length:var(--text-small)] text-[var(--color-text-on-dark)]/80`}
+          >
             {qualifier}
           </p>
         </div>
 
-        <ImageSlot slot={image} priority />
+        <ImageSlot slot={image} priority={priorityImage} />
       </div>
+
+      {scopeItems && scopeItems.length > 0 ? (
+        <ul className="mx-auto mt-10 flex max-w-[1280px] list-none flex-wrap gap-x-8 gap-y-2 border-t border-[var(--color-border-dark)] p-0 pt-6 text-[length:var(--text-small)] font-semibold text-[var(--color-text-on-dark)]/90">
+          {scopeItems.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      ) : null}
     </section>
   );
 }

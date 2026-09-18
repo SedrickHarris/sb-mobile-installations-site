@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Section } from "@/components/layout/Section";
 import { Card } from "@/components/ui/Card";
+import { ImageSlot } from "@/components/ui/ImageSlot";
 import type { HubServiceCard } from "@/types/service-content";
 
 interface ServiceNavGridProps {
@@ -50,6 +51,11 @@ export function ServiceNavGrid({ id, h2, intro, cards }: ServiceNavGridProps) {
                 accent={card.accent ? "red" : "none"}
                 className="relative flex h-full flex-col"
               >
+                {card.slot ? (
+                  <div className="mb-5">
+                    <ImageSlot slot={card.slot} omitFallback />
+                  </div>
+                ) : null}
                 <p className="text-[length:var(--text-label)] font-semibold tracking-wide text-ink-muted uppercase">
                   {card.category}
                 </p>

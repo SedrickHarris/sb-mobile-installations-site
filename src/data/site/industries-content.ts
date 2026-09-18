@@ -35,14 +35,52 @@ import type { InformationalPageContent } from "@/types/service-content";
  * confirmation before this content is strengthened.
  */
 
+/**
+ * Hub h1, metadata description, intro, and FAQ. Section copy for the rest of
+ * the page lives in `industriesHubPageContent` (industries-hub-content.ts);
+ * `body` is unused on the hub. Technology providers are deliberately absent
+ * from the H1, description, and intro: that audience is unconfirmed (docs/01
+ * questions 29 and 30). The FAQ is distinct from the services hub FAQ.
+ */
 export const industriesHubContent: InformationalPageContent = {
-  h1: "Industries SB Mobile Installations Serves",
+  h1: "Fleet Technology Installation for Commercial Operations",
   metaDescription:
-    "SB Mobile Installations installs GPS, ELD, and fleet electronics equipment for commercial fleet and construction vehicle customers nationwide, and for technology providers that need field installation support.",
+    "On-site GPS, ELD, dashcam, and fleet equipment installation for commercial fleets and construction vehicles nationwide. Request an installation quote.",
   intro:
-    "SB Mobile Installations works with fleet, commercial, and construction vehicle customers nationwide, and with technology and hardware providers that need field installation support for their equipment.",
-  body: [
-    "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on fleet, commercial, and construction vehicles, with technicians traveling directly to your location.",
+    "SB Mobile Installations provides on-site fleet technology installation for fleet, commercial, and construction vehicles nationwide. Explore the fleet environments our installation services support, then choose a starting point for your project.",
+  body: [],
+  faq: [
+    {
+      question:
+        "What types of commercial operations can request fleet installation support?",
+      answer:
+        "SB Mobile Installations installs fleet technology on fleet, commercial, and construction vehicles. If your project involves those vehicles, you can request an installation quote.",
+    },
+    {
+      question: "How do I choose between an industry page and a service page?",
+      answer:
+        "Choose an industry page to see how installation support applies to your fleet environment. Choose a service page to start from the equipment you need installed, such as GPS tracking, ELD, or dashcam hardware. If you are unsure, describe your project in a quote request.",
+    },
+    {
+      question: "Which industry page fits delivery vehicles or service trucks?",
+      answer:
+        "Delivery vehicles, service trucks, and work vans are commercial fleet vehicles, so the Commercial Fleets page is the best starting point.",
+      link: {
+        label: "Commercial Fleets",
+        href: "/industries/commercial-fleets/",
+      },
+    },
+    {
+      question: "Can a technology provider discuss a hardware deployment program?",
+      answer:
+        "You can describe an installation request connected to a hardware deployment program in an installation quote. SB Mobile Installations provides installation and deployment support, not the underlying technology platform, and this does not imply a partnership, authorization, or certification.",
+    },
+    {
+      question: "Where can I find nationwide coverage information?",
+      answer:
+        "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location. See the coverage page for details.",
+      link: { label: "Nationwide coverage", href: "/coverage/" },
+    },
   ],
 };
 
