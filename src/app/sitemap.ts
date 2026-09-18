@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 
 import { business } from "@/data/site/business";
 
+// Required for output: export. See next.config.ts.
+export const dynamic = "force-static";
+
 /**
  * Static sitemap generator. Includes only routes that exist at build time;
  * append new routes as future sprints land. Thank-you/confirmation routes
