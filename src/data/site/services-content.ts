@@ -144,3 +144,42 @@ export const dashcamCameraInstallationContent: ServicePageContent = {
     },
   ],
 };
+
+/**
+ * SOURCE-OF-TRUTH FLAG: the plan describes fleet rollouts with a staged
+ * "scoping, staging, install, verification, reporting, closeout" process.
+ * docs/01 section 17 confirms only automatic photo documentation as a
+ * customer-facing process fact (section 17.1); the rest of that staged
+ * workflow is "inferred from recruiting duties," not confirmed for
+ * publication. This content states only confirmed facts: multi-vehicle/
+ * multi-location project capacity ("one vehicle or an entire fleet",
+ * section 11.1/25), scheduling hours, nationwide reach, and photo
+ * documentation. It does not use "verification," "reporting," "quality
+ * assurance," "testing," or "closeout" as claimed process stages, matching
+ * the same constraint applied to DeploymentProcessSteps on the homepage.
+ */
+export const fleetRolloutsContent: ServicePageContent = {
+  h1: "Fleet Rollouts",
+  metaDescription:
+    "Multi-vehicle and multi-location GPS, ELD, and fleet electronics installation rollouts, coordinated nationwide. Technicians travel directly to each project location.",
+  intro:
+    "SB Mobile Installations coordinates multi-vehicle and multi-location installation projects nationwide, from one vehicle to an entire fleet, with technicians traveling directly to each site.",
+  body: [
+    "SB Mobile Installations coordinates installation projects of any size nationwide, from a single vehicle to a full fleet rollout across multiple locations, installing GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment.",
+    "Installation is coordinated on-site at each location, Monday through Friday, 8:00 AM to 6:00 PM. SB Mobile Installations has 15 years of mobile installation experience coordinating projects for fleet, commercial, and construction vehicle customers.",
+    "Every installation is photo documented, and you'll receive that documentation automatically for each vehicle.",
+    "Share your equipment needs, vehicle count, and project locations, and SB Mobile Installations will follow up to coordinate scheduling.",
+  ],
+  faq: [
+    {
+      question: "Can you handle a rollout across multiple locations?",
+      answer:
+        "Yes. SB Mobile Installations coordinates installation projects of any size nationwide, from one vehicle to an entire fleet, with technicians traveling directly to each location.",
+    },
+    {
+      question: "Will each vehicle in a rollout receive its own documentation?",
+      answer:
+        "Every installation is photo documented, and you'll receive that documentation automatically for each vehicle.",
+    },
+  ],
+};

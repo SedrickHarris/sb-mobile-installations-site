@@ -12,14 +12,18 @@ import type { FooterColumn, NavItem } from "@/types/navigation";
  * section 32): Services and Contact lead, Careers stays a real top-level
  * destination.
  *
- * "Industries" is not built in Sprint 1 (Sprint 2 per the roadmap), so it is
- * omitted here. "Coverage" is likewise not built in Sprint 1 (also Sprint 2),
- * so it is omitted too, even though an earlier draft of the plan's nav
- * wording listed it alongside Services/Careers/Contact - see the build
- * report's judgment-call note. Neither is added until its route exists.
+ * "Industries" and "Coverage" are added here in Sprint 2 now that both
+ * routes exist (src/app/industries/, src/app/coverage/). `/case-studies/`
+ * and `/resources/` are deliberately still not in this primary nav per the
+ * plan; `/case-studies/` is additionally empty (structural only) and must
+ * never appear in any navigation while empty. `/resources/` has real,
+ * published content but stays a secondary destination, linked from the
+ * footer only, to keep the primary nav focused on conversion routes.
  */
 export const mainNavigation: readonly NavItem[] = [
   { label: "Services", href: "/services/" },
+  { label: "Industries", href: "/industries/" },
+  { label: "Coverage", href: "/coverage/" },
   { label: "Careers", href: "/careers/" },
   { label: "Contact", href: "/contact/" },
 ];
@@ -92,6 +96,17 @@ export const footerColumns: readonly FooterColumn[] = [
         label: "Dashcam & Camera Installation",
         href: "/services/dashcam-camera-installation/",
       },
+      { label: "Fleet Rollouts", href: "/services/fleet-rollouts/" },
+    ],
+  },
+  {
+    heading: "Industries & Coverage",
+    items: [
+      { label: "All Industries", href: "/industries/" },
+      { label: "Coverage", href: "/coverage/" },
+      { label: "Our Process", href: "/our-process/" },
+      { label: "Quality & Safety", href: "/quality-safety/" },
+      { label: "Resources", href: "/resources/" },
     ],
   },
   {
@@ -108,6 +123,7 @@ export const footerColumns: readonly FooterColumn[] = [
     heading: "Legal",
     items: [
       { label: "Contact", href: "/contact/" },
+      { label: "FAQ", href: "/faq/" },
       { label: "Privacy Policy", href: "/privacy-policy/" },
       { label: "Terms of Use", href: "/terms/" },
       { label: "Accessibility", href: "/accessibility/" },
