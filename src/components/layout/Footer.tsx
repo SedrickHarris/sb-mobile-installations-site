@@ -1,15 +1,17 @@
 import Link from "next/link";
 
-import { footerColumns } from "@/data/navigation/site-navigation";
+import { PhoneButton } from "@/components/layout/PhoneButton";
+import { footerColumns, utilityBar } from "@/data/navigation/site-navigation";
 import { business } from "@/data/site/business";
 
 /**
  * Global site footer.
  *
- * Launch-scoped. Only built routes appear. No services column, because that
- * route does not exist. No contact column beyond the confirmed hours, because
- * no phone or email is verified for display here. No social profiles, because
- * none are verified, which section 21 of 20-component-inventory.md prohibits.
+ * Launch-scoped. Only built routes appear. The confirmed phone number renders
+ * as a click-to-call button in the Company column, reusing the header's
+ * utilityBar data. No email, because none is verified for display. No social
+ * profiles, because none are verified, which section 21 of
+ * 20-component-inventory.md prohibits.
  *
  * No address and no map: the company publishes none and operates a mobile-only
  * model. See 01-business-source-of-truth.md section 5.3.
@@ -23,6 +25,21 @@ export function Footer() {
   return (
     <footer className="border-t-4 border-t-[var(--color-brand-red)] bg-surface-subtle">
       <div className="mx-auto max-w-[1280px] px-5 py-12 md:px-6 md:py-16">
+        <Link
+          href="/"
+          aria-label={business.name}
+          className="mb-10 inline-flex items-center rounded-sm p-1"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/brand/logos/sb-mobile-installations-logo-red.svg"
+            alt={business.name}
+            width={1540}
+            height={779}
+            className="h-auto w-[120px] max-w-full md:w-[150px]"
+          />
+        </Link>
+
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
           {footerColumns.map((column) => (
             <div key={column.heading}>
@@ -41,6 +58,15 @@ export function Footer() {
                     </li>
                   ))}
                 </ul>
+              ) : null}
+
+              {column.heading === "Company" ? (
+                <PhoneButton
+                  href={utilityBar.phoneHref}
+                  label={utilityBar.phoneLabel}
+                  location="footer"
+                  className="mt-4 border-transparent bg-[var(--color-accent-blue-strong)] text-white hover:brightness-110"
+                />
               ) : null}
 
               {column.items.length > 0 ? (

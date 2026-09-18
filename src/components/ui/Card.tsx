@@ -1,7 +1,7 @@
 import type { ElementType, ReactNode } from "react";
 
 type Tone = "light" | "dark";
-type Padding = "compact" | "default" | "spacious";
+type Padding = "none" | "compact" | "default" | "spacious";
 type Accent = "none" | "red";
 
 interface CardProps {
@@ -27,6 +27,7 @@ const toneClasses: Record<Tone, string> = {
 };
 
 const paddingClasses: Record<Padding, string> = {
+  none: "overflow-hidden",
   compact: "p-5",
   default: "p-6 md:p-8",
   spacious: "p-8 md:p-10",

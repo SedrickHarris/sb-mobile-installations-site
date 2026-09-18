@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { HeaderMobileMenu } from "@/components/layout/HeaderMobileMenu";
 import { MainNavigation } from "@/components/layout/MainNavigation";
+import { PhoneButton } from "@/components/layout/PhoneButton";
 import {
   headerCta,
   mainNavigation,
@@ -16,9 +17,8 @@ import {
  * viewBox 1540x779, 14 KB, fill #b50202, shown at 120-150 px wide. Plain img
  * because static export does not use Next image optimization. The thin red top border is decorative only.
  *
- * Utility bar (desktop only): confirmed phone number as a click-to-call
- * link, the confirmed nationwide-reach statement, and the Installer Network
- * link, so the secondary journey stays reachable without competing with the
+ * Utility bar (desktop only): the confirmed nationwide-reach statement and
+ * the Installer Network link, so the secondary journey stays reachable without competing with the
  * primary commercial CTA in the row below.
  *
  * Primary nav is commercial-first per the 2026-09-18 override: Services,
@@ -40,16 +40,6 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-6 py-2 text-[length:var(--text-small)]">
           <div className="flex items-center gap-6">
-            <a
-              href={utilityBar.phoneHref}
-              data-journey="commercial"
-              data-event="cta_call_click"
-              data-cta-location="utility-bar"
-              className="inline-flex items-center gap-2 font-semibold text-[var(--color-text-on-dark)] no-underline hover:underline"
-            >
-              <span aria-hidden="true">{"☎"}</span>
-              {utilityBar.phoneLabel}
-            </a>
             <span>{utilityBar.reachLabel}</span>
           </div>
 
@@ -84,6 +74,13 @@ export function Header() {
         <div className="ms-auto flex items-center gap-4">
           <MainNavigation items={mainNavigation} />
 
+          <PhoneButton
+            href={utilityBar.phoneHref}
+            label={utilityBar.phoneLabel}
+            location="header"
+            className="hidden border-border text-ink hover:bg-surface-subtle md:inline-flex"
+          />
+
           <Link
             href={headerCta.href}
             data-journey="commercial"
@@ -97,6 +94,7 @@ export function Header() {
 
         <HeaderMobileMenu
           items={[...mainNavigation, utilityBar.installerNetwork]}
+          phone={{ href: utilityBar.phoneHref, label: utilityBar.phoneLabel }}
         />
       </div>
     </header>
