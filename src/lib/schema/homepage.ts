@@ -1,10 +1,15 @@
 import { business } from "@/data/site/business";
 import { homepageContent } from "@/data/site/homepage-content";
+import { organizationNode, organizationRef } from "@/lib/schema/organization";
 
 /**
  * Structured data for the homepage.
  *
- * Only four types are emitted: Organization, Service, WebPage, and FAQPage.
+ * Five types are emitted: Organization, WebSite, Service, WebPage, and
+ * FAQPage. Organization is the shared entity from organization.ts; every
+ * other page references it by @id rather than re-declaring it. WebSite is
+ * emitted exactly once, here on the homepage only. See
+ * 13-schema-markup-plan.md section 58a.
  *
  * serviceType carries the confirmed equipment categories from section 9.1 and
  * no third-party platform names. See the note on business.serviceTypes.
@@ -13,22 +18,23 @@ import { homepageContent } from "@/data/site/homepage-content";
  *   LocalBusiness   no physical address exists to satisfy required fields
  *   AggregateRating no reviews exist
  *   Review          no reviews exist
+ *   JobPosting      no active job openings exist
  *   address / logo  no approved value
  *
  * See 01-business-source-of-truth.md sections 5.3 and 16.1, and
  * 13-schema-markup-plan.md.
  */
 
-const ORGANIZATION_ID = `${business.url}/#organization`;
 const WEBPAGE_ID = `${business.url}/#webpage`;
+const WEBSITE_ID = `${business.url}/#website`;
 
-function organization() {
+function website() {
   return {
-    "@type": "Organization",
-    "@id": ORGANIZATION_ID,
-    name: business.name,
+    "@type": "WebSite",
+    "@id": WEBSITE_ID,
     url: business.url,
-    telephone: business.telephone,
+    name: business.name,
+    publisher: organizationRef(),
   };
 }
 
@@ -37,7 +43,7 @@ function service() {
     "@type": "Service",
     name: business.serviceName,
     serviceType: [...business.serviceTypes],
-    provider: { "@id": ORGANIZATION_ID },
+    provider: organizationRef(),
     areaServed: {
       "@type": "Country",
       name: business.areaServed,
@@ -58,7 +64,8 @@ function webPage() {
     url: `${business.url}/`,
     name: homepageContent.hero.h1,
     description: homepageContent.directAnswer.body,
-    isPartOf: { "@id": ORGANIZATION_ID },
+    isPartOf: { "@id": WEBSITE_ID },
+    about: organizationRef(),
   };
 }
 
@@ -81,10 +88,10 @@ function faqPage() {
   };
 }
 
-/** One graph keeps the four types cross-referenced by @id. */
+/** One graph keeps the five types cross-referenced by @id. */
 export function homepageSchema() {
   return {
     "@context": "https://schema.org",
-    "@graph": [organization(), service(), webPage(), faqPage()],
+    "@graph": [organizationNode(), website(), service(), webPage(), faqPage()],
   };
 }

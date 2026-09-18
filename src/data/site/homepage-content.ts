@@ -3,9 +3,10 @@ import type { Cta, HomepageContent } from "@/types/content";
 /**
  * Locked homepage copy.
  *
- * Every string in this file is approved content. Do not rewrite, trim,
- * paraphrase, or correct it. Changes require a content update approved
- * against 01-business-source-of-truth.md.
+ * Restructured 2026-09-18 for the commercial-first override recorded in
+ * 01-business-source-of-truth.md section 32. Every claim here is gated
+ * against docs/_claims-inventory.md; nothing marked "needs confirmation"
+ * there appears below.
  *
  * Facts used here and their source-of-truth status:
  *   15 years in business    Approved, section 4 and 25
@@ -16,84 +17,130 @@ import type { Cta, HomepageContent } from "@/types/content";
  *   Vehicle scope           Approved by stakeholder 2026-09-10, section 12.1
  *   Platform experience     Approved by stakeholder 2026-09-10, section 14
  *   Contractor engagement   Approved by stakeholder 2026-09-10, section 7.2
- *
  *   Project capacity range  Approved by stakeholder 2026-09-10, section 11.1
  *   Photo documentation     Approved by stakeholder 2026-09-10, section 17.1
- *
- * The last two were flagged as unverified during the 2026-09-10 content pass
- * and were confirmed by the stakeholder the same day. Section 31 records the
- * resolution. No string in this file carries an unverified claim.
  *
  * Capacity and reach are separate confirmed facts. "one vehicle or an entire
  * fleet" rests on section 11.1, not on the nationwide reach in section 8.2.
  * Neither may be derived from the other. See the guardrail in section 25.
  *
- * The photo documentation sentence is a delivery promise, which the 2026-09-10
- * confirmation supports: documentation is sent to every customer automatically,
- * without being requested. Do not weaken it into on-request phrasing. Do not
- * add a timeframe, format, channel, or retention period. See section 17.1.
+ * The photo documentation sentence is the approved exact wording: "Every
+ * installation is photo documented, and you'll receive that documentation
+ * automatically." No timeframe, format, channel, or retention period is
+ * added anywhere this sentence appears.
+ *
+ * Pricing, warranties, guarantees, and response times are omitted entirely
+ * per docs/_claims-inventory.md item 21 (unconfirmed across the board).
  *
  * No em dash appears in any string in this file. Section 3.1 of CLAUDE.md is
- * project wide and applies to supplied copy. Where the supplied copy used an
- * em dash, it carries a spaced hyphen instead, with the wording unchanged.
+ * project wide.
  */
 
-/**
- * Routes referenced by homepage CTAs.
- *
- * Neither route has a page yet. Both are flagged as pending in the build
- * report. They must exist before this page is deployed, or the CTAs will
- * resolve to a 404 in the static export.
- */
-const CAREERS_ROUTE = "/careers/";
-const SERVICES_ROUTE = "/services/";
-
-const APPLY_CTA: Cta = {
-  label: "Apply as a Mobile Installation Technician",
-  href: CAREERS_ROUTE,
-  journey: "recruitment",
-  event: "cta_apply_click",
-};
+const CONTACT_ROUTE = "/contact/";
+const TECHNICIAN_ROLE_ROUTE = "/careers/mobile-installation-technician/";
 
 const QUOTE_CTA: Cta = {
   label: "Request an Installation Quote",
-  href: SERVICES_ROUTE,
+  href: CONTACT_ROUTE,
   journey: "commercial",
   event: "cta_quote_click",
 };
 
+const JOIN_NETWORK_CTA: Cta = {
+  label: "Join the Installer Network",
+  href: TECHNICIAN_ROLE_ROUTE,
+  journey: "recruitment",
+  event: "cta_installer_network_click",
+};
+
 export const homepageContent: HomepageContent = {
   hero: {
-    h1: "Mobile Installation Technicians for Fleet Technology, Nationwide",
+    h1: "Mobile Installation of GPS, ELD, and Fleet Electronics, Nationwide",
     subhead:
-      "SB Mobile Installations connects fleet operators with mobile technicians who travel on-site to install GPS and fleet electronics - and connects skilled installers with nationwide contract work. 15 years in the field - technicians travel to you, wherever you are.",
-    primaryCta: APPLY_CTA,
-    secondaryCta: QUOTE_CTA,
+      "SB Mobile Installations sends technicians directly to your location to install GPS, ELD, and fleet electronics on fleet, commercial, and construction vehicles - one vehicle or an entire fleet. 15 years in the field, nationwide.",
+    primaryCta: QUOTE_CTA,
+    secondaryCta: JOIN_NETWORK_CTA,
   },
 
   directAnswer: {
-    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for commercial and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has operated for 15 years and works entirely on-site - there is no physical office location.",
+    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has operated for 15 years and works entirely on-site - there is no physical office location.",
   },
 
-  about: {
-    h2: "About SB Mobile Installations",
-    body: [
-      "For 15 years, SB Mobile Installations has installed GPS, ELD, AOBRD, and fleet management equipment on fleet, commercial, and construction vehicles nationwide. Our independent contractor technicians travel directly to each customer's location - there's no physical office, no shop visit required, and no waiting for equipment to come to you.",
-      "We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, LoJack, Lytx/DriveCam, SmartDrive, and CalAmp, along with TPMS and dashcam installations. Every installation is photo documented, and you'll receive that documentation automatically.",
-      "We operate Monday through Friday, 8:00 AM to 6:00 PM, and coordinate projects across the country - one vehicle or an entire fleet.",
+  whatWeInstall: {
+    h2: "What We Install",
+    intro:
+      "SB Mobile Installations installs the equipment categories below on fleet, commercial, and construction vehicles nationwide.",
+  },
+
+  whyChooseUs: {
+    h2: "Why Fleet Managers Choose SB Mobile Installations",
+    items: [
+      {
+        title: "Photo Documentation on Every Install",
+        body: "Every installation is photo documented, and you'll receive that documentation automatically.",
+      },
+      {
+        title: "Nationwide Reach",
+        body: "Technicians travel directly to your location, wherever you operate in the United States.",
+      },
+      {
+        title: "15 Years in the Field",
+        body: "15 years of mobile installation experience installing GPS, ELD, and fleet electronics equipment.",
+      },
+      {
+        title: "A Contractor Network Built for the Work",
+        body: "Installations are completed by technicians engaged as independent contractors, not employees, working on-site at your location.",
+      },
     ],
   },
 
-  recruiting: {
-    h2: "Become a Mobile Installation Technician",
-    body: "SB Mobile Installations works with independent contractor technicians on GPS and fleet electronics installation projects nationwide. If you have experience with vehicle electrical systems and want flexible, on-site contract work, apply to join our technician network.",
-    cta: APPLY_CTA,
+  process: {
+    h2: "How a Deployment Works",
+    steps: [
+      {
+        title: "Tell Us What You Need",
+        body: "Share your equipment needs, vehicle count, and project locations so we can scope your installation project.",
+      },
+      {
+        title: "We Schedule the Installation",
+        body: "Scheduling is coordinated with your fleet, Monday through Friday, 8:00 AM to 6:00 PM.",
+      },
+      {
+        title: "A Technician Installs On-Site",
+        body: "An independent contractor technician travels directly to your location to complete the installation - one vehicle or an entire fleet.",
+      },
+      {
+        title: "You Receive Photo Documentation",
+        body: "Every installation is photo documented, and you'll receive that documentation automatically.",
+      },
+    ],
+  },
+
+  largeRollout: {
+    h2: "One Vehicle or an Entire Fleet",
+    body: "SB Mobile Installations coordinates installation projects of any size nationwide, from a single vehicle to a full fleet rollout, with technicians traveling directly to each location.",
+    cta: QUOTE_CTA,
   },
 
   commercial: {
     h2: "Installation Services for Fleet and Commercial Vehicles",
-    body: "SB Mobile Installations provides mobile GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, coordinated on-site at your location. We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, and others our technicians already know. We've been doing this for 15 years - straightforward pricing conversations and technicians who show up ready to work.",
+    body: "SB Mobile Installations provides mobile GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, coordinated on-site at your location. We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, and others our technicians already know. 15 years of mobile installation experience, and technicians who travel directly to you.",
     cta: QUOTE_CTA,
+  },
+
+  recruitingBanner: {
+    h2: "Become a Mobile Installation Technician",
+    body: "SB Mobile Installations works with independent contractor technicians on GPS and fleet electronics installation projects nationwide. If you have experience with vehicle electrical systems and want on-site contract work, join our Installer Network. Joining does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+    cta: JOIN_NETWORK_CTA,
+  },
+
+  /**
+   * Stakeholder-content-pending slot. Empty until real, approved proof
+   * content (metrics, not testimonials or ratings, since none of those are
+   * ever published per docs/_claims-inventory.md item 20) exists.
+   */
+  proof: {
+    items: [],
   },
 
   trust: {
@@ -104,15 +151,9 @@ export const homepageContent: HomepageContent = {
   faq: {
     items: [
       {
-        question:
-          "What does a mobile installation technician do at SB Mobile Installations?",
+        question: "What equipment do you install?",
         answer:
-          "Mobile installation technicians travel to customer locations to install GPS and fleet electronics equipment on commercial vehicles, working as independent contractors on a project basis.",
-      },
-      {
-        question: "Does SB Mobile Installations hire independent contractors?",
-        answer:
-          "SB Mobile Installations works with independent contractor technicians nationwide on mobile installation projects, not W-2 employment positions.",
+          "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment on fleet, commercial, and construction vehicles, working with platforms including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, LoJack, and dashcam systems.",
       },
       {
         question: "What areas does SB Mobile Installations serve?",
@@ -120,14 +161,24 @@ export const homepageContent: HomepageContent = {
           "SB Mobile Installations serves fleet and commercial vehicle customers nationwide, with technicians traveling directly to each project location.",
       },
       {
-        question: "What equipment do you install?",
+        question: "Do you document completed installations?",
         answer:
-          "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment on fleet, commercial, and construction vehicles, working with platforms including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, LoJack, and dashcam systems.",
+          "Every installation is photo documented, and you'll receive that documentation automatically.",
+      },
+      {
+        question: "Can you handle one vehicle, or does it have to be a full fleet?",
+        answer:
+          "SB Mobile Installations coordinates projects of any size nationwide, one vehicle or an entire fleet.",
       },
       {
         question: "What are your hours?",
         answer:
           "SB Mobile Installations operates Monday through Friday, 8:00 AM to 6:00 PM.",
+      },
+      {
+        question: "Does SB Mobile Installations hire independent contractors?",
+        answer:
+          "SB Mobile Installations works with independent contractor technicians nationwide on mobile installation projects, not W-2 employment positions. Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
       },
       {
         question: "Do you have a physical office?",
@@ -139,7 +190,7 @@ export const homepageContent: HomepageContent = {
 
   finalCta: {
     h2: "Ready to Get Started?",
-    primaryCta: APPLY_CTA,
-    secondaryCta: QUOTE_CTA,
+    primaryCta: QUOTE_CTA,
+    secondaryCta: JOIN_NETWORK_CTA,
   },
 };
