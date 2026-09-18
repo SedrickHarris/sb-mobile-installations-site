@@ -1,0 +1,47 @@
+import type { Metadata } from "next";
+
+import { PageBody } from "@/components/content/PageBody";
+import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { JsonLd } from "@/components/schema/JsonLd";
+import { constructionHeavyEquipmentContent } from "@/data/site/industries-content";
+import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
+import { webPageSchema } from "@/lib/schema/webpage";
+
+const PATHNAME = "/industries/construction-heavy-equipment/";
+const BREADCRUMBS = [
+  { label: "Home", href: "/" },
+  { label: "Industries", href: "/industries/" },
+  { label: "Construction Vehicle Fleets" },
+];
+
+export const metadata: Metadata = buildPageMetadata({
+  title: constructionHeavyEquipmentContent.h1,
+  description: constructionHeavyEquipmentContent.metaDescription,
+  pathname: PATHNAME,
+});
+
+export default function ConstructionHeavyEquipmentPage() {
+  return (
+    <>
+      <JsonLd
+        schema={webPageSchema({
+          pathname: PATHNAME,
+          name: constructionHeavyEquipmentContent.h1,
+          description: constructionHeavyEquipmentContent.metaDescription,
+          breadcrumbs: BREADCRUMBS,
+        })}
+      />
+      <Breadcrumbs items={BREADCRUMBS} />
+
+      <PageBody id="construction-vehicle-fleets" content={constructionHeavyEquipmentContent}>
+        <h2 className="text-[length:var(--text-h3)] font-bold text-ink">
+          Request an Installation Quote
+        </h2>
+        <div className="mt-6">
+          <CommercialInquiryForm />
+        </div>
+      </PageBody>
+    </>
+  );
+}
