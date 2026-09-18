@@ -395,6 +395,12 @@ Performance is ready for launch when approved routes meet the Core Web Vitals ta
 - 26-launch-checklist.md
 - 30-job-content-schema-specification.md
 
+## 23a. Approved override, September 18, 2026: font cost
+
+Approved during Sprint 1 planning, recorded here per the plan's documentation-debt requirement, dated 2026-09-18.
+
+The prior zero-font-cost assumption (system-font stack only) is replaced. `src/lib/fonts.ts` loads Inter (body, weights 400/500/600/700) and Rajdhani (headings, weights 600/700) via `next/font/google`, both with `display: "swap"`. Estimated added weight is approximately 55-75KB woff2, subset to `latin`. This is measured against the first-party JavaScript budget (150KB target, 200KB hard ceiling) and the LCP/FCP budgets in section 1 during each build; font-loading strategy (`swap`) is chosen specifically to avoid a render-blocking penalty against the FCP 1.8s target.
+
 ## 24. Maintenance
 
 Update this document when route families, image formats, fonts, client components, third-party scripts, Cloudflare settings, browser support, or performance targets change. Record material changes in Git and the project decision log.

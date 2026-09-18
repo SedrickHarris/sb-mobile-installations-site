@@ -1249,3 +1249,15 @@ Both claims flagged during the September 10, 2026 content update were raised wit
 The homepage carries no unverified claim. The remaining launch blockers are the missing `/careers/` and `/services/` routes and the unconfirmed production domain, recorded in `qa/homepage-verification-record.md`.
 
 The immediate priority is a structured business discovery interview covering the items above. Trust and proof content must be planned around the client's decision in section 16.1 rather than waiting on credentials that will not be published.
+
+## 32. Approved override, September 18, 2026: commercial-first priority
+
+Recorded here per the redesign plan's documentation-debt requirement. Approved during Sprint 1 planning, recorded here per the plan's documentation-debt requirement, dated 2026-09-18.
+
+Sections 19 (`docs/19-claude-project-instructions.md`) and 07 (`docs/07-site-architecture.md`) previously made technician recruiting the primary homepage journey and commercial fleet-manager lead generation secondary. That priority is now reversed:
+
+- **Commercial / fleet-manager lead generation is the primary homepage and site journey.** The hero primary CTA, the first content sections after the direct answer, and the flipped `ContentSection id="commercial"` CTA emphasis all reflect this.
+- **Recruiting remains a real, visually prominent secondary pathway**, not buried: a full role page (`/careers/mobile-installation-technician/`) and a dedicated sign-up flow (`InstallerNetworkForm`) exist, and a distinct `RecruitingBanner` component keeps the pathway visible on the homepage.
+- Journey separation (section 4 of CLAUDE.md), the "Apply" vs. "Join the Installer Network" naming rule, and every other confirmed fact in this document are unchanged by this override. Only page-level and navigation-level priority ordering changes.
+
+This override governs `docs/07-site-architecture.md` and `docs/20-component-inventory.md` going forward, both updated in the same documentation pass.

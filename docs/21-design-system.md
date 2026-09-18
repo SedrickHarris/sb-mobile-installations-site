@@ -597,6 +597,24 @@ The design system is ready for implementation when tokens are available to Tailw
 - 24-performance-budget.md
 - 25-quality-assurance-checklist.md
 
+## 27a. Approved override, September 18, 2026: palette, typography, and priority
+
+Approved during Sprint 1 planning, recorded here per the plan's documentation-debt requirement, dated 2026-09-18.
+
+**Priority.** Commercial / fleet-manager lead generation is now primary; recruiting is a real, prominent secondary pathway. See `docs/01-business-source-of-truth.md` section 32 for the full record. Every "recruitment CTA is always primary" rule stated earlier in this document (sections 3.2, 3.3, and elsewhere) is superseded: CTA emphasis is now page-context-determined rather than journey-hardcoded, and on commercial pages the commercial CTA is primary.
+
+**Color palette.** The strict red/black/white palette recorded elsewhere in this document (`#B40000`/`#111827`/`#FFFFFF`) is replaced by a navy-and-accent system. `--color-brand`, `--color-brand-dark`, and `--color-brand-soft` are removed. The new tokens:
+
+- `--color-ink`, `--color-ink-muted`, `--color-surface`, `--color-surface-subtle`, `--color-border` are unchanged.
+- Dark surfaces: `--color-surface-dark: #0b1220`, `--color-surface-dark-raised: #121b2e`, `--color-border-dark: #1f2a3d`, `--color-text-on-dark: #ffffff`.
+- Accents: `--color-accent-blue: #00a8e8`, `--color-accent-blue-strong: #00688a` (finalized, darkened from an initially-proposed `#007ea8` for contrast margin), `--color-accent-amber: #f59e0b`, `--color-accent-green: #22c55e`.
+- None of the three bright accents pass WCAG AA as text/icon color on a white surface (2.15-2.70:1 measured); each passes AA against the specific navy `#0b1220` background tested (6.9-8.7:1). That result does not generalize to every navy-family surface or accent combination; each usage is checked against its actual adjacent background. Bright accents are not used as body text, small link text, or standalone icon color on light surfaces.
+- `--color-accent-blue-strong: #00688a` with white text is the single verified default-primary-action pair, applied consistently across every primary-action surface (header CTA, mobile sticky CTA, form submit controls, `FinalCta`).
+- Focus ring is split by local surface context: `--color-focus-on-light: #0b1220`, `--color-focus-on-dark: #ffffff`, resolved from the nearest `[data-tone]` ancestor rather than a single global rule.
+- Radius gains `--radius-xl: 24px`. Shadows gain `--shadow-card-dark`.
+
+**Typography.** The zero-cost system-font decision is replaced. Body copy uses Inter; headings use Rajdhani (condensed, geometric, distinct from body at a glance), both loaded via `next/font/google` in `src/lib/fonts.ts`. Estimated added weight is approximately 55-75KB woff2, recorded against the font budget in `docs/24-performance-budget.md`.
+
 ## 28. Maintenance
 
 Update this document when brand tokens, typography, image rules, component variants, accessibility requirements, or conversion priorities change. Record material changes in Git and the project decision log.

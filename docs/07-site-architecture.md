@@ -1822,6 +1822,24 @@ Before approving a page family, confirm:
 
 ---
 
+## 54a. Approved override, September 18, 2026: homepage order, nav priority, phased build roadmap
+
+Approved during Sprint 1 planning, recorded here per the plan's documentation-debt requirement, dated 2026-09-18. See `docs/01-business-source-of-truth.md` section 32 for the priority-model approval record.
+
+**Homepage section order** (commercial-first): `HomeHero`, `AnswerBlock`, `WhatWeInstallGrid`, `WhyChooseUsSplit`, `DeploymentProcessSteps`, `LargeRolloutCallout`, `ContentSection id="commercial"` (CTA emphasis flipped to primary), `RecruitingBanner`, `ProofMetrics`, `ContentSection id="trust"`, `FaqGroup`, `FinalCta`.
+
+**Navigation priority**: primary nav leads with commercial destinations (Services, Contact) alongside Careers; the header CTA is the commercial "Request Installation Service" action, with the Installer Network pathway kept visible via a utility-bar link and the persistent mobile bottom bar.
+
+**Phased build roadmap:**
+
+- **Sprint 1** (production foundation + core conversion pages): design tokens, typography, global site shell, SEO foundations, forms, homepage restructure, `/services/`, four service pages, `/contact/`, `/thank-you/service-request/`, `/careers/`, `/careers/mobile-installation-technician/`, `/careers/installer-network-received/`.
+- **Sprint 2** (credibility pages + nationwide coverage): `/services/fleet-rollouts/`, `/industries/` hub and pages, `/coverage/` (single canonical nationwide page), `/our-process/`, `/quality-safety/`, `/faq/`, `/case-studies/` (structural only, empty-safe), `/resources/`.
+- **Sprint 3** (regional/state hubs): `/coverage/[region]/`, `/coverage/[state]/` and per-service state pages, gated on a scoring rubric (existing work/relationships 30%, technician/network availability 20%, fleet density 15%, search/lead demand 15%, service relevance 10%, unique proof availability 10%; publish only at 70/100 or above).
+- **Sprint 4** (proven metro pages): `/coverage/[metro]/` and per-service metro pages, built only where there is a proven customer/job footprint and technician capacity.
+- **Sprint 5** (evidence-driven city/vertical expansion): `/coverage/[city]/`, `/coverage/[city]/[service]/`, `/coverage/[state]/construction-equipment-installation/`, exception-only per Google's doorway-page guidance, gated on verifiable local capability, real demand, an operational distinction from the parent page, genuine unique content, and a real local proof point.
+
+No route beyond Sprint 1 exists in the codebase yet. This section records the roadmap only; each sprint's routes are built and reviewed on their own pass.
+
 ## 55. Maintenance
 
 Review this architecture when:

@@ -1564,6 +1564,24 @@ The launch schema foundation is complete when:
 
 ---
 
+## 58a. Approved override, September 18, 2026: WebSite entity and Sprint 1 per-page schema table
+
+Approved during Sprint 1 planning, recorded here per the plan's documentation-debt requirement, dated 2026-09-18.
+
+A `WebSite` entity is added to the graph, emitted **exactly once, on the homepage**, referencing the shared `Organization` `@id`. Every other page references that same `Organization` `@id` (from `src/lib/schema/organization.ts`, fact-only: `name`, `url`, `telephone`) rather than re-declaring the entity or adding a second `WebSite` node.
+
+Per-page schema, Sprint 1:
+
+| Route | Types emitted |
+| --- | --- |
+| `/` | `Organization`, `WebSite`, `WebPage`, `Service`, `FAQPage` |
+| `/services/`, `/services/*` | `Organization` (by reference), `WebPage`, `Service`, `BreadcrumbList` |
+| `/contact/` | `Organization` (by reference), `WebPage`, `BreadcrumbList` |
+| `/careers/`, `/careers/mobile-installation-technician/` | `Organization` (by reference), `WebPage`, `BreadcrumbList` |
+| `/thank-you/service-request/`, `/careers/installer-network-received/` | `WebPage` only, `noindex` |
+
+`JobPosting` remains unadded pending an active, genuine job opening; none exists as of this date. Geo pages (`/coverage/*`, Sprint 2+) carry no `Service.areaServed` enumeration until Sprint 3+, when real, verified state/region coverage data exists. No `LocalBusiness` is emitted anywhere; no physical address is published.
+
 ## 59. Maintenance
 
 Review this plan:

@@ -2672,6 +2672,25 @@ The site architecture defines page families. This document defines their reusabl
 
 Update this inventory when:
 
+### Approved override, September 18, 2026: Sprint 1 homepage and component set
+
+Approved during Sprint 1 planning, recorded here per the plan's documentation-debt requirement, dated 2026-09-18.
+
+`HomeTemplate` composition is reordered to commercial-first: `HomeHero`, `AnswerBlock`, `WhatWeInstallGrid`, `WhyChooseUsSplit`, `DeploymentProcessSteps`, `LargeRolloutCallout`, `ContentSection id="commercial"` (CTA emphasis `primary`), `RecruitingBanner`, `ProofMetrics`, `ContentSection id="trust"`, `FaqGroup`, `FinalCta`.
+
+New components added to the inventory:
+
+- `Card` (`src/components/ui/Card.tsx`) — reusable container, tone `light | dark`, padding `compact | default | spacious`, optional hover/elevation, no business-specific markup.
+- `CardGrid` (`src/components/layout/CardGrid.tsx`) — layout-only responsive grid, no card copy or CTA logic.
+- `WhatWeInstallGrid` — sourced from `business.serviceTypes`, never a hardcoded list.
+- `WhyChooseUsSplit` — confirmed differentiators only.
+- `DeploymentProcessSteps` — ordered process, no guaranteed response times.
+- `LargeRolloutCallout` — dark-navy tone, "one vehicle or an entire fleet" framing.
+- `RecruitingBanner` (`src/components/careers/RecruitingBanner.tsx`) — visually distinct secondary-journey banner.
+- `ProofMetrics` (`src/components/content/ProofMetrics.tsx`) — **placeholder-slot convention**: this component returns `null` and renders nothing while its content object is empty. No empty cards, "coming soon" badges, zero-value metrics, placeholder logos, fake testimonial shells, or star ratings are ever rendered as a stand-in for missing stakeholder content. The same convention applies to any future case-study or testimonial component: build the structure, never expose empty/placeholder content publicly.
+- `Breadcrumbs` (`src/components/layout/Breadcrumbs.tsx`) — paired with `src/lib/schema/breadcrumbs.ts` for `BreadcrumbList` structured data.
+- `CommercialInquiryForm` and `InstallerNetworkForm` (`src/components/forms/`) — never render on the same page/section, never share a submission handler.
+
 - a page family is added or removed;
 - a component is created, renamed, split, merged, or deprecated;
 - a form or conversion journey changes;
