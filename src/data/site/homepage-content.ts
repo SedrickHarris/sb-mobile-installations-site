@@ -68,9 +68,75 @@ export const homepageContent: HomepageContent = {
   },
 
   whatWeInstall: {
-    h2: "What We Install",
+    h2: "What We Install: Fleet Electronics for Commercial Vehicles",
     intro:
-      "SB Mobile Installations installs the equipment categories below on fleet, commercial, and construction vehicles nationwide.",
+      "SB Mobile Installations provides on-site installation of GPS tracking, electronic logging, tire-pressure monitoring, dashcams, and other fleet electronics for commercial and construction vehicles nationwide. Our technicians travel directly to your location, helping fleet operators equip individual vehicles, groups of vehicles, or entire fleets with professionally installed technology.",
+    // Card copy supplied and approved by the client in session 2026-09-18.
+    // "Vocational", "professional installation", and the AOBRD qualifier are
+    // pending a written record. See docs/_claims-inventory.md item 28. No
+    // savings, accident-reduction, legal, or compliance claims appear here.
+    cards: {
+      "GPS tracking installation": {
+        description:
+          "Professional installation of GPS tracking equipment for commercial vehicles, work trucks, service vans, and fleet vehicles. Proper placement and cable routing help support reliable vehicle visibility while maintaining a clean, professional installation.",
+        useCases: [
+          "Vehicle location tracking",
+          "Fleet visibility",
+          "Service-vehicle monitoring",
+          "Construction equipment oversight",
+          "Mileage and route documentation",
+        ],
+      },
+      "ELD installation": {
+        description:
+          "On-site installation of electronic logging devices in commercial trucks and fleet vehicles. Equipment is positioned and connected for practical driver access while maintaining a clean and secure vehicle installation.",
+        useCases: [
+          "Electronic logging equipment",
+          "Commercial trucking operations",
+          "Driver workflow support",
+          "Fleet technology upgrades",
+          "Multi-vehicle deployments",
+        ],
+      },
+      "AOBRD installation": {
+        description:
+          "SB Mobile Installations also supports installation work involving AOBRD equipment and legacy fleet-recording systems when requested by an approved fleet or equipment provider.",
+        note: "Equipment availability and regulatory use should be confirmed with the fleet operator and applicable provider.",
+      },
+      "TPMS installation": {
+        description:
+          "Installation of tire-pressure monitoring equipment for commercial trucks, fleet vehicles, and vocational equipment. Proper sensor placement and system setup can help fleet operators monitor tire-pressure information across their vehicles.",
+        useCases: [
+          "Commercial truck fleets",
+          "Construction vehicles",
+          "Trailer and vocational equipment",
+          "Preventive fleet maintenance",
+          "Tire-pressure monitoring systems",
+        ],
+      },
+      "Fleet dashcam installation": {
+        description:
+          "Professional installation of fleet dashcams and vehicle cameras in commercial vehicles. Devices are mounted carefully with clean cable routing and positioned to support the intended fleet-technology setup without unnecessarily obstructing the driver's view.",
+        useCases: [
+          "Forward-facing vehicle cameras",
+          "Fleet safety programs",
+          "Incident documentation",
+          "Driver coaching systems",
+          "Commercial vehicle monitoring",
+        ],
+      },
+      "Fleet management equipment installation": {
+        description:
+          "Installation of additional fleet-management hardware, vehicle electronics, and connected equipment based on the requirements of the fleet, equipment provider, or deployment project.",
+        useCases: [
+          "Fleet telematics hardware",
+          "Connected vehicle equipment",
+          "Auxiliary vehicle electronics",
+          "Multi-vehicle deployments",
+          "Platform-specific installation projects",
+        ],
+      },
+    },
   },
 
   whoWeServe: {

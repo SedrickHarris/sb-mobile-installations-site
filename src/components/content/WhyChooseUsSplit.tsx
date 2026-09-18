@@ -12,12 +12,15 @@ interface WhyChooseUsSplitProps {
 /**
  * Confirmed differentiators only: photo-documented installs, nationwide
  * reach, in business since 2011, contractor network. See plan section 7.
+ *
+ * Subtle tone, so it reads as its own band after the white Who We Serve
+ * section rather than running into it.
  */
 export function WhyChooseUsSplit({ content, id }: WhyChooseUsSplitProps) {
   const headingId = `${id}-heading`;
 
   return (
-    <Section tone="default" width="site" labelledBy={headingId}>
+    <Section tone="subtle" width="site" labelledBy={headingId}>
       <h2
         id={headingId}
         className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"

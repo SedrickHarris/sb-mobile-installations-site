@@ -5,6 +5,10 @@
  * strings inside JSX. See 20-component-inventory.md section 5.
  */
 
+import type { business } from "@/data/site/business";
+
+type ServiceType = (typeof business.serviceTypes)[number];
+
 /** A call to action. `href` is the destination route. */
 export interface Cta {
   readonly label: string;
@@ -65,9 +69,19 @@ export interface FinalCtaContent {
  * can never be added to the grid without also being added to the verified
  * business-facts source. See plan section 7's WhatWeInstallGrid constraint.
  */
+/** Copy for one What We Install card, keyed by `business.serviceTypes`. */
+export interface WhatWeInstallCardContent {
+  readonly description: string;
+  /** Visible "Use cases" list. Omitted where no approved list exists. */
+  readonly useCases?: readonly string[];
+  /** Visible qualification shown under the description. */
+  readonly note?: string;
+}
+
 export interface WhatWeInstallContent {
   readonly h2: string;
   readonly intro?: string;
+  readonly cards: Readonly<Record<ServiceType, WhatWeInstallCardContent>>;
 }
 
 export interface WhoWeServeCard {

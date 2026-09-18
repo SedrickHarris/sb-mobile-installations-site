@@ -2701,7 +2701,7 @@ New components added to the inventory:
 
 - `Card` (`src/components/ui/Card.tsx`) — reusable container, tone `light | dark`, padding `compact | default | spacious`, optional hover/elevation, no business-specific markup.
 - `CardGrid` (`src/components/layout/CardGrid.tsx`) — layout-only responsive grid, no card copy or CTA logic.
-- `WhatWeInstallGrid` — sourced from `business.serviceTypes`, never a hardcoded list.
+- `WhatWeInstallGrid` — sourced from `business.serviceTypes`, never a hardcoded list. Each card holds the service title (h3), a descriptive paragraph, an optional visible "Use cases" unordered list, and an optional qualification note (AOBRD), all from `homepageContent.whatWeInstall.cards`. Cards are equal height with a decorative image on top and are not links.
 - `WhoWeServeGrid` — heading, intro, and three image cards (fleet, commercial, construction vehicles); all copy from `homepageContent.whoWeServe`.
 - `WhyChooseUsSplit` — confirmed differentiators only.
 - `DeploymentProcessSteps` — ordered process, no guaranteed response times.
