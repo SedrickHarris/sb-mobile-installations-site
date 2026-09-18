@@ -19,6 +19,10 @@ interface HomeHeroProps {
  * muted, hidden from assistive tech, and replaced by its still frame when
  * the user prefers reduced motion. Text and CTAs use the dark-tone tokens.
  *
+ * The section has a minimum height (560px, 760px from md up) and the media is
+ * anchored to its top edge and right of centre, so the extra height reveals the equipment
+ * installation at the top of the frame instead of cropping it away.
+ *
  * The H1 uses the h1 scale rather than display. The headline runs eleven
  * words, and display would break it across four lines at desktop widths.
  */
@@ -26,7 +30,7 @@ export function HomeHero({ content }: HomeHeroProps) {
   return (
     <section
       data-tone="dark"
-      className="relative isolate overflow-hidden bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:px-6 md:py-24"
+      className="relative isolate flex min-h-[560px] items-center overflow-hidden bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:min-h-[760px] md:px-6 md:py-24"
     >
       {/* Still frame: shown while the video loads and, for users who prefer
           reduced motion, in place of the video. */}
@@ -35,7 +39,7 @@ export function HomeHero({ content }: HomeHeroProps) {
         src={HERO_POSTER}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[75%_0%]"
       />
       <video
         aria-hidden="true"
@@ -46,13 +50,13 @@ export function HomeHero({ content }: HomeHeroProps) {
         playsInline
         preload="metadata"
         poster={HERO_POSTER}
-        className="absolute inset-0 -z-20 h-full w-full object-cover motion-reduce:hidden"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[75%_0%] motion-reduce:hidden"
       >
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
 
-      <div className="mx-auto max-w-[780px] text-center">
+      <div className="mx-auto w-full max-w-[780px] text-center">
         <h1 className="text-[length:var(--text-h1)] leading-[1.08] font-bold text-balance text-[var(--color-text-on-dark)]">
           {content.h1}
         </h1>

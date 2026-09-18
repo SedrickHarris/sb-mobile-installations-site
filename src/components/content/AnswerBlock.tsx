@@ -4,19 +4,20 @@ import type { DirectAnswerContent } from "@/types/content";
 
 interface AnswerBlockProps {
   readonly content: DirectAnswerContent;
-  /** Decorative image for the right column. Omit for a text-only block. */
+  /** Decorative image for the left column. Omit for a text-only block. */
   readonly image?: ServiceImage;
 }
 
 /**
  * Direct answer block.
  *
- * Text on the left and a decorative image on the right, directly under the
+ * A decorative image on the left and text on the right, directly under the
  * hero. No card, no border, no heading. The default tone gives a clean break
  * from the hero and from the subtle-toned section that follows.
  *
- * The text column comes first in the DOM, so reading order survives the
- * collapse to a single column on small screens.
+ * The text column comes first in the DOM and is moved to the right with
+ * `md:order-2`, so reading order survives the collapse to a single column on
+ * small screens.
  *
  * The paragraph is self-contained so an answer engine can lift it whole.
  * See 12-aeo-geo-llm-optimization.md.
@@ -35,7 +36,7 @@ export function AnswerBlock({ content, image }: AnswerBlockProps) {
   return (
     <Section tone="default" width="site">
       <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
-        {paragraph}
+        <div className="md:order-2">{paragraph}</div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image.src}

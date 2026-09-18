@@ -1,3 +1,4 @@
+import { whoWeServeImages } from "@/data/site/who-we-serve-images";
 import type { Cta, HomepageContent } from "@/types/content";
 
 /**
@@ -72,6 +73,18 @@ export const homepageContent: HomepageContent = {
       "SB Mobile Installations installs the equipment categories below on fleet, commercial, and construction vehicles nationwide.",
   },
 
+  whoWeServe: {
+    eyebrow: "Who We Serve",
+    h2: "Fleet, commercial, and construction vehicles",
+    intro:
+      "Our mobile installation services support a wide range of commercial vehicles, including work vans, delivery vehicles, service trucks, heavy-duty trucks, utility vehicles, trailers, and construction equipment. Because installations are completed on-site, fleet operators can coordinate work at their location instead of sending every vehicle to a separate installation facility.",
+    cards: [
+      { title: "Fleet vehicles", image: whoWeServeImages.fleet },
+      { title: "Commercial vehicles", image: whoWeServeImages.commercial },
+      { title: "Construction vehicles", image: whoWeServeImages.construction },
+    ],
+  },
+
   whyChooseUs: {
     h2: "Why Fleet Managers Choose SB Mobile Installations",
     items: [
@@ -116,9 +129,24 @@ export const homepageContent: HomepageContent = {
   },
 
   recruitingBanner: {
-    h2: "Become a Mobile Installation Technician",
-    body: "SB Mobile Installations works with independent contractor technicians on GPS and fleet electronics installation projects nationwide. If you have experience with vehicle electrical systems and want on-site contract work, join our Installer Network. Joining does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+    eyebrow: "INSTALLER OPPORTUNITIES",
+    // "Nationwide" for recruitment is a working assumption, pending written
+    // stakeholder approval. See docs/_claims-inventory.md item 27.
+    h2: "Join a Nationwide Mobile Installation Network",
+    body: "SB Mobile Installations connects experienced independent contractor technicians with GPS, ELD, and fleet-electronics installation opportunities at commercial and fleet locations across the country. If you have experience with vehicle electrical systems, telematics equipment, or mobile installation work, you can learn more about joining the installer network.",
+    highlights: [
+      "GPS, ELD, and fleet-electronics installation projects",
+      "On-site work at fleet, commercial, and construction locations",
+      "Independent contractor engagement",
+      "Nationwide project network",
+    ],
     cta: JOIN_NETWORK_CTA,
+    secondaryLink: {
+      label: "Learn how the installer network works.",
+      href: "/careers/how-assignments-work/",
+    },
+    disclosure:
+      "Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
   },
 
   /**
@@ -167,6 +195,26 @@ export const homepageContent: HomepageContent = {
         question: "Does SB Mobile Installations hire independent contractors?",
         answer:
           "SB Mobile Installations works with independent contractor technicians nationwide on mobile installation projects, not W-2 employment positions. Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+      },
+      {
+        question: "What experience is useful for mobile installation work?",
+        answer:
+          "Experience with vehicle electrical systems, telematics equipment, or mobile installation work is relevant to the Installer Network. Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+      },
+      {
+        question: "Is this an employee position or an independent contractor opportunity?",
+        answer:
+          "Technicians are engaged as independent contractors, not employees. The Installer Network is not a W-2 employment position.",
+      },
+      {
+        question: "Does joining the Installer Network guarantee an assignment?",
+        answer:
+          "No. Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+      },
+      {
+        question: "What types of vehicle electronics are installed?",
+        answer:
+          "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment, plus dashcam and windshield-mounted video recorder systems, on fleet, commercial, and construction vehicles.",
       },
       {
         question: "Do you have a physical office?",

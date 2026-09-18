@@ -10,7 +10,7 @@ interface ContentSectionProps {
   readonly density?: "compact" | "standard" | "spacious";
   readonly ctaEmphasis?: "primary" | "secondary";
   /**
-   * Two-column layout: text left, `image` right. The media column renders
+   * Two-column layout: `image` left, text right. The media column renders
    * only when `image` is also supplied, since an empty image box is not
    * acceptable placeholder content.
    */
@@ -40,8 +40,9 @@ const densityClasses = {
  * are distinguished by order, heading, background, and CTA emphasis only.
  * Neither is visually heavier than the other.
  *
- * When the media column is enabled, the text column comes first in the DOM,
- * so reading order survives the collapse to a single column.
+ * When the media column is enabled, the text column comes first in the DOM
+ * and is moved to the right with `md:order-2`, so reading order survives the
+ * collapse to a single column.
  *
  * A body supplied as an array renders one paragraph per entry. Paragraph
  * spacing matches the gap between the heading and the first paragraph, so a
@@ -124,7 +125,7 @@ export function ContentSection({
             : ""
         }
       >
-        <div>
+        <div className={hasMedia ? "md:order-2" : ""}>
           <h2
             id={headingId}
             className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"

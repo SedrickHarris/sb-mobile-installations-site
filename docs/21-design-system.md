@@ -632,7 +632,7 @@ Restores continuity with the SB logo, whose measured dominant fill is `#B40000` 
 
 The removed `--color-brand`, `--color-brand-dark`, `--color-brand-soft` names are not reintroduced. Section 4 rows and the "red is the primary action color" statements above remain superseded.
 
-**Approved red uses (use a few, not all).** Thin header top rule; active desktop and mobile navigation underline (light surfaces only, with `aria-current`); footer top rule; opt-in `Card accent="red"` top rule; RecruitingBanner left rail; small decorative graphics; section-label marker.
+**Approved red uses (use a few, not all).** Thin header top rule; active desktop and mobile navigation underline (light surfaces only, with `aria-current`); footer top rule; opt-in `Card accent="red"` top rule; RecruitingBanner eyebrow accent line (decorative, dark surface, never text); small decorative graphics; section-label marker.
 
 **Prohibited red uses.** The default commercial CTA or any button fill; large hero backgrounds; body or paragraph text; error messaging (use `--color-error`); repeated card backgrounds; fake urgency or status; focus rings.
 
@@ -642,7 +642,7 @@ The removed `--color-brand`, `--color-brand-dark`, `--color-brand-soft` names ar
 
 | Pair | Use | Ratio | Result |
 | --- | --- | --- | --- |
-| `#B40000` on `#FFFFFF` | nav underline, header rail, RecruitingBanner rail | 7.14 | passes AA text and 3:1 non-text |
+| `#B40000` on `#FFFFFF` | nav underline, header rail | 7.14 | passes AA text and 3:1 non-text |
 | `#B40000` on `#F5F7FA` | footer rule | 6.65 | passes |
 | `#8F0000` on `#FFFFFF` | dark-on-light variant | 9.69 | passes |
 | `#B40000` on `#FDEAEA` | soft surface | 6.17 | passes |

@@ -41,6 +41,8 @@ scope.
 | 23 | "JobPosting" schema / active job openings | None exist | Plan section 5, CLAUDE.md section 5 | — | — | Never emit `JobPosting`. Careers content frames the Installer Network as an opt-in, no-guarantee pathway, never "Apply." |
 | 24 | MECP or other technician certification | Existing recruiting preference only, not a company certification | Section 16 | — | — | OMIT from all customer-facing and careers copy (falls under section 16.1's blanket certification ban). |
 | 25 | Public company name ("SB Mobile Installations", no "LLC") | Confirmed, hard rule | Section 4.2 | Stakeholder | 2026-09-10 | Enforce everywhere, including all new Sprint 1 pages, forms, schema, and metadata. |
+| 26 | Who We Serve vehicle list: work vans, delivery vehicles, service trucks, heavy-duty trucks, utility vehicles, trailers, construction equipment; on-site work means no separate installation facility | Confirmed by stakeholder in session, 2026-09-18 | Homepage `whoWeServe` in `homepage-content.ts` | Stakeholder | 2026-09-18 | Publish as written. Written record of approval should be added to `docs/01` when convenient. |
+| 27 | "Nationwide" applied to the Installer Network and recruitment wording (three separate reaches: verified nationwide service reach, section 8.2; nationwide installer-network reach, pending; active job availability by market, none) | Working assumption, pending written stakeholder approval | Homepage `recruitingBanner` in `homepage-content.ts` | Stakeholder | Not yet approved | Heading describes the network, never nationwide openings. CLAUDE.md section 4 prohibits nationwide openings when only one market is active. Do not extend to job postings or schema |
 
 ## Summary for Sprint 1 build
 

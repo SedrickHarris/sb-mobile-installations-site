@@ -1826,7 +1826,7 @@ Before approving a page family, confirm:
 
 Approved during Sprint 1 planning, recorded here per the plan's documentation-debt requirement, dated 2026-09-18. See `docs/01-business-source-of-truth.md` section 32 for the priority-model approval record.
 
-**Homepage section order** (commercial-first): `HomeHero`, `AnswerBlock`, `WhatWeInstallGrid`, `WhyChooseUsSplit`, `DeploymentProcessSteps`, `LargeRolloutCallout`, `ContentSection id="commercial"` (CTA emphasis flipped to primary), `RecruitingBanner`, `ProofMetrics`, `ContentSection id="trust"`, `FaqGroup`, `FinalCta`.
+**Homepage section order** (commercial-first): `HomeHero`, `AnswerBlock`, `WhatWeInstallGrid`, `WhoWeServeGrid` (added 2026-09-18), `WhyChooseUsSplit`, `DeploymentProcessSteps`, `LargeRolloutCallout`, `ContentSection id="commercial"` (CTA emphasis flipped to primary), `RecruitingBanner`, `ProofMetrics`, `ContentSection id="trust"`, `FaqGroup`, `FinalCta`.
 
 **Navigation priority**: primary nav leads with commercial destinations (Services, Contact) alongside Careers; the header CTA is the commercial "Request Installation Service" action, with the Installer Network pathway kept visible via a utility-bar link and the persistent mobile bottom bar.
 

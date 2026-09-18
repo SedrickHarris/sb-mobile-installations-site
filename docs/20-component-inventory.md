@@ -2676,7 +2676,7 @@ See `21-design-system.md` section 27b for rules and contrast.
 - **NavLink:** active underline is SB red on light surfaces only, with `aria-current`.
 - **Footer:** thin red top border (decorative).
 - **Card:** optional `accent` prop, `"none"` (default) or `"red"`. Red adds a decorative top rule on `tone="light"` only and is ignored on dark cards. Currently unused by any page.
-- **RecruitingBanner:** left rail changes from amber to SB red. CTA remains secondary.
+- **RecruitingBanner:** left rail changes from amber to SB red. CTA remains secondary. Superseded 2026-09-18: now a dark two-column feature block with eyebrow, highlights, primary CTA, secondary link, disclosure panel and optional decorative image (see docs/21 section 27a).
 - **CtaButton, CtaPair, FinalCta, MobileNavigation, ProofMetrics, CardGrid:** no change. ProofMetrics stays empty-safe.
 
 ## 105. Maintenance Standard
@@ -2687,17 +2687,18 @@ Update this inventory when:
 
 Approved during Sprint 1 planning, recorded here per the plan's documentation-debt requirement, dated 2026-09-18.
 
-`HomeTemplate` composition is reordered to commercial-first: `HomeHero`, `AnswerBlock`, `WhatWeInstallGrid`, `WhyChooseUsSplit`, `DeploymentProcessSteps`, `LargeRolloutCallout`, `ContentSection id="commercial"` (CTA emphasis `primary`), `RecruitingBanner`, `ProofMetrics`, `ContentSection id="trust"`, `FaqGroup`, `FinalCta`.
+`HomeTemplate` composition is reordered to commercial-first: `HomeHero`, `AnswerBlock`, `WhatWeInstallGrid`, `WhoWeServeGrid` (added 2026-09-18), `WhyChooseUsSplit`, `DeploymentProcessSteps`, `LargeRolloutCallout`, `ContentSection id="commercial"` (CTA emphasis `primary`), `RecruitingBanner`, `ProofMetrics`, `ContentSection id="trust"`, `FaqGroup`, `FinalCta`.
 
 New components added to the inventory:
 
 - `Card` (`src/components/ui/Card.tsx`) — reusable container, tone `light | dark`, padding `compact | default | spacious`, optional hover/elevation, no business-specific markup.
 - `CardGrid` (`src/components/layout/CardGrid.tsx`) — layout-only responsive grid, no card copy or CTA logic.
 - `WhatWeInstallGrid` — sourced from `business.serviceTypes`, never a hardcoded list.
+- `WhoWeServeGrid` — heading, intro, and three image cards (fleet, commercial, construction vehicles); all copy from `homepageContent.whoWeServe`.
 - `WhyChooseUsSplit` — confirmed differentiators only.
 - `DeploymentProcessSteps` — ordered process, no guaranteed response times.
 - `LargeRolloutCallout` — dark-navy tone, "one vehicle or an entire fleet" framing.
-- `RecruitingBanner` (`src/components/careers/RecruitingBanner.tsx`) — visually distinct secondary-journey banner.
+- `RecruitingBanner` (`src/components/careers/RecruitingBanner.tsx`) — visually distinct dark two-column recruitment feature block (primary CTA, in-flow disclosure panel, optional decorative image, gradient fallback).
 - `ProofMetrics` (`src/components/content/ProofMetrics.tsx`) — **placeholder-slot convention**: this component returns `null` and renders nothing while its content object is empty. No empty cards, "coming soon" badges, zero-value metrics, placeholder logos, fake testimonial shells, or star ratings are ever rendered as a stand-in for missing stakeholder content. The same convention applies to any future case-study or testimonial component: build the structure, never expose empty/placeholder content publicly.
 - `Breadcrumbs` (`src/components/layout/Breadcrumbs.tsx`) — paired with `src/lib/schema/breadcrumbs.ts` for `BreadcrumbList` structured data.
 - `CommercialInquiryForm` and `InstallerNetworkForm` (`src/components/forms/`) — never render on the same page/section, never share a submission handler.

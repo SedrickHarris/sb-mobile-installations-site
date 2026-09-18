@@ -70,6 +70,23 @@ export interface WhatWeInstallContent {
   readonly intro?: string;
 }
 
+export interface WhoWeServeCard {
+  readonly title: string;
+  readonly image: {
+    readonly src: string;
+    readonly width: number;
+    readonly height: number;
+  };
+}
+
+/** Audience block: label, heading, intro paragraph, and three image cards. */
+export interface WhoWeServeContent {
+  readonly eyebrow: string;
+  readonly h2: string;
+  readonly intro: string;
+  readonly cards: readonly WhoWeServeCard[];
+}
+
 export interface DifferentiatorItem {
   readonly title: string;
   readonly body: string;
@@ -103,9 +120,13 @@ export interface LargeRolloutContent {
 }
 
 export interface RecruitingBannerContent {
+  readonly eyebrow: string;
   readonly h2: string;
   readonly body: string;
+  readonly highlights: readonly string[];
   readonly cta: Cta;
+  readonly secondaryLink: { readonly label: string; readonly href: string };
+  readonly disclosure: string;
 }
 
 export interface ProofMetricItem {
@@ -126,6 +147,7 @@ export interface HomepageContent {
   readonly hero: HeroContent;
   readonly directAnswer: DirectAnswerContent;
   readonly whatWeInstall: WhatWeInstallContent;
+  readonly whoWeServe: WhoWeServeContent;
   readonly whyChooseUs: WhyChooseUsContent;
   readonly process: DeploymentProcessContent;
   readonly largeRollout: LargeRolloutContent;

@@ -2,6 +2,7 @@ import { RecruitingBanner } from "@/components/careers/RecruitingBanner";
 import { AnswerBlock } from "@/components/content/AnswerBlock";
 import { commercialSectionImage } from "@/data/site/commercial-section-image";
 import { introImage } from "@/data/site/intro-image";
+import { recruitingSectionImage } from "@/data/site/recruiting-image";
 import { trustImage } from "@/data/site/trust-image";
 import { ContentSection } from "@/components/content/ContentSection";
 import { DeploymentProcessSteps } from "@/components/content/DeploymentProcessSteps";
@@ -10,6 +11,7 @@ import { FinalCta } from "@/components/content/FinalCta";
 import { LargeRolloutCallout } from "@/components/content/LargeRolloutCallout";
 import { ProofMetrics } from "@/components/content/ProofMetrics";
 import { WhatWeInstallGrid } from "@/components/content/WhatWeInstallGrid";
+import { WhoWeServeGrid } from "@/components/content/WhoWeServeGrid";
 import { WhyChooseUsSplit } from "@/components/content/WhyChooseUsSplit";
 import { HomeHero } from "@/components/hero/HomeHero";
 import { JsonLd } from "@/components/schema/JsonLd";
@@ -30,15 +32,16 @@ export const metadata = homepageMetadata;
  *   1.  HomeHero                          commercial primary CTA, recruiting secondary
  *   2.  AnswerBlock
  *   3.  WhatWeInstallGrid                 sourced from business.serviceTypes
- *   4.  WhyChooseUsSplit                  confirmed differentiators only
- *   5.  DeploymentProcessSteps            no guaranteed response times
- *   6.  LargeRolloutCallout               dark-navy tone, capacity framing
- *   7.  ContentSection id="commercial"    ctaEmphasis flipped to primary
- *   8.  RecruitingBanner                  visually distinct secondary journey
- *   9.  ProofMetrics                      renders null while content is empty
- *   10. ContentSection id="trust"
- *   11. FaqGroup
- *   12. FinalCta                          commercial CTA leads
+ *   4.  WhoWeServeGrid                    fleet, commercial, construction cards
+ *   5.  WhyChooseUsSplit                  confirmed differentiators only
+ *   6.  DeploymentProcessSteps            no guaranteed response times
+ *   7.  LargeRolloutCallout               dark-navy tone, capacity framing
+ *   8.  ContentSection id="commercial"    ctaEmphasis flipped to primary
+ *   9.  RecruitingBanner                  visually distinct secondary journey
+ *   10. ProofMetrics                      renders null while content is empty
+ *   11. ContentSection id="trust"
+ *   12. FaqGroup
+ *   13. FinalCta                          commercial CTA leads
  *
  * All copy comes from the homepage content object. No literal copy here.
  */
@@ -53,6 +56,8 @@ export default function HomePage() {
         <AnswerBlock content={homepageContent.directAnswer} image={introImage} />
 
         <WhatWeInstallGrid id="what-we-install" content={homepageContent.whatWeInstall} />
+
+        <WhoWeServeGrid id="who-we-serve" content={homepageContent.whoWeServe} />
 
         <WhyChooseUsSplit id="why-choose-us" content={homepageContent.whyChooseUs} />
 
@@ -69,7 +74,11 @@ export default function HomePage() {
           backgroundImage={commercialSectionImage}
         />
 
-        <RecruitingBanner id="recruiting-banner" content={homepageContent.recruitingBanner} />
+        <RecruitingBanner
+          id="recruiting-banner"
+          content={homepageContent.recruitingBanner}
+          image={recruitingSectionImage}
+        />
 
         <ProofMetrics id="proof" content={homepageContent.proof} />
 
