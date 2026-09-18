@@ -12,11 +12,9 @@ import {
  * Global site header.
  *
  * Brand mark is the full-color red logo on the light header row (the navy
- * utility bar carries no logo). Source: sb-mobile-installations-logo-red.webp,
- * 1662x841 px, 82 KB, shown at about 150 px wide. It is oversized for this
- * context. Follow-up: request an approved SVG or roughly 400 px-wide WebP
- * from the stakeholder. Plain img because static export does not use Next
- * image optimization. The thin red top border is decorative only.
+ * utility bar carries no logo). Source: sb-mobile-installations-logo-red.svg,
+ * viewBox 1540x779, 14 KB, fill #b50202, shown at 120-150 px wide. Plain img
+ * because static export does not use Next image optimization. The thin red top border is decorative only.
  *
  * Utility bar (desktop only): confirmed phone number as a click-to-call
  * link, the confirmed nationwide-reach statement, and the Installer Network
@@ -75,10 +73,10 @@ export function Header() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/brand/logos/sb-mobile-installations-logo-red.webp"
+            src="/images/brand/logos/sb-mobile-installations-logo-red.svg"
             alt="SB Mobile Installations"
-            width={1662}
-            height={841}
+            width={1540}
+            height={779}
             className="h-auto w-[120px] max-w-full md:w-[150px]"
           />
         </Link>

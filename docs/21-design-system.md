@@ -653,7 +653,7 @@ The removed `--color-brand`, `--color-brand-dark`, `--color-brand-soft` names ar
 | `#FFFFFF` on `#00688A` | primary CTA (unchanged) | 6.27 | passes |
 | `#9D174D` on `#FFFFFF` | error token (unchanged) | 7.88 | passes |
 
-**Logo.** Header uses `public/images/brand/logos/sb-mobile-installations-logo-red.webp` on the light header row via a plain `img` with intrinsic 1662x841 dimensions, displayed at 120 px (mobile) and 150 px (desktop). It is oversized for that display. Follow-up: request an approved SVG or roughly 400 px-wide WebP from the stakeholder. No reverse logo is deployed; the red logo is never placed on navy. The brand-kit PDF, PNG exports, white reverse, preview renders, and `primary-logo` (red on a black backing) are not used and stay untracked. The PDF could not be rendered in this environment, so no claim rests on it.
+**Logo.** Header uses `public/images/brand/logos/sb-mobile-installations-logo-red.svg` (viewBox 1540x779, 14 KB, fill `#B50202`) on the light header row via a plain `img` with intrinsic dimensions, displayed at 120 px (mobile) and 150 px (desktop). `#B50202` on white measures about 7.1:1, in line with `#B40000`. No reverse logo is deployed; the red logo is never placed on navy. The earlier `logo-red.webp` fallback is superseded and no longer referenced. The brand-kit PDF, PNG exports, white reverse, preview renders, and `primary-logo` are not used and stay untracked. The PDF could not be rendered in this environment, so no claim rests on it.
 
 ## 28. Maintenance
 

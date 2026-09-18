@@ -403,7 +403,7 @@ The prior zero-font-cost assumption (system-font stack only) is replaced. `src/l
 
 ## 23b. Logo asset, September 18, 2026
 
-The header now loads one image: `sb-mobile-installations-logo-red.webp`, 1662x841 px, 82 KB, displayed at 120-150 px wide with explicit width and height (no layout shift). It is oversized for its display size and is the largest single asset on each page. Follow-up: an approved SVG or roughly 400 px-wide WebP would cut this to a small fraction. Fonts and JavaScript are unchanged (shared first-load JS 103 kB).
+The header loads one image: `sb-mobile-installations-logo-red.svg`, 14 KB, displayed at 120-150 px wide with explicit width and height (no layout shift). It replaces an 82 KB WebP. Fonts and JavaScript are unchanged.
 
 ## 24. Maintenance
 

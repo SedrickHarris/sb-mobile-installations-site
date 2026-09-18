@@ -2672,7 +2672,7 @@ The site architecture defines page families. This document defines their reusabl
 
 See `21-design-system.md` section 27b for rules and contrast.
 
-- **Header:** red logo `img` replaces the text wordmark on the light row; thin red top border (decorative). Navy utility bar unchanged. Primary CTA stays `#00688A`.
+- **Header:** red SVG logo `img` replaces the text wordmark on the light row; thin red top border (decorative). Navy utility bar unchanged. Primary CTA stays `#00688A`.
 - **NavLink:** active underline is SB red on light surfaces only, with `aria-current`.
 - **Footer:** thin red top border (decorative).
 - **Card:** optional `accent` prop, `"none"` (default) or `"red"`. Red adds a decorative top rule on `tone="light"` only and is ignored on dark cards. Currently unused by any page.
