@@ -187,4 +187,16 @@
   [data-tone="dark"] [data-tone="subtle"] :focus-visible {
     outline-color: var(--color-focus-on-light);
   }
+
+  /*
+    The skip link moves real keyboard focus to #main (see layout.tsx) so
+    assistive tech announces the landmark, not just a scroll jump. #main is
+    not itself an interactive control, so the base :focus-visible rule above
+    would otherwise draw a 3px outline around the entire page content block.
+    Suppress it only on #main; every interactive element inside main keeps
+    the full focus-visible ring from the rule above.
+  */
+  #main:focus {
+    outline: none;
+  }
 }
