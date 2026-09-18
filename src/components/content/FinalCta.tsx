@@ -10,21 +10,21 @@ interface FinalCtaProps {
 /**
  * Closing call to action.
  *
- * A brand-soft band signals the end of the page. The tint is used rather than
- * solid brand because body text on solid brand would fail contrast. That still
- * holds for the red palette: ink on solid brand measures 2.48:1. On the tint it
- * measures 15.29:1.
+ * A dark navy band signals the end of the page, distinct from every other
+ * section tone. Section applies data-tone="dark" so the focus ring and text
+ * color resolve correctly for this local context.
  *
- * Both journeys repeat with the recruitment CTA first, matching the hero.
+ * CTA order matches the hero: the commercial CTA leads, per the
+ * commercial-first override in 21-design-system.md section 27a.
  */
 export function FinalCta({ content, id }: FinalCtaProps) {
   const headingId = `${id}-heading`;
 
   return (
-    <Section tone="brandSoft" width="wide" labelledBy={headingId} center>
+    <Section tone="dark" width="wide" labelledBy={headingId} center>
       <h2
         id={headingId}
-        className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+        className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
       >
         {content.h2}
       </h2>

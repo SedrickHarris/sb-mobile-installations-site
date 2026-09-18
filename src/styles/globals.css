@@ -11,22 +11,55 @@
   --color-ink-muted: #4b5563;
   --color-surface: #ffffff;
   --color-surface-subtle: #f5f7fa;
-  --color-surface-dark: #111827;
-  /* Brand red, stakeholder confirmed 2026-09-10. Replaced blue #1468ff. */
-  --color-brand: #b40000;
-  --color-brand-dark: #8a0000;
-  --color-brand-soft: #fceaea;
+  --color-border: #d9e0ea;
+
+  /*
+    Navy + accent system, approved 2026-09-18 (see 21-design-system.md
+    section 27a). --color-brand / --color-brand-dark / --color-brand-soft are
+    removed. Every former reference migrates to these tokens or to the
+    data-tone focus-ring system below.
+  */
+  --color-surface-dark: #0b1220;
+  --color-surface-dark-raised: #121b2e;
+  --color-border-dark: #1f2a3d;
+  --color-text-on-dark: #ffffff;
+
+  /*
+    Bright accents. None of the three pass WCAG AA as text/icon color on a
+    white surface (2.15-2.70:1 measured); each passes AA against the specific
+    navy #0b1220 background tested (6.9-8.7:1). That result does not
+    generalize to every navy-family surface or accent combination - each
+    usage is checked against its actual adjacent background. Never used as
+    body text, small link text, or standalone icon color on a light surface.
+  */
+  --color-accent-blue: #00a8e8;
+  /*
+    Finalized primary-action color, darkened from an initially-proposed
+    #007ea8 (thin 4.62:1 margin). White text on this fill is the single
+    verified default primary-action pair, applied consistently: header CTA,
+    mobile sticky "Request Service" CTA, form submit controls, FinalCta, and
+    any white icon inside those buttons. No other value is used anywhere in
+    the build for a primary action.
+  */
+  --color-accent-blue-strong: #00688a;
+  --color-accent-amber: #f59e0b;
+  --color-accent-green: #22c55e;
+
   --color-success: #166534;
   --color-warning: #92400e;
   /*
-    Deep rose, not a pure red. The brand is now red, and an error token in the
-    same hue family was indistinguishable from it: the previous #b42318 sat
-    3.3 dE2000 from --color-brand. This value sits 22.1 from brand and 20.3
-    from brand-dark, so an error never reads as a brand element. See section
-    4.1 of 21-design-system.md.
+    Deep rose, not a pure red. Kept on its prior verified value; still
+    distinguishable from every navy/accent token in this palette.
   */
   --color-error: #9d174d;
-  --color-border: #d9e0ea;
+
+  /*
+    Focus ring, split by local surface context. Resolved from the nearest
+    [data-tone] ancestor in @layer base below, not a single global value.
+    See 21-design-system.md section 27a.
+  */
+  --color-focus-on-light: #0b1220;
+  --color-focus-on-dark: #ffffff;
 
   /* 4.2 Typography scale. Headings scale with clamp and stay readable narrow. */
   --text-display: clamp(2.5rem, 6vw, 4.5rem);
@@ -52,29 +85,29 @@
   --spacing: 0.25rem;
 
   /* 4.5 Radius and shadow */
-  --radius-sm: 6px;
-  --radius-md: 10px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
   --shadow-card: 0 8px 28px rgb(17 24 39 / 0.08);
+  --shadow-card-dark: 0 8px 28px rgb(0 0 0 / 0.45);
 
   /* Layout maxima from section 4.4 */
   --container-content: 720px;
   --container-site: 1280px;
 
   /*
-    Body face. The brand kit asks for Inter, Arial, or Helvetica. Arial and
-    Helvetica are both in this stack and load no font file, so the kit is
-    satisfied at zero cost against the font budget in section 9 of
-    24-performance-budget.md. Inter was considered and declined: it would add
-    a network request and a swap on the critical path for no legibility gain
-    over the system grotesques.
-
-    The headline face remains undecided. The kit asks for Anton, Bebas Neue,
-    or Oswald Bold, and that choice is deferred to its own performance and
-    licensing review. Headings currently use this same stack.
+    Body face: Inter. Heading face: Rajdhani, a condensed/geometric face kept
+    visually distinct from body at a glance. Both loaded via next/font/google
+    in src/lib/fonts.ts and wired in as CSS variables here, with a system
+    fallback stack retained for the brief pre-load window. Approved
+    2026-09-18, replacing the prior zero-cost system-font decision. See
+    21-design-system.md section 27a and 24-performance-budget.md section 23a.
   */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-heading), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 @layer base {
@@ -106,13 +139,52 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+  }
+
   /*
     Visible keyboard focus on every interactive element. Never remove this
     without an equally visible replacement.
+
+    Split by local surface context rather than one global color. Section
+    and Card each render a stable data-tone="dark" | "light" | "subtle"
+    marker on their own root element. Plain attribute selectors all match at
+    equal specificity regardless of nesting depth, so the base rule below and
+    a single-level [data-tone="..."] rule are not enough on their own: a dark
+    Card nested inside a light Section, or a light/subtle surface nested
+    inside a dark Section, must resolve from their own nearest ancestor, not
+    the outer page section. The nested-context override rules make the
+    nearest local surface win through explicit selector specificity, not
+    implicit cascade behavior. See 21-design-system.md section 27a.
   */
   :focus-visible {
-    outline: 3px solid var(--color-brand);
+    outline: 3px solid var(--color-focus-on-light);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
+  }
+
+  [data-tone="light"] :focus-visible,
+  [data-tone="subtle"] :focus-visible {
+    outline-color: var(--color-focus-on-light);
+  }
+
+  [data-tone="dark"] :focus-visible {
+    outline-color: var(--color-focus-on-dark);
+  }
+
+  /* Dark-in-light: a dark Card inside a light/subtle Section. */
+  [data-tone="light"] [data-tone="dark"] :focus-visible,
+  [data-tone="subtle"] [data-tone="dark"] :focus-visible {
+    outline-color: var(--color-focus-on-dark);
+  }
+
+  /* Light-in-dark: a light/subtle surface nested inside a dark Section. */
+  [data-tone="dark"] [data-tone="light"] :focus-visible,
+  [data-tone="dark"] [data-tone="subtle"] :focus-visible {
+    outline-color: var(--color-focus-on-light);
   }
 }

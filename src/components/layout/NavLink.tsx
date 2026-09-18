@@ -33,7 +33,7 @@ export function NavLink({ item, className = "", onNavigate }: NavLinkProps) {
       className={[
         "inline-flex min-h-11 items-center rounded-sm px-1 font-medium no-underline",
         isCurrent
-          ? "text-ink underline decoration-brand decoration-2 underline-offset-8"
+          ? "text-ink underline decoration-[var(--color-accent-blue-strong)] decoration-2 underline-offset-8"
           : "text-ink-muted hover:text-ink hover:underline hover:underline-offset-8",
         className,
       ].join(" ")}

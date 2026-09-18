@@ -46,7 +46,7 @@ export function FaqGroup({ content, id, accessibleHeading }: FaqGroupProps) {
                 </dt>
                 <span
                   aria-hidden="true"
-                  className="grid size-8 shrink-0 place-items-center rounded-sm border border-border bg-surface text-lg leading-none text-brand-dark transition-transform duration-150 group-open:rotate-45"
+                  className="grid size-8 shrink-0 place-items-center rounded-sm border border-border bg-surface text-lg leading-none text-ink transition-transform duration-150 group-open:rotate-45"
                 >
                   +
                 </span>

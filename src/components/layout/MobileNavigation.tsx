@@ -1,100 +1,46 @@
-"use client";
+import Link from "next/link";
 
-import { useEffect, useId, useRef, useState } from "react";
-
-import { NavLink } from "@/components/layout/NavLink";
-import type { NavItem } from "@/types/navigation";
-
-interface MobileNavigationProps {
-  readonly items: readonly NavItem[];
-}
+import { business } from "@/data/site/business";
+import { mobileNavigationCta } from "@/data/navigation/site-navigation";
 
 /**
- * Mobile menu.
+ * Persistent bottom navigation bar, mobile only.
  *
- * A small client component responsible only for menu state and focus
- * behavior, per section 18 of 20-component-inventory.md.
+ * Two actions, always available while scrolling: click-to-call using the
+ * confirmed phone number, and the commercial "Request Service" CTA. This is
+ * the primary mobile conversion surface, separate from the header's full-nav
+ * disclosure menu (see HeaderMobileMenu).
  *
- * A disclosure pattern rather than a modal: the panel pushes content instead
- * of overlaying it, so there is no inert background to manage and no scroll
- * lock to break page position. That also keeps the menu usable at 200% zoom,
- * where a fixed-height overlay would clip.
- *
- * The header CTA stays visible on mobile rather than moving into this panel,
- * so the primary recruitment action is never hidden behind a menu.
- *
- * Focus moves to the first link on open and returns to the trigger on close.
- * Escape closes. The trigger announces its state with aria-expanded.
+ * Fixed to the viewport bottom. The layout adds bottom padding to <body> so
+ * this bar never covers page content, including the last section's CTAs.
  */
-export function MobileNavigation({ items }: MobileNavigationProps) {
-  const [open, setOpen] = useState(false);
-  const panelId = useId();
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
-  /** Only restore focus for a close the user initiated, not the first render. */
-  const wasOpen = useRef(false);
-
-  useEffect(() => {
-    if (open) {
-      wasOpen.current = true;
-      panelRef.current?.querySelector("a")?.focus();
-      return;
-    }
-    if (wasOpen.current) {
-      wasOpen.current = false;
-      triggerRef.current?.focus();
-    }
-  }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
-    }
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+export function MobileNavigation() {
+  const telHref = `tel:${business.telephone.replace(/[^0-9+]/g, "")}`;
 
   return (
-    <div className="w-full md:hidden">
-      <button
-        ref={triggerRef}
-        type="button"
-        aria-expanded={open}
-        aria-controls={panelId}
-        onClick={() => setOpen((v) => !v)}
-        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-md border border-brand px-3 font-semibold text-brand-dark transition-[box-shadow,background-color] hover:bg-brand-soft hover:shadow-card"
+    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border bg-surface shadow-card md:hidden">
+      <a
+        href={telHref}
+        data-journey="commercial"
+        data-event="cta_call_click"
+        data-cta-location="mobile-bar"
+        className="flex min-h-14 items-center justify-center gap-2 border-r border-border text-[length:var(--text-small)] font-semibold text-ink no-underline"
       >
-        <span aria-hidden="true" className="text-lg leading-none">
-          {open ? "\u00d7" : "\u2261"}
-        </span>
-        {open ? "Close menu" : "Menu"}
-      </button>
+        <span aria-hidden="true">{"☎"}</span>
+        Call {business.telephone}
+      </a>
 
-      {/*
-        Rendered only when open. Keeping it mounted and hidden would leave the
-        links reachable by keyboard while visually collapsed.
-      */}
-      {open ? (
-        <div
-          id={panelId}
-          ref={panelRef}
-          className="mt-4 border-t border-border pt-4"
+      <div data-tone="dark">
+        <Link
+          href={mobileNavigationCta.href}
+          data-journey="commercial"
+          data-event="cta_request_service_click"
+          data-cta-location="mobile-bar"
+          className="flex min-h-14 items-center justify-center bg-[var(--color-accent-blue-strong)] text-[length:var(--text-small)] font-semibold text-white no-underline"
         >
-          <ul className="flex flex-col gap-1">
-            {/* Recruitment destinations appear near the top. */}
-            {items.map((item) => (
-              <li key={item.href}>
-                <NavLink
-                  item={item}
-                  className="w-full py-2"
-                  onNavigate={() => setOpen(false)}
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
+          {mobileNavigationCta.label}
+        </Link>
+      </div>
     </div>
   );
 }

@@ -1,8 +1,12 @@
 import Link from "next/link";
 
+import { HeaderMobileMenu } from "@/components/layout/HeaderMobileMenu";
 import { MainNavigation } from "@/components/layout/MainNavigation";
-import { MobileNavigation } from "@/components/layout/MobileNavigation";
-import { headerCta, mainNavigation } from "@/data/navigation/site-navigation";
+import {
+  headerCta,
+  mainNavigation,
+  utilityBar,
+} from "@/data/navigation/site-navigation";
 
 /**
  * Global site header.
@@ -10,19 +14,55 @@ import { headerCta, mainNavigation } from "@/data/navigation/site-navigation";
  * Brand is a text wordmark. No logo file exists and no placeholder image is
  * generated for one.
  *
- * Navigation is launch-scoped to routes that exist. The Current Openings CTA
- * is the visually dominant pathway and stays visible at every width, so the
- * recruitment path is never hidden behind a menu.
+ * Utility bar (desktop only): confirmed phone number as a click-to-call
+ * link, the confirmed nationwide-reach statement, and the Installer Network
+ * link, so the secondary journey stays reachable without competing with the
+ * primary commercial CTA in the row below.
+ *
+ * Primary nav is commercial-first per the 2026-09-18 override: Services,
+ * Careers, Contact. Neither "Industries" nor "Coverage" is linked, because
+ * neither route exists yet (Sprint 2). See the build report's judgment-call
+ * note on this.
  *
  * Not sticky: a fixed header costs mobile viewport height and can cover
- * anchor targets, which section 16 of 20-component-inventory.md warns against.
- *
- * No phone number, address, or location claim. None is confirmed for display
- * here.
+ * anchor targets, which section 16 of 20-component-inventory.md warns
+ * against. The persistent mobile conversion surface is MobileNavigation, a
+ * fixed bottom bar, not this header.
  */
 export function Header() {
   return (
     <header className="border-b border-border bg-surface">
+      <div
+        data-tone="dark"
+        className="hidden border-b border-border bg-[var(--color-surface-dark)] text-[var(--color-text-on-dark)] md:block"
+      >
+        <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-6 py-2 text-[length:var(--text-small)]">
+          <div className="flex items-center gap-6">
+            <a
+              href={utilityBar.phoneHref}
+              data-journey="commercial"
+              data-event="cta_call_click"
+              data-cta-location="utility-bar"
+              className="inline-flex items-center gap-2 font-semibold text-[var(--color-text-on-dark)] no-underline hover:underline"
+            >
+              <span aria-hidden="true">{"☎"}</span>
+              {utilityBar.phoneLabel}
+            </a>
+            <span>{utilityBar.reachLabel}</span>
+          </div>
+
+          <Link
+            href={utilityBar.installerNetwork.href}
+            data-journey="recruitment"
+            data-event="cta_installer_network_click"
+            data-cta-location="utility-bar"
+            className="text-[var(--color-text-on-dark)] no-underline hover:underline"
+          >
+            {utilityBar.installerNetwork.label}
+          </Link>
+        </div>
+      </div>
+
       <div className="mx-auto flex max-w-[1280px] flex-wrap items-center gap-x-8 gap-y-4 px-5 py-4 md:px-6">
         <Link
           href="/"
@@ -36,16 +76,18 @@ export function Header() {
 
           <Link
             href={headerCta.href}
-            data-journey="recruitment"
-            data-event="cta_openings_click"
+            data-journey="commercial"
+            data-event="cta_request_service_click"
             data-cta-location="header"
-            className="inline-flex min-h-11 items-center justify-center rounded-md border border-transparent bg-brand px-4 py-2 font-semibold text-white no-underline transition-[background-color,box-shadow,transform] duration-150 hover:-translate-y-px hover:bg-brand-dark hover:shadow-card active:translate-y-0"
+            className="inline-flex min-h-11 items-center justify-center rounded-md border border-transparent bg-[var(--color-accent-blue-strong)] px-4 py-2 font-semibold text-white no-underline transition-[filter,box-shadow,transform] duration-150 hover:-translate-y-px hover:brightness-110 hover:shadow-card active:translate-y-0"
           >
             {headerCta.label}
           </Link>
         </div>
 
-        <MobileNavigation items={mainNavigation} />
+        <HeaderMobileMenu
+          items={[...mainNavigation, utilityBar.installerNetwork]}
+        />
       </div>
     </header>
   );

@@ -1,7 +1,25 @@
 import type { ReactNode } from "react";
 
-/** Background rhythm. Sections alternate to separate without hard dividers. */
-type Tone = "default" | "subtle" | "brandSoft";
+/**
+ * Background rhythm. Sections alternate to separate without hard dividers.
+ *
+ * `default` and `subtle` are both light surfaces; `dark` is the new navy
+ * surface used for components such as LargeRolloutCallout. `brandSoft` is
+ * removed along with the brand-soft token it depended on; a section that
+ * previously used it now uses `subtle` or `dark` depending on intent.
+ */
+type Tone = "default" | "subtle" | "dark";
+
+/**
+ * The data-tone marker this tone renders. Used by the focus-ring CSS in
+ * globals.css to resolve the correct outline color from the nearest local
+ * surface. See 21-design-system.md section 27a.
+ */
+const dataTone: Record<Tone, "light" | "subtle" | "dark"> = {
+  default: "light",
+  subtle: "subtle",
+  dark: "dark",
+};
 
 /** Vertical density. Conversion sections breathe; closing statements do not. */
 type Density = "compact" | "standard" | "spacious";
@@ -19,9 +37,9 @@ interface SectionProps {
 }
 
 const toneClasses: Record<Tone, string> = {
-  default: "bg-surface",
-  subtle: "bg-surface-subtle",
-  brandSoft: "bg-brand-soft",
+  default: "bg-surface text-ink",
+  subtle: "bg-surface-subtle text-ink",
+  dark: "bg-[var(--color-surface-dark)] text-[var(--color-text-on-dark)]",
 };
 
 /**
@@ -40,6 +58,14 @@ const widthClasses: Record<Width, string> = {
   site: "max-w-[1280px]",
 };
 
+/**
+ * Section shell.
+ *
+ * Renders a stable `data-tone="dark" | "light" | "subtle"` marker on its own
+ * root element, resolved by CSS in globals.css so keyboard focus rings and
+ * any other tone-aware styling pick the correct local context rather than
+ * inheriting an incorrect value from an outer page section.
+ */
 export function Section({
   children,
   tone = "default",
@@ -50,6 +76,7 @@ export function Section({
 }: SectionProps) {
   return (
     <section
+      data-tone={dataTone[tone]}
       aria-labelledby={labelledBy}
       className={`px-5 md:px-6 ${toneClasses[tone]} ${densityClasses[density]}`}
     >

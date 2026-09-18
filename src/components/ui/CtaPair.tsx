@@ -2,19 +2,22 @@ import { CtaButton } from "@/components/ui/CtaButton";
 import type { Cta } from "@/types/content";
 
 interface CtaPairProps {
-  /** Recruitment CTA. Always rendered first, in DOM and visual order. */
+  /** Rendered first, in DOM and visual order, with primary emphasis. */
   readonly primary: Cta;
-  /** Commercial CTA. Always secondary. */
+  /** Rendered second, with secondary emphasis. */
   readonly secondary: Cta;
   readonly center?: boolean;
 }
 
 /**
- * The two-journey CTA pair.
+ * A two-CTA pair.
  *
- * Stacks full width below 640px and sits horizontally above it. The
- * recruitment CTA is always first and always primary, never reversed and
- * never equally weighted. See 21-design-system.md sections 3.2 and 3.3.
+ * Stacks full width below 640px and sits horizontally above it. Which
+ * journey is `primary` is decided by the caller, per page context, per the
+ * commercial-first override in 21-design-system.md section 27a: the hero and
+ * FinalCta lead with the commercial CTA, while the careers role page and
+ * RecruitingBanner lead with the Installer Network CTA. This component does
+ * not hardcode which journey is which.
  */
 export function CtaPair({ primary, secondary, center = false }: CtaPairProps) {
   return (

@@ -14,8 +14,11 @@ interface CtaButtonProps {
 /**
  * A call-to-action link styled as a button.
  *
- * Exactly two variants exist on the homepage: primary for the recruitment
- * journey and secondary for the commercial journey. Do not add a third.
+ * Emphasis is page-context-determined, not journey-hardcoded: a commercial
+ * page uses `primary` for its commercial CTA, a careers page uses `primary`
+ * for its Installer Network CTA. Do not assume `primary` always means one
+ * journey. See 21-design-system.md section 27a (approved 2026-09-18 override
+ * of the prior "primary is always recruitment" rule).
  *
  * State changes never rely on color alone. Hover and active shift the shadow
  * and translate the button, so the change is visible without color
@@ -23,25 +26,26 @@ interface CtaButtonProps {
  */
 const emphasisClasses: Record<Emphasis, string> = {
   primary: [
-    "bg-brand text-white border border-transparent",
-    "hover:bg-brand-dark active:bg-brand-dark",
+    /*
+      --color-accent-blue-strong (#00688a) with white text is the single
+      verified default primary-action pair, applied consistently across every
+      primary-action surface. No other value is used for a primary CTA fill.
+    */
+    "bg-[var(--color-accent-blue-strong)] text-white border border-transparent",
+    "hover:brightness-110 active:brightness-95",
     "shadow-none hover:shadow-card",
   ].join(" "),
   secondary: [
     /*
       The border is this button's visual boundary, so it must meet the 3:1
-      non-text contrast requirement in WCAG 1.4.11. The color-border token
-      measures 1.24:1 against surface-subtle and fails; color-brand measures
-      7.14:1 on surface and passes.
-
-      Label uses brand-dark at 10.09:1 on surface and 8.70:1 on the brand-soft
-      hover. Under the former blue palette brand-dark was required, because
-      brand itself fell to 4.12:1 on brand-soft. Red clears that bar on its own
-      at 6.15:1, so brand-dark is now a hierarchy choice rather than a contrast
-      necessity. It is kept so the label stays darker than the border.
+      non-text contrast requirement in WCAG 1.4.11. --color-ink on --color-
+      surface and on --color-surface-subtle both clear that bar by a wide
+      margin, so ink is used for both border and label on the secondary
+      variant rather than an accent color, per the accent-on-light
+      restriction in 21-design-system.md section 27a.
     */
-    "bg-surface text-brand-dark border border-brand",
-    "hover:bg-brand-soft hover:border-brand-dark",
+    "bg-surface text-ink border border-ink",
+    "hover:bg-surface-subtle",
     "shadow-none hover:shadow-card",
   ].join(" "),
 };
@@ -60,7 +64,7 @@ export function CtaButton({
         "inline-flex min-h-12 items-center justify-center text-center",
         "rounded-md px-6 py-3",
         "text-base font-semibold no-underline",
-        "transition-[background-color,box-shadow,transform,border-color] duration-150",
+        "transition-[background-color,box-shadow,transform,border-color,filter] duration-150",
         "hover:-translate-y-px active:translate-y-0",
         blockOnMobile ? "w-full sm:w-auto" : "",
         emphasisClasses[emphasis],
