@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout/Section";
 import { CtaButton } from "@/components/ui/CtaButton";
+import type { ServiceImage } from "@/data/site/service-images";
 import type { SectionContent } from "@/types/content";
 
 interface ContentSectionProps {
@@ -9,11 +10,13 @@ interface ContentSectionProps {
   readonly density?: "compact" | "standard" | "spacious";
   readonly ctaEmphasis?: "primary" | "secondary";
   /**
-   * Reserve a second column for an approved image. Off for now: no
-   * photography is approved, and an empty image box is not acceptable
-   * placeholder content. The grid is in place for a later pass.
+   * Two-column layout: text left, `image` right. The media column renders
+   * only when `image` is also supplied, since an empty image box is not
+   * acceptable placeholder content.
    */
   readonly withMediaColumn?: boolean;
+  /** Decorative image for the media column. Used with `withMediaColumn`. */
+  readonly image?: ServiceImage;
   /**
    * Decorative full-bleed background image under a 55% black overlay. Turns
    * the section into a dark-tone surface: `tone` is ignored and text uses the
@@ -51,8 +54,10 @@ export function ContentSection({
   density = "standard",
   ctaEmphasis = "primary",
   withMediaColumn = false,
+  image,
   backgroundImage,
 }: ContentSectionProps) {
+  const hasMedia = withMediaColumn && image !== undefined;
   const headingId = `${id}-heading`;
   const paragraphs =
     typeof content.body === "string" ? [content.body] : content.body;
@@ -109,12 +114,12 @@ export function ContentSection({
     <Section
       tone={tone}
       density={density}
-      width={withMediaColumn ? "site" : "reading"}
+      width={hasMedia ? "site" : "reading"}
       labelledBy={headingId}
     >
       <div
         className={
-          withMediaColumn
+          hasMedia
             ? "grid gap-10 md:grid-cols-2 md:items-center md:gap-16"
             : ""
         }
@@ -142,6 +147,19 @@ export function ContentSection({
             </div>
           ) : null}
         </div>
+
+        {hasMedia ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={image.src}
+            alt=""
+            width={image.width}
+            height={image.height}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[4/3] h-auto w-full rounded-[var(--radius-lg)] object-cover object-[75%_50%]"
+          />
+        ) : null}
       </div>
     </Section>
   );

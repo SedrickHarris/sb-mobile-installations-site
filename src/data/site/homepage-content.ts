@@ -136,6 +136,7 @@ export const homepageContent: HomepageContent = {
   },
 
   faq: {
+    h2: "Frequently Asked Questions",
     items: [
       {
         question: "What equipment do you install?",

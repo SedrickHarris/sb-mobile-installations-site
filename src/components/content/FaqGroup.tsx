@@ -7,11 +7,10 @@ interface FaqGroupProps {
   /** Vertical padding. Defaults to the standard section density. */
   readonly density?: "compact" | "standard" | "spacious";
   /**
-   * Accessible name for the section, rendered for assistive technology only.
-   *
-   * The locked content supplies no visible heading here and no visible copy
-   * may be invented, so the heading is visually hidden. It keeps the document
-   * outline complete for screen-reader users.
+   * Fallback heading for content with no `h2`, rendered for assistive
+   * technology only. No visible copy may be invented, so the heading is
+   * visually hidden. It keeps the document outline complete for
+   * screen-reader users. Ignored when `content.h2` supplies a visible heading.
    */
   readonly accessibleHeading: string;
 }
@@ -49,8 +48,15 @@ export function FaqGroup({
 
   return (
     <Section tone="subtle" density={density} labelledBy={headingId}>
-      <h2 id={headingId} className="sr-only">
-        {accessibleHeading}
+      <h2
+        id={headingId}
+        className={
+          content.h2
+            ? "mb-8 text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink md:mb-10"
+            : "sr-only"
+        }
+      >
+        {content.h2 ?? accessibleHeading}
       </h2>
 
       <div className="divide-y divide-border border-y border-border">

@@ -1,6 +1,8 @@
 import { RecruitingBanner } from "@/components/careers/RecruitingBanner";
 import { AnswerBlock } from "@/components/content/AnswerBlock";
 import { commercialSectionImage } from "@/data/site/commercial-section-image";
+import { introImage } from "@/data/site/intro-image";
+import { trustImage } from "@/data/site/trust-image";
 import { ContentSection } from "@/components/content/ContentSection";
 import { DeploymentProcessSteps } from "@/components/content/DeploymentProcessSteps";
 import { FaqGroup } from "@/components/content/FaqGroup";
@@ -48,7 +50,7 @@ export default function HomePage() {
       <>
         <HomeHero content={homepageContent.hero} />
 
-        <AnswerBlock content={homepageContent.directAnswer} />
+        <AnswerBlock content={homepageContent.directAnswer} image={introImage} />
 
         <WhatWeInstallGrid id="what-we-install" content={homepageContent.whatWeInstall} />
 
@@ -75,13 +77,11 @@ export default function HomePage() {
           id="trust"
           content={homepageContent.trust}
           tone="default"
-          density="compact"
+          density="standard"
+          withMediaColumn
+          image={trustImage}
         />
 
-        {/*
-          The locked content gives no visible heading for this section. The
-          accessible name below is not rendered visually and is not page copy.
-        */}
         <FaqGroup
           id="faq"
           density="compact"

@@ -48,6 +48,8 @@ export interface FaqItem {
 }
 
 export interface FaqContent {
+  /** Visible section heading. When absent, the FAQ shows no visible heading. */
+  readonly h2?: string;
   readonly items: readonly FaqItem[];
 }
 
