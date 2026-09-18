@@ -19,7 +19,9 @@ interface NavLinkProps {
  * 21-design-system.md.
  *
  * Current page is announced with aria-current and also carries a visible
- * underline, so the state is never conveyed by color alone.
+ * underline, so the state is never conveyed by color alone. The SB red
+ * underline (7.14:1 on white) is used only because every NavLink sits on a
+ * light surface. Do not reuse it on a navy nav surface.
  */
 export function NavLink({ item, className = "", onNavigate }: NavLinkProps) {
   const pathname = usePathname();
@@ -33,7 +35,7 @@ export function NavLink({ item, className = "", onNavigate }: NavLinkProps) {
       className={[
         "inline-flex min-h-11 items-center rounded-sm px-1 font-medium no-underline",
         isCurrent
-          ? "text-ink underline decoration-[var(--color-accent-blue-strong)] decoration-2 underline-offset-8"
+          ? "text-ink underline decoration-[var(--color-brand-red)] decoration-2 underline-offset-8"
           : "text-ink-muted hover:text-ink hover:underline hover:underline-offset-8",
         className,
       ].join(" ")}

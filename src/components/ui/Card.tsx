@@ -2,11 +2,18 @@ import type { ElementType, ReactNode } from "react";
 
 type Tone = "light" | "dark";
 type Padding = "compact" | "default" | "spacious";
+type Accent = "none" | "red";
 
 interface CardProps {
   readonly children: ReactNode;
   readonly tone?: Tone;
   readonly padding?: Padding;
+  /**
+   * Decorative SB red top rule only. Light tone only: red on navy is 2.62:1.
+   * Use sparingly, one or two cards per visible section. Never changes text,
+   * CTA, focus, or status meaning.
+   */
+  readonly accent?: Accent;
   /** Adds a hover elevation shift. Off by default for static content cards. */
   readonly hover?: boolean;
   /** Root element. Defaults to `article`, since a card is usually one unit of content. */
@@ -42,6 +49,7 @@ export function Card({
   children,
   tone = "light",
   padding = "default",
+  accent = "none",
   hover = false,
   as: Tag = "article",
   className = "",
@@ -57,6 +65,9 @@ export function Card({
           ? "transition-[transform,box-shadow] duration-150 hover:-translate-y-1 hover:shadow-card"
           : "",
         tone === "dark" ? "shadow-none hover:shadow-card-dark" : "",
+        accent === "red" && tone === "light"
+          ? "border-t-4 border-t-[var(--color-brand-red)]"
+          : "",
         className,
       ].join(" ")}
     >

@@ -11,8 +11,12 @@ import {
 /**
  * Global site header.
  *
- * Brand is a text wordmark. No logo file exists and no placeholder image is
- * generated for one.
+ * Brand mark is the full-color red logo on the light header row (the navy
+ * utility bar carries no logo). Source: sb-mobile-installations-logo-red.webp,
+ * 1662x841 px, 82 KB, shown at about 150 px wide. It is oversized for this
+ * context. Follow-up: request an approved SVG or roughly 400 px-wide WebP
+ * from the stakeholder. Plain img because static export does not use Next
+ * image optimization. The thin red top border is decorative only.
  *
  * Utility bar (desktop only): confirmed phone number as a click-to-call
  * link, the confirmed nationwide-reach statement, and the Installer Network
@@ -31,7 +35,7 @@ import {
  */
 export function Header() {
   return (
-    <header className="border-b border-border bg-surface">
+    <header className="border-t-4 border-t-[var(--color-brand-red)] border-b border-border bg-surface">
       <div
         data-tone="dark"
         className="hidden border-b border-border bg-[var(--color-surface-dark)] text-[var(--color-text-on-dark)] md:block"
@@ -66,9 +70,17 @@ export function Header() {
       <div className="mx-auto flex max-w-[1280px] flex-wrap items-center gap-x-8 gap-y-4 px-5 py-4 md:px-6">
         <Link
           href="/"
-          className="text-[length:var(--text-h4)] font-bold text-ink no-underline hover:underline hover:underline-offset-4"
+          aria-label="SB Mobile Installations"
+          className="inline-flex items-center rounded-sm p-1"
         >
-          SB Mobile Installations
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/brand/logos/sb-mobile-installations-logo-red.webp"
+            alt="SB Mobile Installations"
+            width={1662}
+            height={841}
+            className="h-auto w-[120px] max-w-full md:w-[150px]"
+          />
         </Link>
 
         <div className="ms-auto flex items-center gap-4">

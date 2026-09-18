@@ -15,9 +15,9 @@
 
   /*
     Navy + accent system, approved 2026-09-18 (see 21-design-system.md
-    section 27a). --color-brand / --color-brand-dark / --color-brand-soft are
-    removed. Every former reference migrates to these tokens or to the
-    data-tone focus-ring system below.
+    section 27a). The former --color-brand / --color-brand-dark /
+    --color-brand-soft names are removed. Every former reference migrates to
+    these tokens or to the data-tone focus-ring system below.
   */
   --color-surface-dark: #0b1220;
   --color-surface-dark-raised: #121b2e;
@@ -42,8 +42,27 @@
     the build for a primary action.
   */
   --color-accent-blue-strong: #00688a;
+  /*
+    Utility/status only, never general brand accents. Amber: warning or
+    attention context. Green: success context. Non-text illustration, or a
+    component whose pair has been individually verified.
+  */
   --color-accent-amber: #f59e0b;
   --color-accent-green: #22c55e;
+
+  /*
+    SB red identity accent. #B40000 is the measured fill of the production
+    logo (logo-red.webp). Controlled secondary brand-recognition accent, never
+    a primary action color (that stays --color-accent-blue-strong). On white:
+    #B40000 7.14:1, #8F0000 9.69:1. On soft red #FDEAEA: #B40000 6.17:1.
+    On navy #0B1220: #B40000 is 2.62:1 and FAILS. Never use either red on a
+    navy-family surface as text, interactive icon, active/status indicator,
+    focus ring, or sole state cue. Decorative rules only, where all meaning
+    stays clear without the red. Not for error messaging (--color-error).
+  */
+  --color-brand-red: #b40000;
+  --color-brand-red-strong: #8f0000;
+  --color-brand-red-soft: #fdeaea;
 
   --color-success: #166534;
   --color-warning: #92400e;
