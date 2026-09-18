@@ -5,8 +5,9 @@ node_modules/
 .next/
 out/
 
-# Test coverage
-coverage/
+# Test coverage (root-only: an unanchored "coverage/" also matched and
+# silently hid the real src/app/coverage/ route directory - anchor it)
+/coverage/
 
 # Environment and secrets
 .env

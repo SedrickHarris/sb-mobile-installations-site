@@ -13,12 +13,20 @@ import { mobileNavigationCta } from "@/data/navigation/site-navigation";
  *
  * Fixed to the viewport bottom. The layout adds bottom padding to <body> so
  * this bar never covers page content, including the last section's CTAs.
+ *
+ * Rendered as a `<nav>` landmark with an accessible label so this
+ * always-visible, position-fixed region is contained by a landmark rather
+ * than floating outside the page's landmark structure (axe-core "region"
+ * rule).
  */
 export function MobileNavigation() {
   const telHref = `tel:${business.telephone.replace(/[^0-9+]/g, "")}`;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border bg-surface shadow-card md:hidden">
+    <nav
+      aria-label="Mobile quick actions"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border bg-surface shadow-card md:hidden"
+    >
       <a
         href={telHref}
         data-journey="commercial"
@@ -41,6 +49,6 @@ export function MobileNavigation() {
           {mobileNavigationCta.label}
         </Link>
       </div>
-    </div>
+    </nav>
   );
 }
