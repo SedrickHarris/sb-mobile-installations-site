@@ -113,6 +113,7 @@ export default function ServicesPage() {
       <FaqGroup
         id="services-faq"
         accessibleHeading={hub.faqHeading}
+        layout="columns"
         content={{ h2: hub.faqHeading, items: servicesHubContent.faq ?? [] }}
       />
 
@@ -153,44 +154,61 @@ export default function ServicesPage() {
       </Section>
 
       <div id="request-quote" className="scroll-mt-24">
-        <Section
-          tone="subtle"
-          density="spacious"
-          width="site"
-          labelledBy="services-quote-heading"
+        <section
+          data-tone="dark"
+          aria-labelledby="services-quote-heading"
+          className="relative isolate overflow-hidden bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:px-6 md:py-24"
         >
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-14">
-            <div>
-              <h2
-                id="services-quote-heading"
-                className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-              >
-                {hub.quote.h2}
-              </h2>
-              <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-                {hub.quote.intro}
-              </p>
-              <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-                {hub.quote.detail}
-              </p>
-              <div className="mt-8 flex flex-col items-start gap-3">
-                <p className="text-[length:var(--text-body)] text-ink-muted">
-                  {hub.quote.phoneLead}
+          {/* Decorative background photo under a 55% black overlay. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-final-cta-commercial-fleet-yard.webp"
+            alt=""
+            aria-hidden="true"
+            width={3344}
+            height={1882}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_50%]"
+          />
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
+          <div className="mx-auto max-w-[1280px]">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-14">
+              <div>
+                <h2
+                  id="services-quote-heading"
+                  className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
+                >
+                  {hub.quote.h2}
+                </h2>
+                <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
+                  {hub.quote.intro}
                 </p>
-                <PhoneButton
-                  href={utilityBar.phoneHref}
-                  label={utilityBar.phoneLabel}
-                  location="services-quote"
-                  className="border-ink bg-surface text-ink hover:bg-surface-subtle"
-                />
+                <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
+                  {hub.quote.detail}
+                </p>
+                <div className="mt-8 flex flex-col items-start gap-3">
+                  <p className="text-[length:var(--text-body)] text-[var(--color-text-on-dark)]/90">
+                    {hub.quote.phoneLead}
+                  </p>
+                  <PhoneButton
+                    href={utilityBar.phoneHref}
+                    label={utilityBar.phoneLabel}
+                    location="services-quote"
+                    className="border-white/60 bg-transparent text-white hover:bg-white/10"
+                  />
+                </div>
+              </div>
+
+              <div
+                data-tone="light"
+                className="rounded-lg border border-border bg-surface p-6 text-ink md:p-8"
+              >
+                <CommercialInquiryForm />
               </div>
             </div>
-
-            <div className="rounded-lg border border-border bg-surface p-6 md:p-8">
-              <CommercialInquiryForm />
-            </div>
           </div>
-        </Section>
+        </section>
       </div>
     </>
   );
