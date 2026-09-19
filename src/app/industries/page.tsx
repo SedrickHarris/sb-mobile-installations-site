@@ -175,6 +175,8 @@ export default function IndustriesPage() {
       <FaqGroup
         id="industries-faq"
         accessibleHeading={hub.faqHeading}
+        layout="columns"
+        intro={hub.faqIntro}
         content={{ h2: hub.faqHeading, items: industriesHubContent.faq ?? [] }}
       />
 

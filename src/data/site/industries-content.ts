@@ -54,32 +54,61 @@ export const industriesHubContent: InformationalPageContent = {
       question:
         "What types of commercial operations can request fleet installation support?",
       answer:
-        "SB Mobile Installations installs fleet technology on fleet, commercial, and construction vehicles. If your project involves those vehicles, you can request an installation quote.",
+        "SB Mobile Installations provides installation support for commercial fleets, logistics and delivery vehicles, field-service vehicles, construction vehicles, work vans, utility vehicles, and other approved commercial vehicle environments.",
+    },
+    {
+      question: "What types of fleet technology can SB Mobile Installations install?",
+      answer:
+        "Installation support may include GPS tracking, ELD and AOBRD systems, TPMS, fleet dashcams, and fleet-management equipment. The appropriate installation path depends on the equipment, vehicle type, project scope, and deployment requirements.",
     },
     {
       question: "How do I choose between an industry page and a service page?",
       answer:
-        "Choose an industry page to see how installation support applies to your fleet environment. Choose a service page to start from the equipment you need installed, such as GPS tracking, ELD, or dashcam hardware. If you are unsure, describe your project in a quote request.",
+        "Choose an industry page when you need information based on your vehicle environment or type of operation. Choose a service page when you already know the equipment or installation service you need, such as GPS tracking, ELD, dashcam, or fleet rollout support.",
     },
     {
       question: "Which industry page fits delivery vehicles or service trucks?",
       answer:
-        "Delivery vehicles, service trucks, and work vans are commercial fleet vehicles, so the Commercial Fleets page is the best starting point.",
-      link: {
-        label: "Commercial Fleets",
-        href: "/industries/commercial-fleets/",
-      },
+        "Delivery vehicles typically fit the Logistics & Delivery Fleets page. Service trucks, utility vehicles, and work vans typically fit the Field-Service Fleets page. Projects involving multiple vehicle types or locations may be better suited to the Commercial Fleets or Fleet Rollout Services page.",
+      links: [
+        {
+          label: "Logistics & Delivery Fleets",
+          href: "/industries/logistics-delivery-fleets/",
+        },
+        { label: "Field-Service Fleets", href: "/industries/field-service-fleets/" },
+        { label: "Commercial Fleets", href: "/industries/commercial-fleets/" },
+        { label: "Fleet Rollout Services", href: "/services/fleet-rollouts/" },
+      ],
+    },
+    {
+      question: "What information should I include in a fleet installation request?",
+      answer:
+        "Include the vehicle type, equipment type, number of vehicles, project locations, operating schedule, and preferred timeline. You do not need to have every detail finalized before contacting SB Mobile Installations. Share the information available so the project scope can be discussed.",
+    },
+    {
+      question: "Can SB Mobile Installations support a single vehicle installation?",
+      answer:
+        "Single-vehicle installation requests may be reviewed alongside larger fleet projects. Include the vehicle type, equipment, project location, and preferred timeline so the appropriate installation path can be determined.",
+    },
+    {
+      question: "Can installation support be planned for multiple vehicles or locations?",
+      answer:
+        "Yes. Multi-vehicle and multi-location projects can be reviewed as fleet rollout or deployment projects. Include the number of vehicles, locations, vehicle types, equipment, and preferred timeline so the project requirements can be evaluated.",
+      link: { label: "Fleet Rollout Services", href: "/services/fleet-rollouts/" },
     },
     {
       question: "Can a technology provider discuss a hardware deployment program?",
       answer:
-        "You can describe an installation request connected to a hardware deployment program in an installation quote. SB Mobile Installations provides installation and deployment support, not the underlying technology platform, and this does not imply a partnership, authorization, or certification.",
+        "Yes. Technology providers can use the Technology Provider Deployment Support page to describe a commercial vehicle hardware deployment project. SB Mobile Installations provides physical installation and deployment support; it is not the underlying technology platform, hardware manufacturer, or compliance consultant.",
+      link: {
+        label: "Technology Provider Deployment Support",
+        href: "/industries/telematics-technology-providers/",
+      },
     },
     {
-      question: "Where can I find nationwide coverage information?",
+      question: "Does SB Mobile Installations provide nationwide mobile installation support?",
       answer:
-        "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location. See the coverage page for details.",
-      link: { label: "Nationwide coverage", href: "/coverage/" },
+        "SB Mobile Installations provides nationwide mobile fleet installation support for qualified commercial vehicle projects. Project coordination depends on the vehicle types, equipment, locations, access requirements, timeline, and other details included in the installation request.",
     },
   ],
 };

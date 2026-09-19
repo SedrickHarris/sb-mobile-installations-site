@@ -260,6 +260,7 @@ export interface IndustriesHubPageContent {
     readonly cards: readonly HubRelatedCard[];
   };
   readonly faqHeading: string;
+  readonly faqIntro: string;
   readonly quote: {
     readonly eyebrow: string;
     readonly h2: string;

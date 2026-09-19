@@ -287,6 +287,8 @@ export const industriesHubPageContent: IndustriesHubPageContent = {
   },
 
   faqHeading: "Industry Support FAQs",
+  faqIntro:
+    "Have questions about choosing an industry page, selecting an installation service, or preparing a commercial fleet installation request? These answers explain where to begin and what information is useful to include.",
 
   quote: {
     eyebrow: "COMMERCIAL FLEET INSTALLATION SUPPORT",
