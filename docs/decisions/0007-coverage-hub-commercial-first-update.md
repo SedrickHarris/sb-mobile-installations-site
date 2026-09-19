@@ -49,6 +49,22 @@ Installer Network text link after the form.
 8. **FAQ.** Five visible questions. No `FAQPage` JSON-LD on `/coverage/`;
    schema stays WebPage plus BreadcrumbList.
 
+9. **Introduction section copy (amended 2026-09-19, later in the same
+   session).** The stakeholder supplied new copy for the `/coverage/`
+   introduction and asked for it to be used verbatim: H2 "Nationwide Mobile
+   Installation Support for Fleet and Commercial Vehicles", three paragraphs,
+   a four-item checklist, and the note "Service availability, scheduling, and
+   project logistics are confirmed for each request based on the vehicle type,
+   equipment, project scope, and installation location." This **supersedes
+   item 5 for that section only**: paragraph three ("Project details,
+   equipment requirements, scheduling, and site logistics are reviewed before
+   installation ...") and the note restore review and scheduling wording.
+   Item 5's sentence still governs the hero-adjacent request copy, the quote
+   section, and the FAQ. docs/01 sections 8.3 and 17 still list response,
+   scheduling, and review steps as unconfirmed, so that conflict remains open
+   until those sections are updated. The section keeps its decorative image
+   fallback because no introduction image or video exists yet.
+
 ## Not decided here
 
 Shared `CommercialInquiryForm` accessibility and analytics gaps (per-field
