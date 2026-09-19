@@ -535,6 +535,8 @@ Passenger vehicles were not named in the confirmation and stay unverified. Do no
 
 Do not publish an unsupported vehicle list merely because a device could technically be installed in that vehicle.
 
+> Confirmed by stakeholder, September 19, 2026 (decision 0007, claims row 58): work vans, service trucks, utility vehicles, and heavy-duty trucks are approved as vehicle-context examples. They are examples of common project contexts, not additional categories, and must appear with: "Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type." Vans, utility vehicles, and heavy-duty trucks in the list above are covered by this confirmation only in that wording. The rest of the list still requires verification.
+
 ---
 
 ## 13. Industries
