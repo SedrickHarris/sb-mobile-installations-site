@@ -1,3 +1,4 @@
+import { APPLY_PATH, INSTALLER_NETWORK_PATH, JOBS_INDEX_PATH } from "@/data/jobs/routes";
 import { business } from "@/data/site/business";
 import type { FooterColumn, NavItem } from "@/types/navigation";
 
@@ -30,16 +31,17 @@ export const mainNavigation: readonly NavItem[] = [
 
 /**
  * Header utility bar, above the primary nav. Phone number and hours are
- * confirmed facts; the Installer Network link keeps the secondary journey
- * visible without competing with the primary commercial CTA.
+ * confirmed facts; the current openings link keeps the recruitment journey
+ * visible without competing with the primary commercial CTA. The Installer
+ * Network is a separate, later path linked from the careers pages and footer.
  */
 export const utilityBar = {
   phoneLabel: business.telephone,
   phoneHref: `tel:${business.telephone.replace(/[^0-9+]/g, "")}`,
   reachLabel: "Nationwide Mobile Service",
-  installerNetwork: {
-    label: "Installer Network",
-    href: "/careers/mobile-installation-technician/",
+  openings: {
+    label: "Current Openings",
+    href: JOBS_INDEX_PATH,
   } satisfies NavItem,
 };
 
@@ -64,22 +66,24 @@ export const mobileNavigationCta: NavItem = {
  * Footer brand block. Plain text lines shown under the logo, above the phone
  * button. Hours and founding year are confirmed facts.
  *
- * No address, because the company publishes none and operates a mobile-only
- * model. No email, because none is verified for display. No social profiles,
- * because none are verified. See 01-business-source-of-truth.md sections 5.2
- * and 5.3.
+ * The corporate office address renders separately from `business.address`
+ * (section 5.3 and 33.4), not from this list. No email, because none is
+ * verified for display. No social profiles, because none are verified. See
+ * 01-business-source-of-truth.md sections 5.2 and 5.3.
  */
 export const footerBrandLines: readonly string[] = [
   "In business since 2011",
-  "Monday" + "–" + "Friday, 8:00 AM" + "–" + "6:00 PM",
+  "Monday-Friday, 8:00 AM-6:00 PM",
 ];
 
 /**
  * Footer navigation groups, rendered as four horizontal columns beside the
  * brand block on desktop. Only built routes appear. There is no About route,
- * so Company holds Our Process, Quality & Safety, and Resources. Installer
- * Network and commercial contact routes stay separate. No Apply link, because
- * no active opening exists.
+ * so Company holds Our Process, Quality & Safety, and Resources. The careers
+ * column keeps the journeys separate: the current openings and the Apply link
+ * (the active opening's own application page) come first, then the Installer
+ * Network, a registration for future opportunities, then the commercial
+ * contact route.
  */
 export const footerColumns: readonly FooterColumn[] = [
   {
@@ -121,10 +125,9 @@ export const footerColumns: readonly FooterColumn[] = [
     heading: "Careers & Legal",
     items: [
       { label: "Careers Overview", href: "/careers/" },
-      {
-        label: "Mobile Installation Technician",
-        href: "/careers/mobile-installation-technician/",
-      },
+      { label: "Current Openings", href: JOBS_INDEX_PATH },
+      { label: "Apply", href: APPLY_PATH },
+      { label: "Installer Network", href: INSTALLER_NETWORK_PATH },
       { label: "Contact", href: "/contact/" },
       { label: "FAQ", href: "/faq/" },
       { label: "Privacy Policy", href: "/privacy-policy/" },

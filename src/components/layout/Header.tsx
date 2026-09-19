@@ -44,13 +44,13 @@ export function Header() {
           </div>
 
           <Link
-            href={utilityBar.installerNetwork.href}
+            href={utilityBar.openings.href}
             data-journey="recruitment"
-            data-event="cta_installer_network_click"
+            data-event="cta_careers_click"
             data-cta-location="utility-bar"
             className="text-[var(--color-text-on-dark)] no-underline hover:underline"
           >
-            {utilityBar.installerNetwork.label}
+            {utilityBar.openings.label}
           </Link>
         </div>
       </div>
@@ -93,7 +93,7 @@ export function Header() {
         </div>
 
         <HeaderMobileMenu
-          items={[...mainNavigation, utilityBar.installerNetwork]}
+          items={[...mainNavigation, utilityBar.openings]}
           phone={{ href: utilityBar.phoneHref, label: utilityBar.phoneLabel }}
         />
       </div>

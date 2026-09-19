@@ -13,11 +13,21 @@ export const business = {
    * as prohibited wording. It applies to every customer-facing surface: page
    * copy, legal pages, metadata, and structured data values.
    *
-   * The registered entity is still SB Mobile Installations, LLC. That form is
-   * not published here and is not emitted in structured data. Do not add a
-   * legalName property to the Organization graph to carry it.
+   * The registered entity is still SB Mobile Installations, LLC, held in
+   * `legalEntityName` below for legal disclosures only. It is never used as the
+   * public name and is never emitted in structured data.
    */
   name: "SB Mobile Installations",
+
+  /**
+   * Sections 4.2 and 33.5. The registered legal entity, for legal and
+   * employment or contractor disclosures where the legal entity is required
+   * (for example the privacy policy and terms of use notices, subject to
+   * attorney review). Never page copy, headings, metadata, Open Graph, alt
+   * text, form labels, or job posting titles, and never a `legalName`,
+   * `name`, or `hiringOrganization` value in structured data.
+   */
+  legalEntityName: "SB Mobile Installations, LLC",
 
   /**
    * Production domain. Section 4 records this as approved for current-site
@@ -29,8 +39,53 @@ export const business = {
   /** Section 5.1. Canonical, stakeholder confirmed 2026-09-10. */
   telephone: "623-388-7352",
 
+  /**
+   * Section 5.3 and 33.4. Corporate office, approved 2026-09-19.
+   *
+   * Approved surfaces only: the footer, the contact page, careers pages,
+   * legal pages, Organization schema, and eligible JobPosting schema. Do not
+   * add it anywhere else without approval. It is not a walk-in installation
+   * facility and not a guarantee of local service, so never label it a shop,
+   * a service location, or a place to visit. No map, no directions, no
+   * LocalBusiness schema.
+   */
+  address: {
+    streetAddress: "8907 N 175th Ave",
+    addressLocality: "Waddell",
+    addressRegion: "AZ",
+    postalCode: "85355",
+    addressCountry: "US",
+  },
+
   /** Section 8.2. Nationwide, confirmed. Reach, not capacity. */
   areaServed: "United States",
+
+  /**
+   * Section 33, approved 2026-09-19. Facts for the current Mobile GPS, ELD,
+   * and AOBRD installation technician openings, so no page, form, or schema
+   * retypes them. Applicants are accepted nationwide, which is a fact separate
+   * from installation service reach and does not place any opening in a named
+   * market. The starting rate is never guaranteed income. There is no closing
+   * date, so no `validThrough` is ever derived from this block.
+   */
+  recruitment: {
+    roleTitle: "Mobile GPS, ELD, and AOBRD Installation Technician",
+    applicantsAcceptedNationwide: true,
+    engagement: "Independent contractor",
+    startingRate: {
+      amount: 1600,
+      currency: "USD",
+      unit: "WEEK",
+      display: "$1,600 per week",
+    },
+    travel: {
+      approximatePercent: 75,
+      stateToState: true,
+    },
+    experienceRequired: false,
+    trainingProvided: true,
+    closingDate: null,
+  },
 
   /**
    * Section 5.4. Confirmed hours. Time zone and holiday exceptions are still
@@ -72,3 +127,19 @@ export const business = {
     "Fleet management equipment installation",
   ] as const,
 } as const;
+
+/**
+ * The corporate office address as display lines: street, then city, state,
+ * and postal code. The one formatter every visible surface uses, so no page or
+ * component builds its own copy of the address.
+ */
+export function formatAddressLines(): readonly [string, string] {
+  const { streetAddress, addressLocality, addressRegion, postalCode } =
+    business.address;
+  return [streetAddress, `${addressLocality}, ${addressRegion} ${postalCode}`];
+}
+
+/** The corporate office address on one line, for running text. */
+export function formatAddressInline(): string {
+  return formatAddressLines().join(", ");
+}

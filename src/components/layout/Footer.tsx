@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { CorporateOffice } from "@/components/content/CorporateOffice";
 import { PhoneButton } from "@/components/layout/PhoneButton";
 import {
   footerBrandLines,
@@ -23,8 +24,11 @@ import { business } from "@/data/site/business";
  * profiles, because none are verified, which section 21 of
  * 20-component-inventory.md prohibits.
  *
- * No address and no map: the company publishes none and operates a mobile-only
- * model. See 01-business-source-of-truth.md section 5.3.
+ * The corporate office address is shown as plain text under the company
+ * lines through the shared `CorporateOffice` component, labelled "Corporate
+ * office" so it is not read as a walk-in installation facility. It comes from
+ * `business.address` (approved for the footer, section 33.4). No map, no
+ * directions, no link.
  *
  * Link targets are at least 44px high on mobile and compact on desktop, where
  * the 44px rule does not apply (docs/23 section on mobile touch targets).
@@ -65,6 +69,8 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
+            <CorporateOffice className="mt-3" />
 
             <PhoneButton
               href={utilityBar.phoneHref}

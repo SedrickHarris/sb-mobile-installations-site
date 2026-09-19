@@ -21,13 +21,17 @@ import { UMBRELLA_SERVICE_TYPE } from "@/lib/schema/service-page";
  * 13-schema-markup-plan.md.
  *
  * Deliberately absent, and not to be added:
- *   LocalBusiness   no physical address exists to satisfy required fields
+ *   LocalBusiness   not approved; the corporate office is not a service or
+ *                   walk-in location (01-business-source-of-truth.md 5.3)
  *   AggregateRating no reviews exist
  *   Review          no reviews exist
- *   JobPosting      no active job openings exist
- *   address / logo  no approved value
+ *   JobPosting      the homepage is never an opening page; JobPosting belongs
+ *                   only on an individual active-opening page
+ *   logo            no approved value
  *
- * See 01-business-source-of-truth.md sections 5.3 and 16.1, and
+ * The Organization node carries the approved corporate office address (see
+ * organization.ts). It is not a service market, so no areaServed accompanies
+ * it. See 01-business-source-of-truth.md sections 5.3, 16.1, and 33.4, and
  * 13-schema-markup-plan.md.
  */
 
