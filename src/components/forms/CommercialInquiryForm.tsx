@@ -16,6 +16,12 @@ const THANK_YOU_ROUTE = "/thank-you/service-request/";
  * business.serviceTypes, not a hardcoded list), vehicle/asset count, project
  * location(s), preferred timeline, project description, consent.
  *
+ * Layout: one column on mobile, two columns from the md breakpoint. Related
+ * fields share a row (name and email, phone and company, equipment and vehicle
+ * count, locations and timeline). The description, consent, and submit rows
+ * span both columns. Only the layout is grid; the DOM order, so keyboard and
+ * screen-reader order, is the same as a single column.
+ *
  * Never rendered on the same page/section as InstallerNetworkForm, and never
  * shares a submission handler with it. See CLAUDE.md section 4 and plan
  * section 5.
@@ -93,141 +99,149 @@ export function CommercialInquiryForm() {
         />
       </div>
 
-      <Field label="Name" htmlFor={`${formId}-name`} required>
-        <input
-          id={`${formId}-name`}
-          name="name"
-          type="text"
-          required
-          autoComplete="name"
-          value={fields.name}
-          onChange={(e) => update("name", e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+      <div className="grid gap-x-4 gap-y-5 md:grid-cols-2">
+        <Field label="Name" htmlFor={`${formId}-name`} required>
+          <input
+            id={`${formId}-name`}
+            name="name"
+            type="text"
+            required
+            autoComplete="name"
+            value={fields.name}
+            onChange={(e) => update("name", e.target.value)}
+            className={inputClass}
+          />
+        </Field>
 
-      <Field label="Email" htmlFor={`${formId}-email`} required>
-        <input
-          id={`${formId}-email`}
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-          value={fields.email}
-          onChange={(e) => update("email", e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+        <Field label="Email" htmlFor={`${formId}-email`} required>
+          <input
+            id={`${formId}-email`}
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            value={fields.email}
+            onChange={(e) => update("email", e.target.value)}
+            className={inputClass}
+          />
+        </Field>
 
-      <Field label="Phone" htmlFor={`${formId}-phone`} required>
-        <input
-          id={`${formId}-phone`}
-          name="phone"
-          type="tel"
-          required
-          autoComplete="tel"
-          value={fields.phone}
-          onChange={(e) => update("phone", e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+        <Field label="Phone" htmlFor={`${formId}-phone`} required>
+          <input
+            id={`${formId}-phone`}
+            name="phone"
+            type="tel"
+            required
+            autoComplete="tel"
+            value={fields.phone}
+            onChange={(e) => update("phone", e.target.value)}
+            className={inputClass}
+          />
+        </Field>
 
-      <Field label="Company" htmlFor={`${formId}-company`} required>
-        <input
-          id={`${formId}-company`}
-          name="company"
-          type="text"
-          required
-          autoComplete="organization"
-          value={fields.company}
-          onChange={(e) => update("company", e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+        <Field label="Company" htmlFor={`${formId}-company`} required>
+          <input
+            id={`${formId}-company`}
+            name="company"
+            type="text"
+            required
+            autoComplete="organization"
+            value={fields.company}
+            onChange={(e) => update("company", e.target.value)}
+            className={inputClass}
+          />
+        </Field>
 
-      <Field label="Equipment or service need" htmlFor={`${formId}-serviceNeed`} required>
-        <select
-          id={`${formId}-serviceNeed`}
-          name="serviceNeed"
-          required
-          value={fields.serviceNeed}
-          onChange={(e) => update("serviceNeed", e.target.value)}
-          className={inputClass}
-        >
-          <option value="">Select one</option>
-          {business.serviceTypes.map((service) => (
-            <option key={service} value={service}>
-              {service}
-            </option>
-          ))}
-        </select>
-      </Field>
+        <Field label="Equipment or service need" htmlFor={`${formId}-serviceNeed`} required>
+          <select
+            id={`${formId}-serviceNeed`}
+            name="serviceNeed"
+            required
+            value={fields.serviceNeed}
+            onChange={(e) => update("serviceNeed", e.target.value)}
+            className={inputClass}
+          >
+            <option value="">Select one</option>
+            {business.serviceTypes.map((service) => (
+              <option key={service} value={service}>
+                {service}
+              </option>
+            ))}
+          </select>
+        </Field>
 
-      <Field label="Number of vehicles or assets" htmlFor={`${formId}-vehicleCount`}>
-        <input
-          id={`${formId}-vehicleCount`}
-          name="vehicleCount"
-          type="text"
-          value={fields.vehicleCount}
-          onChange={(e) => update("vehicleCount", e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+        <Field label="Number of vehicles or assets" htmlFor={`${formId}-vehicleCount`}>
+          <input
+            id={`${formId}-vehicleCount`}
+            name="vehicleCount"
+            type="text"
+            value={fields.vehicleCount}
+            onChange={(e) => update("vehicleCount", e.target.value)}
+            className={inputClass}
+          />
+        </Field>
 
-      <Field label="Project location(s)" htmlFor={`${formId}-projectLocations`} required>
-        <input
-          id={`${formId}-projectLocations`}
-          name="projectLocations"
-          type="text"
-          required
-          value={fields.projectLocations}
-          onChange={(e) => update("projectLocations", e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+        <Field label="Project location(s)" htmlFor={`${formId}-projectLocations`} required>
+          <input
+            id={`${formId}-projectLocations`}
+            name="projectLocations"
+            type="text"
+            required
+            value={fields.projectLocations}
+            onChange={(e) => update("projectLocations", e.target.value)}
+            className={inputClass}
+          />
+        </Field>
 
-      <Field label="Preferred timeline" htmlFor={`${formId}-timeline`}>
-        <input
-          id={`${formId}-timeline`}
-          name="timeline"
-          type="text"
-          value={fields.timeline}
-          onChange={(e) => update("timeline", e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+        <Field label="Preferred timeline" htmlFor={`${formId}-timeline`}>
+          <input
+            id={`${formId}-timeline`}
+            name="timeline"
+            type="text"
+            value={fields.timeline}
+            onChange={(e) => update("timeline", e.target.value)}
+            className={inputClass}
+          />
+        </Field>
 
-      <Field label="Project description" htmlFor={`${formId}-description`}>
-        <textarea
-          id={`${formId}-description`}
-          name="description"
-          rows={4}
-          value={fields.description}
-          onChange={(e) => update("description", e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+        <div className="md:col-span-2">
+          <Field label="Project description" htmlFor={`${formId}-description`}>
+            <textarea
+              id={`${formId}-description`}
+              name="description"
+              rows={4}
+              value={fields.description}
+              onChange={(e) => update("description", e.target.value)}
+              className={inputClass}
+            />
+          </Field>
+        </div>
 
-      <label htmlFor={`${formId}-consent`} className="flex items-start gap-3 text-[length:var(--text-small)] text-ink-muted">
-        <input
-          id={`${formId}-consent`}
-          name="consent"
-          type="checkbox"
-          required
-          checked={fields.consent}
-          onChange={(e) => update("consent", e.target.checked)}
-          className="mt-1 size-5 shrink-0"
-        />
-        I consent to be contacted about this project.
-      </label>
+        <div className="md:col-span-2">
+          <label htmlFor={`${formId}-consent`} className="flex items-start gap-3 text-[length:var(--text-small)] text-ink-muted">
+            <input
+              id={`${formId}-consent`}
+              name="consent"
+              type="checkbox"
+              required
+              checked={fields.consent}
+              onChange={(e) => update("consent", e.target.checked)}
+              className="mt-1 size-5 shrink-0"
+            />
+            I consent to be contacted about this project.
+          </label>
+        </div>
 
-      <button
-        type="submit"
-        disabled={submitting}
-        className="inline-flex min-h-12 items-center justify-center rounded-md bg-[var(--color-accent-blue-strong)] px-6 py-3 text-base font-semibold text-white transition-[filter] duration-150 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        {submitting ? "Sending..." : "Request Installation Service"}
-      </button>
+        <div className="md:col-span-2">
+          <button
+            type="submit"
+            disabled={submitting}
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-[var(--color-accent-blue-strong)] px-6 py-3 text-base font-semibold text-white transition-[filter] duration-150 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {submitting ? "Sending..." : "Request Installation Service"}
+          </button>
+        </div>
+      </div>
 
       <div role="status" aria-live="polite" className="text-[length:var(--text-small)]">
         {status === "error" && errorMessage ? (
@@ -258,7 +272,7 @@ function Field({
   children: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex min-w-0 flex-col gap-1.5">
       <label htmlFor={htmlFor} className="text-[length:var(--text-small)] font-semibold text-ink">
         {label}
         {required ? <span aria-hidden="true"> *</span> : null}

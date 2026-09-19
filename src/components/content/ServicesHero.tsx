@@ -14,7 +14,14 @@ interface ServicesHeroProps {
   readonly primaryCta: Cta;
   readonly qualifier: string;
   readonly phone: { readonly href: string; readonly label: string };
-  readonly image: HubImageSlot;
+  /** Right-column image. Omit when the hero uses a background video instead. */
+  readonly image?: HubImageSlot;
+  /**
+   * Decorative looping background video under a 55% black overlay. The poster
+   * is the still frame shown while the video loads and, when the visitor
+   * prefers reduced motion, in place of the video.
+   */
+  readonly backgroundVideo?: { readonly src: string; readonly poster: string };
   /** Low-emphasis text link under the buttons, e.g. a rollout route. */
   readonly secondaryLink?: HubLink;
   /** Short scope strip below the hero columns. Confirmed claims only. */
@@ -50,6 +57,7 @@ export function ServicesHero({
   qualifier,
   phone,
   image,
+  backgroundVideo,
   secondaryLink,
   scopeItems,
   priorityImage = false,
@@ -63,10 +71,37 @@ export function ServicesHero({
     <section
       data-tone="dark"
       aria-labelledby={headingId}
-      className="bg-[var(--color-surface-dark)] px-5 py-12 text-[var(--color-text-on-dark)] md:px-6 md:py-20"
+      className={`${backgroundVideo ? "relative isolate overflow-hidden " : ""}bg-[var(--color-surface-dark)] px-5 py-12 text-[var(--color-text-on-dark)] md:px-6 md:py-20`}
     >
-      <div className="mx-auto grid max-w-[1280px] gap-10 md:grid-cols-2 md:items-center md:gap-16">
-        <div>
+      {backgroundVideo ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={backgroundVideo.poster}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
+          />
+          <video
+            aria-hidden="true"
+            tabIndex={-1}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={backgroundVideo.poster}
+            className="absolute inset-0 -z-20 h-full w-full object-cover motion-reduce:hidden"
+          >
+            <source src={backgroundVideo.src} type="video/mp4" />
+          </video>
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
+        </>
+      ) : null}
+      <div
+        className={`mx-auto max-w-[1280px] ${image ? "grid gap-10 md:grid-cols-2 md:items-center md:gap-16" : ""}`}
+      >
+        <div className={image ? "" : "max-w-[780px]"}>
           <h1
             id={headingId}
             className="text-[length:var(--text-h1)] leading-[1.08] font-bold text-balance text-[var(--color-text-on-dark)]"
@@ -108,7 +143,7 @@ export function ServicesHero({
           </p>
         </div>
 
-        <ImageSlot slot={image} priority={priorityImage} />
+        {image ? <ImageSlot slot={image} priority={priorityImage} /> : null}
       </div>
 
       {scopeItems && scopeItems.length > 0 ? (

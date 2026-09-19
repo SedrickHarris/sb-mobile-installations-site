@@ -17,6 +17,8 @@ export interface HubServiceCard {
   readonly title: string;
   readonly scope: string;
   readonly commonUse: string;
+  /** Optional decision-support sentence shown after the scope. */
+  readonly choose?: string;
   readonly linkLabel: string;
   readonly href: string;
   /** Decorative SB red top rule. Use on one or two cards at most. */
@@ -28,6 +30,8 @@ export interface HubServiceCard {
 /** One row of the "which service do I need" decision guide. */
 export interface HubDecisionRow {
   readonly situation: string;
+  /** Optional supporting sentence under the situation. */
+  readonly supporting?: string;
   readonly destination: string;
   readonly linkLabel: string;
   readonly href: string;
@@ -253,7 +257,7 @@ export interface ServicesHubPageContent {
     readonly callLabel: string;
     readonly qualifier: string;
   };
-  readonly answer: SectionContent;
+  readonly answer: HubSplitSection;
   readonly services: {
     readonly h2: string;
     readonly intro: string;
@@ -274,7 +278,10 @@ export interface ServicesHubPageContent {
   };
   readonly quote: {
     readonly h2: string;
+    /** First paragraph beside the form. */
     readonly intro: string;
+    /** Second paragraph beside the form. */
+    readonly detail: string;
     readonly phoneLead: string;
   };
 }

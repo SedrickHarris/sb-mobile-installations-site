@@ -68,6 +68,11 @@ export function ServiceNavGrid({ id, h2, intro, cards }: ServiceNavGridProps) {
                 <p className="mt-3 text-[length:var(--text-small)] leading-relaxed text-ink-muted">
                   {card.commonUse}
                 </p>
+                {card.choose ? (
+                  <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
+                    {card.choose}
+                  </p>
+                ) : null}
                 <Link
                   href={card.href}
                   className="mt-auto inline-flex min-h-11 items-center gap-2 pt-5 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"

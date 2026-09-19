@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { ContentSection } from "@/components/content/ContentSection";
 import { DecisionGuide } from "@/components/content/DecisionGuide";
 import { FaqGroup } from "@/components/content/FaqGroup";
 import { ServiceNavGrid } from "@/components/content/ServiceNavGrid";
@@ -61,10 +60,19 @@ export default function ServicesPage() {
           href: utilityBar.phoneHref,
           label: `${hub.hero.callLabel} ${utilityBar.phoneLabel}`,
         }}
-        image={servicesHubImages.hero}
+        backgroundVideo={{
+          src: "/images/services/services-hub-page/services-hub-hero/sb-mobile-installations-services-hub-commercial-fleet-installation-background.mp4",
+          poster:
+            "/images/services/services-hub-page/services-hub-hero/sb-mobile-installations-services-hub-commercial-fleet-installation-background.webp",
+        }}
       />
 
-      <ContentSection id="services-answer" content={hub.answer} />
+      <SplitFeature
+        id="services-answer"
+        content={hub.answer}
+        slot={servicesHubImages.answer}
+        mediaSide="left"
+      />
 
       <ServiceNavGrid
         id="services-grid"
@@ -94,7 +102,13 @@ export default function ServicesPage() {
         slot={servicesHubImages.nationwide}
       />
 
-      <SplitFeature id="services-intake" tone="subtle" content={hub.intake} />
+      <SplitFeature
+        id="services-intake"
+        tone="default"
+        content={hub.intake}
+        slot={servicesHubImages.intake}
+        mediaSide="left"
+      />
 
       <FaqGroup
         id="services-faq"
@@ -142,30 +156,39 @@ export default function ServicesPage() {
         <Section
           tone="subtle"
           density="spacious"
+          width="site"
           labelledBy="services-quote-heading"
         >
-          <h2
-            id="services-quote-heading"
-            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-          >
-            {hub.quote.h2}
-          </h2>
-          <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-            {hub.quote.intro}
-          </p>
-          <div className="mt-8">
-            <CommercialInquiryForm />
-          </div>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <p className="text-[length:var(--text-body)] text-ink-muted">
-              {hub.quote.phoneLead}
-            </p>
-            <PhoneButton
-              href={utilityBar.phoneHref}
-              label={utilityBar.phoneLabel}
-              location="services-quote"
-              className="border-ink bg-surface text-ink hover:bg-surface-subtle"
-            />
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-14">
+            <div>
+              <h2
+                id="services-quote-heading"
+                className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+              >
+                {hub.quote.h2}
+              </h2>
+              <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+                {hub.quote.intro}
+              </p>
+              <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+                {hub.quote.detail}
+              </p>
+              <div className="mt-8 flex flex-col items-start gap-3">
+                <p className="text-[length:var(--text-body)] text-ink-muted">
+                  {hub.quote.phoneLead}
+                </p>
+                <PhoneButton
+                  href={utilityBar.phoneHref}
+                  label={utilityBar.phoneLabel}
+                  location="services-quote"
+                  className="border-ink bg-surface text-ink hover:bg-surface-subtle"
+                />
+              </div>
+            </div>
+
+            <div className="rounded-lg border border-border bg-surface p-6 md:p-8">
+              <CommercialInquiryForm />
+            </div>
           </div>
         </Section>
       </div>

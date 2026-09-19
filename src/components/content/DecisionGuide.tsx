@@ -50,6 +50,11 @@ export function DecisionGuide({ id, h2, intro, rows }: DecisionGuideProps) {
               <p className="text-[length:var(--text-body-lg)] leading-snug font-semibold text-[var(--color-text-on-dark)]">
                 {row.situation}
               </p>
+              {row.supporting ? (
+                <p className="mt-2 text-[length:var(--text-body)] leading-relaxed text-[var(--color-text-on-dark)]/90">
+                  {row.supporting}
+                </p>
+              ) : null}
               <p className="mt-3 text-[length:var(--text-small)] text-[var(--color-text-on-dark)]/80">
                 Best starting point:{" "}
                 <span className="font-semibold text-[var(--color-text-on-dark)]">

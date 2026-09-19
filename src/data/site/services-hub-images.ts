@@ -28,17 +28,6 @@ export interface HubImageSlot {
 }
 
 export const servicesHubImages = {
-  hero: {
-    slotId: "services-hub-hero",
-    role: "Technician working inside a commercial fleet vehicle",
-    aspectRatio: "4 / 3",
-    width: 1600,
-    height: 1200,
-    fallback: "route",
-    alt: "",
-    altGuidance:
-      "Describe the technician and vehicle actually shown. Must not push the primary CTA below the fold on mobile.",
-  },
   capability: {
     slotId: "services-hub-capability",
     role: "Commercial truck or van, or a clean equipment installation detail",
@@ -49,6 +38,30 @@ export const servicesHubImages = {
     alt: "",
     altGuidance:
       "Describe the vehicle or equipment detail shown. Use only confirmed vehicle categories.",
+  },
+  answer: {
+    slotId: "services-hub-answer",
+    role: "Commercial vehicle cab with fleet technology equipment installed",
+    aspectRatio: "3318 / 1896",
+    width: 3318,
+    height: 1896,
+    fallback: "grid",
+    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-fleet-technology-cab-interior.webp",
+    alt: "Commercial vehicle cab with a dashcam and dash-mounted display installed",
+    altGuidance:
+      "Describe only what is shown. No device-brand logos and no coverage or market claim.",
+  },
+  intake: {
+    slotId: "services-hub-intake",
+    role: "Fleet management equipment being installed on a commercial vehicle",
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
+    fallback: "grid",
+    src: "/images/services/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp",
+    alt: "Fleet management equipment installation on a commercial vehicle",
+    altGuidance:
+      "Shows a technician handling mounted equipment at the open rear of a white van, with fleet trucks behind. Describe only what is shown. No device-brand logos and no coverage or market claim.",
   },
   nationwide: {
     slotId: "services-hub-nationwide",
