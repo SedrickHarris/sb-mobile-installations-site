@@ -1284,7 +1284,7 @@ Both claims flagged during the September 10, 2026 content update were raised wit
 | Project capacity, “one vehicle or an entire fleet” | Confirmed accurate. Retained in the copy as drafted | Section 11.1 |
 | Photo documentation | Confirmed accurate as a customer-facing deliverable, then confirmed again as automatic and unprompted. The copy states a delivery promise | Section 17.1 |
 
-As of September 10, 2026 the homepage carried no unverified claim. Its "no physical office" statements now conflict with the September 19, 2026 corporate office approval (section 33.4). The launch blockers recorded in `qa/homepage-verification-record.md` were the then-missing `/careers/` and `/services/` routes and the unconfirmed production domain. Those routes now exist in the repository. The production domain status is not re-verified here.
+As of September 10, 2026 the homepage carried no unverified claim. Its "no physical office" statements, which conflicted with the September 19, 2026 corporate office approval, were replaced on September 19, 2026 (section 33.4). The launch blockers recorded in `qa/homepage-verification-record.md` were the then-missing `/careers/` and `/services/` routes and the unconfirmed production domain. Those routes now exist in the repository. The production domain status is not re-verified here.
 
 The immediate priority is a structured business discovery interview covering the items above. Trust and proof content must be planned around the client's decision in section 16.1 rather than waiting on credentials that will not be published.
 
@@ -1355,7 +1355,7 @@ The corporate office is 8907 N 175th Ave, Waddell, AZ 85355. See section 5.3 for
 - Approved surfaces: the website footer, the contact page, careers pages, legal pages, `Organization` schema, and eligible `JobPosting` schema.
 - It is not a walk-in installation facility and not a guarantee of local service availability.
 - Possible shop locations may be mentioned only in the context of a specific assignment.
-- The homepage is unchanged by this update. Existing public copy that predates this approval still says the company has no physical office: the homepage About paragraph and the "Do you have a physical office?" FAQ answer in `homepage-content.ts`. Comment-only notes in `Footer.tsx` and `site-navigation.ts` say the company publishes no address. Those statements now conflict with this record. They were deliberately left unchanged, and they need a separate, approved change (including any page or schema that reuses that FAQ) before the address is published anywhere. Statements that there is no walk-in facility (for example in `process-content.ts`) remain accurate.
+- The homepage is not an approved surface for the address, so the address is not published there. On September 19, 2026 the homepage wording that said the company has no physical office was replaced, in the About paragraph and in the FAQ (now "Do you have a walk-in installation location?"), with statements that there is no walk-in installation facility. The same update changed the homepage recruiting wording to say that current openings exist, without an "Apply" action or a pay figure. The homepage FAQ also feeds the `FAQPage` structured data. Comment-only notes in `Footer.tsx` and `site-navigation.ts` still say the company publishes no address, and should be reconciled when the address is added to the footer. Statements that there is no walk-in facility (for example in `process-content.ts`) remain accurate.
 
 ### 33.5 Public name and entity
 

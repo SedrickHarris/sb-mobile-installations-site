@@ -12,12 +12,20 @@ import type { Cta, HomepageContent } from "@/types/content";
  * Facts used here and their source-of-truth status:
  *   In business since 2011  Approved, section 4 and 25
  *   Nationwide service      Approved, section 8.2
- *   No physical office      Approved, section 5.3
+ *   No walk-in facility     Approved, section 5.3. The Waddell corporate office
+ *                           (section 33.4) is not an approved homepage surface,
+ *                           so the address is not published here.
  *   Mon-Fri 8:00 AM-6:00 PM Approved, section 5.4
  *   Equipment scope         Approved by stakeholder 2026-09-10, section 9.1
  *   Vehicle scope           Approved by stakeholder 2026-09-10, section 12.1
  *   Platform experience     Approved by stakeholder 2026-09-10, section 14
  *   Contractor engagement   Approved by stakeholder 2026-09-10, section 7.2
+ *   Current installer       Approved by stakeholder 2026-09-19, section 33.1.
+ *   openings, candidates    Homepage wording states only that openings exist,
+ *   accepted nationwide     for independent contractors, with candidates accepted
+ *                           nationwide. No pay figure, no "Apply" action (the
+ *                           application page and form do not exist yet), and no
+ *                           claim that an opening is in a named market.
  *   Project capacity range  Approved by stakeholder 2026-09-10, section 11.1
  *   Photo documentation     Approved by stakeholder 2026-09-10, section 17.1
  *
@@ -65,7 +73,7 @@ export const homepageContent: HomepageContent = {
   },
 
   directAnswer: {
-    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has been in business since 2011 and works entirely on-site - there is no physical office location.",
+    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has been in business since 2011 and works on-site at the customer's location - there is no walk-in installation facility.",
   },
 
   whatWeInstall: {
@@ -246,15 +254,17 @@ export const homepageContent: HomepageContent = {
 
   recruitingBanner: {
     eyebrow: "INSTALLER OPPORTUNITIES",
-    // "Nationwide" for recruitment is a working assumption, pending written
-    // stakeholder approval. See docs/_claims-inventory.md item 27.
-    h2: "Join a Nationwide Mobile Installation Network",
-    body: "SB Mobile Installations connects experienced independent contractor technicians with GPS, ELD, and fleet-electronics installation opportunities at commercial and fleet locations across the country. If you have experience with vehicle electrical systems, telematics equipment, or mobile installation work, you can learn more about joining the installer network.",
+    // Current openings and nationwide candidates are approved (docs/01 section
+    // 33.1, claims inventory rows 27 and 48). This is not an application: no
+    // application page or form exists yet, so the copy says "register your
+    // interest" and never "apply". No pay figure appears on the homepage.
+    h2: "Current Openings for Mobile Installation Technicians",
+    body: "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. The work is independent contractor work, and candidates are accepted nationwide. If you have experience with vehicle electrical systems, telematics equipment, or mobile installation work, learn about the role and register your interest through the Installer Network.",
     highlights: [
-      "GPS, ELD, and fleet-electronics installation projects",
+      "GPS, ELD, and AOBRD installation work",
       "On-site work at fleet, commercial, and construction locations",
       "Independent contractor engagement",
-      "Nationwide project network",
+      "Candidates accepted nationwide",
     ],
     cta: JOIN_NETWORK_CTA,
     secondaryLink: {
@@ -317,7 +327,7 @@ export const homepageContent: HomepageContent = {
       },
     },
     installerNetwork: {
-      prompt: "Are you an experienced vehicle-electronics installer? Learn how to join the independent installer network.",
+      prompt: "Are you an experienced vehicle-electronics installer? We have current installer openings for independent contractors. Learn how to join the independent installer network.",
       link: {
         label: "Join the Installer Network",
         href: TECHNICIAN_ROLE_ROUTE,
@@ -358,7 +368,7 @@ export const homepageContent: HomepageContent = {
       {
         question: "Does SB Mobile Installations hire independent contractors?",
         answer:
-          "SB Mobile Installations works with independent contractor technicians nationwide on mobile installation projects, not W-2 employment positions. Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+          "Yes. SB Mobile Installations has current openings for independent contractor technicians, and candidates are accepted nationwide. These are independent contractor roles, not W-2 employment positions. Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
       },
       {
         question: "What experience is useful for mobile installation work?",
@@ -381,9 +391,9 @@ export const homepageContent: HomepageContent = {
           "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment, plus dashcam and windshield-mounted video recorder systems, on fleet, commercial, and construction vehicles.",
       },
       {
-        question: "Do you have a physical office?",
+        question: "Do you have a walk-in installation location?",
         answer:
-          "SB Mobile Installations operates as a mobile-only company with no physical office - technicians travel directly to each job site.",
+          "No. SB Mobile Installations technicians travel directly to the customer's location. There is no walk-in installation facility.",
       },
     ],
   },
