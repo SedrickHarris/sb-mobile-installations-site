@@ -116,7 +116,7 @@ export function TrustSection({ content, id, image }: TrustSectionProps) {
 
       <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 text-[length:var(--text-small)] text-ink-muted sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
         <p>{content.installerNetwork.prompt}</p>
-        <CtaButton cta={content.installerNetwork.link} emphasis="secondary" blockOnMobile />
+        <CtaButton cta={content.installerNetwork.link} emphasis="dark" blockOnMobile />
       </div>
     </Section>
   );

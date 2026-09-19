@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import type { Cta } from "@/types/content";
 
-type Emphasis = "primary" | "secondary";
+type Emphasis = "primary" | "secondary" | "dark";
 
 interface CtaButtonProps {
   readonly cta: Cta;
@@ -46,6 +46,17 @@ const emphasisClasses: Record<Emphasis, string> = {
     */
     "bg-surface text-ink border border-ink",
     "hover:bg-surface-subtle",
+    "shadow-none hover:shadow-card",
+  ].join(" "),
+  dark: [
+    /*
+      --color-ink (#111827) with white text, for a solid dark button on light
+      surfaces. Used for the Installer Network button so it stays distinct from
+      the blue commercial primary. Hover lifts the fill slightly and moves the
+      button, so the change is not color-only.
+    */
+    "bg-ink text-white border border-transparent",
+    "hover:brightness-125 active:brightness-100",
     "shadow-none hover:shadow-card",
   ].join(" "),
 };
