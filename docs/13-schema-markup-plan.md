@@ -1582,7 +1582,7 @@ Per-page schema, Sprint 1:
 
 `JobPosting` remains unadded pending an active, genuine job opening; none exists as of this date. Geo pages (`/coverage/*`, Sprint 2+) carry no `Service.areaServed` enumeration until Sprint 3+, when real, verified state/region coverage data exists. No `LocalBusiness` is emitted anywhere; no physical address is published.
 
-No `Service` node on any page carries `areaServed`, including a country-level value, until verified structured coverage data exists. Nationwide reach stays visible copy and the `/coverage/` page. The homepage `Service` carries a single umbrella `serviceType` ("Mobile fleet technology installation services") rather than a category list. Each `/services/*` page emits only the `serviceType` that matches its own visible purpose, and Fleet Rollouts omits it. See `docs/decisions/0005-service-page-template-and-work-wording.md`.
+No `Service` node on any page carries `areaServed`, including a country-level value, until verified structured coverage data exists. Nationwide reach stays visible copy and the `/coverage/` page. The homepage `Service` and the `/services/` hub `Service` each carry a single umbrella `serviceType` ("Mobile fleet technology installation services") rather than a category list. Neither carries `hoursAvailable`: the confirmed hours have no timezone and no approved schema purpose, so any published hours belong in visible contact and footer content. Each `/services/*` page emits only the `serviceType` that matches its own visible purpose, and Fleet Rollouts omits it. `/industries/`, `/careers/` and `/coverage/` emit no `Service`. See `docs/decisions/0005-service-page-template-and-work-wording.md`.
 
 ## 59. Maintenance
 

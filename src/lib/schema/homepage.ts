@@ -1,6 +1,7 @@
 import { business } from "@/data/site/business";
 import { homepageContent } from "@/data/site/homepage-content";
 import { organizationNode, organizationRef } from "@/lib/schema/organization";
+import { UMBRELLA_SERVICE_TYPE } from "@/lib/schema/service-page";
 
 /**
  * Structured data for the homepage.
@@ -15,8 +16,9 @@ import { organizationNode, organizationRef } from "@/lib/schema/organization";
  * homepage's broad commercial-overview purpose, not a list of equipment
  * categories, and no third-party platform names. It carries no areaServed,
  * not even Country "United States": nationwide reach stays visible copy and
- * the /coverage/ page until verified structured coverage data exists. See
- * decision 0005 and 13-schema-markup-plan.md.
+ * the /coverage/ page until verified structured coverage data exists. It
+ * also carries no hoursAvailable. See decision 0005 and
+ * 13-schema-markup-plan.md.
  *
  * Deliberately absent, and not to be added:
  *   LocalBusiness   no physical address exists to satisfy required fields
@@ -32,9 +34,6 @@ import { organizationNode, organizationRef } from "@/lib/schema/organization";
 const WEBPAGE_ID = `${business.url}/#webpage`;
 const WEBSITE_ID = `${business.url}/#website`;
 
-/** One umbrella label for the homepage Service. Not a category list. */
-const HOMEPAGE_SERVICE_TYPE = "Mobile fleet technology installation services";
-
 function website() {
   return {
     "@type": "WebSite",
@@ -49,14 +48,14 @@ function service() {
   return {
     "@type": "Service",
     name: business.serviceName,
-    serviceType: HOMEPAGE_SERVICE_TYPE,
+    serviceType: UMBRELLA_SERVICE_TYPE,
     provider: organizationRef(),
-    hoursAvailable: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [...business.hours.days],
-      opens: business.hours.opens,
-      closes: business.hours.closes,
-    },
+    /*
+      No hoursAvailable. The confirmed hours have no timezone, and a service
+      schedule is not a schema purpose anyone approved. Any published hours
+      belong in visible contact and footer content until the owner confirms
+      the exact hours, the timezone, and what the hours represent.
+    */
   };
 }
 

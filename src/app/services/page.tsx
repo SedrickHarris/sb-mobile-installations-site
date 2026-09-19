@@ -15,12 +15,14 @@ import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { Card } from "@/components/ui/Card";
 import { utilityBar } from "@/data/navigation/site-navigation";
-import { business } from "@/data/site/business";
 import { servicesHubContent } from "@/data/site/services-content";
 import { servicesHubImages } from "@/data/site/services-hub-images";
 import { servicesHubPageContent as hub } from "@/data/site/services-hub-content";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
-import { servicePageSchema } from "@/lib/schema/service-page";
+import {
+  servicePageSchema,
+  UMBRELLA_SERVICE_TYPE,
+} from "@/lib/schema/service-page";
 
 const PATHNAME = "/services/";
 const BREADCRUMBS = [{ label: "Home", href: "/" }, { label: "Services" }];
@@ -43,7 +45,7 @@ export default function ServicesPage() {
         schema={servicePageSchema({
           pathname: PATHNAME,
           content: servicesHubContent,
-          serviceTypes: [...business.serviceTypes],
+          serviceTypes: UMBRELLA_SERVICE_TYPE,
           breadcrumbs: BREADCRUMBS,
         })}
       />

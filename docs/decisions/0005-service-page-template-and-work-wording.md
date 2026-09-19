@@ -57,11 +57,20 @@ per-service copy. Three points needed a decision.
 
 ## Consequences
 
-- The homepage `Service` node previously emitted `areaServed` and the six-item
-  category list. A follow-up commit removed `areaServed` and replaced the list
-  with one umbrella `serviceType`, "Mobile fleet technology installation
-  services", so the whole site follows the same rule. `hoursAvailable` and the
-  visible nationwide copy are unchanged.
+- The homepage `Service` node previously emitted `areaServed`, the six-item
+  category list, and `hoursAvailable`. Follow-up commits removed `areaServed`
+  and `hoursAvailable` and replaced the list with one umbrella `serviceType`,
+  "Mobile fleet technology installation services", so the whole site follows
+  the same rule. The services hub `Service` likewise carries that single
+  umbrella value instead of its six-item list. Visible nationwide copy is
+  unchanged.
+- `hoursAvailable` was removed because the confirmed hours have no timezone and
+  no approved schema purpose. To publish hours in structured data later, the
+  owner must confirm the exact hours, the timezone, what the hours represent
+  (office, phone, installation, dispatch, or service availability), and that
+  the same statement is visible to users.
+- Point 4 above ("serviceType mapping") applies to the five individual service
+  pages. The homepage and the hub use the single umbrella value.
 - `/faq/` now includes the Fleet Rollouts FAQs, which were missing, and the new
   distinct per-page FAQs.
 - The old page `body` paragraphs no longer render. The platform-name list, the
