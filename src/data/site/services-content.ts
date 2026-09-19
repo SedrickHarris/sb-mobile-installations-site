@@ -83,9 +83,9 @@ export const servicesHubContent: ServicePageContent = {
 };
 
 export const fleetTelematicsInstallationContent: ServicePageContent = {
-  h1: "Fleet Telematics Installation Services",
+  h1: "Fleet Telematics Installation",
   metaDescription:
-    "On-site installation of GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment for fleet, commercial, and construction vehicles nationwide.",
+    "Learn about mobile fleet telematics installation for commercial vehicle projects. Request an installation quote and share your equipment, vehicle count, project locations, and preferred timing.",
   intro:
     "SB Mobile Installations provides mobile installation support for approved connected fleet hardware, including GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment, on fleet, commercial, and construction vehicles. Technicians travel to your location. Share your equipment, vehicle count, project locations, and preferred timing to start an installation conversation.",
   body: [],
@@ -110,6 +110,17 @@ export const fleetTelematicsInstallationContent: ServicePageContent = {
       question: "Which service page should I start with?",
       answer:
         "Start with the page for your equipment: GPS Tracking Installation, ELD Installation, or Dashcam & Camera Installation. If your project includes several equipment types or many vehicles, start with this page or with Fleet Rollout Services.",
+    },
+    {
+      question:
+        "What vehicle types can be part of a telematics installation project?",
+      answer:
+        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
+    },
+    {
+      question: "Can I request installation at our project location?",
+      answer:
+        "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location. Share your project locations in the quote request.",
     },
   ],
 };

@@ -10,6 +10,7 @@ import { PhoneButton } from "@/components/layout/PhoneButton";
 import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { Card } from "@/components/ui/Card";
+import { CtaButton } from "@/components/ui/CtaButton";
 import { servicePageSchema } from "@/lib/schema/service-page";
 import type { ServicePageBundle } from "@/types/service-content";
 
@@ -22,8 +23,8 @@ interface ServicePageTemplateProps {
  * page with a direct quote path. Every section is rendered from typed data,
  * so no copy, phone number, or route lives in this file.
  *
- * Order: hero, definition, scope, vehicle context, fit guide, nationwide
- * project-location context, documentation, related services, FAQ, quote
+ * Order: hero, definition, scope, vehicle context, fit guide, optional
+ * mid-page quote CTA, nationwide project-location context, documentation, related services, FAQ, quote
  * form, resources, and a single low-emphasis Installer Network text link
  * after the form. The recruiting link is never above the form, and no
  * Installer Network form appears on these commercial pages.
@@ -36,6 +37,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
   const { page, content, shared, primaryCta, phone, heroImage, contextImage } =
     bundle;
   const id = content.slug;
+  const handoff = content.handoff ?? shared.handoff;
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
@@ -88,6 +90,27 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
       />
 
       <SplitFeature id={`${id}-fit`} tone="subtle" content={content.fit} />
+
+      {content.midCtaHeading ? (
+        <Section
+          tone="default"
+          density="compact"
+          labelledBy={`${id}-mid-cta-heading`}
+        >
+          <h2
+            id={`${id}-mid-cta-heading`}
+            className="text-[length:var(--text-h3)] leading-[1.15] font-bold text-balance text-ink"
+          >
+            {content.midCtaHeading}
+          </h2>
+          <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+            {shared.heroQualifier}
+          </p>
+          <div className="mt-6">
+            <CtaButton cta={primaryCta} emphasis="primary" blockOnMobile />
+          </div>
+        </Section>
+      ) : null}
 
       <SplitFeature
         id={`${id}-nationwide`}
@@ -211,14 +234,14 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
 
       <Section tone="default" density="compact">
         <p className="text-[length:var(--text-body)] text-ink-muted">
-          {shared.handoff.question}{" "}
+          {handoff.question}{" "}
           <Link
-            href={shared.handoff.link.href}
+            href={handoff.link.href}
             data-journey="recruitment"
             data-event="cta_installer_network_click"
             className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
           >
-            {shared.handoff.link.label}
+            {handoff.link.label}
           </Link>
         </p>
       </Section>

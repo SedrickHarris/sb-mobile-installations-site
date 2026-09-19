@@ -86,6 +86,15 @@ export interface ServiceTemplateContent {
   readonly related: readonly string[];
   readonly faqHeading: string;
   readonly quoteH2: string;
+  /**
+   * Optional commercial CTA band after the fit section. Renders only when set,
+   * so pages that do not opt in keep their current layout. The button reuses
+   * the bundle's primary CTA and its analytics event; the supporting line is
+   * the shared hero qualifier.
+   */
+  readonly midCtaHeading?: string;
+  /** Page-level handoff wording. Falls back to `ServiceTemplateShared.handoff`. */
+  readonly handoff?: { readonly question: string; readonly link: HubLink };
 }
 
 /** Blocks that are the same on every service page. */

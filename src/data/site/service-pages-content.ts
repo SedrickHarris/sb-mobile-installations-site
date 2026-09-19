@@ -11,6 +11,7 @@ import {
   type ServiceSlug,
 } from "@/data/site/service-pages-images";
 import type {
+  HubLink,
   HubRelatedCard,
   HubSplitSection,
   ServicePageBundle,
@@ -149,6 +150,12 @@ const serviceCards: Record<ServiceSlug, HubRelatedCard> = {
 
 const FIT_NOTE = "These are general signals, not compliance or technical advice.";
 
+/** A related-service link built from the approved card taxonomy above. */
+function cardLink(slug: ServiceSlug): HubLink {
+  const card = serviceCards[slug];
+  return { label: card.linkLabel, href: card.href };
+}
+
 /** The four scope items, worded for one hardware description. */
 function installScope(hardware: string): HubSplitSection {
   return {
@@ -182,9 +189,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     definition: {
       h2: "What Is Fleet Telematics Installation?",
       body: [
-        "Fleet telematics installation is the physical mounting, connection, and routing work required to place approved connected fleet hardware into commercial vehicles.",
-        "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment. We install and deploy the hardware; we are not the platform vendor.",
-        "To scope a project, we need to know the equipment, the vehicle count, the project locations, and your preferred timing.",
+        "Fleet telematics installation is the physical mounting, connection, and routing work required to place approved connected fleet hardware into commercial vehicles. SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment. To scope a project, we need to know the equipment, the vehicle count, the project locations, and your preferred timing.",
       ],
     },
     scope: {
@@ -198,7 +203,9 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "Because this service spans several equipment categories, a project may involve more than one type of hardware across your fleet, commercial, and construction vehicles.",
     fit: {
       h2: "When Fleet Telematics Installation May Be a Fit",
-      body: [],
+      body: [
+        "Use these related service pages to find the most relevant starting point for your installation request.",
+      ],
       listPanel: true,
       lists: [
         {
@@ -211,6 +218,20 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
         },
       ],
       footnotes: [FIT_NOTE],
+      links: [
+        cardLink("gps-tracking-installation"),
+        cardLink("eld-installation"),
+        cardLink("dashcam-camera-installation"),
+        cardLink("fleet-rollouts"),
+      ],
+    },
+    midCtaHeading: "Need installation support for a fleet telematics project?",
+    handoff: {
+      question: "Are you an experienced mobile fleet installation technician?",
+      link: {
+        label: "Learn about the SB Mobile Installations Installer Network",
+        href: shared.handoff.link.href,
+      },
     },
     nationwideExtra:
       "Include your project location or locations, vehicle count, and preferred timeline when requesting an installation quote.",
