@@ -23,7 +23,7 @@ const textLinkClasses =
  * Two-column intro (image left, text right; the text comes first in the DOM
  * so reading order survives the single-column collapse), then four compact
  * benefit blocks, a fleet-manager list beside the commercial CTA panel, and
- * one visually secondary Installer Network link below a divider.
+ * one visually secondary Installer Network button below a divider.
  *
  * The customer quote CTA and the technician-network link are separate
  * journeys with separate routes and events. All copy comes from
@@ -114,16 +114,9 @@ export function TrustSection({ content, id, image }: TrustSectionProps) {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-1 border-t border-border pt-6 text-[length:var(--text-small)] text-ink-muted sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
+      <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 text-[length:var(--text-small)] text-ink-muted sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
         <p>{content.installerNetwork.prompt}</p>
-        <Link
-          href={content.installerNetwork.link.href}
-          data-journey={content.installerNetwork.link.journey}
-          data-event={content.installerNetwork.link.event}
-          className={`${textLinkClasses} text-ink hover:text-[var(--color-accent-blue-strong)]`}
-        >
-          {content.installerNetwork.link.label}
-        </Link>
+        <CtaButton cta={content.installerNetwork.link} emphasis="secondary" blockOnMobile />
       </div>
     </Section>
   );
