@@ -193,12 +193,23 @@ Tailwind theme values, never scattered hex literals.
 
 ## 10. Git
 
-`main` is the default and production branch. Work and commit directly on `main`;
-feature branches and pull requests are not required. Commit format is `type(scope): imperative summary` using the allowed
-types in `docs/18-github-workflow.md` section 13.
+`main` is the default working branch and the production branch. Solo development is
+done directly on `main`. When a task authorizes committing, commit directly to `main`.
+Feature branches and pull requests are optional for solo work. Use a branch or pull
+request only when collaboration, code review, or a GitHub protection rule requires one.
+The full workflow is in `docs/18-github-workflow.md` section 8.
 
-**State Git authorization explicitly in every task.** Claude Code commits, pushes,
-or opens pull requests only when the task says so.
+Commit format is `type(scope): imperative summary` using the allowed types in
+`docs/18-github-workflow.md` section 13.
+
+**State Git authorization explicitly in every task.** Direct commits to `main` are the
+approved workflow, but they are not authorized for every task. Claude Code commits,
+pushes, or opens pull requests only when the task says so. Authorization to commit does
+not authorize pushing.
+
+Run the validation in section 11 before committing to `main`. Do not describe branch
+protection, GitHub Actions, required status checks, or Cloudflare deployment as active
+unless they have been verified.
 
 Note: the current GitHub credential lacks the `workflow` scope. Adding files under
 `.github/workflows/` requires `gh auth refresh -s workflow` first.

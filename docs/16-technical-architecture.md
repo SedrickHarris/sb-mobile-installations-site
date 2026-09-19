@@ -1746,11 +1746,13 @@ Exact commands must match the installed framework and lint/test tooling. Avoid r
 ### Branch model
 
 - `main` represents the production source state.
-- Feature or content branches support review and Cloudflare previews.
+- Direct commits to `main` are the approved solo workflow. Feature or content branches are optional and support review and Cloudflare previews when they are used.
 - Emergency fixes still require a traceable commit.
 - Do not develop directly in generated `out/` files.
 
 ### Pull request requirements
+
+Applies when a pull request is used. Pull requests are optional for solo work.
 
 - concise change summary;
 - affected routes and systems;
@@ -1766,7 +1768,9 @@ Exact commands must match the installed framework and lint/test tooling. Avoid r
 
 ### Protected branch recommendations
 
-- require pull request before merge;
+These recommendations apply when collaboration or external review requires them. A pull request requirement blocks direct pushes, so it is not applied while one maintainer works directly on `main`. Whether any protection is configured has not been verified.
+
+- require pull request before merge, when pull requests are required;
 - require passing status checks;
 - require branch to be current where appropriate;
 - prevent force pushes and deletion;

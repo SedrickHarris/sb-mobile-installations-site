@@ -8,8 +8,8 @@
 **Deployment integration:** GitHub to Cloudflare Pages  
 **Primary development tools:** Visual Studio Code, Claude, and Claude Code  
 **Status:** Repository governance and implementation draft  
-**Version:** 0.1  
-**Last updated:** September 10, 2026
+**Version:** 0.2  
+**Last updated:** September 19, 2026
 
 ---
 
@@ -40,6 +40,14 @@ It governs:
 
 The workflow must protect production without creating unnecessary process. Business truth, candidate privacy, build integrity, and recoverability take precedence over commit volume or development speed.
 
+### Approved workflow summary
+
+The approved workflow for solo development is:
+
+> Work directly on `main`. Feature branches and pull requests are optional and are only required when collaboration, external review, or a specific GitHub protection rule makes them necessary.
+
+Section 8 defines this workflow in full. Where a later section describes branches, pull requests, reviews, or merges, that section applies only when a branch or pull request is actually in use. Nothing in this document makes a pull request mandatory for solo work.
+
 ---
 
 ## 2. Workflow Objectives
@@ -47,13 +55,13 @@ The workflow must protect production without creating unnecessary process. Busin
 The GitHub workflow must:
 
 1. Keep `main` in a deployable state.
-2. Make every production change traceable to an author, purpose, review, and test result.
-3. Prevent failed builds from reaching the production branch.
+2. Make every production change traceable to an author, purpose, and test result, and to a review when a review takes place.
+3. Keep failed builds from reaching the production branch by running local validation before every push to `main`, and by required status checks where they exist.
 4. Support safe Cloudflare preview deployments.
 5. Separate development, publication, and indexation decisions.
 6. Protect business, applicant, customer, and credential data.
 7. Allow urgent job changes without bypassing source-of-truth validation.
-8. Support a solo maintainer initially and stronger multi-person review when collaborators are added.
+8. Support a solo maintainer working directly on `main`, and stronger multi-person review with branches and pull requests when collaborators are added.
 9. Make AI-assisted changes reviewable at the same standard as manually written changes.
 10. Support fast, understandable rollback through Git history and Cloudflare deployments.
 
@@ -163,7 +171,8 @@ The decision must address:
 - Must not contain secrets or applicant/customer data.
 - Must not be force-pushed.
 - Must not be deleted.
-- Must receive changes through the approved pull-request workflow except a documented emergency exception.
+- Must receive changes through direct commits for solo work, or through pull requests when a pull request is in use (see section 8).
+- Must pass local validation before any push (see section 16).
 - Must match the intended production source state after any Cloudflare rollback.
 
 `main` is not a place for unfinished experiments or partially resolved merge conflicts.
@@ -172,23 +181,29 @@ The decision must address:
 
 ## 7. Solo-Friendly Governance
 
-The project may begin with one primary builder. GitHub review rules must protect the repository without making it impossible for the sole authorized maintainer to merge.
+The project begins with one primary builder who works directly on `main`. GitHub rules must protect the repository without making it impossible for the sole authorized maintainer to commit and push.
 
-### Initial recommended configuration
+### Recommended configuration for solo work
 
-- Require a pull request before merging where the repository plan supports it.
-- Require passing status checks.
-- Require conversation resolution.
 - Block force pushes.
 - Block branch deletion.
-- Use squash merge.
+- Do not require a pull request while one maintainer works directly on `main`.
+- Require passing status checks only after a quality workflow exists and has run successfully.
 - Do not require a second-person approval until an authorized reviewer exists.
+- Use squash merge for any pull request that is opened.
 - Require business approval through an issue, checklist, or recorded signoff for business-critical facts even if GitHub cannot enforce that approval technically.
+
+If a GitHub ruleset or protection rule ever requires pull requests on `main`, that rule blocks direct pushes. The maintainer then uses a branch and pull request until the rule is changed, and the rule, not this document, determines the flow.
+
+### Verified repository state
+
+At the time of this revision, `.github/` contains only an issue template placeholder. No workflow, pull request template, CODEOWNERS file, or Dependabot configuration exists in the repository. Whether GitHub branch protection, rulesets, required status checks, or a Cloudflare Pages Git connection are configured has not been verified from the repository. Do not describe any of them as active until they are confirmed.
 
 ### Multi-person upgrade
 
-When another qualified reviewer is added:
+When another qualified reviewer or collaborator is added, branches and pull requests become the expected route for changes, and the repository should:
 
+- require pull requests before merge;
 - require at least one approving review;
 - dismiss stale approvals after material new commits;
 - require review of the most recent change by someone other than its author where useful;
@@ -201,28 +216,60 @@ The absence of a required GitHub reviewer does not authorize publishing unverifi
 
 ## 8. Development Model
 
-### Standard flow
+### Approved solo workflow (default)
+
+`main` is the default working branch and the production branch. Routine solo development is performed directly on `main`.
 
 ```text
-Issue or scoped task
-    -> update local main
+Scoped task
+    -> sync local main (git pull --ff-only origin main)
+    -> implement in VS Code / Claude Code
+    -> run local checks
+    -> review the full diff
+    -> commit focused changes to main (when the task authorizes committing)
+    -> push main (when the task authorizes pushing)
+    -> verify the deployment, if a Cloudflare Pages connection is confirmed
+```
+
+Rules for direct work on `main`:
+
+- Commit directly to `main` only when the task authorizes committing. Authorization to commit does not authorize pushing, and neither is implied by any other task. State Git authorization in every task.
+- Run local validation before committing, and again before pushing if the code changed. Do not commit or push known failing work.
+- Treat every push to `main` as a production change once Cloudflare Pages is connected to `main`.
+- Never force-push `main`.
+- Use the commit format in section 13.
+
+### Optional branch and pull request workflow
+
+Feature branches and pull requests are optional for solo work. Use them when:
+
+- a collaborator contributes changes;
+- an external reviewer or stakeholder needs to review a change before it reaches `main`;
+- a GitHub ruleset or protection rule requires a pull request;
+- a change is large or risky enough to justify a separate review or a Cloudflare preview; or
+- the task asks for a branch or pull request.
+
+```text
+Scoped task
+    -> sync local main
     -> create working branch
     -> implement in VS Code / Claude Code
     -> run local checks
     -> commit focused changes
-    -> push branch
-    -> Cloudflare preview + GitHub checks
+    -> push branch (when authorized)
+    -> open pull request, with a Cloudflare preview and GitHub checks where they exist
     -> review and approval
     -> squash merge to main
-    -> Cloudflare production deployment
     -> production verification
 ```
+
+Sections 11, 12, 17 (branch push), 21 to 27, and 55 describe this optional flow. They apply only when a branch or pull request is in use.
 
 ### Working principles
 
 - Start with a defined outcome.
 - Keep changes small enough to review.
-- Do not mix unrelated fixes in one pull request.
+- Do not mix unrelated fixes in one commit or pull request.
 - Preserve user changes in a dirty worktree.
 - Validate business facts before implementation.
 - Verify generated output rather than trusting the build command alone.
@@ -262,6 +309,8 @@ npm ci
 npm run check
 ```
 
+`package.json` currently defines `typecheck`, `lint`, and `build` and does not define a `check` script. Until a combined `check` script exists, run those three scripts and every other validation that exists.
+
 If the repository has not been scaffolded, follow the approved initialization task rather than inventing a different framework or package manager.
 
 ### Visual Studio Code
@@ -286,7 +335,7 @@ Recommended workspace behavior:
 
 ## 10. Synchronizing Before Work
 
-Before creating a branch:
+Before starting work on `main` or creating a branch:
 
 ```bash
 git switch main
@@ -297,7 +346,7 @@ git status
 ### Rules
 
 - Use fast-forward-only pulls on `main`.
-- Do not begin new work on an outdated branch intentionally.
+- Do not begin new work on an outdated `main` or branch intentionally.
 - Do not discard uncommitted user changes.
 - Stash only when the contents and recovery path are understood.
 - Do not use destructive reset commands as routine cleanup.
@@ -306,6 +355,8 @@ git status
 ---
 
 ## 11. Branch Naming
+
+Branches are optional for solo work. This section applies only when a branch is used.
 
 ### Format
 
@@ -341,6 +392,8 @@ git status
 ---
 
 ## 12. Creating a Branch
+
+Optional. Skip this section when working directly on `main`.
 
 ```bash
 git switch main
@@ -414,6 +467,7 @@ chore(deps): update supported patch releases
 - Do not claim tests passed unless they were run.
 - Do not use meaningless summaries such as `updates`, `fix`, or `changes`.
 - Avoid mixing formatting-only rewrites with behavior changes.
+- Commit directly to `main` only when the task authorizes committing. Authorization to commit does not authorize pushing.
 
 ---
 
@@ -478,11 +532,13 @@ git commit -m "docs(project): add GitHub workflow"
 
 ## 16. Local Quality Gate
 
-Before pushing a review-ready branch, run:
+Before pushing to `main`, or pushing a review-ready branch, run:
 
 ```bash
 npm run check
 ```
+
+Until a combined `check` script exists, run `npm run typecheck`, `npm run lint`, and `npm run build`, plus every other validation that exists. Report actual results and never claim a check passed without running it.
 
 The complete check should include:
 
@@ -500,7 +556,7 @@ The complete check should include:
 
 ### Changed-area tests
 
-Also run relevant focused tests while developing. The full check remains required before merge.
+Also run relevant focused tests while developing. The full check remains required before pushing to `main` or merging.
 
 ### Manual review
 
@@ -516,7 +572,17 @@ Automation does not replace:
 
 ---
 
-## 17. Pushing a Branch
+## 17. Pushing
+
+### Pushing `main`
+
+When the task authorizes pushing:
+
+```bash
+git push origin main
+```
+
+### Pushing a branch (optional workflow)
 
 ```bash
 git push -u origin docs/github-workflow
@@ -534,7 +600,7 @@ git push
 - Do not force-push shared branches without coordination.
 - Never force-push `main`.
 - Use `--force-with-lease` rather than `--force` only when rewriting an unmerged personal branch is necessary and understood.
-- Do not push known failing work as review-ready.
+- Do not push known failing work to `main` or as review-ready.
 - Draft pull requests may contain incomplete work when clearly marked and safe for preview.
 
 ---
@@ -663,7 +729,7 @@ Milestones represent outcomes, not arbitrary dates. Assign target dates only aft
 
 ## 21. Pull Request Standard
 
-Every standard production change should use a pull request.
+Pull requests are optional for solo work. When a pull request is used, it follows this standard.
 
 ### Pull request title
 
@@ -701,7 +767,7 @@ Large foundational pull requests require a clear file map and staged review orde
 
 ## 22. Pull Request Template
 
-Recommended `.github/pull_request_template.md`:
+Recommended `.github/pull_request_template.md`, to be created only if pull requests are used regularly. No such template exists yet:
 
 ```md
 ## Summary
@@ -756,6 +822,8 @@ Adapt the template after the actual scripts and review workflow exist.
 
 ## 23. Draft Pull Requests
 
+Applies only when pull requests are used.
+
 Use a draft pull request when:
 
 - early feedback would prevent rework;
@@ -777,6 +845,8 @@ GitHub does not automatically request CODEOWNERS review for a draft until it bec
 ---
 
 ## 24. Review Responsibilities
+
+This section applies whenever a review takes place, whether on a pull request or on a change committed directly to `main`. For direct commits, the author self-review below is required before committing.
 
 ### Author self-review
 
@@ -853,7 +923,7 @@ Required conversation resolution may be enabled on `main` protection.
 
 ### Recommended method
 
-Use **squash merge** for ordinary pull requests.
+Use **squash merge** for ordinary pull requests when a pull request is used.
 
 Benefits:
 
@@ -879,12 +949,12 @@ Include the reason or issue reference when it adds long-term value.
 
 ---
 
-## 27. Post-Merge Procedure
+## 27. Post-Merge and Post-Push Procedure
 
-After merge:
+After a merge, or after a push to `main`:
 
-1. Delete the merged branch.
-2. Monitor the Cloudflare production build.
+1. Delete the merged branch, if a branch was used.
+2. Monitor the Cloudflare production build when a Cloudflare Pages connection is confirmed.
 3. Confirm the deployed commit SHA.
 4. Run the affected production smoke tests.
 5. Verify forms, search controls, and analytics when relevant.
@@ -895,7 +965,7 @@ After merge:
 ```bash
 git switch main
 git pull --ff-only origin main
-git branch -d docs/github-workflow
+git branch -d docs/github-workflow   # only if a branch was used
 ```
 
 Do not delete an unmerged branch until its work is intentionally abandoned or preserved elsewhere.
@@ -904,18 +974,23 @@ Do not delete an unmerged branch until its work is intentionally abandoned or pr
 
 ## 28. Protected `main` Configuration
 
-Use a GitHub ruleset or branch protection rule supported by the repository plan.
+Use a GitHub ruleset or branch protection rule supported by the repository plan. Whether any such rule is configured has not been verified from the repository.
 
-### Initial required settings
+### Recommended settings for solo work
 
 - target branch: `main`;
-- require pull request before merge where feasible;
-- require status checks;
-- require conversation resolution;
-- require linear history;
 - block force pushes;
-- block deletion; and
+- block deletion;
+- require status checks once a quality workflow exists and has run successfully; and
 - restrict bypass to the repository owner or designated emergency role.
+
+### Settings that apply when pull requests are used or required
+
+- require pull request before merge;
+- require conversation resolution; and
+- require linear history.
+
+A rule that requires pull requests blocks direct pushes to `main`. Enable it when collaboration, external review, or a stakeholder decision requires it, and not while a single maintainer works directly on `main`.
 
 ### Review setting
 
@@ -923,7 +998,7 @@ Choose based on team capacity:
 
 | Team state | Required approval setting |
 |---|---|
-| One authorized maintainer | Automated checks required; business approval recorded separately; do not create an impossible self-review gate |
+| One authorized maintainer | Automated checks required once they exist; business approval recorded separately; do not create an impossible self-review gate |
 | Two or more qualified reviewers | Require at least one approval |
 | Sensitive integration/security changes | Require designated technical/code-owner approval where plan supports it |
 
@@ -942,7 +1017,7 @@ Requiring a branch to be current with `main` reduces merge integration risk but 
 
 ## 29. Required Status Checks
 
-Recommended required checks:
+Recommended required checks, to be configured only after the corresponding workflow exists. No workflow exists in the repository yet:
 
 | Check | Purpose |
 |---|---|
@@ -967,7 +1042,7 @@ GitHub warns that duplicate job names across workflows can make required status 
 
 ## 30. GitHub Actions Quality Workflow
 
-Recommended `.github/workflows/quality.yml` baseline:
+Recommended `.github/workflows/quality.yml` baseline. No workflow file exists yet, and adding one requires a GitHub credential with the `workflow` scope (see `CLAUDE.md` section 10):
 
 ```yaml
 name: quality
@@ -1108,7 +1183,7 @@ If Cloudflare Pages remains the sole deployment engine, do not create unused Git
 
 ## 34. Cloudflare Pages Integration
 
-Follow `17-cloudflare-deployment.md`.
+Follow `17-cloudflare-deployment.md`. Whether a Cloudflare Pages Git connection exists has not been verified from the repository.
 
 ### Required integration behavior
 
@@ -1118,7 +1193,7 @@ Follow `17-cloudflare-deployment.md`.
 - preview deployments do not use production forms or analytics.
 - Cloudflare check runs are visible in GitHub.
 - a failed production build does not replace the current production deployment.
-- the production deployment is verified after merge.
+- the production deployment is verified after a merge or a push to `main`.
 
 ### Required-check caution
 
@@ -1195,7 +1270,7 @@ Require heightened review for:
 - security and privacy pages; and
 - scripts that publish or transform content.
 
-The pull request must describe security, privacy, search, deployment, and rollback impact for these paths.
+The commit message, or the pull request when one is used, must describe security, privacy, search, deployment, and rollback impact for these paths.
 
 ---
 
@@ -1215,9 +1290,9 @@ Changes to these values require an approval reference:
 - certifications, partnerships, testimonials, and case studies; and
 - applicant-data and privacy statements.
 
-### Pull request requirement
+### Approval reference requirement
 
-Include the non-sensitive approval source, such as:
+Include the non-sensitive approval source in the commit message, or in the pull request when one is used, such as:
 
 - approved issue number;
 - decision-log entry;
@@ -1236,12 +1311,12 @@ Active jobs require an expedited but controlled workflow.
 
 1. Create a `type:job` issue from approved intake.
 2. Confirm actual opening, job ID, hiring entity, location, classification, terms, application route, and dates.
-3. Create a `job/` branch.
+3. Work on `main`, or create a `job/` branch when a branch or pull request is used.
 4. Add the typed record and content.
 5. Run job, schema, route, sitemap, and application tests.
-6. Review the Cloudflare preview.
+6. Review the Cloudflare preview when one exists.
 7. Record recruiting/business approval.
-8. Merge after required checks.
+8. Commit to `main` (or merge the pull request) after required checks pass.
 9. Verify production and external platform consistency.
 
 ### Update a job
@@ -1254,13 +1329,13 @@ Active jobs require an expedited but controlled workflow.
 
 ### Close a job
 
-1. Create a focused `job/close-...` or `hotfix/close-...` branch.
+1. Make a focused change on `main`, or on a `job/close-...` or `hotfix/close-...` branch when a branch is used.
 2. Set status to closed in the source record.
 3. Disable application for that job.
 4. Remove active JobPosting schema and sitemap eligibility.
 5. Add accurate closed-state alternatives.
 6. Run the full job lifecycle check.
-7. Merge and monitor production.
+7. Commit or merge, and monitor production.
 8. Update external recruitment platforms.
 
 Never leave a job active because the normal content calendar is delayed.
@@ -1274,12 +1349,12 @@ Never leave a job active because the normal content calendar is delayed.
 1. Open or reference the content issue.
 2. Confirm target query, audience, page purpose, and next action.
 3. Verify facts and sources.
-4. Create a `content/` or `seo/` branch.
+4. Work on `main`, or on a `content/` or `seo/` branch when a branch or pull request is used.
 5. Update content and affected metadata/schema/internal links.
 6. Run content and build validation.
-7. Review preview at mobile and desktop widths.
+7. Review at mobile and desktop widths, using the preview when one exists.
 8. Obtain required factual approval.
-9. Merge and verify production.
+9. Commit to `main` (or merge) and verify production.
 10. Record substantive review date when appropriate.
 
 ### Content review rules
@@ -1296,7 +1371,7 @@ Never leave a job active because the normal content calendar is delayed.
 
 ### Document changes
 
-- Use `docs/` branches when documentation is the only change.
+- Documentation-only changes may be committed directly to `main`. Use a `docs/` branch only when a branch or pull request is used.
 - Keep filenames and numbering consistent with `00-project-overview.md`.
 - Update dependent documents when a decision changes.
 - Do not let code contradict an approved source-of-truth document silently.
@@ -1311,14 +1386,14 @@ When a material decision changes:
 2. update the governing document;
 3. update dependent implementation docs;
 4. update code and tests where applicable;
-5. explain migration and rollback in the pull request; and
+5. explain migration and rollback in the commit message or pull request; and
 6. do not rewrite history to hide the previous decision.
 
 ---
 
 ## 41. AI-Assisted Development
 
-Claude and Claude Code may assist with research, content, coding, refactoring, testing, and review. The repository owner remains responsible for every merged change.
+Claude and Claude Code may assist with research, content, coding, refactoring, testing, and review. The repository owner remains responsible for every change committed to `main`.
 
 ### Required AI workflow
 
@@ -1329,7 +1404,7 @@ Claude and Claude Code may assist with research, content, coding, refactoring, t
 5. Review the complete diff.
 6. Run project checks independently.
 7. inspect factual claims, URLs, dependencies, and security behavior.
-8. Test the preview and affected user journey.
+8. Test the affected user journey, using the preview when one exists.
 9. Commit only the approved result.
 
 ### Do not provide to AI tools
@@ -1381,6 +1456,7 @@ Every implementation prompt should specify:
 
 Unless the task explicitly requests it, Claude Code should not:
 
+- commit to `main`;
 - push to GitHub;
 - merge a pull request;
 - alter Cloudflare production settings;
@@ -1389,6 +1465,8 @@ Unless the task explicitly requests it, Claude Code should not:
 - publish an unverified job;
 - connect preview forms to production systems; or
 - remove unrelated work.
+
+Direct commits to `main` are the approved solo workflow, but they are not automatically authorized for every task. Each task must state whether commit and push are authorized. Authorization to commit does not authorize pushing, opening a pull request, or deploying.
 
 ---
 
@@ -1471,7 +1549,7 @@ Thumbs.db
 - no hidden EXIF/location or private metadata remains when unnecessary;
 - no applicant/customer identity appears without approval;
 - no duplicate oversized originals are deployed; and
-- the pull request reports material size impact.
+- the commit message or pull request reports material size impact.
 
 ### Git LFS
 
@@ -1557,16 +1635,16 @@ Configure Dependabot only after deciding:
 - labels; and
 - whether lockfile-only updates are acceptable.
 
-### Dependency pull requests
+### Dependency change documentation
 
-Must include:
+Every dependency change, whether committed directly or through a pull request, must include, in the commit message or pull request:
 
 - reason for update;
 - release-note or advisory link;
 - breaking-change assessment;
 - static build result;
 - regression test result;
-- preview review; and
+- preview review, when a preview exists; and
 - rollback plan.
 
 Do not merge dependency updates solely because an automated check is green.
@@ -1692,12 +1770,12 @@ Follow `17-cloudflare-deployment.md` for the production deployment rollback. Aft
 ### Procedure
 
 1. Open or record an incident.
-2. Create `hotfix/[description]` from current `main`.
+2. Work from current `main`. A `hotfix/[description]` branch is optional.
 3. Make the smallest safe change.
 4. Run the highest-value relevant tests and full check when time permits.
-5. Create a pull request and obtain review when an authorized reviewer is available.
-6. Use bypass only if the delay creates greater harm.
-7. Merge and monitor Cloudflare production.
+5. Obtain review when an authorized reviewer is available. Use a pull request if a protection rule requires one or if a review is wanted.
+6. Use a protection bypass only if a rule blocks the change and the delay creates greater harm.
+7. Commit or merge, and monitor Cloudflare production when a Cloudflare Pages connection is confirmed.
 8. Verify the affected journey.
 9. Record any skipped tests or controls.
 10. Complete follow-up review and prevention work.
@@ -1728,6 +1806,7 @@ Use a full deployment rollback only when the release has broader serious defects
 ### Principles
 
 - Update the branch from `main` before final merge when necessary.
+- When working directly on `main`, use `git pull --ff-only origin main`. If it cannot fast-forward, stop and resolve the divergence deliberately before committing or pushing.
 - Resolve conflicts based on current business truth and architecture, not mechanically.
 - Re-run tests after conflict resolution.
 - Re-review generated job, schema, metadata, redirect, and lockfile conflicts carefully.
@@ -1763,7 +1842,7 @@ Recommended files:
     └── quality.yml
 ```
 
-Add only templates that the team will use. Empty or redundant forms create friction without governance value.
+Add only templates that the team will use. Empty or redundant forms create friction without governance value. A pull request template is needed only if pull requests are used regularly.
 
 ---
 
@@ -1820,7 +1899,7 @@ GitHub is the canonical source platform, but continuity requires more than a loc
 - at least one current authorized local clone;
 - business-controlled administrator or handoff path;
 - documented Cloudflare connection;
-- protected `main`;
+- `main` protection, where configured;
 - releases or known-good commit references;
 - dependency lockfile;
 - environment-variable inventory without secret values;
@@ -1920,6 +1999,8 @@ Small sample sizes require qualitative review. Fast merging is not successful wh
 
 ### Pull requests
 
+Apply these only when pull requests are required or used regularly.
+
 - Require branch protection/ruleset.
 - Require conversations resolved.
 - Require status checks.
@@ -1950,7 +2031,7 @@ Small sample sizes require qualitative review. Fast merging is not successful wh
 4. Who is the backup administrator?
 5. Who may merge to `main`?
 6. Is there an authorized second reviewer at launch?
-7. Will pull requests be required during the initial solo build?
+7. Will pull requests be required during the initial solo build? Resolved: no. Pull requests are optional for solo work (section 8). Revisit when a collaborator or external reviewer is added.
 8. Which checks will be required by name?
 9. Will strict up-to-date branch checks be required?
 10. Will rulesets or classic branch protection be used?
@@ -1974,6 +2055,8 @@ Do not silently choose ownership, approval, publication, or security decisions. 
 ---
 
 ## 64. Implementation Checklist
+
+This checklist describes the recommended full configuration. An item is verified only when it is checked. Items about pull requests, review, and CODEOWNERS apply only when pull requests are used.
 
 ### Ownership and access
 
@@ -2053,7 +2136,7 @@ The GitHub workflow is implemented when:
 - appropriate branch protection or rulesets are active;
 - force pushes and deletion are blocked;
 - required checks run successfully and have stable unique names;
-- pull requests use the approved template;
+- pull requests, when used, use the approved template;
 - issue forms support bugs, content, and job changes;
 - solo or multi-person approval rules match actual team capacity;
 - sensitive paths receive appropriate review;
@@ -2062,7 +2145,7 @@ The GitHub workflow is implemented when:
 - secrets and applicant/customer data are absent from repository content and logs;
 - dependency and security-alert processes are assigned;
 - Cloudflare previews are connected and isolated from production systems;
-- squash merge and post-merge verification are practiced;
+- squash merge, when pull requests are used, and post-merge or post-push verification are practiced;
 - job publication and closure have a controlled rapid workflow;
 - rollback uses traceable Git changes rather than destructive history rewriting;
 - emergency bypass has a documented owner and audit process;

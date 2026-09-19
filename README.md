@@ -1,27 +1,82 @@
 # SB Mobile Installations Website
 
-Website rebuild and installer recruitment project for **SB Mobile Installations, LLC**, a mobile
-fleet-technology installation company serving commercial, fleet, and construction vehicles
+Website implementation and Installer Network recruitment project for **SB Mobile Installations, LLC**,
+a mobile fleet-technology installation company serving commercial, fleet, and construction vehicles
 nationwide.
 
-## Status
+The site has two separate journeys:
 
-Planning and documentation phase. This repository currently contains the project's strategy and
-specification documents. No application code has been written yet.
+- **Commercial:** operators of commercial, fleet, and construction vehicles learn about installation
+  services and request a quote.
+- **Installer Network:** independent contractor technicians learn about the network and register
+  interest. The network is a future-opportunity pathway, is kept separate from commercial inquiries
+  in routes, forms, data, and analytics events, and guarantees no contact, interview, employment,
+  contract, assignment, schedule, work volume, or pay.
 
-## Planned stack
+## Current implementation status
+
+This is an active implementation repository. It contains application code alongside the strategy
+and specification documents. Verified from the repository contents:
+
+| Area | What exists |
+| --- | --- |
+| Homepage | `src/app/page.tsx`, with homepage content, metadata, and schema modules |
+| Services | Services hub and five service pages: fleet telematics, GPS tracking, ELD, dashcam and camera, fleet rollouts, rendered through one `ServicePageTemplate` |
+| Industries | Industries hub and five industry pages |
+| Installer Network | `/careers/`, `/careers/mobile-installation-technician/`, and `/careers/installer-network-received/` |
+| Supporting pages | Coverage, process, quality and safety, FAQ, resources hub and articles, case studies route, contact, thank-you, accessibility, privacy policy, and terms |
+| Shared components | Layout, content, UI, form, hero, and schema components under `src/components/` |
+| Structured content | Typed content and data modules under `src/data/` and `src/types/` |
+| SEO and schema | Metadata helpers, JSON-LD builders for organization, web page, breadcrumbs, homepage, service pages, careers, and articles, plus `sitemap.ts` and `robots.ts` |
+| Forms | `CommercialInquiryForm` and `InstallerNetworkForm`, posting to an external endpoint set by `NEXT_PUBLIC_FORMS_ENDPOINT` |
+| Styling and config | Tailwind CSS styles in `src/styles/`, plus Next.js, TypeScript, ESLint, and PostCSS configuration |
+| Assets | Brand logos, homepage hero media, service and "why choose us" images, and icons under `public/` |
+| Prompts | Research, build, QA, and SEO prompt files in `prompts/` |
+| SEO automation | Node scripts in `seo-automation/scripts/` for route scanning, keyword CSV parsing, clustering, opportunity scoring, and a pipeline runner |
+| Documentation | Numbered strategy and specification documents, decision records, and a QA record in `docs/` |
+
+Not present or not verified from the repository:
+
+- `scripts/` holds placeholder directories only. There is no test runner and no content, job,
+  schema, or link validation script in `package.json`.
+- `src/data/jobs/` is empty, so no job data exists in the repository.
+- No `functions/` directory, Wrangler configuration, `_headers`, or `_redirects` file is present.
+  Cloudflare Pages deployment is specified in `docs/17-cloudflare-deployment.md`, but this README
+  does not claim that deployment, Cloudflare configuration, analytics, or production publication is
+  complete.
+- Analytics event names are defined in `src/lib/analytics/events.ts`. Whether analytics is live is
+  not verified here.
+
+## Technology stack
 
 | Layer | Choice |
 | --- | --- |
-| Framework | Next.js (App Router) |
+| Framework | Next.js (App Router), static export (`output: "export"` in `next.config.ts`) |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
-| Hosting | Cloudflare Pages |
-| Trusted backend | Cloudflare Workers / Pages Functions |
+| Source control | GitHub |
+| Hosting | Cloudflare Pages (target, see `docs/17-cloudflare-deployment.md`) |
+| Trusted backend | Cloudflare Workers or Pages Functions where applicable. The static export contains no server routes, so form handling relies on an external trusted endpoint configured through `NEXT_PUBLIC_FORMS_ENDPOINT` |
+
+Node version is pinned in `.nvmrc` (Node 22).
+
+## Local development
+
+Install dependencies with npm (`package-lock.json` is committed), then copy `.env.example` to
+`.env.local`. Commands defined in `package.json`:
+
+```bash
+npm run dev         # start the local development server
+npm run typecheck   # TypeScript check (tsc --noEmit)
+npm run lint        # ESLint
+npm run build       # production build (static export)
+```
+
+Run `typecheck`, `lint`, and `build` before treating a change as complete.
 
 ## Documentation
 
-All planning documents live in [`docs/`](docs/) and are numbered in reading order.
+All planning and specification documents live in [`docs/`](docs/) and are numbered in reading order.
 
 | Range | Topic |
 | --- | --- |
@@ -35,6 +90,9 @@ All planning documents live in [`docs/`](docs/) and are numbered in reading orde
 | 25–27 | Quality assurance, launch checklist, post-launch growth |
 | 28–31 | Recruitment strategy, distribution, job schema, operations |
 
+Unnumbered material in `docs/`: the claims inventory (`_claims-inventory.md`), stakeholder
+confirmation questions, and the `decisions/`, `qa/`, `briefs/`, and `research/` folders.
+
 Two documents govern the rest:
 
 - [`docs/01-business-source-of-truth.md`](docs/01-business-source-of-truth.md) is the canonical
@@ -42,11 +100,20 @@ Two documents govern the rest:
 - [`docs/18-github-workflow.md`](docs/18-github-workflow.md) defines branching, commits, review,
   and release rules for this repository.
 
+[`CLAUDE.md`](CLAUDE.md) holds the operating instructions for Claude and Claude Code in this
+repository. The project documents in `docs/` take priority over any tool or plugin guidance.
+
 ## Contributing
 
-`main` is the default and production branch. Work happens on feature branches and merges through
-pull requests. Commit messages follow `type(scope): imperative summary`. See the GitHub workflow
-document for the full standard.
+`main` is the default working branch and the production branch. Solo development is done
+directly on `main`, and commits go to `main` when a task authorizes committing. Feature
+branches and pull requests are optional. Use them only when collaboration, code review, or a
+GitHub protection rule requires them.
+
+Commit messages follow `type(scope): imperative summary`. Run `npm run typecheck`,
+`npm run lint`, and `npm run build` before committing. Git authorization (commit, push, pull
+request) is stated per task and is never assumed. See [`CLAUDE.md`](CLAUDE.md) and
+[`docs/18-github-workflow.md`](docs/18-github-workflow.md) for the full standard.
 
 ## Secrets
 

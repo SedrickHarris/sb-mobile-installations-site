@@ -263,7 +263,7 @@ Exclude noisy, archived, or automated branches that do not require a preview.
 ### Production protection
 
 - Only `main` may be selected as the production branch.
-- GitHub branch protection and required checks should prevent unreviewed changes from reaching `main`.
+- GitHub branch protection and required checks can prevent failing or unreviewed changes from reaching `main` where they are configured. For solo work, local validation before each push to `main` is the minimum gate. Whether branch protection is configured has not been verified.
 - Cloudflare account users must not change the production branch without an approved architecture or incident decision.
 - Record production-branch changes in the decision log.
 
@@ -313,7 +313,7 @@ Where `check` performs type checking, linting, tests, content validation, schema
 
 - GitHub Actions runs the complete quality suite.
 - Cloudflare runs `npm run build`.
-- GitHub branch protection requires quality checks before merge.
+- GitHub branch protection requires quality checks before merge, where branch protection is configured and pull requests are used.
 
 Pattern B avoids repeating every expensive test in Cloudflare, but Cloudflare must still fail on build-time content and route errors. Select one documented production gate and keep local, GitHub, and Cloudflare Node/dependency versions aligned.
 
