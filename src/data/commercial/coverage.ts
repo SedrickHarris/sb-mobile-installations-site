@@ -70,11 +70,37 @@ export const coverage = {
       // "In business since 2011" is confirmed (docs/_claims-inventory.md row 11),
       // but a one-item trust row reads as isolated, so no trust row renders.
     },
+    // Stakeholder-supplied copy (2026-09-19, decision 0007 item 9). It restores
+    // the scheduling and review wording that docs/01 sections 8.3 and 17 still
+    // list as unconfirmed, so keep this text exactly as supplied.
     introSection: {
-      h2: "What Does Nationwide Mobile Installation Mean?",
+      h2: "Nationwide Mobile Installation Support for Fleet and Commercial Vehicles",
       body: [
-        "Nationwide mobile installation service, delivered at the customer's location.",
-        `Share your equipment, vehicle count, project locations, and preferred timing to discuss an installation request. ${AVAILABILITY_SENTENCE}`,
+        "SB Mobile Installations provides nationwide mobile fleet installation services for fleet operators, commercial vehicle owners, and construction companies. Installation support is coordinated at the customer's approved location, including fleet yards, commercial vehicle sites, construction operations, and other project locations.",
+        "Our installation scope includes GPS tracking systems, ELD and AOBRD equipment, fleet dashcams, TPMS, and other commercial vehicle electronics. Projects can range from a single vehicle to a larger fleet deployment, depending on the equipment, vehicle types, site conditions, and project requirements.",
+        "Mobile coordination helps reduce the need to move vehicles to a walk-in facility. Project details, equipment requirements, scheduling, and site logistics are reviewed before installation so the work can be organized around the customer's operational needs.",
+      ],
+      lists: [
+        {
+          style: "checklist",
+          items: [
+            "Single-vehicle and fleet deployment support",
+            "Installation at approved customer locations",
+            "GPS, ELD, AOBRD, dashcam, and TPMS installation",
+            "Support for fleet, commercial, and construction vehicles",
+          ],
+        },
+      ],
+      footnotes: [
+        "Service availability, scheduling, and project logistics are confirmed for each request based on the vehicle type, equipment, project scope, and installation location.",
+      ],
+      links: [
+        { label: "Explore fleet installation services", href: "/services/" },
+        {
+          label: "Explore industry-specific installation support",
+          href: "/industries/",
+        },
+        { label: "Request an Installation Quote", href: "#request-quote" },
       ],
     },
     requestStart: {

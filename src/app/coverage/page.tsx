@@ -68,6 +68,8 @@ export default function CoveragePage() {
 
       <SplitFeature
         id="coverage-intro"
+        eyebrow="NATIONWIDE COVERAGE"
+        density="compact"
         content={page.introSection}
         slot={coverageImages.intro}
         mediaSide="left"

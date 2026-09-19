@@ -28,6 +28,23 @@ interface SplitFeatureProps {
   readonly mediaFirstOnMobile?: boolean;
   /** "narrow" gives the media column about 45% of the row instead of 50%. */
   readonly mediaShare?: "even" | "narrow";
+  /** Vertical padding of the section. Defaults to the Section default. */
+  readonly density?: "compact" | "standard" | "spacious";
+  /**
+   * Optional animated media for the media column, used in place of `slot`'s
+   * image. Muted, looping, inline, no preload, hidden from assistive tech
+   * unless `label` is set. The poster always renders beneath the video and is
+   * what reduced-motion users and blocked-autoplay browsers see. Width and
+   * height reserve the box so nothing shifts when the media loads.
+   */
+  readonly video?: {
+    readonly src: string;
+    readonly poster: string;
+    readonly width: number;
+    readonly height: number;
+    /** Accessible name when the video carries information. Omit when decorative. */
+    readonly label?: string;
+  };
 }
 
 /**
@@ -49,8 +66,11 @@ export function SplitFeature({
   align = "center",
   mediaFirstOnMobile = false,
   mediaShare = "even",
+  density,
+  video,
 }: SplitFeatureProps) {
   const headingId = `${id}-heading`;
+  const hasMedia = Boolean(slot ?? video);
   const dark = tone === "dark";
 
   const heading = dark
@@ -64,10 +84,15 @@ export function SplitFeature({
     : "text-[var(--color-accent-blue-strong)]";
 
   return (
-    <Section tone={tone} width={slot ? "site" : "reading"} labelledBy={headingId}>
+    <Section
+      tone={tone}
+      width={hasMedia ? "site" : "reading"}
+      density={density}
+      labelledBy={headingId}
+    >
       <div
         className={
-          slot
+          hasMedia
             ? `grid gap-10 md:gap-16 ${
                 mediaShare === "narrow"
                   ? mediaSide === "left"
@@ -80,7 +105,7 @@ export function SplitFeature({
             : ""
         }
       >
-        <div className={slot && mediaSide === "left" ? "md:order-2" : ""}>
+        <div className={hasMedia && mediaSide === "left" ? "md:order-2" : ""}>
           {eyebrow ? (
             <p
               className={`mb-3 text-[length:var(--text-label)] font-semibold tracking-wide uppercase ${
@@ -168,13 +193,47 @@ export function SplitFeature({
           ) : null}
         </div>
 
-        {slot ? (
+        {hasMedia ? (
           <div
             className={`${mediaFirstOnMobile ? "order-first md:order-none " : ""}${
               align === "top" ? "md:sticky md:top-24" : ""
             }`}
           >
-            <ImageSlot slot={slot} />
+            {video ? (
+              <div
+                {...(video.label
+                  ? { role: "img", "aria-label": video.label }
+                  : { "aria-hidden": true })}
+                className="relative overflow-hidden rounded-lg"
+                style={{ aspectRatio: `${video.width} / ${video.height}` }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={video.poster}
+                  alt=""
+                  width={video.width}
+                  height={video.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <video
+                  aria-hidden="true"
+                  tabIndex={-1}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
+                  poster={video.poster}
+                  className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+                >
+                  <source src={video.src} type="video/mp4" />
+                </video>
+              </div>
+            ) : slot ? (
+              <ImageSlot slot={slot} />
+            ) : null}
           </div>
         ) : null}
       </div>
