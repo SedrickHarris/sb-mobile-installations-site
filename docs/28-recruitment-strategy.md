@@ -8,7 +8,7 @@
 **Secondary objective:** Maintain an installer network between active hiring cycles.  
 **Status:** Working recruitment strategy  
 **Version:** 0.1  
-**Last updated:** September 10, 2026
+**Last updated:** September 19, 2026
 
 ---
 
@@ -31,6 +31,32 @@ It works with:
 
 This is a recruitment strategy, not a promise that any role, market, compensation, schedule, classification, or benefit exists. Those facts must come from an approved job record.
 
+### Current recruitment state (September 19, 2026)
+
+The recruitment model is now active, not evergreen only. The approved facts are recorded in `01-business-source-of-truth.md` section 33 and summarized here:
+
+- Several current Mobile GPS/ELD/AOBRD Installation Technician openings exist, applications are accepted nationwide, and the current openings have no closing date.
+- The role is for independent contractors, not employees.
+- Starting compensation is `$1,600 per week`, presented as a starting rate for the current opening and never as guaranteed weekly income.
+- Approximately 75% travel and state-to-state travel are required. Contractors provide their own personal vehicle, tools, and travel resources. A valid driver's license, a smartphone for installation data submission and installation photos, and a background check are required.
+- No prior installation experience is required, and training will be provided.
+- MECP and the listed platform experience may be shown as preferred applicant experience only.
+
+Four journeys stay separate in routes, forms, data, analytics events, and confirmation language:
+
+| Journey | Purpose | Notes |
+|---|---|---|
+| Active job application | Apply to one specific active opening | Uses "Apply". Requires that opening's own record, canonical URL, and working application path |
+| Installer-network registration | Register interest for future opportunities | Not an application. Uses "Join the Installer Network". Guarantees nothing |
+| Commercial inquiry | Request installation service | Never used by candidates |
+| Referral inquiry | Its own pathway | Never merged with applications, network registration, or commercial inquiries. Its route, form, and confirmation are not defined here |
+
+Site roles: the homepage remains commercial-led. The Careers pages are the primary recruitment funnel.
+
+The header's secondary objective, maintaining an installer network between active hiring cycles, is read together with this section: the network now operates for future opportunities alongside the active openings, not only between hiring cycles.
+
+Build status: each active opening needs its own stable job record and canonical URL, and none exists in the repository yet. The application landing page and the application form have not been created. Until they exist and work, no page may present an "Apply" action as live.
+
 ---
 
 ## 2. Recruitment Outcomes
@@ -40,7 +66,7 @@ The program should:
 1. increase qualified applications for active openings;
 2. help candidates self-qualify before starting an application;
 3. reduce confusion between an active job and an evergreen role;
-4. capture installer interest when no suitable opening is active;
+4. capture installer interest for future opportunities when no active opening fits;
 5. create consistent job information across the site and recruitment platforms;
 6. give recruiters useful source and funnel data;
 7. improve candidate experience and follow-up reliability; and
@@ -57,6 +83,7 @@ Traffic without qualified candidates is not the primary success measure.
 - Evergreen recruiting education is not an active vacancy.
 - Installer-network registration is not an application.
 - Commercial inquiries are a separate journey.
+- Referral inquiries are a separate journey.
 - Job platforms must match the canonical page.
 - Requirements are transparent before the form.
 - Candidate data is collected only when needed.
@@ -196,7 +223,7 @@ Only validated active records may produce active job pages, platform postings, J
 
 ## 10. Evergreen Recruiting Strategy
 
-Evergreen pages support discovery when no opening is active. They may explain:
+Evergreen pages support discovery and preparation alongside active openings, and they are the fallback when no opening fits. They may explain:
 
 - what mobile installers do;
 - related installer role categories;
@@ -214,7 +241,7 @@ Evergreen pages must clearly state that role information is educational or gener
 
 ## 11. Installer Network Strategy
 
-The installer network is a future-opportunity channel for qualified or potentially qualified installers.
+The installer network is a registration channel for future opportunities, offered alongside the active openings, for qualified or potentially qualified installers. It is not the application for a current opening. A candidate who wants a current opening uses that opening's own application path once it exists.
 
 ### Network proposition
 

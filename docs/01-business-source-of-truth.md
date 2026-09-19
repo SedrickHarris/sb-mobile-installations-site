@@ -5,7 +5,7 @@
 **Business:** SB Mobile Installations, LLC  
 **Status:** Discovery draft  
 **Version:** 0.9  
-**Last updated:** September 10, 2026
+**Last updated:** September 19, 2026
 
 ---
 
@@ -75,7 +75,7 @@ Lower-priority sources may identify facts that require verification. They do not
 
 | Field | Current value | Status | Notes |
 | --- | --- | --- | --- |
-| Legal business name | SB Mobile Installations, LLC | Approved, internal only | Client confirmed as the sole operating entity. Never published. See section 4.2 |
+| Legal business name | SB Mobile Installations, LLC | Approved. Internal, with a limited legal-disclosure use | Client confirmed as the sole operating entity. It is not the public name. See sections 4.2 and 33.5 |
 | Public-facing name | SB Mobile Installations | Approved | Stakeholder confirmed September 10, 2026 as the only name used publicly. See section 4.2 |
 | Abbreviated name | SB Mobile | Existing website statement | Existing homepage uses this shortened form |
 | Current website | https://sbmobileinstallations.com/ | Approved for current-site reference | Confirm this will remain the production domain |
@@ -86,8 +86,8 @@ Lower-priority sources may identify facts that require verification. They do not
 | Founder | Unknown | Pending verification | Do not publish |
 | Owner | Unknown | Pending verification | Do not publish third-party names without confirmation |
 | Leadership | Unknown | Pending verification | Needed for About and entity content |
-| Headquarters | Not published | Approved | Client confirmed a mobile-only model with no published address. See section 5.3 |
-| Customer-facing office | None | Approved | Client confirmed no walk-in location. See section 5.3 |
+| Corporate office | 8907 N 175th Ave, Waddell, AZ 85355 | Approved September 19, 2026 (supersedes the September 10, 2026 no-address record) | May be published on the approved surfaces only. Not a walk-in facility. See sections 5.3 and 33.4 |
+| Customer-facing office | None | Approved | No walk-in location. The corporate office is not a customer-facing or walk-in installation facility. See section 5.3 |
 
 ### 4.1 Sole operating entity
 
@@ -97,11 +97,11 @@ SB Mobile Installations, LLC is the sole operating entity referenced throughout 
 
 There is no Doral Transport LLC relationship to document. Do not represent Doral Transport LLC as a parent, affiliate, employer, contracting entity, hiring entity, or operating company, and do not present the two names as interchangeable.
 
-One entity is responsible for recruiting, hiring or contracting, payment, supervision, and installer management. Use SB Mobile Installations, LLC as the organization in company copy, employment and contractor language, privacy notices, forms, and structured data.
+One entity is responsible for recruiting, hiring or contracting, payment, supervision, and installer management. Use SB Mobile Installations as the organization name in public company copy, forms, and structured data. Use SB Mobile Installations, LLC only where the legal entity is required, such as internal documentation or legally appropriate employment and contractor disclosures. See sections 4.2 and 33.5.
 
 Several other project documents still describe this relationship as unresolved and block content on it. Those documents require a follow-up update to reflect this confirmation.
 
-### 4.2 "LLC" is never published
+### 4.2 The public name never carries "LLC"
 
 **The public company name is SB Mobile Installations. It never carries "LLC".**
 
@@ -116,6 +116,8 @@ This note exists so a future review does not re-flag the change as unauthorized.
 This is a project-wide content rule, not a page-level preference. It applies to every customer-facing surface, which includes page copy, headings, navigation, footers, legal pages, metadata, structured data values, alt text, form labels, error messages, email templates, and job postings.
 
 The registered entity remains SB Mobile Installations, LLC, and section 4 records it as a business fact. That form stays internal. Do not publish it, and do not reintroduce it through a schema `legalName` property, an Open Graph `siteName`, or a copyright line.
+
+**Approved limited exception, September 19, 2026.** The registered entity may appear where the legal entity is required, such as internal documentation and legally appropriate employment and contractor disclosures. Each such use must be identified as legally required before it is published. The exception does not change the public name. Page copy, headings, navigation, footers, metadata, `Organization` `name`, `hiringOrganization` `name`, Open Graph `siteName`, alt text, form labels, and job posting titles keep using SB Mobile Installations without "LLC". Do not publish `legalName`, and do not add "LLC" to a copyright line, unless a separate written approval names that surface. This exception was stated by the project owner on September 19, 2026 and narrows the earlier statement that the rule has no approval path.
 
 Internal project documents in `docs/` are not customer-facing and may name the registered entity where the legal fact is the point, as this section does.
 
@@ -159,25 +161,30 @@ Do not invent departmental email addresses.
 
 ### 5.3 Address
 
-**The company does not publish a physical or mailing address.**
+**The corporate office is 8907 N 175th Ave, Waddell, AZ 85355.**
 
-**Status:** Approved. Client confirmed.
+**Status:** Approved September 19, 2026. This supersedes the September 10, 2026 record that the company publishes no address (see the verification log in section 29).
 
-SB Mobile Installations operates a mobile-only model. Service is delivered at the customer's location. There is no walk-in location, no customer-facing office, and no address to publish.
+SB Mobile Installations operates a mobile-only installation model. Service is delivered at the customer's location. The Waddell address is the corporate office. It is not a walk-in installation facility, not a customer-facing service location, and not a guarantee of local service availability.
+
+Approved publication surfaces for the Waddell address: the website footer, the contact page, careers pages, legal pages, `Organization` structured data, and eligible `JobPosting` structured data. Any other surface needs separate approval.
 
 Consequences:
 
-- Do not publish a street address, mailing address, or map in website copy, footers, contact pages, or structured data.
-- The business is not eligible for a standard storefront-style Google Business Profile listing. Any future profile work must use a service-area configuration with the address hidden, and only if the client chooses to pursue one.
-- `LocalBusiness` structured data that requires a physical address is not usable. Prefer `Organization` for entity markup. See `13-schema-markup-plan.md`.
+- Do not describe the Waddell address as a walk-in facility, an installation shop, or a place where customers or candidates can visit for service.
+- Do not present the address as evidence of local service in Arizona or any other market. Nationwide reach stays reach, not physical presence. See section 8.4.
+- Publishing the address does not make the business eligible for a storefront-style Google Business Profile listing. No Google Business Profile, Bing Places, or Apple Business Connect profile is approved, and any future profile work needs its own decision.
+- `LocalBusiness` structured data is not approved. Use `Organization` for entity markup, with the address only as approved above. See `13-schema-markup-plan.md`.
+- Do not publish a map, directions, or visiting hours for the office.
 - Contact pathways rely on the telephone number in section 5.1, approved forms, and email once verified.
+- Address values live in typed data files and are never embedded in reusable UI components (CLAUDE.md section 8).
 - Local content must describe service reach, not a physical presence. See section 8.4.
 
 #### Retired shop-location language
 
-A prior company-authored job posting on Glassdoor, expired January 2026, referenced a "possibility of shop locations." The stakeholder confirmed on September 10, 2026 that this language was outdated and inaccurate. **No physical office or shop exists.**
+A prior company-authored job posting on Glassdoor, expired January 2026, referenced a "possibility of shop locations." The stakeholder confirmed on September 10, 2026 that this language was outdated and inaccurate as a general statement. The corporate office recorded above is not a shop. Possible shop locations may be mentioned only in the context of a specific assignment, and only where that assignment's record supports it.
 
-**Status:** Retired. Do not reintroduce shop-location language in any customer-facing or recruiting content.
+**Status:** Retired as a general statement, and narrowed on September 19, 2026. Do not present shop locations as a standing feature of the company, the careers pages, or the Installer Network. Do not reintroduce the "possibility of shop locations" wording.
 
 This is recorded here so the expired posting does not resurface as an unresolved conflict in a future content pass. See sections 7.1 and 17, which were corrected to remove the same language.
 
@@ -272,7 +279,7 @@ Do not infer any of the following from it. Each remains a separate, unconfirmed 
 - Exclusivity, territory, or volume commitments
 - The screening, onboarding, or assignment process
 
-See section 19, which continues to require company review before compensation, schedule, travel percentage, or benefits appear in careers content.
+**Update, September 19, 2026.** Starting compensation, travel expectations, applicant requirements, and training for the current openings are now approved. See sections 19 and 33. Contract terms and length, expense or mileage reimbursement, benefits, tax treatment, exclusivity, territory or volume commitments, and the screening, onboarding, and assignment process stay unconfirmed, and schedule and benefits still require company review before they appear in careers content.
 
 #### Publication limits
 
@@ -369,7 +376,7 @@ Distinguish:
 
 ### 8.5 Local profile rule
 
-The client confirmed a mobile-only model with no published address, so the business is not eligible for a standard storefront-style local profile. See section 5.3.
+The business operates a mobile-only installation model, and its corporate office is not a walk-in facility (section 5.3), so it is not eligible for a standard storefront-style local profile. See section 5.3.
 
 Do not create or optimize a Google Business Profile, Bing Places profile, Apple Business Connect location, `LocalBusiness` schema record, or address citation that asserts a physical customer-facing location. Any future profile must be configured as a service-area business with the address hidden, and only at the client's direction.
 
@@ -402,7 +409,7 @@ Limits that survive this confirmation:
 
 - Platform names are experience context, not a service taxonomy. The usage restrictions in section 14 remain in force in full. Never use a platform name as a structured-data taxonomy value.
 - Equipment scope is not capacity. Project capacity was confirmed separately on the same date and is recorded in section 11.1.
-- Compensation was not asked about and was not confirmed. See section 19.
+- Compensation was not asked about on September 10, 2026. Starting compensation for the current openings was approved on September 19, 2026. See sections 19 and 33.
 - Installation process details were not part of this confirmation. Photo documentation was confirmed separately on the same date and is recorded in section 17.1. The rest of section 17 stays unconfirmed.
 
 ---
@@ -651,7 +658,7 @@ Do not market general automotive repair, stereo installation, panel repair, or b
 
 The current career page states that MECP is preferred.
 
-**Status:** Existing recruiting preference.
+**Status:** Existing recruiting preference. Approved September 19, 2026 for listing as preferred applicant experience on careers and job pages only (section 33.3).
 
 This does not establish that:
 
@@ -659,6 +666,8 @@ This does not establish that:
 - Every technician is MECP certified.
 - MECP certification is mandatory.
 - The company has an official MECP partnership.
+
+MECP may be listed only as preferred experience for applicants. It must not be presented as a required certification, a company credential, or a partnership.
 
 ### Other certifications
 
@@ -691,6 +700,8 @@ What this means in practice:
 Build credibility instead through the evidence the client does approve: described installation process, documented technical competencies, equipment and vehicle experience, service reach, and clear operational explanation. See sections 15, 17, and 18.
 
 This decision does not relax section 26. The prohibited wording list continues to apply in full, including "Fully insured", "Fully licensed", "Background-checked technicians nationwide", and "MECP-certified technicians nationwide".
+
+Two applicant-facing statements are approved and do not conflict with this decision (section 33): MECP as preferred applicant experience, and a background check as an applicant requirement. Neither one is a claim about the company's technicians, and neither may be reworded into one.
 
 Required verification remains open only for internal operational purposes, not for publication:
 
@@ -812,15 +823,17 @@ The current career page describes:
 - Significant travel
 - On-the-road work
 
+Section 33 records which of these facts are now approved for the current openings. Items not listed there, including shift lengths and weekend schedules, remain unapproved.
+
 ### Compensation
 
-The existing page displays pay starting at $1,600 per week.
+Starting compensation for the current Mobile GPS/ELD/AOBRD Installation Technician openings is `$1,600 per week`.
 
-**Status:** Existing recruiting statement requiring current confirmation.
+**Status:** Approved September 19, 2026 for the current openings (section 33).
 
-Do not carry compensation, schedule, travel percentage, classification, or benefits into the new careers content without review by the company.
+Present it only as a starting rate for the current opening. It is not guaranteed weekly income, not a guaranteed minimum, and not a promise of hours or assignments. Do not describe it as salary, wages, or a range, and do not add bonuses, mileage, reimbursements, or benefits. The figure must be identical on the careers page, each opening page, external postings, and structured data.
 
-Employment and contractor language must be approved before publication.
+Schedule and benefits still require company review before they appear in careers content. Employment and contractor language must be approved before publication.
 
 ---
 
@@ -1023,7 +1036,7 @@ Project-size language is part of this caveat. Phrasing such as “one vehicle or
 
 ## 26. Prohibited wording until supported
 
-**"SB Mobile Installations, LLC" in any customer-facing content.** The public name never carries "LLC". This is a hard rule with no approval path, not a claim awaiting support. See section 4.2.
+**"SB Mobile Installations, LLC" as the public name.** The public name never carries "LLC". The only exception is a legally required disclosure identified and approved as such (section 4.2). See section 4.2.
 
 Do not use the following claims without documentation and approval:
 
@@ -1152,9 +1165,9 @@ All website content must:
 ### Careers
 
 53. Is the current independent contractor model accurate?
-54. Is the displayed compensation current?
+54. Is the displayed compensation current? Answered September 19, 2026 for the current openings: see section 33.
 55. What technician qualifications are mandatory?
-56. What travel expectations are current?
+56. What travel expectations are current? Answered September 19, 2026 for the current openings: see section 33.
 57. What information should the application collect?
 
 ---
@@ -1167,7 +1180,7 @@ Use this table to record approved updates.
 | --- | --- | --- | --- | --- | --- | --- |
 | 2026-09-09 | Initial document | Not created | Discovery draft established | Existing website review | Project team | Business interview required |
 | 2026-09-10 | Telephone number | Conflicting | 623-388-7352 | Stakeholder confirmation | Client | 623-338-7352 rejected as a typographical error. See `decisions/0001-canonical-business-telephone-number.md` |
-| 2026-09-10 | Address | Pending verification | No published address; mobile-only model | Client confirmation | Client | Not eligible for a storefront-style local profile. Goodyear directory association confirmed irrelevant |
+| 2026-09-10 | Address | Pending verification | No published address; mobile-only model | Client confirmation | Client | Not eligible for a storefront-style local profile. Goodyear directory association confirmed irrelevant. Superseded on 2026-09-19: see the corporate office row below and section 33.4 |
 | 2026-09-10 | Business hours | Unknown | Monday to Friday, 8:00 AM to 6:00 PM | Client confirmation | Client | Time zone and holiday exceptions still unconfirmed |
 | 2026-09-10 | Service area | Inferred | Nationwide | Client confirmation | Client | Confirms reach, not capacity. Section 26 still applies |
 | 2026-09-10 | Operating entity | Existing website statement | SB Mobile Installations, LLC is the sole operating entity | Client confirmation | Client | No Doral Transport LLC relationship exists. Other project documents need follow-up |
@@ -1178,13 +1191,21 @@ Use this table to record approved updates.
 | 2026-09-10 | Vehicle scope | Recruiting evidence | Fleet, commercial, and construction vehicles | Stakeholder confirmation, quoted in section 12.1 | Stakeholder | Passenger vehicles not named, status unchanged |
 | 2026-09-10 | Technology and platform experience | Recruiting evidence | Technicians work with the platforms listed in section 14 | Stakeholder confirmation, quoted in section 9.1 | Stakeholder | Experience only. Partnership, authorization, certification, and reseller restrictions in section 14 are unchanged. Approved for visible copy. Never a structured-data taxonomy value |
 | 2026-09-18 | Founding date / years in business | Approved as "15 years" (2026-09-10), founding date pending | Founding year 2011; publish as "in business since 2011," not as a "15 years" duration figure | Client confirmation | Client | Supersedes the 2026-09-10 "15 years" entry above. See section 25 for updated approved wording |
-| 2026-09-10 | Shop locations | Recruiting evidence | No physical office or shop exists | Stakeholder confirmation that the expired Glassdoor "possibility of shop locations" language was outdated and inaccurate | Stakeholder | Retired. Sections 7.1 and 17 corrected. Recorded in section 5.3 so it does not resurface as an unresolved conflict |
-| 2026-09-10 | Compensation | Existing recruiting statement | No change | Not asked, not confirmed | Not approved | Explicitly excluded from the scope confirmation above. The $1,600 per week figure from the expired posting must not be treated as current. Section 19 unchanged |
+| 2026-09-10 | Shop locations | Recruiting evidence | No physical office or shop exists | Stakeholder confirmation that the expired Glassdoor "possibility of shop locations" language was outdated and inaccurate | Stakeholder | Retired. Sections 7.1 and 17 corrected. Recorded in section 5.3 so it does not resurface as an unresolved conflict. Narrowed on 2026-09-19: shop locations may be mentioned only for a specific assignment |
+| 2026-09-10 | Compensation | Existing recruiting statement | No change | Not asked, not confirmed | Not approved | Explicitly excluded from the scope confirmation above. The $1,600 per week figure from the expired posting must not be treated as current. Section 19 unchanged at that date. Superseded on 2026-09-19: see section 33 |
 | 2026-09-10 | Project capacity range | Pending verification | Projects from a single vehicle to an entire fleet | Direct stakeholder confirmation, quoted verbatim in section 11.1 | Stakeholder | Capacity range only, and a distinct fact from the nationwide reach in section 8.2. Do not conflate the two or derive either from the other. Simultaneous multi-market volume, turnaround time, and project acceptance remain unconfirmed. The general guardrail in section 25 is unchanged |
 | 2026-09-10 | Photo documentation | Pending verification | Customers receive or can request installation photo documentation | Direct stakeholder confirmation | Stakeholder | Superseded the same day by the row below. Recorded so the narrowing is traceable rather than silently overwritten |
 | 2026-09-10 | Public company name | Proposed | SB Mobile Installations, with "LLC" never published | Direct stakeholder instruction received outside the build thread and relayed verbatim, quoted in section 4.2 | Stakeholder | Not inferred or proposed by the build. See the provenance note in section 4.2. Hard project-wide rule. Removed from the footer, mobile navigation, privacy policy, terms of use, Open Graph siteName, and the Organization schema name. The registered entity is unchanged and stays internal |
 | 2026-09-10 | Brand and action color | Design-system default | Red #B40000 replaces blue #1468FF. Error re-picked to #9D174D. Accent yellow removed | Direct stakeholder confirmation, recorded in sections 4.1.1 to 4.1.3 of `21-design-system.md` | Stakeholder | Source is the brand kit supplied the same day. The error token was changed as a forced consequence: the previous #B42318 sat 3.3 dE2000 from the new brand red. Logo and headline typography remain unresolved |
 | 2026-09-10 | Photo documentation | Confirmed as on-request, above | Photo documentation is sent to every customer automatically, without being requested | Direct stakeholder confirmation, quoted verbatim in section 17.1 | Stakeholder | Supersedes the on-request wording. Automatic delivery is the correct claim and a delivery promise is accurate in copy. Delivery timeframe, format, channel, and retention remain unconfirmed. Every other section 17 process item stays unconfirmed |
+| 2026-09-19 | Active openings | No active openings recorded | Several current Mobile GPS/ELD/AOBRD Installation Technician openings exist. No closing date | Project owner instruction, September 19, 2026 working session | Stakeholder (relayed by the project owner) | Recorded in section 33.1. No job records, opening pages, application landing page, or application form exist yet |
+| 2026-09-19 | Nationwide applications | Recruiting reach unconfirmed | Applications are accepted nationwide | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Distinct from nationwide installation service reach (section 8.2). Not a claim that every opening is in every market |
+| 2026-09-19 | Starting compensation | Not approved | `$1,600 per week`, a starting rate for the current openings | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Not guaranteed weekly income. Supersedes the 2026-09-10 compensation row |
+| 2026-09-19 | Travel and applicant requirements | Unconfirmed | About 75% travel, state-to-state travel, own vehicle, tools, and travel resources, valid driver's license, smartphone, background check | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Section 33.2 sets the wording limits |
+| 2026-09-19 | Experience and training | Unconfirmed | No prior installation experience required. Training will be provided | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | No claim of paid training, immediate start, or guaranteed hire |
+| 2026-09-19 | Preferred experience | MECP and platforms restricted | MECP and the listed platforms may be named as preferred applicant experience | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Not a company credential, partnership, or requirement. Never a schema taxonomy value |
+| 2026-09-19 | Corporate office | No published address | 8907 N 175th Ave, Waddell, AZ 85355, approved for the footer, contact page, careers pages, legal pages, `Organization` schema, and eligible `JobPosting` schema | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Not a walk-in facility or a local service guarantee. Supersedes the 2026-09-10 address row. Shop locations only for specific assignments |
+| 2026-09-19 | Entity name in legal disclosures | "LLC" never published | Public name stays SB Mobile Installations. The registered entity may appear where legally required | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Narrows the 2026-09-10 public name row. See section 4.2 |
 
 ---
 
@@ -1212,7 +1233,7 @@ At this stage, the project has enough evidence to begin architecture, research, 
 ### Confirmed as of September 10, 2026
 
 - Canonical telephone number
-- No published address, mobile-only operating model
+- No published address, mobile-only operating model (superseded September 19, 2026; see below)
 - Business hours, Monday to Friday, 8:00 AM to 6:00 PM
 - Nationwide service reach
 - SB Mobile Installations, LLC as the sole operating entity
@@ -1225,10 +1246,22 @@ At this stage, the project has enough evidence to begin architecture, research, 
 - Equipment and service scope: GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment, plus dashcam and windshield-mounted video recorder installation
 - Vehicle scope: fleet, commercial, and construction vehicles
 - Technology and platform experience, as experience only, with the section 14 restrictions intact
-- No physical office or shop exists; the expired posting's shop-location language is retired
+- The expired posting's shop-location language is retired as a general statement (narrowed September 19, 2026: shops may be mentioned only for specific assignments)
 - Project capacity range: a single vehicle through an entire fleet, a fact distinct from nationwide reach
 - Photo documentation sent to every customer automatically, without being requested
-- Public company name: SB Mobile Installations, with "LLC" never published
+- Public company name: SB Mobile Installations, with "LLC" never part of the public name (limited legal-disclosure exception recorded September 19, 2026)
+
+### Confirmed as of September 19, 2026
+
+- Several current Mobile GPS/ELD/AOBRD Installation Technician openings, accepting applications nationwide, with no closing date
+- Independent contractor role, not employment
+- Starting compensation of `$1,600 per week`, presented as a starting rate and never as guaranteed income
+- Approximately 75% travel and state-to-state travel required
+- Applicant requirements: own personal vehicle, tools, and travel resources; valid driver's license; smartphone for installation data submission and photos; background check
+- No prior installation experience required; training will be provided
+- MECP and the listed platforms as preferred applicant experience only
+- Corporate office at 8907 N 175th Ave, Waddell, AZ 85355, publishable on the approved surfaces, not a walk-in facility
+- The homepage stays commercial-led; the Careers pages are the primary recruitment funnel
 
 ### Still required before launch
 
@@ -1238,7 +1271,8 @@ At this stage, the project has enough evidence to begin architecture, research, 
 - Founding date, owner, and leadership for entity and About content
 - Response expectations, travel terms, turnaround time, and simultaneous multi-market deployment volume, none of which the confirmed capacity range establishes
 - The rest of the installation process and quality evidence in section 17, photo documentation excepted
-- Compensation, contract terms, schedule, and benefits, which classification alone does not establish
+- Contract terms, schedule, benefits, and expense or mileage terms. Starting compensation for the current openings is approved (section 33); classification and that figure do not establish the rest
+- Individual opening records and canonical URLs, the application landing page, and the application form, none of which exist yet
 - Time zone and holiday exceptions for published hours
 
 ### Resolved: the two homepage About claims
@@ -1250,7 +1284,7 @@ Both claims flagged during the September 10, 2026 content update were raised wit
 | Project capacity, “one vehicle or an entire fleet” | Confirmed accurate. Retained in the copy as drafted | Section 11.1 |
 | Photo documentation | Confirmed accurate as a customer-facing deliverable, then confirmed again as automatic and unprompted. The copy states a delivery promise | Section 17.1 |
 
-The homepage carries no unverified claim. The remaining launch blockers are the missing `/careers/` and `/services/` routes and the unconfirmed production domain, recorded in `qa/homepage-verification-record.md`.
+As of September 10, 2026 the homepage carried no unverified claim. Its "no physical office" statements now conflict with the September 19, 2026 corporate office approval (section 33.4). The launch blockers recorded in `qa/homepage-verification-record.md` were the then-missing `/careers/` and `/services/` routes and the unconfirmed production domain. Those routes now exist in the repository. The production domain status is not re-verified here.
 
 The immediate priority is a structured business discovery interview covering the items above. Trust and proof content must be planned around the client's decision in section 16.1 rather than waiting on credentials that will not be published.
 
@@ -1265,3 +1299,104 @@ Sections 19 (`docs/19-claude-project-instructions.md`) and 07 (`docs/07-site-arc
 - Journey separation (section 4 of CLAUDE.md), the "Apply" vs. "Join the Installer Network" naming rule, and every other confirmed fact in this document are unchanged by this override. Only page-level and navigation-level priority ordering changes.
 
 This override governs `docs/07-site-architecture.md` and `docs/20-component-inventory.md` going forward, both updated in the same documentation pass.
+
+## 33. Approved update, September 19, 2026: active installer recruitment and corporate office
+
+**Provenance.** The project owner stated these facts as approved in the September 19, 2026 working session and instructed that they be recorded. This section is that record. It supersedes the earlier statements listed in section 33.8. A separate decision-log entry has not been created.
+
+### 33.1 Current openings
+
+| Fact | Approved value |
+| --- | --- |
+| Openings | Several current Mobile GPS/ELD/AOBRD Installation Technician openings exist |
+| Applications | Accepted nationwide |
+| Classification | Independent contractors, not employees (section 7.2) |
+| Closing date | None. The current opening has no closing date |
+| Starting compensation | `$1,600 per week`, a starting rate for the current opening |
+
+Limits:
+
+- Do not publish a number of openings, job IDs, or per-opening details that are not in a verified job record. "Several" is the approved quantity word.
+- Do not describe the compensation as guaranteed weekly income, a guaranteed minimum, or a promise of hours, assignments, or volume. Do not call it salary or wages.
+- Do not use urgency or scarcity language such as "hiring now", "limited spots", or "apply today".
+- Nationwide acceptance of applications is not a claim that every opening is in every market. It is a fact separate from nationwide installation service reach (section 8.2). Neither may be derived from the other.
+- Do not present nationwide openings as available in a named market unless that opening's record says so.
+
+### 33.2 Applicant requirements
+
+| Requirement | Approved wording basis |
+| --- | --- |
+| Travel | Approximately 75% travel is required |
+| Interstate travel | State-to-state travel is required |
+| Vehicle, tools, and travel | Contractors provide their own personal vehicle, tools, and travel resources |
+| Driver's license | A valid driver's license is required |
+| Smartphone | A smartphone is required for installation data submission and installation photos |
+| Background check | A background check is required |
+| Experience | No prior installation experience is required |
+| Training | Training will be provided |
+
+Limits:
+
+- Use "approximately 75%" for travel. Do not convert it into a guarantee of how much work or travel a contractor will receive.
+- Training: state only that training will be provided. Do not add a format, length, cost, or outcome. Do not say "paid training", "immediate start", or "guaranteed hire" (CLAUDE.md section 4).
+- "No prior experience required" is not a promise of acceptance. Acceptance is never automatic, and no automated form makes an employment or contracting decision.
+- The background check is an applicant requirement. It does not authorize any claim that technicians are background-checked (section 26 still prohibits that wording).
+- Do not add pay, expense, mileage, lodging, benefit, schedule, or shift statements that are not in this section.
+
+### 33.3 Preferred experience
+
+- MECP may be listed as preferred experience. It is not a required certification, and it is not a company or technician credential. The restrictions in section 16 otherwise stay in force.
+- The platforms listed in sections 9.1 and 14 may be publicly named as preferred applicant experience on careers and job pages. This is experience wording only. It implies no partnership, authorization, endorsement, certification, reseller status, or platform requirement. No platform logos. A platform name is never a structured-data taxonomy value (section 14).
+
+### 33.4 Corporate office
+
+The corporate office is 8907 N 175th Ave, Waddell, AZ 85355. See section 5.3 for the full rules.
+
+- Approved surfaces: the website footer, the contact page, careers pages, legal pages, `Organization` schema, and eligible `JobPosting` schema.
+- It is not a walk-in installation facility and not a guarantee of local service availability.
+- Possible shop locations may be mentioned only in the context of a specific assignment.
+- The homepage is unchanged by this update. Existing public copy that predates this approval still says the company has no physical office: the homepage About paragraph and the "Do you have a physical office?" FAQ answer in `homepage-content.ts`. Comment-only notes in `Footer.tsx` and `site-navigation.ts` say the company publishes no address. Those statements now conflict with this record. They were deliberately left unchanged, and they need a separate, approved change (including any page or schema that reuses that FAQ) before the address is published anywhere. Statements that there is no walk-in facility (for example in `process-content.ts`) remain accurate.
+
+### 33.5 Public name and entity
+
+The public-facing name is SB Mobile Installations. Use SB Mobile Installations, LLC only where the legal entity is required, such as internal documentation or legally appropriate employment and contractor disclosures, and identify each such use as legally required (section 4.2).
+
+### 33.6 Journeys and site roles
+
+Four journeys stay separate in routes, forms, data, analytics events, and confirmation language:
+
+- Active job applications, which use "Apply" and belong only to a genuine active opening.
+- Installer-network registration, which is a registration for future opportunities offered alongside the active openings. It is not an application and guarantees no contact, interview, employment, contract, assignment, schedule, work volume, or pay.
+- Commercial inquiries.
+- Referral inquiries.
+
+The homepage remains commercial-led (section 32). The Careers pages are the primary recruitment funnel. Never route a candidate for an active opening into a commercial or network form, and never count a network registration as an application.
+
+### 33.7 Structured data and build status
+
+- `JobPosting` may be used only on an individual active-opening page, after the canonical page exists, the application path works, the opening is publicly accessible, the required fields are verified, and the page is not blocked or noindexed. See `13-schema-markup-plan.md` section 14 and `30-job-content-schema-specification.md` section 16.
+- The general `/careers/` page does not receive generic `JobPosting` schema because active openings exist.
+- Each active opening requires its own stable job record and canonical URL.
+- As of September 19, 2026, none of these exists in the repository: `src/data/jobs/` holds only a placeholder, and there is no individual opening page, application landing page, or application form. `JobPosting` is not emitted anywhere, and no "Apply" action may go live until the application landing page and form exist and work.
+
+### 33.8 Statements superseded by this section
+
+- "No published address" and "no address to publish" (sections 4, 5.3, 29, and 31, dated September 10, 2026): superseded by the Waddell corporate office.
+- "No physical office or shop exists" (sections 5.3, 29, and 31): narrowed. Shops may be mentioned only for specific assignments.
+- "Compensation was not asked about and was not confirmed" and the September 10, 2026 instruction not to treat the `$1,600 per week` figure as current: superseded for the current openings.
+- "Do not carry compensation, schedule, travel percentage, classification, or benefits into the new careers content" (section 19): superseded for compensation and travel. Schedule and benefits remain unapproved.
+- "LLC is never published" as a rule with no approval path (section 4.2): narrowed to a limited legal-disclosure exception.
+- MECP treated only as an existing recruiting preference (section 16): now approved as preferred applicant experience.
+
+### 33.9 Still unconfirmed
+
+- The number of openings, and any job ID, title variation, or market for each opening
+- Schedule, shift length, weekend work, and benefits
+- Expense, mileage, lodging, and equipment reimbursement
+- Contract terms, contract length, and termination conditions
+- The screening, onboarding, and assignment process, and what the application collects
+- Email addresses for the careers pathway
+- Whether a Google Business Profile, Bing Places, or Apple Business Connect profile will be pursued
+- How `jobLocation` and `applicantLocationRequirements` represent nationwide field work in `JobPosting` schema
+
+The restrictions against guaranteed assignments, guaranteed weekly income, automatic acceptance, unsupported benefits, unsupported partnerships or certifications, and platform names used as schema taxonomy values are unchanged.

@@ -7,7 +7,7 @@
 **Secondary schema outcome:** Eligible enhanced search presentation and entity clarity  
 **Status:** Technical and governance draft  
 **Version:** 0.1  
-**Last updated:** September 9, 2026
+**Last updated:** September 19, 2026
 
 ---
 
@@ -228,9 +228,9 @@ Avoid repeating full organization records in several incompatible forms. Use sha
 | Homepage | `WebPage` | `Organization`, `WebSite` | Organization and site-name support |
 | About | `AboutPage` | `BreadcrumbList`, organization reference | Semantic plus breadcrumb |
 | Contact | `ContactPage` | `BreadcrumbList`, organization reference | Semantic plus breadcrumb |
-| Careers hub | `WebPage` | `BreadcrumbList` | No dedicated careers rich result |
+| Careers hub | `WebPage` | `BreadcrumbList` | No dedicated careers rich result. Never generic `JobPosting`, even when active openings exist |
 | Jobs index | `CollectionPage` | `BreadcrumbList` | Never `JobPosting` for the list |
-| Active job leaf | `JobPosting` | `WebPage`, `BreadcrumbList` | Job-search eligibility |
+| Active job leaf (one page per opening) | `JobPosting` | `WebPage`, `BreadcrumbList` | Job-search eligibility, only after the section 14 gate. No such page exists yet |
 | Evergreen role | `WebPage` | `BreadcrumbList` | Never imply an active job |
 | Installer network | `WebPage` | `BreadcrumbList` | Never `JobPosting` |
 | Resources hub | `CollectionPage` | `BreadcrumbList` | Semantic plus breadcrumb |
@@ -278,10 +278,10 @@ Use `Organization` until a more specific accurate subtype is verified.
 ### Rules
 
 - `name` must match the approved public identity.
-- `legalName` must use the registered legal name only when verified.
+- `legalName` is not published. The public name is SB Mobile Installations. The registered legal name appears in structured data only if a separate written approval names that surface (`01-business-source-of-truth.md` section 4.2).
 - Do not use `alternateName` for keyword phrases.
 - Use international phone format.
-- Include an address only when accurate and appropriate for public display.
+- The approved corporate office address (8907 N 175th Ave, Waddell, AZ 85355; `01-business-source-of-truth.md` section 5.3) may be included in `Organization` as a `PostalAddress`. Do not describe it as a walk-in location, and do not use it to justify `LocalBusiness` or `areaServed`. The shared `Organization` node does not carry it yet.
 - Use `sameAs` only for official profiles representing the same entity.
 - Do not include job-board listing URLs, random directories, or unrelated partner pages in `sameAs`.
 - Do not publish employee count, founding date, NAICS code, tax ID, DUNS, or other identifiers without approval.
@@ -370,6 +370,8 @@ Breadcrumb schema must be generated from the route's approved breadcrumb model, 
 
 ## 14. JobPosting Eligibility
 
+Active openings exist (`01-business-source-of-truth.md` section 33), but `JobPosting` is not yet emitted on any page because no individual opening page exists. `JobPosting` may be used only on an individual active-opening page, each with its own stable job record and canonical URL, and only after the canonical page exists, the application path works, the opening is publicly accessible, the required fields are verified, and the page is neither blocked nor noindexed.
+
 Add `JobPosting` only when all conditions are true:
 
 - one real opening exists;
@@ -385,7 +387,7 @@ Add `JobPosting` only when all conditions are true:
 
 ### Never add JobPosting to
 
-- `/careers/`;
+- `/careers/`, even when active openings exist;
 - `/careers/jobs/`;
 - search or filtered job results;
 - evergreen role pages;
@@ -515,7 +517,7 @@ Required discovery must determine which entity:
 - owns the application data; and
 - appears on candidate agreements.
 
-Do not default to SB Mobile Installations, LLC if Doral Transport LLC or another entity is the actual hiring or contracting organization.
+The hiring entity is SB Mobile Installations, which `01-business-source-of-truth.md` section 4.1 records as the sole operating entity. Use `name`: SB Mobile Installations, without "LLC", unless a written approval requires the registered form for a specific legal disclosure (section 4.2 of that document). Do not substitute another entity.
 
 ### Recommended object
 
@@ -566,11 +568,15 @@ Use only a supported value that accurately reflects approved terms, such as:
 
 Do not infer classification from casual wording. Legal or HR review is required where classification is unresolved. Do not use `CONTRACTOR` merely because technicians travel or use their own tools.
 
+The current openings are approved as independent contractor roles (`01-business-source-of-truth.md` section 7.2), so `CONTRACTOR` is the supported value for those openings. Never use an employee value for them.
+
 ---
 
 ## 22. Compensation
 
 Add `baseSalary` only when compensation is approved, current, visible on the page, and represented accurately.
+
+The current approved basis is `$1,600 per week`, a starting rate for the current openings (`01-business-source-of-truth.md` section 33). If `baseSalary` is emitted, it must state the amount and `WEEK` as the unit, match the visible page copy exactly, and never imply guaranteed income. Because the figure is a starting rate, do not present it as a fixed or maximum amount. If it cannot be represented accurately, omit `baseSalary`.
 
 ### Supported model
 
@@ -598,7 +604,7 @@ Use the actual date the opening was first published for the current recruiting c
 
 ### `validThrough`
 
-Include the real expiration date when one exists. Use ISO 8601 and include timezone information for timestamps.
+Include the real expiration date when one exists. Use ISO 8601 and include timezone information for timestamps. The current openings have no closing date, so `validThrough` is omitted for them. Do not invent an expiry.
 
 ### Closing workflow
 
@@ -1580,7 +1586,7 @@ Per-page schema, Sprint 1:
 | `/careers/`, `/careers/mobile-installation-technician/` | `Organization` (by reference), `WebPage`, `BreadcrumbList` |
 | `/thank-you/service-request/`, `/careers/installer-network-received/` | `WebPage` only, `noindex` |
 
-`JobPosting` remains unadded pending an active, genuine job opening; none exists as of this date. Geo pages (`/coverage/*`, Sprint 2+) carry no `Service.areaServed` enumeration until Sprint 3+, when real, verified state/region coverage data exists. No `LocalBusiness` is emitted anywhere; no physical address is published.
+`JobPosting` remains unadded as of the September 19, 2026 update. Active openings exist (`01-business-source-of-truth.md` section 33), but no individual opening page, stable job record, application landing page, or application form exists yet, and the general `/careers/` page never receives generic `JobPosting`. Geo pages (`/coverage/*`, Sprint 2+) carry no `Service.areaServed` enumeration until Sprint 3+, when real, verified state/region coverage data exists. No `LocalBusiness` is emitted anywhere. The Waddell corporate office address is approved for `Organization` and eligible `JobPosting` schema (`01-business-source-of-truth.md` section 5.3), but the shared `Organization` node currently carries only `name`, `url`, and `telephone`, so it does not include the address yet.
 
 No `Service` node on any page carries `areaServed`, including a country-level value, until verified structured coverage data exists. Nationwide reach stays visible copy and the `/coverage/` page. The homepage `Service` and the `/services/` hub `Service` each carry a single umbrella `serviceType` ("Mobile fleet technology installation services") rather than a category list. Neither carries `hoursAvailable`: the confirmed hours have no timezone and no approved schema purpose, so any published hours belong in visible contact and footer content. Each `/services/*` page emits only the `serviceType` that matches its own visible purpose, and Fleet Rollouts omits it. `/industries/`, `/careers/` and `/coverage/` emit no `Service`. See `docs/decisions/0005-service-page-template-and-work-wording.md`.
 

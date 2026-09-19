@@ -66,8 +66,9 @@ plugin has an opinion about, this order governs:
 document, stop and report the conflict. Follow the project document unless the
 user explicitly approves a change.
 
-No plugin recommendation may override verified business facts, recruitment-first
-conversion priorities, active-job data rules, installer-network disclosures,
+No plugin recommendation may override verified business facts, the approved
+conversion priorities (commercial-led homepage, Careers as the primary recruitment
+funnel), active-job data rules, installer-network disclosures,
 commercial and recruitment separation, accessibility requirements, performance
 budgets, schema eligibility, privacy rules, or launch and indexation controls.
 
@@ -111,16 +112,31 @@ approved and locked.
 Internal project documents in `docs/` are not customer-facing and are not
 covered by this rule.
 
+## 3.2 Public name
+
+The public-facing company name is `SB Mobile Installations`. Use `SB Mobile Installations, LLC`
+only where the legal entity is required, such as internal documentation or legally
+appropriate employment and contractor disclosures, and identify each such use as legally
+required (`docs/01-business-source-of-truth.md` section 4.2).
+
 ## 4. Journey separation
 
 Active job applications, installer-network registration, referrals, and commercial
 inquiries stay separate in routes, forms, data, analytics events, and confirmation
 language.
 
-- "Apply" belongs only to a genuine active opening.
-- "Join the Installer Network" is a future-opportunity pathway. It guarantees no
-  contact, interview, employment, contract, assignment, schedule, volume, or pay.
-- Never route a candidate for an active opening into a commercial or network form.
+Active openings now exist (`docs/01-business-source-of-truth.md` section 33). The homepage
+remains commercial-led, and the Careers pages are the primary recruitment funnel.
+
+- "Apply" belongs only to a genuine active opening and its own application path. The
+  application landing page and form have not been created yet, so no "Apply" control may go
+  live until they exist and work.
+- "Join the Installer Network" is a registration pathway for future opportunities, offered
+  alongside the active openings. It is not an application. It guarantees no contact, interview,
+  employment, contract, assignment, schedule, volume, or pay.
+- Referral inquiries are a fourth, separate pathway.
+- Never route a candidate for an active opening into a commercial or network form, and never
+  count a network registration as an application.
 
 ### Prohibited recruiting language
 
@@ -128,6 +144,10 @@ Guaranteed work, hours, or income. Employee benefits for contractors. Contractor
 status for employees. Nationwide openings when only one market is active. Paid
 training or immediate start when unverified. Unlimited earning potential. Automatic
 acceptance. Any final employment decision made by an automated form.
+
+Approved for the current openings (`docs/01` section 33): nationwide applications, starting
+compensation of `$1,600 per week` presented only as a starting rate, and training being
+provided. Present none of them as a guarantee.
 
 ## 5. Active jobs and schema
 
@@ -137,11 +157,16 @@ model, a working application path, valid dates, required fields present, and the
 page neither noindexed nor blocked.
 
 Never generate `JobPosting` for draft, paused, closed, archived, evergreen, or
-network records. Populate a property only when the value is verified, not merely
-because the vocabulary allows it.
+network records, or for the general `/careers/` page merely because active openings
+exist. Each active opening needs its own stable job record and canonical URL, and
+`JobPosting` belongs only on that opening's page. Populate a property only when the value
+is verified, not merely because the vocabulary allows it.
 
-Never turn a recruiting market into a physical office. Never publish a street
-address or exact site location without approval.
+Never turn a recruiting market into a physical office. The corporate office address (8907 N
+175th Ave, Waddell, AZ 85355) is approved for the footer, contact page, careers pages, legal
+pages, `Organization` schema, and eligible `JobPosting` schema (`docs/01` sections 5.3 and 33).
+Never describe it as a walk-in installation facility or a guarantee of local service
+availability. Do not publish any other street address or exact site location without approval.
 
 ## 6. Accessibility and performance
 

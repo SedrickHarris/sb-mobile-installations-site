@@ -7,7 +7,9 @@
 **Secondary outcome:** Establish commercial credibility and support future customer acquisition  
 **Status:** Strategic discovery draft  
 **Version:** 0.1  
-**Last updated:** September 9, 2026
+**Last updated:** September 19, 2026
+
+> **Update, September 19, 2026.** Recruitment is now an active model, not evergreen only. Several current Mobile GPS/ELD/AOBRD Installation Technician openings exist for independent contractors, applications are accepted nationwide, and starting compensation is `$1,600 per week` as a starting rate, never guaranteed income. The corporate office at 8907 N 175th Ave, Waddell, AZ 85355 may be published on approved surfaces and is not a walk-in facility. The homepage stays commercial-led, and the Careers pages are the primary recruitment funnel. The authoritative record is `01-business-source-of-truth.md` section 33. Where this overview conflicts with it, the source of truth governs.
 
 ---
 
@@ -47,7 +49,7 @@ Existing website and recruiting content indicate experience involving:
 - installation documentation; and
 - mobile, on-site service.
 
-The business appears to coordinate technicians who travel to customer or shop locations, complete installations using defined procedures, test installed equipment, document the work, and communicate with scheduling personnel.
+The business appears to coordinate technicians who travel to customer locations (and to a shop location only where a specific assignment involves one), complete installations using defined procedures, test installed equipment, document the work, and communicate with scheduling personnel.
 
 The company’s immediate growth priority is not merely to generate more website traffic. It is to attract more qualified installer candidates and convert them into screened, onboarded, and activated installers.
 
@@ -124,7 +126,7 @@ Based on existing recruiting content, a typical installation workflow may includ
 1. A customer, provider, or project coordinator defines the installation requirement.
 2. SB Mobile Installations schedules an approved technician.
 3. Equipment, installation instructions, and approved connection procedures are provided.
-4. The technician travels to the customer, fleet, yard, or shop location.
+4. The technician travels to the customer, fleet, or yard location, or to a shop location where a specific assignment involves one.
 5. The technician gains appropriate access to the vehicle and installs the equipment.
 6. The installed device is tested for functionality.
 7. Required photographs, serial numbers, forms, or installation records are submitted.
@@ -775,7 +777,7 @@ Current gaps include:
 
 - unclear legal and hiring entity structure;
 - conflicting phone information;
-- no approved business address or hours;
+- no approved business address or hours at the time of the original review (both are now approved: see `01-business-source-of-truth.md` sections 5.3, 5.4, and 33);
 - limited company-history and leadership information;
 - incomplete service definitions;
 - unclear customer and partner relationships;

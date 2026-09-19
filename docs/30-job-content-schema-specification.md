@@ -6,7 +6,7 @@
 **Primary objective:** Maintain one validated job record that can safely drive pages, structured data, platform postings, forms, and reporting.  
 **Status:** Working data specification  
 **Version:** 0.1  
-**Last updated:** September 10, 2026
+**Last updated:** September 19, 2026
 
 ---
 
@@ -52,8 +52,10 @@ The model separates controlled job facts from page presentation. A page, schema 
 | Scheduled job | Approved future opening not yet public | No |
 | Closed job | Previously public opening | No |
 | Evergreen role | General role education | No |
-| Installer network | Future-opportunity registration | No |
+| Installer network | Registration for future opportunities, offered alongside active openings | No |
 | Draft or unverified | Internal preparation | No |
+
+Active openings exist as of September 19, 2026 (`01-business-source-of-truth.md` section 33). Each active opening is its own record with a stable job ID and its own canonical URL, even when several openings share a role title. No job records exist in the repository yet, and the application landing page and application form have not been created.
 
 ---
 
@@ -238,6 +240,19 @@ Rules:
 
 Legal review may be required for jurisdiction-specific pay-transparency or classification requirements.
 
+### Current approved values for the current openings
+
+Store these in each opening's job record, not in page components (`01-business-source-of-truth.md` section 33):
+
+- engagement: independent contractor, not employee;
+- starting compensation: `$1,600 per week`, described as a starting rate and never as guaranteed income;
+- travel: approximately 75%, with state-to-state travel required;
+- own personal vehicle, tools, and travel resources;
+- valid driver's license, smartphone for installation data submission and photos, and a background check;
+- no prior installation experience required, and training provided;
+- MECP and the listed platforms as preferred applicant experience only, never as schema taxonomy values;
+- applications accepted nationwide, with no closing date, so no `validThrough` value.
+
 ---
 
 ## 13. Application Object
@@ -308,7 +323,7 @@ An active JobPosting object may be generated only when:
 - required schema fields are available; and
 - the page is not noindexed or blocked.
 
-Do not generate JobPosting for draft, paused, closed, archived, evergreen, or network records.
+Do not generate JobPosting for draft, paused, closed, archived, evergreen, or network records. Do not generate it for the general `/careers/` page or any index or hub page because active openings exist. Generate it only on the individual active-opening page, and only after the canonical page exists, the application path works, the opening is publicly accessible, the required fields are verified, and the page is neither blocked nor noindexed.
 
 ---
 
@@ -345,7 +360,7 @@ Location data must distinguish:
 - service area; and
 - candidate residence requirement.
 
-Never transform a recruiting market into a physical office. Never publish a street address or exact site location unless approved and necessary.
+Never transform a recruiting market into a physical office. The approved corporate office (Waddell, Arizona; `01-business-source-of-truth.md` section 5.3) is a company office, not a work location, recruiting market, or walk-in facility. It may appear as the organization address where approved, and it must not be used as `jobLocation` for field work. Possible shop locations may appear only inside a specific assignment's record. Never publish any other street address or exact site location unless approved and necessary. How `jobLocation` and `applicantLocationRequirements` represent nationwide field work is not decided and must be settled before any JobPosting is generated (`13-schema-markup-plan.md` sections 18 to 20).
 
 ---
 
