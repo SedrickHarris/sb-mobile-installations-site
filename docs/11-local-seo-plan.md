@@ -7,7 +7,9 @@
 **Secondary business outcome:** Generate qualified commercial inquiries  
 **Status:** Strategy and implementation draft  
 **Version:** 0.1  
-**Last updated:** September 9, 2026
+**Last updated:** September 19, 2026
+
+> **Update, September 19, 2026.** Current installer openings now exist (`01-business-source-of-truth.md` section 33). The Installer Network is a registration pathway for future opportunities, offered alongside those openings, and is not an application for a specific opening. Where this document calls the network a future-opportunity pathway, it describes the network only, not the whole recruitment model. Rules for the case where no active job exists still apply conditionally. An application page and form now exist for the current opening (`/careers/apply/`), and "Apply" belongs only to that opening. See `28-recruitment-strategy.md`.
 
 ---
 
@@ -57,7 +59,7 @@ The business source of truth currently records the following as pending verifica
 - approved customer-facing service areas;
 - active recruiting markets;
 - active job locations;
-- relationship between SB Mobile Installations, LLC and Doral Transport LLC; and
+- relationship between SB Mobile Installations, LLC and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1); and
 - which entity recruits, contracts, employs, pays, supervises, and serves customers.
 
 A third-party association with Goodyear, Arizona is evidence for investigation only. It must not be published as a location, address, service area, citation, or structured-data fact until approved.
@@ -1267,7 +1269,7 @@ The initial local SEO foundation is complete when:
 ## 41. Open Decisions
 
 - What is the canonical public business name?
-- What is the confirmed relationship between SB Mobile Installations, LLC and Doral Transport LLC?
+- What is the confirmed relationship between SB Mobile Installations, LLC and Doral Transport LLC? Resolved September 10, 2026: none exists (`01-business-source-of-truth.md` section 4.1).
 - Which entity provides commercial services?
 - Which entity recruits or contracts installers?
 - What is the verified primary phone number?

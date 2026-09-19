@@ -55,7 +55,7 @@ The model separates controlled job facts from page presentation. A page, schema 
 | Installer network | Registration for future opportunities, offered alongside active openings | No |
 | Draft or unverified | Internal preparation | No |
 
-Active openings exist as of September 19, 2026 (`01-business-source-of-truth.md` section 33). Each active opening is its own record with a stable job ID and its own canonical URL, even when several openings share a role title. No job records exist in the repository yet, and the application landing page and application form have not been created.
+Active openings exist as of September 19, 2026 (`01-business-source-of-truth.md` section 33). Each active opening is its own record with a stable job ID and its own canonical URL, even when several openings share a role title. One job record exists (`src/data/jobs/mobile-gps-eld-aobrd-installation-technician.ts`), and the application page and form exist. The record has no closing date field, so no `validThrough` is emitted.
 
 ---
 

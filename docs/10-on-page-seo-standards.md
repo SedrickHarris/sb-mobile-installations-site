@@ -393,7 +393,7 @@ Every recruitment page must distinguish:
 ### Requirements
 
 - Use the approved organization name.
-- Do not use SB Mobile Installations and Doral Transport LLC interchangeably.
+- Do not use SB Mobile Installations and Doral Transport LLC interchangeably. No relationship exists (`01-business-source-of-truth.md` section 4.1).
 - State classification at the job level.
 - Identify active status accurately.
 - Avoid using “employee,” “contractor,” or “subcontractor” generically.

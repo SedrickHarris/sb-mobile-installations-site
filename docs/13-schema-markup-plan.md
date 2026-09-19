@@ -119,7 +119,7 @@ The following must be resolved before the full entity graph can be finalized:
 
 - canonical public business name;
 - verified legal name;
-- relationship between SB Mobile Installations, LLC and Doral Transport LLC;
+- relationship between SB Mobile Installations, LLC and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
 - hiring, employing, or contracting organization;
 - canonical primary phone;
 - canonical address and public-display status;
@@ -281,7 +281,7 @@ Use `Organization` until a more specific accurate subtype is verified.
 - `legalName` is not published. The public name is SB Mobile Installations. The registered legal name appears in structured data only if a separate written approval names that surface (`01-business-source-of-truth.md` section 4.2).
 - Do not use `alternateName` for keyword phrases.
 - Use international phone format.
-- The approved corporate office address (8907 N 175th Ave, Waddell, AZ 85355; `01-business-source-of-truth.md` section 5.3) may be included in `Organization` as a `PostalAddress`. Do not describe it as a walk-in location, and do not use it to justify `LocalBusiness` or `areaServed`. The shared `Organization` node does not carry it yet.
+- The approved corporate office address (8907 N 175th Ave, Waddell, AZ 85355; `01-business-source-of-truth.md` section 5.3) may be included in `Organization` as a `PostalAddress`. Do not describe it as a walk-in location, and do not use it to justify `LocalBusiness` or `areaServed`. The shared `Organization` node now carries it (`organization.ts`), with `addressCountry` `US` and no `areaServed`.
 - Use `sameAs` only for official profiles representing the same entity.
 - Do not include job-board listing URLs, random directories, or unrelated partner pages in `sameAs`.
 - Do not publish employee count, founding date, NAICS code, tax ID, DUNS, or other identifiers without approval.
@@ -370,7 +370,7 @@ Breadcrumb schema must be generated from the route's approved breadcrumb model, 
 
 ## 14. JobPosting Eligibility
 
-Active openings exist (`01-business-source-of-truth.md` section 33), but `JobPosting` is not yet emitted on any page because no individual opening page exists. `JobPosting` may be used only on an individual active-opening page, each with its own stable job record and canonical URL, and only after the canonical page exists, the application path works, the opening is publicly accessible, the required fields are verified, and the page is neither blocked nor noindexed.
+Active openings exist (`01-business-source-of-truth.md` section 33), and `JobPosting` is emitted on exactly one page: `/careers/mobile-gps-eld-aobrd-installation-technician/` (`src/lib/schema/job-posting.ts`). It has no `validThrough` because no closing date is published, no `jobLocation` because no work location is approved (Google may report it missing), and it expresses nationwide applicants with `applicantLocationRequirements`. `JobPosting` may be used only on an individual active-opening page, each with its own stable job record and canonical URL, and only after the canonical page exists, the application path works, the opening is publicly accessible, the required fields are verified, and the page is neither blocked nor noindexed.
 
 Add `JobPosting` only when all conditions are true:
 
@@ -1503,7 +1503,7 @@ No schema generator or AI tool may become the authority for a business fact.
 
 - What is the approved public business name?
 - What is the verified legal name?
-- How are SB Mobile Installations, LLC and Doral Transport LLC related?
+- How are SB Mobile Installations, LLC and Doral Transport LLC related? Resolved September 10, 2026: they are not related (`01-business-source-of-truth.md` section 4.1).
 - Which entity is the hiring or contracting organization?
 - What organization and website names should Google associate with the domain?
 - Which phone, email, address, and official profiles are canonical?
@@ -1583,10 +1583,12 @@ Per-page schema, Sprint 1:
 | `/` | `Organization`, `WebSite`, `WebPage`, `Service`, `FAQPage` |
 | `/services/`, `/services/*` | `Organization` (by reference), `WebPage`, `Service`, `BreadcrumbList` |
 | `/contact/` | `Organization` (by reference), `WebPage`, `BreadcrumbList` |
-| `/careers/`, `/careers/mobile-installation-technician/` | `Organization` (by reference), `WebPage`, `BreadcrumbList` |
-| `/thank-you/service-request/`, `/careers/installer-network-received/` | `WebPage` only, `noindex` |
+| `/careers/`, `/careers/apply/`, `/careers/mobile-installation-technician/` | `Organization` (by reference), `WebPage`, `BreadcrumbList` |
+| `/careers/jobs/` | `Organization` (by reference), `CollectionPage`, `BreadcrumbList` |
+| `/careers/mobile-gps-eld-aobrd-installation-technician/` | `Organization` (by reference), `WebPage`, `BreadcrumbList`, `JobPosting` |
+| `/thank-you/service-request/`, `/careers/installer-network-received/`, `/careers/application-received/` | No schema emitted, `noindex` |
 
-`JobPosting` remains unadded as of the September 19, 2026 update. Active openings exist (`01-business-source-of-truth.md` section 33), but no individual opening page, stable job record, application landing page, or application form exists yet, and the general `/careers/` page never receives generic `JobPosting`. Geo pages (`/coverage/*`, Sprint 2+) carry no `Service.areaServed` enumeration until Sprint 3+, when real, verified state/region coverage data exists. No `LocalBusiness` is emitted anywhere. The Waddell corporate office address is approved for `Organization` and eligible `JobPosting` schema (`01-business-source-of-truth.md` section 5.3), but the shared `Organization` node currently carries only `name`, `url`, and `telephone`, so it does not include the address yet.
+As of the September 19, 2026 update, `JobPosting` is emitted only on the individual opening page (section 14). The general `/careers/` page, the jobs index, the Installer Network page, the application page, and the homepage never carry it. Geo pages (`/coverage/*`, Sprint 2+) carry no `Service.areaServed` enumeration until Sprint 3+, when real, verified state/region coverage data exists. No `LocalBusiness` is emitted anywhere. The Waddell corporate office address is approved for `Organization` and eligible `JobPosting` schema (`01-business-source-of-truth.md` section 5.3), and the shared `Organization` node now carries it as a `PostalAddress` (`addressCountry` `US`), emitted where the homepage declares the entity. It has no `areaServed`. The `JobPosting` on the opening page carries the address only through its `hiringOrganization`, never as a job location.
 
 No `Service` node on any page carries `areaServed`, including a country-level value, until verified structured coverage data exists. Nationwide reach stays visible copy and the `/coverage/` page. The homepage `Service` and the `/services/` hub `Service` each carry a single umbrella `serviceType` ("Mobile fleet technology installation services") rather than a category list. Neither carries `hoursAvailable`: the confirmed hours have no timezone and no approved schema purpose, so any published hours belong in visible contact and footer content. Each `/services/*` page emits only the `serviceType` that matches its own visible purpose, and Fleet Rollouts omits it. `/industries/`, `/careers/` and `/coverage/` emit no `Service`. See `docs/decisions/0005-service-page-template-and-work-wording.md`.
 

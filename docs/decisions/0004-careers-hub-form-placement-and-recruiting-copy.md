@@ -65,3 +65,18 @@ the working session on 2026-09-18 to supply requirements.
   context, not on the careers hub.
 - The five items still needing review: schedule and shifts, travel percentage,
   compensation, certifications, and a tools list.
+
+## Update, September 19, 2026
+
+The owner approved current-openings facts, recorded in `docs/01` section 33.
+Decision 3 above no longer excludes the compensation figure or the travel
+percentage: the `$1,600 per week` starting rate (never guaranteed income),
+approximately 75% travel, no prior experience required, and training provided
+now appear on the Careers hub and role page. "Apply", "hiring", shifts, days,
+hours, weekends, MECP as a requirement, and platform brand names stay out, and
+the Installer Network form stays an expression of interest, because no
+application page or form exists. Decision 7 is unchanged: no `JobPosting`.
+
+## Later update, September 19, 2026
+
+The careers architecture was restructured (see `0006-active-careers-architecture.md`). `/careers/` is now the recruitment landing page, and the Installer Network content described above moved to `/careers/mobile-installation-technician/`, still a registration for future opportunities. The statement above that the form "stays an expression of interest, because no application page or form exists" now applies only to the Installer Network form. The active opening has its own application page and form. Decision 7 is superseded for one page: `JobPosting` is emitted on the individual opening page and nowhere else.

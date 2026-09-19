@@ -7,7 +7,9 @@
 **Secondary content objective:** Build commercial credibility and qualified demand  
 **Status:** Strategic content draft  
 **Version:** 0.1  
-**Last updated:** September 9, 2026
+**Last updated:** September 19, 2026
+
+> **Update, September 19, 2026.** Current installer openings now exist (`01-business-source-of-truth.md` section 33). The Installer Network is a registration pathway for future opportunities, offered alongside those openings, and is not an application for a specific opening. Where this document calls the network a future-opportunity pathway, it describes the network only, not the whole recruitment model. Rules for the case where no active job exists still apply conditionally. An application page and form now exist for the current opening (`/careers/apply/`), and "Apply" belongs only to that opening. See `28-recruitment-strategy.md`.
 
 ---
 
@@ -1022,7 +1024,7 @@ Do not infer outcomes or disclose confidential project information.
 
 ### Entity requirement
 
-The relationship between SB Mobile Installations, LLC and Doral Transport LLC must be resolved before company, recruiting, application, privacy, agreement, or payment content is finalized.
+Resolved September 10, 2026: no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Company, recruiting, application, privacy, agreement, and payment content no longer waits on this question. Do not represent Doral Transport LLC as related to SB Mobile Installations.
 
 ---
 

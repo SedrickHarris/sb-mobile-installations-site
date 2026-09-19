@@ -7,7 +7,9 @@
 **Secondary focus:** Commercial installation intent  
 **Status:** Strategic planning draft  
 **Version:** 0.1  
-**Last updated:** September 9, 2026
+**Last updated:** September 19, 2026
+
+> **Update, September 19, 2026.** Current installer openings now exist (`01-business-source-of-truth.md` section 33). The Installer Network is a registration pathway for future opportunities, offered alongside those openings, and is not an application for a specific opening. Where this document calls the network a future-opportunity pathway, it describes the network only, not the whole recruitment model. Rules for the case where no active job exists still apply conditionally. An application page and form now exist for the current opening (`/careers/apply/`), and "Apply" belongs only to that opening. See `28-recruitment-strategy.md`.
 
 ---
 
@@ -470,9 +472,9 @@ The user expects a genuine opportunity connected to the named market, not a nati
 - Review or expiration date
 - Direct application path
 
-### Alternative when no job is active
+### Alternative when no active opening fits
 
-Route users to the installer network with an explicit statement that no current opening is being represented.
+Route users to the installer network with an explicit statement that it is a registration for future opportunities and not an application for a specific opening.
 
 ### Indexation rule
 

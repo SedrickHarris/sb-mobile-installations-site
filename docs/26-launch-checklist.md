@@ -9,7 +9,9 @@
 **Primary objective:** Launch an accurate, accessible, fast, indexable recruitment-first website with working conversion paths.  
 **Status:** Working launch standard  
 **Version:** 0.1  
-**Last updated:** September 10, 2026
+**Last updated:** September 19, 2026
+
+> **Update, September 19, 2026.** Current installer openings now exist (`01-business-source-of-truth.md` section 33). The Installer Network is a registration pathway for future opportunities, offered alongside those openings, and is not an application for a specific opening. Where this document calls the network a future-opportunity pathway, it describes the network only, not the whole recruitment model. Rules for the case where no active job exists still apply conditionally. An application page and form now exist for the current opening (`/careers/apply/`), and "Apply" belongs only to that opening. See `28-recruitment-strategy.md`.
 
 ---
 
@@ -392,6 +394,21 @@ Launch is complete when the approved release is deployed to the correct Cloudfla
 - 27-post-launch-growth-plan.md
 - 28-recruitment-strategy.md
 - 29-recruitment-platform-distribution.md
+
+## Release gate: application flow (September 19, 2026)
+
+The application flow is built and tested against a simulated endpoint. It must not go live to applicants until every item below is checked. Nothing here is complete unless it is checked.
+
+- [ ] `NEXT_PUBLIC_FORMS_ENDPOINT` is set in Cloudflare Pages for Production, and for Preview if previews should submit, and the site is redeployed. The value is baked in at build time, so a redeploy is required. As of September 19, 2026 it is NOT configured: the deployed bundle at `sb-mobile-installations-site.pages.dev` compiles the setting as an unset reference, and every form there (commercial, Installer Network, and application) shows the "isn't accepting submissions" fallback.
+- [ ] The trusted backend accepts `formType: "job_application"` payloads, stores the background-check consent, acknowledgments, and privacy consent, and has a decided retention period and processor list.
+- [ ] After deployment, one real submission from the deployed site is received by the backend, and the browser lands on `/careers/application-received/` showing "Application Received".
+- [ ] After deployment, an endpoint failure is checked once (for example a temporary bad URL in Preview): the form shows the failure message and the call fallback, keeps the entered values, and never redirects.
+- [ ] The homepage banner button reads "Apply for the Current Opening" and opens `/careers/apply/`, not the Installer Network page.
+- [ ] Counsel has reviewed the background-check consent wording, the privacy policy's description of the three forms, the terms of use, and the use of the registered entity name in the legal notices.
+- [ ] The owner has confirmed that `datePosted` `2026-07-01` means July 1, 2026 and not 7 January 2026.
+- [ ] The production domain `sbmobileinstallations.com` points at the new deployment (it still serves the previous site).
+
+Already verified locally in a real browser against a simulated endpoint: validation errors with focus management, success and redirect, a 500 response, a dropped connection, a request that hangs (timeout at 20 seconds), a missing endpoint, honeypot handling, blocked browser storage, and no analytics event carrying personal data. A visit to the confirmation URL that did not follow a confirmed submission shows a neutral message and never claims receipt.
 
 ## 25. Maintenance
 

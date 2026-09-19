@@ -9,7 +9,7 @@ The site has two separate journeys:
 - **Commercial:** operators of commercial, fleet, and construction vehicles learn about installation
   services and request a quote.
 - **Installer Network:** independent contractor technicians learn about the network and register
-  interest. The network is a future-opportunity pathway, is kept separate from commercial inquiries
+  interest. The network is a registration pathway for future opportunities, offered alongside current installer openings, is kept separate from commercial inquiries
   in routes, forms, data, and analytics events, and guarantees no contact, interview, employment,
   contract, assignment, schedule, work volume, or pay.
 
@@ -23,12 +23,13 @@ and specification documents. Verified from the repository contents:
 | Homepage | `src/app/page.tsx`, with homepage content, metadata, and schema modules |
 | Services | Services hub and five service pages: fleet telematics, GPS tracking, ELD, dashcam and camera, fleet rollouts, rendered through one `ServicePageTemplate` |
 | Industries | Industries hub and five industry pages |
-| Installer Network | `/careers/`, `/careers/mobile-installation-technician/`, and `/careers/installer-network-received/` |
+| Careers | `/careers/` (recruitment landing page), `/careers/jobs/`, the opening page `/careers/mobile-gps-eld-aobrd-installation-technician/`, `/careers/apply/`, and `/careers/application-received/`, with typed job records in `src/data/jobs/` |
+| Installer Network | `/careers/mobile-installation-technician/` (registration for future opportunities) and `/careers/installer-network-received/` |
 | Supporting pages | Coverage, process, quality and safety, FAQ, resources hub and articles, case studies route, contact, thank-you, accessibility, privacy policy, and terms |
 | Shared components | Layout, content, UI, form, hero, and schema components under `src/components/` |
 | Structured content | Typed content and data modules under `src/data/` and `src/types/` |
-| SEO and schema | Metadata helpers, JSON-LD builders for organization, web page, breadcrumbs, homepage, service pages, careers, and articles, plus `sitemap.ts` and `robots.ts` |
-| Forms | `CommercialInquiryForm` and `InstallerNetworkForm`, posting to an external endpoint set by `NEXT_PUBLIC_FORMS_ENDPOINT` |
+| SEO and schema | Metadata helpers, JSON-LD builders for organization, web page, breadcrumbs, homepage, service pages, careers, articles, and the active opening (`JobPosting`, on its own page only), plus `sitemap.ts` and `robots.ts` |
+| Forms | `CommercialInquiryForm`, `InstallerNetworkForm`, and `ApplicationForm`, posting to an external endpoint set by `NEXT_PUBLIC_FORMS_ENDPOINT` |
 | Styling and config | Tailwind CSS styles in `src/styles/`, plus Next.js, TypeScript, ESLint, and PostCSS configuration |
 | Assets | Brand logos, homepage hero media, service and "why choose us" images, and icons under `public/` |
 | Prompts | Research, build, QA, and SEO prompt files in `prompts/` |
@@ -39,7 +40,7 @@ Not present or not verified from the repository:
 
 - `scripts/` holds placeholder directories only. There is no test runner and no content, job,
   schema, or link validation script in `package.json`.
-- `src/data/jobs/` is empty, so no job data exists in the repository.
+- `src/data/jobs/` holds one job record. Application submissions depend on the forms endpoint, which this repository cannot verify.
 - No `functions/` directory, Wrangler configuration, `_headers`, or `_redirects` file is present.
   Cloudflare Pages deployment is specified in `docs/17-cloudflare-deployment.md`, but this README
   does not claim that deployment, Cloudflare configuration, analytics, or production publication is

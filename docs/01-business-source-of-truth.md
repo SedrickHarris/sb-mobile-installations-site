@@ -99,7 +99,7 @@ There is no Doral Transport LLC relationship to document. Do not represent Doral
 
 One entity is responsible for recruiting, hiring or contracting, payment, supervision, and installer management. Use SB Mobile Installations as the organization name in public company copy, forms, and structured data. Use SB Mobile Installations, LLC only where the legal entity is required, such as internal documentation or legally appropriate employment and contractor disclosures. See sections 4.2 and 33.5.
 
-Several other project documents still describe this relationship as unresolved and block content on it. Those documents require a follow-up update to reflect this confirmation.
+Several other project documents described this relationship as unresolved. They were updated on September 19, 2026 to mark it resolved: `02`, `05`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, and `19`.
 
 ### 4.2 The public name never carries "LLC"
 
@@ -1206,6 +1206,7 @@ Use this table to record approved updates.
 | 2026-09-19 | Preferred experience | MECP and platforms restricted | MECP and the listed platforms may be named as preferred applicant experience | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Not a company credential, partnership, or requirement. Never a schema taxonomy value |
 | 2026-09-19 | Corporate office | No published address | 8907 N 175th Ave, Waddell, AZ 85355, approved for the footer, contact page, careers pages, legal pages, `Organization` schema, and eligible `JobPosting` schema | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Not a walk-in facility or a local service guarantee. Supersedes the 2026-09-10 address row. Shop locations only for specific assignments |
 | 2026-09-19 | Entity name in legal disclosures | "LLC" never published | Public name stays SB Mobile Installations. The registered entity may appear where legally required | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Narrows the 2026-09-10 public name row. See section 4.2 |
+| 2026-09-19 | Active careers architecture | Not implemented | Job record, opening page, jobs index, application page and form, and confirmation page exist. `JobPosting` only on the opening page | Implementation of the owner's 2026-09-19 update plan | Project owner | Endpoint acceptance of application submissions is not verified. See section 33.7 and `decisions/0006` |
 
 ---
 
@@ -1272,7 +1273,7 @@ At this stage, the project has enough evidence to begin architecture, research, 
 - Response expectations, travel terms, turnaround time, and simultaneous multi-market deployment volume, none of which the confirmed capacity range establishes
 - The rest of the installation process and quality evidence in section 17, photo documentation excepted
 - Contract terms, schedule, benefits, and expense or mileage terms. Starting compensation for the current openings is approved (section 33); classification and that figure do not establish the rest
-- Individual opening records and canonical URLs, the application landing page, and the application form, none of which exist yet
+- Confirmation that the forms endpoint accepts application submissions. The opening record, application page, and form exist (section 33.7), but their submission path is not verified
 - Time zone and holiday exceptions for published hours
 
 ### Resolved: the two homepage About claims
@@ -1355,7 +1356,7 @@ The corporate office is 8907 N 175th Ave, Waddell, AZ 85355. See section 5.3 for
 - Approved surfaces: the website footer, the contact page, careers pages, legal pages, `Organization` schema, and eligible `JobPosting` schema.
 - It is not a walk-in installation facility and not a guarantee of local service availability.
 - Possible shop locations may be mentioned only in the context of a specific assignment.
-- The homepage is not an approved surface for the address, so the address is not published there. On September 19, 2026 the homepage wording that said the company has no physical office was replaced, in the About paragraph and in the FAQ (now "Do you have a walk-in installation location?"), with statements that there is no walk-in installation facility. The same update changed the homepage recruiting wording to say that current openings exist, without an "Apply" action or a pay figure. The homepage FAQ also feeds the `FAQPage` structured data. Comment-only notes in `Footer.tsx` and `site-navigation.ts` still say the company publishes no address, and should be reconciled when the address is added to the footer. Statements that there is no walk-in facility (for example in `process-content.ts`) remain accurate.
+- The homepage is not an approved surface for the address, so the address is not published there. On September 19, 2026 the homepage wording that said the company has no physical office was replaced, in the About paragraph and in the FAQ (now "Do you have a walk-in installation location?"), with statements that there is no walk-in installation facility. The same update changed the homepage recruiting wording to say that current openings exist, without a pay figure. The banner's primary button is now "Apply for the Current Opening" to `/careers/apply/`, and the Installer Network is a separate secondary link, so the word "apply" never sends a visitor to a registration form. The homepage FAQ also feeds the `FAQPage` structured data. The address now appears on every approved surface except JobPosting schema, always read from `business.address` in `business.ts` and never typed into a page: the footer, the contact page, the Careers hub, the Installer Network role page, and the legal pages, as plain text labelled "Corporate office" (through the shared `CorporateOffice` component, or through the legal contact notice), and the `Organization` structured data as a `PostalAddress`. The `Organization` node carries no `areaServed`. The contact notices in the privacy policy and terms of use identify the registered entity, SB Mobile Installations, LLC, as the one place the entity name appears on the public site, subject to attorney review (section 4.2); the accessibility statement uses the public name. The `JobPosting` schema on the opening page carries the address through its `hiringOrganization`, which is the shared `Organization` node, and does not use it as a job location. Comment-only notes that said no address is published were updated to match. Statements that there is no walk-in facility (for example in `process-content.ts`) remain accurate.
 
 ### 33.5 Public name and entity
 
@@ -1365,7 +1366,7 @@ The public-facing name is SB Mobile Installations. Use SB Mobile Installations, 
 
 Four journeys stay separate in routes, forms, data, analytics events, and confirmation language:
 
-- Active job applications, which use "Apply" and belong only to a genuine active opening.
+- Active job applications, which use "Apply" and belong only to a genuine active opening. The application page is `/careers/apply/`, and its form (`ApplicationForm`) is separate from every other form.
 - Installer-network registration, which is a registration for future opportunities offered alongside the active openings. It is not an application and guarantees no contact, interview, employment, contract, assignment, schedule, work volume, or pay.
 - Commercial inquiries.
 - Referral inquiries.
@@ -1377,7 +1378,8 @@ The homepage remains commercial-led (section 32). The Careers pages are the prim
 - `JobPosting` may be used only on an individual active-opening page, after the canonical page exists, the application path works, the opening is publicly accessible, the required fields are verified, and the page is not blocked or noindexed. See `13-schema-markup-plan.md` section 14 and `30-job-content-schema-specification.md` section 16.
 - The general `/careers/` page does not receive generic `JobPosting` schema because active openings exist.
 - Each active opening requires its own stable job record and canonical URL.
-- As of September 19, 2026, none of these exists in the repository: `src/data/jobs/` holds only a placeholder, and there is no individual opening page, application landing page, or application form. `JobPosting` is not emitted anywhere, and no "Apply" action may go live until the application landing page and form exist and work.
+- As of September 19, 2026 these exist in the repository: the job record (`src/data/jobs/mobile-gps-eld-aobrd-installation-technician.ts`, reading `business.recruitment`), the opening page `/careers/mobile-gps-eld-aobrd-installation-technician/` (the only page that emits `JobPosting`), the jobs index `/careers/jobs/`, the application page `/careers/apply/` with the dedicated `ApplicationForm`, and the noindex confirmation `/careers/application-received/`. `/careers/` is the recruitment landing page. The Installer Network stays a separate registration at `/careers/mobile-installation-technician/`.
+- Submission depends on the trusted forms endpoint (`NEXT_PUBLIC_FORMS_ENDPOINT`). As of September 19, 2026 it is NOT configured in the deployed Cloudflare Pages environment (checked against the deployed JavaScript), so every form there shows its fallback. The confirmation page claims receipt only after a confirmed submission in the same browser session. The release gate is in `docs/26-launch-checklist.md`. Until it is confirmed to accept `job_application` payloads, the form shows an error and a click-to-call fallback and never a false success. `JobPosting` is emitted with no `validThrough`, no `jobLocation`, and a `datePosted` of 2026-07-01, the opening date the owner gave as 07/01/2026 and read as US format.
 
 ### 33.8 Statements superseded by this section
 
@@ -1394,9 +1396,12 @@ The homepage remains commercial-led (section 32). The Careers pages are the prim
 - Schedule, shift length, weekend work, and benefits
 - Expense, mileage, lodging, and equipment reimbursement
 - Contract terms, contract length, and termination conditions
-- The screening, onboarding, and assignment process, and what the application collects
+- The screening, onboarding, and assignment process
 - Email addresses for the careers pathway
 - Whether a Google Business Profile, Bing Places, or Apple Business Connect profile will be pursued
-- How `jobLocation` and `applicantLocationRequirements` represent nationwide field work in `JobPosting` schema
+- How `jobLocation` and `applicantLocationRequirements` represent nationwide field work in `JobPosting` schema. `jobLocation` is omitted because no work location is approved, and Google may report it as missing
+- Confirmation that the opening date the owner gave as 07/01/2026 means July 1, 2026 (US format) and not 7 January 2026
+- Whether the trusted forms endpoint accepts and safely stores `job_application` payloads, and its retention and processor details
+- Legal review of the background-check consent wording, the privacy policy's description of what the forms collect, the terms of use, and the use of the registered entity name in the legal notices
 
 The restrictions against guaranteed assignments, guaranteed weekly income, automatic acceptance, unsupported benefits, unsupported partnerships or certifications, and platform names used as schema taxonomy values are unchanged.

@@ -78,3 +78,7 @@ per-service copy. Three points needed a decision.
   service pages (hours remain in the form phone line).
 - `docs/01` and `_claims-inventory.md` have not been edited; recording the
   work wording and vehicle examples there is left to the owner.
+
+## Update, September 19, 2026
+
+Point 6 (the Installer Network handoff) changed. The single low-emphasis text link after the quote form now points to `/careers/jobs/` with the recruitment journey and the `cta_careers_click` event. Its wording is "Interested in installer work with SB Mobile Installations?" and "View current installer openings". It is the same shared handoff on all five service pages, with no per-page override, and it makes no claim that experience is required. It is still one text link after the form, with no banner, form, or hiring language.

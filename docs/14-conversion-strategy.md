@@ -7,7 +7,9 @@
 **Secondary conversion outcome:** Qualified commercial inquiry and opportunity creation  
 **Status:** Strategy and implementation draft  
 **Version:** 0.1  
-**Last updated:** September 9, 2026
+**Last updated:** September 19, 2026
+
+> **Update, September 19, 2026.** Current installer openings now exist (`01-business-source-of-truth.md` section 33). The Installer Network is a registration pathway for future opportunities, offered alongside those openings, and is not an application for a specific opening. Where this document calls the network a future-opportunity pathway, it describes the network only, not the whole recruitment model. Rules for the case where no active job exists still apply conditionally. An application page and form now exist for the current opening (`/careers/apply/`), and "Apply" belongs only to that opening. See `28-recruitment-strategy.md`.
 
 ---
 
@@ -107,7 +109,7 @@ The primary recruitment metric is not an application. It is a qualified, approve
 The following must be confirmed before forms and automations launch:
 
 - public business and hiring entity names;
-- relationship between SB Mobile Installations, LLC and Doral Transport LLC;
+- relationship between SB Mobile Installations, LLC and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
 - active roles and markets;
 - employment or contractor classification;
 - compensation, expenses, tools, vehicle, travel, schedule, and availability terms;
@@ -198,7 +200,7 @@ The installer reaches the defined operational activation milestone. This is the 
 
 ## 7. Installer-Network Funnel
 
-The installer network is a future-opportunity pathway, not an active job.
+The installer network is a registration pathway for future opportunities, offered alongside the current openings. It is not an active job and not an application for one.
 
 ### Funnel
 

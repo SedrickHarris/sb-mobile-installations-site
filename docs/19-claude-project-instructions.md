@@ -10,7 +10,9 @@
 **Secondary outcome:** Build commercial credibility and qualified commercial demand  
 **Status:** Claude Project operating instructions draft  
 **Version:** 0.1  
-**Last updated:** September 10, 2026
+**Last updated:** September 19, 2026
+
+> **Update, September 19, 2026.** Current installer openings now exist (`01-business-source-of-truth.md` section 33). The Installer Network is a registration pathway for future opportunities, offered alongside those openings, and is not an application for a specific opening. Where this document calls the network a future-opportunity pathway, it describes the network only, not the whole recruitment model. Rules for the case where no active job exists still apply conditionally. An application page and form now exist for the current opening (`/careers/apply/`), and "Apply" belongs only to that opening. See `28-recruitment-strategy.md`.
 
 ---
 
@@ -284,7 +286,7 @@ Treat the current project knowledge files as the governing project record. Use t
 Never silently resolve a conflict. Identify the conflict, use the highest-authority confirmed source, and list what requires approval.
 
 BUSINESS-TRUTH RULES
-Do not invent or assume business facts. Treat the following as blocked until verified: the relationship between SB Mobile Installations, LLC and Doral Transport LLC; which entity recruits, hires or contracts, pays, supervises, and manages installers; phone numbers; email addresses; physical locations; service areas; active recruiting markets; current job openings; employment or contractor classification; compensation; tools; vehicles; travel; schedule; expenses; training; work volume; benefits; certifications; partnerships; customer names; project results; and service capabilities.
+Do not invent or assume business facts. SB Mobile Installations, LLC is the sole operating entity and the one entity that recruits, hires or contracts, pays, supervises, and manages installers. No Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Treat the following as blocked until verified: phone numbers; email addresses; physical locations; service areas; active recruiting markets; current job openings; employment or contractor classification; compensation; tools; vehicles; travel; schedule; expenses; training; work volume; benefits; certifications; partnerships; customer names; project results; and service capabilities.
 
 Use clearly labeled placeholders only in internal drafts. Do not let placeholders appear in production-ready copy, schema, metadata, application language, job-board content, or Claude Code instructions intended for implementation.
 
@@ -728,7 +730,7 @@ If required facts are missing, output an intake form or internal draft, not a pu
 
 ## 17. Installer Network Protocol
 
-Claude must describe the network as a future-opportunity pathway.
+Claude must describe the network as a registration pathway for future opportunities, offered alongside the current openings, and never as an application for a specific opening.
 
 ### Required disclosure concepts
 
@@ -743,7 +745,7 @@ Claude must describe the network as a future-opportunity pathway.
 Use:
 
 - “Join the Installer Network” for future opportunity;
-- “Apply” only for an actual active job; and
+- “Apply” only for an actual active job that has its own working application path (none exists yet, so no “Apply” action is live); and
 - separate confirmation language and analytics events.
 
 ---
@@ -1603,7 +1605,7 @@ The Claude Project is configured successfully when:
 - canonical knowledge files are loaded in a clear source hierarchy;
 - obsolete duplicates are removed;
 - no secret, applicant data, customer data, or private credential is present;
-- Claude consistently flags the unresolved SB Mobile Installations/Doral Transport relationship;
+- Claude never represents Doral Transport LLC as related to SB Mobile Installations, because no relationship exists (`01-business-source-of-truth.md` section 4.1);
 - Claude refuses to invent active jobs, classifications, compensation, locations, services, or performance claims;
 - Claude preserves active-job, installer-network, referral, and commercial separation;
 - Claude uses current authoritative sources for unstable platform and policy questions;

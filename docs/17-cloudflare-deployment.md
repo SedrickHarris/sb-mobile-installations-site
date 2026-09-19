@@ -159,7 +159,7 @@ Use stable, descriptive names.
 | Turnstile widget | `sb-mobile-installations-public-forms` |
 | Analytics site | Canonical production domain |
 
-Resource names are operational identifiers. They do not resolve the public relationship between SB Mobile Installations, LLC and Doral Transport LLC.
+Resource names are operational identifiers. They imply no relationship between SB Mobile Installations, LLC and Doral Transport LLC, and none exists (`01-business-source-of-truth.md` section 4.1).
 
 ---
 

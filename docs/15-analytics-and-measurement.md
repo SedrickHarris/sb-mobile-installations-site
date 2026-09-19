@@ -7,7 +7,11 @@
 **Secondary measurement outcome:** Qualified commercial opportunities and resulting business value  
 **Status:** Strategy and implementation draft  
 **Version:** 0.1  
-**Last updated:** September 9, 2026
+**Last updated:** September 19, 2026
+
+> **Update, September 19, 2026.** Current installer openings now exist (`01-business-source-of-truth.md` section 33). The Installer Network is a registration pathway for future opportunities, offered alongside those openings, and is not an application for a specific opening. Where this document calls the network a future-opportunity pathway, it describes the network only, not the whole recruitment model. Rules for the case where no active job exists still apply conditionally. An application page and form now exist for the current opening (`/careers/apply/`), and "Apply" belongs only to that opening. See `28-recruitment-strategy.md`.
+>
+> Application journey events (`src/lib/analytics/events.ts`): `active_opening_view`, `cta_apply_click`, `application_start`, `application_error`, `application_submit`, `application_success`, and `application_failure`, plus `cta_careers_click` for links into the careers pages. They stay separate from `commercial_form_*` and `installer_network_*`, carry the job slug and counts only, and reach a reporting tool only if a `dataLayer` and provider are added.
 
 ---
 
@@ -1406,7 +1410,7 @@ Retain a launch QA record with date, environment, tester, result, evidence, defe
 | AI visibility overclaim | Misleading reporting | Label platform, method, date, and limitation |
 | Small samples | Unstable rate decisions | Show counts, longer windows, and confidence caveats |
 | CRM stages not maintained | Downstream value cannot be measured | Define owner, SLA, required fields, and audits |
-| Business-entity ambiguity | Incorrect forms, profiles, and reports | Resolve SB Mobile Installations/Doral Transport relationship |
+| Business-entity ambiguity | Incorrect forms, profiles, and reports | Doral Transport relationship resolved (none exists; `01-business-source-of-truth.md` section 4.1). Keep the entity name consistent |
 
 ---
 
@@ -1416,7 +1420,7 @@ The following require business approval:
 
 1. What exact event defines an activated installer?
 2. Which organization is the hiring or contracting entity for each role?
-3. What is the approved relationship between SB Mobile Installations, LLC and Doral Transport LLC?
+3. What is the approved relationship between SB Mobile Installations, LLC and Doral Transport LLC? Resolved September 10, 2026: none exists (`01-business-source-of-truth.md` section 4.1).
 4. Which ATS or recruiting CRM will own applicant records?
 5. Which commercial CRM will own inquiries and opportunities?
 6. Will applications be onsite, embedded, or hosted externally?

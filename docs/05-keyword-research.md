@@ -612,6 +612,8 @@ Do not target entry-level, training, apprenticeship, certification, or paid-trai
 - Doral Transport installer jobs
 - Doral Transport SB Mobile Installations
 
+Resolved September 10, 2026: no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Do not target these phrases or imply an association through them.
+
 These phrases should be monitored, not targeted with assumptions. The relationship between the entities must be verified before creating content intended to rank for combined entity terms.
 
 ### Recommended destinations

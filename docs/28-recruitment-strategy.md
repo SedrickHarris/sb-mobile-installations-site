@@ -55,7 +55,7 @@ Site roles: the homepage remains commercial-led. The Careers pages are the prima
 
 The header's secondary objective, maintaining an installer network between active hiring cycles, is read together with this section: the network now operates for future opportunities alongside the active openings, not only between hiring cycles.
 
-Build status: each active opening needs its own stable job record and canonical URL, and none exists in the repository yet. The application landing page and the application form have not been created. Until they exist and work, no page may present an "Apply" action as live.
+Build status (September 19, 2026): the job record, opening page, jobs index, application page, application form, and confirmation page exist. The form's submission path depends on the forms endpoint, which is not verified, so treat the application as built but unproven end to end. "Apply" belongs only to the active opening's routes.
 
 ---
 

@@ -83,9 +83,9 @@ Before publication, the company must confirm:
 - leadership information; and
 - company history.
 
-### 3.2 Entity relationship requiring clarification
+### 3.2 Entity relationship (resolved)
 
-The possible relationship between SB Mobile Installations, LLC and Doral Transport LLC must be documented before careers, application, privacy, payment, or contractor language is published.
+**Resolved September 10, 2026.** The client confirmed that SB Mobile Installations, LLC is the sole operating entity and that no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). This question no longer blocks careers, application, privacy, payment, or contractor language. The checklist below is kept for history and for any future entity change.
 
 The website must clearly identify:
 
@@ -97,7 +97,7 @@ The website must clearly identify:
 - which entity schedules or supervises work; and
 - which entity issues agreements and tax documents.
 
-Until confirmed, Doral Transport LLC must not be represented as a parent, affiliate, employer, contractor, or operating company.
+Doral Transport LLC must not be represented as a parent, affiliate, employer, contractor, or operating company. No such relationship exists.
 
 ---
 
@@ -905,7 +905,7 @@ Before launch, obtain approved answers for:
 ### Identity and governance
 
 - legal and public business names;
-- SB Mobile Installations and Doral Transport relationship;
+- SB Mobile Installations and Doral Transport relationship (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
 - recruiting, contracting, payment, supervision, and data-controller entities;
 - authorized content and job approvers;
 - canonical phone, email, address, and hours; and

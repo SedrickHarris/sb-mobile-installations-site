@@ -1279,7 +1279,7 @@ The commit message, or the pull request when one is used, must describe security
 Changes to these values require an approval reference:
 
 - business or legal name;
-- relationship between SB Mobile Installations, LLC and Doral Transport LLC;
+- any relationship between SB Mobile Installations, LLC and another entity, including Doral Transport LLC (none exists; `01-business-source-of-truth.md` section 4.1);
 - phone, email, address, and hours;
 - verified offices and service areas;
 - hiring or contracting entity;
