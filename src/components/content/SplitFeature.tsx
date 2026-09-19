@@ -19,6 +19,13 @@ interface SplitFeatureProps {
    * tones only: SB red on navy is 2.62:1, so it is dropped on dark surfaces.
    */
   readonly eyebrow?: string;
+  /** Vertical alignment of the two columns. Defaults to centered. */
+  readonly align?: "center" | "top";
+  /**
+   * Show the image above the text on mobile. The DOM order stays text first,
+   * so this is a visual reorder only. Off by default.
+   */
+  readonly mediaFirstOnMobile?: boolean;
 }
 
 /**
@@ -37,6 +44,8 @@ export function SplitFeature({
   slot,
   mediaSide = "right",
   eyebrow,
+  align = "center",
+  mediaFirstOnMobile = false,
 }: SplitFeatureProps) {
   const headingId = `${id}-heading`;
   const dark = tone === "dark";
@@ -55,7 +64,11 @@ export function SplitFeature({
     <Section tone={tone} width={slot ? "site" : "reading"} labelledBy={headingId}>
       <div
         className={
-          slot ? "grid gap-10 md:grid-cols-2 md:items-center md:gap-16" : ""
+          slot
+            ? `grid gap-10 md:grid-cols-2 md:gap-16 ${
+                align === "top" ? "md:items-start" : "md:items-center"
+              }`
+            : ""
         }
       >
         <div className={slot && mediaSide === "left" ? "md:order-2" : ""}>
@@ -103,9 +116,17 @@ export function SplitFeature({
           {content.footnotes?.map((note) => (
             <p
               key={note}
-              className={`mt-4 text-[length:var(--text-small)] leading-relaxed text-pretty ${
-                dark ? "text-[var(--color-text-on-dark)]/80" : "text-ink-muted"
-              }`}
+              className={
+                content.footnoteCallout
+                  ? `mt-6 border-l-4 py-1 pl-4 text-[length:var(--text-body)] leading-relaxed text-pretty ${
+                      dark
+                        ? "border-[var(--color-text-on-dark)]/60 text-[var(--color-text-on-dark)]/90"
+                        : "border-[var(--color-accent-blue-strong)] text-ink"
+                    }`
+                  : `mt-4 text-[length:var(--text-small)] leading-relaxed text-pretty ${
+                      dark ? "text-[var(--color-text-on-dark)]/80" : "text-ink-muted"
+                    }`
+              }
             >
               {note}
             </p>
@@ -128,7 +149,15 @@ export function SplitFeature({
           ) : null}
         </div>
 
-        {slot ? <ImageSlot slot={slot} /> : null}
+        {slot ? (
+          <div
+            className={`${mediaFirstOnMobile ? "order-first md:order-none " : ""}${
+              align === "top" ? "md:sticky md:top-24" : ""
+            }`}
+          >
+            <ImageSlot slot={slot} />
+          </div>
+        ) : null}
       </div>
     </Section>
   );

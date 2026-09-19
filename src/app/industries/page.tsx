@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { ContentSection } from "@/components/content/ContentSection";
 import { DecisionGuide } from "@/components/content/DecisionGuide";
 import { FaqGroup } from "@/components/content/FaqGroup";
 import { ServiceNavGrid } from "@/components/content/ServiceNavGrid";
@@ -64,7 +63,15 @@ export default function IndustriesPage() {
         image={industriesHubImages.hero}
       />
 
-      <ContentSection id="industries-answer" content={hub.answer} />
+      <SplitFeature
+        id="industries-answer"
+        eyebrow="INDUSTRY-SPECIFIC FLEET SUPPORT"
+        content={hub.answer}
+        slot={industriesHubImages.answer}
+        mediaSide="left"
+        align="top"
+        mediaFirstOnMobile
+      />
 
       <ServiceNavGrid
         id="industries-grid"

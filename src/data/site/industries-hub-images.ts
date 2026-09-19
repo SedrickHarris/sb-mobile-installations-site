@@ -31,6 +31,18 @@ export const industriesHubImages = {
     altGuidance:
       "Describe the vehicles and work actually shown. Avoid a generic industry collage.",
   },
+  answer: {
+    slotId: "industries-hub-answer",
+    role: "Commercial fleet vehicles parked at a fleet facility",
+    aspectRatio: "3344 / 1882",
+    width: 3344,
+    height: 1882,
+    fallback: "grid",
+    src: "/images/industries/industries-hero/sb-mobile-installations-industries-hub-commercial-fleet-vehicles.webp",
+    alt: "Commercial fleet vehicles parked at a fleet facility",
+    altGuidance:
+      "Describe only what is shown. No trade branding, no third-party logos, and no vertical implied beyond confirmed categories.",
+  },
   capability: {
     slotId: "industries-hub-capability",
     role: "Field installation photograph on a commercial vehicle",

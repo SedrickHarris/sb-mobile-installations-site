@@ -1,5 +1,5 @@
 import type { HubImageSlot } from "@/data/site/services-hub-images";
-import type { Cta, FaqItem, SectionContent } from "@/types/content";
+import type { Cta, FaqItem } from "@/types/content";
 
 /** Shared content shape for the services hub and each service detail page. */
 export interface ServicePageContent {
@@ -57,6 +57,8 @@ export interface HubSplitSection {
   readonly listPanel?: boolean;
   /** Small muted notes shown after the lists and before the links. */
   readonly footnotes?: readonly string[];
+  /** Render the footnotes as a visually distinct callout with a left rule. */
+  readonly footnoteCallout?: boolean;
   readonly links?: readonly HubLink[];
 }
 
@@ -221,7 +223,7 @@ export interface IndustriesHubPageContent {
     readonly secondaryLink: HubLink;
     readonly scopeItems: readonly string[];
   };
-  readonly answer: SectionContent;
+  readonly answer: HubSplitSection;
   readonly industries: {
     readonly h2: string;
     readonly intro: string;

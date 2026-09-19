@@ -40,12 +40,29 @@ export const industriesHubPageContent: IndustriesHubPageContent = {
   },
 
   answer: {
-    h2: "What Does Industry-Specific Fleet Installation Support Mean?",
+    h2: "Fleet Installation Support Built Around Your Industry",
     body: [
-      "Industry-specific fleet installation support means planning and completing approved fleet technology hardware installation work around the vehicles, work environments, equipment, scheduling needs, and project requirements of a commercial operation.",
-      "The right starting point depends on your fleet type, the equipment being installed, the number of vehicles, the number of locations, and your timeline. SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on fleet, commercial, and construction vehicles.",
+      "Fleet technology installation is not the same for every operation. Vehicle types, equipment, operating environments, scheduling requirements, and deployment locations can all affect how an installation project is planned and completed.",
+      "SB Mobile Installations provides on-site commercial vehicle electronics installation support for fleet, commercial, logistics, delivery, service, and construction vehicles. We install approved hardware such as GPS tracking, ELD and AOBRD systems, TPMS, fleet dashcams, and fleet-management equipment.",
+      "Our role is to help coordinate and complete the physical installation work around your vehicles and project requirements. That may include single-vehicle installations, multi-vehicle deployments, scheduled fleet projects, or installation support across multiple locations.",
+      "The right starting point depends on your vehicle types, equipment, installation volume, locations, and timeline. Share the details of your project so the installation requirements can be reviewed clearly before work begins.",
+    ],
+    lists: [
+      {
+        style: "checklist",
+        items: [
+          "On-site installation for commercial and fleet vehicles",
+          "Support for GPS, ELD, AOBRD, TPMS, dashcam, and fleet-management equipment",
+          "Installation planning based on vehicle type and project requirements",
+          "Support for single vehicles and larger commercial deployments",
+          "Nationwide mobile installation network",
+        ],
+      },
+    ],
+    footnotes: [
       "SB Mobile Installations provides installation support. We install and deploy the hardware; we are not the platform vendor or a compliance consultant.",
     ],
+    footnoteCallout: true,
   },
 
   industries: {
