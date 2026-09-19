@@ -11,8 +11,12 @@ import { organizationNode, organizationRef } from "@/lib/schema/organization";
  * emitted exactly once, here on the homepage only. See
  * 13-schema-markup-plan.md section 58a.
  *
- * serviceType carries the confirmed equipment categories from section 9.1 and
- * no third-party platform names. See the note on business.serviceTypes.
+ * The Service node carries one umbrella serviceType that matches the
+ * homepage's broad commercial-overview purpose, not a list of equipment
+ * categories, and no third-party platform names. It carries no areaServed,
+ * not even Country "United States": nationwide reach stays visible copy and
+ * the /coverage/ page until verified structured coverage data exists. See
+ * decision 0005 and 13-schema-markup-plan.md.
  *
  * Deliberately absent, and not to be added:
  *   LocalBusiness   no physical address exists to satisfy required fields
@@ -28,6 +32,9 @@ import { organizationNode, organizationRef } from "@/lib/schema/organization";
 const WEBPAGE_ID = `${business.url}/#webpage`;
 const WEBSITE_ID = `${business.url}/#website`;
 
+/** One umbrella label for the homepage Service. Not a category list. */
+const HOMEPAGE_SERVICE_TYPE = "Mobile fleet technology installation services";
+
 function website() {
   return {
     "@type": "WebSite",
@@ -42,12 +49,8 @@ function service() {
   return {
     "@type": "Service",
     name: business.serviceName,
-    serviceType: [...business.serviceTypes],
+    serviceType: HOMEPAGE_SERVICE_TYPE,
     provider: organizationRef(),
-    areaServed: {
-      "@type": "Country",
-      name: business.areaServed,
-    },
     hoursAvailable: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [...business.hours.days],

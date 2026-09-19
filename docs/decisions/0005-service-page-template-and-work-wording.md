@@ -57,9 +57,11 @@ per-service copy. Three points needed a decision.
 
 ## Consequences
 
-- The homepage graph still emits `areaServed` (`src/lib/schema/homepage.ts`).
-  It is outside these pages and was not changed. Review it against the same
-  policy separately.
+- The homepage `Service` node previously emitted `areaServed` and the six-item
+  category list. A follow-up commit removed `areaServed` and replaced the list
+  with one umbrella `serviceType`, "Mobile fleet technology installation
+  services", so the whole site follows the same rule. `hoursAvailable` and the
+  visible nationwide copy are unchanged.
 - `/faq/` now includes the Fleet Rollouts FAQs, which were missing, and the new
   distinct per-page FAQs.
 - The old page `body` paragraphs no longer render. The platform-name list, the
