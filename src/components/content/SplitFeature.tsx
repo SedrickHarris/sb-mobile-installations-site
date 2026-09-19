@@ -26,6 +26,8 @@ interface SplitFeatureProps {
    * so this is a visual reorder only. Off by default.
    */
   readonly mediaFirstOnMobile?: boolean;
+  /** "narrow" gives the media column about 45% of the row instead of 50%. */
+  readonly mediaShare?: "even" | "narrow";
 }
 
 /**
@@ -46,6 +48,7 @@ export function SplitFeature({
   eyebrow,
   align = "center",
   mediaFirstOnMobile = false,
+  mediaShare = "even",
 }: SplitFeatureProps) {
   const headingId = `${id}-heading`;
   const dark = tone === "dark";
@@ -65,7 +68,13 @@ export function SplitFeature({
       <div
         className={
           slot
-            ? `grid gap-10 md:grid-cols-2 md:gap-16 ${
+            ? `grid gap-10 md:gap-16 ${
+                mediaShare === "narrow"
+                  ? mediaSide === "left"
+                    ? "md:grid-cols-[minmax(0,9fr)_minmax(0,11fr)]"
+                    : "md:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]"
+                  : "md:grid-cols-2"
+              } ${
                 align === "top" ? "md:items-start" : "md:items-center"
               }`
             : ""

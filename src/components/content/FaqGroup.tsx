@@ -4,17 +4,23 @@ import { Section } from "@/components/layout/Section";
 import type { FaqContent, FaqItem } from "@/types/content";
 
 /** Restrained inline link after an answer. The answer text stands alone without it. */
-function FaqLink({ link }: { readonly link: FaqItem["link"] }) {
-  if (!link) return null;
+function FaqLink({ item }: { readonly item: FaqItem }) {
+  const links = [...(item.link ? [item.link] : []), ...(item.links ?? [])];
+  if (links.length === 0) return null;
   return (
     <>
       {" "}
-      <Link
-        href={link.href}
-        className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-      >
-        {link.label}
-      </Link>
+      {links.map((link, index) => (
+        <span key={link.href}>
+          {index > 0 ? <span aria-hidden="true">{" | "}</span> : null}
+          <Link
+            href={link.href}
+            className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+          >
+            {link.label}
+          </Link>
+        </span>
+      ))}
     </>
   );
 }
@@ -37,6 +43,8 @@ interface FaqGroupProps {
    * unchanged, so keyboard and screen-reader order matches the DOM.
    */
   readonly layout?: "list" | "columns";
+  /** Optional supporting paragraph under the visible heading (columns layout). */
+  readonly intro?: string;
 }
 
 /**
@@ -75,13 +83,14 @@ export function FaqGroup({
   density = "standard",
   accessibleHeading,
   layout = "list",
+  intro,
 }: FaqGroupProps) {
   const headingId = `${id}-heading`;
   const columns = layout === "columns";
 
   const headingClass = content.h2
     ? `text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink ${
-        columns ? "mb-6" : "mb-8 md:mb-10"
+        columns ? (intro ? "mb-3" : "mb-6") : "mb-8 md:mb-10"
       }`
     : "sr-only";
 
@@ -96,6 +105,11 @@ export function FaqGroup({
       <Section tone="subtle" width="site" density={density} labelledBy={headingId}>
         <div className="mx-auto max-w-[1100px]">
           {heading}
+          {intro && content.h2 ? (
+            <p className="mb-6 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+              {intro}
+            </p>
+          ) : null}
           <div className="grid items-start gap-3 md:grid-cols-2 md:gap-4">
             {content.items.map((item, index) => {
               const answerId = `${id}-answer-${index + 1}`;
@@ -123,7 +137,7 @@ export function FaqGroup({
                     className="px-4 pb-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted md:px-4.5"
                   >
                     {item.answer}
-                    <FaqLink link={item.link} />
+                    <FaqLink item={item} />
                   </p>
                 </details>
               );
@@ -162,7 +176,7 @@ export function FaqGroup({
                 className="pr-14 pb-6 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
               >
                 {item.answer}
-                <FaqLink link={item.link} />
+                <FaqLink item={item} />
               </p>
             </details>
           );

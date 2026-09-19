@@ -1,3 +1,4 @@
+import type { HubLink, HubRelatedCard, HubSplitSection } from "@/types/service-content";
 /**
  * Content types for the homepage.
  *
@@ -54,6 +55,11 @@ export interface FaqItem {
    * complete without it, so the visible text and any FAQ markup still match.
    */
   readonly link?: { readonly label: string; readonly href: string };
+  /**
+   * Optional related pages shown under the answer when it points to more than
+   * one destination. The answer text stays complete without them.
+   */
+  readonly links?: readonly { readonly label: string; readonly href: string }[];
 }
 
 export interface FaqContent {
@@ -238,9 +244,55 @@ export interface HomepageContent {
 export interface NationwideCoverageContent {
   readonly h1: string;
   readonly metaDescription: string;
-  readonly intro: string;
-  readonly body: readonly string[];
-  readonly faq?: readonly FaqItem[];
+  /** Hero copy and the commercial CTA. The secondary action is the phone button. */
+  readonly hero: {
+    readonly eyebrow: string;
+    /** Direct answer first, then the request-framing sentence. */
+    readonly paragraphs: readonly string[];
+    readonly primaryCta: Cta;
+    /** Prefix for the phone button label, e.g. "Call SB Mobile Installations". */
+    readonly callLabel: string;
+    /** Optional. The row renders only when two or more items exist. */
+    readonly trustItems?: readonly string[];
+  };
+  /** "What does nationwide mean" answer section that follows the hero. */
+  readonly introSection: HubSplitSection;
+  /** Four-item information strip, with a quiet link to the quote form. */
+  readonly requestStart: {
+    readonly h2: string;
+    readonly items: readonly { readonly label: string; readonly description: string }[];
+    readonly note: string;
+    readonly link: HubLink;
+  };
+  /** Service cards, built from the approved service taxonomy. */
+  readonly services: {
+    readonly h2: string;
+    readonly cards: readonly HubRelatedCard[];
+  };
+  readonly vehicles: {
+    readonly h2: string;
+    readonly examplesHeading: string;
+    readonly examples: readonly string[];
+    readonly categoriesHeading: string;
+    readonly categories: readonly string[];
+    readonly note: string;
+  };
+  readonly explore: {
+    readonly h2: string;
+    readonly links: readonly HubLink[];
+  };
+  readonly faqHeading: string;
+  readonly faq: readonly FaqItem[];
+  readonly quote: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly phoneLead: string;
+  };
+  /** Quiet recruitment text link shown after the commercial form. */
+  readonly handoff: {
+    readonly question: string;
+    readonly link: Cta;
+  };
 }
 
 /**

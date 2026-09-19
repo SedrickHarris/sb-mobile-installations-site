@@ -469,6 +469,26 @@ const pages = {
   "fleet-rollouts": fleetRolloutsContent,
 } as const;
 
+/**
+ * The five service cards in display order, for pages outside the service
+ * template (the coverage hub). Titles, descriptions, and routes come from
+ * `serviceCards`, so they cannot drift from the service pages.
+ */
+export const SERVICE_CARD_ORDER = [
+  "fleet-telematics-installation",
+  "gps-tracking-installation",
+  "eld-installation",
+  "dashcam-camera-installation",
+  "fleet-rollouts",
+] as const satisfies readonly ServiceSlug[];
+
+export function getServiceCard(slug: ServiceSlug): HubRelatedCard {
+  return serviceCards[slug];
+}
+
+/** Approved vehicle-context examples and their clarification (claims rows 26 and 39). */
+export const vehicleContext = shared.vehicles;
+
 /** Assemble everything ServicePageTemplate needs for one service page. */
 export function getServicePage(slug: ServiceSlug): ServicePageBundle {
   const content = contents[slug];
