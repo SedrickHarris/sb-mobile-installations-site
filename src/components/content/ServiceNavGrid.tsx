@@ -9,6 +9,8 @@ interface ServiceNavGridProps {
   readonly id: string;
   readonly h2: string;
   readonly intro: string;
+  /** Small label above the H2. Not a heading. */
+  readonly eyebrow?: string;
   readonly cards: readonly HubServiceCard[];
 }
 
@@ -22,11 +24,22 @@ interface ServiceNavGridProps {
  * columns so the grid has no orphan. The red top rule is decorative and
  * limited to the cards flagged `accent`.
  */
-export function ServiceNavGrid({ id, h2, intro, cards }: ServiceNavGridProps) {
+export function ServiceNavGrid({
+  id,
+  h2,
+  intro,
+  eyebrow,
+  cards,
+}: ServiceNavGridProps) {
   const headingId = `${id}-heading`;
 
   return (
     <Section tone="subtle" width="site" labelledBy={headingId}>
+      {eyebrow ? (
+        <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-brand-red)] uppercase">
+          {eyebrow}
+        </p>
+      ) : null}
       <h2
         id={headingId}
         className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"

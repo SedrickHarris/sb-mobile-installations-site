@@ -1,3 +1,4 @@
+import type { CommercialInquiryFormCopy } from "@/components/forms/CommercialInquiryForm";
 import type { HubImageSlot } from "@/data/site/services-hub-images";
 import type { Cta, FaqItem } from "@/types/content";
 
@@ -27,6 +28,14 @@ export interface HubServiceCard {
   readonly slot?: HubImageSlot;
 }
 
+/** Secondary note under the decision guide cards, with one inline link. */
+export interface HubDecisionNote {
+  readonly before: string;
+  readonly linkText: string;
+  readonly href: string;
+  readonly after: string;
+}
+
 /** One row of the "which service do I need" decision guide. */
 export interface HubDecisionRow {
   readonly situation: string;
@@ -40,7 +49,8 @@ export interface HubDecisionRow {
 export interface HubList {
   readonly heading?: string;
   readonly items: readonly string[];
-  readonly style?: "bullets" | "checklist";
+  /** "labeled": each item is "Label: description", shown with a bold label. */
+  readonly style?: "bullets" | "checklist" | "labeled";
 }
 
 export interface HubLink {
@@ -60,6 +70,8 @@ export interface HubSplitSection {
   /** Render the footnotes as a visually distinct callout with a left rule. */
   readonly footnoteCallout?: boolean;
   readonly links?: readonly HubLink[];
+  /** Style the first link as primary and any others as secondary (lighter weight). */
+  readonly primaryLink?: boolean;
 }
 
 /**
@@ -225,27 +237,40 @@ export interface IndustriesHubPageContent {
   };
   readonly answer: HubSplitSection;
   readonly industries: {
+    readonly eyebrow?: string;
     readonly h2: string;
     readonly intro: string;
     readonly cards: readonly HubServiceCard[];
   };
   readonly decisionGuide: {
+    readonly eyebrow?: string;
     readonly h2: string;
     readonly intro: string;
     readonly rows: readonly HubDecisionRow[];
+    readonly note?: HubDecisionNote;
   };
   readonly capability: HubSplitSection;
   readonly intake: HubSplitSection;
   readonly nationwide: HubSplitSection;
   readonly services: {
+    readonly eyebrow?: string;
     readonly h2: string;
+    /** Introduction paragraphs directly under the heading. */
+    readonly intro?: readonly string[];
     readonly cards: readonly HubRelatedCard[];
   };
   readonly faqHeading: string;
   readonly quote: {
+    readonly eyebrow: string;
     readonly h2: string;
-    readonly intro: string;
+    readonly paragraphs: readonly string[];
+    readonly listHeading: string;
+    readonly list: readonly string[];
+    readonly reassurance: string;
+    readonly formHeading: string;
+    readonly formIntro: string;
     readonly phoneLead: string;
+    readonly formCopy: CommercialInquiryFormCopy;
   };
 }
 

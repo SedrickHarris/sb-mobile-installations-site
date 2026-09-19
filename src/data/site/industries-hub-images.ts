@@ -20,17 +20,6 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * contains no dashes or unverified claims.
  */
 export const industriesHubImages = {
-  hero: {
-    slotId: "industries-hub-hero",
-    role: "Authentic fleet yard or technician-at-work photograph",
-    aspectRatio: "4 / 3",
-    width: 1600,
-    height: 1200,
-    fallback: "route",
-    alt: "",
-    altGuidance:
-      "Describe the vehicles and work actually shown. Avoid a generic industry collage.",
-  },
   answer: {
     slotId: "industries-hub-answer",
     role: "Commercial fleet vehicles parked at a fleet facility",
@@ -45,25 +34,39 @@ export const industriesHubImages = {
   },
   capability: {
     slotId: "industries-hub-capability",
-    role: "Field installation photograph on a commercial vehicle",
-    aspectRatio: "3 / 2",
-    width: 1500,
-    height: 1000,
+    role: "Commercial vans and trucks staged at a fleet facility",
+    aspectRatio: "7 / 4",
+    width: 3318,
+    height: 1896,
     fallback: "grid",
-    alt: "",
+    src: "/images/industries/industries-hub-page/sb-mobile-installations-planning-commercial-fleet-installation-projects.webp",
+    alt: "Commercial vans and trucks staged outside a fleet facility",
     altGuidance:
-      "Describe the installation work shown. Do not imply an unconfirmed vehicle type or vertical.",
+      "Describe only what is shown. No trade branding, no third-party logos, no readable text, and no geographic claim.",
+  },
+  intake: {
+    slotId: "industries-hub-intake",
+    role: "Commercial vans and trucks arranged in an organized fleet staging area",
+    aspectRatio: "7 / 4",
+    width: 3318,
+    height: 1896,
+    fallback: "grid",
+    src: "/images/industries/industries-hub-page/sb-mobile-installations-project-details-installation-planning-fleet-staging.webp",
+    alt: "Commercial vans and trucks arranged in an organized fleet staging area",
+    altGuidance:
+      "Describe only what is shown. No trade branding, no third-party logos, no readable text, and no geographic claim.",
   },
   nationwide: {
     slotId: "industries-hub-nationwide",
-    role: "Abstract route or network graphic, or an operational vehicle image",
-    aspectRatio: "16 / 9",
-    width: 1600,
-    height: 900,
+    role: "Commercial trucks and a van staged in a fleet yard at dusk",
+    aspectRatio: "7 / 4",
+    width: 3318,
+    height: 1896,
     fallback: "route",
-    alt: "",
+    src: "/images/industries/industries-hub-page/sb-mobile-installations-nationwide-mobile-installation-support-commercial-fleet.webp",
+    alt: "Commercial trucks and a van staged in a fleet yard at dusk",
     altGuidance:
-      "Never a state map or any graphic implying state-level coverage. The decorative fallback may ship as the final design.",
+      "Describe only what is shown. Never a map or any graphic implying state-level coverage, and no city or state identifiers.",
   },
   cardCommercial: {
     slotId: "industries-card-commercial",

@@ -15,8 +15,8 @@ interface SplitFeatureProps {
   readonly slot?: HubImageSlot;
   readonly mediaSide?: "left" | "right";
   /**
-   * Small chapter label above the heading. Not a heading. Rendered on light
-   * tones only: SB red on navy is 2.62:1, so it is dropped on dark surfaces.
+   * Small chapter label above the heading. Not a heading. SB red on navy is
+   * 2.62:1, so dark surfaces use the light-on-dark text color instead.
    */
   readonly eyebrow?: string;
   /** Vertical alignment of the two columns. Defaults to centered. */
@@ -72,8 +72,14 @@ export function SplitFeature({
         }
       >
         <div className={slot && mediaSide === "left" ? "md:order-2" : ""}>
-          {eyebrow && !dark ? (
-            <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-brand-red)] uppercase">
+          {eyebrow ? (
+            <p
+              className={`mb-3 text-[length:var(--text-label)] font-semibold tracking-wide uppercase ${
+                dark
+                  ? "text-[var(--color-text-on-dark)]/80"
+                  : "text-[var(--color-brand-red)]"
+              }`}
+            >
               {eyebrow}
             </p>
           ) : null}
@@ -134,11 +140,15 @@ export function SplitFeature({
 
           {content.links && content.links.length > 0 ? (
             <ul className="mt-6 flex list-none flex-col gap-1 p-0">
-              {content.links.map((item) => (
+              {content.links.map((item, index) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold underline underline-offset-4 ${link}`}
+                    className={`inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] underline underline-offset-4 ${
+                      content.primaryLink && index > 0
+                        ? "font-normal"
+                        : "font-semibold"
+                    } ${link}`}
                   >
                     {item.label}
                     <span aria-hidden="true">&rarr;</span>
@@ -171,6 +181,7 @@ function FeatureList({
   readonly dark: boolean;
 }) {
   const checklist = list.style === "checklist";
+  const labeled = list.style === "labeled";
 
   return (
     <div>
@@ -198,10 +209,22 @@ function FeatureList({
             >
               {checklist ? "✓" : "•"}
             </span>
-            <span>{item}</span>
+            {labeled ? <LabeledItem item={item} /> : <span>{item}</span>}
           </li>
         ))}
       </ul>
     </div>
+  );
+}
+
+/** "Label: description" rendered with the label in bold. */
+function LabeledItem({ item }: { readonly item: string }) {
+  const at = item.indexOf(": ");
+  if (at < 0) return <span>{item}</span>;
+  return (
+    <span>
+      <strong className="font-bold">{item.slice(0, at)}:</strong>{" "}
+      {item.slice(at + 2)}
+    </span>
   );
 }

@@ -2,13 +2,17 @@ import Link from "next/link";
 
 import { Section } from "@/components/layout/Section";
 import { Card } from "@/components/ui/Card";
-import type { HubDecisionRow } from "@/types/service-content";
+import type { HubDecisionNote, HubDecisionRow } from "@/types/service-content";
 
 interface DecisionGuideProps {
   readonly id: string;
   readonly h2: string;
   readonly intro: string;
   readonly rows: readonly HubDecisionRow[];
+  /** Small label above the H2. Not a heading. */
+  readonly eyebrow?: string;
+  /** Secondary note with one inline link, shown under the cards. */
+  readonly note?: HubDecisionNote;
 }
 
 /**
@@ -19,11 +23,23 @@ interface DecisionGuideProps {
  * never diagnoses a regulatory or technical requirement. Cards stack to one
  * column on mobile. No red on this dark surface (contrast is 2.62:1).
  */
-export function DecisionGuide({ id, h2, intro, rows }: DecisionGuideProps) {
+export function DecisionGuide({
+  id,
+  h2,
+  intro,
+  rows,
+  eyebrow,
+  note,
+}: DecisionGuideProps) {
   const headingId = `${id}-heading`;
 
   return (
     <Section tone="dark" width="site" labelledBy={headingId}>
+      {eyebrow ? (
+        <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-text-on-dark)]/80 uppercase">
+          {eyebrow}
+        </p>
+      ) : null}
       <h2
         id={headingId}
         className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
@@ -72,6 +88,19 @@ export function DecisionGuide({ id, h2, intro, rows }: DecisionGuideProps) {
           </li>
         ))}
       </ul>
+
+      {note ? (
+        <p className="mt-8 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/80">
+          {note.before}
+          <Link
+            href={note.href}
+            className="font-semibold text-[var(--color-text-on-dark)] underline underline-offset-4"
+          >
+            {note.linkText}
+          </Link>
+          {note.after}
+        </p>
+      ) : null}
     </Section>
   );
 }

@@ -1,4 +1,3 @@
-import { industriesHubImages as img } from "@/data/site/industries-hub-images";
 import type { IndustriesHubPageContent } from "@/types/service-content";
 
 /**
@@ -66,207 +65,221 @@ export const industriesHubPageContent: IndustriesHubPageContent = {
   },
 
   industries: {
-    h2: "Explore Industry Support",
+    eyebrow: "INDUSTRY-SPECIFIC FLEET SUPPORT",
+    h2: "Explore Industry-Specific Installation Support",
     intro:
-      "Choose the page closest to your fleet environment. Each one covers the confirmed installation scope for that type of vehicle.",
+      "Choose the page that best matches your fleet, vehicle type, or deployment environment. Each page explains the installation support available for that type of operation, including common vehicle applications, equipment considerations, and how to request project information.",
     cards: [
       {
         category: "Commercial fleets",
         title: "Commercial Fleets",
         scope:
-          "Installation support for fleet and commercial vehicles, including delivery vehicles, service trucks, and work vans.",
+          "Installation support for commercial fleets, including delivery vehicles, service trucks, work vans, and other fleet vehicles.",
         commonUse:
-          "Installation context: GPS tracking, ELD, dashcam, and fleet management equipment across a commercial fleet.",
-        linkLabel: "Explore commercial fleet support",
+          "Support for GPS tracking, ELD, dashcam, TPMS, and fleet-management equipment across single-vehicle and multi-vehicle projects.",
+        linkLabel: "Explore commercial fleet installation support",
         href: "/industries/commercial-fleets/",
         accent: true,
-        slot: img.cardCommercial,
       },
       {
-        category: "Construction",
+        category: "Construction vehicle fleets",
         title: "Construction Vehicle Fleets",
-        scope: "Installation support for construction vehicles.",
+        scope:
+          "Installation support for construction vehicles and equipment used in field-based commercial operations.",
         commonUse:
-          "Installation context: technicians travel directly to your location.",
-        linkLabel: "Explore construction vehicle support",
+          "On-site installation support coordinated around vehicle access, equipment type, project schedule, and jobsite requirements.",
+        linkLabel: "Explore construction vehicle installation support",
         href: "/industries/construction-heavy-equipment/",
-        slot: img.cardConstruction,
       },
       {
-        category: "Commercial fleet use case",
+        category: "Logistics and delivery",
         title: "Logistics & Delivery Fleets",
         scope:
-          "Installation support for delivery vehicles and heavy-duty trucks within commercial fleet projects.",
+          "Installation support for delivery vehicles, box trucks, service vehicles, and heavy-duty trucks used in logistics and distribution operations.",
         commonUse:
-          "Installation context: on-site installation, for one vehicle or an entire fleet.",
-        linkLabel: "Explore logistics fleet support",
+          "On-site installation for individual vehicles, scheduled fleet deployments, or broader commercial vehicle projects.",
+        linkLabel: "Explore logistics and delivery fleet support",
         href: "/industries/logistics-delivery-fleets/",
-        slot: img.cardLogistics,
       },
       {
-        category: "Commercial fleet use case",
+        category: "Field-service fleets",
         title: "Field-Service Fleets",
         scope:
-          "Installation support for service trucks, work vans, and utility vehicles within commercial fleet projects.",
+          "Installation support for service trucks, work vans, utility vehicles, and other vehicles used by mobile field-service teams.",
         commonUse:
-          "Installation context: on-site installation across service vehicles, for one vehicle or an entire fleet.",
+          "Support for fleet technology installations completed around vehicle availability, service schedules, and operational requirements.",
         linkLabel: "Explore field-service fleet support",
         href: "/industries/field-service-fleets/",
-        slot: img.cardFieldService,
       },
       {
-        category: "Hardware deployment programs",
-        title: "Technology Providers",
+        category: "Technology provider deployment",
+        title: "Technology Provider Deployment Support",
         scope:
-          "Use this starting point to describe an installation request connected to a hardware deployment program. SB Mobile provides installation and deployment support, not the underlying technology platform.",
+          "Installation and deployment support for technology providers coordinating hardware installations across commercial vehicles and fleet environments.",
         commonUse:
-          "Starting point: describe your program in an installation quote request.",
-        linkLabel: "Explore technology provider support",
+          "SB Mobile Installations provides the physical installation support. We are not the underlying technology platform, hardware manufacturer, or compliance consultant.",
+        linkLabel: "Explore technology provider deployment support",
         href: "/industries/telematics-technology-providers/",
-        slot: img.cardTechnology,
       },
     ],
   },
 
   decisionGuide: {
+    eyebrow: "PROJECT ROUTING",
     h2: "Find the Right Starting Point for Your Installation Project",
     intro:
-      "Find the situation closest to yours. Each route leads to the page that fits it.",
+      "Not sure which page fits your project? Choose the situation closest to yours. Each route leads to information about the installation support, vehicle types, equipment, or deployment requirements most relevant to your request.",
     rows: [
       {
         situation: "Your project involves commercial vehicles across a fleet",
         destination: "Commercial Fleets",
-        linkLabel: "Explore commercial fleet support",
+        linkLabel: "Explore commercial fleet installation support",
         href: "/industries/commercial-fleets/",
       },
       {
-        situation: "Your project involves construction vehicles",
+        situation: "Your project involves construction vehicles or equipment",
         destination: "Construction Vehicle Fleets",
-        linkLabel: "Explore construction vehicle support",
+        linkLabel: "Explore construction vehicle installation support",
         href: "/industries/construction-heavy-equipment/",
       },
       {
         situation:
-          "You know the equipment you need installed, such as GPS, ELD, or dashcam hardware",
-        destination: "Installation services",
-        linkLabel: "Explore installation services",
+          "You know the fleet technology or vehicle hardware you need installed",
+        destination: "Installation Services",
+        linkLabel: "Explore fleet installation services",
         href: "/services/",
       },
       {
-        situation: "You are coordinating many vehicles or multiple locations",
+        situation:
+          "You are coordinating installations for multiple vehicles or locations",
         destination: "Fleet Rollout Services",
         linkLabel: "Discuss a fleet rollout",
         href: "/services/fleet-rollouts/",
       },
       {
-        situation:
-          "You are describing an installation request tied to a hardware deployment program",
-        destination: "Technology Providers",
-        linkLabel: "Explore technology provider support",
+        situation: "You are coordinating a hardware deployment program",
+        destination: "Technology Provider Deployment Support",
+        linkLabel: "Explore technology provider deployment support",
         href: "/industries/telematics-technology-providers/",
       },
     ],
+    note: {
+      before: "If you are unsure which route fits your project, start with the ",
+      linkText: "installation request page",
+      href: "#request-quote",
+      after:
+        " and include your vehicle types, equipment, number of vehicles, locations, and preferred timeline.",
+    },
   },
 
   capability: {
-    h2: "Installation Planning for Commercial Fleet Environments",
+    h2: "Planning Commercial Fleet Installation Projects",
     body: [
-      "Installation planning starts with your vehicles, your equipment, and your project locations. SB Mobile Installations installs fleet technology on fleet, commercial, and construction vehicles, with technicians traveling directly to your location.",
+      "Installation planning begins with the vehicles, equipment, project locations, and timeline involved. SB Mobile Installations provides on-site installation support for fleet, commercial, logistics, delivery, service, and construction vehicles.",
+      "Project details may include the number and types of vehicles, the equipment being installed, vehicle access, installation locations, scheduling requirements, and whether the work involves one vehicle, a fleet, or multiple locations.",
+      "Before requesting a project review, gather the information available about your vehicles, equipment, locations, and preferred timeline. This helps clarify the installation requirements and determine the appropriate starting point.",
     ],
     lists: [
       {
         items: [
-          "On-site installation at your location",
-          "One vehicle or an entire fleet",
-          "Every installation photo documented, with documentation delivered automatically",
-          "Nationwide project discussion",
-          "Project location and timeline intake",
+          "On-site installation at an approved project location",
+          "Support for one vehicle, multiple vehicles, or an entire fleet",
+          "Installation planning based on vehicle type and equipment",
+          "Project location, access, and scheduling considerations",
+          "Support for commercial and nationwide deployment discussions",
         ],
       },
     ],
-    links: [
-      { label: "Fleet installation services", href: "/services/" },
-      {
-        label: "Installation quality and safety approach",
-        href: "/quality-safety/",
-      },
-    ],
+    links: [{ label: "Explore fleet installation services", href: "/services/" }],
   },
 
   intake: {
     h2: "Project Details That Help Shape Installation Planning",
     body: [
-      "Including these details in your request helps SB Mobile Installations route your inquiry to the right service and follow up on scope.",
+      "Providing a few project details helps SB Mobile Installations understand the installation environment, identify the appropriate service path, and determine what planning may be required before work begins.",
+      "The most useful information includes the vehicles involved, the equipment being installed, the number of vehicles and locations, operating requirements, and the preferred project timeline. You do not need to have every detail finalized before reaching out. Share what you know, and the project scope can be discussed from there.",
     ],
     lists: [
       {
-        style: "checklist",
+        style: "labeled",
         items: [
-          "Vehicle type: helps identify the fleet environment for your project",
-          "Equipment type: helps route your request to the relevant service",
-          "Vehicle count: helps separate a single installation from a fleet rollout",
-          "Number of locations: helps show whether the project needs coordination across sites",
-          "Operating schedule: helps plan work around vehicle availability",
-          "Timeline: helps start the project-scope conversation",
+          "Vehicle type: Helps identify the fleet environment and installation requirements.",
+          "Equipment type: Helps connect your request with the relevant installation service.",
+          "Vehicle count: Helps distinguish a single-vehicle installation from a larger fleet rollout.",
+          "Number of locations: Helps determine whether the project requires coordination across multiple sites.",
+          "Operating schedule: Helps account for vehicle availability and access requirements.",
+          "Preferred timeline: Helps begin the project-scope and scheduling discussion.",
         ],
       },
     ],
   },
 
   nationwide: {
-    h2: "On-Site Fleet Installation Support Nationwide",
+    h2: "Nationwide Mobile Installation Support",
     body: [
-      "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location. Technicians travel directly to each project location.",
-      "Tell us your industry, equipment, vehicle count, and project locations so your inquiry can be routed appropriately.",
+      "SB Mobile Installations provides mobile fleet installation support for commercial, logistics, delivery, service, and construction vehicles. Projects are coordinated around the vehicle types, equipment, locations, access requirements, and timeline provided in the installation request.",
+      "Share your industry, equipment, vehicle count, and project locations so the inquiry can be routed appropriately and the installation requirements can be discussed.",
     ],
+    primaryLink: true,
     links: [
-      { label: "Explore Nationwide Coverage", href: "/coverage/" },
+      {
+        label: "Discuss a nationwide installation project",
+        href: "#request-quote",
+      },
       {
         label: "How fleet installation projects are coordinated",
-        href: "/our-process/",
+        href: "/services/fleet-rollouts/",
       },
     ],
   },
 
   services: {
+    eyebrow: "FLEET INSTALLATION SERVICES",
     h2: "Explore Fleet Installation Services",
+    intro: [
+      "SB Mobile Installations provides on-site installation support for fleet technology and commercial vehicle electronics, including GPS tracking, ELD and AOBRD systems, fleet dashcams, TPMS, and coordinated fleet rollout projects.",
+      "Choose the service that best matches your equipment or deployment requirements.",
+    ],
     cards: [
       {
         title: "Fleet Telematics Installation",
         description:
-          "GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment.",
+          "Installation support for GPS tracking, ELD, AOBRD, TPMS, dashcam, and fleet-management equipment used across commercial vehicles.",
         linkLabel: "Explore fleet telematics installation",
         href: "/services/fleet-telematics-installation/",
       },
       {
         title: "GPS Tracking Installation",
-        description: "On-site installation of GPS tracking hardware.",
+        description:
+          "On-site installation support for GPS tracking hardware in commercial vehicles, work vans, service vehicles, and fleet vehicles.",
         linkLabel: "Explore GPS tracking installation",
         href: "/services/gps-tracking-installation/",
       },
       {
         title: "ELD Installation",
-        description: "Installation of ELD and AOBRD equipment.",
+        description:
+          "Installation support for ELD and AOBRD equipment used in commercial and fleet vehicle environments.",
         linkLabel: "Explore ELD installation",
         href: "/services/eld-installation/",
       },
       {
         title: "Dashcam & Camera Installation",
         description:
-          "Fleet dashcam and windshield-mounted video recorder installation.",
+          "Fleet dashcam and windshield-mounted camera installation support for commercial vehicles and fleet deployment projects.",
         linkLabel: "Explore dashcam and camera installation",
         href: "/services/dashcam-camera-installation/",
       },
       {
         title: "Fleet Rollout Services",
         description:
-          "Coordinated multi-vehicle and multi-location installation projects.",
+          "Coordinated installation support for multi-vehicle and multi-location fleet technology deployments.",
         linkLabel: "Explore fleet rollout services",
         href: "/services/fleet-rollouts/",
       },
       {
-        title: "All installation services",
-        description: "See every installation service in one place.",
+        title: "Complete Fleet Installation Services",
+        description:
+          "Review the full range of approved fleet technology and commercial vehicle installation services in one place.",
         linkLabel: "Explore all fleet installation services",
         href: "/services/",
       },
@@ -276,10 +289,37 @@ export const industriesHubPageContent: IndustriesHubPageContent = {
   faqHeading: "Industry Support FAQs",
 
   quote: {
+    eyebrow: "COMMERCIAL FLEET INSTALLATION SUPPORT",
     h2: "Discuss Your Fleet Installation Project",
-    intro:
-      "Share your industry, equipment type, vehicle count, project locations, and preferred timeline. We will use those details to route your installation inquiry appropriately.",
+    paragraphs: [
+      "Tell us about your vehicles, equipment, project locations, and preferred timeline. SB Mobile Installations uses these details to understand the installation environment and route your inquiry to the appropriate service or project path.",
+      "Installation requests may involve one commercial vehicle, a larger fleet, multiple locations, or a technology deployment program. You do not need to have every detail finalized before reaching out. Share what you know, and the project scope can be discussed from there.",
+    ],
+    listHeading: "A useful project request may include:",
+    list: [
+      "Vehicle type and operating environment",
+      "Equipment or service needed",
+      "Number of vehicles or assets",
+      "Project location or locations",
+      "Preferred installation timeline",
+      "Any access, scheduling, or deployment requirements",
+    ],
+    reassurance:
+      "The more project information you can provide, the easier it is to determine the appropriate installation path. If your requirements are still being defined, provide the available details and explain what you are planning.",
+    formHeading: "Tell Us About Your Installation Needs",
+    formIntro:
+      "Complete the form with the project details currently available. A representative can review the information and determine the appropriate next step.",
     phoneLead:
       "Prefer to talk it through? Call Monday through Friday, 8:00 AM to 6:00 PM.",
+    formCopy: {
+      serviceNeed: "Equipment or installation service needed",
+      projectLocations: "Project location or locations",
+      timeline: "Preferred installation timeline",
+      description: "Tell us about your project",
+      descriptionPlaceholder:
+        "Include vehicle types, equipment, number of locations, access requirements, or other project details.",
+      consent: "I agree to be contacted about this installation project.",
+      submit: "Submit Installation Request",
+    },
   },
 };

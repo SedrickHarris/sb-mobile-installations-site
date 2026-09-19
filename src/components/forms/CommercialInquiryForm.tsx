@@ -10,6 +10,30 @@ import { useFormSubmission } from "@/lib/forms/useFormSubmission";
 const THANK_YOU_ROUTE = "/thank-you/service-request/";
 
 /**
+ * Visible copy a page may override. Field names, ids, required rules,
+ * autocomplete, validation, payload, endpoint, and analytics are not affected.
+ * Defaults keep the wording every other page already uses.
+ */
+export interface CommercialInquiryFormCopy {
+  readonly serviceNeed: string;
+  readonly projectLocations: string;
+  readonly timeline: string;
+  readonly description: string;
+  readonly descriptionPlaceholder?: string;
+  readonly consent: string;
+  readonly submit: string;
+}
+
+const defaultCopy: CommercialInquiryFormCopy = {
+  serviceNeed: "Equipment or service need",
+  projectLocations: "Project location(s)",
+  timeline: "Preferred timeline",
+  description: "Project description",
+  consent: "I consent to be contacted about this project.",
+  submit: "Request Installation Service",
+};
+
+/**
  * Commercial inquiry form.
  *
  * Fields: name, email, phone, company, equipment/service need (sourced from
@@ -26,7 +50,12 @@ const THANK_YOU_ROUTE = "/thank-you/service-request/";
  * shares a submission handler with it. See CLAUDE.md section 4 and plan
  * section 5.
  */
-export function CommercialInquiryForm() {
+export function CommercialInquiryForm({
+  copy,
+}: {
+  readonly copy?: Partial<CommercialInquiryFormCopy>;
+} = {}) {
+  const text = { ...defaultCopy, ...copy };
   const formId = useId();
   const [fields, setFields] = useState({
     name: "",
@@ -152,7 +181,7 @@ export function CommercialInquiryForm() {
           />
         </Field>
 
-        <Field label="Equipment or service need" htmlFor={`${formId}-serviceNeed`} required>
+        <Field label={text.serviceNeed} htmlFor={`${formId}-serviceNeed`} required>
           <select
             id={`${formId}-serviceNeed`}
             name="serviceNeed"
@@ -181,7 +210,7 @@ export function CommercialInquiryForm() {
           />
         </Field>
 
-        <Field label="Project location(s)" htmlFor={`${formId}-projectLocations`} required>
+        <Field label={text.projectLocations} htmlFor={`${formId}-projectLocations`} required>
           <input
             id={`${formId}-projectLocations`}
             name="projectLocations"
@@ -193,7 +222,7 @@ export function CommercialInquiryForm() {
           />
         </Field>
 
-        <Field label="Preferred timeline" htmlFor={`${formId}-timeline`}>
+        <Field label={text.timeline} htmlFor={`${formId}-timeline`}>
           <input
             id={`${formId}-timeline`}
             name="timeline"
@@ -205,11 +234,12 @@ export function CommercialInquiryForm() {
         </Field>
 
         <div className="md:col-span-2">
-          <Field label="Project description" htmlFor={`${formId}-description`}>
+          <Field label={text.description} htmlFor={`${formId}-description`}>
             <textarea
               id={`${formId}-description`}
               name="description"
               rows={4}
+              placeholder={text.descriptionPlaceholder}
               value={fields.description}
               onChange={(e) => update("description", e.target.value)}
               className={inputClass}
@@ -228,7 +258,7 @@ export function CommercialInquiryForm() {
               onChange={(e) => update("consent", e.target.checked)}
               className="mt-1 size-5 shrink-0"
             />
-            I consent to be contacted about this project.
+            {text.consent}
           </label>
         </div>
 
@@ -238,7 +268,7 @@ export function CommercialInquiryForm() {
             disabled={submitting}
             className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-[var(--color-accent-blue-strong)] px-6 py-3 text-base font-semibold text-white transition-[filter] duration-150 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {submitting ? "Sending..." : "Request Installation Service"}
+            {submitting ? "Sending..." : text.submit}
           </button>
         </div>
       </div>
