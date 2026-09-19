@@ -17,14 +17,21 @@ import {
  * viewBox 1540x779, 14 KB, fill #b50202, shown at 120-150 px wide. Plain img
  * because static export does not use Next image optimization. The thin red top border is decorative only.
  *
- * Utility bar (desktop only): the confirmed nationwide-reach statement and
- * the Installer Network link, so the secondary journey stays reachable without competing with the
+ * Utility bar (desktop only, 1024px and up): the confirmed nationwide-reach
+ * statement and the current openings link, so the secondary journey stays reachable without competing with the
  * primary commercial CTA in the row below.
  *
  * Primary nav is commercial-first per the 2026-09-18 override: Services,
  * Careers, Contact. Neither "Industries" nor "Coverage" is linked, because
  * neither route exists yet (Sprint 2). See the build report's judgment-call
  * note on this.
+ *
+ * Breakpoint: the full desktop header (utility bar, main navigation, phone
+ * button) starts at lg (1024px). The row needs more than 720px, so it cannot
+ * fit at md (768px) without horizontal overflow. Below lg the header shows the
+ * logo, the Request Service CTA, and the disclosure menu, and MobileNavigation
+ * keeps a one-tap phone action visible. Keep HeaderMobileMenu,
+ * MainNavigation, and MobileNavigation on this same breakpoint.
  *
  * Not sticky: a fixed header costs mobile viewport height and can cover
  * anchor targets, which section 16 of 20-component-inventory.md warns
@@ -36,7 +43,7 @@ export function Header() {
     <header className="border-t-4 border-t-[var(--color-brand-red)] border-b border-border bg-surface">
       <div
         data-tone="dark"
-        className="hidden border-b border-border bg-[var(--color-surface-dark)] text-[var(--color-text-on-dark)] md:block"
+        className="hidden border-b border-border bg-[var(--color-surface-dark)] text-[var(--color-text-on-dark)] lg:block"
       >
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-6 py-2 text-[length:var(--text-small)]">
           <div className="flex items-center gap-6">
@@ -67,19 +74,26 @@ export function Header() {
             alt="SB Mobile Installations"
             width={1540}
             height={779}
-            className="h-auto w-[120px] max-w-full md:w-[150px]"
+            className="h-auto w-[120px] max-w-full lg:w-[150px]"
           />
         </Link>
 
         <div className="ms-auto flex items-center gap-4">
           <MainNavigation items={mainNavigation} />
 
-          <PhoneButton
-            href={utilityBar.phoneHref}
-            label={utilityBar.phoneLabel}
-            location="header"
-            className="hidden border-transparent bg-[var(--color-brand-red)] text-white hover:bg-[var(--color-brand-red-strong)] md:inline-flex"
-          />
+          {/*
+            Wrapper, not a `hidden` class on the button: PhoneButton's own
+            `inline-flex` overrides `hidden`, which left the phone button visible
+            on small screens. Hiding the wrapper hides the whole button below lg.
+          */}
+          <div className="hidden lg:block">
+            <PhoneButton
+              href={utilityBar.phoneHref}
+              label={utilityBar.phoneLabel}
+              location="header"
+              className="border-transparent bg-[var(--color-brand-red)] text-white hover:bg-[var(--color-brand-red-strong)]"
+            />
+          </div>
 
           <Link
             href={headerCta.href}

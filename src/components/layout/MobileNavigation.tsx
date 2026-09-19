@@ -4,7 +4,9 @@ import { business } from "@/data/site/business";
 import { mobileNavigationCta } from "@/data/navigation/site-navigation";
 
 /**
- * Persistent bottom navigation bar, mobile only.
+ * Persistent bottom navigation bar, below lg (1024px), so phones and tablets.
+ * It matches the header breakpoint: below lg the header phone button lives
+ * in the menu, so this bar keeps a one-tap call visible.
  *
  * Two actions, always available while scrolling: click-to-call using the
  * confirmed phone number, and the commercial "Request Service" CTA. This is
@@ -33,7 +35,7 @@ export function MobileNavigation() {
   return (
     <nav
       aria-label="Mobile quick actions"
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border bg-surface shadow-card md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border bg-surface shadow-card lg:hidden"
     >
       <a
         href={telHref}

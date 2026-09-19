@@ -49,7 +49,7 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className={`${bodyFont.variable} ${headingFont.variable}`}>
-      <body className="flex min-h-screen flex-col pb-14 md:pb-0">
+      <body className="flex min-h-screen flex-col pb-14 lg:pb-0">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-[var(--color-accent-blue-strong)] focus:px-4 focus:py-2 focus:text-white"

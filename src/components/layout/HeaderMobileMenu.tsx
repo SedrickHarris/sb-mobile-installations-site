@@ -12,7 +12,7 @@ interface HeaderMobileMenuProps {
 }
 
 /**
- * Header disclosure menu, mobile only.
+ * Header disclosure menu, below lg (1024px), so phones and tablets.
  *
  * A small client component responsible only for menu state and focus
  * behavior, per section 18 of 20-component-inventory.md.
@@ -57,7 +57,7 @@ export function HeaderMobileMenu({ items, phone }: HeaderMobileMenuProps) {
   }, [open]);
 
   return (
-    <div className="w-full md:hidden">
+    <div className="w-full lg:hidden">
       <button
         ref={triggerRef}
         type="button"

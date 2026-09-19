@@ -6,7 +6,8 @@ interface MainNavigationProps {
 }
 
 /**
- * Desktop navigation.
+ * Desktop navigation, shown from lg (1024px). Below that the header uses the
+ * disclosure menu (HeaderMobileMenu).
  *
  * Server-rendered links. Careers is a top-level destination, never nested
  * inside an About dropdown, per section 17 of 20-component-inventory.md.
@@ -16,7 +17,7 @@ interface MainNavigationProps {
  */
 export function MainNavigation({ items }: MainNavigationProps) {
   return (
-    <nav aria-label="Main" className="hidden md:block">
+    <nav aria-label="Main" className="hidden lg:block">
       <ul className="flex items-center gap-8">
         {items.map((item) => (
           <li key={item.href}>
