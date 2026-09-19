@@ -1,6 +1,7 @@
 import {
   dashcamCameraInstallationContent,
   eldInstallationContent,
+  fleetRolloutsContent,
   fleetTelematicsInstallationContent,
   gpsTrackingInstallationContent,
   servicesHubContent,
@@ -52,6 +53,11 @@ export const faqPageContent: FaqPageContent = {
       dashcamCameraInstallationContent.faq ?? [],
       "/services/dashcam-camera-installation/",
       "Dashcam & Camera Installation",
+    ),
+    ...fromSource(
+      fleetRolloutsContent.faq ?? [],
+      "/services/fleet-rollouts/",
+      "Fleet Rollout Services",
     ),
     ...fromSource(coverage.nationwide.faq ?? [], "/coverage/", "Coverage"),
     ...fromSource(careersHubContent.faq ?? [], "/careers/", "Careers"),

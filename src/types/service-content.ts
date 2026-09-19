@@ -56,6 +56,81 @@ export interface HubSplitSection {
   readonly links?: readonly HubLink[];
 }
 
+/**
+ * Per-service content for `ServicePageTemplate`. The H1, metadata
+ * description, answer-first intro, and FAQ live in the matching
+ * `ServicePageContent` (services-content.ts); everything below is the section
+ * copy that differs per service. Shared blocks live in
+ * `ServiceTemplateShared`.
+ */
+export interface ServiceTemplateContent {
+  readonly slug: string;
+  readonly pathname: string;
+  /** Last breadcrumb label. */
+  readonly breadcrumbLabel: string;
+  /**
+   * Schema `serviceType` values that directly match this page's visible
+   * purpose. Empty means the key is omitted (no approved label exists).
+   */
+  readonly serviceTypes: readonly string[];
+  /** Hero scope strip: a service-specific first item plus two shared items. */
+  readonly scopeItems: readonly string[];
+  readonly definition: HubSplitSection;
+  readonly scope: HubSplitSection;
+  /** Page-specific sentence; the vehicle examples and disclaimer are shared. */
+  readonly vehiclesBody: string;
+  readonly fit: HubSplitSection;
+  /** Page-specific request-detail sentence added to the nationwide section. */
+  readonly nationwideExtra: string;
+  /** Slugs of related service pages, in display order. */
+  readonly related: readonly string[];
+  readonly faqHeading: string;
+  readonly quoteH2: string;
+}
+
+/** Blocks that are the same on every service page. */
+export interface ServiceTemplateShared {
+  readonly callLabel: string;
+  readonly heroQualifier: string;
+  readonly vehicles: {
+    readonly h2: string;
+    readonly listHeading: string;
+    readonly examples: readonly string[];
+    readonly note: string;
+  };
+  readonly nationwide: {
+    readonly h2: string;
+    readonly lead: string;
+    readonly links: readonly HubLink[];
+  };
+  readonly documentation: {
+    readonly h2: string;
+    readonly sentence: string;
+    readonly links: readonly HubLink[];
+  };
+  readonly related: { readonly h2: string; readonly allCard: HubRelatedCard };
+  readonly quote: { readonly intro: string; readonly phoneLead: string };
+  readonly resources: { readonly h2: string; readonly links: readonly HubLink[] };
+  readonly handoff: { readonly question: string; readonly link: HubLink };
+}
+
+/** Everything `ServicePageTemplate` needs to render one service page. */
+export interface ServicePageBundle {
+  readonly page: ServicePageContent;
+  readonly content: ServiceTemplateContent;
+  readonly shared: ServiceTemplateShared;
+  readonly primaryCta: Cta;
+  /** `label` is the hero button text ("Call ..."); `numberLabel` is the bare number. */
+  readonly phone: {
+    readonly href: string;
+    readonly label: string;
+    readonly numberLabel: string;
+  };
+  readonly heroImage: HubImageSlot;
+  readonly contextImage: HubImageSlot;
+  readonly relatedCards: readonly HubRelatedCard[];
+}
+
 export interface CareersEquipmentCard {
   readonly title: string;
   readonly description: string;

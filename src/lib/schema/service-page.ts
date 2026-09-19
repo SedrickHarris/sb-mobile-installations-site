@@ -9,7 +9,8 @@ import type { ServicePageContent } from "@/types/service-content";
  *
  * Organization is referenced by @id (not re-declared), plus WebPage, Service,
  * and BreadcrumbList. No second WebSite node; WebSite is emitted exactly
- * once, on the homepage. See 13-schema-markup-plan.md section 58a.
+ * once, on the homepage. See 13-schema-markup-plan.md section 58a. No
+ * areaServed on the Service (see decision 0005).
  */
 export function servicePageSchema({
   pathname,
@@ -19,7 +20,11 @@ export function servicePageSchema({
 }: {
   readonly pathname: string;
   readonly content: ServicePageContent;
-  /** Confirmed equipment categories this page covers, from business.serviceTypes. */
+  /**
+   * `serviceType` values that directly match this page's visible purpose.
+   * Pass an empty array to omit the key when no approved label exists. Never
+   * reuse a broader list than the page shows.
+   */
   readonly serviceTypes: readonly string[];
   readonly breadcrumbs: readonly BreadcrumbItem[];
 }) {
@@ -39,9 +44,13 @@ export function servicePageSchema({
       {
         "@type": "Service",
         name: content.h1,
-        serviceType: [...serviceTypes],
+        ...(serviceTypes.length > 0 ? { serviceType: [...serviceTypes] } : {}),
         provider: organizationRef(),
-        areaServed: { "@type": "Country", name: business.areaServed },
+        /*
+          No areaServed, not even Country "United States": nationwide reach is
+          visible copy and the /coverage/ page only, until verified coverage
+          data supports structured geography.
+        */
       },
       breadcrumbList(breadcrumbs),
     ],
