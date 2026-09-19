@@ -2,32 +2,13 @@
 
 import { useId, useState, type FormEvent, type ReactNode } from "react";
 
+import { PLATFORM_OPTIONS } from "@/components/forms/platform-options";
 import { business } from "@/data/site/business";
 import { AnalyticsEvent } from "@/lib/analytics/events";
 import { buildAttribution } from "@/lib/forms/attribution";
 import { useFormSubmission } from "@/lib/forms/useFormSubmission";
 
 const THANK_YOU_ROUTE = "/careers/installer-network-received/";
-
-/**
- * Confirmed platform-experience language only, per docs/_claims-inventory.md
- * item 13. Labeled "experience with," never "certified on." Never used as a
- * schema taxonomy value elsewhere, and this list is not exported for reuse
- * outside this form for that reason.
- */
-const PLATFORM_OPTIONS = [
-  "Samsara",
-  "Geotab",
-  "Verizon Connect",
-  "Omnitracs",
-  "PeopleNet",
-  "Trimble",
-  "Zonar",
-  "LoJack",
-  "Lytx/DriveCam",
-  "SmartDrive",
-  "CalAmp",
-] as const;
 
 /**
  * Installer Network form.

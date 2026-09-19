@@ -1,34 +1,91 @@
+import { activeTechnicianJob, APPLY_PATH, INSTALLER_NETWORK_PATH } from "@/data/jobs";
 import type { CareersPageContent } from "@/types/service-content";
 
 /**
- * Careers hub and technician role page content.
+ * Careers landing page and Installer Network page content.
  *
- * "Apply" never appears; the pathway is "Join the Installer Network"
- * throughout, per CLAUDE.md section 4 and docs/_claims-inventory.md item 23.
- * No compensation figure appears anywhere in this file, per item 22. No
- * MECP or other certification claim appears, per item 24. No em dash
- * appears anywhere in this file.
+ * Two separate journeys:
+ * - The active opening and its application (`careersHubContent`, and the job
+ *   record in src/data/jobs). "Apply" belongs only here, because the opening
+ *   has its own application page and form.
+ * - The Installer Network (`installerNetworkContent`), a registration for
+ *   future opportunities. It is never an application, and it never uses
+ *   "Apply".
+ *
+ * The approved current-openings facts (docs/01 section 33) live in
+ * `business.recruitment` and the job record, not retyped here. No MECP or
+ * other certification claim appears as a requirement. No em dash appears in
+ * this file.
  */
 
 /**
- * Careers hub h1, metadata description, intro, and FAQ. Section copy for the
- * rest of the page lives in `careersHubPageContent` (careers-hub-content.ts);
- * `body` is unused on the hub. The FAQ feeds `/faq/`, and its two original
- * questions are kept word for word. New questions avoid the technician
- * page's own FAQ (guarantee, W-2, equipment).
+ * Careers landing page h1, metadata description, intro, and FAQ. Section copy
+ * for the page lives in `careersLandingContent` (careers-landing-content.ts).
+ * The FAQ feeds `/faq/`.
  */
 export const careersHubContent: CareersPageContent = {
+  h1: "Installer Careers at SB Mobile Installations",
+  metaDescription:
+    "Current openings for Mobile GPS, ELD, and AOBRD installation technicians. Independent contractor work, nationwide applicants accepted, no prior installation experience required, and training provided.",
+  intro:
+    "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. This is independent contractor field work, applicants are accepted nationwide, and no prior installation experience is required. Training is provided.",
+  body: [],
+  faq: [
+    {
+      question: "Are there current installer openings?",
+      answer:
+        "Yes. SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. Applicants are accepted nationwide, and no closing date is currently published.",
+      link: {
+        label: "View the current opening",
+        href: activeTechnicianJob.path,
+      },
+    },
+    {
+      question: "How do I apply for the current opening?",
+      answer:
+        "Use the application page. It is a dedicated form for the current opening and is separate from the Installer Network.",
+      link: { label: "Go to the application page", href: APPLY_PATH },
+    },
+    {
+      question:
+        "What is the difference between applying and joining the Installer Network?",
+      answer:
+        "Applying is for the current opening. The Installer Network is a separate registration for future opportunities. Joining it is not an application, and it does not guarantee contact, an interview, a contract, an assignment, a schedule, work volume, or pay.",
+      link: { label: "About the Installer Network", href: INSTALLER_NETWORK_PATH },
+    },
+    {
+      question: "Is this employee employment?",
+      answer:
+        "No. This is independent contractor work, not employee employment.",
+    },
+    {
+      question: "How can a business request fleet installation services?",
+      answer:
+        "Businesses request fleet installation services separately from installer careers. Visit the contact page to request an installation quote.",
+      link: { label: "Contact SB Mobile Installations", href: "/contact/" },
+    },
+  ],
+};
+
+/**
+ * Installer Network page h1, metadata description, intro, and FAQ. Section
+ * copy lives in `careersHubPageContent` (careers-hub-content.ts). The FAQ
+ * feeds `/faq/`. The Installer Network is a registration for future
+ * opportunities, separate from the application for the current opening.
+ */
+export const installerNetworkContent: CareersPageContent = {
   h1: "Join the SB Mobile Installations Installer Network",
   metaDescription:
-    "Share your fleet installation experience, tools, home market, and travel availability with the SB Mobile Installations Installer Network. An opt-in pathway, not an active job opening.",
+    "Register for future installation opportunities with the SB Mobile Installations Installer Network. A separate registration from the application for the current opening. Share your experience, tools, home market, and travel availability.",
   intro:
-    "SB Mobile Installations works with independent contractor technicians nationwide on GPS, ELD, and fleet electronics installation projects. Share your experience, tools, home market, and travel availability to join the Installer Network. It is an opt-in, no-guarantee pathway, not an active job opening.",
+    "The Installer Network is a registration for future installation opportunities with SB Mobile Installations. It is separate from the application for the current opening, and it is not an application. Share your experience, tools, home market, and travel availability to join.",
   body: [],
   faq: [
     {
       question: "Is the Installer Network an active job opening?",
       answer:
-        "No. The Installer Network is an opt-in, no-guarantee pathway for independent contractor technicians. It is not an active job opening, and joining it is not an application for one.",
+        "No. The Installer Network is an opt-in, no-guarantee registration for future opportunities, and joining it is not an application for a specific opening. To apply for the current opening, use the application page.",
+      link: { label: "Go to the application page", href: APPLY_PATH },
     },
     {
       question: "Are Installer Network technicians employees?",
@@ -38,7 +95,7 @@ export const careersHubContent: CareersPageContent = {
     {
       question: "What is the SB Mobile Installer Network?",
       answer:
-        "The SB Mobile Installer Network is a way for technicians to share their mobile installation experience, tools, home market, and travel availability for future installation opportunities. It is an expression of interest, not an application for a job.",
+        "The SB Mobile Installer Network is a way for technicians to share their mobile installation experience, tools, home market, and travel availability for future installation opportunities. It is a registration, not an application for a job.",
     },
     {
       question: "What information should I include in my Installer Network form?",
@@ -48,7 +105,7 @@ export const careersHubContent: CareersPageContent = {
     {
       question: "What are the requirements to join the Installer Network?",
       answer:
-        "Installer Network technicians are asked to have a valid driver's license, a personal vehicle for travel, the ability to travel state to state, and a smartphone for submitting installation data, and to pass a background check. See the Installer Network page for the full list of requirements and experience.",
+        "Installer Network technicians are asked to have a valid driver's license, their own personal vehicle, tools, and travel resources, the ability to travel state to state, and a smartphone for submitting installation data and installation photos, and to pass a background check. No prior installation experience is required, and training is provided. See the Installer Network page for the full list of requirements and helpful experience.",
     },
     {
       question: "What tools should I tell SB Mobile about?",
@@ -75,38 +132,6 @@ export const careersHubContent: CareersPageContent = {
       answer:
         "Businesses request fleet installation services separately from the Installer Network. Visit the contact page to request an installation quote.",
       link: { label: "Contact SB Mobile Installations", href: "/contact/" },
-    },
-  ],
-};
-
-export const technicianRoleContent: CareersPageContent = {
-  h1: "Mobile Installation Technician",
-  metaDescription:
-    "Join the SB Mobile Installations Installer Network as a mobile installation technician. Independent contractor, on-site GPS, ELD, and fleet electronics installation work, nationwide.",
-  intro:
-    "SB Mobile Installations works with independent contractor technicians nationwide who travel on-site to install GPS, ELD, and fleet electronics equipment on fleet, commercial, and construction vehicles.",
-  body: [
-    "Equipment installed: GPS tracking, ELD, AOBRD, TPMS, fleet dashcam / windshield-mounted video recorder, and fleet management equipment.",
-    "Vehicle types: fleet, commercial, and construction vehicles.",
-    "Technicians engaged through the Installer Network are independent contractors, not employees. Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
-    "Installation work is coordinated on-site at each customer's location, Monday through Friday, 8:00 AM to 6:00 PM, nationwide. Technicians travel directly to each project location.",
-    "Every installation is photo documented as part of the completed work, and that documentation is delivered to the customer automatically.",
-  ],
-  faq: [
-    {
-      question: "Is this a W-2 employment position?",
-      answer:
-        "No. Mobile installation technicians are engaged as independent contractors, not employees.",
-    },
-    {
-      question: "Does joining the Installer Network guarantee work?",
-      answer:
-        "No. Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
-    },
-    {
-      question: "What equipment would I be installing?",
-      answer:
-        "GPS tracking, ELD, AOBRD, TPMS, fleet dashcam / windshield-mounted video recorder, and fleet management equipment, on fleet, commercial, and construction vehicles.",
     },
   ],
 };

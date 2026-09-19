@@ -1,3 +1,4 @@
+import { applyCta } from "@/data/jobs/ctas";
 import { whoWeServeImages } from "@/data/site/who-we-serve-images";
 import type { Cta, HomepageContent } from "@/types/content";
 
@@ -23,9 +24,10 @@ import type { Cta, HomepageContent } from "@/types/content";
  *   Current installer       Approved by stakeholder 2026-09-19, section 33.1.
  *   openings, candidates    Homepage wording states only that openings exist,
  *   accepted nationwide     for independent contractors, with candidates accepted
- *                           nationwide. No pay figure, no "Apply" action (the
- *                           application page and form do not exist yet), and no
- *                           claim that an opening is in a named market.
+ *                           nationwide. No pay figure and no claim that an
+ *                           opening is in a named market. The banner's primary
+ *                           button is Apply (/careers/apply/), and the
+ *                           Installer Network stays a separate secondary link.
  *   Project capacity range  Approved by stakeholder 2026-09-10, section 11.1
  *   Photo documentation     Approved by stakeholder 2026-09-10, section 17.1
  *
@@ -255,24 +257,26 @@ export const homepageContent: HomepageContent = {
   recruitingBanner: {
     eyebrow: "INSTALLER OPPORTUNITIES",
     // Current openings and nationwide candidates are approved (docs/01 section
-    // 33.1, claims inventory rows 27 and 48). This is not an application: no
-    // application page or form exists yet, so the copy says "register your
-    // interest" and never "apply". No pay figure appears on the homepage.
+    // 33.1 and 33.2, claims inventory rows 27, 48, and 50). The body's final
+    // sentence uses "apply" on the owner's instruction, so the primary button
+    // is the Apply link to /careers/apply/ (row 51). The Installer Network is
+    // the secondary link, a separate registration for future opportunities,
+    // never the application. No pay figure appears on the homepage.
     h2: "Current Openings for Mobile Installation Technicians",
-    body: "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. The work is independent contractor work, and candidates are accepted nationwide. If you have experience with vehicle electrical systems, telematics equipment, or mobile installation work, learn about the role and register your interest through the Installer Network.",
+    body: "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. The work is independent contractor work, and candidates are accepted nationwide. No prior installation experience is required, and training is provided. Candidates with related vehicle electrical, telematics, automotive, audio, mechanical, or mobile installation experience are also encouraged to apply.",
     highlights: [
       "GPS, ELD, and AOBRD installation work",
       "On-site work at fleet, commercial, and construction locations",
       "Independent contractor engagement",
       "Candidates accepted nationwide",
     ],
-    cta: JOIN_NETWORK_CTA,
+    cta: applyCta,
     secondaryLink: {
       label: "Learn about the Installer Network",
       href: TECHNICIAN_ROLE_ROUTE,
     },
     disclosure:
-      "Joining the Installer Network does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+      "Applying for the current opening, or joining the Installer Network, does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay. The Installer Network is a separate registration and is not an application.",
   },
 
   /**
@@ -327,7 +331,7 @@ export const homepageContent: HomepageContent = {
       },
     },
     installerNetwork: {
-      prompt: "Are you an experienced vehicle-electronics installer? We have current installer openings for independent contractors. Learn how to join the independent installer network.",
+      prompt: "Are you an experienced vehicle-electronics installer? Learn how to join the independent installer network.",
       link: {
         label: "Join the Installer Network",
         href: TECHNICIAN_ROLE_ROUTE,

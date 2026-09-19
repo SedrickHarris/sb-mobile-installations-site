@@ -1,3 +1,4 @@
+import { JOBS_INDEX_PATH } from "@/data/jobs/routes";
 import { utilityBar } from "@/data/navigation/site-navigation";
 import {
   dashcamCameraInstallationContent,
@@ -103,10 +104,10 @@ const shared: ServiceTemplateShared = {
     ],
   },
   handoff: {
-    question: "Are you a mobile fleet installation technician?",
+    question: "Interested in installer work with SB Mobile Installations?",
     link: {
-      label: "Explore the SB Mobile Installer Network",
-      href: "/careers/mobile-installation-technician/",
+      label: "View current installer openings",
+      href: JOBS_INDEX_PATH,
     },
   },
 };
@@ -226,13 +227,6 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       ],
     },
     midCtaHeading: "Need installation support for a fleet telematics project?",
-    handoff: {
-      question: "Are you an experienced mobile fleet installation technician?",
-      link: {
-        label: "Learn about the SB Mobile Installations Installer Network",
-        href: shared.handoff.link.href,
-      },
-    },
     nationwideExtra:
       "Include your project location or locations, vehicle count, and preferred timeline when requesting an installation quote.",
     related: [

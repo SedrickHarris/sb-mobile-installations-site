@@ -1,5 +1,8 @@
 export interface AttributionFields {
-  readonly formType: "commercial_inquiry" | "installer_network";
+  readonly formType:
+    | "commercial_inquiry"
+    | "installer_network"
+    | "job_application";
   readonly sourcePage: string;
   readonly sourceTitle: string;
   readonly referrer: string;

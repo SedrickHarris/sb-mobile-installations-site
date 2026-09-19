@@ -71,12 +71,12 @@ export const servicesHubContent: ServicePageContent = {
         "Submit an installation quote request with your equipment, vehicle count, and project locations, or call during business hours, Monday through Friday, 8:00 AM to 6:00 PM. SB Mobile Installations will follow up to coordinate scheduling.",
     },
     {
-      question: "How can installation technicians join the Installer Network?",
+      question: "How can installation technicians find installer openings?",
       answer:
-        "Technicians can learn about the Installer Network and register interest on the Installer Network page. The Installer Network is a pathway for future opportunities. It does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+        "Technicians can view the current installer opening and apply on the Careers pages. The Installer Network is a separate registration for future opportunities and is not an application. Neither guarantees contact, an interview, a contract, an assignment, a schedule, work volume, or pay.",
       link: {
-        label: "Join the Installer Network",
-        href: "/careers/mobile-installation-technician/",
+        label: "View current installer openings",
+        href: "/careers/jobs/",
       },
     },
   ],

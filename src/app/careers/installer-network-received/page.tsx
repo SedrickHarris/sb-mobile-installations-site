@@ -10,7 +10,7 @@ const PATHNAME = "/careers/installer-network-received/";
  * Installer Network confirmation page. Noindexed. Named
  * "installer-network-received", not "thank-you/technician-application", per
  * the naming correction recorded in the plan: "Apply" is reserved for a
- * genuine active opening, and none exists.
+ * genuine active opening's own application path, and none exists yet.
  */
 export const metadata: Metadata = buildPageMetadata({
   title: "Installer Network Interest Received",

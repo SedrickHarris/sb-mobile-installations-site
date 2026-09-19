@@ -11,7 +11,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/thank-you/", "/careers/installer-network-received/"],
+        disallow: [
+          "/thank-you/",
+          "/careers/installer-network-received/",
+          "/careers/application-received/",
+        ],
       },
     ],
     sitemap: `${business.url}/sitemap.xml`,

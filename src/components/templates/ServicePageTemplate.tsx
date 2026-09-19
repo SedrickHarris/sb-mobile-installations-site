@@ -24,10 +24,10 @@ interface ServicePageTemplateProps {
  * so no copy, phone number, or route lives in this file.
  *
  * Order: hero, definition, scope, vehicle context, fit guide, optional
- * mid-page quote CTA, nationwide project-location context, documentation, related services, FAQ, quote
- * form, resources, and a single low-emphasis Installer Network text link
- * after the form. The recruiting link is never above the form, and no
- * Installer Network form appears on these commercial pages.
+ * mid-page quote CTA, nationwide project-location context, documentation,
+ * related services, FAQ, quote form, resources, and a single low-emphasis
+ * careers text link after the form. The recruiting link is never above the
+ * form, and no recruitment form appears on these commercial pages.
  *
  * Schema: WebPage + Service + BreadcrumbList via `servicePageSchema`, with
  * only the `serviceType` values the page's content supplies and no
@@ -37,7 +37,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
   const { page, content, shared, primaryCta, phone, heroImage, contextImage } =
     bundle;
   const id = content.slug;
-  const handoff = content.handoff ?? shared.handoff;
+  const handoff = shared.handoff;
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
@@ -238,7 +238,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           <Link
             href={handoff.link.href}
             data-journey="recruitment"
-            data-event="cta_installer_network_click"
+            data-event="cta_careers_click"
             className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
           >
             {handoff.link.label}

@@ -6,7 +6,8 @@ import {
   gpsTrackingInstallationContent,
   servicesHubContent,
 } from "@/data/site/services-content";
-import { careersHubContent, technicianRoleContent } from "@/data/site/careers-content";
+import { activeTechnicianJob } from "@/data/jobs";
+import { careersHubContent, installerNetworkContent } from "@/data/site/careers-content";
 import { coverage } from "@/data/commercial/coverage";
 import type { FaqPageContent, FaqPageItem } from "@/types/service-content";
 
@@ -62,9 +63,14 @@ export const faqPageContent: FaqPageContent = {
     ...fromSource(coverage.nationwide.faq ?? [], "/coverage/", "Coverage"),
     ...fromSource(careersHubContent.faq ?? [], "/careers/", "Careers"),
     ...fromSource(
-      technicianRoleContent.faq ?? [],
+      activeTechnicianJob.faq,
+      activeTechnicianJob.path,
+      "Current Installer Opening",
+    ),
+    ...fromSource(
+      installerNetworkContent.faq ?? [],
       "/careers/mobile-installation-technician/",
-      "Mobile Installation Technician",
+      "Installer Network",
     ),
   ],
 };

@@ -4,21 +4,27 @@ import { breadcrumbList } from "@/lib/schema/breadcrumbs";
 import { organizationRef } from "@/lib/schema/organization";
 
 /**
- * Structured data for `/careers/` and `/careers/mobile-installation-technician/`.
+ * Structured data for the careers pages that are not an individual opening:
+ * `/careers/`, `/careers/jobs/`, the Installer Network page, and
+ * `/careers/apply/`.
  *
- * Organization reference, WebPage, and BreadcrumbList only.
+ * Organization reference, WebPage (or CollectionPage for the jobs index), and
+ * BreadcrumbList only.
  *
- * JobPosting is deliberately absent and is never added here: no active,
- * genuine job opening exists. The Installer Network is an opt-in,
- * no-guarantee pathway, never framed as an active opening. See CLAUDE.md
- * section 5 and 13-schema-markup-plan.md section 58a.
+ * JobPosting is deliberately absent and is never added here. These pages are
+ * not individual opening pages, so they never carry generic JobPosting even
+ * though a current opening exists. JobPosting belongs only on the individual
+ * opening page, in `job-posting.ts`. See CLAUDE.md section 5 and
+ * 13-schema-markup-plan.md sections 14 and 58a.
  */
 export function careersPageSchema({
   pathname,
   h1,
   description,
   breadcrumbs,
+  type = "WebPage",
 }: {
+  readonly type?: "WebPage" | "CollectionPage";
   readonly pathname: string;
   readonly h1: string;
   readonly description: string;
@@ -30,7 +36,7 @@ export function careersPageSchema({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
+        "@type": type,
         "@id": `${url}#webpage`,
         url,
         name: h1,

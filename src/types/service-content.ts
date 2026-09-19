@@ -93,8 +93,6 @@ export interface ServiceTemplateContent {
    * the shared hero qualifier.
    */
   readonly midCtaHeading?: string;
-  /** Page-level handoff wording. Falls back to `ServiceTemplateShared.handoff`. */
-  readonly handoff?: { readonly question: string; readonly link: HubLink };
 }
 
 /** Blocks that are the same on every service page. */
@@ -146,9 +144,12 @@ export interface CareersEquipmentCard {
 }
 
 /**
- * Section content for the `/careers/` Installer Network page, beside
- * `careersHubContent` (h1, intro, metadata description, FAQ). No compensation,
- * schedule, hours, certification, platform-brand, or active-opening language.
+ * Section content for the Installer Network page, beside
+ * `installerNetworkContent` (h1, intro, metadata description, FAQ). The
+ * Installer Network is a registration for future opportunities, separate from
+ * the application for the current opening. `openings` only points to that
+ * opening; its facts live in the job record. No schedule, hours,
+ * certification, or platform-brand language.
  */
 export interface CareersHubPageContent {
   /** Document title, without the site-name suffix the layout appends. */
@@ -166,6 +167,8 @@ export interface CareersHubPageContent {
     readonly prepare: string;
     readonly join: string;
   };
+  /** Pointer to the current opening and its application. Never an application itself. */
+  readonly openings: HubSplitSection;
   readonly answer: HubSplitSection;
   readonly fit: HubSplitSection;
   readonly requirements: HubSplitSection;

@@ -1,19 +1,23 @@
+import { activeTechnicianJob, APPLY_PATH } from "@/data/jobs";
 import type { CareersHubPageContent } from "@/types/service-content";
 
 /**
- * Section copy for the `/careers/` Installer Network page. The H1, intro,
- * metadata description, and FAQ live in `careersHubContent`
- * (careers-content.ts).
+ * Section copy for the Installer Network page
+ * (`/careers/mobile-installation-technician/`). The H1, intro, metadata
+ * description, and FAQ live in `installerNetworkContent` (careers-content.ts).
+ * The export keeps its original name for compatibility.
  *
- * This is an opt-in, no-guarantee pathway, never a job listing. Requirement
- * groups come from the stakeholder-supplied listing text (2026-09-18) and are
- * recorded in docs/decisions/0004. Deliberately absent, per docs/_claims-
- * inventory.md items 12, 22, 23, 24 and CLAUDE.md section 4: any pay or
- * dollar figure, MECP or other certification, days, hours, shifts, weekends,
- * travel percentage, "shop locations", "Apply", "position", "hiring",
- * platform brand names, trailers, state or city lists, and any promise of
- * contact, review, timing, or assignment. No em dash appears in this file; a
- * spaced hyphen would be used instead.
+ * The Installer Network is a registration for future opportunities, separate
+ * from the application for the current opening. It is never an application and
+ * never uses "Apply" as its own action. The `openings` section only points to
+ * the current opening and its application page; the opening's facts live in
+ * the job record, not here. Requirement groups come from the
+ * stakeholder-supplied listing text (2026-09-18, docs/decisions/0004). Still
+ * absent: MECP or other certification as a requirement, days, hours, shifts,
+ * weekends, "shop locations", "position", "hiring", platform brand names,
+ * trailers, state or city lists, and any promise of contact, review, timing,
+ * or assignment. No em dash appears in this file; a spaced hyphen would be
+ * used instead.
  */
 export const careersHubPageContent: CareersHubPageContent = {
   metaTitle: "Mobile Fleet Installation Technician Network",
@@ -30,8 +34,8 @@ export const careersHubPageContent: CareersHubPageContent = {
       "Joining the Installer Network is an expression of interest, not a job application.",
     scopeItems: [
       "Opt-in Installer Network",
-      "Mobile fleet installation experience",
-      "Nationwide service context",
+      "Registration for future opportunities",
+      "Independent contractor work",
     ],
   },
 
@@ -40,6 +44,18 @@ export const careersHubPageContent: CareersHubPageContent = {
     work: "Understand the work context",
     prepare: "Prepare your information",
     join: "Join the network",
+  },
+
+  openings: {
+    h2: "Looking for the Current Opening?",
+    body: [
+      "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. To apply, use the application page.",
+      "The Installer Network below is a separate registration for future opportunities. It is not an application for the current opening.",
+    ],
+    links: [
+      { label: "View the current opening", href: activeTechnicianJob.path },
+      { label: "Apply for the current opening", href: APPLY_PATH },
+    ],
   },
 
   answer: {
@@ -69,7 +85,7 @@ export const careersHubPageContent: CareersHubPageContent = {
         items: [
           "You are looking for guaranteed work, hours, or income",
           "You are looking for employee status or benefits",
-          "You are looking for an active job opening",
+          "You expect this form to be an application for a specific opening",
         ],
       },
     ],
@@ -79,25 +95,26 @@ export const careersHubPageContent: CareersHubPageContent = {
     h2: "Requirements and Experience",
     body: [
       "These are the requirements and experience SB Mobile Installations asks of Installer Network technicians.",
+      "No prior installation experience is required, and training is provided. The experience listed under helpful skills is welcome, not required.",
     ],
     lists: [
       {
         heading: "Core requirements",
         items: [
           "A valid driver's license",
-          "A personal vehicle for travel",
-          "Ability to travel state to state",
-          "A smartphone for submitting installation data after each installation",
+          "Your own personal vehicle, tools, and travel resources",
+          "Ability to travel state to state, with approximately 75% travel for the current openings",
+          "A smartphone for submitting installation data and installation photos after each installation",
           "Passing a background check",
         ],
       },
       {
-        heading: "Skills and experience",
+        heading: "Helpful skills and experience",
         items: [
           "Understanding of vehicle installation practices, including electrical systems and mechanical knowledge",
           "Experience with 12 and 24 volt electrical systems, including using a multimeter and diagnosing electrical connections",
           "Experience removing interior and exterior vehicle panels",
-          "Prior experience installing GPS and fleet management equipment in fleet vehicles",
+          "Experience installing GPS and fleet management equipment in fleet vehicles",
         ],
       },
       {
