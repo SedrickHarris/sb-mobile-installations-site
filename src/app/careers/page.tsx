@@ -12,7 +12,7 @@ import { CtaButton } from "@/components/ui/CtaButton";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { utilityBar } from "@/data/navigation/site-navigation";
 import { careersHubContent, careersPageFaq } from "@/data/site/careers-content";
-import { careersHubImages } from "@/data/site/careers-hub-images";
+import { careersHeroVideo, careersHubImages } from "@/data/site/careers-hub-images";
 import { careersLandingContent as page } from "@/data/site/careers-landing-content";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { careersPageSchema } from "@/lib/schema/careers-page";
@@ -64,7 +64,7 @@ export default function CareersPage() {
         phoneJourney="recruitment"
         phoneEvent={null}
         scopeItems={page.hero.scopeItems}
-        image={careersHubImages.hero}
+        backgroundVideo={careersHeroVideo}
       />
 
       {/*

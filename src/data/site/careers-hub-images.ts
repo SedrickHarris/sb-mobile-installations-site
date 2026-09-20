@@ -17,6 +17,19 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * text describes the photo and contains no dashes or unverified claims.
  * `altGuidance` is a note for the supplier and is never rendered.
  */
+/**
+ * Approved hero background video and its static poster for `/careers/`.
+ *
+ * The poster is the same frame composition as the video and is the fallback
+ * for reduced motion, blocked autoplay, and load failure. The video always
+ * plays muted.
+ */
+export const careersHeroVideo = {
+  src: "/images/careers/homepage-hero/sb-mobile-installations-careers-fleet-installation-tools-hero.mp4",
+  poster:
+    "/images/careers/homepage-hero/sb-mobile-installations-careers-fleet-installation-tools-hero.webp",
+} as const;
+
 export const careersHubImages = {
   hero: {
     slotId: "careers-hub-hero",
