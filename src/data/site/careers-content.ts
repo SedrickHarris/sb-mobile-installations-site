@@ -1,4 +1,6 @@
 import { activeTechnicianJob, APPLY_PATH, INSTALLER_NETWORK_PATH } from "@/data/jobs";
+import { business } from "@/data/site/business";
+import type { FaqItem } from "@/types/content";
 import type { CareersPageContent } from "@/types/service-content";
 
 /**
@@ -66,6 +68,89 @@ export const careersHubContent: CareersPageContent = {
     },
   ],
 };
+
+const { recruitment } = business;
+
+/**
+ * FAQ shown on `/careers/` only. `careersHubContent.faq` above is left as is
+ * because it feeds `/faq/` and that page's FAQPage schema; this list is
+ * separate so expanding the Careers page cannot change that schema.
+ *
+ * Wording is taken from the approved job record and business data. Rate and
+ * travel come from `business.recruitment`, never retyped. Order matters: the
+ * two-column layout flows row by row, so odd items sit left, even items right.
+ * No em dash appears here.
+ */
+export const careersPageFaq: readonly FaqItem[] = [
+  {
+    question: "Are there current installer openings?",
+    answer:
+      "Yes. SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. Applicants are accepted nationwide, and no closing date is currently published.",
+    link: { label: "View the current opening", href: activeTechnicianJob.path },
+  },
+  {
+    question: "How do I apply for the current opening?",
+    answer:
+      "Use the application page. It is a dedicated form for the current opening and is separate from the Installer Network.",
+    link: { label: "Go to the application page", href: APPLY_PATH },
+  },
+  {
+    question: "What does a mobile GPS, ELD, and AOBRD installer do?",
+    answer:
+      "Technicians install GPS, ELD, and AOBRD equipment on fleet, commercial, and construction vehicles at customer locations. It is field work, and every installation is photo documented.",
+    link: { label: "Read the full opening details", href: activeTechnicianJob.path },
+  },
+  {
+    question: "Is prior installation experience required?",
+    answer:
+      "No. No prior installation experience is required for the current opening, and training is provided.",
+  },
+  {
+    question: "Can someone with no fleet installation experience apply?",
+    answer:
+      "Yes. The current opening does not require prior installation experience. Review the full opening details and give accurate information about your background and availability.",
+    link: { label: "View the current opening", href: activeTechnicianJob.path },
+  },
+  {
+    question: "What type of work arrangement is offered?",
+    answer:
+      "The current opening is independent contractor work, not employee employment. Contractors provide their own vehicle, tools, smartphone, and travel resources.",
+  },
+  {
+    question: "How much travel is required?",
+    answer: `Approximately ${recruitment.travel.approximatePercent}% travel is required, including state-to-state travel. Review the full opening details before applying.`,
+    link: { label: "View the current opening", href: activeTechnicianJob.path },
+  },
+  {
+    question: "Are applicants accepted nationwide?",
+    answer:
+      "Yes. Applicants are accepted nationwide. That does not mean every applicant will receive an assignment, a schedule, work volume, a contract, or pay.",
+  },
+  {
+    question: "What requirements must applicants meet?",
+    answer:
+      "A valid driver's license and a background check are required. Contractors also provide their own vehicle, tools, smartphone, and travel resources.",
+  },
+  {
+    question: "Is the starting rate guaranteed?",
+    answer: `No. The starting rate of ${recruitment.startingRate.display} is not guaranteed income. Applying does not guarantee contact, an interview, a contract, an assignment, a schedule, work volume, or pay.`,
+  },
+  {
+    question: "What is the Installer Network?",
+    answer:
+      "The Installer Network is a separate registration for future installation opportunities. It is not an application for the current opening, and it does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+    link: {
+      label: "Learn About the Installer Network",
+      href: INSTALLER_NETWORK_PATH,
+    },
+  },
+  {
+    question: "How can a business request fleet installation services?",
+    answer:
+      "Businesses request fleet installation services separately from installer careers. Visit the contact page to request an installation quote.",
+    link: { label: "Contact SB Mobile Installations", href: "/contact/" },
+  },
+];
 
 /**
  * Installer Network page h1, metadata description, intro, and FAQ. Section

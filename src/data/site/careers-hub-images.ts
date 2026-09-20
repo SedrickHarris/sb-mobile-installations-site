@@ -73,4 +73,26 @@ export const careersHubImages = {
     altGuidance:
       "Suggested file: sb-mobile-installations-installer-network-fleet-vehicles.webp. Fleet vehicles in a lot. No license plates, no customer signage, no implied nationwide map.",
   },
+  networkBand: {
+    slotId: "careers-network-band",
+    role: "Installer Network band on the Careers page",
+    aspectRatio: "3 / 2",
+    width: 1500,
+    height: 1000,
+    fallback: "route",
+    alt: "",
+    altGuidance:
+      "Suggested file: sb-mobile-installations-installer-network-future-opportunities.webp. Unbranded fleet vehicle, organized installation tools, wiring harnesses, multimeter, or mounting components in a clean fleet-yard setting. No logos, plates, readable text, maps, pins, customer information, or anything implying a current assignment.",
+  },
+  contact: {
+    slotId: "careers-contact",
+    role: "Recruitment contact block on the Careers page",
+    aspectRatio: "3 / 2",
+    width: 1500,
+    height: 1000,
+    fallback: "grid",
+    alt: "",
+    altGuidance:
+      "Unbranded fleet vehicle, organized installation tools, wiring harnesses, multimeter, or fleet-electronics components in a clean service-yard setting. No people required. No logos, plates, readable text, maps, pins, customer information, or anything implying a specific assignment.",
+  },
 } as const satisfies Record<string, HubImageSlot>;
