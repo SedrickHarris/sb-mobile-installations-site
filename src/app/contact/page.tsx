@@ -67,6 +67,103 @@ export default function ContactPage() {
         overlay="navy"
       />
 
+      {/*
+        Installer questions: the same shared block as /careers/, placed directly
+        below the hero at the stakeholder's direction (docs/decisions/0008).
+        Path links carry the recruitment journey.
+      */}
+      <InstallerQuestions
+        content={careersLandingContent.contact}
+        image={careersHubImages.contact}
+        headingId="contact-installer-heading"
+        phoneLocation="contact-installer"
+        trackPaths
+      />
+
+      <ServiceNavGrid
+        id="contact-services"
+        h2={page.services.h2}
+        intro={page.services.intro}
+        cards={page.services.cards}
+      />
+
+      <Section
+        tone="default"
+        width="site"
+        density="compact"
+        labelledBy="contact-nationwide-heading"
+      >
+        <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10 lg:gap-14">
+          <ImageSlot slot={page.nationwide.image} />
+
+          <div>
+            <h2
+              id="contact-nationwide-heading"
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+            >
+              {page.nationwide.h2}
+            </h2>
+            {page.nationwide.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
+              >
+                {paragraph}
+              </p>
+            ))}
+            <div className="mt-6 flex flex-col items-start gap-1">
+              <Link
+                href={page.nationwide.href}
+                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+              >
+                {page.nationwide.linkLabel}
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link
+                href={page.nationwide.quoteHref}
+                data-journey="commercial"
+                data-event="cta_quote_click"
+                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-medium text-ink-muted underline underline-offset-4 hover:text-ink"
+              >
+                {page.nationwide.quoteLinkLabel}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="subtle" width="site" labelledBy="contact-include-heading">
+        <h2
+          id="contact-include-heading"
+          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+        >
+          {page.include.h2}
+        </h2>
+        <p className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+          {page.include.intro}
+        </p>
+        <ul className="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
+          {page.include.items.map((item) => (
+            <li key={item.title}>
+              <Card as="div" padding="none" className="h-full p-6">
+                <h3 className="text-[length:var(--text-h4)] leading-tight font-bold text-ink">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
+                  {item.body}
+                </p>
+              </Card>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-10 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+          {page.include.supporting}
+        </p>
+        <p className="mt-4 max-w-[720px] text-[length:var(--text-body)] leading-relaxed font-semibold text-pretty text-ink">
+          {page.include.closing}
+        </p>
+      </Section>
+
       <section
         id="request-quote"
         tabIndex={-1}
@@ -121,91 +218,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Section tone="default" width="site" labelledBy="contact-include-heading">
-        <h2
-          id="contact-include-heading"
-          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-        >
-          {page.include.h2}
-        </h2>
-        <p className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-          {page.include.intro}
-        </p>
-        <ul className="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
-          {page.include.items.map((item) => (
-            <li key={item.title}>
-              <Card as="div" padding="none" className="h-full p-6">
-                <h3 className="text-[length:var(--text-h4)] leading-tight font-bold text-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
-                  {item.body}
-                </p>
-              </Card>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-10 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-          {page.include.supporting}
-        </p>
-        <p className="mt-4 max-w-[720px] text-[length:var(--text-body)] leading-relaxed font-semibold text-pretty text-ink">
-          {page.include.closing}
-        </p>
-      </Section>
-
-      <ServiceNavGrid
-        id="contact-services"
-        h2={page.services.h2}
-        intro={page.services.intro}
-        cards={page.services.cards}
-      />
-
-      <Section
-        tone="default"
-        width="site"
-        density="compact"
-        labelledBy="contact-nationwide-heading"
-      >
-        <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10 lg:gap-14">
-          <ImageSlot slot={page.nationwide.image} />
-
-          <div>
-            <h2
-              id="contact-nationwide-heading"
-              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-            >
-              {page.nationwide.h2}
-            </h2>
-            {page.nationwide.paragraphs.map((paragraph) => (
-              <p
-                key={paragraph}
-                className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
-              >
-                {paragraph}
-              </p>
-            ))}
-            <div className="mt-6 flex flex-col items-start gap-1">
-              <Link
-                href={page.nationwide.href}
-                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-              >
-                {page.nationwide.linkLabel}
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
-              <Link
-                href={page.nationwide.quoteHref}
-                data-journey="commercial"
-                data-event="cta_quote_click"
-                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-medium text-ink-muted underline underline-offset-4 hover:text-ink"
-              >
-                {page.nationwide.quoteLinkLabel}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section tone="subtle" width="site" labelledBy="contact-helpful-heading">
+      <Section tone="default" width="site" labelledBy="contact-helpful-heading">
         <h2
           id="contact-helpful-heading"
           className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
@@ -237,19 +250,6 @@ export default function ContactPage() {
           ))}
         </ul>
       </Section>
-
-      {/*
-        Installer questions: the same shared block as /careers/, a clearly
-        separated secondary pathway after all commercial content
-        (docs/decisions/0008). Path links carry the recruitment journey.
-      */}
-      <InstallerQuestions
-        content={careersLandingContent.contact}
-        image={careersHubImages.contact}
-        headingId="contact-installer-heading"
-        phoneLocation="contact-installer"
-        trackPaths
-      />
 
       <Section
         tone="subtle"

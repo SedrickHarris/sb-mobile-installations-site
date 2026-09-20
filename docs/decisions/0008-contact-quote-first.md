@@ -40,6 +40,13 @@ quote-conversion page with a separate, quiet Installer Network handoff.
    `/contact/` the path links carry `data-journey="recruitment"` and the
    existing `cta_careers_click` (opening) and `cta_installer_network_click`
    (network) events. No JobPosting schema is added to `/contact/`.
+   **Placement (amended 2026-09-20, later).** The stakeholder moved this block
+   directly below the hero, above the services, project-location, request
+   checklist, and quote form sections, which supersedes "after all commercial
+   content" above. The quote form remains the only form and stays separate from
+   the recruitment block. The page order is: Hero, installer questions,
+   services, project location, request checklist, quote form, resources,
+   corporate office.
 7. **Quote wording.** docs/21 line 394 says the commercial form must not
    promise a quote unless the verified process supports it. The CTA and H1 reuse
    the label "Request an Installation Quote" already approved on the homepage
