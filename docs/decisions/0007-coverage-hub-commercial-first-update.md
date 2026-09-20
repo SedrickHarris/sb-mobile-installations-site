@@ -65,6 +65,24 @@ Installer Network text link after the form.
    until those sections are updated. The section keeps its decorative image
    fallback because no introduction image or video exists yet.
 
+10. **Installer Network handoff band (amended 2026-09-19, later in the same
+    session).** The stakeholder moved the Installer Network handoff from a
+    quiet text link after the form to a full-width navy band directly below
+    the introduction. This **supersedes item 6's placement rule and the
+    original "low-emphasis handoff after the commercial form" direction**. It
+    keeps item 6's route, `data-journey="recruitment"`, and event
+    `cta_installer_network_click`. Copy: eyebrow "INSTALLER NETWORK", H2
+    "Interested in Mobile Installation Work?", a body stating that experience
+    is helpful but not required to learn about the Installer Network, and the
+    link "Learn About the Installer Network". The supporting line reuses the
+    approved Installer Network disclosure from `careers-hub-content.ts`
+    (expression of interest, no guarantee of contact, interview, employment,
+    contract, assignment, schedule, work volume, or pay, and independent
+    contractors, not employees). No "Apply" language and no opening or
+    location claims. The earlier wording "Are you an experienced mobile fleet
+    installation technician?" is removed because it implied experience is
+    required. The old text link after the form is removed.
+
 ## Not decided here
 
 Shared `CommercialInquiryForm` accessibility and analytics gaps (per-field
