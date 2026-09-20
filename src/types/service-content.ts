@@ -111,6 +111,18 @@ export interface ServiceTemplateContent {
    * the shared hero qualifier.
    */
   readonly midCtaHeading?: string;
+  /**
+   * Optional two-column quote section: guidance on the left, the form on the
+   * right. When absent the shared single-column intro and form render.
+   */
+  readonly quoteGuide?: {
+    readonly intro: string;
+    readonly support: string;
+    readonly includeHeading: string;
+    readonly includeItems: readonly string[];
+    readonly nextHeading: string;
+    readonly nextSteps: readonly string[];
+  };
 }
 
 /** Blocks that are the same on every service page. */
@@ -155,6 +167,11 @@ export interface ServicePageBundle {
   };
   readonly heroImage: HubImageSlot;
   readonly contextImage: HubImageSlot;
+  /** Optional media beside the definition and scope sections. */
+  readonly definitionImage?: HubImageSlot;
+  readonly scopeImage?: HubImageSlot;
+  readonly fitImage?: HubImageSlot;
+  readonly nationwideImage?: HubImageSlot;
   readonly relatedCards: readonly HubRelatedCard[];
 }
 

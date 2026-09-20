@@ -28,7 +28,16 @@ export type ServiceSlug =
 interface ServiceImageSet {
   readonly hero: HubImageSlot;
   readonly context: HubImageSlot;
+  /** Optional media for the definition and scope sections. Telematics only. */
+  readonly definition?: HubImageSlot;
+  readonly scope?: HubImageSlot;
+  /** Optional media beside the "may be a fit" section. Telematics only. */
+  readonly fit?: HubImageSlot;
+  /** Optional media beside the project-location band. Telematics only. */
+  readonly nationwide?: HubImageSlot;
 }
+
+const SERVICE_PHOTO_DIR = "/images/services";
 
 function slots(
   short: string,
@@ -61,12 +70,62 @@ function slots(
 }
 
 export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
-  "fleet-telematics-installation": slots(
+  "fleet-telematics-installation": {
+    ...slots(
     "telematics",
     "Connected fleet hardware being installed in a commercial vehicle",
     "Suggested file: sb-mobile-installations-fleet-telematics-installation-hero.webp. Describe the hardware and vehicle actually shown. No device-brand logos, platform logos or dashboards, maps, pins, state outlines, stock technician imagery, readable plates, or customer signage.",
     "sb-mobile-installations-fleet-telematics-vehicle-context.webp",
-  ),
+    ),
+    definition: {
+      slotId: "service-telematics-definition",
+      role: "Connected fleet hardware being installed under a commercial vehicle dashboard",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "route",
+      src: `${SERVICE_PHOTO_DIR}/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp`,
+      alt: "Gloved hands mounting a black fleet hardware unit and connecting its wiring under a commercial vehicle dashboard",
+      altGuidance:
+        "Describe only what is shown. No device-brand logos, no compliance or capability claims.",
+    },
+    fit: {
+      slotId: "service-telematics-fit",
+      role: "Commercial fleet vehicles staged at a fleet facility",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
+      alt: "A cargo van, utility truck, dump truck, and tractor truck staged outside a commercial fleet facility",
+      altGuidance:
+        "Describe only what is shown. No brand or coverage claims. Shows vehicle types beyond the approved vehicle examples, so it is not used in the vehicle-context section.",
+    },
+    nationwide: {
+      slotId: "service-telematics-nationwide",
+      role: "Fleet electronics staged on a workbench near commercial vehicles at a project location",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "route",
+      src: "/images/coverage/sb-mobile-installations-coverage-fleet-electronics-staging-equipment-v2.webp",
+      alt: "Fleet electronics, cabling, and mounting hardware laid out on a workbench in front of a cargo van, utility trucks, and a tractor truck at a commercial facility",
+      altGuidance:
+        "Describe only what is shown. Never a map or graphic implying state-level coverage, and no city or state identifiers.",
+    },
+    scope: {
+      slotId: "service-telematics-scope",
+      role: "Fleet hardware modules, cabling, and installation tools organized at a vehicle",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      src: `${SERVICE_PHOTO_DIR}/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp`,
+      alt: "Black fleet hardware modules and routed cabling mounted on a van wall panel above a workbench of installation tools, with white commercial trucks parked behind",
+      altGuidance:
+        "Describe only what is shown. No device-brand logos, no compliance or capability claims.",
+    },
+  },
   "gps-tracking-installation": slots(
     "gps",
     "GPS tracking hardware being installed in a commercial vehicle",

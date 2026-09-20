@@ -226,6 +226,26 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     ],
     faqHeading: "Fleet Telematics Installation FAQs",
     quoteH2: "Request a Fleet Telematics Installation Quote",
+    quoteGuide: {
+      intro:
+        "Tell us about your fleet telematics installation project so we can better understand the equipment, vehicle count, project location or locations, and preferred timing.",
+      support:
+        "Use this form to request installation support for approved GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, or fleet management equipment. Providing complete project details helps establish the appropriate starting point for the conversation.",
+      includeHeading: "What to Include in Your Request",
+      includeItems: [
+        "Equipment or service needed",
+        "Number of vehicles or assets",
+        "Project location or locations",
+        "Preferred installation timeline",
+        "Relevant fleet, vehicle, or deployment details",
+      ],
+      nextHeading: "What Happens Next",
+      nextSteps: [
+        "Submit your project details through the form.",
+        "SB Mobile Installations reviews the information provided.",
+        "The team follows up to discuss project scope, installation needs, and coordination details.",
+      ],
+    },
   },
 
   "gps-tracking-installation": {
@@ -498,6 +518,10 @@ export function getServicePage(slug: ServiceSlug): ServicePageBundle {
     },
     heroImage: servicePagesImages[slug].hero,
     contextImage: servicePagesImages[slug].context,
+    definitionImage: servicePagesImages[slug].definition,
+    scopeImage: servicePagesImages[slug].scope,
+    fitImage: servicePagesImages[slug].fit,
+    nationwideImage: servicePagesImages[slug].nationwide,
     relatedCards: content.related.map((related) => serviceCards[related as ServiceSlug]),
   };
 }

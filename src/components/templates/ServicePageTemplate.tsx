@@ -34,10 +34,22 @@ interface ServicePageTemplateProps {
  * `areaServed`. FAQPage is not emitted.
  */
 export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
-  const { page, content, shared, primaryCta, phone, heroImage, contextImage } =
-    bundle;
+  const {
+    page,
+    content,
+    shared,
+    primaryCta,
+    phone,
+    heroImage,
+    contextImage,
+    definitionImage,
+    scopeImage,
+    fitImage,
+    nationwideImage,
+  } = bundle;
   const id = content.slug;
   const handoff = shared.handoff;
+  const guide = content.quoteGuide;
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
@@ -69,9 +81,21 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         image={heroImage}
       />
 
-      <SplitFeature id={`${id}-definition`} content={content.definition} />
+      <SplitFeature
+        id={`${id}-definition`}
+        content={content.definition}
+        slot={definitionImage}
+        mediaSide="left"
+        mediaFirstOnMobile
+      />
 
-      <SplitFeature id={`${id}-scope`} tone="subtle" content={content.scope} />
+      <SplitFeature
+        id={`${id}-scope`}
+        tone="subtle"
+        content={content.scope}
+        slot={scopeImage}
+        mediaSide="right"
+      />
 
       <SplitFeature
         id={`${id}-vehicles`}
@@ -90,7 +114,13 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         mediaSide="left"
       />
 
-      <SplitFeature id={`${id}-fit`} tone="subtle" content={content.fit} />
+      <SplitFeature
+        id={`${id}-fit`}
+        tone="subtle"
+        content={content.fit}
+        slot={fitImage}
+        mediaSide="right"
+      />
 
       {content.midCtaHeading ? (
         <Section
@@ -121,6 +151,8 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           body: [shared.nationwide.lead, content.nationwideExtra],
           links: shared.nationwide.links,
         }}
+        slot={nationwideImage}
+        mediaSide="left"
       />
 
       <SplitFeature
@@ -179,30 +211,71 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         <Section
           tone="default"
           density="spacious"
+          width={guide ? "site" : "reading"}
           labelledBy={`${id}-quote-heading`}
         >
-          <h2
-            id={`${id}-quote-heading`}
-            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+          <div
+            className={
+              guide
+                ? "grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16"
+                : ""
+            }
           >
-            {content.quoteH2}
-          </h2>
-          <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-            {shared.quote.intro}
-          </p>
-          <div className="mt-8">
-            <CommercialInquiryForm />
-          </div>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <p className="text-[length:var(--text-body)] text-ink-muted">
-              {shared.quote.phoneLead}
-            </p>
-            <PhoneButton
-              href={phone.href}
-              label={phone.numberLabel}
-              location="service-quote"
-              className="border-ink bg-surface text-ink hover:bg-surface-subtle"
-            />
+            <div>
+              <h2
+                id={`${id}-quote-heading`}
+                className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+              >
+                {content.quoteH2}
+              </h2>
+              <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+                {guide ? guide.intro : shared.quote.intro}
+              </p>
+              {guide ? (
+                <>
+                  <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+                    {guide.support}
+                  </p>
+                  <h3 className="mt-8 text-[length:var(--text-h4)] font-bold text-ink">
+                    {guide.includeHeading}
+                  </h3>
+                  <ul className="mt-3 flex list-none flex-col gap-2 p-0 text-[length:var(--text-body)] text-ink">
+                    {guide.includeItems.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span aria-hidden="true" className="shrink-0 font-bold">
+                          &bull;
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <h3 className="mt-8 text-[length:var(--text-h4)] font-bold text-ink">
+                    {guide.nextHeading}
+                  </h3>
+                  <ol className="mt-3 flex list-decimal flex-col gap-2 pl-6 text-[length:var(--text-body)] text-ink marker:font-bold">
+                    {guide.nextSteps.map((step) => (
+                      <li key={step} className="pl-1">
+                        {step}
+                      </li>
+                    ))}
+                  </ol>
+                </>
+              ) : null}
+            </div>
+            <div className={guide ? "" : "mt-8"}>
+              <CommercialInquiryForm />
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+                <p className="text-[length:var(--text-body)] text-ink-muted">
+                  {shared.quote.phoneLead}
+                </p>
+                <PhoneButton
+                  href={phone.href}
+                  label={phone.numberLabel}
+                  location="service-quote"
+                  className="border-ink bg-surface text-ink hover:bg-surface-subtle"
+                />
+              </div>
+            </div>
           </div>
         </Section>
       </div>
