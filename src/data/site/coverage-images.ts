@@ -38,15 +38,36 @@ export const coverageImages = {
     altGuidance:
       "Describe only what is shown. No map, flag, city or state label, vehicle logo, visible face, or implied local office.",
   },
-  intro: {
-    slotId: "coverage-intro",
-    role: "Commercial fleet vehicles staged at a customer location",
-    aspectRatio: "4 / 3",
-    width: 1600,
-    height: 1200,
+  /**
+   * Installer Network handoff illustration (7:4): a work van with an open
+   * equipment bay, installation hardware, and a pathway of icons. Decorative,
+   * so the alt is empty; the heading and copy carry the meaning. Never a map,
+   * pin, logo, readable text, or anything implying employment, guaranteed
+   * work, openings, or a location.
+   */
+  installerNetwork: {
+    slotId: "coverage-installer-network",
+    role: "Vector illustration for the Installer Network handoff",
+    aspectRatio: "7 / 4",
+    width: 3318,
+    height: 1896,
     fallback: "grid",
+    src: "/images/coverage/sb-mobile-installations-installer-network-fleet-installation-pathway.webp",
     alt: "",
     altGuidance:
-      "No approved photo yet. Suggested alt when one exists: Commercial fleet vehicles staged at a customer location for mobile installation support. No people, logos, readable text, map, pin, city or state label, or implied local office.",
+      "Decorative unless it shows something the text does not say. Do not imply employment, guaranteed work, openings, or a location.",
+  },
+  intro: {
+    slotId: "coverage-intro",
+    role: "Fleet electronics laid out in front of commercial fleet vehicles",
+    // Natural ratio of the supplied file, so nothing is cropped or shifts.
+    aspectRatio: "3318 / 1896",
+    width: 3318,
+    height: 1896,
+    fallback: "grid",
+    src: "/images/coverage/sb-mobile-installations-coverage-fleet-electronics-staging-equipment.webp",
+    alt: "Fleet electronics equipment, including a dashcam, a display, a tire pressure sensor, and wiring, laid out on a table in front of a work van and service trucks",
+    altGuidance:
+      "Describe only what is shown. No people, logos, readable text, map, pin, city or state label, or implied local office. Do not describe the setting as a customer location, because the photo does not establish that.",
   },
 } as const satisfies Record<string, HubImageSlot>;

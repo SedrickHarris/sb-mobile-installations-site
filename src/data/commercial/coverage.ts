@@ -1,4 +1,5 @@
 import { INSTALLER_NETWORK_PATH } from "@/data/jobs/routes";
+import { careersHubPageContent } from "@/data/site/careers-hub-content";
 import {
   getServiceCard,
   SERVICE_CARD_ORDER,
@@ -29,6 +30,17 @@ import type { CoverageData } from "@/types/content";
  * from the service pages. The vehicle examples and their clarification come
  * from the same shared source.
  */
+
+/**
+ * The two approved Installer Network disclosure sentences, read from the
+ * Installer Network page content so they cannot drift. Fails the build if the
+ * source changes shape.
+ */
+const [, expressionOfInterest, contractor] = careersHubPageContent.answer.body;
+if (!expressionOfInterest || !contractor) {
+  throw new Error("Installer Network disclosure source changed shape.");
+}
+const NETWORK_DISCLOSURE = { expressionOfInterest, contractor };
 
 const SERVICE_CARDS = SERVICE_CARD_ORDER.map((slug) => getServiceCard(slug));
 const FLEET_ROLLOUT_CARD = getServiceCard("fleet-rollouts");
@@ -123,15 +135,21 @@ export const coverage = {
           description: "Include your preferred timing.",
         },
       ],
-      note: "These details help frame your installation request.",
+      note: "Share these details so SB Mobile Installations can understand the equipment, vehicles, locations, and timing connected to your installation request.",
       link: { label: "Request an Installation Quote", href: "#request-quote" },
     },
     services: {
       h2: "Fleet Installation Services We Can Discuss",
+      intro:
+        "Explore the installation services available for fleet, commercial, and construction vehicle projects. Each service page provides more detail about the equipment category and installation context.",
+      // Titles, descriptions, link labels, and routes come from the service cards.
       cards: SERVICE_CARDS,
+      allLink: { label: "Explore all installation services", href: "/services/" },
     },
     vehicles: {
       h2: "Vehicle Context for Installation Projects",
+      intro:
+        "Mobile installation projects may involve different commercial vehicle contexts. The vehicle type, equipment category, and project requirements should be included when framing an installation request.",
       examplesHeading: vehicleContext.listHeading,
       examples: vehicleContext.examples,
       categoriesHeading: "Vehicle categories",
@@ -141,12 +159,84 @@ export const coverage = {
     },
     explore: {
       h2: "Explore How SB Mobile Works",
-      links: [
-        { label: "Our Process", href: "/our-process/" },
-        { label: "Quality & Safety", href: "/quality-safety/" },
-        { label: "Fleet Installation Services", href: "/services/" },
-        { label: "Frequently Asked Questions", href: "/faq/" },
-        { label: "Resources", href: "/resources/" },
+      intro:
+        "Learn more about SB Mobile Installations, the services available for fleet and commercial vehicle projects, and the information that can help you evaluate an installation request.",
+      // Routes verified against src/app. Images are in public/images/coverage.
+      cards: [
+        {
+          title: "Our Process",
+          description:
+            "Learn how to prepare for and understand a mobile installation request.",
+          linkLabel: "Explore our process",
+          href: "/our-process/",
+          image: {
+            src: "/images/coverage/sb-mobile-installations-our-process-fleet-installation-request-pathway.webp",
+            width: 3318,
+            height: 1896,
+          },
+        },
+        {
+          title: "Quality & Safety",
+          description:
+            "Review the quality and safety information available from SB Mobile Installations.",
+          linkLabel: "Explore quality and safety",
+          href: "/quality-safety/",
+          image: {
+            src: "/images/coverage/sb-mobile-installations-quality-safety-fleet-installation-components.webp",
+            width: 1659,
+            height: 948,
+          },
+        },
+        {
+          title: "Fleet Installation Services",
+          description:
+            "Explore approved installation categories for fleet and commercial vehicle projects.",
+          linkLabel: "Explore fleet installation services",
+          href: "/services/",
+          image: {
+            src: "/images/coverage/sb-mobile-installations-fleet-installation-services-commercial-vehicle-electronics.webp",
+            width: 3318,
+            height: 1896,
+          },
+        },
+        {
+          title: "Industries",
+          description:
+            "Explore installation information organized around approved commercial vehicle contexts.",
+          linkLabel: "Explore industries",
+          href: "/industries/",
+          image: {
+            src: "/images/coverage/sb-mobile-installations-industries-commercial-vehicle-contexts.webp",
+            width: 3318,
+            height: 1896,
+          },
+        },
+        {
+          title: "Frequently Asked Questions",
+          description:
+            "Find answers to common questions about services, requests, and installation context.",
+          linkLabel: "Explore frequently asked questions",
+          href: "/faq/",
+          image: {
+            src: "/images/coverage/sb-mobile-installations-frequently-asked-questions-fleet-electronics.webp",
+            width: 3318,
+            height: 1896,
+          },
+        },
+        {
+          title: "Resources",
+          description:
+            "Browse additional information related to fleet installation and commercial vehicle electronics.",
+          linkLabel: "Explore resources",
+          href: "/resources/",
+          // The supplied file name is missing the leading "s" ("b-mobile-...").
+          // Referenced as it exists on disk; assets are not renamed here.
+          image: {
+            src: "/images/coverage/b-mobile-installations-resources-fleet-installation-reference.webp",
+            width: 3318,
+            height: 1896,
+          },
+        },
       ],
     },
     faqHeading: "Coverage FAQ",
@@ -176,19 +266,58 @@ export const coverage = {
         question: "What vehicle types can be part of an installation project?",
         answer: `Common project contexts include ${VEHICLE_EXAMPLE_LIST}. ${vehicleContext.note}`,
       },
+      {
+        question: "What equipment can SB Mobile Installations install?",
+        // Stakeholder-supplied wording. The category names follow the service
+        // taxonomy (service-pages-content.ts); AOBRD is part of the ELD card.
+        answer:
+          "Available service categories include fleet telematics, GPS tracking, ELD, AOBRD, dashcam and camera, and fleet rollout services. Review the individual service pages for more information about each approved installation category.",
+      },
+      {
+        question: "Can mobile installation be discussed for one vehicle?",
+        answer:
+          "Yes. Installation requests may involve one vehicle or an entire fleet. Include the equipment, vehicle type, project location, and preferred timing so SB Mobile Installations can determine whether the request fits the available service context.",
+      },
+      {
+        question: "Do technicians travel to the customer's location?",
+        answer:
+          "Nationwide mobile installation service is delivered at the customer's location. Share the project location, equipment context, vehicle count, and preferred timing through the installation request form.",
+      },
     ],
+    // Stakeholder-supplied quote-section copy (2026-09-19). "Will review ... to
+    // determine whether your request fits" and the follow-up sentence describe
+    // a review step that docs/01 sections 8.3 and 17 still list as unconfirmed.
     quote: {
-      h2: "Request an Installation Quote",
-      intro: `Tell us about your equipment, vehicle count, project locations, and preferred timing. ${AVAILABILITY_SENTENCE}`,
+      h2: "Request a Mobile Installation Quote",
+      intro:
+        "Tell us about your equipment, vehicle count, project locations, and preferred timing. SB Mobile Installations will review the details to determine whether your request fits the available installation service context.",
+      support:
+        "Include the equipment or service needed, the number of vehicles or assets, relevant project locations, and any scheduling details that may help us understand the request.",
+      nextHeading: "What happens next?",
+      nextBody:
+        "After you submit the request, the team can review the project information and follow up using the contact details you provide.",
       phoneLead:
         "Prefer to talk it through? Call Monday through Friday, 8:00 AM to 6:00 PM.",
+      // Field labels, payload, validation, and analytics are unchanged; only
+      // visible copy is overridden for this page.
+      formCopy: {
+        serviceNeed: "Equipment or service needed",
+        descriptionPlaceholder:
+          "Tell us about the vehicle types, equipment, locations, and installation requirements.",
+        submit: "Submit Installation Request",
+      },
     },
-    // Text link only; same journey and event as the existing Installer Network
-    // links (homepage-content.ts, careers-hub-content.ts).
+    // Installer Network handoff band (stakeholder-supplied copy, 2026-09-19,
+    // decision 0007 item 10). Same journey and event as the existing Installer
+    // Network links (homepage-content.ts, careers-hub-content.ts). The
+    // disclosure is the approved wording already on the Installer Network page.
     handoff: {
-      question: "Are you an experienced mobile fleet installation technician?",
+      eyebrow: "INSTALLER NETWORK",
+      h2: "Interested in Mobile Installation Work?",
+      body: "Experience with mobile fleet installation is helpful, but it is not required to learn about the SB Mobile Installations Installer Network. Review the network information, expectations, and available next steps to determine whether it may be a fit for you.",
+      disclosure: `${NETWORK_DISCLOSURE.expressionOfInterest} ${NETWORK_DISCLOSURE.contractor}`,
       link: {
-        label: "Learn about the SB Mobile Installations Installer Network",
+        label: "Learn About the Installer Network",
         href: INSTALLER_NETWORK_PATH,
         journey: "recruitment",
         event: "cta_installer_network_click",

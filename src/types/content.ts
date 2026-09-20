@@ -1,3 +1,4 @@
+import type { CommercialInquiryFormCopy } from "@/components/forms/CommercialInquiryForm";
 import type { HubLink, HubRelatedCard, HubSplitSection } from "@/types/service-content";
 /**
  * Content types for the homepage.
@@ -240,6 +241,23 @@ export interface HomepageContent {
   readonly finalCta: FinalCtaContent;
 }
 
+/**
+ * One internal-navigation card on the coverage page. The image is decorative:
+ * the card title and description carry the meaning, so it renders with an
+ * empty alt.
+ */
+export interface CoverageExploreCard {
+  readonly title: string;
+  readonly description: string;
+  readonly linkLabel: string;
+  readonly href: string;
+  readonly image: {
+    readonly src: string;
+    readonly width: number;
+    readonly height: number;
+  };
+}
+
 /** Confirmed-facts content for the single nationwide coverage page (Sprint 2). */
 export interface NationwideCoverageContent {
   readonly h1: string;
@@ -267,10 +285,13 @@ export interface NationwideCoverageContent {
   /** Service cards, built from the approved service taxonomy. */
   readonly services: {
     readonly h2: string;
+    readonly intro: string;
     readonly cards: readonly HubRelatedCard[];
+    readonly allLink: HubLink;
   };
   readonly vehicles: {
     readonly h2: string;
+    readonly intro: string;
     readonly examplesHeading: string;
     readonly examples: readonly string[];
     readonly categoriesHeading: string;
@@ -279,18 +300,33 @@ export interface NationwideCoverageContent {
   };
   readonly explore: {
     readonly h2: string;
-    readonly links: readonly HubLink[];
+    readonly intro: string;
+    readonly cards: readonly CoverageExploreCard[];
   };
   readonly faqHeading: string;
   readonly faq: readonly FaqItem[];
   readonly quote: {
     readonly h2: string;
     readonly intro: string;
+    /** Second short paragraph: what to include in the request. */
+    readonly support: string;
+    readonly nextHeading: string;
+    readonly nextBody: string;
     readonly phoneLead: string;
+    /** Visible-copy overrides for this page's commercial form only. */
+    readonly formCopy: Partial<CommercialInquiryFormCopy>;
   };
-  /** Quiet recruitment text link shown after the commercial form. */
+  /**
+   * Installer Network handoff band, shown right after the introduction. A
+   * separate recruitment journey: its own link, journey, and event, never the
+   * commercial form.
+   */
   readonly handoff: {
-    readonly question: string;
+    readonly eyebrow: string;
+    readonly h2: string;
+    readonly body: string;
+    /** Approved independent-contractor and no-guarantee disclosure. */
+    readonly disclosure: string;
     readonly link: Cta;
   };
 }
