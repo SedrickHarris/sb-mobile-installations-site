@@ -89,7 +89,7 @@ export const coverageImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/coverage/sb-mobile-installations-coverage-fleet-electronics-staging-equipment.webp",
+    src: "/images/coverage/sb-mobile-installations-coverage-fleet-electronics-staging-equipment-v2.webp",
     alt: "Fleet electronics equipment, including a dashcam, a display, a tire pressure sensor, and wiring, laid out on a table in front of a work van and service trucks",
     altGuidance:
       "Describe only what is shown. No people, logos, readable text, map, pin, city or state label, or implied local office. Do not describe the setting as a customer location, because the photo does not establish that.",

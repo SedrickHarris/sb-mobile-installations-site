@@ -31,7 +31,7 @@ export const careersHubImages = {
   },
   fieldWork: {
     slotId: "careers-hub-field-work",
-    src: "/images/careers/sb-mobile-installations-current-opening-technician-fleet-electronics-installation.webp",
+    src: "/images/careers/sb-mobile-installations-current-opening-technician-fleet-electronics-installation-v2.webp",
     role: "Field work in a commercial vehicle environment",
     aspectRatio: "7 / 4",
     width: 3318,

@@ -47,7 +47,7 @@ export const servicesHubImages = {
     width: 3318,
     height: 1896,
     fallback: "grid",
-    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-fleet-technology-cab-interior.webp",
+    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-fleet-technology-cab-interior-v2.webp",
     alt: "Commercial vehicle cab with a dashcam and dash-mounted display installed",
     altGuidance:
       "Describe only what is shown. No device-brand logos and no coverage or market claim.",
