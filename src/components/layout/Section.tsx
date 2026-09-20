@@ -25,7 +25,7 @@ const dataTone: Record<Tone, "light" | "subtle" | "dark"> = {
 type Density = "compact" | "standard" | "spacious";
 
 /** Measure. See 21-design-system.md section 5.2. */
-type Width = "reading" | "wide" | "site";
+type Width = "reading" | "wide" | "site" | "siteWide";
 
 interface SectionProps {
   readonly children: ReactNode;
@@ -56,6 +56,13 @@ const widthClasses: Record<Width, string> = {
   reading: "max-w-[720px]",
   wide: "max-w-[780px]",
   site: "max-w-[1280px]",
+  /**
+   * Stakeholder-approved exception to the 1200-1280px standard page ceiling
+   * in 21-design-system.md section 5.2 (approved 2026-09-20), scoped to the
+   * homepage direct-answer section only. Do not reuse without the same
+   * approval; every other section stays on "site".
+   */
+  siteWide: "max-w-[1360px]",
 };
 
 /**

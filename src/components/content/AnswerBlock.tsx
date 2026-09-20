@@ -67,8 +67,8 @@ export function AnswerBlock({ content, image }: AnswerBlockProps) {
   }
 
   return (
-    <Section tone="default" width="site">
-      <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+    <Section tone="default" width="siteWide">
+      <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-center md:gap-12">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image.src}
