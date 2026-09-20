@@ -28,12 +28,18 @@ quote-conversion page with a separate, quiet Installer Network handoff.
 5. **Schema.** `WebPage` + `BreadcrumbList` via `webPageSchema`. docs 07, 09,
    10, and 12 name `ContactPage` for Contact. That mismatch is unchanged and
    remains a follow-up.
-6. **Installer questions block.** "Have Questions About Installer
-   Opportunities?" is reused from the Careers landing content at the bottom of
-   the page. On `/contact/` it keeps only the Installer Network path
-   (`cta_installer_network_click`, `data-journey="recruitment"`). The path that
-   uses "Apply" stays on `/careers/`. The phone link is low-emphasis, keeps the
-   recruitment journey, and emits no commercial call event. It has no red fill.
+6. **Installer questions block (amended 2026-09-20).** "Have Questions About
+   Installer Opportunities?" is the shared `InstallerQuestions` component, used
+   identically on `/careers/` and at the bottom of `/contact/`, after all
+   commercial content. The stakeholder chose the full Careers version over the
+   reduced one first proposed, so on `/contact/` it includes the "Review and
+   apply for the current opening" path (the opening is `status: "active"` in
+   `src/data/jobs/`), the red phone button, the corporate office address, and
+   the Careers image. This is a stakeholder-approved exception to CLAUDE.md
+   section 4 ("Apply" only on careers pages), scoped to this block. On
+   `/contact/` the path links carry `data-journey="recruitment"` and the
+   existing `cta_careers_click` (opening) and `cta_installer_network_click`
+   (network) events. No JobPosting schema is added to `/contact/`.
 7. **Quote wording.** docs/21 line 394 says the commercial form must not
    promise a quote unless the verified process supports it. The CTA and H1 reuse
    the label "Request an Installation Quote" already approved on the homepage

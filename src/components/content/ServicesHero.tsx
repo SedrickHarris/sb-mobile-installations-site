@@ -24,7 +24,14 @@ interface ServicesHeroProps {
    * is the still frame shown while the video loads and, when the visitor
    * prefers reduced motion, in place of the video.
    */
-  readonly backgroundVideo?: { readonly src: string; readonly poster: string };
+  readonly backgroundVideo?: { readonly src: string; readonly poster?: string };
+  /**
+   * Overlay color over the background video. Defaults to black (existing
+   * pages). `navy` uses the dark surface token at 75% for a navy-led hero.
+   */
+  readonly overlay?: "black" | "navy";
+  /** Short audience line directly under the intro, above the buttons. */
+  readonly audience?: string;
   /** Low-emphasis text link under the buttons, e.g. a rollout route. */
   readonly secondaryLink?: HubLink;
   /** Short scope strip below the hero columns. Confirmed claims only. */
@@ -62,6 +69,8 @@ export function ServicesHero({
   phone,
   image,
   backgroundVideo,
+  overlay = "black",
+  audience,
   secondaryLink,
   scopeItems,
   priorityImage = false,
@@ -79,13 +88,15 @@ export function ServicesHero({
     >
       {backgroundVideo ? (
         <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={backgroundVideo.poster}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 -z-20 h-full w-full object-cover"
-          />
+          {backgroundVideo.poster ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={backgroundVideo.poster}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 -z-20 h-full w-full object-cover"
+            />
+          ) : null}
           <video
             aria-hidden="true"
             tabIndex={-1}
@@ -99,7 +110,10 @@ export function ServicesHero({
           >
             <source src={backgroundVideo.src} type="video/mp4" />
           </video>
-          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
+          <div
+            aria-hidden="true"
+            className={`absolute inset-0 -z-10 ${overlay === "navy" ? "bg-[var(--color-surface-dark)]/75" : "bg-black/55"}`}
+          />
         </>
       ) : null}
       <div
@@ -120,6 +134,11 @@ export function ServicesHero({
           <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
             {intro}
           </p>
+          {audience ? (
+            <p className="mt-4 text-[length:var(--text-body)] font-semibold text-[var(--color-text-on-dark)]">
+              {audience}
+            </p>
+          ) : null}
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <CtaButton cta={primaryCta} emphasis="primary" blockOnMobile />

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { CorporateOffice } from "@/components/content/CorporateOffice";
+import { InstallerQuestions } from "@/components/content/InstallerQuestions";
 import { ServiceNavGrid } from "@/components/content/ServiceNavGrid";
 import { ServicesHero } from "@/components/content/ServicesHero";
 import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
@@ -10,10 +10,13 @@ import { PhoneButton } from "@/components/layout/PhoneButton";
 import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { Card } from "@/components/ui/Card";
+import { CtaButton } from "@/components/ui/CtaButton";
+import { ImageSlot } from "@/components/ui/ImageSlot";
 import { utilityBar } from "@/data/navigation/site-navigation";
+import { business, formatAddressLines } from "@/data/site/business";
+import { careersHubImages } from "@/data/site/careers-hub-images";
+import { careersLandingContent } from "@/data/site/careers-landing-content";
 import { contactContent as page } from "@/data/site/contact-content";
-import { servicesHubPageContent as hub } from "@/data/site/services-hub-content";
-import { AnalyticsEvent } from "@/lib/analytics/events";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
 
@@ -29,11 +32,13 @@ export const metadata: Metadata = buildPageMetadata({
 /**
  * Commercial quote page (docs/decisions/0008). One primary commercial path:
  * the CommercialInquiryForm, reached from the hero CTA at `#request-quote`.
- * The Installer Network appears once, after all commercial content, as a
- * separate recruitment-journey text link. Schema is WebPage + BreadcrumbList
- * only; no local, offer, FAQ, or job types.
+ * The shared InstallerQuestions block (same as /careers/) follows all
+ * commercial content as a clearly separated recruitment pathway. Schema is
+ * WebPage + BreadcrumbList only; no local, offer, FAQ, or job types.
  */
 export default function ContactPage() {
+  const [streetLine, cityLine] = formatAddressLines();
+
   return (
     <>
       <JsonLd
@@ -51,13 +56,15 @@ export default function ContactPage() {
         eyebrow={page.hero.eyebrow}
         h1={page.h1}
         intro={page.hero.intro}
+        audience={page.hero.audience}
         primaryCta={page.hero.primaryCta}
         phone={{
           href: utilityBar.phoneHref,
           label: `${page.hero.callLabel} ${utilityBar.phoneLabel}`,
         }}
         phoneLocation="contact-hero"
-        image={page.hero.image}
+        backgroundVideo={page.hero.video}
+        overlay="navy"
       />
 
       <Section tone="default" width="site" labelledBy="contact-include-heading">
@@ -67,21 +74,27 @@ export default function ContactPage() {
         >
           {page.include.h2}
         </h2>
-        <ul className="mt-8 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
+        <p className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+          {page.include.intro}
+        </p>
+        <ul className="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
           {page.include.items.map((item) => (
             <li key={item.title}>
-              <Card as="div" padding="compact" className="h-full">
+              <Card as="div" padding="none" className="h-full p-6">
                 <h3 className="text-[length:var(--text-h4)] leading-tight font-bold text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
+                <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
                   {item.body}
                 </p>
               </Card>
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-[length:var(--text-body)] text-ink-muted">
+        <p className="mt-10 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+          {page.include.supporting}
+        </p>
+        <p className="mt-4 max-w-[720px] text-[length:var(--text-body)] leading-relaxed font-semibold text-pretty text-ink">
           {page.include.closing}
         </p>
       </Section>
@@ -90,28 +103,65 @@ export default function ContactPage() {
         id="contact-services"
         h2={page.services.h2}
         intro={page.services.intro}
-        cards={hub.services.cards}
+        cards={page.services.cards}
       />
 
-      <Section tone="default" width="reading" labelledBy="contact-nationwide-heading">
-        <h2
-          id="contact-nationwide-heading"
-          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-        >
-          {page.nationwide.h2}
-        </h2>
-        <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-          {page.nationwide.statement}
-        </p>
-        <p className="mt-4">
-          <Link
-            href={page.nationwide.href}
-            className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+      <Section
+        tone="default"
+        width="site"
+        density="compact"
+        labelledBy="contact-nationwide-heading"
+      >
+        <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10 lg:gap-14">
+          {/*
+            TEMPORARY image placeholder (4:3) for visual inspection only. It is
+            decorative, hidden from assistive tech, and carries no alt text,
+            metadata, or schema. Replace this element with an approved
+            ImageSlot photo before launch.
+          */}
+          <div
+            aria-hidden="true"
+            className="flex aspect-[4/3] w-full items-center justify-center rounded-[var(--radius-lg)] border border-border bg-surface-subtle"
           >
-            {page.nationwide.linkLabel}
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </p>
+            <span className="rounded-md bg-surface px-3 py-1 text-[length:var(--text-small)] font-semibold text-ink-muted">
+              Image placeholder
+            </span>
+          </div>
+
+          <div>
+            <h2
+              id="contact-nationwide-heading"
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+            >
+              {page.nationwide.h2}
+            </h2>
+            {page.nationwide.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
+              >
+                {paragraph}
+              </p>
+            ))}
+            <div className="mt-6 flex flex-col items-start gap-1">
+              <Link
+                href={page.nationwide.href}
+                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+              >
+                {page.nationwide.linkLabel}
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link
+                href={page.nationwide.quoteHref}
+                data-journey="commercial"
+                data-event="cta_quote_click"
+                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-medium text-ink-muted underline underline-offset-4 hover:text-ink"
+              >
+                {page.nationwide.quoteLinkLabel}
+              </Link>
+            </div>
+          </div>
+        </div>
       </Section>
 
       <section
@@ -163,21 +213,24 @@ export default function ContactPage() {
         >
           {page.helpful.h2}
         </h2>
-        <ul className="mt-8 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2">
+        <p className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+          {page.helpful.intro}
+        </p>
+        <ul className="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2">
           {page.helpful.items.map((item) => (
             <li key={item.href}>
-              <Card as="div" hover padding="compact" className="relative h-full">
-                <h3 className="text-[length:var(--text-h4)] leading-tight font-bold text-ink">
+              <Card as="div" hover padding="none" className="relative flex h-full flex-col p-6 md:p-8">
+                <h3 className="text-[length:var(--text-h3)] leading-tight font-bold text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
+                <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
                   {item.description}
                 </p>
                 <Link
                   href={item.href}
-                  className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
+                  className="mt-auto inline-flex min-h-11 items-center gap-2 pt-5 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
                 >
-                  {`View ${item.title}`}
+                  {item.linkLabel}
                   <span aria-hidden="true">&rarr;</span>
                 </Link>
               </Card>
@@ -186,73 +239,55 @@ export default function ContactPage() {
         </ul>
       </Section>
 
-      <Section tone="subtle" width="site" density="compact">
-        <CorporateOffice />
-      </Section>
+      <Section
+        tone="subtle"
+        width="site"
+        density="compact"
+        labelledBy="contact-office-heading"
+      >
+        <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10 lg:gap-14">
+          <ImageSlot slot={page.office.image} />
 
-      {/*
-        Installer questions. The one recruitment handoff, placed after all
-        commercial content. Quiet: no button, no red fill. The phone link keeps
-        the recruitment journey and emits no commercial call event. Only the
-        Installer Network path is offered here; the active-opening path lives on
-        /careers/.
-      */}
-      <Section tone="default" width="site" density="compact" labelledBy="contact-installer-heading">
-        <div
-          data-tone="light"
-          className="max-w-[720px] rounded-lg border border-border border-l-4 border-l-[var(--color-brand-red)] bg-surface p-6 text-ink md:p-8"
-        >
-          <p className="mb-2 text-[length:var(--text-label)] font-semibold tracking-wide text-ink-muted uppercase">
-            {page.installer.eyebrow}
-          </p>
-          <h2
-            id="contact-installer-heading"
-            className="text-[length:var(--text-h3)] leading-[1.15] font-bold text-balance text-ink"
-          >
-            {page.installer.h2}
-          </h2>
-          <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-            {page.installer.body}
-          </p>
-          <p className="mt-3 text-[length:var(--text-small)] leading-relaxed text-pretty text-ink-muted">
-            {page.installer.clarification}
-          </p>
-
-          <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <PhoneButton
-              href={utilityBar.phoneHref}
-              label={utilityBar.phoneLabel}
-              location="contact-installer"
-              journey="recruitment"
-              event={null}
-              className="border-border bg-transparent text-ink hover:bg-surface-subtle"
-            />
-            <p className="text-[length:var(--text-body)] text-ink">{page.installer.hours}</p>
-          </div>
-
-          <div className="mt-6 border-t border-border pt-5">
-            <h3 className="text-[length:var(--text-body)] font-bold text-ink">
-              {page.installer.pathsHeading}
-            </h3>
-            <ul className="mt-2 flex list-none flex-col gap-3 p-0">
-              {page.installer.paths.map((path) => (
-                <li key={path.href}>
-                  <Link
-                    href={path.href}
-                    data-journey="recruitment"
-                    data-event={AnalyticsEvent.ctaInstallerNetworkClick}
-                    className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-                  >
-                    {path.label}
-                    <span aria-hidden="true">&rarr;</span>
-                  </Link>
-                  <p className="text-[length:var(--text-small)] text-ink-muted">{path.note}</p>
-                </li>
-              ))}
-            </ul>
+          <div>
+            <h2
+              id="contact-office-heading"
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+            >
+              {page.office.h2}
+            </h2>
+            <address className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-ink not-italic">
+              <span className="block font-semibold">{business.name}</span>
+              <span className="block">{streetLine}</span>
+              <span className="block">{cityLine}</span>
+            </address>
+            <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+              {page.office.body}
+            </p>
+            <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <CtaButton cta={page.hero.primaryCta} emphasis="primary" blockOnMobile />
+              <PhoneButton
+                href={utilityBar.phoneHref}
+                label={utilityBar.phoneLabel}
+                location="contact-office"
+                className="w-full border-ink bg-surface text-ink hover:bg-surface-subtle sm:w-auto"
+              />
+            </div>
           </div>
         </div>
       </Section>
+
+      {/*
+        Installer questions: the same shared block as /careers/, a clearly
+        separated secondary pathway after all commercial content
+        (docs/decisions/0008). Path links carry the recruitment journey.
+      */}
+      <InstallerQuestions
+        content={careersLandingContent.contact}
+        image={careersHubImages.contact}
+        headingId="contact-installer-heading"
+        phoneLocation="contact-installer"
+        trackPaths
+      />
     </>
   );
 }

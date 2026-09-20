@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { CorporateOffice } from "@/components/content/CorporateOffice";
 import { FaqGroup } from "@/components/content/FaqGroup";
+import { InstallerQuestions } from "@/components/content/InstallerQuestions";
 import { ServicesHero } from "@/components/content/ServicesHero";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { PhoneButton } from "@/components/layout/PhoneButton";
 import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { CtaButton } from "@/components/ui/CtaButton";
@@ -178,68 +177,12 @@ export default function CareersPage() {
         commercial call event. The two path links are text links, not buttons:
         the primary Apply action lives in the opening section.
       */}
-      <Section tone="dark" width="site" density="compact" labelledBy="careers-contact-heading">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,58fr)_minmax(0,42fr)] md:items-center md:gap-12">
-          <div
-            data-tone="light"
-            className="rounded-lg border border-border border-l-4 border-l-[var(--color-brand-red)] bg-surface p-6 text-ink md:p-8"
-          >
-            <p className="mb-2 text-[length:var(--text-label)] font-semibold tracking-wide text-ink-muted uppercase">
-              {page.contact.eyebrow}
-            </p>
-            <h2
-              id="careers-contact-heading"
-              className="text-[length:var(--text-h3)] leading-[1.15] font-bold text-balance text-ink"
-            >
-              {page.contact.h2}
-            </h2>
-            <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-              {page.contact.body}
-            </p>
-            <p className="mt-3 text-[length:var(--text-small)] leading-relaxed text-pretty text-ink-muted">
-              {page.contact.clarification}
-            </p>
-
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-              <PhoneButton
-                href={utilityBar.phoneHref}
-                label={utilityBar.phoneLabel}
-                location="careers-contact"
-                journey="recruitment"
-                event={null}
-                className="border-transparent bg-[var(--color-brand-red)] text-white hover:bg-[var(--color-brand-red-strong)] focus-visible:outline-[var(--color-brand-red-strong)]"
-              />
-              <p className="text-[length:var(--text-body)] text-ink">{page.contact.hours}</p>
-            </div>
-            <CorporateOffice className="mt-4" />
-
-            <div className="mt-6 border-t border-border pt-5">
-              <h3 className="text-[length:var(--text-body)] font-bold text-ink">
-                {page.contact.pathsHeading}
-              </h3>
-              <ul className="mt-2 flex list-none flex-col gap-3 p-0">
-                {page.contact.paths.map((path) => (
-                  <li key={path.href}>
-                    <Link
-                      href={path.href}
-                      className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-                    >
-                      {path.label}
-                      <span aria-hidden="true">&rarr;</span>
-                    </Link>
-                    <p className="text-[length:var(--text-small)] text-ink-muted">{path.note}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <ImageSlot
-            slot={careersHubImages.contact}
-            className="border border-[var(--color-border-dark)]"
-          />
-        </div>
-      </Section>
+      <InstallerQuestions
+        content={page.contact}
+        image={careersHubImages.contact}
+        headingId="careers-contact-heading"
+        phoneLocation="careers-contact"
+      />
 
       {/*
         Installer Network: a secondary, separate pathway. Image left, content
