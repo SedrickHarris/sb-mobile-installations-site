@@ -209,6 +209,13 @@ public language.
 Build only what an approved page brief requires. Do not create files for future
 inventory items.
 
+**Section media scrolls with the content.** Images and video beside or behind
+section content move with the page like the text does. Never pin them with
+`position: sticky`, `position: fixed`, `background-attachment: fixed`, or
+scroll-linked parallax, on any existing page or future page build. This is a
+site-wide rule set by the stakeholder on 2026-09-19. `SplitFeature`'s `align`
+prop controls vertical alignment only.
+
 ## 9. Technical constraints
 
 Next.js App Router, TypeScript strict mode, Tailwind CSS, static export, Cloudflare
