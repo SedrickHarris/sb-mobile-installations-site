@@ -78,6 +78,7 @@ export default function ContactPage() {
         headingId="contact-installer-heading"
         phoneLocation="contact-installer"
         trackPaths
+        tone="default"
       />
 
       <ServiceNavGrid

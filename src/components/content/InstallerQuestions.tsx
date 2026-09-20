@@ -22,6 +22,8 @@ interface InstallerQuestionsProps {
    * events. Off on `/careers/`, which renders them untagged.
    */
   readonly trackPaths?: boolean;
+  /** Section background. Dark navy by default (the Careers treatment); `default` is white. */
+  readonly tone?: "dark" | "default";
 }
 
 /**
@@ -39,9 +41,10 @@ export function InstallerQuestions({
   headingId,
   phoneLocation,
   trackPaths = false,
+  tone = "dark",
 }: InstallerQuestionsProps) {
   return (
-    <Section tone="dark" width="site" density="compact" labelledBy={headingId}>
+    <Section tone={tone} width="site" density="compact" labelledBy={headingId}>
       <div className="grid gap-8 md:grid-cols-[minmax(0,58fr)_minmax(0,42fr)] md:items-center md:gap-12">
         <div
           data-tone="light"
@@ -106,7 +109,14 @@ export function InstallerQuestions({
           </div>
         </div>
 
-        <ImageSlot slot={image} className="border border-[var(--color-border-dark)]" />
+        <ImageSlot
+          slot={image}
+          className={
+            tone === "dark"
+              ? "border border-[var(--color-border-dark)]"
+              : "border border-border"
+          }
+        />
       </div>
     </Section>
   );
