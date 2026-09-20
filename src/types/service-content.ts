@@ -113,6 +113,8 @@ export interface ServiceTemplateContent {
    * the shared hero qualifier.
    */
   readonly midCtaHeading?: string;
+  /** Show the full Installer Network band in place of the one-line handoff. */
+  readonly installerNetworkBand?: boolean;
   /** Supporting line for the mid-page CTA. Falls back to the shared hero qualifier. */
   readonly midCtaBody?: string;
   /**
@@ -184,6 +186,16 @@ export interface ServicePageBundle {
   readonly scopeImage?: HubImageSlot;
   readonly fitImage?: HubImageSlot;
   readonly nationwideImage?: HubImageSlot;
+  /** Installer Network band content and image, from the Careers page data. */
+  readonly networkBand?: {
+    readonly content: {
+      readonly eyebrow: string;
+      readonly h2: string;
+      readonly body: string;
+      readonly link: HubLink;
+    };
+    readonly image: HubImageSlot;
+  };
   readonly relatedCards: readonly HubRelatedCard[];
 }
 

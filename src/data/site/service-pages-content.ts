@@ -1,5 +1,7 @@
 import { INSTALLER_NETWORK_PATH } from "@/data/jobs/routes";
 import { utilityBar } from "@/data/navigation/site-navigation";
+import { careersHubImages } from "@/data/site/careers-hub-images";
+import { careersLandingContent } from "@/data/site/careers-landing-content";
 import {
   dashcamCameraInstallationContent,
   eldInstallationContent,
@@ -217,6 +219,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       ],
     },
     midCtaHeading: "Need installation support for a fleet telematics project?",
+    installerNetworkBand: true,
     midCtaBody:
       "Tell us about your equipment, vehicle count, project locations, and preferred timing so we can understand your installation request.",
     nationwideExtra:
@@ -544,6 +547,12 @@ export function getServicePage(slug: ServiceSlug): ServicePageBundle {
     scopeImage: servicePagesImages[slug].scope,
     fitImage: servicePagesImages[slug].fit,
     nationwideImage: servicePagesImages[slug].nationwide,
+    networkBand: content.installerNetworkBand
+      ? {
+          content: careersLandingContent.network,
+          image: careersHubImages.networkBand,
+        }
+      : undefined,
     relatedCards: content.related.map((related) => serviceCards[related as ServiceSlug]),
   };
 }

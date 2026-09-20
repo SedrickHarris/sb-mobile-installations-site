@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { FaqGroup } from "@/components/content/FaqGroup";
+import { InstallerNetworkBand } from "@/components/content/InstallerNetworkBand";
 import { ServicesHero } from "@/components/content/ServicesHero";
 import { SplitFeature } from "@/components/content/SplitFeature";
 import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
@@ -353,19 +354,27 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         </ul>
       </Section>
 
-      <Section tone="default" density="compact">
-        <p className="text-[length:var(--text-body)] text-ink-muted">
-          {handoff.question}{" "}
-          <Link
-            href={handoff.link.href}
-            data-journey="recruitment"
-            data-event="cta_installer_network_click"
-            className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-          >
-            {handoff.link.label}
-          </Link>
-        </p>
-      </Section>
+      {bundle.networkBand ? (
+        <InstallerNetworkBand
+          content={bundle.networkBand.content}
+          image={bundle.networkBand.image}
+          headingId={`${id}-network-heading`}
+        />
+      ) : (
+        <Section tone="default" density="compact">
+          <p className="text-[length:var(--text-body)] text-ink-muted">
+            {handoff.question}{" "}
+            <Link
+              href={handoff.link.href}
+              data-journey="recruitment"
+              data-event="cta_installer_network_click"
+              className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+            >
+              {handoff.link.label}
+            </Link>
+          </p>
+        </Section>
+      )}
     </>
   );
 }
