@@ -73,7 +73,6 @@ export default function IndustriesPage() {
         content={hub.answer}
         slot={industriesHubImages.answer}
         mediaSide="left"
-        align="top"
         mediaFirstOnMobile
       />
 
