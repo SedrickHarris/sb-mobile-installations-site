@@ -43,9 +43,9 @@ export const servicesHubImages = {
   answer: {
     slotId: "services-hub-answer",
     role: "Commercial vehicle cab with fleet technology equipment installed",
-    aspectRatio: "3318 / 1896",
-    width: 3318,
-    height: 1896,
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
     fallback: "grid",
     src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-fleet-technology-cab-interior-v2.webp",
     alt: "Commercial vehicle cab with a dashcam and dash-mounted display installed",

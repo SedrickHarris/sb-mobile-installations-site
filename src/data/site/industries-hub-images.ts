@@ -23,9 +23,9 @@ export const industriesHubImages = {
   answer: {
     slotId: "industries-hub-answer",
     role: "Commercial fleet vehicles parked at a fleet facility",
-    aspectRatio: "3344 / 1882",
-    width: 3344,
-    height: 1882,
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
     fallback: "grid",
     src: "/images/industries/industries-hub-page/sb-mobile-installations-industries-hub-commercial-fleet-staging-area-v2.webp",
     alt: "Commercial fleet vehicles parked at a fleet facility",
