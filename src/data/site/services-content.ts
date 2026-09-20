@@ -120,7 +120,7 @@ export const fleetTelematicsInstallationContent: ServicePageContent = {
     {
       question: "Can I request installation at our project location?",
       answer:
-        "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location. Share your project locations in the quote request.",
+        "Nationwide mobile installation service, delivered at the customer's location. Share your project locations in the quote request.",
     },
   ],
 };

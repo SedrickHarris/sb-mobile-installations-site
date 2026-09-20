@@ -60,6 +60,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         id={id}
         h1={page.h1}
         intro={page.intro}
+        eyebrow={shared.heroEyebrow}
         primaryCta={primaryCta}
         qualifier={shared.heroQualifier}
         phone={phone}
@@ -238,7 +239,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           <Link
             href={handoff.link.href}
             data-journey="recruitment"
-            data-event="cta_careers_click"
+            data-event="cta_installer_network_click"
             className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
           >
             {handoff.link.label}

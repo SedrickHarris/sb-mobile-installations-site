@@ -34,6 +34,7 @@ function slots(
   short: string,
   heroRole: string,
   heroGuidance: string,
+  contextFile?: string,
 ): ServiceImageSet {
   return {
     hero: {
@@ -54,8 +55,7 @@ function slots(
       height: 1000,
       fallback: "grid",
       alt: "",
-      altGuidance:
-        "Show a confirmed vehicle example. No trailers, pickups, buses, or heavy equipment.",
+      altGuidance: `${contextFile ? `Suggested file: ${contextFile}. ` : ""}Show one confirmed vehicle example. No trailers, pickups, buses, or heavy equipment.`,
     },
   };
 }
@@ -64,7 +64,8 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
   "fleet-telematics-installation": slots(
     "telematics",
     "Connected fleet hardware being installed in a commercial vehicle",
-    "Describe the hardware and vehicle actually shown. No device-brand logos.",
+    "Suggested file: sb-mobile-installations-fleet-telematics-installation-hero.webp. Describe the hardware and vehicle actually shown. No device-brand logos, platform logos or dashboards, maps, pins, state outlines, stock technician imagery, readable plates, or customer signage.",
+    "sb-mobile-installations-fleet-telematics-vehicle-context.webp",
   ),
   "gps-tracking-installation": slots(
     "gps",

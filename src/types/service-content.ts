@@ -137,6 +137,8 @@ export interface ServiceTemplateShared {
   readonly quote: { readonly intro: string; readonly phoneLead: string };
   readonly resources: { readonly h2: string; readonly links: readonly HubLink[] };
   readonly handoff: { readonly question: string; readonly link: HubLink };
+  /** Small label above the H1, shared by the five service pages. */
+  readonly heroEyebrow: string;
 }
 
 /** Everything `ServicePageTemplate` needs to render one service page. */

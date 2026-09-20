@@ -1,4 +1,4 @@
-import { JOBS_INDEX_PATH } from "@/data/jobs/routes";
+import { INSTALLER_NETWORK_PATH } from "@/data/jobs/routes";
 import { utilityBar } from "@/data/navigation/site-navigation";
 import {
   dashcamCameraInstallationContent,
@@ -45,6 +45,7 @@ const FORM_ANCHOR = "#request-quote";
 
 const shared: ServiceTemplateShared = {
   callLabel: "Call",
+  heroEyebrow: "Fleet Technology Installation Services",
   heroQualifier:
     "Tell us about your equipment, vehicle count, project locations, and preferred timing.",
   vehicles: {
@@ -55,7 +56,7 @@ const shared: ServiceTemplateShared = {
   },
   nationwide: {
     h2: "Mobile Installation at Your Project Location",
-    lead: "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location.",
+    lead: "Nationwide mobile installation service, delivered at the customer's location.",
     links: [
       {
         label: "Explore nationwide fleet installation coverage",
@@ -94,7 +95,7 @@ const shared: ServiceTemplateShared = {
       "Prefer to talk it through? Call Monday through Friday, 8:00 AM to 6:00 PM.",
   },
   resources: {
-    h2: "Planning Resources",
+    h2: "Related Resources",
     links: [
       {
         label: "Fleet installation planning resources",
@@ -104,10 +105,10 @@ const shared: ServiceTemplateShared = {
     ],
   },
   handoff: {
-    question: "Interested in installer work with SB Mobile Installations?",
+    question: "Are you an experienced mobile fleet installation technician?",
     link: {
-      label: "View current installer openings",
-      href: JOBS_INDEX_PATH,
+      label: "Learn about the SB Mobile Installations Installer Network",
+      href: INSTALLER_NETWORK_PATH,
     },
   },
 };
@@ -207,18 +208,6 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       body: [
         "Use these related service pages to find the most relevant starting point for your installation request.",
       ],
-      listPanel: true,
-      lists: [
-        {
-          heading: "This service may be a fit when",
-          items: [
-            "Your project involves more than one type of approved fleet hardware",
-            "Your project involves commercial fleet or construction vehicles",
-            "You want to describe your equipment, vehicle count, and locations before choosing a narrower service",
-          ],
-        },
-      ],
-      footnotes: [FIT_NOTE],
       links: [
         cardLink("gps-tracking-installation"),
         cardLink("eld-installation"),
