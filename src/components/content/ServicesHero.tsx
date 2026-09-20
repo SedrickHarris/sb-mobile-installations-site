@@ -12,7 +12,10 @@ interface ServicesHeroProps {
   readonly h1: string;
   readonly intro: string;
   readonly primaryCta: Cta;
-  readonly qualifier: string;
+  /** Short supporting line under the buttons. Omit when the intro already says it. */
+  readonly qualifier?: string;
+  /** Small label above the H1. Not a heading. Rendered in the on-dark text color. */
+  readonly eyebrow?: string;
   readonly phone: { readonly href: string; readonly label: string };
   /** Right-column image. Omit when the hero uses a background video instead. */
   readonly image?: HubImageSlot;
@@ -55,6 +58,7 @@ export function ServicesHero({
   intro,
   primaryCta,
   qualifier,
+  eyebrow,
   phone,
   image,
   backgroundVideo,
@@ -102,6 +106,11 @@ export function ServicesHero({
         className={`mx-auto max-w-[1280px] ${image ? "grid gap-10 md:grid-cols-2 md:items-center md:gap-16" : ""}`}
       >
         <div className={image ? "" : "max-w-[780px]"}>
+          {eyebrow ? (
+            <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-text-on-dark)]/90 uppercase">
+              {eyebrow}
+            </p>
+          ) : null}
           <h1
             id={headingId}
             className="text-[length:var(--text-h1)] leading-[1.08] font-bold text-balance text-[var(--color-text-on-dark)]"
@@ -136,11 +145,13 @@ export function ServicesHero({
             </p>
           ) : null}
 
-          <p
-            className={`${secondaryLink ? "mt-2" : "mt-4"} text-[length:var(--text-small)] text-[var(--color-text-on-dark)]/80`}
-          >
-            {qualifier}
-          </p>
+          {qualifier ? (
+            <p
+              className={`${secondaryLink ? "mt-2" : "mt-4"} text-[length:var(--text-small)] text-[var(--color-text-on-dark)]/80`}
+            >
+              {qualifier}
+            </p>
+          ) : null}
         </div>
 
         {image ? <ImageSlot slot={image} priority={priorityImage} /> : null}
