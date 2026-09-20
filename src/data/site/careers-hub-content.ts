@@ -19,6 +19,21 @@ import type { CareersHubPageContent } from "@/types/service-content";
  * or assignment. No em dash appears in this file; a spaced hyphen would be
  * used instead.
  */
+/**
+ * DRAFT, NOT RENDERED. Entry-level pathway block for "Is the Installer Network
+ * a Fit for You?". Publication is blocked until stakeholder approval: the
+ * transferable-experience wording (automotive, electrical, mechanical,
+ * construction, technical) is not in docs/01 or decision 0004. Once approved,
+ * add it to `fit` and add the matching FAQ item in careers-content.ts. Makes no
+ * training, employment, assignment, pay, or contact promise, and never uses
+ * "Apply".
+ */
+export const pendingEntryLevelFit = {
+  approved: false,
+  heading: "New to mobile fleet installation?",
+  body: "You may still share your background if you have hands-on experience in automotive, electrical, mechanical, construction, technical, or related work. Your experience can help SB Mobile Installations understand the skills you may bring to mobile installation work.",
+} as const;
+
 export const careersHubPageContent: CareersHubPageContent = {
   metaTitle: "Mobile Fleet Installation Technician Network",
 
@@ -75,7 +90,7 @@ export const careersHubPageContent: CareersHubPageContent = {
       {
         heading: "This may suit you if",
         items: [
-          "You have fleet or commercial vehicle installation experience to share",
+          "You have installation experience to share, or you are new to mobile installation work",
           "You are comfortable with on-site work at customer locations",
           "You are looking for independent contractor work",
         ],

@@ -76,7 +76,7 @@ export default function InstallerNetworkPage() {
         phoneJourney="recruitment"
         phoneEvent={null}
         scopeItems={hub.hero.scopeItems}
-        image={careersHubImages.hero}
+        image={careersHubImages.networkHero}
       />
 
       {/* Pointer to the current opening: a separate journey */}
@@ -95,6 +95,8 @@ export default function InstallerNetworkPage() {
         id="network-requirements"
         eyebrow={hub.chapters.work}
         content={hub.requirements}
+        slot={careersHubImages.networkRequirements}
+        mediaSide="right"
       />
 
       <Section tone="subtle" width="site" labelledBy="network-equipment-heading">
@@ -127,7 +129,7 @@ export default function InstallerNetworkPage() {
         id="network-field-work"
         tone="dark"
         content={hub.fieldWork}
-        slot={careersHubImages.fieldWork}
+        slot={careersHubImages.networkVehicles}
         mediaSide="left"
       />
 

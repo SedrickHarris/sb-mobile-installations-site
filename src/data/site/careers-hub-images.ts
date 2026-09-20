@@ -40,4 +40,37 @@ export const careersHubImages = {
     altGuidance:
       "A work van, service truck, utility vehicle, or heavy-duty truck. No trailers, no implied nationwide map.",
   },
+  networkHero: {
+    slotId: "careers-network-hero",
+    role: "Technician working at a fleet vehicle, Installer Network page hero",
+    aspectRatio: "4 / 3",
+    width: 1600,
+    height: 1200,
+    fallback: "route",
+    alt: "",
+    altGuidance:
+      "Suggested file: sb-mobile-installations-installer-network-hero.webp. Show a technician at a fleet vehicle. Describe only what is shown. Released, identifiable technicians only.",
+  },
+  networkRequirements: {
+    slotId: "careers-network-requirements",
+    role: "Vehicle installation work beside Requirements and Experience",
+    aspectRatio: "3 / 2",
+    width: 1500,
+    height: 1000,
+    fallback: "grid",
+    alt: "",
+    altGuidance:
+      "Suggested file: sb-mobile-installations-installer-network-vehicle-installation.webp. Interior panel or wiring work. No equipment brand visible. Do not imply a training program.",
+  },
+  networkVehicles: {
+    slotId: "careers-network-vehicles",
+    role: "Fleet vehicles beside Work Where Fleet Vehicles Operate",
+    aspectRatio: "3 / 2",
+    width: 1500,
+    height: 1000,
+    fallback: "route",
+    alt: "",
+    altGuidance:
+      "Suggested file: sb-mobile-installations-installer-network-fleet-vehicles.webp. Fleet vehicles in a lot. No license plates, no customer signage, no implied nationwide map.",
+  },
 } as const satisfies Record<string, HubImageSlot>;
