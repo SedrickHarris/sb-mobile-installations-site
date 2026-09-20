@@ -33,6 +33,16 @@ interface SectionProps {
   readonly density?: Density;
   readonly width?: Width;
   readonly labelledBy?: string;
+  /**
+   * Decorative background image under the content (empty alt, hidden from
+   * assistive tech, scrolls with the section). The tone's surface color stays
+   * as the fallback. Use only for light, text-free artwork.
+   */
+  readonly backgroundImage?: {
+    readonly src: string;
+    readonly width: number;
+    readonly height: number;
+  };
   readonly center?: boolean;
 }
 
@@ -80,14 +90,30 @@ export function Section({
   density = "standard",
   width = "reading",
   labelledBy,
+  backgroundImage,
   center = false,
 }: SectionProps) {
   return (
     <section
       data-tone={dataTone[tone]}
       aria-labelledby={labelledBy}
-      className={`px-5 md:px-6 ${toneClasses[tone]} ${densityClasses[density]}`}
+      className={`px-5 md:px-6 ${toneClasses[tone]} ${densityClasses[density]}${
+        backgroundImage ? " relative isolate overflow-hidden" : ""
+      }`}
     >
+      {backgroundImage ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={backgroundImage.src}
+          alt=""
+          aria-hidden="true"
+          width={backgroundImage.width}
+          height={backgroundImage.height}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-left-bottom"
+        />
+      ) : null}
       <div
         data-reveal-group
         className={`mx-auto ${widthClasses[width]} ${center ? "text-center" : ""}`}

@@ -77,6 +77,18 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
     "Suggested file: sb-mobile-installations-fleet-telematics-installation-hero.webp. Describe the hardware and vehicle actually shown. No device-brand logos, platform logos or dashboards, maps, pins, state outlines, stock technician imagery, readable plates, or customer signage.",
     "sb-mobile-installations-fleet-telematics-vehicle-context.webp",
     ),
+    context: {
+      slotId: "service-telematics-context",
+      role: "Work van, service trucks, and a heavy-duty truck at a commercial service yard",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      src: `${SERVICE_PHOTO_DIR}/fleet-telematics-installation/sb-mobile-installations-commercial-vehicle-installation-context.webp`,
+      alt: "Commercial fleet vehicles in a service yard, including a work van, utility service trucks, and a heavy-duty truck",
+      altGuidance:
+        "Describe only what is shown. Confirmed vehicle examples only. No trailers, pickups, buses, or heavy equipment.",
+    },
     definition: {
       slotId: "service-telematics-definition",
       role: "Connected fleet hardware being installed under a commercial vehicle dashboard",

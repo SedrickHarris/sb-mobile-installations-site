@@ -129,6 +129,18 @@ export interface ServiceTemplateContent {
    * Optional two-column quote section: guidance on the left, the form on the
    * right. When absent the shared single-column intro and form render.
    */
+  /**
+   * Optional decorative hero background video. When set it replaces the
+   * hero's right-column image slot. The poster shows while the video loads and
+   * for reduced-motion visitors.
+   */
+  readonly heroVideo?: { readonly src: string; readonly poster: string };
+  /** Optional decorative background image for the quote section. */
+  readonly quoteBackground?: {
+    readonly src: string;
+    readonly width: number;
+    readonly height: number;
+  };
   readonly quoteGuide?: {
     readonly intro: string;
     readonly support: string;

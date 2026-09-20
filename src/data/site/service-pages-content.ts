@@ -251,6 +251,16 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
         },
       ],
     },
+    heroVideo: {
+      src: "/images/services/fleet-telematics-installation/hero/sb-mobile-installations-fleet-telematics-installation-hero.mp4",
+      poster:
+        "/images/services/fleet-telematics-installation/hero/sb-mobile-installations-fleet-telematics-installation-hero.webp",
+    },
+    quoteBackground: {
+      src: "/images/services/fleet-telematics-installation/sb-mobile-installations-fleet-telematics-quote-light-background.webp",
+      width: 3344,
+      height: 1882,
+    },
     quoteGuide: {
       intro:
         "Tell us about your fleet telematics installation project so we can better understand the equipment, vehicle count, project location or locations, and preferred timing.",

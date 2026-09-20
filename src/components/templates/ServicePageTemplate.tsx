@@ -79,7 +79,8 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         phone={phone}
         phoneLocation="service-hero"
         scopeItems={content.scopeItems}
-        image={heroImage}
+        image={content.heroVideo ? undefined : heroImage}
+        backgroundVideo={content.heroVideo}
       />
 
       <SplitFeature
@@ -260,6 +261,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           tone="default"
           density="spacious"
           width={guide ? "site" : "reading"}
+          backgroundImage={content.quoteBackground}
           labelledBy={`${id}-quote-heading`}
         >
           <div
