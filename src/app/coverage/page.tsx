@@ -387,7 +387,7 @@ export default function CoveragePage() {
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-[var(--color-surface-dark)]/80"
+            className="absolute inset-0 -z-10 bg-[var(--color-surface-dark)]/55"
           />
           <div className="mx-auto max-w-[1280px]">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-14">
