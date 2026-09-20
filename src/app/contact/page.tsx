@@ -113,20 +113,7 @@ export default function ContactPage() {
         labelledBy="contact-nationwide-heading"
       >
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10 lg:gap-14">
-          {/*
-            TEMPORARY image placeholder (4:3) for visual inspection only. It is
-            decorative, hidden from assistive tech, and carries no alt text,
-            metadata, or schema. Replace this element with an approved
-            ImageSlot photo before launch.
-          */}
-          <div
-            aria-hidden="true"
-            className="flex aspect-[4/3] w-full items-center justify-center rounded-[var(--radius-lg)] border border-border bg-surface-subtle"
-          >
-            <span className="rounded-md bg-surface px-3 py-1 text-[length:var(--text-small)] font-semibold text-ink-muted">
-              Image placeholder
-            </span>
-          </div>
+          <ImageSlot slot={page.nationwide.image} />
 
           <div>
             <h2

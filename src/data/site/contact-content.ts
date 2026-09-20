@@ -140,6 +140,18 @@ export const contactContent = {
       "SB Mobile Installations provides on-site installation support at customer-designated locations nationwide. Whether you need equipment installed at a fleet yard, facility, job site, dealership, or other approved project location, share your vehicle count, equipment requirements, locations, and preferred timing with our team.",
       "Our field-service model is designed to support individual vehicle installations, multi-vehicle projects, and coordinated deployments across multiple locations.",
     ],
+    image: {
+      slotId: "contact-project-location",
+      role: "Project-location photo beside the nationwide installation copy on the Contact page",
+      src: "/images/contact/sb-mobile-installations-contact-project-location-fleet-installation.webp",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      alt: "White commercial cargo van at a fleet facility loading area, with an installation tool case, cable coils, and mounting brackets on the ground beside it",
+      altGuidance:
+        "Describe only what is shown. No brand names, no location or coverage claim.",
+    } satisfies HubImageSlot,
     linkLabel: "Explore Installation Coverage",
     href: "/coverage/",
     quoteLinkLabel: "Request a Fleet Installation Quote",
