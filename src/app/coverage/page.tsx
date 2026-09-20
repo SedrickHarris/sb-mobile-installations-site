@@ -16,6 +16,7 @@ import { utilityBar } from "@/data/navigation/site-navigation";
 import {
   coverageHeroVideo,
   coverageImages,
+  quoteBackground,
   vehicleContextBackground,
 } from "@/data/site/coverage-images";
 import { AnalyticsEvent } from "@/lib/analytics/events";
@@ -371,8 +372,23 @@ export default function CoveragePage() {
         <section
           data-tone="dark"
           aria-labelledby="coverage-quote-heading"
-          className="bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:px-6 md:py-24"
+          className="relative isolate overflow-hidden bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:px-6 md:py-24"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={quoteBackground.src}
+            alt=""
+            aria-hidden="true"
+            width={quoteBackground.width}
+            height={quoteBackground.height}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-right"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-[var(--color-surface-dark)]/80"
+          />
           <div className="mx-auto max-w-[1280px]">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-14">
               <div>

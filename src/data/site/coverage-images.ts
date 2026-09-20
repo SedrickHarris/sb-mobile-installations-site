@@ -29,6 +29,18 @@ export const vehicleContextBackground = {
 } as const;
 
 /**
+ * Decorative background for the final quote section on `/coverage/`. A
+ * technician's gloved hands working on installed equipment under a vehicle
+ * dashboard. It sits under a dark wash, scrolls with the section, and is never
+ * pinned. Empty alt: the section copy carries the meaning.
+ */
+export const quoteBackground = {
+  src: "/images/coverage/sb-mobile-installations-careers-mobile-installer-dashboard-installation-hero.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
+/**
  * Image slot for the `/coverage/` hero. Used only when no background video
  * is supplied; the video hero does not render it.
  *
