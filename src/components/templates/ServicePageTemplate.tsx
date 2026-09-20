@@ -125,7 +125,8 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
       {content.midCtaHeading ? (
         <Section
           tone="default"
-          density="compact"
+          density="tight"
+          center
           labelledBy={`${id}-mid-cta-heading`}
         >
           <h2
@@ -135,9 +136,9 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
             {content.midCtaHeading}
           </h2>
           <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-            {shared.heroQualifier}
+            {content.midCtaBody ?? shared.heroQualifier}
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex justify-center">
             <CtaButton cta={primaryCta} emphasis="primary" blockOnMobile />
           </div>
         </Section>
@@ -155,15 +156,60 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         mediaSide="left"
       />
 
-      <SplitFeature
-        id={`${id}-documentation`}
-        tone="subtle"
-        content={{
-          h2: shared.documentation.h2,
-          body: [shared.documentation.sentence],
-          links: shared.documentation.links,
-        }}
-      />
+      {content.documentationCards ? (
+        <Section
+          tone="subtle"
+          width="site"
+          labelledBy={`${id}-documentation-heading`}
+        >
+          <h2
+            id={`${id}-documentation-heading`}
+            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+          >
+            {shared.documentation.h2}
+          </h2>
+          <p className="mt-5 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+            {content.documentationCards.intro}
+          </p>
+          <div className="mt-8">
+            <CardGrid columns={3}>
+              {content.documentationCards.cards.map((card) => (
+                <Card key={card.title} padding="compact" className="flex flex-col">
+                  <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 text-[length:var(--text-body)] text-ink-muted">
+                    {card.body}
+                  </p>
+                </Card>
+              ))}
+            </CardGrid>
+          </div>
+          <ul className="mt-6 flex list-none flex-col gap-1 p-0">
+            {shared.documentation.links.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+                >
+                  {item.label}
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : (
+        <SplitFeature
+          id={`${id}-documentation`}
+          tone="subtle"
+          content={{
+            h2: shared.documentation.h2,
+            body: [shared.documentation.sentence],
+            links: shared.documentation.links,
+          }}
+        />
+      )}
 
       <Section tone="default" width="site" labelledBy={`${id}-related-heading`}>
         <h2
@@ -205,6 +251,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         id={`${id}-faq`}
         accessibleHeading={content.faqHeading}
         content={{ h2: content.faqHeading, items: page.faq ?? [] }}
+        layout={content.faqLayout}
       />
 
       <div id="request-quote" className="scroll-mt-24">
@@ -272,7 +319,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
                   href={phone.href}
                   label={phone.numberLabel}
                   location="service-quote"
-                  className="border-ink bg-surface text-ink hover:bg-surface-subtle"
+                  className="shrink-0 border-ink bg-surface px-5 whitespace-nowrap text-ink hover:bg-surface-subtle"
                 />
               </div>
             </div>

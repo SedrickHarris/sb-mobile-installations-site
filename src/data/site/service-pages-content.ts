@@ -199,6 +199,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       h2: "What Fleet Telematics Installation Can Include",
       body: [
         "Installation work covers the approved equipment categories for your project.",
+        "Depending on the project, installation may support approved GPS, ELD, AOBRD, TPMS, dashcam, telematics, and fleet-management equipment.",
       ],
     },
     vehiclesBody:
@@ -216,6 +217,8 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       ],
     },
     midCtaHeading: "Need installation support for a fleet telematics project?",
+    midCtaBody:
+      "Tell us about your equipment, vehicle count, project locations, and preferred timing so we can understand your installation request.",
     nationwideExtra:
       "Include your project location or locations, vehicle count, and preferred timeline when requesting an installation quote.",
     related: [
@@ -225,12 +228,31 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "fleet-rollouts",
     ],
     faqHeading: "Fleet Telematics Installation FAQs",
+    faqLayout: "columns",
     quoteH2: "Request a Fleet Telematics Installation Quote",
+    documentationCards: {
+      intro:
+        "Documentation can help fleet teams keep installation details organized and easier to review throughout a commercial vehicle project.",
+      cards: [
+        {
+          title: "Photo Documentation",
+          body: "Project photos can help show installation context, equipment placement, and visible work completed on a commercial vehicle when photo documentation is included in the project process.",
+        },
+        {
+          title: "Installation Records",
+          body: "Installation records can help organize project details for fleet coordination, internal review, and future reference.",
+        },
+        {
+          title: "Quality and Safety",
+          body: "Installation quality and safety information can help fleet teams understand vehicle-specific considerations, approved equipment requirements, and important project details.",
+        },
+      ],
+    },
     quoteGuide: {
       intro:
         "Tell us about your fleet telematics installation project so we can better understand the equipment, vehicle count, project location or locations, and preferred timing.",
       support:
-        "Use this form to request installation support for approved GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, or fleet management equipment. Providing complete project details helps establish the appropriate starting point for the conversation.",
+        "Use this form to request installation support for approved GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, or fleet management equipment. Providing complete project details helps the team understand your installation request.",
       includeHeading: "What to Include in Your Request",
       includeItems: [
         "Equipment or service needed",

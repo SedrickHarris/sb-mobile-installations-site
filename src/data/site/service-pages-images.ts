@@ -121,7 +121,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       height: 2172,
       fallback: "grid",
       src: `${SERVICE_PHOTO_DIR}/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp`,
-      alt: "Black fleet hardware modules and routed cabling mounted on a van wall panel above a workbench of installation tools, with white commercial trucks parked behind",
+      alt: "Technician routing fleet-electronics cables inside a commercial service vehicle",
       altGuidance:
         "Describe only what is shown. No device-brand logos, no compliance or capability claims.",
     },

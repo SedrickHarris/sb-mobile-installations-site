@@ -91,36 +91,64 @@ export const fleetTelematicsInstallationContent: ServicePageContent = {
   body: [],
   faq: [
     {
-      question: "Does this service cover ELD and AOBRD together?",
+      question:
+        "Does this service cover ELD and AOBRD together?",
       answer:
-        "Yes. Fleet telematics installation covers GPS tracking, ELD, and AOBRD as current equipment categories, alongside TPMS, fleet dashcam, and fleet management equipment.",
+        "SB Mobile Installations can install approved ELD, AOBRD, and related fleet hardware included in a project. The appropriate equipment and installation scope depend on the approved hardware and project requirements.",
     },
     {
-      question: "Are you the platform vendor for the equipment you install?",
+      question:
+        "Are you the platform vendor for the equipment you install?",
       answer:
-        "No. SB Mobile Installations installs and deploys hardware for the platforms fleets already run on. We are an installation and deployment partner, not the platform vendor.",
+        "SB Mobile Installations provides installation support for approved fleet hardware. The equipment platform, hardware selection, and software relationship remain separate from the installation service.",
     },
     {
       question:
         "What should I include when requesting fleet telematics installation?",
       answer:
-        "Include the equipment you need installed, your approximate vehicle count, your project locations, and your preferred timing. Any fleet, vehicle, or deployment details that affect the work also help.",
+        "Include the equipment or service needed, the number of vehicles or assets, the project location or locations, and your preferred installation timeline. Additional vehicle or deployment details may also help clarify the project.",
     },
     {
-      question: "Which service page should I start with?",
+      question:
+        "Which service page should I start with?",
       answer:
-        "Start with the page for your equipment: GPS Tracking Installation, ELD Installation, or Dashcam & Camera Installation. If your project includes several equipment types or many vehicles, start with this page or with Fleet Rollout Services.",
+        "Start with the service page that best matches your equipment or project need, such as GPS tracking installation, ELD installation, dashcam and camera installation, or fleet rollout services.",
     },
     {
       question:
         "What vehicle types can be part of a telematics installation project?",
       answer:
-        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
+        "Fleet telematics installation projects may involve work vans, service trucks, utility vehicles, heavy-duty trucks, and other commercial or construction vehicles. The appropriate equipment category depends on the vehicle and project requirements.",
     },
     {
-      question: "Can I request installation at our project location?",
+      question:
+        "Can I request installation at our project location?",
       answer:
-        "Nationwide mobile installation service, delivered at the customer's location. Share your project locations in the quote request.",
+        "Yes. Include the project location or locations, vehicle count, and preferred timeline when requesting an installation quote. SB Mobile Installations provides mobile installation service at the customer’s project location when the project requirements are appropriate.",
+    },
+    {
+      question:
+        "What does fleet telematics installation include?",
+      answer:
+        "Fleet telematics installation may include physically mounting approved hardware, connecting the equipment to the vehicle, routing required cables, and coordinating on-site installation work.",
+    },
+    {
+      question:
+        "What types of equipment can be installed?",
+      answer:
+        "Approved project equipment may include GPS tracking hardware, ELD, AOBRD, TPMS, fleet dashcams, telematics hardware, and other fleet-management equipment.",
+    },
+    {
+      question:
+        "Can installation support involve multiple vehicles or locations?",
+      answer:
+        "A project may involve one vehicle, multiple vehicles, or more than one project location. Include the vehicle count, locations, equipment, and preferred timing so the installation request can be understood accurately.",
+    },
+    {
+      question:
+        "How do I request a fleet telematics installation quote?",
+      answer:
+        "Use the fleet telematics installation quote form to provide your contact information, equipment or service need, vehicle or asset count, project location or locations, preferred timeline, and project description.",
     },
   ],
 };

@@ -22,7 +22,7 @@ const dataTone: Record<Tone, "light" | "subtle" | "dark"> = {
 };
 
 /** Vertical density. Conversion sections breathe; closing statements do not. */
-type Density = "compact" | "standard" | "spacious";
+type Density = "tight" | "compact" | "standard" | "spacious";
 
 /** Measure. See 21-design-system.md section 5.2. */
 type Width = "reading" | "wide" | "site" | "siteWide";
@@ -47,6 +47,7 @@ const toneClasses: Record<Tone, string> = {
  * Vertical padding varies by density, drawn from the 4px scale in section 4.4.
  */
 const densityClasses: Record<Density, string> = {
+  tight: "py-8 md:py-10",
   compact: "py-10 md:py-14",
   standard: "py-12 md:py-20",
   spacious: "py-16 md:py-24",

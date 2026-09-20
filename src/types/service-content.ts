@@ -103,6 +103,8 @@ export interface ServiceTemplateContent {
   /** Slugs of related service pages, in display order. */
   readonly related: readonly string[];
   readonly faqHeading: string;
+  /** "columns" shows the FAQ as a two-column accordion from md up. Defaults to the list. */
+  readonly faqLayout?: "list" | "columns";
   readonly quoteH2: string;
   /**
    * Optional commercial CTA band after the fit section. Renders only when set,
@@ -111,6 +113,16 @@ export interface ServiceTemplateContent {
    * the shared hero qualifier.
    */
   readonly midCtaHeading?: string;
+  /** Supporting line for the mid-page CTA. Falls back to the shared hero qualifier. */
+  readonly midCtaBody?: string;
+  /**
+   * Optional card layout for the documentation band. When present it replaces
+   * the shared single-sentence band; the shared link still renders below.
+   */
+  readonly documentationCards?: {
+    readonly intro: string;
+    readonly cards: readonly { readonly title: string; readonly body: string }[];
+  };
   /**
    * Optional two-column quote section: guidance on the left, the form on the
    * right. When absent the shared single-column intro and form render.
