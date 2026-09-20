@@ -15,17 +15,37 @@ const THANK_YOU_ROUTE = "/thank-you/service-request/";
  * Defaults keep the wording every other page already uses.
  */
 export interface CommercialInquiryFormCopy {
+  readonly name?: string;
+  readonly email?: string;
+  readonly phone?: string;
+  readonly company?: string;
+  readonly vehicleCount?: string;
   readonly serviceNeed: string;
+  /** Equipment dropdown options. Defaults to the approved `business.serviceTypes`. */
+  readonly serviceOptions?: readonly string[];
   readonly projectLocations: string;
   readonly timeline: string;
   readonly description: string;
   readonly descriptionPlaceholder?: string;
   readonly consent: string;
+  /** Optional privacy policy link shown directly under the consent checkbox. */
+  readonly privacyLink?: { readonly label: string; readonly href: string };
   readonly submit: string;
 }
 
-const defaultCopy: CommercialInquiryFormCopy = {
+type ResolvedCopy = Required<
+  Omit<CommercialInquiryFormCopy, "descriptionPlaceholder" | "privacyLink">
+> &
+  Pick<CommercialInquiryFormCopy, "descriptionPlaceholder" | "privacyLink">;
+
+const defaultCopy: ResolvedCopy = {
+  name: "Name",
+  email: "Email",
+  phone: "Phone",
+  company: "Company",
+  vehicleCount: "Number of vehicles or assets",
   serviceNeed: "Equipment or service need",
+  serviceOptions: business.serviceTypes,
   projectLocations: "Project location(s)",
   timeline: "Preferred timeline",
   description: "Project description",
@@ -129,7 +149,7 @@ export function CommercialInquiryForm({
       </div>
 
       <div className="grid gap-x-4 gap-y-5 md:grid-cols-2">
-        <Field label="Name" htmlFor={`${formId}-name`} required>
+        <Field label={text.name} htmlFor={`${formId}-name`} required>
           <input
             id={`${formId}-name`}
             name="name"
@@ -142,7 +162,7 @@ export function CommercialInquiryForm({
           />
         </Field>
 
-        <Field label="Email" htmlFor={`${formId}-email`} required>
+        <Field label={text.email} htmlFor={`${formId}-email`} required>
           <input
             id={`${formId}-email`}
             name="email"
@@ -155,7 +175,7 @@ export function CommercialInquiryForm({
           />
         </Field>
 
-        <Field label="Phone" htmlFor={`${formId}-phone`} required>
+        <Field label={text.phone} htmlFor={`${formId}-phone`} required>
           <input
             id={`${formId}-phone`}
             name="phone"
@@ -168,7 +188,7 @@ export function CommercialInquiryForm({
           />
         </Field>
 
-        <Field label="Company" htmlFor={`${formId}-company`} required>
+        <Field label={text.company} htmlFor={`${formId}-company`} required>
           <input
             id={`${formId}-company`}
             name="company"
@@ -191,7 +211,7 @@ export function CommercialInquiryForm({
             className={inputClass}
           >
             <option value="">Select one</option>
-            {business.serviceTypes.map((service) => (
+            {text.serviceOptions.map((service) => (
               <option key={service} value={service}>
                 {service}
               </option>
@@ -199,7 +219,7 @@ export function CommercialInquiryForm({
           </select>
         </Field>
 
-        <Field label="Number of vehicles or assets" htmlFor={`${formId}-vehicleCount`}>
+        <Field label={text.vehicleCount} htmlFor={`${formId}-vehicleCount`}>
           <input
             id={`${formId}-vehicleCount`}
             name="vehicleCount"
@@ -260,6 +280,16 @@ export function CommercialInquiryForm({
             />
             {text.consent}
           </label>
+          {text.privacyLink ? (
+            <p className="mt-2 ps-8 text-[length:var(--text-small)] text-ink-muted">
+              <a
+                href={text.privacyLink.href}
+                className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+              >
+                {text.privacyLink.label}
+              </a>
+            </p>
+          ) : null}
         </div>
 
         <div className="md:col-span-2">

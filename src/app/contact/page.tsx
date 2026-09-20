@@ -67,6 +67,60 @@ export default function ContactPage() {
         overlay="navy"
       />
 
+      <section
+        id="request-quote"
+        tabIndex={-1}
+        data-tone="dark"
+        aria-labelledby="contact-quote-heading"
+        className="relative isolate scroll-mt-24 overflow-hidden bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] outline-none md:px-6 md:py-24"
+      >
+        {/* Decorative background under the content. The navy surface color above is the fallback. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={page.quote.backgroundImage.src}
+          alt=""
+          aria-hidden="true"
+          width={page.quote.backgroundImage.width}
+          height={page.quote.backgroundImage.height}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+        <div className="mx-auto max-w-[1280px]">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-14">
+            <div>
+              <h2
+                id="contact-quote-heading"
+                className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
+              >
+                {page.quote.h2}
+              </h2>
+              <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
+                {page.quote.intro}
+              </p>
+              <div className="mt-8 flex flex-col items-start gap-3">
+                <p className="text-[length:var(--text-body)] text-[var(--color-text-on-dark)]/90">
+                  {page.quote.phoneLead}
+                </p>
+                <PhoneButton
+                  href={utilityBar.phoneHref}
+                  label={`${page.hero.callLabel} ${utilityBar.phoneLabel}`}
+                  location="contact-quote"
+                  className="border-white/60 bg-transparent text-white hover:bg-white/10"
+                />
+              </div>
+            </div>
+
+            <div
+              data-tone="light"
+              className="rounded-lg border border-border bg-surface p-6 text-ink md:p-8"
+            >
+              <CommercialInquiryForm copy={page.quote.form} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Section tone="default" width="site" labelledBy="contact-include-heading">
         <h2
           id="contact-include-heading"
@@ -151,49 +205,7 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      <section
-        id="request-quote"
-        tabIndex={-1}
-        data-tone="dark"
-        aria-labelledby="contact-quote-heading"
-        className="scroll-mt-24 bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] outline-none md:px-6 md:py-24"
-      >
-        <div className="mx-auto max-w-[1280px]">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-14">
-            <div>
-              <h2
-                id="contact-quote-heading"
-                className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
-              >
-                {page.quote.h2}
-              </h2>
-              <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
-                {page.quote.intro}
-              </p>
-              <div className="mt-8 flex flex-col items-start gap-3">
-                <p className="text-[length:var(--text-body)] text-[var(--color-text-on-dark)]/90">
-                  {page.quote.phoneLead}
-                </p>
-                <PhoneButton
-                  href={utilityBar.phoneHref}
-                  label={`${page.hero.callLabel} ${utilityBar.phoneLabel}`}
-                  location="contact-quote"
-                  className="border-white/60 bg-transparent text-white hover:bg-white/10"
-                />
-              </div>
-            </div>
-
-            <div
-              data-tone="light"
-              className="rounded-lg border border-border bg-surface p-6 text-ink md:p-8"
-            >
-              <CommercialInquiryForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Section tone="default" width="site" labelledBy="contact-helpful-heading">
+      <Section tone="subtle" width="site" labelledBy="contact-helpful-heading">
         <h2
           id="contact-helpful-heading"
           className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
@@ -225,6 +237,19 @@ export default function ContactPage() {
           ))}
         </ul>
       </Section>
+
+      {/*
+        Installer questions: the same shared block as /careers/, a clearly
+        separated secondary pathway after all commercial content
+        (docs/decisions/0008). Path links carry the recruitment journey.
+      */}
+      <InstallerQuestions
+        content={careersLandingContent.contact}
+        image={careersHubImages.contact}
+        headingId="contact-installer-heading"
+        phoneLocation="contact-installer"
+        trackPaths
+      />
 
       <Section
         tone="subtle"
@@ -262,19 +287,6 @@ export default function ContactPage() {
           </div>
         </div>
       </Section>
-
-      {/*
-        Installer questions: the same shared block as /careers/, a clearly
-        separated secondary pathway after all commercial content
-        (docs/decisions/0008). Path links carry the recruitment journey.
-      */}
-      <InstallerQuestions
-        content={careersLandingContent.contact}
-        image={careersHubImages.contact}
-        headingId="contact-installer-heading"
-        phoneLocation="contact-installer"
-        trackPaths
-      />
     </>
   );
 }

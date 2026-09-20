@@ -159,10 +159,46 @@ export const contactContent = {
   },
 
   quote: {
-    h2: "Request an Installation Quote",
+    h2: "Request a Fleet Installation Quote",
     intro:
-      "Tell us about your equipment, vehicle count, project locations, and preferred timing.",
+      "Tell us about your equipment, vehicle count, project locations, and preferred timing. The more detail you provide, the easier it is to understand your fleet installation requirements.",
     phoneLead: "Need help by phone?",
+    /** Decorative dark circuit-line background. No text or photography in the file. */
+    backgroundImage: {
+      src: "/images/contact/sb-mobile-installations-contact-fleet-installation-quote-background.webp",
+      width: 3344,
+      height: 1882,
+    },
+    /**
+     * Contact-page form copy, passed through the form's `copy` prop so other
+     * pages keep their defaults. Dropdown values are display text and are sent
+     * as the existing `serviceNeed` field; no payload field is added.
+     */
+    form: {
+      name: "Name",
+      email: "Business email",
+      phone: "Phone",
+      company: "Company or organization",
+      serviceNeed: "Equipment or installation need",
+      serviceOptions: [
+        "GPS tracking",
+        "ELD",
+        "AOBRD",
+        "Fleet dashcam or camera",
+        "TPMS",
+        "Telematics",
+        "Multiple equipment types",
+        "Other fleet-electronics installation",
+      ],
+      vehicleCount: "Number of vehicles or assets",
+      projectLocations: "Project location(s)",
+      timeline: "Preferred installation timeline",
+      description: "Tell us about your project",
+      consent:
+        "I consent to SB Mobile Installations contacting me about this installation project.",
+      privacyLink: { label: "Read our Privacy Policy", href: "/privacy-policy/" },
+      submit: "Request a Fleet Installation Quote",
+    },
   },
 
   /**
