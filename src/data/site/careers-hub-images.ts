@@ -98,4 +98,16 @@ export const careersHubImages = {
     altGuidance:
       "Unbranded fleet vehicle, organized installation tools, wiring harnesses, multimeter, or fleet-electronics components in a clean service-yard setting. No people required. No logos, plates, readable text, maps, pins, customer information, or anything implying a specific assignment.",
   },
+  commercialHandoff: {
+    slotId: "careers-commercial-handoff",
+    src: "/images/careers/sb-mobile-installations-careers-fleet-installation-handoff-equipment.webp",
+    role: "Commercial fleet installation handoff on the Careers page",
+    aspectRatio: "7 / 4",
+    width: 3318,
+    height: 1896,
+    fallback: "route",
+    alt: "",
+    altGuidance:
+      "Suggested file: sb-mobile-installations-careers-fleet-installation-handoff-equipment.webp. Unbranded commercial fleet vehicle in a clean fleet yard with an organized installation case or equipment in the foreground. No people required. No logos, plates, readable text, maps, pins, customer information, recruitment imagery, or damaged vehicles.",
+  },
 } as const satisfies Record<string, HubImageSlot>;

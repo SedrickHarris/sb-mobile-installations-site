@@ -76,7 +76,7 @@ export default function CareersPage() {
       */}
       <Section tone="subtle" width="site" labelledBy="careers-opening-heading">
         <div className="grid gap-8 md:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] md:items-start md:gap-12">
-          <ImageSlot slot={careersHubImages.fieldWork} />
+          <ImageSlot slot={careersHubImages.fieldWork} className="md:self-center" />
 
           <div>
             <h2
@@ -265,29 +265,60 @@ export default function CareersPage() {
         </div>
       </Section>
 
-      <Section tone="subtle" density="compact" labelledBy="careers-handoff-heading">
-        <h2
-          id="careers-handoff-heading"
-          className="text-[length:var(--text-h4)] font-bold text-ink"
-        >
-          {page.handoff.h2}
-        </h2>
-        <p className="mt-2 text-[length:var(--text-body)] text-ink-muted">
-          {page.handoff.body}
-        </p>
-        <ul className="mt-3 flex list-none flex-col gap-1 p-0">
-          {page.handoff.links.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+      {/*
+        Commercial handoff: customers only, kept apart from the recruitment
+        sections above. Content left, image right from md; content above the
+        image on mobile. The primary link carries the commercial quote-click
+        event; the secondary link is plain. No recruitment tracking, no form.
+      */}
+      <Section tone="subtle" width="site" density="compact" labelledBy="careers-handoff-heading">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,58fr)_minmax(0,42fr)] md:items-center md:gap-12">
+          <div>
+            <span
+              aria-hidden="true"
+              className="mb-4 block h-0.5 w-10 bg-[var(--color-brand-red)]"
+            />
+            <h2
+              id="careers-handoff-heading"
+              className="text-[length:var(--text-h3)] leading-[1.15] font-bold text-balance text-ink"
+            >
+              {page.handoff.h2}
+            </h2>
+            {page.handoff.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
               >
-                {item.label}
+                {paragraph}
+              </p>
+            ))}
+            <ul
+              aria-label="Fleet installation services"
+              className="mt-5 grid list-none grid-cols-1 gap-x-6 gap-y-2 p-0 text-[length:var(--text-body)] text-ink sm:grid-cols-2"
+            >
+              {page.handoff.services.map((service) => (
+                <li key={service} className="flex gap-3">
+                  <span aria-hidden="true" className="mt-[0.15rem] shrink-0 font-bold">
+                    •
+                  </span>
+                  <span>{service}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
+              <CtaButton cta={page.handoff.primaryCta} emphasis="primary" blockOnMobile />
+              <Link
+                href={page.handoff.secondaryLink.href}
+                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+              >
+                {page.handoff.secondaryLink.label}
                 <span aria-hidden="true">&rarr;</span>
               </Link>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </div>
+
+          <ImageSlot slot={careersHubImages.commercialHandoff} />
+        </div>
       </Section>
     </>
   );

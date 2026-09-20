@@ -1,5 +1,7 @@
 import { applyCta } from "@/data/jobs/ctas";
 import { activeTechnicianJob, INSTALLER_NETWORK_PATH, JOBS_INDEX_PATH } from "@/data/jobs";
+import { business } from "@/data/site/business";
+import { AnalyticsEvent } from "@/lib/analytics/events";
 import type { Cta } from "@/types/content";
 import type { HubLink } from "@/types/service-content";
 
@@ -59,8 +61,10 @@ interface CareersLandingContent {
   readonly contact: CareersContactContent;
   readonly handoff: {
     readonly h2: string;
-    readonly body: string;
-    readonly links: readonly HubLink[];
+    readonly paragraphs: readonly string[];
+    readonly services: readonly string[];
+    readonly primaryCta: Cta;
+    readonly secondaryLink: HubLink;
   };
 }
 
@@ -165,10 +169,20 @@ export const careersLandingContent: CareersLandingContent = {
 
   handoff: {
     h2: "Need Fleet Installation Services?",
-    body: "SB Mobile Installations provides on-site installation of GPS tracking systems, ELD and AOBRD equipment, fleet dashcams, and other commercial vehicle electronics for commercial and fleet vehicle operators.",
-    links: [
-      { label: "Request an Installation Quote", href: "/contact/" },
-      { label: "Explore Fleet Installation Services", href: "/services/" },
+    paragraphs: [
+      "SB Mobile Installations provides on-site installation of GPS tracking systems, ELD and AOBRD equipment, fleet dashcams, and other commercial vehicle electronics for fleet and commercial vehicle operators.",
+      "We install fleet electronics on work vans, service vehicles, delivery vehicles, utility vehicles, and other vehicles managed as part of a commercial fleet. To begin, share the equipment, approximate vehicle count, project location or locations, and preferred timing in an installation quote request.",
     ],
+    services: business.serviceTypes,
+    primaryCta: {
+      label: "Request an Installation Quote",
+      href: "/contact/",
+      journey: "commercial",
+      event: AnalyticsEvent.ctaQuoteClick,
+    },
+    secondaryLink: {
+      label: "Explore Fleet Installation Services",
+      href: "/services/",
+    },
   },
 };
