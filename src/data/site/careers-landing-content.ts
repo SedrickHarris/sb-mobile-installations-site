@@ -164,11 +164,11 @@ export const careersLandingContent: CareersLandingContent = {
   },
 
   handoff: {
-    h2: "Looking for Fleet Installation Service?",
-    body: "SB Mobile Installations installs fleet technology for commercial customers. Businesses request installation separately from installer careers.",
+    h2: "Need Fleet Installation Services?",
+    body: "SB Mobile Installations provides on-site installation of GPS tracking systems, ELD and AOBRD equipment, fleet dashcams, and other commercial vehicle electronics for commercial and fleet vehicle operators.",
     links: [
-      { label: "Request an installation quote", href: "/contact/" },
-      { label: "Explore fleet installation services", href: "/services/" },
+      { label: "Request an Installation Quote", href: "/contact/" },
+      { label: "Explore Fleet Installation Services", href: "/services/" },
     ],
   },
 };

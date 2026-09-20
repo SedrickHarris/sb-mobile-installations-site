@@ -151,42 +151,6 @@ export default function CareersPage() {
         </div>
       </Section>
 
-      {/*
-        Installer Network: a secondary, separate pathway. Image left, content
-        right from md, stacked on mobile. Deliberately quieter than the opening
-        above: a light surface, a text link, and no button. The image scrolls
-        with the section and is never pinned.
-      */}
-      <Section tone="default" width="site" labelledBy="careers-network-heading">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] md:items-center md:gap-12">
-          <ImageSlot slot={careersHubImages.networkBand} />
-
-          <div>
-            <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-brand-red)] uppercase">
-              {page.network.eyebrow}
-            </p>
-            <h2
-              id="careers-network-heading"
-              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-            >
-              {page.network.h2}
-            </h2>
-            <p className="mt-5 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-              {page.network.body}
-            </p>
-            <p className="mt-4">
-              <Link
-                href={page.network.link.href}
-                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-              >
-                {page.network.link.label}
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </p>
-          </div>
-        </div>
-      </Section>
-
       <FaqGroup
         id="careers-faq"
         accessibleHeading={page.faqHeading}
@@ -265,7 +229,43 @@ export default function CareersPage() {
         </div>
       </Section>
 
-      <Section tone="default" density="compact" labelledBy="careers-handoff-heading">
+      {/*
+        Installer Network: a secondary, separate pathway. Image left, content
+        right from md, stacked on mobile. Deliberately quieter than the opening
+        above: a light surface, a text link, and no button. The image scrolls
+        with the section and is never pinned.
+      */}
+      <Section tone="default" width="site" labelledBy="careers-network-heading">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] md:items-center md:gap-12">
+          <ImageSlot slot={careersHubImages.networkBand} />
+
+          <div>
+            <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-brand-red)] uppercase">
+              {page.network.eyebrow}
+            </p>
+            <h2
+              id="careers-network-heading"
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+            >
+              {page.network.h2}
+            </h2>
+            <p className="mt-5 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+              {page.network.body}
+            </p>
+            <p className="mt-4">
+              <Link
+                href={page.network.link.href}
+                className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+              >
+                {page.network.link.label}
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="subtle" density="compact" labelledBy="careers-handoff-heading">
         <h2
           id="careers-handoff-heading"
           className="text-[length:var(--text-h4)] font-bold text-ink"

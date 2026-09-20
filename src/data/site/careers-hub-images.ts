@@ -31,10 +31,11 @@ export const careersHubImages = {
   },
   fieldWork: {
     slotId: "careers-hub-field-work",
+    src: "/images/careers/sb-mobile-installations-current-opening-technician-fleet-electronics-installation.webp",
     role: "Field work in a commercial vehicle environment",
-    aspectRatio: "3 / 2",
-    width: 1500,
-    height: 1000,
+    aspectRatio: "7 / 4",
+    width: 3318,
+    height: 1896,
     fallback: "grid",
     alt: "",
     altGuidance:
@@ -75,10 +76,11 @@ export const careersHubImages = {
   },
   networkBand: {
     slotId: "careers-network-band",
+    src: "/images/careers/sb-mobile-installations-careers-recruitment-contact-installation-toolkit.webp",
     role: "Installer Network band on the Careers page",
-    aspectRatio: "3 / 2",
-    width: 1500,
-    height: 1000,
+    aspectRatio: "7 / 4",
+    width: 3318,
+    height: 1896,
     fallback: "route",
     alt: "",
     altGuidance:
@@ -86,10 +88,11 @@ export const careersHubImages = {
   },
   contact: {
     slotId: "careers-contact",
+    src: "/images/careers/sb-mobile-installations-installer-network-mobile-installation-toolkit-v2.webp",
     role: "Recruitment contact block on the Careers page",
-    aspectRatio: "3 / 2",
-    width: 1500,
-    height: 1000,
+    aspectRatio: "7 / 4",
+    width: 3318,
+    height: 1896,
     fallback: "grid",
     alt: "",
     altGuidance:
