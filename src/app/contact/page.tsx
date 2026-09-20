@@ -32,9 +32,10 @@ export const metadata: Metadata = buildPageMetadata({
 /**
  * Commercial quote page (docs/decisions/0008). One primary commercial path:
  * the CommercialInquiryForm, reached from the hero CTA at `#request-quote`.
- * The shared InstallerQuestions block (same as /careers/) follows all
- * commercial content as a clearly separated recruitment pathway. Schema is
- * WebPage + BreadcrumbList only; no local, offer, FAQ, or job types.
+ * The shared InstallerQuestions block (same as /careers/) sits directly below
+ * the hero at the stakeholder's direction and stays a separate recruitment
+ * pathway. Schema is WebPage + BreadcrumbList only; no local, offer, FAQ, or
+ * job types.
  */
 export default function ContactPage() {
   const [streetLine, cityLine] = formatAddressLines();
@@ -165,6 +166,39 @@ export default function ContactPage() {
         </p>
       </Section>
 
+      <Section tone="default" width="site" labelledBy="contact-helpful-heading">
+        <h2
+          id="contact-helpful-heading"
+          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+        >
+          {page.helpful.h2}
+        </h2>
+        <p className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+          {page.helpful.intro}
+        </p>
+        <ul className="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2">
+          {page.helpful.items.map((item) => (
+            <li key={item.href}>
+              <Card as="div" hover padding="none" className="relative flex h-full flex-col p-6 md:p-8">
+                <h3 className="text-[length:var(--text-h3)] leading-tight font-bold text-ink">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
+                  {item.description}
+                </p>
+                <Link
+                  href={item.href}
+                  className="mt-auto inline-flex min-h-11 items-center gap-2 pt-5 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
+                >
+                  {item.linkLabel}
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </Card>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       <section
         id="request-quote"
         tabIndex={-1}
@@ -218,39 +252,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Section tone="default" width="site" labelledBy="contact-helpful-heading">
-        <h2
-          id="contact-helpful-heading"
-          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-        >
-          {page.helpful.h2}
-        </h2>
-        <p className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-          {page.helpful.intro}
-        </p>
-        <ul className="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2">
-          {page.helpful.items.map((item) => (
-            <li key={item.href}>
-              <Card as="div" hover padding="none" className="relative flex h-full flex-col p-6 md:p-8">
-                <h3 className="text-[length:var(--text-h3)] leading-tight font-bold text-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
-                  {item.description}
-                </p>
-                <Link
-                  href={item.href}
-                  className="mt-auto inline-flex min-h-11 items-center gap-2 pt-5 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
-                >
-                  {item.linkLabel}
-                  <span aria-hidden="true">&rarr;</span>
-                </Link>
-              </Card>
-            </li>
-          ))}
-        </ul>
-      </Section>
 
       <Section
         tone="subtle"

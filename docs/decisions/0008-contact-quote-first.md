@@ -45,7 +45,7 @@ quote-conversion page with a separate, quiet Installer Network handoff.
    checklist, and quote form sections, which supersedes "after all commercial
    content" above. The quote form remains the only form and stays separate from
    the recruitment block. The page order is: Hero, installer questions,
-   services, project location, request checklist, quote form, resources,
+   services, project location, request checklist, resources, quote form,
    corporate office.
 7. **Quote wording.** docs/21 line 394 says the commercial form must not
    promise a quote unless the verified process supports it. The CTA and H1 reuse
