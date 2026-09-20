@@ -32,9 +32,36 @@ export interface HeroContent {
   readonly secondaryCta: Cta;
 }
 
-/** A single self-contained paragraph answering who the company is. */
-export interface DirectAnswerContent {
+/** One button within an audience pathway, paired with its visual weight. */
+export interface PathwayCta {
+  readonly cta: Cta;
+  readonly emphasis: "primary" | "secondary" | "installerRed";
+}
+
+/**
+ * One audience's route through the direct-answer section: who it's for, what
+ * to do next, and the button(s) that do it. `variant` drives the installer
+ * pathway's accent styling; it is never the only signal distinguishing the
+ * pathways, since each also carries its own heading and body text.
+ */
+export interface AudiencePathway {
+  readonly variant: "fleet" | "installer";
+  readonly label: string;
   readonly body: string;
+  readonly ctas: readonly PathwayCta[];
+}
+
+/**
+ * Self-contained answer paragraph(s) answering who the company is, with an
+ * optional eyebrow/heading and audience pathways beneath. A body supplied as
+ * an array renders one paragraph per entry.
+ */
+export interface DirectAnswerContent {
+  readonly eyebrow?: string;
+  readonly heading?: string;
+  readonly body: string | readonly string[];
+  readonly pathwaysHeading?: string;
+  readonly pathways?: readonly AudiencePathway[];
 }
 
 export interface SectionContent {

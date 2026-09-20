@@ -35,11 +35,11 @@ export const industriesHubImages = {
   capability: {
     slotId: "industries-hub-capability",
     role: "Commercial vans and trucks staged at a fleet facility",
-    aspectRatio: "7 / 4",
-    width: 3318,
-    height: 1896,
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
     fallback: "grid",
-    src: "/images/industries/industries-hub-page/sb-mobile-installations-planning-commercial-fleet-installation-projects.webp",
+    src: "/images/industries/industries-hub-page/sb-mobile-installations-industries-commercial-fleet-project-planning.webp",
     alt: "Commercial vans and trucks staged outside a fleet facility",
     altGuidance:
       "Describe only what is shown. No trade branding, no third-party logos, no readable text, and no geographic claim.",
@@ -47,11 +47,11 @@ export const industriesHubImages = {
   intake: {
     slotId: "industries-hub-intake",
     role: "Commercial vans and trucks arranged in an organized fleet staging area",
-    aspectRatio: "7 / 4",
-    width: 3318,
-    height: 1896,
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
     fallback: "grid",
-    src: "/images/industries/industries-hub-page/sb-mobile-installations-project-details-installation-planning-fleet-staging.webp",
+    src: "/images/industries/industries-hub-page/sb-mobile-installations-industries-project-details-installation-planning.webp",
     alt: "Commercial vans and trucks arranged in an organized fleet staging area",
     altGuidance:
       "Describe only what is shown. No trade branding, no third-party logos, no readable text, and no geographic claim.",

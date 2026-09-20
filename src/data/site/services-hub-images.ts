@@ -31,11 +31,11 @@ export const servicesHubImages = {
   capability: {
     slotId: "services-hub-capability",
     role: "Commercial fleet vehicles staged at a fleet facility for an on-site installation project",
-    aspectRatio: "7 / 4",
-    width: 3318,
-    height: 1896,
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
     fallback: "grid",
-    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-nationwide-commercial-fleet-installation-support.webp",
+    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
     alt: "Commercial fleet vehicles staged for an on-site installation project",
     altGuidance:
       "Describe only what is shown. Use only confirmed vehicle categories, and make no coverage or market claim.",

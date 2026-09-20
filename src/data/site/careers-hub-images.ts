@@ -25,7 +25,7 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * plays muted.
  */
 export const careersHeroVideo = {
-  src: "/images/careers/homepage-hero/sb-mobile-installations-careers-fleet-installation-tools-hero.mp4",
+  src: "/images/careers/homepage-hero/sb-mobile-installations-careers-fleet-installation-tools-hero-v2.mp4",
   poster:
     "/images/careers/homepage-hero/sb-mobile-installations-careers-fleet-installation-tools-hero.webp",
 } as const;
@@ -101,11 +101,11 @@ export const careersHubImages = {
   },
   contact: {
     slotId: "careers-contact",
-    src: "/images/careers/sb-mobile-installations-installer-network-mobile-installation-toolkit-v2.webp",
+    src: "/images/careers/sb-mobile-installations-installer-network-tool-case-fleet-yard-4x3.webp",
     role: "Recruitment contact block on the Careers page",
-    aspectRatio: "7 / 4",
-    width: 3318,
-    height: 1896,
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
     fallback: "grid",
     alt: "",
     altGuidance:

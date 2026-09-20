@@ -45,6 +45,17 @@ interface FaqGroupProps {
   readonly layout?: "list" | "columns";
   /** Optional supporting paragraph under the visible heading (columns layout). */
   readonly intro?: string;
+  /**
+   * Small chapter label above the heading (columns layout only). Not a
+   * heading; purely a visual label.
+   */
+  readonly eyebrow?: string;
+  /**
+   * Section background. Defaults to "subtle" (light gray), the value every
+   * existing caller relies on. Pass "default" (white) to visually separate
+   * this FAQ section from a "subtle" section immediately above it.
+   */
+  readonly tone?: "default" | "subtle";
 }
 
 /**
@@ -84,6 +95,8 @@ export function FaqGroup({
   accessibleHeading,
   layout = "list",
   intro,
+  eyebrow,
+  tone = "subtle",
 }: FaqGroupProps) {
   const headingId = `${id}-heading`;
   const columns = layout === "columns";
@@ -102,8 +115,13 @@ export function FaqGroup({
 
   if (columns) {
     return (
-      <Section tone="subtle" width="site" density={density} labelledBy={headingId}>
+      <Section tone={tone} width="site" density={density} labelledBy={headingId}>
         <div className="mx-auto max-w-[1100px]">
+          {eyebrow ? (
+            <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-brand-red)] uppercase">
+              {eyebrow}
+            </p>
+          ) : null}
           {heading}
           {intro && content.h2 ? (
             <p className="mb-6 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">

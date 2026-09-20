@@ -99,7 +99,6 @@ export default function IndustriesPage() {
         content={hub.capability}
         slot={industriesHubImages.capability}
         mediaSide="left"
-        align="top"
         mediaFirstOnMobile
       />
 
@@ -110,7 +109,6 @@ export default function IndustriesPage() {
         content={hub.intake}
         slot={industriesHubImages.intake}
         mediaSide="left"
-        align="top"
         mediaFirstOnMobile
       />
 

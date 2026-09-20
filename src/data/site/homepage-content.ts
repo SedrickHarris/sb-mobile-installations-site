@@ -1,3 +1,4 @@
+import { CAREERS_PATH } from "@/data/jobs";
 import { applyCta } from "@/data/jobs/ctas";
 import { whoWeServeImages } from "@/data/site/who-we-serve-images";
 import type { Cta, HomepageContent } from "@/types/content";
@@ -65,6 +66,20 @@ const JOIN_NETWORK_CTA: Cta = {
   event: "cta_installer_network_click",
 };
 
+const EXPLORE_SERVICES_CTA: Cta = {
+  label: "Explore Fleet Installation Services",
+  href: SERVICES_ROUTE,
+  journey: "commercial",
+  event: "cta_request_service_click",
+};
+
+const CAREERS_PATHWAY_CTA: Cta = {
+  label: "Learn About Installer Careers",
+  href: CAREERS_PATH,
+  journey: "recruitment",
+  event: "cta_careers_click",
+};
+
 export const homepageContent: HomepageContent = {
   hero: {
     h1: "Mobile Installation of GPS, ELD, and Fleet Electronics, Nationwide",
@@ -75,7 +90,31 @@ export const homepageContent: HomepageContent = {
   },
 
   directAnswer: {
-    body: "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country. The company has been in business since 2011 and works on-site at the customer's location - there is no walk-in installation facility.",
+    eyebrow: "About SB Mobile Installations",
+    heading: "Mobile Fleet Installation Services for Commercial Vehicles",
+    body: [
+      "SB Mobile Installations provides on-site fleet electronics installation for commercial, construction, transportation, and service vehicles nationwide. Our field technicians install GPS tracking devices, electronic logging devices, AOBRD equipment, fleet cameras, tire-pressure monitoring systems, and related vehicle electronics at the customer's location.",
+      "Mobile installation helps fleet operators coordinate equipment deployment where vehicles are parked, staged, or operating, while reducing unnecessary vehicle downtime. Our services can support individual vehicles, mixed fleets, and larger installation projects that require consistent procedures and installation documentation.",
+      "In business since 2011, SB Mobile Installations connects commercial customers with field installation resources for fleet technology deployments. We work on-site at customer locations rather than operating as a walk-in installation facility.",
+    ],
+    pathwaysHeading: "Choose the right path",
+    pathways: [
+      {
+        variant: "fleet",
+        label: "Fleet operators",
+        body: "Request an installation quote or explore fleet installation services for your commercial vehicles or fleet deployment.",
+        ctas: [
+          { cta: QUOTE_CTA, emphasis: "primary" },
+          { cta: EXPLORE_SERVICES_CTA, emphasis: "secondary" },
+        ],
+      },
+      {
+        variant: "installer",
+        label: "Installers",
+        body: "Learn about current installer openings and the Installer Network. Training may be available for qualified applicants, including people who do not have previous installation experience.",
+        ctas: [{ cta: CAREERS_PATHWAY_CTA, emphasis: "installerRed" }],
+      },
+    ],
   },
 
   whatWeInstall: {

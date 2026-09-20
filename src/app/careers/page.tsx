@@ -74,7 +74,12 @@ export default function CareersPage() {
         (3 / 2) and renders the decorative fallback until a photo is approved.
         Every fact is HTML text. The disclaimer sits above the Apply button.
       */}
-      <Section tone="subtle" width="site" labelledBy="careers-opening-heading">
+      <Section
+        tone="subtle"
+        width="site"
+        density="spacious"
+        labelledBy="careers-opening-heading"
+      >
         <div className="grid gap-8 md:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] md:items-start md:gap-12">
           <ImageSlot slot={careersHubImages.fieldWork} className="md:self-center" />
 
@@ -151,10 +156,17 @@ export default function CareersPage() {
         </div>
       </Section>
 
+      {/* Restrained full-width boundary so the gray opening section and the
+          white FAQ section never visually blend into one block. */}
+      <div aria-hidden="true" className="h-px w-full bg-[var(--color-border)]" />
+
       <FaqGroup
         id="careers-faq"
         accessibleHeading={page.faqHeading}
         layout="columns"
+        tone="default"
+        eyebrow={page.faqEyebrow}
+        intro={page.faqIntro}
         content={{ h2: page.faqHeading, items: careersPageFaq }}
       />
 
@@ -195,7 +207,7 @@ export default function CareersPage() {
                 location="careers-contact"
                 journey="recruitment"
                 event={null}
-                className="border-ink bg-surface text-ink hover:bg-surface-subtle"
+                className="border-transparent bg-[var(--color-brand-red)] text-white hover:bg-[var(--color-brand-red-strong)] focus-visible:outline-[var(--color-brand-red-strong)]"
               />
               <p className="text-[length:var(--text-body)] text-ink">{page.contact.hours}</p>
             </div>

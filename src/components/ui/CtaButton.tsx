@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import type { Cta } from "@/types/content";
 
-type Emphasis = "primary" | "secondary" | "dark";
+type Emphasis = "primary" | "secondary" | "dark" | "installerRed";
 
 interface CtaButtonProps {
   readonly cta: Cta;
@@ -57,6 +57,20 @@ const emphasisClasses: Record<Emphasis, string> = {
     */
     "bg-ink text-white border border-transparent",
     "hover:brightness-125 active:brightness-100",
+    "shadow-none hover:shadow-card",
+  ].join(" "),
+  installerRed: [
+    /*
+      --color-brand-red (#B40000) fill with white text (7.14:1, passes WCAG
+      AA). 21-design-system.md section 27b prohibits red as any button fill;
+      this is a stakeholder-approved exception granted 2026-09-20, scoped to
+      the homepage direct-answer section's installer pathway CTA only. Do not
+      reuse this emphasis elsewhere without the same approval. The focus ring
+      is red too, per that approval, rather than the default accent ring.
+    */
+    "bg-[var(--color-brand-red)] text-white border border-transparent",
+    "hover:bg-[var(--color-brand-red-strong)] active:bg-[var(--color-brand-red-strong)]",
+    "focus-visible:outline-[var(--color-brand-red-strong)]",
     "shadow-none hover:shadow-card",
   ].join(" "),
 };

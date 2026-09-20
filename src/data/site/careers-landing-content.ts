@@ -57,7 +57,9 @@ interface CareersLandingContent {
   };
   readonly opening: CareersOpeningContent;
   readonly network: CareersNetworkContent;
+  readonly faqEyebrow: string;
   readonly faqHeading: string;
+  readonly faqIntro: string;
   readonly contact: CareersContactContent;
   readonly handoff: {
     readonly h2: string;
@@ -143,7 +145,10 @@ export const careersLandingContent: CareersLandingContent = {
     },
   },
 
+  faqEyebrow: "Installer Careers",
   faqHeading: "Installer Careers Questions",
+  faqIntro:
+    "Answers about the current opening, the application process, and the Installer Network.",
 
   contact: {
     eyebrow: "Installer Careers",
