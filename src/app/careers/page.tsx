@@ -160,19 +160,14 @@ export default function CareersPage() {
 
       {/*
         Recruitment contact. A deep navy band, separate from the FAQ above and
-        the commercial handoff below. Image left, light card right from md;
-        stacked on mobile. The image is decorative and scrolls with the
+        the commercial handoff below. Light card left, image right from md;
+        card first, then image, on mobile. The image is decorative and scrolls with the
         section. The phone link keeps the recruitment journey and emits no
         commercial call event. The two path links are text links, not buttons:
         the primary Apply action lives in the opening section.
       */}
       <Section tone="dark" width="site" density="compact" labelledBy="careers-contact-heading">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] md:items-center md:gap-12">
-          <ImageSlot
-            slot={careersHubImages.contact}
-            className="border border-[var(--color-border-dark)]"
-          />
-
+        <div className="grid gap-8 md:grid-cols-[minmax(0,58fr)_minmax(0,42fr)] md:items-center md:gap-12">
           <div
             data-tone="light"
             className="rounded-lg border border-border border-l-4 border-l-[var(--color-brand-red)] bg-surface p-6 text-ink md:p-8"
@@ -226,6 +221,11 @@ export default function CareersPage() {
               </ul>
             </div>
           </div>
+
+          <ImageSlot
+            slot={careersHubImages.contact}
+            className="border border-[var(--color-border-dark)]"
+          />
         </div>
       </Section>
 
