@@ -85,9 +85,9 @@ export const coverageImages = {
     slotId: "coverage-intro",
     role: "Fleet electronics laid out in front of commercial fleet vehicles",
     // Natural ratio of the supplied file, so nothing is cropped or shifts.
-    aspectRatio: "3318 / 1896",
-    width: 3318,
-    height: 1896,
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
     fallback: "grid",
     src: "/images/coverage/sb-mobile-installations-coverage-fleet-electronics-staging-equipment.webp",
     alt: "Fleet electronics equipment, including a dashcam, a display, a tire pressure sensor, and wiring, laid out on a table in front of a work van and service trucks",

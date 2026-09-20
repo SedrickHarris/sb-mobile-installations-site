@@ -27,7 +27,7 @@ export const industriesHubImages = {
     width: 3344,
     height: 1882,
     fallback: "grid",
-    src: "/images/industries/industries-hub-page/industries-hero/sb-mobile-installations-industries-hub-commercial-fleet-vehicles.webp",
+    src: "/images/industries/industries-hub-page/sb-mobile-installations-industries-hub-commercial-fleet-staging-area.webp",
     alt: "Commercial fleet vehicles parked at a fleet facility",
     altGuidance:
       "Describe only what is shown. No trade branding, no third-party logos, and no vertical implied beyond confirmed categories.",
