@@ -17,6 +17,18 @@ export const coverageHeroVideo = {
 } as const;
 
 /**
+ * Decorative background for the "Vehicle Context" section. A light vector
+ * illustration with empty space on the left for text and vehicles and
+ * hardware on the right. Empty alt; it scrolls with the section (never
+ * pinned). No map, pin, logo, readable text, or place label.
+ */
+export const vehicleContextBackground = {
+  src: "/images/coverage/sb-mobile-installations-vehicle-context-fleet-electronics-background.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
+/**
  * Image slot for the `/coverage/` hero. Used only when no background video
  * is supplied; the video hero does not render it.
  *

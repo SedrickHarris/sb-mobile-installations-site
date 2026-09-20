@@ -13,7 +13,11 @@ import { Card } from "@/components/ui/Card";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { coverage } from "@/data/commercial/coverage";
 import { utilityBar } from "@/data/navigation/site-navigation";
-import { coverageHeroVideo, coverageImages } from "@/data/site/coverage-images";
+import {
+  coverageHeroVideo,
+  coverageImages,
+  vehicleContextBackground,
+} from "@/data/site/coverage-images";
 import { AnalyticsEvent } from "@/lib/analytics/events";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
@@ -244,7 +248,31 @@ export default function CoveragePage() {
         </p>
       </Section>
 
-      <Section tone="subtle" width="site" labelledBy="coverage-vehicles-heading">
+      {/*
+        Decorative background image. The artwork sits on the right, so from lg
+        the content is held to the left ~48%. Below lg a white wash keeps the
+        text and cards legible over the artwork. The image scrolls with the
+        section and is never pinned.
+      */}
+      <section
+        data-tone="subtle"
+        aria-labelledby="coverage-vehicles-heading"
+        className="relative isolate overflow-hidden bg-surface-subtle px-5 py-12 text-ink md:px-6 md:py-20"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={vehicleContextBackground.src}
+          alt=""
+          aria-hidden="true"
+          width={vehicleContextBackground.width}
+          height={vehicleContextBackground.height}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-right"
+        />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-white/75 lg:hidden" />
+        <div data-reveal-group className="mx-auto max-w-[1280px]">
+          <div className="lg:max-w-[48%]">
         <h2
           id="coverage-vehicles-heading"
           className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
@@ -279,7 +307,9 @@ export default function CoveragePage() {
         <p className="mt-6 max-w-[720px] text-[length:var(--text-small)] leading-relaxed text-pretty text-ink-muted">
           {page.vehicles.note}
         </p>
-      </Section>
+          </div>
+        </div>
+      </section>
 
       <Section tone="default" width="site" labelledBy="coverage-explore-heading">
         <h2
