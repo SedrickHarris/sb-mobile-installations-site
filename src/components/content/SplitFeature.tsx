@@ -19,7 +19,11 @@ interface SplitFeatureProps {
    * 2.62:1, so dark surfaces use the light-on-dark text color instead.
    */
   readonly eyebrow?: string;
-  /** Vertical alignment of the two columns. Defaults to centered. */
+  /**
+   * Vertical alignment of the two columns. Defaults to centered. Alignment
+   * only: section media always scrolls with the content and is never pinned
+   * (CLAUDE.md section 8).
+   */
   readonly align?: "center" | "top";
   /**
    * Show the image above the text on mobile. The DOM order stays text first,
@@ -194,11 +198,7 @@ export function SplitFeature({
         </div>
 
         {hasMedia ? (
-          <div
-            className={`${mediaFirstOnMobile ? "order-first md:order-none " : ""}${
-              align === "top" ? "md:sticky md:top-24" : ""
-            }`}
-          >
+          <div className={mediaFirstOnMobile ? "order-first md:order-none" : ""}>
             {video ? (
               <div
                 {...(video.label
