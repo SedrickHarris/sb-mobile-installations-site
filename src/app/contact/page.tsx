@@ -211,7 +211,7 @@ export default function ContactPage() {
 
             <div
               data-tone="light"
-              className="rounded-lg border border-border bg-surface p-6 text-ink md:p-8"
+              className="rounded-lg border border-border border-t-[3px] border-t-[var(--color-brand-red)] bg-surface p-6 text-ink shadow-[0_12px_30px_rgba(5,15,35,0.18)] md:p-8"
             >
               <CommercialInquiryForm copy={page.quote.form} />
             </div>
