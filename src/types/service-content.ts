@@ -93,6 +93,28 @@ export interface ServiceTemplateContent {
   readonly serviceTypes: readonly string[];
   /** Hero scope strip: a service-specific first item plus two shared items. */
   readonly scopeItems: readonly string[];
+  /**
+   * Optional hero-only copy. Each field replaces the shared or page-level
+   * value in the hero alone. The page `h1` still drives metadata and schema,
+   * and the primary CTA keeps its destination, journey, and event.
+   */
+  readonly hero?: {
+    readonly eyebrow?: string;
+    readonly h1?: string;
+    readonly intro?: string;
+    readonly ctaLabel?: string;
+    readonly qualifier?: string;
+  };
+  /** Optional page-specific paragraphs and links for the project-location section. */
+  readonly nationwideContext?: {
+    readonly body: readonly string[];
+    readonly links: readonly HubLink[];
+  };
+  /** Optional page-specific list heading and note for the vehicle-context section. */
+  readonly vehicleContext?: {
+    readonly listHeading?: string;
+    readonly note?: string;
+  };
   readonly definition: HubSplitSection;
   readonly scope: HubSplitSection;
   /** Page-specific sentence; the vehicle examples and disclaimer are shared. */
@@ -113,6 +135,8 @@ export interface ServiceTemplateContent {
    * the shared hero qualifier.
    */
   readonly midCtaHeading?: string;
+  /** Button label for the mid-page CTA. Falls back to the bundle's primary CTA label. */
+  readonly midCtaLabel?: string;
   /** Show the full Installer Network band in place of the one-line handoff. */
   readonly installerNetworkBand?: boolean;
   /** Supporting line for the mid-page CTA. Falls back to the shared hero qualifier. */
@@ -146,9 +170,14 @@ export interface ServiceTemplateContent {
     readonly support: string;
     readonly includeHeading: string;
     readonly includeItems: readonly string[];
-    readonly nextHeading: string;
-    readonly nextSteps: readonly string[];
+    /** Optional "what happens next" block. Omit it to end the guide after the list. */
+    readonly nextHeading?: string;
+    readonly nextSteps?: readonly string[];
   };
+  /** Top-align the two-column quote layout instead of centering it. */
+  readonly quoteAlignTop?: boolean;
+  /** Visible label for the form's equipment field. The field name and payload are unchanged. */
+  readonly quoteServiceNeedLabel?: string;
 }
 
 /** Blocks that are the same on every service page. */

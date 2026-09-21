@@ -38,6 +38,7 @@ interface ServiceImageSet {
 }
 
 const SERVICE_PHOTO_DIR = "/images/services";
+const GPS_DIR = `${SERVICE_PHOTO_DIR}/gps-tracking-installation`;
 
 function slots(
   short: string,
@@ -145,6 +146,18 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       "Suggested file: sb-mobile-installations-gps-tracking-installation-hero.webp. Abstract navy fleet grid and route line motif only until an approved image exists. No maps, pins, boundaries, dashboards, device-brand logos, or customer information.",
       "sb-mobile-installations-gps-tracking-installation-vehicle-context.webp",
     ),
+    context: {
+      slotId: "service-gps-context",
+      role: "Work van, service trucks, and a heavy-duty truck at a commercial service yard",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      src: `${GPS_DIR}/sb-mobile-installations-commercial-vehicle-installation-context-2.webp`,
+      alt: "Commercial fleet vehicles that may require GPS tracking installation",
+      altGuidance:
+        "Describe only what is shown. Confirmed vehicle examples only. No trailers, pickups, buses, or heavy equipment.",
+    },
     // Placeholder slots: no src, so production renders the decorative fallback.
     // Assets go in public/images/services/gps-tracking-installation/.
     definition: {
@@ -154,7 +167,8 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      alt: "",
+      src: `${GPS_DIR}/sb-mobile-installations-what-is-gps-tracking-installation.webp`,
+      alt: "GPS tracking device mounted inside a commercial van with wiring routed through protective conduit",
       altGuidance:
         "Suggested file: sb-mobile-installations-gps-tracking-installation-hardware-mounting.webp. Describe only the hardware and vehicle shown. No device-brand logos, screens, or capability claims.",
     },
@@ -165,31 +179,34 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      alt: "",
+      src: `${GPS_DIR}/sb-mobile-installations-gps-tracking-installation-components.webp`,
+      alt: "GPS tracking device and fuse block mounted inside a commercial van with wiring routed through protective conduit",
       altGuidance:
-        "Suggested file: sb-mobile-installations-gps-tracking-installation-cable-routing.webp. Physical work only. No screens, readouts, or tracking data.",
+        "Suggested file: sb-mobile-installations-gps-tracking-installation-device-mounting-wiring.webp. Secured GPS device, clean power connection, neatly routed and protected wiring inside a commercial vehicle. Suggested alt: GPS tracking device with organized wiring installed in a commercial vehicle. No people or hands, screens, readouts, tracking data, logos, or readable text.",
     },
     fit: {
       slotId: "service-gps-fit",
-      role: "Neutral commercial fleet vehicles at a project location",
+      role: "Fleet electronics, cabling, and mounting hardware staged near commercial vehicles",
       aspectRatio: "4 / 3",
       width: 2896,
       height: 2172,
       fallback: "grid",
-      alt: "",
+      src: `${GPS_DIR}/sb-mobile-installations-related-fleet-installation-services.webp`,
+      alt: "Fleet electronics and vehicle installation equipment prepared for commercial deployment",
       altGuidance:
-        "Suggested file: sb-mobile-installations-gps-tracking-installation-fleet-vehicles.webp. No dashboard imagery, readable plates, or customer signage.",
+        "Describe only what is shown. No dashboard imagery, readable plates, or customer signage.",
     },
     nationwide: {
       slotId: "service-gps-nationwide",
-      role: "Installation equipment staged at a project location",
+      role: "Commercial vans, box trucks, and a service truck staged at a fleet yard",
       aspectRatio: "4 / 3",
       width: 2896,
       height: 2172,
       fallback: "route",
-      alt: "",
+      src: `${GPS_DIR}/sb-mobile-installations-mobile-installation-project-location.webp`,
+      alt: "Mobile fleet installation service vehicle at a commercial project location",
       altGuidance:
-        "Suggested file: sb-mobile-installations-gps-tracking-installation-project-location.webp. Never a map or graphic implying coverage, and no city or state identifiers.",
+        "Describe only what is shown. Never a map or graphic implying coverage, and no city or state identifiers.",
     },
   },
   "eld-installation": slots(

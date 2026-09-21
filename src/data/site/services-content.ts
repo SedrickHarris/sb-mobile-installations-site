@@ -164,35 +164,65 @@ export const gpsTrackingInstallationContent: ServicePageContent = {
     {
       question: "What is GPS tracking installation?",
       answer:
-        "GPS tracking installation is the physical installation of approved GPS tracking hardware in commercial vehicle project contexts.",
+        "GPS tracking installation is the physical installation of a GPS tracking device and related wiring in a commercial vehicle. The work may include device mounting, power or electrical connections, and organized wire routing, based on the device, vehicle, and project requirements. This page covers physical installation only.",
     },
     {
       question: "What can GPS tracking installation include?",
       answer:
-        "Approved scope can include mounting, connection, and routing for GPS tracking hardware.",
+        "Depending on the project, installation may include secure device mounting, connection to an appropriate vehicle power source, and organized routing and securing of associated wiring. Every installation is photo documented, and you'll receive that documentation automatically. The exact requirements depend on the device, vehicle, and project scope.",
     },
     {
       question:
         "What vehicle types can be part of a GPS tracking installation project?",
       answer:
-        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
+        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle applications vary by project. Include the device, vehicle type, project location, and installation requirements with your request so SB Mobile Installations can understand the installation request.",
     },
     {
       question: "Can I request installation at our project location?",
       answer:
-        "Nationwide mobile installation service, delivered at the customer's location. Include project locations in the installation request.",
+        "Nationwide mobile installation service, delivered at the customer's location. Include each project location, vehicle or equipment count, device type, and preferred timing in your request so SB Mobile Installations can understand the installation requirements.",
     },
     {
       question:
         "Is GPS tracking installation different from telematics or ELD installation?",
       answer:
-        "GPS Tracking Installation, Fleet Telematics Installation, and ELD Installation are separate service categories on the site. Use the related service links to find the most relevant starting point for the installation request.",
+        "GPS Tracking Installation, Fleet Telematics Installation, and ELD Installation are separate service categories on this site, and the equipment involved can differ by device and project. This page covers GPS tracking hardware installation. Use the related service links to find the most relevant starting point for your request.",
+      links: [
+        {
+          label: "Fleet Telematics Installation",
+          href: "/services/fleet-telematics-installation/",
+        },
+        { label: "ELD Installation", href: "/services/eld-installation/" },
+      ],
     },
     {
-      question:
-        "What should I include in a GPS tracking installation request?",
+      question: "What should I include in a GPS tracking installation request?",
       answer:
-        "Include your equipment, vehicle count, project locations, and preferred timing.",
+        "Include the GPS device or hardware type, the number and type of vehicles, project locations, and preferred installation timing. Additional details about the vehicle configuration can also help clarify the installation request.",
+    },
+    {
+      question: "Can GPS tracking devices be installed across multiple vehicles?",
+      answer:
+        "Yes. A project can involve one vehicle, multiple vehicles, or an entire fleet, across more than one project location. Include the total vehicle count, vehicle types, project locations, device information, and preferred timing so SB Mobile Installations can understand the project.",
+      link: {
+        label: "Fleet Rollout Services",
+        href: "/services/fleet-rollouts/",
+      },
+    },
+    {
+      question: "Does SB Mobile Installations provide the GPS tracking software?",
+      answer:
+        "SB Mobile Installations provides physical installation support for GPS tracking hardware. This page covers installation only and does not describe GPS software, monitoring platforms, or data plans.",
+    },
+    {
+      question: "Is installation documentation available after the installation?",
+      answer:
+        "Yes. Every installation is photo documented, and you'll receive that documentation automatically.",
+    },
+    {
+      question: "How do I request GPS tracking installation support?",
+      answer:
+        "Use the GPS installation quote form on this page to share the device type, vehicle or equipment count, project locations, and preferred installation timing. You can also use the call option on this page.",
     },
   ],
 };

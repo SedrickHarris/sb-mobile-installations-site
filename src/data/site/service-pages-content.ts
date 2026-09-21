@@ -179,6 +179,28 @@ function installScope(hardware: string): HubSplitSection {
   };
 }
 
+/** Documentation band shared by the telematics and GPS pages (stakeholder-supplied copy). */
+const DOCUMENTATION_CARDS: NonNullable<
+  ServiceTemplateContent["documentationCards"]
+> = {
+  intro:
+    "Documentation can help fleet teams keep installation details organized and easier to review throughout a commercial vehicle project.",
+  cards: [
+    {
+      title: "Photo Documentation",
+      body: "Project photos can help show installation context, equipment placement, and visible work completed on a commercial vehicle when photo documentation is included in the project process.",
+    },
+    {
+      title: "Installation Records",
+      body: "Installation records can help organize project details for fleet coordination, internal review, and future reference.",
+    },
+    {
+      title: "Quality and Safety",
+      body: "Installation quality and safety information can help fleet teams understand vehicle-specific considerations, approved equipment requirements, and important project details.",
+    },
+  ],
+};
+
 const contents: Record<ServiceSlug, ServiceTemplateContent> = {
   "fleet-telematics-installation": {
     slug: "fleet-telematics-installation",
@@ -233,24 +255,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     faqHeading: "Fleet Telematics Installation FAQs",
     faqLayout: "columns",
     quoteH2: "Request a Fleet Telematics Installation Quote",
-    documentationCards: {
-      intro:
-        "Documentation can help fleet teams keep installation details organized and easier to review throughout a commercial vehicle project.",
-      cards: [
-        {
-          title: "Photo Documentation",
-          body: "Project photos can help show installation context, equipment placement, and visible work completed on a commercial vehicle when photo documentation is included in the project process.",
-        },
-        {
-          title: "Installation Records",
-          body: "Installation records can help organize project details for fleet coordination, internal review, and future reference.",
-        },
-        {
-          title: "Quality and Safety",
-          body: "Installation quality and safety information can help fleet teams understand vehicle-specific considerations, approved equipment requirements, and important project details.",
-        },
-      ],
-    },
+    documentationCards: DOCUMENTATION_CARDS,
     heroVideo: {
       src: "/images/services/fleet-telematics-installation/hero/sb-mobile-installations-fleet-telematics-installation-hero.mp4",
       poster:
@@ -288,46 +293,95 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     pathname: "/services/gps-tracking-installation/",
     breadcrumbLabel: "GPS Tracking Installation",
     serviceTypes: ["GPS tracking installation"],
-    scopeItems: ["GPS tracking hardware"],
+    scopeItems: [
+      "On-site GPS device installation for commercial vehicles and equipment",
+    ],
+    hero: {
+      eyebrow: "Mobile GPS Tracking Installation for Commercial Fleets",
+      h1: "GPS Tracking Installation for Commercial Fleets",
+      intro:
+        "SB Mobile Installations provides on-site GPS tracking device installation for commercial fleets, work vehicles, trucks, equipment, and other business assets. Our mobile installation teams support multi-vehicle deployments at your location.",
+      ctaLabel: "Request a GPS Installation Quote",
+      qualifier:
+        "Share your device type, vehicle or equipment count, project locations, and preferred installation timing.",
+    },
     definition: {
       h2: "What Is GPS Tracking Installation?",
       body: [
-        "GPS tracking installation is the physical installation of approved GPS tracking hardware in commercial vehicle project contexts. Share the equipment involved, vehicle count, project locations, and preferred timing so SB Mobile Installations can understand the installation request.",
+        "GPS tracking installation is the professional installation of a GPS tracking device and related wiring in a commercial vehicle. SB Mobile Installations helps fleet operators and businesses install the GPS tracking hardware selected for the project, including mounting, connection, and routing, at the project location. This page covers physical installation only.",
+        "Installation requests may involve one vehicle, multiple fleet vehicles, or an entire fleet, including commercial and construction vehicles. When requesting service, provide the device type, vehicle count, project locations, and preferred installation timing so SB Mobile Installations can understand the installation request.",
       ],
     },
     scope: {
       h2: "What GPS Tracking Installation Can Include",
-      body: [],
+      body: [
+        "GPS tracking installation requirements vary by device, vehicle type, equipment, and project scope. Depending on the deployment, installation may include the following work:",
+      ],
       lists: [
         {
           style: "checklist",
           items: [
-            "Mounting: physical placement of approved GPS tracking hardware",
-            "Connection: physical connection work for approved GPS tracking hardware",
-            "Routing: routing associated with approved installation work",
+            "Device mounting: Secure placement of the GPS tracking device in an appropriate location within the vehicle.",
+            "Power and electrical connections: Connection of the device to the appropriate vehicle power source.",
+            "Wire routing and protection: Organized routing and securing of associated wiring to support a clean installation.",
+            "Installation documentation: Every installation is photo documented, and you'll receive that documentation automatically.",
           ],
         },
       ],
     },
     vehiclesBody:
-      "GPS tracking hardware installation projects can involve fleet, commercial, and construction vehicles.",
+      "GPS tracking installation projects may involve different types of commercial vehicles. The appropriate installation approach depends on the vehicle, device, available power connections, and project requirements.",
+    vehicleContext: {
+      listHeading: "Common vehicle applications",
+      note: "Vehicle applications vary by project. Include the device, vehicle type, equipment, project location, and installation requirements with your request so SB Mobile Installations can understand the installation request.",
+    },
     fit: {
-      h2: "When GPS Tracking Installation May Be a Fit",
+      h2: "Explore Related Fleet Installation Services",
       body: [
-        "Use these related service pages to find the most relevant starting point for your installation request.",
+        "GPS tracking may be one part of a larger fleet technology deployment. Explore related installation services to identify the right starting point for your vehicle, device, or multi-vehicle project.",
       ],
       links: [
-        cardLink("fleet-telematics-installation"),
-        cardLink("eld-installation"),
-        cardLink("dashcam-camera-installation"),
-        cardLink("fleet-rollouts"),
+        {
+          label: "Explore Fleet Telematics Installation",
+          href: serviceCards["fleet-telematics-installation"].href,
+        },
+        {
+          label: "Explore ELD Installation",
+          href: serviceCards["eld-installation"].href,
+        },
+        {
+          label: "Explore Dashcam and Camera Installation",
+          href: serviceCards["dashcam-camera-installation"].href,
+        },
+        {
+          label: "Explore Fleet Rollout Services",
+          href: serviceCards["fleet-rollouts"].href,
+        },
       ],
     },
-    midCtaHeading: "Need GPS tracking hardware installation support?",
+    midCtaHeading: "Ready to Plan Your GPS Tracking Installation?",
     midCtaBody:
-      "Tell us about your equipment, vehicle count, project locations, and preferred timing.",
+      "Share your device type, vehicle or equipment count, project locations, and preferred installation timing. We'll use those details to understand your project requirements.",
+    midCtaLabel: "Request a GPS Installation Quote",
+    documentationCards: DOCUMENTATION_CARDS,
     nationwideExtra:
       "Include your project locations in the installation request.",
+    nationwideContext: {
+      body: [
+        "SB Mobile Installations provides mobile installation support at customer-designated project locations for commercial vehicles and multi-vehicle deployments.",
+        "Include each project location, vehicle or equipment count, device type, and preferred timing in your request so SB Mobile Installations can understand the installation requirements.",
+      ],
+      links: [
+        {
+          label: "Explore Nationwide Fleet Installation Coverage",
+          href: "/coverage/",
+        },
+        {
+          label: "Learn How Fleet Installation Projects Are Coordinated",
+          href: "/our-process/",
+        },
+      ],
+    },
     related: [
       "fleet-telematics-installation",
       "eld-installation",
@@ -335,7 +389,30 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "fleet-rollouts",
     ],
     faqHeading: "GPS Tracking Installation FAQs",
-    quoteH2: "Request a GPS Tracking Installation Quote",
+    faqLayout: "columns",
+    quoteH2: "Request GPS Tracking Installation Support",
+    quoteAlignTop: true,
+    quoteBackground: {
+      src: "/images/services/gps-tracking-installation/sb-mobile-installations-gps-tracking-quote-request-fleet-yard-background.webp",
+      width: 3344,
+      height: 1882,
+    },
+    installerNetworkBand: true,
+    quoteServiceNeedLabel: "Device or equipment type",
+    quoteGuide: {
+      intro:
+        "Planning a GPS tracking installation for commercial vehicles? Share your project details so SB Mobile Installations can understand the equipment, vehicle count, locations, and timing involved.",
+      support:
+        "The more information you provide, the easier it is to understand the installation requirements.",
+      includeHeading: "Include the following details when available:",
+      includeItems: [
+        "GPS device or equipment type",
+        "Number and type of vehicles or assets",
+        "Project location or locations",
+        "Preferred installation timing",
+        "Known deployment details",
+      ],
+    },
   },
 
   "eld-installation": {

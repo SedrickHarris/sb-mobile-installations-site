@@ -52,6 +52,8 @@ export function InstallerNetworkBand({
           <p className="mt-4">
             <Link
               href={content.link.href}
+              data-journey="recruitment"
+              data-event="cta_installer_network_click"
               className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
             >
               {content.link.label}
