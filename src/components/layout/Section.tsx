@@ -43,7 +43,7 @@ interface SectionProps {
     readonly width: number;
     readonly height: number;
   };
-  /** 45% black overlay over `backgroundImage`, under the content. */
+  /** 55% black overlay over `backgroundImage`, under the content. */
   readonly backgroundOverlay?: boolean;
   readonly center?: boolean;
 }
@@ -120,7 +120,7 @@ export function Section({
       {backgroundImage && backgroundOverlay ? (
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-black/45"
+          className="absolute inset-0 -z-10 bg-black/55"
         />
       ) : null}
       <div
