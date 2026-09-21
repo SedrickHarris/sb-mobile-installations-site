@@ -68,6 +68,7 @@ const JOIN_NETWORK_CTA: Cta = {
 
 const EXPLORE_SERVICES_CTA: Cta = {
   label: "Explore Fleet Installation Services",
+  labelBreakAfter: "Explore Fleet",
   href: SERVICES_ROUTE,
   journey: "commercial",
   event: "cta_request_service_click",
@@ -75,6 +76,7 @@ const EXPLORE_SERVICES_CTA: Cta = {
 
 const CAREERS_PATHWAY_CTA: Cta = {
   label: "Learn About Installer Careers",
+  labelBreakAfter: "Learn About",
   href: CAREERS_PATH,
   journey: "recruitment",
   event: "cta_careers_click",

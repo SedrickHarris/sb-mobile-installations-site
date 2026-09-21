@@ -95,7 +95,15 @@ export function CtaButton({
         emphasisClasses[emphasis],
       ].join(" ")}
     >
-      {cta.label}
+      {cta.labelBreakAfter && cta.label.startsWith(cta.labelBreakAfter) ? (
+        <>
+          {cta.labelBreakAfter}
+          <br />
+          {cta.label.slice(cta.labelBreakAfter.length).trimStart()}
+        </>
+      ) : (
+        cta.label
+      )}
     </Link>
   );
 }

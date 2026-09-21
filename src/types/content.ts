@@ -14,6 +14,11 @@ type ServiceType = (typeof business.serviceTypes)[number];
 /** A call to action. `href` is the destination route. */
 export interface Cta {
   readonly label: string;
+  /**
+   * Optional leading part of `label` after which the button shows a line
+   * break, so the label wraps at a chosen point. The full label is unchanged.
+   */
+  readonly labelBreakAfter?: string;
   readonly href: string;
   /**
    * Which journey this CTA belongs to. Recruitment and commercial journeys
