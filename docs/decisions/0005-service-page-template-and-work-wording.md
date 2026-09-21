@@ -96,3 +96,13 @@ Telematics page alignment. Shared service-page changes:
 **Reverses the September 19 handoff change, pending stakeholder confirmation.** The handoff link now points to `INSTALLER_NETWORK_PATH` with `cta_installer_network_click` and the recruitment journey. Wording: "Are you an experienced mobile fleet installation technician?" and "Learn about the SB Mobile Installations Installer Network". This was requested in the page spec. It conflicts with the September 19 note that the link makes no claim that experience is required, and it moves candidates away from the active opening at `/careers/jobs/`. Revert both if the September 19 decision stands.
 
 Stakeholder review still open: the FAQ answer "We are an installation and deployment partner, not the platform vendor" uses "partner" and "platform". It is unchanged approved copy, not silently rewritten.
+
+## 2026-09-20 addendum: GPS Tracking Installation page rebuild
+
+Draft changes made without stakeholder review, pending confirmation:
+
+- The GPS H1 is now "GPS Tracking Installation" (was "... Services").
+- "Installation and deployment partner, not the tracking platform vendor" wording and the platform-name FAQ were removed from the GPS page. Decision needed on whether the partner/platform wording and experience-only platform names return.
+- "Installation coordination" was dropped from the GPS scope list. Scope is Mounting, Connection, Routing only. Decision needed on whether it returns.
+- The GPS Installer Network handoff stays a text link (no `InstallerNetworkBand`).
+- Image slots for definition, scope, fit, and nationwide are declared without `src`; production shows the decorative fallback.

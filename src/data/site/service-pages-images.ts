@@ -28,12 +28,12 @@ export type ServiceSlug =
 interface ServiceImageSet {
   readonly hero: HubImageSlot;
   readonly context: HubImageSlot;
-  /** Optional media for the definition and scope sections. Telematics only. */
+  /** Optional media for the definition and scope sections. Telematics and GPS. */
   readonly definition?: HubImageSlot;
   readonly scope?: HubImageSlot;
-  /** Optional media beside the "may be a fit" section. Telematics only. */
+  /** Optional media beside the "may be a fit" section. Telematics and GPS. */
   readonly fit?: HubImageSlot;
-  /** Optional media beside the project-location band. Telematics only. */
+  /** Optional media beside the project-location band. Telematics and GPS. */
   readonly nationwide?: HubImageSlot;
 }
 
@@ -138,11 +138,60 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
         "Describe only what is shown. No device-brand logos, no compliance or capability claims.",
     },
   },
-  "gps-tracking-installation": slots(
-    "gps",
-    "GPS tracking hardware being installed in a commercial vehicle",
-    "Describe the hardware and vehicle actually shown. No device-brand logos.",
-  ),
+  "gps-tracking-installation": {
+    ...slots(
+      "gps",
+      "GPS tracking hardware being installed in a commercial vehicle",
+      "Suggested file: sb-mobile-installations-gps-tracking-installation-hero.webp. Abstract navy fleet grid and route line motif only until an approved image exists. No maps, pins, boundaries, dashboards, device-brand logos, or customer information.",
+      "sb-mobile-installations-gps-tracking-installation-vehicle-context.webp",
+    ),
+    // Placeholder slots: no src, so production renders the decorative fallback.
+    // Assets go in public/images/services/gps-tracking-installation/.
+    definition: {
+      slotId: "service-gps-definition",
+      role: "GPS tracking hardware being installed in a commercial vehicle",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      alt: "",
+      altGuidance:
+        "Suggested file: sb-mobile-installations-gps-tracking-installation-hardware-mounting.webp. Describe only the hardware and vehicle shown. No device-brand logos, screens, or capability claims.",
+    },
+    scope: {
+      slotId: "service-gps-scope",
+      role: "Hands mounting or connecting GPS tracking hardware",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      alt: "",
+      altGuidance:
+        "Suggested file: sb-mobile-installations-gps-tracking-installation-cable-routing.webp. Physical work only. No screens, readouts, or tracking data.",
+    },
+    fit: {
+      slotId: "service-gps-fit",
+      role: "Neutral commercial fleet vehicles at a project location",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      alt: "",
+      altGuidance:
+        "Suggested file: sb-mobile-installations-gps-tracking-installation-fleet-vehicles.webp. No dashboard imagery, readable plates, or customer signage.",
+    },
+    nationwide: {
+      slotId: "service-gps-nationwide",
+      role: "Installation equipment staged at a project location",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "route",
+      alt: "",
+      altGuidance:
+        "Suggested file: sb-mobile-installations-gps-tracking-installation-project-location.webp. Never a map or graphic implying coverage, and no city or state identifiers.",
+    },
+  },
   "eld-installation": slots(
     "eld",
     "ELD or AOBRD hardware being installed in a commercial truck cab",

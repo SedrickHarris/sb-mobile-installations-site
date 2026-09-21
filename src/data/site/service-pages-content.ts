@@ -288,47 +288,50 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     pathname: "/services/gps-tracking-installation/",
     breadcrumbLabel: "GPS Tracking Installation",
     serviceTypes: ["GPS tracking installation"],
-    scopeItems: [
-      "GPS tracking hardware",
-      "On-site installation",
-      "Nationwide service context",
-    ],
+    scopeItems: ["GPS tracking hardware"],
     definition: {
       h2: "What Is GPS Tracking Installation?",
       body: [
-        "GPS tracking installation is the physical mounting, connection, and routing work required to place approved GPS tracking hardware into commercial vehicles.",
-        "SB Mobile Installations installs and deploys GPS tracking hardware. We are an installation and deployment partner, not the tracking platform vendor.",
-        "To scope a project, we need the vehicle count, the project locations, and your preferred timing.",
+        "GPS tracking installation is the physical installation of approved GPS tracking hardware in commercial vehicle project contexts. Share the equipment involved, vehicle count, project locations, and preferred timing so SB Mobile Installations can understand the installation request.",
       ],
     },
     scope: {
-      ...installScope("GPS tracking hardware"),
       h2: "What GPS Tracking Installation Can Include",
       body: [],
-    },
-    vehiclesBody:
-      "GPS tracking hardware is installed on fleet, commercial, and construction vehicles.",
-    fit: {
-      h2: "When GPS Tracking Installation May Be a Fit",
-      body: [],
-      listPanel: true,
       lists: [
         {
-          heading: "This service may be a fit when",
+          style: "checklist",
           items: [
-            "You have approved GPS tracking hardware that needs physical installation",
-            "Your project involves commercial fleet vehicles",
-            "You can describe the vehicle count and the project location",
+            "Mounting: physical placement of approved GPS tracking hardware",
+            "Connection: physical connection work for approved GPS tracking hardware",
+            "Routing: routing associated with approved installation work",
           ],
         },
       ],
-      footnotes: [FIT_NOTE],
     },
+    vehiclesBody:
+      "GPS tracking hardware installation projects can involve fleet, commercial, and construction vehicles.",
+    fit: {
+      h2: "When GPS Tracking Installation May Be a Fit",
+      body: [
+        "Use these related service pages to find the most relevant starting point for your installation request.",
+      ],
+      links: [
+        cardLink("fleet-telematics-installation"),
+        cardLink("eld-installation"),
+        cardLink("dashcam-camera-installation"),
+        cardLink("fleet-rollouts"),
+      ],
+    },
+    midCtaHeading: "Need GPS tracking hardware installation support?",
+    midCtaBody:
+      "Tell us about your equipment, vehicle count, project locations, and preferred timing.",
     nationwideExtra:
-      "Include the number of vehicles receiving GPS tracking hardware and each project location.",
+      "Include your project locations in the installation request.",
     related: [
       "fleet-telematics-installation",
       "eld-installation",
+      "dashcam-camera-installation",
       "fleet-rollouts",
     ],
     faqHeading: "GPS Tracking Installation FAQs",

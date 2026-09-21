@@ -154,34 +154,45 @@ export const fleetTelematicsInstallationContent: ServicePageContent = {
 };
 
 export const gpsTrackingInstallationContent: ServicePageContent = {
-  h1: "GPS Tracking Installation Services",
+  h1: "GPS Tracking Installation",
   metaDescription:
-    "On-site GPS tracking hardware installation for fleet, commercial, and construction vehicles nationwide. SB Mobile Installations is an installation and deployment partner, not a platform vendor.",
+    "Learn about mobile GPS tracking installation for commercial vehicle projects. Request an installation quote and share your equipment, vehicle count, project locations, and preferred timing.",
   intro:
-    "SB Mobile Installations provides mobile installation support for approved GPS tracking hardware on fleet, commercial, and construction vehicles. Technicians travel to your location, for one vehicle or an entire fleet. Share your vehicle count, project locations, and preferred timing to start an installation conversation. We install the hardware; we are not the tracking platform vendor.",
+    "SB Mobile Installations provides mobile GPS tracking hardware installation support for commercial vehicle projects.",
   body: [],
   faq: [
     {
-      question: "Which GPS tracking platforms do you install for?",
+      question: "What is GPS tracking installation?",
       answer:
-        "We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, Omnitracs, PeopleNet, Trimble, Zonar, and CalAmp.",
+        "GPS tracking installation is the physical installation of approved GPS tracking hardware in commercial vehicle project contexts.",
     },
     {
-      question: "What vehicle types can you install GPS tracking on?",
+      question: "What can GPS tracking installation include?",
       answer:
-        "SB Mobile Installations installs GPS tracking equipment on fleet, commercial, and construction vehicles.",
-    },
-    {
-      question:
-        "What vehicle and location details should I include for GPS tracking installation?",
-      answer:
-        "Include your approximate vehicle count, the types of vehicles, each project location, and your preferred timing.",
+        "Approved scope can include mounting, connection, and routing for GPS tracking hardware.",
     },
     {
       question:
-        "How does GPS tracking installation relate to fleet telematics installation?",
+        "What vehicle types can be part of a GPS tracking installation project?",
       answer:
-        "Fleet telematics installation covers all of the approved equipment categories, including GPS tracking. Use the GPS tracking page when your project is specifically GPS tracking hardware.",
+        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
+    },
+    {
+      question: "Can I request installation at our project location?",
+      answer:
+        "Nationwide mobile installation service, delivered at the customer's location. Include project locations in the installation request.",
+    },
+    {
+      question:
+        "Is GPS tracking installation different from telematics or ELD installation?",
+      answer:
+        "GPS Tracking Installation, Fleet Telematics Installation, and ELD Installation are separate service categories on the site. Use the related service links to find the most relevant starting point for the installation request.",
+    },
+    {
+      question:
+        "What should I include in a GPS tracking installation request?",
+      answer:
+        "Include your equipment, vehicle count, project locations, and preferred timing.",
     },
   ],
 };
