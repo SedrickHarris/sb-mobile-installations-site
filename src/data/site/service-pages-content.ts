@@ -627,9 +627,9 @@ export function getServicePage(slug: ServiceSlug): ServicePageBundle {
     scopeImage: servicePagesImages[slug].scope,
     fitImage: servicePagesImages[slug].fit,
     nationwideImage: servicePagesImages[slug].nationwide,
-    networkBand: {
-      content: careersLandingContent.network,
-      image: careersHubImages.networkBand,
+    installerQuestions: {
+      content: careersLandingContent.contact,
+      image: careersHubImages.contact,
     },
     relatedCards: content.related.map((related) => serviceCards[related as ServiceSlug]),
   };

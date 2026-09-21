@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { FaqGroup } from "@/components/content/FaqGroup";
-import { InstallerNetworkBand } from "@/components/content/InstallerNetworkBand";
+import { InstallerQuestions } from "@/components/content/InstallerQuestions";
 import { ServicesHero } from "@/components/content/ServicesHero";
 import { SplitFeature } from "@/components/content/SplitFeature";
 import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
@@ -386,10 +386,11 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         </ul>
       </Section>
 
-      <InstallerNetworkBand
-        content={bundle.networkBand.content}
-        image={bundle.networkBand.image}
-        headingId={`${id}-network-heading`}
+      <InstallerQuestions
+        content={bundle.installerQuestions.content}
+        image={bundle.installerQuestions.image}
+        headingId={`${id}-installer-questions-heading`}
+        phoneLocation="service-installer-questions"
       />
     </>
   );

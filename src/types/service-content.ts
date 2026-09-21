@@ -1,4 +1,5 @@
 import type { CommercialInquiryFormCopy } from "@/components/forms/CommercialInquiryForm";
+import type { careersLandingContent } from "@/data/site/careers-landing-content";
 import type { HubImageSlot } from "@/data/site/services-hub-images";
 import type { Cta, FaqItem } from "@/types/content";
 
@@ -224,14 +225,9 @@ export interface ServicePageBundle {
   readonly scopeImage?: HubImageSlot;
   readonly fitImage?: HubImageSlot;
   readonly nationwideImage?: HubImageSlot;
-  /** Installer Network band content and image, from the Careers page data. */
-  readonly networkBand: {
-    readonly content: {
-      readonly eyebrow: string;
-      readonly h2: string;
-      readonly body: string;
-      readonly link: HubLink;
-    };
+  /** "Have Questions About Installer Opportunities?" block, from the Careers page data. */
+  readonly installerQuestions: {
+    readonly content: (typeof careersLandingContent)["contact"];
     readonly image: HubImageSlot;
   };
   readonly relatedCards: readonly HubRelatedCard[];
