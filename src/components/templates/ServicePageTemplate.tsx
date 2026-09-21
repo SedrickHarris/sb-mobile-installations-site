@@ -49,7 +49,6 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
     nationwideImage,
   } = bundle;
   const id = content.slug;
-  const handoff = shared.handoff;
   const guide = content.quoteGuide;
   /** True when the quote section sits on a darkened background image. */
   const onOverlay = Boolean(content.quoteBackground);
@@ -387,27 +386,11 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         </ul>
       </Section>
 
-      {bundle.networkBand ? (
-        <InstallerNetworkBand
-          content={bundle.networkBand.content}
-          image={bundle.networkBand.image}
-          headingId={`${id}-network-heading`}
-        />
-      ) : (
-        <Section tone="default" density="compact">
-          <p className="text-[length:var(--text-body)] text-ink-muted">
-            {handoff.question}{" "}
-            <Link
-              href={handoff.link.href}
-              data-journey="recruitment"
-              data-event="cta_installer_network_click"
-              className="font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-            >
-              {handoff.link.label}
-            </Link>
-          </p>
-        </Section>
-      )}
+      <InstallerNetworkBand
+        content={bundle.networkBand.content}
+        image={bundle.networkBand.image}
+        headingId={`${id}-network-heading`}
+      />
     </>
   );
 }

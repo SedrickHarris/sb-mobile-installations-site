@@ -137,8 +137,6 @@ export interface ServiceTemplateContent {
   readonly midCtaHeading?: string;
   /** Button label for the mid-page CTA. Falls back to the bundle's primary CTA label. */
   readonly midCtaLabel?: string;
-  /** Show the full Installer Network band in place of the one-line handoff. */
-  readonly installerNetworkBand?: boolean;
   /** Supporting line for the mid-page CTA. Falls back to the shared hero qualifier. */
   readonly midCtaBody?: string;
   /**
@@ -203,7 +201,6 @@ export interface ServiceTemplateShared {
   readonly related: { readonly h2: string; readonly allCard: HubRelatedCard };
   readonly quote: { readonly intro: string; readonly phoneLead: string };
   readonly resources: { readonly h2: string; readonly links: readonly HubLink[] };
-  readonly handoff: { readonly question: string; readonly link: HubLink };
   /** Small label above the H1, shared by the five service pages. */
   readonly heroEyebrow: string;
 }
@@ -228,7 +225,7 @@ export interface ServicePageBundle {
   readonly fitImage?: HubImageSlot;
   readonly nationwideImage?: HubImageSlot;
   /** Installer Network band content and image, from the Careers page data. */
-  readonly networkBand?: {
+  readonly networkBand: {
     readonly content: {
       readonly eyebrow: string;
       readonly h2: string;

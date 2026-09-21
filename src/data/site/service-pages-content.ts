@@ -1,4 +1,3 @@
-import { INSTALLER_NETWORK_PATH } from "@/data/jobs/routes";
 import { utilityBar } from "@/data/navigation/site-navigation";
 import { careersHubImages } from "@/data/site/careers-hub-images";
 import { careersLandingContent } from "@/data/site/careers-landing-content";
@@ -105,13 +104,6 @@ const shared: ServiceTemplateShared = {
       },
       { label: "Fleet installation FAQs", href: "/faq/" },
     ],
-  },
-  handoff: {
-    question: "Are you an experienced mobile fleet installation technician?",
-    link: {
-      label: "Learn about the SB Mobile Installations Installer Network",
-      href: INSTALLER_NETWORK_PATH,
-    },
   },
 };
 
@@ -241,7 +233,6 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       ],
     },
     midCtaHeading: "Need installation support for a fleet telematics project?",
-    installerNetworkBand: true,
     midCtaBody:
       "Tell us about your equipment, vehicle count, project locations, and preferred timing so we can understand your installation request.",
     nationwideExtra:
@@ -397,7 +388,6 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       width: 3344,
       height: 1882,
     },
-    installerNetworkBand: true,
     quoteServiceNeedLabel: "Device or equipment type",
     quoteGuide: {
       intro:
@@ -637,12 +627,10 @@ export function getServicePage(slug: ServiceSlug): ServicePageBundle {
     scopeImage: servicePagesImages[slug].scope,
     fitImage: servicePagesImages[slug].fit,
     nationwideImage: servicePagesImages[slug].nationwide,
-    networkBand: content.installerNetworkBand
-      ? {
-          content: careersLandingContent.network,
-          image: careersHubImages.networkBand,
-        }
-      : undefined,
+    networkBand: {
+      content: careersLandingContent.network,
+      image: careersHubImages.networkBand,
+    },
     relatedCards: content.related.map((related) => serviceCards[related as ServiceSlug]),
   };
 }
