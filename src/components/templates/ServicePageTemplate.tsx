@@ -51,6 +51,8 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
   const id = content.slug;
   const handoff = shared.handoff;
   const guide = content.quoteGuide;
+  /** True when the quote section sits on a darkened background image. */
+  const onOverlay = Boolean(content.quoteBackground);
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
@@ -262,6 +264,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           density="spacious"
           width={guide ? "site" : "reading"}
           backgroundImage={content.quoteBackground}
+          backgroundOverlay={Boolean(content.quoteBackground)}
           labelledBy={`${id}-quote-heading`}
         >
           <div
@@ -271,25 +274,25 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
                 : ""
             }
           >
-            <div>
+            <div className={onOverlay ? "text-white" : ""}>
               <h2
                 id={`${id}-quote-heading`}
-                className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+                className={`text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance ${onOverlay ? "text-white" : "text-ink"}`}
               >
                 {content.quoteH2}
               </h2>
-              <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+              <p className={`mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty ${onOverlay ? "text-white" : "text-ink-muted"}`}>
                 {guide ? guide.intro : shared.quote.intro}
               </p>
               {guide ? (
                 <>
-                  <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+                  <p className={`mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty ${onOverlay ? "text-white" : "text-ink-muted"}`}>
                     {guide.support}
                   </p>
-                  <h3 className="mt-8 text-[length:var(--text-h4)] font-bold text-ink">
+                  <h3 className={`mt-8 text-[length:var(--text-h4)] font-bold ${onOverlay ? "text-white" : "text-ink"}`}>
                     {guide.includeHeading}
                   </h3>
-                  <ul className="mt-3 flex list-none flex-col gap-2 p-0 text-[length:var(--text-body)] text-ink">
+                  <ul className={`mt-3 flex list-none flex-col gap-2 p-0 text-[length:var(--text-body)] ${onOverlay ? "text-white" : "text-ink"}`}>
                     {guide.includeItems.map((item) => (
                       <li key={item} className="flex gap-3">
                         <span aria-hidden="true" className="shrink-0 font-bold">
@@ -299,10 +302,10 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
                       </li>
                     ))}
                   </ul>
-                  <h3 className="mt-8 text-[length:var(--text-h4)] font-bold text-ink">
+                  <h3 className={`mt-8 text-[length:var(--text-h4)] font-bold ${onOverlay ? "text-white" : "text-ink"}`}>
                     {guide.nextHeading}
                   </h3>
-                  <ol className="mt-3 flex list-decimal flex-col gap-2 pl-6 text-[length:var(--text-body)] text-ink marker:font-bold">
+                  <ol className={`mt-3 flex list-decimal flex-col gap-2 pl-6 text-[length:var(--text-body)] marker:font-bold ${onOverlay ? "text-white" : "text-ink"}`}>
                     {guide.nextSteps.map((step) => (
                       <li key={step} className="pl-1">
                         {step}
@@ -312,7 +315,9 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
                 </>
               ) : null}
             </div>
-            <div className={guide ? "" : "mt-8"}>
+            <div
+              className={`${guide ? "" : "mt-8"} ${onOverlay ? "rounded-[var(--radius-lg)] bg-surface p-6 text-ink md:p-8" : ""}`}
+            >
               <CommercialInquiryForm />
               <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
                 <p className="text-[length:var(--text-body)] text-ink-muted">

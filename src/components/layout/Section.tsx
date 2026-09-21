@@ -43,6 +43,8 @@ interface SectionProps {
     readonly width: number;
     readonly height: number;
   };
+  /** 45% black overlay over `backgroundImage`, under the content. */
+  readonly backgroundOverlay?: boolean;
   readonly center?: boolean;
 }
 
@@ -91,6 +93,7 @@ export function Section({
   width = "reading",
   labelledBy,
   backgroundImage,
+  backgroundOverlay = false,
   center = false,
 }: SectionProps) {
   return (
@@ -112,6 +115,12 @@ export function Section({
           loading="lazy"
           decoding="async"
           className="absolute inset-0 -z-10 h-full w-full object-cover object-left-bottom"
+        />
+      ) : null}
+      {backgroundImage && backgroundOverlay ? (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-black/45"
         />
       ) : null}
       <div
