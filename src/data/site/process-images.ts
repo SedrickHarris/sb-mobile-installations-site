@@ -16,22 +16,32 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * placed over a photo is black only (`bg-black/55`). Media scrolls with the
  * section and is never pinned.
  *
+ * The hero uses `processHeroBackground` below, not a slot.
  * The installer handoff is text only, so it has no slot.
  *
  * `altGuidance` is a note for whoever supplies the file. It is never rendered.
  */
+/**
+ * Decorative full-width hero background. Empty alt and hidden from assistive
+ * tech: the hero text carries the meaning. Sits under a black overlay.
+ */
+export const processHeroBackground = {
+  src: "/images/brand/our-process/hero/sb-mobile-installations-our-process-commercial-fleet-installation-hero-background-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
+/**
+ * Decorative background for the quote section. Empty alt and hidden from
+ * assistive tech. Sits under a black overlay.
+ */
+export const processQuoteBackground = {
+  src: "/images/brand/our-process/sb-mobile-installations-our-process-installation-quote-commercial-fleet-background-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
 export const processImages = {
-  hero: {
-    slotId: "process-hero",
-    role: "Decorative hero visual. Abstract linework or form-field shapes until an authentic approved photo exists",
-    aspectRatio: "4 / 3",
-    width: 2896,
-    height: 2172,
-    fallback: "route",
-    alt: "",
-    altGuidance:
-      "Decorative. Keep alt empty unless an authentic photo is supplied, then describe only what is shown. Never a map, schedule, dispatch, tracking, or completion graphic.",
-  },
   vehicleContext: {
     slotId: "process-vehicle-context",
     role: "Authentic photo of commercial vehicles of different types, such as a work van or service truck",
@@ -39,7 +49,10 @@ export const processImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    alt: "",
+    src: "/images/brand/our-process/sb-mobile-installations-our-process-commercial-vehicle-types-fleet-context-4x3.webp",
+    // The vehicles sit in the middle band of the frame; keep that band in view if cropped.
+    objectPosition: "center 45%",
+    alt: "A white cargo van, a white service truck with a utility body, and a dark gray SUV parked side by side outside a commercial building with garage doors",
     altGuidance:
       "Describe only what is shown. Approved vehicle types only, no device-brand logos, and no coverage, market, or every-hardware-in-every-vehicle implication.",
   },
@@ -50,7 +63,9 @@ export const processImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    alt: "",
+    src: "/images/brand/our-process/sb-mobile-installations-our-process-fleet-installation-photo-documentation-4x3.webp",
+    objectPosition: "center",
+    alt: "Hands in a navy work shirt holding a smartphone to photograph a small black device mounted under the dashboard of a commercial vehicle",
     altGuidance:
       "Describe only what is shown. Must not resemble a report, portal, work order, inspection record, checklist, or customer dashboard. No photo counts or before-and-after framing.",
   },

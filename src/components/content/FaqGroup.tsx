@@ -56,6 +56,12 @@ interface FaqGroupProps {
    * this FAQ section from a "subtle" section immediately above it.
    */
   readonly tone?: "default" | "subtle";
+  /**
+   * Breakpoint where the columns layout goes to two columns. Defaults to "md",
+   * the value every existing caller relies on. Pass "lg" to keep tablet widths
+   * in one readable column.
+   */
+  readonly columnsFrom?: "md" | "lg";
 }
 
 /**
@@ -97,6 +103,7 @@ export function FaqGroup({
   intro,
   eyebrow,
   tone = "subtle",
+  columnsFrom = "md",
 }: FaqGroupProps) {
   const headingId = `${id}-heading`;
   const columns = layout === "columns";
@@ -115,7 +122,12 @@ export function FaqGroup({
 
   if (columns) {
     return (
-      <Section tone={tone} width="site" density={density} labelledBy={headingId}>
+      <Section
+        tone={tone}
+        width="site"
+        density={density}
+        labelledBy={headingId}
+      >
         <div className="mx-auto max-w-[1100px]">
           {eyebrow ? (
             <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-brand-red)] uppercase">
@@ -128,7 +140,11 @@ export function FaqGroup({
               {intro}
             </p>
           ) : null}
-          <div className="grid items-start gap-3 md:grid-cols-2 md:gap-4">
+          <div
+            className={`grid items-start gap-3 md:gap-4 ${
+              columnsFrom === "lg" ? "lg:grid-cols-2" : "md:grid-cols-2"
+            }`}
+          >
             {content.items.map((item, index) => {
               const answerId = `${id}-answer-${index + 1}`;
               return (

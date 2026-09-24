@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { InstallerQuestions } from "@/components/content/InstallerQuestions";
+import { InstallCategoryCard } from "@/components/content/WhatWeInstallGrid";
 import { FaqGroup } from "@/components/content/FaqGroup";
 import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { CardGrid } from "@/components/layout/CardGrid";
 import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { ImageSlot } from "@/components/ui/ImageSlot";
+import { business } from "@/data/site/business";
+import { homepageContent } from "@/data/site/homepage-content";
+import { careersHubImages } from "@/data/site/careers-hub-images";
+import { careersLandingContent } from "@/data/site/careers-landing-content";
 import { ourProcessContent as page } from "@/data/site/process-content";
-import { processImages } from "@/data/site/process-images";
-import { getServiceCard } from "@/data/site/service-pages-content";
+import {
+  processHeroBackground,
+  processImages,
+  processQuoteBackground,
+} from "@/data/site/process-images";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
 
@@ -78,9 +88,9 @@ function ContextIcon({ kind }: { readonly kind: string }) {
  * Commercial intake guide, not a workflow (docs/01 section 17 is unconfirmed).
  * Schema is WebPage plus BreadcrumbList only, matching visible content: no
  * FAQPage (the Q&A is visible text), no HowTo, no Service, no areaServed. The
- * quote form follows the explanation. The installer handoff is a low-emphasis
- * text link placed after the commercial form, in its own journey. No
- * approved photography exists, so every image is an ImageSlot with no file.
+ * quote form follows the explanation. The only recruitment content is the
+ * shared InstallerQuestions block, in its own journey. Photography is supplied for the hero, vehicle, documentation, and quote
+ * sections.
  */
 export default function OurProcessPage() {
   return (
@@ -95,14 +105,34 @@ export default function OurProcessPage() {
       />
       <Breadcrumbs items={BREADCRUMBS} />
 
-      {/* Hero: text first in the DOM, decorative slot after it. */}
+      {/*
+        Hero: single text column over a full-width decorative background photo.
+        Black overlay only (site rule); it scrolls with the section and is
+        never pinned.
+      */}
       <section
         data-tone="dark"
         aria-labelledby="process-hero-heading"
-        className="bg-[var(--color-surface-dark)] px-5 py-14 text-[var(--color-text-on-dark)] md:px-6 md:py-20"
+        className="relative isolate overflow-hidden bg-[var(--color-surface-dark)] px-5 py-14 text-[var(--color-text-on-dark)] md:px-6 md:py-20"
       >
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-center lg:gap-14">
-          <div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={processHeroBackground.src}
+          alt=""
+          aria-hidden="true"
+          width={processHeroBackground.width}
+          height={processHeroBackground.height}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center] md:object-center"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-black/55"
+        />
+        <div className="mx-auto max-w-[1280px]">
+          <div className="max-w-[720px]">
             <p className="mb-3 flex items-center gap-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-text-on-dark)]/90 uppercase">
               <span
                 aria-hidden="true"
@@ -116,9 +146,14 @@ export default function OurProcessPage() {
             >
               {page.h1}
             </h1>
-            <p className="mt-5 max-w-[640px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
-              {page.hero.support}
-            </p>
+            {page.hero.support.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-5 max-w-[640px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90"
+              >
+                {paragraph}
+              </p>
+            ))}
             <div className="mt-8 flex flex-col items-start gap-4">
               <CtaButton cta={page.hero.cta} emphasis="primary" blockOnMobile />
               <a
@@ -129,7 +164,6 @@ export default function OurProcessPage() {
               </a>
             </div>
           </div>
-          <ImageSlot slot={processImages.hero} priority />
         </div>
       </section>
 
@@ -177,66 +211,64 @@ export default function OurProcessPage() {
         <h2 id="process-scope-heading" className={h2Class}>
           {page.scope.h2}
         </h2>
-        <ul className="mt-8 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2 lg:grid-cols-3">
-          {page.scope.cards.map((card) => (
-            <li
-              key={card.slug}
-              className="h-full rounded-lg border border-border bg-surface p-5"
-            >
-              <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
-                <Link
-                  href={getServiceCard(card.slug).href}
-                  className="text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-                >
-                  {card.title}
-                </Link>
-              </h3>
-              <p className="mt-2 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
-                {card.body}
-              </p>
-            </li>
-          ))}
-        </ul>
+        {/*
+          The same six approved cards as the homepage "What We Install" grid,
+          rendered by the shared InstallCategoryCard from business.serviceTypes
+          so titles, copy, images, and links cannot drift.
+        */}
+        <div className="mt-8">
+          <CardGrid columns={3}>
+            {business.serviceTypes.map((service) => (
+              <InstallCategoryCard
+                key={service}
+                service={service}
+                content={homepageContent.whatWeInstall}
+                id="process-install"
+              />
+            ))}
+          </CardGrid>
+        </div>
       </Section>
 
       {/* Vehicle context and nationwide statement: text callout, no map. */}
       <Section tone="subtle" width="site" labelledBy="process-vehicles-heading">
-        <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-16">
-          <div>
-            <h2 id="process-vehicles-heading" className={h2Class}>
-              {page.vehicles.h2}
-            </h2>
-            <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink">
-              {page.vehicles.lead}
-            </p>
-            <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-              {page.vehicles.clarification}
-            </p>
-            <div className="mt-8">
-              <ImageSlot slot={processImages.vehicleContext} />
+        {/* Left: copy and dark card, centered against the image on the right. */}
+        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+          <div className="grid gap-8">
+            <div>
+              <h2 id="process-vehicles-heading" className={h2Class}>
+                {page.vehicles.h2}
+              </h2>
+              <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink">
+                {page.vehicles.lead}
+              </p>
+              <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+                {page.vehicles.clarification}
+              </p>
+            </div>
+            <div
+              data-tone="dark"
+              className="rounded-lg bg-[var(--color-surface-dark)] p-6 text-[var(--color-text-on-dark)] md:p-8"
+            >
+              <h3 className="text-[length:var(--text-h3)] leading-tight font-bold text-balance">
+                {page.vehicles.nationwide.heading}
+              </h3>
+              <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty">
+                {page.vehicles.nationwide.sentence}
+              </p>
+              <ul className="mt-6 grid list-none gap-2 border-t border-[var(--color-border-dark)] p-0 pt-5">
+                {page.vehicles.nationwide.facts.map((fact) => (
+                  <li
+                    key={fact}
+                    className="text-[length:var(--text-body)] text-[var(--color-text-on-dark)]/90"
+                  >
+                    {fact}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-          <div
-            data-tone="dark"
-            className="rounded-lg bg-[var(--color-surface-dark)] p-6 text-[var(--color-text-on-dark)] md:p-8"
-          >
-            <h3 className="text-[length:var(--text-h3)] leading-tight font-bold text-balance">
-              {page.vehicles.nationwide.heading}
-            </h3>
-            <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty">
-              {page.vehicles.nationwide.sentence}
-            </p>
-            <ul className="mt-6 grid list-none gap-2 border-t border-[var(--color-border-dark)] p-0 pt-5">
-              {page.vehicles.nationwide.facts.map((fact) => (
-                <li
-                  key={fact}
-                  className="text-[length:var(--text-body)] text-[var(--color-text-on-dark)]/90"
-                >
-                  {fact}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ImageSlot slot={processImages.vehicleContext} />
         </div>
       </Section>
 
@@ -254,13 +286,10 @@ export default function OurProcessPage() {
             <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink">
               {page.documentation.sentence}
             </p>
-          </div>
-          <div className="grid gap-4">
-            <ImageSlot slot={processImages.documentation} />
             {/* Static CSS panel repeating approved language only. Not a portal or report. */}
             <ul
               aria-label="Installation documentation summary"
-              className="grid list-none gap-3 rounded-lg border border-border bg-surface-subtle p-5 md:p-6"
+              className="mt-6 grid list-none gap-3 rounded-lg border border-border bg-surface-subtle p-5 md:p-6"
             >
               {page.documentation.panelLabels.map((label) => (
                 <li
@@ -272,14 +301,30 @@ export default function OurProcessPage() {
               ))}
             </ul>
           </div>
+          <ImageSlot slot={processImages.documentation} />
         </div>
       </Section>
+
+      {/*
+        Installer questions: the shared recruitment contact block, the same one
+        used on the service pages, /careers/, /contact/, and /quality-safety/.
+        Separate journey: its links carry the recruitment journey and never
+        lead into the commercial form.
+      */}
+      <InstallerQuestions
+        content={careersLandingContent.contact}
+        image={careersHubImages.contact}
+        headingId="process-installer-questions-heading"
+        phoneLocation="process-installer-questions"
+        trackPaths
+      />
 
       {/* Visible Q&A. No FAQPage markup. */}
       <FaqGroup
         id="process-faq"
         accessibleHeading={page.questions.h2}
         layout="columns"
+        columnsFrom="lg"
         content={{ h2: page.questions.h2, items: [...page.questions.items] }}
       />
 
@@ -288,8 +333,24 @@ export default function OurProcessPage() {
         <section
           data-tone="dark"
           aria-labelledby="process-quote-heading"
-          className="bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:px-6 md:py-24"
+          className="relative isolate overflow-hidden bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:px-6 md:py-24"
         >
+          {/* Decorative background; scrolls with the section. Black overlay only. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={processQuoteBackground.src}
+            alt=""
+            aria-hidden="true"
+            width={processQuoteBackground.width}
+            height={processQuoteBackground.height}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-black/55"
+          />
           <div className="mx-auto max-w-[1280px]">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-14">
               <div>
@@ -314,31 +375,6 @@ export default function OurProcessPage() {
         </section>
       </div>
 
-      {/* Installer Network handoff: separate journey, low emphasis, text only. */}
-      <Section
-        tone="default"
-        width="site"
-        density="compact"
-        labelledBy="process-installer-heading"
-      >
-        <h2
-          id="process-installer-heading"
-          className="text-[length:var(--text-h4)] font-bold text-ink"
-        >
-          {page.installerHandoff.question}
-        </h2>
-        <p className="mt-2">
-          <Link
-            href={page.installerHandoff.link.href}
-            data-journey={page.installerHandoff.link.journey}
-            data-event={page.installerHandoff.link.event}
-            className={textLink}
-          >
-            {page.installerHandoff.link.label}
-          </Link>
-        </p>
-      </Section>
-
       {/* Related resources */}
       <Section
         tone="subtle"
@@ -349,15 +385,20 @@ export default function OurProcessPage() {
         <h2 id="process-related-heading" className={h2Class}>
           {page.related.h2}
         </h2>
-        <ul className="mt-6 flex list-none flex-wrap gap-x-8 gap-y-1 p-0">
-          {page.scope.cards.map((card) => (
-            <li key={card.slug}>
-              <Link href={getServiceCard(card.slug).href} className={textLink}>
-                {card.title}
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </li>
-          ))}
+        {/* The same six approved cards as the homepage; unique id keeps use-case label ids distinct. */}
+        <div className="mt-8">
+          <CardGrid columns={3}>
+            {business.serviceTypes.map((service) => (
+              <InstallCategoryCard
+                key={service}
+                service={service}
+                content={homepageContent.whatWeInstall}
+                id="process-related"
+              />
+            ))}
+          </CardGrid>
+        </div>
+        <ul className="mt-8 flex list-none flex-wrap gap-x-8 gap-y-1 p-0">
           {page.related.links.map((link) => (
             <li key={link.href}>
               <Link href={link.href} className={textLink}>

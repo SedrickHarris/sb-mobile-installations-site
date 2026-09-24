@@ -1,4 +1,3 @@
-import { INSTALLER_NETWORK_PATH } from "@/data/jobs/routes";
 import { PHOTO_DOCUMENTATION_SENTENCE } from "@/data/site/quality-content";
 
 /**
@@ -33,16 +32,18 @@ const CLARIFICATION =
   "Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.";
 
 export const ourProcessContent = {
-  h1: "Our Process",
+  h1: "Our Nationwide Fleet Installation Process",
   // The layout title template appends " | SB Mobile Installations".
   metaTitle: "Our Process | Mobile Fleet Installation",
   metaDescription:
     "Learn what to include in an installation quote request: equipment, vehicle count, project locations, and preferred timing. Nationwide mobile installation service, delivered at the customer's location, with automatic photo documentation.",
 
   hero: {
-    eyebrow: "COMMERCIAL INSTALLATION QUOTES",
-    support:
-      "Start by telling us about your equipment, vehicle count, project locations, and preferred timing. SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location.",
+    eyebrow: "NATIONWIDE MOBILE FLEET INSTALLATION",
+    support: [
+      "Start by telling us about your equipment, vehicle count, project locations, and preferred timing. SB Mobile Installations reviews that information so the request can be understood and next steps can be discussed.",
+      "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location, for one vehicle or an entire fleet.",
+    ],
     cta: {
       label: "Request an Installation Quote",
       href: "#request-quote",
@@ -86,34 +87,6 @@ export const ourProcessContent = {
 
   scope: {
     h2: "Commercial Fleet Installation Context",
-    // hrefs come from the service pages via getServiceCard in the page file.
-    cards: [
-      {
-        slug: "fleet-telematics-installation",
-        title: "Fleet Telematics Installation",
-        body: "Installation context for commercial vehicle projects.",
-      },
-      {
-        slug: "gps-tracking-installation",
-        title: "GPS Tracking Installation",
-        body: "Installation context for commercial vehicle projects.",
-      },
-      {
-        slug: "eld-installation",
-        title: "ELD Installation",
-        body: "Physical installation context, not compliance or legal advice.",
-      },
-      {
-        slug: "dashcam-camera-installation",
-        title: "Dashcam & Camera Installation",
-        body: "Fleet dashcam and windshield-mounted video recorder installation context.",
-      },
-      {
-        slug: "fleet-rollouts",
-        title: "Fleet Rollout Installation Services",
-        body: "Discuss installation support for one vehicle or an entire fleet, including multiple project locations.",
-      },
-    ],
   },
 
   vehicles: {
@@ -189,21 +162,11 @@ export const ourProcessContent = {
   quote: {
     h2: "Request an Installation Quote",
     intro:
-      "Tell us about your equipment, vehicle count, project locations, and preferred timing.",
+      "Tell us about your equipment or service needs, vehicle count, project locations, and preferred timing. These details help our team review your installation request and discuss next steps.",
     // Field labels, payload, validation, and analytics are unchanged.
     formCopy: {
       serviceNeed: "Equipment or service needed",
       submit: "Submit Installation Request",
-    },
-  },
-
-  installerHandoff: {
-    question: "Are you an experienced mobile fleet installation technician?",
-    link: {
-      label: "Learn about the SB Mobile Installations Installer Network",
-      href: INSTALLER_NETWORK_PATH,
-      journey: "recruitment",
-      event: "cta_installer_network_click",
     },
   },
 
