@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { FaqGroup } from "@/components/content/FaqGroup";
 import { ServicesHero } from "@/components/content/ServicesHero";
-import { SplitFeature } from "@/components/content/SplitFeature";
 import { InstallerNetworkForm } from "@/components/forms/InstallerNetworkForm";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { CardGrid } from "@/components/layout/CardGrid";
@@ -261,13 +261,68 @@ export default function InstallerNetworkPage() {
         </div>
       </Section>
 
-      <SplitFeature
-        id="network-fit"
+      <Section
         tone="dark"
-        content={hub.fit}
+        width="site"
+        labelledBy="network-fit-heading"
         backgroundImage={networkFitBackground}
+        backgroundOverlay
         backgroundPosition="center"
-      />
+      >
+        <h2
+          id="network-fit-heading"
+          className="max-w-[720px] text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
+        >
+          {hub.fit.h2}
+        </h2>
+        {hub.fit.body.map((paragraph) => (
+          <p
+            key={paragraph}
+            className="mt-5 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90"
+          >
+            {paragraph}
+          </p>
+        ))}
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2 md:items-stretch">
+          {hub.fit.lists?.map((list) => (
+            <div
+              key={list.heading}
+              className="rounded-lg border border-[var(--color-border-dark)] bg-[var(--color-surface-dark-raised)] p-6"
+            >
+              <h3 className="text-[length:var(--text-h4)] font-bold text-[var(--color-text-on-dark)]">
+                {list.heading}
+              </h3>
+              <ul className="mt-4 flex list-none flex-col gap-2 p-0 text-[length:var(--text-body)] text-[var(--color-text-on-dark)]/90">
+                {list.items.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span aria-hidden="true" className="mt-[0.15rem] shrink-0 font-bold">
+                      &bull;
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <div className="flex flex-col rounded-lg border border-[var(--color-border-dark)] border-l-4 border-l-[var(--color-text-on-dark)] bg-[var(--color-surface-dark-raised)] p-6">
+            <h3 className="text-[length:var(--text-h4)] font-bold text-[var(--color-text-on-dark)]">
+              {hub.noExperience.title}
+            </h3>
+            <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
+              {hub.noExperience.body}
+            </p>
+            <Link
+              href={hub.noExperience.link.href}
+              data-journey="recruitment"
+              className="mt-auto flex min-h-12 items-center justify-between gap-3 self-start rounded-lg border-2 border-[var(--color-text-on-dark)]/70 px-5 py-3 text-[length:var(--text-body)] font-semibold text-[var(--color-text-on-dark)] hover:bg-white/10"
+            >
+              {hub.noExperience.link.label}
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+        </div>
+      </Section>
 
       {/* What the network is, and is not */}
       <Section tone="subtle" width="site" labelledBy="network-answer-heading">

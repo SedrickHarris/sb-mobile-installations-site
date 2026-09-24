@@ -364,6 +364,12 @@ export interface CareersHubPageContent {
   };
   readonly answer: HubSplitSection;
   readonly fit: HubSplitSection;
+  /** Card beside the fit list: the no-experience option for current openings. */
+  readonly noExperience: {
+    readonly title: string;
+    readonly body: string;
+    readonly link: HubLink;
+  };
   /** Requirements and experience: callout, three grouped lists, and supporting notes. */
   readonly requirements: {
     readonly h2: string;

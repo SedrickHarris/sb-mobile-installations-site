@@ -1,3 +1,4 @@
+import { JOBS_INDEX_PATH } from "@/data/jobs";
 import type { CareersHubPageContent } from "@/types/service-content";
 
 /**
@@ -105,6 +106,12 @@ export const careersHubPageContent: CareersHubPageContent = {
         ],
       },
     ],
+  },
+
+  noExperience: {
+    title: "No Experience Required",
+    body: "Some current SB Mobile Installations openings accept applicants with no prior installation experience, and training is provided. Check each opening's requirements and apply through the Current Openings page. Installer Network registration is separate and does not apply for a job.",
+    link: { label: "View Current Openings", href: JOBS_INDEX_PATH },
   },
 
   boundary: {
