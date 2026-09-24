@@ -118,6 +118,8 @@ export interface ServiceTemplateContent {
     readonly h2?: string;
     readonly body: readonly string[];
     readonly links: readonly HubLink[];
+    /** Render the links as full-width outlined buttons instead of text links. */
+    readonly linksAsButtons?: boolean;
   };
   /** Optional page-specific list heading and note for the vehicle-context section. */
   readonly vehicleContext?: {

@@ -188,7 +188,11 @@ export function SplitFeature({
                     href={item.href}
                     className={
                       content.linksAsButtons
-                        ? `flex min-h-12 items-center justify-between gap-3 rounded-lg border-2 border-[var(--color-accent-blue-strong)] px-5 py-3 text-[length:var(--text-body)] font-semibold hover:bg-[var(--color-accent-blue-strong)]/5 ${link}`
+                        ? `flex min-h-12 items-center justify-between gap-3 rounded-lg border-2 px-5 py-3 text-[length:var(--text-body)] font-semibold ${
+                            dark
+                              ? "border-[var(--color-text-on-dark)]/70 hover:bg-white/10"
+                              : "border-[var(--color-accent-blue-strong)] hover:bg-[var(--color-accent-blue-strong)]/5"
+                          } ${link}`
                         : `inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] underline underline-offset-4 ${
                             content.primaryLink && index > 0
                               ? "font-normal"

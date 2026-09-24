@@ -258,6 +258,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
             content.nationwideExtra,
           ],
           links: content.nationwideContext?.links ?? shared.nationwide.links,
+          linksAsButtons: content.nationwideContext?.linksAsButtons,
         }}
         slot={nationwideImage}
         mediaSide="left"

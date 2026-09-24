@@ -824,10 +824,17 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "One vehicle or an entire fleet",
       "Multiple project locations",
     ],
+    heroBackgroundImage: {
+      src: "/images/services/fleet-rollouts/hero/sb-mobile-installations-fleet-rollout-commercial-vehicles-hero-background-16x9.webp",
+      width: 3344,
+      height: 1882,
+    },
     hero: {
       intro:
-        "Discuss installation support for one vehicle or an entire fleet, including multiple project locations.",
+        "SB Mobile Installations provides on-site installation support for fleet technology deployments, from a single vehicle to multiple vehicles across project locations.",
       ctaLabel: "Request an Installation Quote",
+      qualifier:
+        "Tell us your equipment, vehicle count, project locations, and preferred timing so we can understand your installation request.",
     },
     definition: {
       h2: "What Are Fleet Rollout Installation Services?",
@@ -838,15 +845,17 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     },
     scope: {
       h2: "Installation Context for Commercial Fleet Projects",
-      body: ["These details help frame your installation request."],
+      body: [
+        "These details help us understand your installation request and prepare a relevant quote.",
+      ],
       lists: [
         {
           style: "labeled",
           items: [
-            "Equipment: Describe the approved hardware involved.",
-            "Vehicle count: Share the number of vehicles included in the request.",
-            "Project locations: Include the locations relevant to the request.",
-            "Preferred timing: Let us know your preferred timing.",
+            "Equipment: Identify the fleet technology or hardware to be installed.",
+            "Vehicle count: Share how many vehicles are included.",
+            "Project locations: List the location or locations relevant to the request.",
+            "Preferred timing: Share the requested timing or deployment phases, if applicable.",
           ],
         },
       ],
@@ -855,12 +864,13 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       h2: "Installation Support for One Vehicle or an Entire Fleet",
     },
     vehiclesBody:
-      "One vehicle: describe the equipment and vehicle context for an individual installation request. An entire fleet: describe the vehicle count and installation context for a broader fleet request.",
+      "One vehicle: Describe the equipment and vehicle context for an individual installation request. An entire fleet: Describe the vehicle count and installation context for a broader fleet request.",
     fit: {
       h2: "When Fleet Rollout Installation Services May Be a Fit",
       body: [
         "Use these related service pages to find the most relevant starting point for your installation request. For one vehicle or an entire fleet, including multiple project locations, this page is the starting point.",
       ],
+      linksAsButtons: true,
       links: [
         {
           label: serviceCards["fleet-telematics-installation"].title,
@@ -891,9 +901,10 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     nationwideContext: {
       h2: "Multiple Project Locations",
       body: [
-        "For requests involving multiple project locations, include the locations relevant to the installation request along with your equipment, vehicle count, and preferred timing.",
+        "For requests involving multiple project locations, include the locations relevant to the installation request, along with your equipment, vehicle count, and preferred timing. These details help describe the project request; they do not guarantee that every location or schedule can be accommodated.",
         shared.nationwide.lead,
       ],
+      linksAsButtons: true,
       links: shared.nationwide.links.filter((link) => link.href === "/coverage/"),
     },
     relatedSection: {
@@ -948,6 +959,11 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     faqHeading: "Fleet Rollout Installation Services FAQ",
     faqLayout: "columns",
     quoteH2: "Request an Installation Quote",
+    quoteBackground: {
+      src: "/images/services/fleet-rollouts/sb-mobile-installations-fleet-rollout-quote-background-commercial-fleet-vehicles-16x9.webp",
+      width: 3344,
+      height: 1882,
+    },
   },
 };
 

@@ -336,6 +336,18 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       "Describe the vehicles and setting shown. No map, state outline, city label, pin, dispatch or dashboard view, platform logo, or customer-site information.",
       "sb-mobile-installations-fleet-rollout-vehicle-context.webp",
     ),
+    context: {
+      slotId: "service-rollouts-context",
+      role: "Commercial work van at a commercial facility",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-commercial-work-van-service-section-4x3.webp`,
+      alt: "White commercial work van parked outside a commercial facility, with the cab and dashboard visible through the windshield",
+      altGuidance:
+        "Uses the approved work van photo. Describe only what is shown. Confirmed vehicle example only. Do not imply every vehicle type supports every hardware category, and no device-brand logos or capability claims.",
+    },
     definition: {
       slotId: "service-rollouts-definition",
       role: "Commercial fleet vehicles grouped at a project location",
@@ -343,9 +355,10 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      alt: "",
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-commercial-vehicles-service-section-4x3.webp`,
+      alt: "Commercial vans and utility service trucks parked in a row at a commercial facility",
       altGuidance:
-        "Describe only what is shown. No map, no coverage or capacity implication, no customer signage or readable plates.",
+        "Uses the approved service-section photo. Describe only what is shown. No map, no coverage or capacity implication, no customer signage or readable plates.",
     },
     scope: {
       slotId: "service-rollouts-scope",
@@ -354,9 +367,10 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      alt: "",
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-gps-hardware-commercial-vehicle-4x3.webp`,
+      alt: "GPS tracking device, mounting bracket, wiring harness, fasteners, cable ties, and hand tools laid out on the step of a commercial truck",
       altGuidance:
-        "Describe only what is shown. No device-brand logos, screens, or capability claims.",
+        "Uses the approved hardware photo. Describe only what is shown. No device-brand logos, screens, or capability claims.",
     },
     fit: {
       slotId: "service-rollouts-fit",
@@ -365,9 +379,10 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      alt: "",
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-commercial-vehicles-fleet-facility-4x3.webp`,
+      alt: "Commercial cargo vans and utility service trucks parked in rows outside a fleet facility",
       altGuidance:
-        "Describe only what is shown, without implying installation work is pictured. No readable plates or customer signage.",
+        "Uses the approved fleet facility photo. Describe only what is shown, without implying installation work is pictured. No readable plates or customer signage.",
     },
     nationwide: {
       slotId: "service-rollouts-nationwide",
@@ -376,9 +391,10 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      alt: "",
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-multiple-project-locations-commercial-vehicles-4x3.webp`,
+      alt: "Commercial service trucks and cargo vans parked outside a large commercial facility with loading docks",
       altGuidance:
-        "Never a map or graphic implying coverage, and no city or state identifiers.",
+        "Uses the approved project locations photo. Describe only what is shown. Never a map or graphic implying coverage, and no city or state identifiers.",
     },
   },
 };
