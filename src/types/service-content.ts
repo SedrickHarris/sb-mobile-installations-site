@@ -350,12 +350,6 @@ export interface CareersHubPageContent {
     readonly prepare: string;
     readonly join: string;
   };
-  /** Low-emphasis pointer to the current opening's own page. Never an application itself. */
-  readonly openings: {
-    readonly h2: string;
-    readonly body: string;
-    readonly link: HubLink;
-  };
   /** Three editorial cards directly under the hero. */
   readonly contextStrip: {
     readonly h2: string;
@@ -420,21 +414,15 @@ export interface CareersHubPageContent {
     };
     readonly note: string;
   };
-  readonly where: HubSplitSection;
-  readonly after: HubSplitSection;
+  /** Shown directly under the form's submit button. */
   readonly join: {
-    readonly h2: string;
-    readonly intro: string;
-    readonly noGuarantee: string;
-    /** Shown directly under the submit button. */
     readonly expectation: string;
-    readonly phoneLead: string;
   };
   readonly faqHeading: string;
   /** Business installation inquiry, kept separate from the Installer Network form. */
   readonly commercial: {
     readonly h2: string;
-    readonly body: string;
+    readonly body: readonly string[];
     readonly cta: Cta;
   };
   /** Heading for the related-services card grid. */

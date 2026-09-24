@@ -193,6 +193,26 @@ export const installerNetworkContent: CareersPageContent = {
         "Installer Network technicians are asked to have a valid driver's license, their own personal vehicle, tools, and travel resources, the ability to travel state to state, and a smartphone for submitting installation data and installation photos, and to pass a background check. No prior installation experience is required, and training is provided. See the Installer Network page for the full list of requirements and helpful experience.",
     },
     {
+      question: "Do I need prior installation experience to join?",
+      answer:
+        "No. No prior installation experience is required for current openings, and training is provided. Registering for the Installer Network is an expression of interest, not an application for an active opening or an employment offer.",
+    },
+    {
+      question: "Do I need my own vehicle and tools?",
+      answer:
+        "Yes. Installer Network technicians are asked to have their own personal vehicle, tools, and travel resources, along with a valid driver's license and a smartphone for submitting installation data and photos. See the requirements section on this page for the full list.",
+    },
+    {
+      question: "How much travel is involved?",
+      answer:
+        "Current openings involve approximately 75% travel, including state-to-state travel. Joining the Installer Network does not guarantee an assignment, a travel schedule, or work.",
+    },
+    {
+      question: "What installation experience is relevant?",
+      answer:
+        "Experience installing GPS tracking, ELD, AOBRD, dashcam, and other fleet equipment in vehicles is helpful. Experience with 12 and 24 volt electrical systems or removing vehicle panels is also welcome. None of it is required, and you can share whatever related background you have.",
+    },
+    {
       question: "What tools should I tell SB Mobile about?",
       answer:
         "The form asks which tools you currently own. This question is optional. List the tools you use for installation work.",

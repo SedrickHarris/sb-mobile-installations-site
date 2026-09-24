@@ -87,6 +87,18 @@ export const careersHubImages = {
     altGuidance:
       "A work van, service truck, utility vehicle, or heavy-duty truck. No trailers, no implied nationwide map.",
   },
+  networkAbout: {
+    slotId: "careers-network-about",
+    src: "/images/careers/mobile-installation-technician/sb-mobile-installations-installer-network-van-workspace-tools-components-4x3.webp",
+    role: "Installer Network overview beside About the Installer Network",
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
+    fallback: "grid",
+    alt: "Organized van interior with a workbench holding wiring harnesses, a dashcam, and a GPS module, with cable spools, hand tools, and parts bins on the wall",
+    altGuidance:
+      "Authentic photo only. Mobile installation work or a fleet vehicle in a commercial setting. No logos, plates, readable text, maps, pins, customer information, or anything implying a current assignment or opening.",
+  },
   networkRequirements: {
     slotId: "careers-network-requirements",
     role: "Vehicle installation work beside Requirements and Experience",

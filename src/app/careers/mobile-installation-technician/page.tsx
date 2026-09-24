@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
-import { CorporateOffice } from "@/components/content/CorporateOffice";
 import { FaqGroup } from "@/components/content/FaqGroup";
 import { ServicesHero } from "@/components/content/ServicesHero";
 import { SplitFeature } from "@/components/content/SplitFeature";
 import { InstallerNetworkForm } from "@/components/forms/InstallerNetworkForm";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { CardGrid } from "@/components/layout/CardGrid";
-import { PhoneButton } from "@/components/layout/PhoneButton";
 import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { InstallCategoryCard } from "@/components/content/WhatWeInstallGrid";
@@ -16,6 +13,7 @@ import { InstallerQuestions } from "@/components/content/InstallerQuestions";
 import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { Card } from "@/components/ui/Card";
+import { ImageSlot } from "@/components/ui/ImageSlot";
 import { INSTALLER_NETWORK_PATH } from "@/data/jobs";
 import { utilityBar } from "@/data/navigation/site-navigation";
 import { business } from "@/data/site/business";
@@ -181,9 +179,6 @@ function InformationList({
 const bulletList =
   "mt-4 flex list-disc flex-col gap-2 pl-5 text-[length:var(--text-body)] text-ink-muted marker:text-ink-muted";
 
-const linkClass =
-  "inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4";
-
 /**
  * Technician-interest landing page for the Installer Network
  * (`/careers/mobile-installation-technician/`).
@@ -275,32 +270,47 @@ export default function InstallerNetworkPage() {
       />
 
       {/* What the network is, and is not */}
-      <SplitFeature id="network-answer" tone="subtle" content={hub.answer} />
-      <Section tone="subtle" density="compact" labelledBy="network-boundary-heading">
-        <h2 id="network-boundary-heading" className="sr-only">
-          What this page is and is not
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-md border border-border bg-surface p-6">
-            <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
-              {hub.boundary.isHeading}
-            </h3>
-            <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-[length:var(--text-body)] text-ink-muted">
-              {hub.boundary.isItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+      <Section tone="subtle" width="site" labelledBy="network-answer-heading">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+          <div>
+            <h2
+              id="network-answer-heading"
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+            >
+              {hub.answer.h2}
+            </h2>
+            {hub.answer.body.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
+              >
+                {paragraph}
+              </p>
+            ))}
+            <div className="mt-5 grid gap-4 xl:grid-cols-2">
+              <div className="rounded-md border border-border bg-surface p-5">
+                <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
+                  {hub.boundary.isHeading}
+                </h3>
+                <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-[length:var(--text-body)] text-ink-muted">
+                  {hub.boundary.isItems.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-md border border-border bg-surface p-5">
+                <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
+                  {hub.boundary.isNotHeading}
+                </h3>
+                <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-[length:var(--text-body)] text-ink-muted">
+                  {hub.boundary.isNotItems.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="rounded-md border border-border bg-surface p-6">
-            <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
-              {hub.boundary.isNotHeading}
-            </h3>
-            <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-[length:var(--text-body)] text-ink-muted">
-              {hub.boundary.isNotItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
+          <ImageSlot slot={careersHubImages.networkAbout} />
         </div>
       </Section>
 
@@ -436,106 +446,61 @@ export default function InstallerNetworkPage() {
         backgroundOverlay
         backgroundPosition="center"
       >
-        <h2
-          id="network-information-heading"
-          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
-        >
-          {hub.information.h2}
-        </h2>
-        {hub.information.intro.map((paragraph) => (
-          <p
-            key={paragraph}
-            className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90"
-          >
-            {paragraph}
-          </p>
-        ))}
-
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-lg border border-[var(--color-border-dark)] bg-[var(--color-surface-dark-raised)] p-6">
-            <h3 className="text-[length:var(--text-h4)] font-bold text-[var(--color-text-on-dark)]">
-              {hub.information.requested.heading}
-            </h3>
-            <InformationList items={hub.information.requested.items} />
-          </div>
-          <div className="rounded-lg border border-dashed border-[var(--color-text-on-dark)]/60 bg-black/30 p-6">
-            <h3 className="text-[length:var(--text-h4)] font-bold text-[var(--color-text-on-dark)]">
-              {hub.information.optional.heading}
-            </h3>
-            <p className="mt-1 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-text-on-dark)]/80 uppercase">
-              {hub.information.optional.label}
-            </p>
-            <InformationList items={hub.information.optional.items} />
-          </div>
-        </div>
-
-        <p className="mt-6 max-w-[720px] text-[length:var(--text-small)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/85">
-          {hub.information.note}
-        </p>
-      </Section>
-      <Section tone="default" width="site" labelledBy="network-where-heading">
         <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-16">
           <div>
             <h2
-              id="network-where-heading"
-              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+              id="network-information-heading"
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
             >
-              {hub.where.h2}
+              {hub.information.h2}
             </h2>
-            {hub.where.body.map((paragraph) => (
+            {hub.information.intro.map((paragraph) => (
               <p
                 key={paragraph}
-                className="mt-5 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
+                className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90"
               >
                 {paragraph}
               </p>
             ))}
+
+            <div className="mt-8 flex flex-col gap-6">
+              <div className="rounded-lg border border-[var(--color-border-dark)] bg-[var(--color-surface-dark-raised)] p-6">
+                <h3 className="text-[length:var(--text-h4)] font-bold text-[var(--color-text-on-dark)]">
+                  {hub.information.requested.heading}
+                </h3>
+                <InformationList items={hub.information.requested.items} />
+              </div>
+              <div className="rounded-lg border border-dashed border-[var(--color-text-on-dark)]/60 bg-black/30 p-6">
+                <h3 className="text-[length:var(--text-h4)] font-bold text-[var(--color-text-on-dark)]">
+                  {hub.information.optional.heading}
+                </h3>
+                <p className="mt-1 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-text-on-dark)]/80 uppercase">
+                  {hub.information.optional.label}
+                </p>
+                <InformationList items={hub.information.optional.items} />
+              </div>
+            </div>
+
+            <p className="mt-6 text-[length:var(--text-small)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/85">
+              {hub.information.note}
+            </p>
           </div>
-          <div className="rounded-lg border border-border bg-surface p-6 md:p-8">
+
+          {/* Interest form. Focusable target for the hero CTA anchor. */}
+          <div
+            id="installer-network-form"
+            tabIndex={-1}
+            data-tone="light"
+            className="scroll-mt-24 rounded-lg bg-surface p-6 text-ink md:p-8"
+          >
             <InstallerNetworkForm expectation={hub.join.expectation} twoColumnAt="lg" />
           </div>
         </div>
       </Section>
 
-      {/* Interest form. Focusable target for the hero CTA anchor. */}
-      <div id="installer-network-form" tabIndex={-1} className="scroll-mt-24">
-        <Section tone="default" density="spacious" labelledBy="network-join-heading">
-          <h2
-            id="network-join-heading"
-            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-          >
-            {hub.join.h2}
-          </h2>
-          <p className="mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-            {hub.join.intro}
-          </p>
-          <p className="mt-4 rounded-md border border-border bg-surface-subtle p-4 text-[length:var(--text-small)] leading-relaxed text-ink">
-            {hub.join.noGuarantee}
-          </p>
-          <div className="mt-8">
-            <InstallerNetworkForm expectation={hub.join.expectation} twoColumnAt="md" />
-          </div>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <p className="text-[length:var(--text-body)] text-ink-muted">
-              {hub.join.phoneLead}
-            </p>
-            <PhoneButton
-              href={utilityBar.phoneHref}
-              label={utilityBar.phoneLabel}
-              location="careers-form"
-              journey="recruitment"
-              event={null}
-              className="border-ink bg-surface text-ink hover:bg-surface-subtle"
-            />
-          </div>
-          <CorporateOffice className="mt-8" />
-        </Section>
-      </div>
-
-      <SplitFeature id="network-after" tone="subtle" content={hub.after} />
-
       <FaqGroup
         id="network-faq"
+        layout="columns"
         accessibleHeading={hub.faqHeading}
         content={{ h2: hub.faqHeading, items: installerNetworkContent.faq ?? [] }}
       />
@@ -557,9 +522,14 @@ export default function InstallerNetworkPage() {
             >
               {hub.commercial.h2}
             </h2>
-            <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
-              {hub.commercial.body}
-            </p>
+            {hub.commercial.body.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90"
+              >
+                {paragraph}
+              </p>
+            ))}
             <div className="mt-8">
               <CtaButton cta={hub.commercial.cta} emphasis="primary" blockOnMobile />
             </div>
@@ -575,31 +545,7 @@ export default function InstallerNetworkPage() {
         </div>
       </Section>
 
-      {/* 2. Installer opportunities: current opening pointer, then the shared questions block */}
-      <Section tone="subtle" density="compact" labelledBy="network-opening-heading">
-        <div className="rounded-lg border border-border border-l-4 border-l-[var(--color-brand-red)] bg-surface p-6 md:p-8">
-          <h2
-            id="network-opening-heading"
-            className="text-[length:var(--text-h3)] leading-[1.15] font-bold text-balance text-ink"
-          >
-            {hub.openings.h2}
-          </h2>
-          <p className="mt-3 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-            {hub.openings.body}
-          </p>
-          <p className="mt-4">
-            <Link
-              href={hub.openings.link.href}
-              data-journey="recruitment"
-              className={linkClass}
-            >
-              {hub.openings.link.label}
-              <span aria-hidden="true">&rarr;</span>
-            </Link>
-          </p>
-        </div>
-      </Section>
-
+      {/* 2. Installer opportunities: the shared questions block */}
       <InstallerQuestions
         content={careersLandingContent.contact}
         image={careersHubImages.contact}

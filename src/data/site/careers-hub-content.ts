@@ -1,4 +1,3 @@
-import { JOBS_INDEX_PATH } from "@/data/jobs";
 import type { CareersHubPageContent } from "@/types/service-content";
 
 /**
@@ -63,12 +62,6 @@ export const careersHubPageContent: CareersHubPageContent = {
     work: "Understand the work context",
     prepare: "Prepare your information",
     join: "Join the network",
-  },
-
-  openings: {
-    h2: "Looking for the Current Opening?",
-    body: "The current Mobile GPS, ELD, and AOBRD installation technician openings have their own page. The Installer Network is a separate registration.",
-    link: { label: "View Current Openings", href: JOBS_INDEX_PATH },
   },
 
   contextStrip: {
@@ -269,42 +262,19 @@ export const careersHubPageContent: CareersHubPageContent = {
     note: "You may share experience with fleet technology platforms or device ecosystems that you have worked with. This information is optional and does not indicate certification, authorization, partnership, or a guarantee of assignment.",
   },
 
-  where: {
-    h2: "Tell Us Where You Can Work",
-    body: [
-      "Share your home market or region and the areas where you are willing and able to travel for installation projects. Include any limits on your travel range or coverage so SB Mobile Installations can better understand your availability.",
-      "This information helps us assess whether your stated coverage may fit a future project. Listing a market or region does not mean work is currently available there or guarantee contact or an assignment.",
-    ],
-  },
-
-  after: {
-    h2: "After You Share Your Interest",
-    body: [
-      "Submitting the interest form shares your information for Installer Network consideration. It is not an application for an active job opening, and it does not automatically enroll you in a project or create an employment offer.",
-      "SB Mobile Installations may consider your experience, home market, and travel availability when assessing potential project fit. Project needs vary, and submitting the form does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
-    ],
-    footnotes: [
-      "Technicians engaged through the Installer Network are independent contractors, not employees.",
-    ],
-    footnoteCallout: true,
-  },
-
   join: {
-    h2: "Express Interest in the Installer Network",
-    intro:
-      "Share your contact information and relevant mobile fleet-installation background. SB Mobile Installations will use the information you provide to understand your interest in the Installer Network.",
-    noGuarantee:
-      "Joining the Installer Network is an expression of interest. It does not guarantee employment, a project assignment, compensation, or future work.",
     expectation:
       "This form is for Installer Network interest. It does not indicate a current opening or guarantee future work.",
-    phoneLead: "Prefer to talk it through? Call",
   },
 
   faqHeading: "Installer Network Questions",
 
   commercial: {
-    h2: "Looking for mobile fleet installation service for your business?",
-    body: "Businesses request installation separately from the Installer Network. Share your project details so SB Mobile Installations can determine whether the request fits the available service context.",
+    h2: "Need Mobile Fleet Installation Services for Your Business?",
+    body: [
+      "SB Mobile Installations provides on-site installation of fleet technology and electronic equipment for commercial vehicles. Businesses can request service for GPS tracking, ELDs, dashcams, fleet telematics, TPMS, and related fleet equipment.",
+      "Share your equipment needs, vehicle or asset count, project locations, and preferred timing. Our team will review the project details to understand the installation scope and service fit. Use this form for business installation requests. Technicians interested in joining the Installer Network should use the separate Installer Network interest form.",
+    ],
     cta: {
       label: "Request an Installation Quote",
       href: "#business-inquiry-form",
