@@ -216,6 +216,10 @@ scroll-linked parallax, on any existing page or future page build. This is a
 site-wide rule set by the stakeholder on 2026-09-19. `SplitFeature`'s `align`
 prop controls vertical alignment only.
 
+**Overlays are black only.** Any overlay over an image or video is black (`bg-black/55`
+by default, `bg-black/65` on photo heroes that already use it). Never use a navy,
+tinted, or brand-color overlay. Set by the stakeholder on 2026-09-24.
+
 ## 9. Technical constraints
 
 Next.js App Router, TypeScript strict mode, Tailwind CSS, static export, Cloudflare

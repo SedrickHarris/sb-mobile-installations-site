@@ -30,6 +30,39 @@ export const careersHeroVideo = {
     "/images/careers/homepage-hero/sb-mobile-installations-careers-fleet-installation-tools-hero.webp",
 } as const;
 
+/**
+ * Decorative full-width hero photo for the Installer Network page. The
+ * technician sits on the right of the frame, so the default mobile crop
+ * (right-weighted) keeps the subject visible while copy sits on the navy left.
+ */
+export const networkHeroBackground = {
+  src: "/images/careers/mobile-installation-technician/hero/sb-mobile-installations-installer-network-technician-commercial-van-hero-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
+/**
+ * Decorative text-free background for "Who the Installer Network Is For".
+ * Shown under a 55% black overlay with light text. Centered crop keeps the
+ * plain van wall and floor behind the copy instead of the busy tool cases.
+ */
+export const networkFitBackground = {
+  src: "/images/careers/mobile-installation-technician/sb-mobile-installations-fleet-electronics-tools-commercial-van-background-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
+/**
+ * Decorative text-free background for "Share Your Experience and Availability".
+ * Shown under a 55% black overlay with light text. The centered crop keeps the
+ * dark van wall behind the copy and the tool storage at the edges.
+ */
+export const networkInformationBackground = {
+  src: "/images/careers/mobile-installation-technician/sb-mobile-installations-organized-fleet-electronics-workspace-van-background-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
 export const careersHubImages = {
   hero: {
     slotId: "careers-hub-hero",
@@ -53,17 +86,6 @@ export const careersHubImages = {
     alt: "",
     altGuidance:
       "A work van, service truck, utility vehicle, or heavy-duty truck. No trailers, no implied nationwide map.",
-  },
-  networkHero: {
-    slotId: "careers-network-hero",
-    role: "Technician working at a fleet vehicle, Installer Network page hero",
-    aspectRatio: "4 / 3",
-    width: 1600,
-    height: 1200,
-    fallback: "route",
-    alt: "",
-    altGuidance:
-      "Suggested file: sb-mobile-installations-installer-network-hero.webp. Show a technician at a fleet vehicle. Describe only what is shown. Released, identifiable technicians only.",
   },
   networkRequirements: {
     slotId: "careers-network-requirements",

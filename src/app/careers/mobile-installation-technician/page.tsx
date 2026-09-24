@@ -11,12 +11,24 @@ import { CardGrid } from "@/components/layout/CardGrid";
 import { PhoneButton } from "@/components/layout/PhoneButton";
 import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
+import { InstallCategoryCard } from "@/components/content/WhatWeInstallGrid";
+import { InstallerQuestions } from "@/components/content/InstallerQuestions";
+import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
+import { CtaButton } from "@/components/ui/CtaButton";
 import { Card } from "@/components/ui/Card";
 import { INSTALLER_NETWORK_PATH } from "@/data/jobs";
 import { utilityBar } from "@/data/navigation/site-navigation";
+import { business } from "@/data/site/business";
 import { installerNetworkContent } from "@/data/site/careers-content";
+import { careersLandingContent } from "@/data/site/careers-landing-content";
 import { careersHubPageContent as hub } from "@/data/site/careers-hub-content";
-import { careersHubImages } from "@/data/site/careers-hub-images";
+import {
+  careersHubImages,
+  networkFitBackground,
+  networkInformationBackground,
+  networkHeroBackground as heroBackgroundImage,
+} from "@/data/site/careers-hub-images";
+import { homepageContent } from "@/data/site/homepage-content";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { careersPageSchema } from "@/lib/schema/careers-page";
 
@@ -32,6 +44,142 @@ export const metadata: Metadata = buildPageMetadata({
   description: installerNetworkContent.metaDescription,
   pathname: PATHNAME,
 });
+
+const CONTEXT_ICON_PATHS: Record<
+  NonNullable<(typeof hub.contextStrip.cards)[number]["icon"]>,
+  string[]
+> = {
+  technician: ["M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z", "M4 20a8 8 0 0 1 16 0"],
+  vehicle: [
+    "M3 7h11v9H3z",
+    "M14 10h4l3 3v3h-7",
+    "M7 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z",
+    "M17 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z",
+  ],
+  location: [
+    "M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z",
+    "M12 8a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z",
+  ],
+};
+
+const REQUIREMENT_ICON_PATHS = {
+  training: ["M2 9l10-5 10 5-10 5z", "M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5", "M22 9v6"],
+  checklist: [
+    "M9 6h11",
+    "M9 12h11",
+    "M9 18h11",
+    "M3.5 6l1.5 1.5L7.5 5",
+    "M3.5 12l1.5 1.5L7.5 11",
+    "M3.5 18l1.5 1.5L7.5 17",
+  ],
+  tools: [
+    "M14.5 6.5a4 4 0 0 0 5 5L21 13l-8 8-4-4 8-8z",
+    "M4 20l4-4",
+    "M6 4l3 3-2 2-3-3z",
+  ],
+  clipboard: [
+    "M9 4h6v3H9z",
+    "M8 5.5H6a1 1 0 0 0-1 1V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6.5a1 1 0 0 0-1-1h-2",
+    "M9 14l2 2 4-4",
+  ],
+} as const;
+
+/** Decorative inline icon. The heading beside it stays the accessible label. */
+function SvgIcon({
+  paths,
+  size,
+  className,
+}: {
+  readonly paths: readonly string[];
+  readonly size: number;
+  readonly className: string;
+}) {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      {paths.map((d) => (
+        <path key={d} d={d} />
+      ))}
+    </svg>
+  );
+}
+
+function ContextIcon({ name }: { readonly name: keyof typeof CONTEXT_ICON_PATHS }) {
+  return (
+    <SvgIcon
+      paths={CONTEXT_ICON_PATHS[name]}
+      size={32}
+      className="mb-3 block shrink-0 text-[var(--color-accent-blue-strong)]"
+    />
+  );
+}
+
+function HeadingWithIcon({
+  icon,
+  children,
+}: {
+  readonly icon: keyof typeof REQUIREMENT_ICON_PATHS;
+  readonly children: string;
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      <SvgIcon
+        paths={REQUIREMENT_ICON_PATHS[icon]}
+        size={26}
+        className="shrink-0 text-[var(--color-accent-blue-strong)]"
+      />
+      <h3 className="text-[length:var(--text-h4)] font-bold text-ink">{children}</h3>
+    </div>
+  );
+}
+
+const INFORMATION_ICON_PATHS: Record<
+  (typeof hub.information.requested.items)[number]["icon"],
+  readonly string[]
+> = {
+  contact: ["M3 6h18v12H3z", "M3 7l9 6 9-6"],
+  location: CONTEXT_ICON_PATHS.location,
+  experience: REQUIREMENT_ICON_PATHS.tools,
+  travel: ["M5 6h3a4 4 0 0 1 4 4v4a4 4 0 0 0 4 4h3", "M3 6h2", "M19 18h2"],
+  platform: ["M4 8l8-4 8 4-8 4z", "M4 12l8 4 8-4", "M4 16l8 4 8-4"],
+  tools: ["M4 9h16v10H4z", "M9 9V6h6v3", "M4 14h16"],
+};
+
+/** Icon list on a dark surface. The item text stays the accessible label. */
+function InformationList({
+  items,
+}: {
+  readonly items: typeof hub.information.requested.items;
+}) {
+  return (
+    <ul className="mt-4 flex list-none flex-col gap-3 p-0 text-[length:var(--text-body)] text-[var(--color-text-on-dark)]">
+      {items.map((item) => (
+        <li key={item.text} className="flex gap-3">
+          <SvgIcon
+            paths={INFORMATION_ICON_PATHS[item.icon]}
+            size={22}
+            className="mt-[0.1rem] shrink-0 text-[var(--color-text-on-dark)]"
+          />
+          <span>{item.text}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+const bulletList =
+  "mt-4 flex list-disc flex-col gap-2 pl-5 text-[length:var(--text-body)] text-ink-muted marker:text-ink-muted";
 
 const linkClass =
   "inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4";
@@ -52,8 +200,8 @@ const linkClass =
  *
  * Schema is WebPage + BreadcrumbList only. This is not an individual opening
  * page, so it never carries JobPosting (13-schema-markup-plan.md section 14).
- * No FAQPage. The hero visual is the decorative fallback until approved
- * photography exists. The corporate office address appears once, near the
+ * No FAQPage. The hero uses the supplied background photo under a 55% black overlay.
+ * The corporate office address appears once, near the
  * form, from `business.address`.
  */
 export default function InstallerNetworkPage() {
@@ -71,9 +219,9 @@ export default function InstallerNetworkPage() {
 
       <ServicesHero
         id="installer-network"
-        eyebrow="Installer Network"
-        h1={installerNetworkContent.h1}
-        intro={installerNetworkContent.intro}
+        eyebrow={hub.hero.eyebrow}
+        h1={hub.hero.h1}
+        intro={hub.hero.intro}
         primaryCta={hub.hero.primaryCta}
         secondaryLink={{
           label: "Learn how the Installer Network works",
@@ -88,7 +236,9 @@ export default function InstallerNetworkPage() {
         phoneJourney="recruitment"
         phoneEvent={null}
         scopeItems={hub.hero.scopeItems}
-        image={careersHubImages.networkHero}
+        backgroundImage={heroBackgroundImage}
+        backgroundOverlayStrength={55}
+        backgroundFocus="top"
       />
 
       {/* Context strip */}
@@ -103,10 +253,7 @@ export default function InstallerNetworkPage() {
           <CardGrid columns={3}>
             {hub.contextStrip.cards.map((card) => (
               <Card key={card.title} padding="compact">
-                <span
-                  aria-hidden="true"
-                  className="mb-3 block h-1 w-10 bg-[var(--color-brand-red)]"
-                />
+                {card.icon ? <ContextIcon name={card.icon} /> : null}
                 <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
                   {card.title}
                 </h3>
@@ -119,7 +266,13 @@ export default function InstallerNetworkPage() {
         </div>
       </Section>
 
-      <SplitFeature id="network-fit" content={hub.fit} />
+      <SplitFeature
+        id="network-fit"
+        tone="dark"
+        content={hub.fit}
+        backgroundImage={networkFitBackground}
+        backgroundPosition="center"
+      />
 
       {/* What the network is, and is not */}
       <SplitFeature id="network-answer" tone="subtle" content={hub.answer} />
@@ -164,27 +317,185 @@ export default function InstallerNetworkPage() {
         </p>
         <div className="mt-8">
           <CardGrid columns={3}>
-            {hub.equipment.cards.map((card) => (
-              <Card key={card.title} padding="compact">
-                <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-[length:var(--text-body)] text-ink-muted">
-                  {card.description}
-                </p>
-              </Card>
+            {business.serviceTypes.map((service) => (
+              <InstallCategoryCard
+                key={service}
+                service={service}
+                content={homepageContent.whatWeInstall}
+                id="network-services"
+              />
             ))}
           </CardGrid>
         </div>
       </Section>
 
-      <SplitFeature id="network-field-work" tone="subtle" content={hub.fieldWork} />
+      <Section tone="subtle" width="site" labelledBy="network-field-work-heading">
+        <h2
+          id="network-field-work-heading"
+          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+        >
+          {hub.fieldWork.h2}
+        </h2>
+        <p className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
+          {hub.fieldWork.intro}
+        </p>
+        <div className="mt-8">
+          <CardGrid columns={4}>
+            {hub.fieldWork.cards.map((card) => (
+              <Card key={card.title} tone="light" padding="none" className="flex h-full flex-col">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={card.image.src}
+                  alt={card.image.alt}
+                  width={card.image.width}
+                  height={card.image.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[4/3] h-auto w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="text-[length:var(--text-h4)] font-semibold text-ink">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
+                    {card.description}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </CardGrid>
+        </div>
+        <p className="mt-6 max-w-[720px] border-l-4 border-[var(--color-accent-blue-strong)] py-1 pl-4 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink">
+          {hub.fieldWork.note}
+        </p>
+      </Section>
 
       {/* Stakeholder-approved requirements and form guidance (decision 0004) */}
-      <SplitFeature id="network-requirements" content={hub.requirements} />
-      <SplitFeature id="network-information" tone="subtle" content={hub.information} />
-      <SplitFeature id="network-where" content={hub.where} />
-      <SplitFeature id="network-after" tone="subtle" content={hub.after} />
+      <Section tone="default" width="site" labelledBy="network-requirements-heading">
+        <h2
+          id="network-requirements-heading"
+          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+        >
+          {hub.requirements.h2}
+        </h2>
+
+        <div className="mt-6 rounded-lg border border-border border-l-4 border-l-[var(--color-accent-blue-strong)] bg-surface-subtle p-6">
+          <HeadingWithIcon icon="training">{hub.requirements.callout.title}</HeadingWithIcon>
+          <p className="mt-3 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink">
+            {hub.requirements.callout.body}
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <Card tone="light" padding="default">
+            <HeadingWithIcon icon="checklist">{hub.requirements.core.heading}</HeadingWithIcon>
+            <ul className={bulletList}>
+              {hub.requirements.core.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </Card>
+          <Card tone="light" padding="default">
+            <HeadingWithIcon icon="tools">{hub.requirements.preferred.heading}</HeadingWithIcon>
+            <p className="mt-2 text-[length:var(--text-label)] font-semibold tracking-wide text-ink uppercase">
+              {hub.requirements.preferred.label}
+            </p>
+            <ul className={bulletList}>
+              {hub.requirements.preferred.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+
+        <Card tone="light" padding="default" className="mt-6">
+          <HeadingWithIcon icon="clipboard">{hub.requirements.asks.heading}</HeadingWithIcon>
+          <ul className={`${bulletList} md:grid md:grid-cols-2 md:gap-x-8`}>
+            {hub.requirements.asks.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Card>
+
+        <div className="mt-6 flex max-w-[820px] flex-col gap-3">
+          {hub.requirements.notes.map((note) => (
+            <p
+              key={note}
+              className="text-[length:var(--text-small)] leading-relaxed text-pretty text-ink-muted"
+            >
+              {note}
+            </p>
+          ))}
+        </div>
+      </Section>
+      <Section
+        tone="dark"
+        width="site"
+        labelledBy="network-information-heading"
+        backgroundImage={networkInformationBackground}
+        backgroundOverlay
+        backgroundPosition="center"
+      >
+        <h2
+          id="network-information-heading"
+          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
+        >
+          {hub.information.h2}
+        </h2>
+        {hub.information.intro.map((paragraph) => (
+          <p
+            key={paragraph}
+            className="mt-4 max-w-[720px] text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90"
+          >
+            {paragraph}
+          </p>
+        ))}
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="rounded-lg border border-[var(--color-border-dark)] bg-[var(--color-surface-dark-raised)] p-6">
+            <h3 className="text-[length:var(--text-h4)] font-bold text-[var(--color-text-on-dark)]">
+              {hub.information.requested.heading}
+            </h3>
+            <InformationList items={hub.information.requested.items} />
+          </div>
+          <div className="rounded-lg border border-dashed border-[var(--color-text-on-dark)]/60 bg-black/30 p-6">
+            <h3 className="text-[length:var(--text-h4)] font-bold text-[var(--color-text-on-dark)]">
+              {hub.information.optional.heading}
+            </h3>
+            <p className="mt-1 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-text-on-dark)]/80 uppercase">
+              {hub.information.optional.label}
+            </p>
+            <InformationList items={hub.information.optional.items} />
+          </div>
+        </div>
+
+        <p className="mt-6 max-w-[720px] text-[length:var(--text-small)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/85">
+          {hub.information.note}
+        </p>
+      </Section>
+      <Section tone="default" width="site" labelledBy="network-where-heading">
+        <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-16">
+          <div>
+            <h2
+              id="network-where-heading"
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+            >
+              {hub.where.h2}
+            </h2>
+            {hub.where.body.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-5 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <div className="rounded-lg border border-border bg-surface p-6 md:p-8">
+            <InstallerNetworkForm expectation={hub.join.expectation} twoColumnAt="lg" />
+          </div>
+        </div>
+      </Section>
 
       {/* Interest form. Focusable target for the hero CTA anchor. */}
       <div id="installer-network-form" tabIndex={-1} className="scroll-mt-24">
@@ -202,7 +513,7 @@ export default function InstallerNetworkPage() {
             {hub.join.noGuarantee}
           </p>
           <div className="mt-8">
-            <InstallerNetworkForm expectation={hub.join.expectation} />
+            <InstallerNetworkForm expectation={hub.join.expectation} twoColumnAt="md" />
           </div>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
             <p className="text-[length:var(--text-body)] text-ink-muted">
@@ -221,59 +532,101 @@ export default function InstallerNetworkPage() {
         </Section>
       </div>
 
+      <SplitFeature id="network-after" tone="subtle" content={hub.after} />
+
       <FaqGroup
         id="network-faq"
         accessibleHeading={hub.faqHeading}
         content={{ h2: hub.faqHeading, items: installerNetworkContent.faq ?? [] }}
       />
 
-      {/* Low-emphasis links after the technician content */}
-      <Section tone="default" density="compact" labelledBy="network-handoff-heading">
+      {/* 1. Business installation inquiry: a separate journey with its own form */}
+      <Section
+        tone="dark"
+        width="site"
+        labelledBy="network-commercial-heading"
+        backgroundImage={careersHubImages.commercialHandoff}
+        backgroundOverlay
+        backgroundPosition="center"
+      >
+        <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-16">
+          <div>
+            <h2
+              id="network-commercial-heading"
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-[var(--color-text-on-dark)]"
+            >
+              {hub.commercial.h2}
+            </h2>
+            <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
+              {hub.commercial.body}
+            </p>
+            <div className="mt-8">
+              <CtaButton cta={hub.commercial.cta} emphasis="primary" blockOnMobile />
+            </div>
+          </div>
+          <div
+            id="business-inquiry-form"
+            tabIndex={-1}
+            data-tone="light"
+            className="scroll-mt-24 rounded-lg bg-surface p-6 text-ink md:p-8"
+          >
+            <CommercialInquiryForm />
+          </div>
+        </div>
+      </Section>
+
+      {/* 2. Installer opportunities: current opening pointer, then the shared questions block */}
+      <Section tone="subtle" density="compact" labelledBy="network-opening-heading">
+        <div className="rounded-lg border border-border border-l-4 border-l-[var(--color-brand-red)] bg-surface p-6 md:p-8">
+          <h2
+            id="network-opening-heading"
+            className="text-[length:var(--text-h3)] leading-[1.15] font-bold text-balance text-ink"
+          >
+            {hub.openings.h2}
+          </h2>
+          <p className="mt-3 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
+            {hub.openings.body}
+          </p>
+          <p className="mt-4">
+            <Link
+              href={hub.openings.link.href}
+              data-journey="recruitment"
+              className={linkClass}
+            >
+              {hub.openings.link.label}
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </p>
+        </div>
+      </Section>
+
+      <InstallerQuestions
+        content={careersLandingContent.contact}
+        image={careersHubImages.contact}
+        headingId="network-installer-questions-heading"
+        phoneLocation="network-installer-questions"
+      />
+
+      {/* 3. Related services: the same six approved cards as the homepage */}
+      <Section tone="default" width="site" labelledBy="network-related-heading">
         <h2
-          id="network-handoff-heading"
-          className="text-[length:var(--text-h4)] font-bold text-ink"
+          id="network-related-heading"
+          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
         >
-          {hub.handoff.h2}
-        </h2>
-        <p className="mt-2 text-[length:var(--text-body)] text-ink-muted">
-          {hub.handoff.body}
-        </p>
-        <ul className="mt-3 flex list-none flex-col gap-1 p-0">
-          {hub.handoff.links.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className={linkClass}>
-                {item.label}
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <h2 className="mt-8 text-[length:var(--text-h4)] font-bold text-ink">
-          {hub.openings.h2}
-        </h2>
-        <p className="mt-2 text-[length:var(--text-body)] text-ink-muted">
-          {hub.openings.body}
-        </p>
-        <p className="mt-3">
-          <Link href={hub.openings.link.href} className={linkClass}>
-            {hub.openings.link.label}
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </p>
-
-        <h2 className="mt-8 text-[length:var(--text-h4)] font-bold text-ink">
           {hub.relatedLinks.h2}
         </h2>
-        <ul className="mt-3 flex list-none flex-col gap-1 p-0">
-          {hub.relatedLinks.links.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className={linkClass}>
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-8">
+          <CardGrid columns={3}>
+            {business.serviceTypes.map((service) => (
+              <InstallCategoryCard
+                key={service}
+                service={service}
+                content={homepageContent.whatWeInstall}
+                id="network-related"
+              />
+            ))}
+          </CardGrid>
+        </div>
       </Section>
     </>
   );

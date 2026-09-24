@@ -22,7 +22,17 @@ const THANK_YOU_ROUTE = "/careers/installer-network-received/";
  * never shares a submission handler with it. See CLAUDE.md section 4 and
  * plan section 5.
  */
-export function InstallerNetworkForm({ expectation }: { readonly expectation?: string } = {}) {
+export function InstallerNetworkForm({
+  expectation,
+  twoColumnAt,
+}: {
+  readonly expectation?: string;
+  /**
+   * Breakpoint from which short fields sit two per row to reduce height.
+   * Layout only. Omit for a single column.
+   */
+  readonly twoColumnAt?: "md" | "lg";
+} = {}) {
   const formId = useId();
   const [fields, setFields] = useState({
     name: "",
@@ -79,13 +89,22 @@ export function InstallerNetworkForm({ expectation }: { readonly expectation?: s
   }
 
   const submitting = status === "submitting";
+  // Literal class names so Tailwind can see them.
+  const grid =
+    twoColumnAt === "lg"
+      ? "lg:grid lg:grid-cols-2"
+      : twoColumnAt === "md"
+        ? "md:grid md:grid-cols-2"
+        : "";
+  const wide =
+    twoColumnAt === "lg" ? "lg:col-span-2" : twoColumnAt === "md" ? "md:col-span-2" : "";
 
   return (
     <form
       onSubmit={handleSubmit}
       data-journey="recruitment"
       data-event={AnalyticsEvent.installerNetworkSubmit}
-      className="flex flex-col gap-5"
+      className={`flex flex-col gap-5 ${grid}`}
       noValidate
     >
       <div aria-hidden="true" className="sr-only">
@@ -152,7 +171,7 @@ export function InstallerNetworkForm({ expectation }: { readonly expectation?: s
         />
       </Field>
 
-      <Field label="Experience summary" htmlFor={`${formId}-experienceSummary`} required>
+      <Field label="Experience summary" htmlFor={`${formId}-experienceSummary`} required className={wide}>
         <textarea
           id={`${formId}-experienceSummary`}
           name="experienceSummary"
@@ -164,7 +183,7 @@ export function InstallerNetworkForm({ expectation }: { readonly expectation?: s
         />
       </Field>
 
-      <fieldset className="flex flex-col gap-2">
+      <fieldset className={`flex flex-col gap-2 ${wide}`}>
         <legend className="text-[length:var(--text-small)] font-semibold text-ink">
           Platform experience with (optional)
         </legend>
@@ -206,7 +225,7 @@ export function InstallerNetworkForm({ expectation }: { readonly expectation?: s
         />
       </Field>
 
-      <label htmlFor={`${formId}-consent`} className="flex items-start gap-3 text-[length:var(--text-small)] text-ink-muted">
+      <label htmlFor={`${formId}-consent`} className={`flex items-start gap-3 text-[length:var(--text-small)] text-ink-muted ${wide}`}>
         <input
           id={`${formId}-consent`}
           name="consent"
@@ -219,7 +238,7 @@ export function InstallerNetworkForm({ expectation }: { readonly expectation?: s
         I consent to be contacted about Installer Network opportunities.
       </label>
 
-      <label htmlFor={`${formId}-noGuarantee`} className="flex items-start gap-3 text-[length:var(--text-small)] text-ink-muted">
+      <label htmlFor={`${formId}-noGuarantee`} className={`flex items-start gap-3 text-[length:var(--text-small)] text-ink-muted ${wide}`}>
         <input
           id={`${formId}-noGuarantee`}
           name="noGuaranteeAcknowledged"
@@ -237,16 +256,16 @@ export function InstallerNetworkForm({ expectation }: { readonly expectation?: s
       <button
         type="submit"
         disabled={submitting}
-        className="inline-flex min-h-12 items-center justify-center rounded-md bg-[var(--color-accent-blue-strong)] px-6 py-3 text-base font-semibold text-white transition-[filter] duration-150 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+        className={`inline-flex min-h-12 items-center justify-center rounded-md bg-[var(--color-accent-blue-strong)] px-6 py-3 text-base font-semibold text-white transition-[filter] duration-150 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60 ${wide}`}
       >
         {submitting ? "Sending..." : "Submit Your Interest"}
       </button>
 
       {expectation ? (
-        <p className="text-[length:var(--text-small)] text-ink-muted">{expectation}</p>
+        <p className={`text-[length:var(--text-small)] text-ink-muted ${wide}`}>{expectation}</p>
       ) : null}
 
-      <div role="status" aria-live="polite" className="text-[length:var(--text-small)]">
+      <div role="status" aria-live="polite" className={`text-[length:var(--text-small)] ${wide}`}>
         {status === "error" && errorMessage ? (
           <p className="rounded-md border border-error bg-surface-subtle p-4 text-error">
             {errorMessage}{" "}
@@ -267,15 +286,17 @@ function Field({
   label,
   htmlFor,
   required = false,
+  className = "",
   children,
 }: {
   label: string;
   htmlFor: string;
   required?: boolean;
+  className?: string;
   children: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className={`flex flex-col gap-1.5 ${className}`}>
       <label htmlFor={htmlFor} className="text-[length:var(--text-small)] font-semibold text-ink">
         {label}
         {required ? <span aria-hidden="true"> *</span> : null}

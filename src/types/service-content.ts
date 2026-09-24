@@ -310,9 +310,17 @@ export interface ServicePageBundle {
   readonly relatedCards: readonly HubRelatedCard[];
 }
 
+export interface InformationItem {
+  readonly text: string;
+  /** Decorative icon shown before the text. */
+  readonly icon: "contact" | "location" | "experience" | "travel" | "platform" | "tools";
+}
+
 export interface CareersEquipmentCard {
   readonly title: string;
   readonly description: string;
+  /** Optional decorative icon shown above the title. */
+  readonly icon?: "technician" | "vehicle" | "location";
 }
 
 /**
@@ -327,6 +335,9 @@ export interface CareersHubPageContent {
   /** Document title, without the site-name suffix the layout appends. */
   readonly metaTitle: string;
   readonly hero: {
+    readonly eyebrow: string;
+    readonly h1: string;
+    readonly intro: string;
     readonly primaryCta: Cta;
     readonly callLabel: string;
     readonly qualifier: string;
@@ -359,14 +370,56 @@ export interface CareersHubPageContent {
   };
   readonly answer: HubSplitSection;
   readonly fit: HubSplitSection;
-  readonly requirements: HubSplitSection;
+  /** Requirements and experience: callout, three grouped lists, and supporting notes. */
+  readonly requirements: {
+    readonly h2: string;
+    readonly callout: { readonly title: string; readonly body: string };
+    readonly core: { readonly heading: string; readonly items: readonly string[] };
+    readonly preferred: {
+      readonly heading: string;
+      readonly label: string;
+      readonly items: readonly string[];
+    };
+    readonly asks: { readonly heading: string; readonly items: readonly string[] };
+    /** Age recommendation and no-guarantee statement, in reading order. */
+    readonly notes: readonly string[];
+  };
+  /** Heading and intro only. The cards are the homepage service cards, reused as-is. */
   readonly equipment: {
     readonly h2: string;
     readonly intro: string;
-    readonly cards: readonly CareersEquipmentCard[];
   };
-  readonly fieldWork: HubSplitSection;
-  readonly information: HubSplitSection;
+  /** On-site installation environments: heading, intro, four vehicle image cards, and a note. */
+  readonly fieldWork: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly cards: readonly {
+      readonly title: string;
+      readonly description: string;
+      readonly image: {
+        readonly src: string;
+        readonly width: number;
+        readonly height: number;
+        readonly alt: string;
+      };
+    }[];
+    readonly note: string;
+  };
+  /** Requested and optional form details, shown as two grouped icon lists. */
+  readonly information: {
+    readonly h2: string;
+    readonly intro: readonly string[];
+    readonly requested: {
+      readonly heading: string;
+      readonly items: readonly InformationItem[];
+    };
+    readonly optional: {
+      readonly heading: string;
+      readonly label: string;
+      readonly items: readonly InformationItem[];
+    };
+    readonly note: string;
+  };
   readonly where: HubSplitSection;
   readonly after: HubSplitSection;
   readonly join: {
@@ -378,15 +431,15 @@ export interface CareersHubPageContent {
     readonly phoneLead: string;
   };
   readonly faqHeading: string;
-  readonly handoff: {
+  /** Business installation inquiry, kept separate from the Installer Network form. */
+  readonly commercial: {
     readonly h2: string;
     readonly body: string;
-    readonly links: readonly HubLink[];
+    readonly cta: Cta;
   };
-  /** Text-link cluster to approved service pages and coverage. */
+  /** Heading for the related-services card grid. */
   readonly relatedLinks: {
     readonly h2: string;
-    readonly links: readonly HubLink[];
   };
 }
 

@@ -36,10 +36,16 @@ interface ServicesHeroProps {
     readonly height: number;
   };
   /**
-   * Overlay color over the background video. Defaults to black (existing
-   * pages). `navy` uses the dark surface token at 75% for a navy-led hero.
+   * Black overlay strength over the background photo, in percent. Defaults to
+   * 65. Overlays are always black across this project.
    */
-  readonly overlay?: "black" | "navy";
+  readonly backgroundOverlayStrength?: 55 | 65;
+  /**
+   * Vertical anchor for the cropped background photo. `top` keeps the top of
+   * the frame visible when the hero is wider than the image. Defaults to
+   * `center`.
+   */
+  readonly backgroundFocus?: "center" | "top";
   /** Short audience line directly under the intro, above the buttons. */
   readonly audience?: string;
   /** Low-emphasis text link under the buttons, e.g. a rollout route. */
@@ -80,7 +86,8 @@ export function ServicesHero({
   image,
   backgroundVideo,
   backgroundImage,
-  overlay = "black",
+  backgroundOverlayStrength = 65,
+  backgroundFocus = "center",
   audience,
   secondaryLink,
   scopeItems,
@@ -118,11 +125,14 @@ export function ServicesHero({
           height={backgroundImage.height}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 -z-20 h-full w-full object-cover object-[85%_center] md:object-center"
+          className={`absolute inset-0 -z-20 h-full w-full object-cover ${backgroundFocus === "top" ? "object-[85%_top] md:object-top" : "object-[85%_center] md:object-center"}`}
         />
       ) : null}
       {backgroundImage ? (
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/65" />
+        <div
+          aria-hidden="true"
+          className={`absolute inset-0 -z-10 ${backgroundOverlayStrength === 55 ? "bg-black/55" : "bg-black/65"}`}
+        />
       ) : null}
       {backgroundVideo ? (
         <>
@@ -150,7 +160,7 @@ export function ServicesHero({
           </video>
           <div
             aria-hidden="true"
-            className={`absolute inset-0 -z-10 ${overlay === "navy" ? "bg-[var(--color-surface-dark)]/75" : "bg-black/55"}`}
+            className="absolute inset-0 -z-10 bg-black/55"
           />
         </>
       ) : null}

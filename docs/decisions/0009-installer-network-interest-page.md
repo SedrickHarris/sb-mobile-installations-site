@@ -41,3 +41,12 @@ experienced mobile fleet-installation technicians, not a job listing.
    `Person`, `Occupation`, `Offer`, or `LocalBusiness`.
 9. **Media.** The hero uses the decorative fallback until approved photography
    exists. No image, preload, or label reaches the production build.
+10. **Commercial inquiry section (requested 2026-09-24, needs written stakeholder
+    confirmation).** The page ends with a business installation inquiry section
+    that renders `CommercialInquiryForm`, followed by the current-opening
+    pointer, the shared `InstallerQuestions` block, and the six homepage service
+    cards. This departs from docs/20 (line 2716), the `CommercialInquiryForm`
+    source comment, and CLAUDE.md section 4, which keep the two forms off the
+    same page. The two forms stay separate components with separate submission
+    handlers, thank-you routes, and journey attributes, and sit in different
+    sections. Until confirmed in writing, treat this as an open exception.

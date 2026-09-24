@@ -65,7 +65,6 @@ export default function ContactPage() {
         }}
         phoneLocation="contact-hero"
         backgroundVideo={page.hero.video}
-        overlay="navy"
       />
 
       {/*

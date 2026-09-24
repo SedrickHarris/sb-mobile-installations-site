@@ -45,6 +45,8 @@ interface SectionProps {
   };
   /** 55% black overlay over `backgroundImage`, under the content. */
   readonly backgroundOverlay?: boolean;
+  /** Crop anchor for `backgroundImage`. Defaults to `left-bottom`. */
+  readonly backgroundPosition?: "left-bottom" | "center";
   readonly center?: boolean;
 }
 
@@ -94,6 +96,7 @@ export function Section({
   labelledBy,
   backgroundImage,
   backgroundOverlay = false,
+  backgroundPosition = "left-bottom",
   center = false,
 }: SectionProps) {
   return (
@@ -114,7 +117,7 @@ export function Section({
           height={backgroundImage.height}
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-left-bottom"
+          className={`absolute inset-0 -z-10 h-full w-full object-cover ${backgroundPosition === "center" ? "object-center" : "object-left-bottom"}`}
         />
       ) : null}
       {backgroundImage && backgroundOverlay ? (

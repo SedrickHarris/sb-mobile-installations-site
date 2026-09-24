@@ -35,6 +35,16 @@ interface SplitFeatureProps {
   /** Vertical padding of the section. Defaults to the Section default. */
   readonly density?: "compact" | "standard" | "spacious";
   /**
+   * Decorative text-free photo behind the section, under a 55% black overlay.
+   * Use with `tone="dark"` so the copy is light on the darkened photo.
+   */
+  readonly backgroundImage?: {
+    readonly src: string;
+    readonly width: number;
+    readonly height: number;
+  };
+  readonly backgroundPosition?: "left-bottom" | "center";
+  /**
    * Optional animated media for the media column, used in place of `slot`'s
    * image. Muted, looping, inline, no preload, hidden from assistive tech
    * unless `label` is set. The poster always renders beneath the video and is
@@ -72,6 +82,8 @@ export function SplitFeature({
   mediaShare = "even",
   density,
   video,
+  backgroundImage,
+  backgroundPosition,
 }: SplitFeatureProps) {
   const headingId = `${id}-heading`;
   const hasMedia = Boolean(slot ?? video);
@@ -93,6 +105,9 @@ export function SplitFeature({
       width={hasMedia ? "site" : "reading"}
       density={density}
       labelledBy={headingId}
+      backgroundImage={backgroundImage}
+      backgroundOverlay={Boolean(backgroundImage)}
+      backgroundPosition={backgroundPosition}
     >
       <div
         className={
@@ -143,7 +158,9 @@ export function SplitFeature({
                 content.lists.length > 1 ? "sm:grid-cols-2" : ""
               }${
                 content.listPanel
-                  ? " rounded-lg border border-border bg-surface p-6"
+                  ? dark
+                    ? " rounded-lg border border-[var(--color-border-dark)] bg-[var(--color-surface-dark-raised)] p-6"
+                    : " rounded-lg border border-border bg-surface p-6"
                   : ""
               }`}
             >
