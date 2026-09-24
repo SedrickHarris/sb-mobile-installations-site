@@ -119,6 +119,10 @@ vehicle or an entire fleet") and the photo-documentation practice (item 10).
   scheduling, on-site installation, photo documentation, follow-up)? This is
   needed to confirm or correct the process copy already published on
   `/our-process/` against actual operating practice.
+- Is "Our Process" approved as the visible page label, navigation label, and
+  H1? No document records approval. The page was rebuilt 2026-09-24 as a
+  commercial intake guide with no workflow claims, and the label was kept at
+  the user's direction, but it can still imply a formal operating process.
 
 ## 9. Proof assets available for publication
 
