@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 import { CardGrid } from "@/components/layout/CardGrid";
 import { Section } from "@/components/layout/Section";
 import { Card } from "@/components/ui/Card";
 import { business } from "@/data/site/business";
+import { installCardLinks } from "@/data/site/service-pages-content";
 import { serviceImages } from "@/data/site/service-images";
 import type { WhatWeInstallContent } from "@/types/content";
 
@@ -21,7 +24,9 @@ interface WhatWeInstallGridProps {
  * Each card carries a description, an optional "Use cases" list, and an
  * optional qualification note, all server-rendered HTML text keyed by
  * service name. Cards are equal height. The images are decorative; the h3
- * names the category.
+ * names the category. A card with a specific service page gets one visible
+ * "Learn more" link at the bottom (`installCardLinks`); cards without a page
+ * of their own stay unlinked rather than sharing another card's destination.
  */
 function slug(service: string): string {
   return service.toLowerCase().replace(/[^a-z0-9]+/g, "-");
@@ -84,6 +89,17 @@ export function InstallCategoryCard({
               ))}
             </ul>
           </div>
+        ) : null}
+        {installCardLinks[service] ? (
+          <p className="mt-auto pt-5">
+            <Link
+              href={installCardLinks[service]}
+              className="inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+            >
+              Learn more about {service}
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </p>
         ) : null}
       </div>
     </Card>

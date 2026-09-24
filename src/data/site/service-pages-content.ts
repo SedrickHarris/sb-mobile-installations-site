@@ -1,4 +1,5 @@
 import { utilityBar } from "@/data/navigation/site-navigation";
+import { business } from "@/data/site/business";
 import { homepageContent } from "@/data/site/homepage-content";
 import { careersHubImages } from "@/data/site/careers-hub-images";
 import { careersLandingContent } from "@/data/site/careers-landing-content";
@@ -158,6 +159,28 @@ const serviceCards: Record<ServiceSlug, HubRelatedCard> = {
     linkLabel: "Explore fleet rollout services",
     href: "/services/fleet-rollouts/",
   },
+};
+
+/**
+ * Destination for each "What We Install" card, from the approved service-page
+ * routes above. A service appears here only when a page covers it specifically:
+ * GPS, ELD, and dashcam have their own pages, and fleet management equipment
+ * points to the fleet telematics umbrella page that covers it
+ * (docs/_claims-inventory.md, "Four Sprint 1 service pages").
+ *
+ * Deliberately absent: AOBRD (covered on the ELD page, no page of its own, so
+ * it is not sent to the ELD card's destination) and TPMS (folded into the
+ * telematics umbrella, no page of its own). Those cards stay unlinked until a
+ * specific page exists.
+ */
+export const installCardLinks: Readonly<
+  Partial<Record<(typeof business.serviceTypes)[number], string>>
+> = {
+  "GPS tracking installation": serviceCards["gps-tracking-installation"].href,
+  "ELD installation": serviceCards["eld-installation"].href,
+  "Fleet dashcam installation": serviceCards["dashcam-camera-installation"].href,
+  "Fleet management equipment installation":
+    serviceCards["fleet-telematics-installation"].href,
 };
 
 const FIT_NOTE = "These are general signals, not compliance or technical advice.";
