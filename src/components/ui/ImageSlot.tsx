@@ -65,7 +65,11 @@ export function ImageSlot({
         loading={priority ? "eager" : "lazy"}
         decoding="async"
         className={`${frame} h-auto object-cover`}
-        style={style}
+        style={
+          slot.objectPosition
+            ? { ...style, objectPosition: slot.objectPosition }
+            : style
+        }
       />
     );
   }

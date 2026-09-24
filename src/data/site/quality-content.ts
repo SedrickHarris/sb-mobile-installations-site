@@ -1,10 +1,3 @@
-import { INSTALLER_NETWORK_PATH } from "@/data/jobs/routes";
-import {
-  getServiceCard,
-  SERVICE_CARD_ORDER,
-  vehicleContext,
-} from "@/data/site/service-pages-content";
-
 /**
  * `/quality-safety/` content.
  *
@@ -36,9 +29,6 @@ export const PHOTO_DOCUMENTATION_SENTENCE =
 const NATIONWIDE_SENTENCE =
   "Nationwide mobile installation service, delivered at the customer's location.";
 
-const QUOTE_QUALIFIER =
-  "Tell us about your equipment, vehicle count, project locations, and preferred timing.";
-
 export const qualitySafetyContent = {
   h1: "Quality & Safety",
   // The layout title template appends " | SB Mobile Installations".
@@ -47,9 +37,10 @@ export const qualitySafetyContent = {
     "Nationwide mobile installation service, delivered at the customer's location. Every installation is photo documented, and you'll receive that documentation automatically.",
 
   hero: {
-    eyebrow: "Commercial Installation Information",
+    eyebrow: "INSTALLATION QUALITY & SAFETY",
     paragraphs: [
-      "SB Mobile Installations provides nationwide mobile installation service at the customer's location. Our commercial installation pages explain approved installation scope, vehicle context, and documentation for your project.",
+      "SB Mobile Installations provides on-site fleet-electronics installation for commercial and fleet vehicles across the United States. Before work begins, project details help define the approved equipment, vehicle types, installation scope, locations, and schedule.",
+      "Installers follow the approved project requirements and document completed work. Photo documentation gives fleet teams a record of the installation for review and project coordination.",
     ],
     cta: {
       label: "Request an Installation Quote",
@@ -57,8 +48,10 @@ export const qualitySafetyContent = {
       journey: "commercial",
       event: "cta_quote_click",
     },
-    qualifier: QUOTE_QUALIFIER,
-    documentationLine: PHOTO_DOCUMENTATION_SENTENCE,
+    qualifier:
+      "Tell us which equipment needs to be installed, how many vehicles are involved, where the vehicles will be available, and your preferred timing.",
+    documentationLine:
+      "Installation documentation is provided as part of the project closeout.",
   },
 
   scope: {
@@ -96,18 +89,22 @@ export const qualitySafetyContent = {
     h2: "Commercial Installation Context",
     intro:
       "These pages describe the physical installation context for each approved service. ELD content does not represent compliance or legal advice.",
-    cards: SERVICE_CARD_ORDER.map((slug) => getServiceCard(slug)),
+    // Cards come from the homepage whatWeInstall data (business.serviceTypes).
   },
 
   vehicles: {
     h2: "Installation Context for Commercial Vehicles",
-    lead: "Common project contexts include work vans, service trucks, utility vehicles, heavy-duty trucks, fleet vehicles, commercial vehicles, and construction vehicles.",
-    note: vehicleContext.note,
+    lead: "SB Mobile Installations provides mobile installation service for approved fleet-technology projects involving commercial vehicles. Common project contexts include work vans, service trucks, utility vehicles, heavy-duty trucks, fleet vehicles, and construction vehicles.",
+    body: "The vehicle type and approved equipment help define the installation scope for each project. Share the vehicle details and equipment requirements when requesting a quote so the project can be reviewed in context.",
+    note: "These vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
   },
 
   projectLocation: {
     h2: "Mobile Installation at Your Project Location",
-    body: [NATIONWIDE_SENTENCE],
+    body: [
+      "Mobile installation lets fleet teams coordinate equipment installation at a customer-designated location. SB Mobile Installations provides nationwide on-site installation service for commercial vehicles.",
+      "Before scheduling, share the equipment being installed, the vehicle types and number of vehicles, the project locations, and your preferred timing. These details help define the installation scope and support coordination for your project.",
+    ],
   },
 
   projectInfo: {
@@ -126,38 +123,57 @@ export const qualitySafetyContent = {
     h2: "Questions About Installation Documentation and Scope",
     items: [
       {
-        question: "What documentation is provided after installation?",
-        answer: PHOTO_DOCUMENTATION_SENTENCE,
+        question:
+          "What information should I include when requesting a fleet installation quote?",
+        answer:
+          "Share the equipment to be installed, the number and types of vehicles, project locations, and your preferred timing. These details help SB Mobile Installations understand the requested project scope.",
       },
       {
         question: "Where does SB Mobile Installations provide service?",
         answer:
-          "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location.",
+          "SB Mobile Installations provides nationwide mobile installation service at customer locations. Share the project locations when requesting a quote so the service requirements can be reviewed.",
       },
       {
-        question: "What information should I include in an installation quote request?",
-        answer: QUOTE_QUALIFIER,
-      },
-      {
-        question: "What installation contexts can be discussed?",
+        question:
+          "What types of fleet equipment can SB Mobile Installations install?",
         answer:
-          "Approved service contexts include fleet telematics installation, GPS tracking installation, ELD installation, fleet dashcam and video recorder installation, and fleet rollout installation services.",
+          "Installation services include GPS tracking, ELD, AOBRD, TPMS, fleet dashcams, and fleet management equipment. The equipment requested and vehicle details help define the installation scope for each project.",
       },
       {
-        question: "Does ELD installation include compliance or legal advice?",
+        question:
+          "Can the same equipment be installed in every type of commercial vehicle?",
         answer:
-          "No. ELD content describes physical installation context and does not represent compliance or legal advice.",
+          "Not necessarily. Work vans, service trucks, utility vehicles, heavy-duty trucks, fleet vehicles, and construction vehicles are examples of common project contexts. Compatibility depends on the equipment and vehicle; not every hardware category is installed in every vehicle type.",
       },
       {
-        question: "Does the page describe every vehicle and hardware combination?",
-        answer: `No. ${vehicleContext.note}`,
+        question: "What happens during an on-site fleet installation project?",
+        answer:
+          "Installation work takes place at a customer-designated location. When requesting a quote, provide the equipment, vehicle count and types, project locations, and preferred timing so the project can be reviewed and coordinated.",
+      },
+      {
+        question: "What installation documentation is provided after the work?",
+        answer:
+          "Documentation practices may depend on the project. Ask about documentation when requesting a quote so the expected records can be confirmed for your installation.",
+      },
+      {
+        question: "Does SB Mobile Installations provide ELD compliance or legal advice?",
+        answer:
+          "No. Information about ELD installation describes the physical installation context. It does not provide compliance guidance or legal advice. For compliance questions, consult the relevant regulator or a qualified advisor.",
+      },
+      {
+        question: "How do I request an installation quote?",
+        answer:
+          "Use the installation quote form and include the equipment, vehicle count and types, project locations, and preferred timing. SB Mobile Installations can review those details to understand the project request.",
       },
     ],
   },
 
   quote: {
     h2: "Request an Installation Quote",
-    intro: QUOTE_QUALIFIER,
+    intro:
+      "Tell us about your equipment or service needs, the number of vehicles or assets, project locations, and preferred timing. These details help us understand the installation request and review its scope.",
+    detail:
+      "Use the project description field to share additional context, such as vehicle types or other details that may help us assess your request.",
     // Field labels, payload, validation, and analytics are unchanged.
     formCopy: {
       serviceNeed: "Equipment or service needed",
@@ -165,24 +181,11 @@ export const qualitySafetyContent = {
     },
   },
 
-  // Quiet recruitment handoff: text only, separate journey and event.
-  handoff: {
-    prompt: "Are you an experienced mobile fleet installation technician?",
-    link: {
-      label: "Learn about the SB Mobile Installations Installer Network",
-      href: INSTALLER_NETWORK_PATH,
-      journey: "recruitment",
-      event: "cta_installer_network_click",
-    },
-  },
-
   related: {
     h2: "Related Resources",
+    // The six service cards come from the homepage whatWeInstall data
+    // (business.serviceTypes); only the remaining text links live here.
     links: [
-      ...SERVICE_CARD_ORDER.map((slug) => {
-        const card = getServiceCard(slug);
-        return { label: card.title, href: card.href };
-      }),
       { label: "Nationwide fleet installation coverage", href: "/coverage/" },
       { label: "Contact SB Mobile Installations", href: "/contact/" },
     ],

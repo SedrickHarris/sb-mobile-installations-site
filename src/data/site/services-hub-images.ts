@@ -23,6 +23,8 @@ export interface HubImageSlot {
   /** Which decorative motif the production fallback draws. */
   readonly fallback: ImageSlotFallback;
   readonly src?: string;
+  /** CSS object-position for the cropped image. Defaults to centered. */
+  readonly objectPosition?: string;
   readonly alt: string;
   readonly altGuidance: string;
 }

@@ -16,38 +16,55 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  *
  * `altGuidance` is a note for whoever supplies the file. It is never rendered.
  */
+/**
+ * Decorative full-width hero background. Empty alt and hidden from assistive
+ * tech: the hero text carries the meaning. Sits under a black overlay.
+ */
+export const qualityHeroBackground = {
+  src: "/images/brand/quality-safety/hero/sb-mobile-installations-quality-safety-fleet-electronics-installation-documentation-hero-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
+/**
+ * Decorative background for the quote section. Empty alt and hidden from
+ * assistive tech. Sits under a black overlay. The file lives in
+ * brand/quality-safety/, one level above the hero folder.
+ */
+export const qualityQuoteBackground = {
+  src: "/images/brand/quality-safety/sb-mobile-installations-quality-safety-installation-quote-fleet-background-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
 export const qualityImages = {
-  hero: {
-    slotId: "quality-hero",
-    role: "Authentic approved photo of a mobile installation at a customer location",
-    aspectRatio: "4 / 3",
-    width: 2896,
-    height: 2172,
-    fallback: "grid",
-    alt: "",
-    altGuidance:
-      "Describe only what is shown. No safety, inspection, or certification implication and no device-brand logos.",
-  },
   projectLocation: {
     slotId: "quality-project-location",
     role: "Authentic approved photo of an on-site installation at a customer location",
-    aspectRatio: "3 / 2",
-    width: 3318,
-    height: 2212,
+    aspectRatio: "4 / 3",
+    width: 3344,
+    height: 1882,
     fallback: "route",
-    alt: "",
+    src: qualityHeroBackground.src,
+    // The left half of the photo is an empty truck door; crop toward the technician.
+    objectPosition: "85% center",
+    alt: "Technician in a dark cap and navy work shirt kneeling at the open door of a commercial truck cab, connecting equipment to wiring under the dashboard",
     altGuidance:
       "Describe only what is shown. Never a map, an office, a state or city identifier, or any graphic implying coverage.",
   },
   vehicleContext: {
     slotId: "quality-vehicle-context",
-    role: "Optional photo of an approved vehicle type (work van, service truck, utility, heavy-duty truck, fleet, commercial, or construction vehicle)",
-    aspectRatio: "3 / 2",
-    width: 3318,
-    height: 2212,
+    role: "Commercial vehicles of different types parked outside a commercial building",
+    aspectRatio: "4 / 3",
+    width: 2896,
+    height: 2172,
     fallback: "grid",
-    alt: "",
+    // The file sits in brand/quality-safety/, one level above the hero folder.
+    src: "/images/brand/quality-safety/sb-mobile-installations-quality-safety-commercial-fleet-vehicle-types-4x3.webp",
+    // The vehicles sit in the middle band of the frame; keep that band in view if cropped.
+    objectPosition: "center 60%",
+    alt: "A white cargo van, a white service truck with a utility body, and a navy heavy-duty truck parked side by side outside a commercial building",
     altGuidance:
-      "Show only approved vehicle types. Rendered with omitFallback, so nothing appears until a real file is set.",
+      "Describe only what is shown. Approved vehicle types only, no device-brand logos, and no coverage or market claim.",
   },
 } as const satisfies Record<string, HubImageSlot>;
