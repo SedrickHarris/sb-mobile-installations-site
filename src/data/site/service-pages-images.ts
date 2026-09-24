@@ -326,9 +326,59 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
         "Uses the approved mounting and cable routing photo. Describe only what is shown. No device-brand logos, footage, or capability claims.",
     },
   },
-  "fleet-rollouts": slots(
-    "rollouts",
-    "Several commercial vehicles at a project location",
-    "Describe the vehicles and setting shown. No implied map or coverage area.",
-  ),
+  // Placeholder slots: no src, so production renders the decorative fallback.
+  // Assets go in public/images/services/fleet-rollouts/. Fallbacks are abstract
+  // route-line and fleet-grid motifs, never a map, pin, or dashboard.
+  "fleet-rollouts": {
+    ...slots(
+      "rollouts",
+      "Several commercial vehicles at a project location",
+      "Describe the vehicles and setting shown. No map, state outline, city label, pin, dispatch or dashboard view, platform logo, or customer-site information.",
+      "sb-mobile-installations-fleet-rollout-vehicle-context.webp",
+    ),
+    definition: {
+      slotId: "service-rollouts-definition",
+      role: "Commercial fleet vehicles grouped at a project location",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "route",
+      alt: "",
+      altGuidance:
+        "Describe only what is shown. No map, no coverage or capacity implication, no customer signage or readable plates.",
+    },
+    scope: {
+      slotId: "service-rollouts-scope",
+      role: "Fleet electronics and mounting hardware prepared for a commercial vehicle",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      alt: "",
+      altGuidance:
+        "Describe only what is shown. No device-brand logos, screens, or capability claims.",
+    },
+    fit: {
+      slotId: "service-rollouts-fit",
+      role: "Commercial vehicles staged at a fleet facility",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      alt: "",
+      altGuidance:
+        "Describe only what is shown, without implying installation work is pictured. No readable plates or customer signage.",
+    },
+    nationwide: {
+      slotId: "service-rollouts-nationwide",
+      role: "Commercial fleet vehicles at a customer project location",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "route",
+      alt: "",
+      altGuidance:
+        "Never a map or graphic implying coverage, and no city or state identifiers.",
+    },
+  },
 };

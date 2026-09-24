@@ -252,7 +252,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         id={`${id}-nationwide`}
         tone="dark"
         content={{
-          h2: shared.nationwide.h2,
+          h2: content.nationwideContext?.h2 ?? shared.nationwide.h2,
           body: content.nationwideContext?.body ?? [
             shared.nationwide.lead,
             content.nationwideExtra,

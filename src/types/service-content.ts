@@ -114,6 +114,8 @@ export interface ServiceTemplateContent {
   };
   /** Optional page-specific paragraphs and links for the project-location section. */
   readonly nationwideContext?: {
+    /** Optional heading replacing the shared project-location heading. */
+    readonly h2?: string;
     readonly body: readonly string[];
     readonly links: readonly HubLink[];
   };

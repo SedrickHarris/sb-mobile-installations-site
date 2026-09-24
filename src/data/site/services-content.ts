@@ -338,33 +338,39 @@ export const dashcamCameraInstallationContent: ServicePageContent = {
  * the same constraint applied to DeploymentProcessSteps on the homepage.
  */
 export const fleetRolloutsContent: ServicePageContent = {
-  h1: "Fleet Rollout Services",
+  h1: "Fleet Rollout Installation Services",
   metaDescription:
-    "Multi-vehicle and multi-location GPS, ELD, and fleet electronics installation rollouts, coordinated nationwide. Technicians travel directly to each project location.",
+    "Discuss nationwide installation support for one vehicle or an entire fleet, including multiple project locations. Share your equipment, vehicle count, project locations, and preferred timing in an installation quote request.",
   intro:
-    "SB Mobile Installations coordinates multi-vehicle and multi-location installation projects nationwide, from one vehicle to an entire fleet. Technicians travel directly to each project location. Share your equipment, vehicle count, project locations, and preferred timing to start a rollout conversation.",
+    "Discuss installation support for one vehicle or an entire fleet, including multiple project locations.",
   body: [],
   faq: [
     {
-      question: "Can you handle a rollout across multiple locations?",
+      question: "What are Fleet Rollout Installation Services?",
       answer:
-        "Yes. SB Mobile Installations coordinates installation projects of any size nationwide, from one vehicle to an entire fleet, with technicians traveling directly to each location.",
+        "Fleet Rollout Installation Services provide a starting point for installation requests involving one vehicle or an entire fleet, including multiple project locations.",
     },
     {
-      question: "Will each vehicle in a rollout receive its own documentation?",
+      question: "Can I submit a request for one vehicle or an entire fleet?",
       answer:
-        "Every installation is photo documented, and you'll receive that documentation automatically for each vehicle.",
+        "Yes. Use the request form to share the equipment, vehicle count, project locations, and preferred timing for the installation request.",
     },
     {
       question:
-        "What information should I include for a multi-location rollout request?",
+        "Can I include multiple project locations in an installation request?",
       answer:
-        "Include each project location, the approximate number of vehicles at each location, the equipment you need installed, and your preferred timing.",
+        "Yes. Include the project locations relevant to the request along with equipment, vehicle count, and preferred timing.",
     },
     {
-      question: "How is a fleet rollout different from a single installation?",
+      question:
+        "What types of installation requests can be discussed through Fleet Rollouts?",
       answer:
-        "A rollout covers many vehicles, more than one location, or both. A single installation covers one vehicle. SB Mobile Installations coordinates both, and you request either through the same quote form.",
+        "Use Fleet Rollouts as a starting point for a broader installation request. You can also explore Fleet Telematics Installation, GPS Tracking Installation, ELD Installation, and Dashcam & Camera Installation for hardware-specific context.",
+    },
+    {
+      question: "What should I include in a Fleet Rollout Installation request?",
+      answer:
+        "Include equipment, vehicle count, project locations, and preferred timing.",
     },
   ],
 };

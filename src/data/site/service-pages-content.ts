@@ -823,59 +823,131 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     scopeItems: [
       "One vehicle or an entire fleet",
       "Multiple project locations",
-      "Nationwide service context",
     ],
+    hero: {
+      intro:
+        "Discuss installation support for one vehicle or an entire fleet, including multiple project locations.",
+      ctaLabel: "Request an Installation Quote",
+    },
     definition: {
-      h2: "What Is a Fleet Rollout?",
+      h2: "What Are Fleet Rollout Installation Services?",
       body: [
-        "A fleet rollout is an installation project that covers many vehicles, more than one location, or both. SB Mobile Installations coordinates these projects nationwide, from one vehicle to an entire fleet.",
-        "Rollouts cover the confirmed equipment categories: GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment. We install and deploy the hardware; we are not the platform vendor.",
-        "To start a conversation, share your equipment, vehicle count, project locations, and preferred timing.",
+        "Fleet Rollout Installation Services provide a starting point for installation requests involving one vehicle or an entire fleet, including multiple project locations.",
+        "Share your equipment, vehicle count, project locations, and preferred timing to describe the context of your request.",
       ],
     },
     scope: {
-      h2: "What Fleet Rollout Coordination Can Include",
-      body: [],
+      h2: "Installation Context for Commercial Fleet Projects",
+      body: ["These details help frame your installation request."],
       lists: [
         {
-          style: "checklist",
+          style: "labeled",
           items: [
-            "Multi-vehicle projects: installation across many vehicles, up to an entire fleet",
-            "Multi-location projects: coordination across more than one project location",
-            "On-site installation: technicians travel directly to each location",
-            "Mounting, connection, and routing: the same physical installation work on each vehicle",
+            "Equipment: Describe the approved hardware involved.",
+            "Vehicle count: Share the number of vehicles included in the request.",
+            "Project locations: Include the locations relevant to the request.",
+            "Preferred timing: Let us know your preferred timing.",
           ],
         },
       ],
     },
+    vehicleContext: {
+      h2: "Installation Support for One Vehicle or an Entire Fleet",
+    },
     vehiclesBody:
-      "Fleet rollouts cover fleet, commercial, and construction vehicles.",
+      "One vehicle: describe the equipment and vehicle context for an individual installation request. An entire fleet: describe the vehicle count and installation context for a broader fleet request.",
     fit: {
-      h2: "When a Fleet Rollout May Be a Fit",
-      body: [],
-      listPanel: true,
-      lists: [
+      h2: "When Fleet Rollout Installation Services May Be a Fit",
+      body: [
+        "Use these related service pages to find the most relevant starting point for your installation request. For one vehicle or an entire fleet, including multiple project locations, this page is the starting point.",
+      ],
+      links: [
         {
-          heading: "This service may be a fit when",
-          items: [
-            "Your project involves many commercial vehicles",
-            "Your work spans more than one project location",
-            "You want to describe your equipment, vehicle count, locations, and timing before installation work begins",
-          ],
+          label: serviceCards["fleet-telematics-installation"].title,
+          href: serviceCards["fleet-telematics-installation"].href,
+        },
+        {
+          label: serviceCards["gps-tracking-installation"].title,
+          href: serviceCards["gps-tracking-installation"].href,
+        },
+        {
+          label: serviceCards["eld-installation"].title,
+          href: serviceCards["eld-installation"].href,
+        },
+        {
+          label: serviceCards["dashcam-camera-installation"].title,
+          href: serviceCards["dashcam-camera-installation"].href,
         },
       ],
       footnotes: [FIT_NOTE],
     },
+    midCtaHeading:
+      "Discuss Installation Support for One Vehicle or an Entire Fleet",
+    midCtaBody:
+      "Tell us about your equipment, vehicle count, project locations, and preferred timing.",
+    midCtaLabel: "Request an Installation Quote",
     nationwideExtra:
-      "Include each project location, the number of vehicles at each, and the equipment for each.",
+      "Include the locations relevant to the request along with your equipment, vehicle count, and preferred timing.",
+    nationwideContext: {
+      h2: "Multiple Project Locations",
+      body: [
+        "For requests involving multiple project locations, include the locations relevant to the installation request along with your equipment, vehicle count, and preferred timing.",
+        shared.nationwide.lead,
+      ],
+      links: shared.nationwide.links.filter((link) => link.href === "/coverage/"),
+    },
+    relatedSection: {
+      h2: "Related Fleet Installation Services",
+      intro:
+        "Explore related fleet technology installation services from SB Mobile Installations.",
+      cards: [
+        {
+          ...serviceCards["fleet-telematics-installation"],
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Fleet technology cables and hardware inside a commercial vehicle",
+          },
+        },
+        {
+          ...serviceCards["gps-tracking-installation"],
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp",
+            width: 2896,
+            height: 2172,
+            alt: "GPS tracking hardware being mounted under a commercial vehicle dashboard",
+          },
+        },
+        {
+          ...serviceCards["eld-installation"],
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-eld-installation-commercial-truck-cab.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Technician mounting an in-cab device on the dashboard of a commercial truck",
+          },
+        },
+        {
+          ...serviceCards["dashcam-camera-installation"],
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-fleet-dashcam-installation-commercial-truck.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Fleet dashcam mounted in a commercial truck",
+          },
+        },
+      ],
+    },
     related: [
       "fleet-telematics-installation",
       "gps-tracking-installation",
       "eld-installation",
       "dashcam-camera-installation",
     ],
-    faqHeading: "Fleet Rollout FAQs",
-    quoteH2: "Request a Fleet Rollout Quote",
+    faqHeading: "Fleet Rollout Installation Services FAQ",
+    faqLayout: "columns",
+    quoteH2: "Request an Installation Quote",
   },
 };
 
