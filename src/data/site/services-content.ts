@@ -287,41 +287,39 @@ export const dashcamCameraInstallationContent: ServicePageContent = {
   body: [],
   faq: [
     {
-      question: "What is dashcam and camera installation?",
+      question: "What is commercial dashcam installation?",
       answer:
-        "Dashcam and camera installation is the physical installation of approved fleet dashcam and windshield-mounted video recorder hardware in commercial vehicle project contexts.",
+        "Commercial dashcam installation is the physical installation of fleet dashcam or windshield-mounted video recorder hardware in a commercial vehicle. SB Mobile Installations installs the hardware; the work does not include providing the camera’s video platform.",
     },
     {
-      question: "What can dashcam and camera installation include?",
+      question: "What can dashcam installation include?",
       answer:
-        "Approved installation scope includes mounting, connection, and routing for fleet dashcam and video recorder hardware, along with installation coordination for one vehicle or an entire fleet.",
+        "Depending on the approved hardware and vehicle, installation may include mounting the camera, connecting it, and routing its cables within the vehicle. The exact work depends on the equipment and project requirements.",
     },
     {
-      question:
-        "Does SB Mobile Installations provide camera monitoring or video platform services?",
+      question: "Does SB Mobile Installations provide camera monitoring or video platform services?",
       answer:
-        "No. SB Mobile Installations is the installer, not the video platform vendor. This page describes physical installation context. It does not describe camera features, monitoring, video storage, coaching, platform services, or safety outcomes.",
+        "No. SB Mobile Installations installs dashcam and video recorder hardware. We are not the video platform vendor and do not provide camera monitoring, video storage, coaching, or platform services.",
     },
     {
-      question:
-        "What vehicle types can be part of a dashcam installation project?",
+      question: "What types of vehicles can be included in a dashcam installation project?",
       answer:
-        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
+        "Projects may involve work vans, service trucks, utility vehicles, or heavy-duty trucks. Vehicle examples describe common project contexts; they do not guarantee that every hardware category fits every vehicle. Share your vehicle types and equipment details so the project can be scoped.",
     },
     {
-      question: "Can I request installation at our project location?",
+      question: "Can dashcams be installed at my project location?",
       answer:
-        "Yes. Nationwide mobile installation service, delivered at the customer's location. Include project locations in the installation request.",
+        "SB Mobile Installations provides nationwide mobile installation at the customer’s location. For a project inquiry, share the project location, vehicle count, equipment, and preferred timing.",
     },
     {
-      question: "What is documented after a dashcam installation?",
+      question: "What installation documentation will I receive?",
       answer:
-        "Every installation is photo documented, and you'll receive that documentation automatically.",
+        "SB Mobile Installations’ current service information states that installations are photo documented and that documentation is sent automatically. Confirm that this process applies to your project when requesting a quote.",
     },
     {
       question: "What should I include in a dashcam installation quote request?",
       answer:
-        "Include your equipment, vehicle count, project locations, and preferred timing.",
+        "Include the equipment type or model, the number and types of vehicles, each project location, and your preferred timing. These details help SB Mobile Installations understand the installation request.",
     },
   ],
 };

@@ -289,16 +289,29 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       "Suggested file: sb-mobile-installations-dashcam-camera-installation-hero.webp. Describe the hardware shown. No forward-facing, driver-facing, AI, or monitoring wording. No lens view, road footage, driver, cab interior, dashboard, map, platform interface, or device-brand logos.",
       "sb-mobile-installations-dashcam-camera-installation-vehicle-context.webp",
     ),
-    definition: {
-      slotId: "service-dashcam-definition",
-      role: "Fleet dashcam or windshield-mounted video recorder hardware being mounted",
+    context: {
+      slotId: "service-dashcam-context",
+      role: "Commercial work van cab with a discreetly mounted dashcam",
       aspectRatio: "4 / 3",
       width: 2896,
       height: 2172,
-      fallback: "route",
-      alt: "",
+      fallback: "grid",
+      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/sb-mobile-installations-commercial-work-van-dashcam-installation-context-4x3.webp`,
+      alt: "Commercial work van cab with a dashcam mounted at the top of the windshield",
       altGuidance:
-        "Suggested file: sb-mobile-installations-dashcam-camera-installation-hardware-mounting.webp. Describe only the hardware and mounting shown. No device-brand logos, screens, footage, or capability claims.",
+        "Uses the approved work van photo. Describe only what is shown. Do not imply every pictured vehicle type has a dashcam installed. No device-brand logos, footage, or capability claims.",
+    },
+    definition: {
+      slotId: "service-dashcam-definition",
+      role: "Fleet dashcam or windshield-mounted video recorder hardware being mounted",
+      aspectRatio: "16 / 9",
+      width: 3344,
+      height: 1882,
+      fallback: "route",
+      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/hero/sb-mobile-installations-commercial-dashcam-truck-cab-hero-background-16x9.webp`,
+      alt: "Commercial truck cab with a compact dashcam mounted on the windshield",
+      altGuidance:
+        "Uses the approved hero background photo. Describe only what is shown. No device-brand logos, footage, or capability claims. Original placeholder note: sb-mobile-installations-dashcam-camera-installation-hardware-mounting.webp. Describe only the hardware and mounting shown. No device-brand logos, screens, footage, or capability claims.",
     },
     scope: {
       slotId: "service-dashcam-scope",
@@ -307,9 +320,10 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      alt: "",
+      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/sb-mobile-installations-commercial-dashcam-mounting-cable-routing-4x3.webp`,
+      alt: "Dashcam mounted at the top of a commercial vehicle windshield with its cable routed along the headliner",
       altGuidance:
-        "Suggested file: sb-mobile-installations-dashcam-camera-installation-mounting-routing.webp. Describe only what is shown. No people, screens, footage, device-brand logos, or readable text.",
+        "Uses the approved mounting and cable routing photo. Describe only what is shown. No device-brand logos, footage, or capability claims.",
     },
   },
   "fleet-rollouts": slots(

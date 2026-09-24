@@ -623,47 +623,96 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     scopeItems: [
       "Dashcam and video recorder hardware",
       "On-site installation",
-      "Nationwide service context",
+      "Nationwide installation service",
     ],
+    heroBackgroundImage: {
+      src: "/images/services/dashcam-camera-installation/hero/sb-mobile-installations-commercial-dashcam-truck-cab-hero-background-16x9.webp",
+      width: 3344,
+      height: 1882,
+    },
+    hero: {
+      h1: "Commercial Dashcam and Camera Installation",
+      intro:
+        "SB Mobile Installations provides on-site installation of dashcams and windshield-mounted video recorder hardware for commercial and fleet vehicles. We install the hardware; we are not the video platform vendor.",
+      ctaLabel: "Request an Installation Quote",
+    },
     definition: {
       h2: "What Is Dashcam and Camera Installation?",
       body: [
         "Dashcam and camera installation is the physical mounting, connection, and routing work required to place approved fleet dashcam and windshield-mounted video recorder hardware into commercial vehicles.",
-        "SB Mobile Installations installs and deploys this hardware. We are not the video platform vendor. This page describes physical installation context. It does not describe camera features, monitoring, video storage, coaching, platform services, or safety outcomes.",
+        "SB Mobile Installations installs and deploys this hardware. We are not the video platform vendor.",
+        "This page covers physical installation. It does not describe camera features, monitoring, video storage, coaching, platform services, or safety outcomes.",
         "To scope a project, share your equipment, vehicle count, project locations, and preferred timing.",
       ],
     },
     scope: {
-      ...installScope("dashcam or windshield-mounted video recorder"),
       h2: "What Dashcam and Camera Installation Can Include",
       body: [],
+      lists: [
+        {
+          style: "checklist",
+          items: [
+            "Mounting: Physically mounting a dashcam or windshield-mounted video recorder in the vehicle.",
+            "Connection and cable routing: Connecting the hardware and routing its cables within the vehicle.",
+            "On-site coordination: Coordinating installation at the customer’s location for one vehicle or a fleet.",
+          ],
+        },
+      ],
     },
     vehiclesBody:
       "Fleet dashcam and windshield-mounted video recorder hardware is installed on fleet, commercial, and construction vehicles.",
     fit: {
       h2: "When Dashcam and Camera Installation May Be a Fit",
       body: [],
-      listPanel: true,
       lists: [
         {
           heading: "This service may be a fit when",
           items: [
-            "You have approved dashcam or windshield-mounted video recorder hardware that needs physical installation",
-            "Your project involves commercial fleet vehicles",
-            "You can describe the vehicle count and the project locations",
-          ],
-        },
-        {
-          heading: "Other request contexts",
-          items: [
-            "Connected fleet hardware more broadly: Fleet Telematics Installation",
-            "GPS tracking hardware: GPS Tracking Installation",
-            "ELD or AOBRD hardware: ELD Installation",
-            "One vehicle or an entire fleet across multiple project locations: Fleet Rollout Services",
+            "You have approved dashcam or windshield-mounted video recorder hardware that needs physical installation.",
+            "Your project involves commercial fleet vehicles.",
+            "You can share the vehicle count and project locations.",
           ],
         },
       ],
       footnotes: [FIT_NOTE],
+    },
+    fitBackground: {
+      src: "/images/services/dashcam-camera-installation/sb-mobile-installations-commercial-fleet-vehicles-service-fit-background-16x9.webp",
+      width: 3344,
+      height: 1882,
+    },
+    fitRelated: {
+      heading: "Other request contexts",
+      items: [
+        {
+          context: "Connected fleet hardware",
+          link: {
+            label: serviceCards["fleet-telematics-installation"].title,
+            href: serviceCards["fleet-telematics-installation"].href,
+          },
+        },
+        {
+          context: "GPS tracking hardware",
+          link: {
+            label: serviceCards["gps-tracking-installation"].title,
+            href: serviceCards["gps-tracking-installation"].href,
+          },
+        },
+        {
+          context: "ELD or AOBRD hardware",
+          link: {
+            label: serviceCards["eld-installation"].title,
+            href: serviceCards["eld-installation"].href,
+          },
+        },
+        {
+          context: "A vehicle or fleet project across multiple locations",
+          link: {
+            label: serviceCards["fleet-rollouts"].title,
+            href: serviceCards["fleet-rollouts"].href,
+          },
+        },
+      ],
     },
     midCtaHeading:
       "Need fleet dashcam or video recorder hardware installation support?",
@@ -672,6 +721,84 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     midCtaLabel: "Request an Installation Quote",
     nationwideExtra:
       "Include the number of vehicles receiving dashcam or video recorder hardware and each project location.",
+    nationwideContext: {
+      body: [
+        "SB Mobile Installations provides nationwide mobile installation at the customer's location.",
+        "Include the number of vehicles receiving dashcam or video recorder hardware and the project location or locations in your installation request.",
+      ],
+      links: shared.nationwide.links,
+    },
+    relatedSection: {
+      h2: "Related Fleet Installation Services",
+      intro:
+        "Explore related fleet technology installation services from SB Mobile Installations. Choose a service to learn more about the equipment and project support it covers.",
+      cards: [
+        {
+          title: "Fleet Telematics Installation",
+          description:
+            "On-site installation support for fleet telematics equipment, including GPS tracking, ELD and AOBRD hardware, TPMS, dashcams, and other fleet technology.",
+          linkLabel: "Explore fleet telematics installation",
+          href: serviceCards["fleet-telematics-installation"].href,
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Fleet technology cables and hardware inside a commercial vehicle",
+          },
+        },
+        {
+          title: "GPS Tracking Installation",
+          description:
+            "On-site installation of GPS tracking hardware in commercial fleet vehicles.",
+          linkLabel: "Explore GPS tracking installation",
+          href: serviceCards["gps-tracking-installation"].href,
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp",
+            width: 2896,
+            height: 2172,
+            alt: "GPS tracking hardware being mounted under a commercial vehicle dashboard",
+          },
+        },
+        {
+          title: "ELD Installation",
+          description: serviceCards["eld-installation"].description,
+          linkLabel: "Explore ELD installation",
+          href: serviceCards["eld-installation"].href,
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-eld-installation-commercial-truck-cab.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Technician mounting an in-cab device on the dashboard of a commercial truck",
+          },
+        },
+        {
+          title: "Fleet Rollout Services",
+          description:
+            "Installation coordination for projects involving multiple vehicles or locations.",
+          linkLabel: "Explore fleet rollout services",
+          href: serviceCards["fleet-rollouts"].href,
+          image: {
+            src: "/images/services/services-hub/sb-mobile-installations-on-site-fleet-projects-nationwide-commercial-vehicles.webp",
+            width: 3318,
+            height: 1896,
+            alt: "Several commercial fleet vehicles at a project location",
+          },
+        },
+        {
+          title: "All Fleet Installation Services",
+          description:
+            "Browse the full range of fleet technology installation services.",
+          linkLabel: "Explore all fleet installation services",
+          href: shared.related.allCard.href,
+          image: {
+            src: "/images/services/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Commercial vehicles staged outside a fleet facility",
+          },
+        },
+      ],
+    },
     related: [
       "fleet-telematics-installation",
       "gps-tracking-installation",
@@ -679,7 +806,13 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "fleet-rollouts",
     ],
     faqHeading: "Dashcam and Camera Installation FAQs",
+    faqLayout: "columns",
     quoteH2: "Request a Dashcam and Camera Installation Quote",
+    quoteBackground: {
+      src: "/images/services/dashcam-camera-installation/sb-mobile-installations-dashcam-camera-quote-commercial-fleet-background-16x9.webp",
+      width: 3344,
+      height: 1882,
+    },
   },
 
   "fleet-rollouts": {

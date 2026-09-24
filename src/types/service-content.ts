@@ -128,6 +128,24 @@ export interface ServiceTemplateContent {
   /** Page-specific sentence; the vehicle examples and disclaimer are shared. */
   readonly vehiclesBody: string;
   readonly fit: HubSplitSection;
+  /**
+   * Optional full-width photo behind the fit section. When set, the section
+   * renders as a centered solid card over the photo (fit.h2, fit.lists[0],
+   * `fitRelated`, and fit.footnotes) instead of the split layout.
+   */
+  readonly fitBackground?: {
+    readonly src: string;
+    readonly width: number;
+    readonly height: number;
+  };
+  /** Right column of the `fitBackground` card: request contexts with internal links. */
+  readonly fitRelated?: {
+    readonly heading: string;
+    readonly items: readonly {
+      readonly context: string;
+      readonly link: HubLink;
+    }[];
+  };
   /** Page-specific request-detail sentence added to the nationwide section. */
   readonly nationwideExtra: string;
   /** Slugs of related service pages, in display order. */

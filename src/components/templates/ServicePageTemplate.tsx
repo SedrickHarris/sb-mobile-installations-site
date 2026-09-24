@@ -138,13 +138,78 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         mediaSide="left"
       />
 
-      <SplitFeature
-        id={`${id}-fit`}
-        tone="subtle"
-        content={content.fit}
-        slot={fitImage}
-        mediaSide="right"
-      />
+      {content.fitBackground && content.fitRelated ? (
+        <Section
+          tone="default"
+          density="spacious"
+          width="site"
+          backgroundImage={content.fitBackground}
+          labelledBy={`${id}-fit-heading`}
+        >
+          <div className="mx-auto max-w-[960px] rounded-lg bg-white p-6 shadow-lg md:p-10">
+            <h2
+              id={`${id}-fit-heading`}
+              className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+            >
+              {content.fit.h2}
+            </h2>
+            <div className="mt-6 grid gap-8 md:grid-cols-2 md:gap-12">
+              {content.fit.lists?.[0] ? (
+                <div>
+                  <h3 className="text-[length:var(--text-body)] font-bold text-ink">
+                    {content.fit.lists[0].heading}
+                  </h3>
+                  <ul className="mt-2 flex list-none flex-col gap-2 p-0 text-[length:var(--text-body)] text-ink">
+                    {content.fit.lists[0].items.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span aria-hidden="true" className="mt-[0.15rem] shrink-0 font-bold text-ink">
+                          &bull;
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+              <div>
+                <h3 className="text-[length:var(--text-body)] font-bold text-ink">
+                  {content.fitRelated.heading}
+                </h3>
+                <ul className="mt-2 flex list-none flex-col gap-3 p-0 text-[length:var(--text-body)]">
+                  {content.fitRelated.items.map((item) => (
+                    <li key={item.link.href} className="flex flex-col">
+                      <span className="text-ink-muted">{item.context}</span>
+                      <Link
+                        href={item.link.href}
+                        className="inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+                      >
+                        {item.link.label}
+                        <span aria-hidden="true">&rarr;</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            {content.fit.footnotes?.map((note) => (
+              <p
+                key={note}
+                className="mt-6 text-[length:var(--text-small)] leading-relaxed text-pretty text-ink-muted"
+              >
+                {note}
+              </p>
+            ))}
+          </div>
+        </Section>
+      ) : (
+        <SplitFeature
+          id={`${id}-fit`}
+          tone="subtle"
+          content={content.fit}
+          slot={fitImage}
+          mediaSide="right"
+        />
+      )}
 
       {content.midCtaHeading ? (
         <Section
