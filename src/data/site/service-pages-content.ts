@@ -303,6 +303,11 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     scopeItems: [
       "On-site GPS device installation for commercial vehicles and equipment",
     ],
+    heroBackgroundImage: {
+      src: "/images/services/gps-tracking-installation/hero/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp",
+      width: 3344,
+      height: 1882,
+    },
     hero: {
       eyebrow: "Mobile GPS Tracking Installation for Commercial Fleets",
       h1: "GPS Tracking Installation for Commercial Fleets",
