@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { FaqGroup } from "@/components/content/FaqGroup";
 import { InstallerQuestions } from "@/components/content/InstallerQuestions";
+import { InstallCategoryCard } from "@/components/content/WhatWeInstallGrid";
 import { ServicesHero } from "@/components/content/ServicesHero";
 import { SplitFeature } from "@/components/content/SplitFeature";
 import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
@@ -10,6 +11,7 @@ import { CardGrid } from "@/components/layout/CardGrid";
 import { PhoneButton } from "@/components/layout/PhoneButton";
 import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
+import { business } from "@/data/site/business";
 import { Card } from "@/components/ui/Card";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { servicePageSchema } from "@/lib/schema/service-page";
@@ -26,9 +28,9 @@ interface ServicePageTemplateProps {
  *
  * Order: hero, definition, scope, vehicle context, fit guide, optional
  * mid-page quote CTA, nationwide project-location context, documentation,
- * related services, FAQ, quote form, resources, and a single low-emphasis
- * careers text link after the form. The recruiting link is never above the
- * form, and no recruitment form appears on these commercial pages.
+ * related services, the installer-questions block, FAQ, quote form, and
+ * resources. The installer block sits directly before the FAQ on every service
+ * page (stakeholder direction, 2026-09-23); no recruitment form appears here.
  *
  * Schema: WebPage + Service + BreadcrumbList via `servicePageSchema`, with
  * only the `serviceType` values the page's content supplies and no
@@ -50,13 +52,26 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
   } = bundle;
   const id = content.slug;
   const guide = content.quoteGuide;
-  /** True when the quote section sits on a darkened background image. */
-  const onOverlay = Boolean(content.quoteBackground);
+  /**
+   * The quote section always sits on a dark surface: a darkened background
+   * image when `quoteBackground` is set, otherwise the dark fallback until an
+   * approved image is wired in.
+   */
+  const onOverlay = true;
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
     { label: content.breadcrumbLabel },
   ];
+
+  const installerBlock = (
+    <InstallerQuestions
+      content={bundle.installerQuestions.content}
+      image={bundle.installerQuestions.image}
+      headingId={`${id}-installer-questions-heading`}
+      phoneLocation="service-installer-questions"
+    />
+  );
 
   return (
     <>
@@ -84,7 +99,8 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         phone={phone}
         phoneLocation="service-hero"
         scopeItems={content.scopeItems}
-        image={content.heroVideo ? undefined : heroImage}
+        image={content.heroVideo || content.heroBackgroundImage ? undefined : heroImage}
+        backgroundImage={content.heroBackgroundImage}
         backgroundVideo={content.heroVideo}
       />
 
@@ -107,7 +123,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
       <SplitFeature
         id={`${id}-vehicles`}
         content={{
-          h2: shared.vehicles.h2,
+          h2: content.vehicleContext?.h2 ?? shared.vehicles.h2,
           body: [content.vehiclesBody],
           lists: [
             {
@@ -143,9 +159,16 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           >
             {content.midCtaHeading}
           </h2>
-          <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted">
-            {content.midCtaBody ?? shared.heroQualifier}
-          </p>
+          {(content.midCtaBody ?? shared.heroQualifier)
+            .split("\n\n")
+            .map((paragraph, index) => (
+              <p
+                key={paragraph}
+                className={`${index === 0 ? "mt-3" : "mt-4"} mx-auto max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-pretty text-ink-muted`}
+              >
+                {paragraph}
+              </p>
+            ))}
           <div className="mt-6 flex justify-center">
             <CtaButton
               cta={
@@ -224,12 +247,88 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           tone="subtle"
           content={{
             h2: shared.documentation.h2,
-            body: [shared.documentation.sentence],
+            body: [content.documentationText ?? shared.documentation.sentence],
             links: shared.documentation.links,
           }}
         />
       )}
 
+      {bundle.installCatalog ? (
+        <Section tone="default" width="site" labelledBy={`${id}-related-heading`}>
+          <h2
+            id={`${id}-related-heading`}
+            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+          >
+            {shared.related.h2}
+          </h2>
+          <div className="mt-10">
+            <CardGrid columns={3}>
+              {business.serviceTypes
+                .filter((service) => !content.serviceTypes.includes(service))
+                .map((service) => (
+                <InstallCategoryCard
+                  key={service}
+                  service={service}
+                  content={bundle.installCatalog!}
+                  id={`${id}-related`}
+                />
+              ))}
+            </CardGrid>
+          </div>
+        </Section>
+      ) : content.relatedSection ? (
+        <Section tone="default" width="site" labelledBy={`${id}-related-heading`}>
+          <h2
+            id={`${id}-related-heading`}
+            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+          >
+            {content.relatedSection.h2}
+          </h2>
+          <p className="mt-4 max-w-[720px] text-[length:var(--text-body)] leading-relaxed text-ink-muted">
+            {content.relatedSection.intro}
+          </p>
+          <div className="mt-10">
+            <CardGrid columns={3}>
+              {content.relatedSection.cards.map((card) => (
+                <Card
+                  key={card.href}
+                  as="div"
+                  tone="light"
+                  padding="none"
+                  hover
+                  className="relative flex h-full flex-col"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={card.image.src}
+                    alt={card.image.alt}
+                    width={card.image.width}
+                    height={card.image.height}
+                    loading="lazy"
+                    decoding="async"
+                    className="card-image-zoom aspect-[4/3] h-auto w-full object-cover"
+                  />
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="text-[length:var(--text-h4)] font-semibold text-ink">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-ink-muted">
+                      {card.description}
+                    </p>
+                    <Link
+                      href={card.href}
+                      className="mt-auto inline-flex min-h-11 items-center gap-2 pt-4 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
+                    >
+                      {card.linkLabel}
+                      <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  </div>
+                </Card>
+              ))}
+            </CardGrid>
+          </div>
+        </Section>
+      ) : (
       <Section tone="default" width="site" labelledBy={`${id}-related-heading`}>
         <h2
           id={`${id}-related-heading`}
@@ -265,6 +364,9 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           </CardGrid>
         </div>
       </Section>
+      )}
+
+      {installerBlock}
 
       <FaqGroup
         id={`${id}-faq`}
@@ -273,21 +375,23 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         layout={content.faqLayout}
       />
 
+
       <div id="request-quote" className="scroll-mt-24">
         <Section
-          tone="default"
+          tone={content.quoteBackground ? "default" : "dark"}
           density="spacious"
-          width={guide ? "site" : "reading"}
+          width="site"
           backgroundImage={content.quoteBackground}
           backgroundOverlay={Boolean(content.quoteBackground)}
           labelledBy={`${id}-quote-heading`}
         >
+          {process.env.NODE_ENV !== "production" && !content.quoteBackground ? (
+            <p className="mb-4 text-[length:var(--text-small)] text-white/70">
+              {id}-quote-background placeholder (development only)
+            </p>
+          ) : null}
           <div
-            className={
-              guide
-                ? `grid gap-10 lg:grid-cols-2 lg:gap-16 ${content.quoteAlignTop ? "lg:items-start" : "lg:items-center"}`
-                : ""
-            }
+            className={`grid gap-10 lg:grid-cols-2 lg:gap-16 ${content.quoteAlignTop ? "lg:items-start" : "lg:items-center"}`}
           >
             <div className={onOverlay ? "text-white" : ""}>
               <h2
@@ -297,7 +401,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
                 {content.quoteH2}
               </h2>
               <p className={`mt-4 text-[length:var(--text-body-lg)] leading-relaxed text-pretty ${onOverlay ? "text-white" : "text-ink-muted"}`}>
-                {guide ? guide.intro : shared.quote.intro}
+                {guide ? guide.intro : (content.quoteIntro ?? shared.quote.intro)}
               </p>
               {guide ? (
                 <>
@@ -335,7 +439,8 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
               ) : null}
             </div>
             <div
-              className={`${guide ? "" : "mt-8"} ${onOverlay ? "rounded-[var(--radius-lg)] bg-surface p-6 text-ink md:p-8" : ""}`}
+              data-tone="light"
+              className={`${onOverlay ? "rounded-[var(--radius-lg)] bg-surface p-6 text-ink md:p-8" : ""}`}
             >
               <CommercialInquiryForm
                 copy={
@@ -360,6 +465,63 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         </Section>
       </div>
 
+      {content.resourceCards ? (
+        <Section
+          tone="subtle"
+          width="site"
+          labelledBy={`${id}-resources-heading`}
+        >
+          <h2
+            id={`${id}-resources-heading`}
+            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+          >
+            {shared.resources.h2}
+          </h2>
+          <div className="mt-10">
+            <CardGrid columns={3}>
+              {shared.resources.links.map((item) => {
+                const card = content.resourceCards?.find(
+                  (entry) => entry.href === item.href,
+                );
+                return (
+                  <Card
+                    key={item.href}
+                    as="div"
+                    tone="light"
+                    padding="none"
+                    hover
+                    className="relative flex h-full flex-col"
+                  >
+                    {card ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={card.image.src}
+                        alt={card.image.alt}
+                        width={card.image.width}
+                        height={card.image.height}
+                        loading="lazy"
+                        decoding="async"
+                        className="card-image-zoom aspect-[4/3] h-auto w-full object-cover"
+                      />
+                    ) : null}
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="text-[length:var(--text-h4)] font-semibold text-ink">
+                        <Link
+                          href={item.href}
+                          className="inline-flex min-h-11 items-center gap-2 text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
+                        >
+                          {item.label}
+                          <span aria-hidden="true">&rarr;</span>
+                        </Link>
+                      </h3>
+                    </div>
+                  </Card>
+                );
+              })}
+            </CardGrid>
+          </div>
+        </Section>
+      ) : (
       <Section
         tone="subtle"
         density="compact"
@@ -385,13 +547,7 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
           ))}
         </ul>
       </Section>
-
-      <InstallerQuestions
-        content={bundle.installerQuestions.content}
-        image={bundle.installerQuestions.image}
-        headingId={`${id}-installer-questions-heading`}
-        phoneLocation="service-installer-questions"
-      />
+      )}
     </>
   );
 }

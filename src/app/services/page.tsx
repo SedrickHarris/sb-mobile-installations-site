@@ -61,9 +61,9 @@ export default function ServicesPage() {
           label: `${hub.hero.callLabel} ${utilityBar.phoneLabel}`,
         }}
         backgroundVideo={{
-          src: "/images/services/services-hub-page/services-hub-hero/sb-mobile-installations-services-hub-commercial-fleet-installation-background.mp4",
+          src: "/images/services/services-hub/services-hub-hero/sb-mobile-installations-services-hub-commercial-fleet-installation-background.mp4",
           poster:
-            "/images/services/services-hub-page/services-hub-hero/sb-mobile-installations-services-hub-commercial-fleet-installation-background.webp",
+            "/images/services/services-hub/services-hub-hero/sb-mobile-installations-services-hub-commercial-fleet-installation-background.webp",
         }}
       />
 
@@ -162,7 +162,7 @@ export default function ServicesPage() {
           {/* Decorative background photo under a 55% black overlay. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-final-cta-commercial-fleet-yard.webp"
+            src="/images/services/services-hub/sb-mobile-installations-services-hub-final-cta-commercial-fleet-yard.webp"
             alt=""
             aria-hidden="true"
             width={3344}

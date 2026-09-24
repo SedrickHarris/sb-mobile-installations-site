@@ -228,32 +228,52 @@ export const gpsTrackingInstallationContent: ServicePageContent = {
 };
 
 export const eldInstallationContent: ServicePageContent = {
-  h1: "ELD Installation Services",
+  h1: "ELD Installation",
   metaDescription:
-    "On-site ELD and AOBRD installation for fleet, commercial, and construction vehicles nationwide. SB Mobile Installations is an installation and deployment partner, not an ELD provider.",
+    "Learn about mobile ELD and AOBRD hardware installation for commercial vehicle projects. Request an installation quote and share your equipment, vehicle count, project locations, and preferred timing.",
   intro:
-    "SB Mobile Installations provides mobile installation support for approved ELD and AOBRD hardware on fleet, commercial, and construction vehicles. Technicians travel to your location. We install and deploy the hardware; we are not an ELD provider or a compliance consultant. Share your vehicle count, project locations, and preferred timing to start an installation conversation.",
+    "SB Mobile Installations provides mobile installation support for ELD and AOBRD hardware in commercial vehicle project contexts.",
   body: [],
   faq: [
     {
-      question: "Do you install both ELD and AOBRD equipment?",
+      question: "What is ELD installation?",
       answer:
-        "Yes. ELD and AOBRD are both current equipment categories SB Mobile Installations installs on fleet, commercial, and construction vehicles.",
+        "ELD installation is the physical installation of approved electronic logging device hardware in a commercial vehicle. The work may include mounting, connection, and cable routing, depending on the equipment and project requirements.",
     },
     {
-      question: "Are you an ELD provider or compliance consultant?",
+      question: "Does SB Mobile Installations provide ELD compliance advice?",
       answer:
-        "No. SB Mobile Installations installs and deploys ELD hardware for the platforms fleets already run on. We are an installation and deployment partner, not an ELD provider or a compliance consultant.",
+        "No. SB Mobile Installations provides physical installation support for approved ELD and AOBRD hardware. The company does not provide ELD compliance or regulatory advice.",
     },
     {
-      question: "What should I include when requesting ELD installation?",
+      question: "What can ELD installation include?",
       answer:
-        "Include your approximate vehicle count, each project location, and your preferred timing, along with whether the hardware is ELD or AOBRD equipment.",
+        "Depending on the approved equipment and project requirements, installation may include mounting the hardware, connecting it, and routing associated cables.",
     },
     {
-      question: "Should I use the ELD page or the GPS tracking page?",
+      question: "What vehicle types can be part of an ELD installation project?",
       answer:
-        "Use the ELD page for ELD and AOBRD hardware and the GPS Tracking Installation page for GPS tracking hardware. If your project includes both, start with Fleet Telematics Installation.",
+        "Projects may involve commercial vehicles such as work vans, service trucks, utility vehicles, and heavy-duty trucks. Equipment compatibility should be confirmed for the specific vehicle and device.",
+    },
+    {
+      question: "Can I request ELD installation at our project location?",
+      answer:
+        "Yes. SB Mobile Installations provides mobile installation support at customer project locations nationwide. Share where the vehicles will be available when you request a quote.",
+    },
+    {
+      question: "What should I include in an ELD installation quote request?",
+      answer:
+        "Include the equipment being installed, vehicle types and count, project location or locations, and preferred timing. These details help clarify the scope of the request.",
+    },
+    {
+      question: "Can you install ELD hardware across multiple vehicles or locations?",
+      answer:
+        "Fleet projects can involve one vehicle or a larger multi-vehicle project. Share the vehicle count and locations so the project requirements can be discussed.",
+    },
+    {
+      question: "Will I receive documentation after installation?",
+      answer:
+        "Photo documentation may be available for completed installation work. Ask about the documentation available for your project when requesting a quote.",
     },
   ],
 };

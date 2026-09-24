@@ -97,7 +97,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      src: `${SERVICE_PHOTO_DIR}/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp`,
+      src: `${SERVICE_PHOTO_DIR}/service-cards/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp`,
       alt: "Gloved hands mounting a black fleet hardware unit and connecting its wiring under a commercial vehicle dashboard",
       altGuidance:
         "Describe only what is shown. No device-brand logos, no compliance or capability claims.",
@@ -109,7 +109,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
+      src: "/images/services/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
       alt: "A cargo van, utility truck, dump truck, and tractor truck staged outside a commercial fleet facility",
       altGuidance:
         "Describe only what is shown. No brand or coverage claims. Shows vehicle types beyond the approved vehicle examples, so it is not used in the vehicle-context section.",
@@ -133,7 +133,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${SERVICE_PHOTO_DIR}/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp`,
+      src: `${SERVICE_PHOTO_DIR}/service-cards/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp`,
       alt: "Technician routing fleet-electronics cables inside a commercial service vehicle",
       altGuidance:
         "Describe only what is shown. No device-brand logos, no compliance or capability claims.",
@@ -209,11 +209,77 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
         "Describe only what is shown. Never a map or graphic implying coverage, and no city or state identifiers.",
     },
   },
-  "eld-installation": slots(
-    "eld",
-    "ELD or AOBRD hardware being installed in a commercial truck cab",
-    "Describe what is shown. Never call AOBRD legacy. No compliance claims in the alt text.",
-  ),
+  // Placeholder slots: no src, so production renders the decorative fallback.
+  // Assets go in public/images/services/eld-installation/. The existing AOBRD
+  // file name contains "legacy"; rename it before use.
+  "eld-installation": {
+    ...slots(
+      "eld",
+      "ELD or AOBRD hardware being installed in a commercial truck cab",
+      "Suggested file: sb-mobile-installations-eld-installation-hero.webp. Describe what is shown. Never call AOBRD legacy. No compliance claims in the alt text, no tablet or driver-log screens.",
+      "sb-mobile-installations-eld-installation-vehicle-context.webp",
+    ),
+    context: {
+      slotId: "service-eld-context",
+      role: "Work van, service truck, utility vehicle, and heavy-duty truck",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      src: "/images/services/eld-installation/sb-mobile-installations-eld-aobrd-commercial-fleet-vehicle-types-4x3.webp",
+      alt: "Commercial fleet vehicles including a work van, service truck, utility vehicle, and heavy-duty truck",
+      altGuidance:
+        "Describe only what is shown. Confirmed vehicle examples only. No trailers, pickups, buses, or heavy equipment. Do not imply every pictured vehicle has ELD hardware installed.",
+    },
+    definition: {
+      slotId: "service-eld-definition",
+      role: "ELD or AOBRD hardware installed in a commercial vehicle cab",
+      aspectRatio: "16 / 9",
+      width: 3344,
+      height: 1882,
+      fallback: "route",
+      src: "/images/services/eld-installation/hero/sb-mobile-installations-eld-installation-commercial-truck-cab-hero-16x9.webp",
+      alt: "ELD device mounted near the dashboard inside a commercial truck cab",
+      altGuidance:
+        "Uses the approved hero photo. Describe only what is shown. Never call AOBRD legacy. No device-brand logos, driver logs, or compliance claims.",
+    },
+    scope: {
+      slotId: "service-eld-scope",
+      role: "ELD or AOBRD hardware mounted with a neatly routed cable in a commercial truck cab",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      src: "/images/services/eld-installation/sb-mobile-installations-eld-installation-mounting-cable-routing-commercial-truck-cab-4x3.webp",
+      alt: "ELD device mounted near a truck dashboard with a neatly routed cable",
+      altGuidance:
+        "Describe only what is shown. No device-brand logos, screens, driver logs, or compliance claims.",
+    },
+    fit: {
+      slotId: "service-eld-fit",
+      role: "Commercial vehicles staged at a fleet service facility",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      src: "/images/services/eld-installation/sb-mobile-installations-commercial-fleet-service-yard-related-services-4x3.webp",
+      alt: "Commercial vehicles staged at a fleet service facility",
+      altGuidance:
+        "Describe only what is shown, without implying the pictured vehicles have equipment installed. No readable plates or customer signage.",
+    },
+    nationwide: {
+      slotId: "service-eld-nationwide",
+      role: "Commercial fleet vehicle at a customer project location",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "route",
+      src: "/images/services/eld-installation/sb-mobile-installations-mobile-eld-installation-commercial-project-location-4x3.webp",
+      alt: "Commercial fleet vehicle at a customer project location",
+      altGuidance:
+        "Do not imply installation work is pictured. Never a map or graphic implying coverage, and no city or state identifiers.",
+    },
+  },
   "dashcam-camera-installation": slots(
     "dashcam",
     "Fleet dashcam or windshield-mounted video recorder being installed",

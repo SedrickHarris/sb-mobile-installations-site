@@ -35,7 +35,7 @@ export const servicesHubImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
+    src: "/images/services/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
     alt: "Commercial fleet vehicles staged for an on-site installation project",
     altGuidance:
       "Describe only what is shown. Use only confirmed vehicle categories, and make no coverage or market claim.",
@@ -47,7 +47,7 @@ export const servicesHubImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-services-hub-fleet-technology-cab-interior-v2.webp",
+    src: "/images/services/services-hub/sb-mobile-installations-services-hub-fleet-technology-cab-interior-v2.webp",
     alt: "Commercial vehicle cab with a dashcam and dash-mounted display installed",
     altGuidance:
       "Describe only what is shown. No device-brand logos and no coverage or market claim.",
@@ -59,7 +59,7 @@ export const servicesHubImages = {
     width: 3318,
     height: 1896,
     fallback: "grid",
-    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-installation-request-fleet-equipment-preparation.webp",
+    src: "/images/services/services-hub/sb-mobile-installations-installation-request-fleet-equipment-preparation.webp",
     alt: "Fleet tracking and camera equipment with cabling laid out in a service van",
     altGuidance:
       "Describe only what is shown. No device-brand logos and no coverage or market claim.",
@@ -71,7 +71,7 @@ export const servicesHubImages = {
     width: 3318,
     height: 1896,
     fallback: "route",
-    src: "/images/services/services-hub-page/services-hub/sb-mobile-installations-on-site-fleet-projects-nationwide-commercial-vehicles.webp",
+    src: "/images/services/services-hub/sb-mobile-installations-on-site-fleet-projects-nationwide-commercial-vehicles.webp",
     alt: "Commercial fleet vehicles parked outside a commercial facility",
     altGuidance:
       "Describe only what is shown. Never a state map or any graphic implying state-level coverage, and no city or state identifiers.",

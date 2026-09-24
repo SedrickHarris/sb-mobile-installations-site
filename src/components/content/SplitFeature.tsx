@@ -177,16 +177,24 @@ export function SplitFeature({
           ))}
 
           {content.links && content.links.length > 0 ? (
-            <ul className="mt-6 flex list-none flex-col gap-1 p-0">
+            <ul
+              className={`mt-6 flex list-none p-0 ${
+                content.linksAsButtons ? "flex-col gap-3" : "flex-col gap-1"
+              }`}
+            >
               {content.links.map((item, index) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] underline underline-offset-4 ${
-                      content.primaryLink && index > 0
-                        ? "font-normal"
-                        : "font-semibold"
-                    } ${link}`}
+                    className={
+                      content.linksAsButtons
+                        ? `flex min-h-12 items-center justify-between gap-3 rounded-lg border-2 border-[var(--color-accent-blue-strong)] px-5 py-3 text-[length:var(--text-body)] font-semibold hover:bg-[var(--color-accent-blue-strong)]/5 ${link}`
+                        : `inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body)] underline underline-offset-4 ${
+                            content.primaryLink && index > 0
+                              ? "font-normal"
+                              : "font-semibold"
+                          } ${link}`
+                    }
                   >
                     {item.label}
                     <span aria-hidden="true">&rarr;</span>
@@ -195,6 +203,15 @@ export function SplitFeature({
               ))}
             </ul>
           ) : null}
+
+          {content.closing?.map((paragraph) => (
+            <p
+              key={paragraph}
+              className={`mt-6 text-[length:var(--text-body)] leading-relaxed text-pretty ${body}`}
+            >
+              {paragraph}
+            </p>
+          ))}
         </div>
 
         {hasMedia ? (
@@ -267,21 +284,54 @@ function FeatureList({
           dark ? "text-[var(--color-text-on-dark)]/90" : "text-ink"
         }`}
       >
-        {list.items.map((item) => (
+        {list.items.map((item, index) => (
           <li key={item} className="flex gap-3">
-            <span
-              aria-hidden="true"
-              className={`mt-[0.15rem] shrink-0 font-bold ${
-                dark ? "text-[var(--color-text-on-dark)]" : "text-ink"
-              }`}
-            >
-              {checklist ? "✓" : "•"}
-            </span>
+            {list.icons?.[index] ? (
+              <ItemIcon name={list.icons[index]} />
+            ) : (
+              <span
+                aria-hidden="true"
+                className={`mt-[0.15rem] shrink-0 font-bold ${
+                  dark ? "text-[var(--color-text-on-dark)]" : "text-ink"
+                }`}
+              >
+                {checklist ? "✓" : "•"}
+              </span>
+            )}
             {labeled ? <LabeledItem item={item} /> : <span>{item}</span>}
           </li>
         ))}
       </ul>
     </div>
+  );
+}
+
+const ICON_PATHS: Record<NonNullable<HubList["icons"]>[number], string[]> = {
+  mounting: ["M4 5h16v11H4z", "M12 16v4", "M8 20h8"],
+  connection: ["M9 3v5", "M15 3v5", "M7 8h10v3a5 5 0 0 1-10 0z", "M12 16v5"],
+  routing: ["M5 6h3a4 4 0 0 1 4 4v4a4 4 0 0 0 4 4h3", "M3 6h2", "M19 18h2"],
+};
+
+/** Decorative inline icon. The item text stays the accessible label. */
+function ItemIcon({ name }: { readonly name: keyof typeof ICON_PATHS }) {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mt-[0.1rem] shrink-0 text-ink"
+    >
+      {ICON_PATHS[name].map((d) => (
+        <path key={d} d={d} />
+      ))}
+    </svg>
   );
 }
 

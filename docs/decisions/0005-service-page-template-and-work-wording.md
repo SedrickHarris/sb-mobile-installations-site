@@ -106,3 +106,12 @@ Draft changes made without stakeholder review, pending confirmation:
 - "Installation coordination" was dropped from the GPS scope list. Scope is Mounting, Connection, Routing only. Decision needed on whether it returns.
 - The GPS Installer Network handoff stays a text link (no `InstallerNetworkBand`).
 - Image slots for definition, scope, fit, and nationwide are declared without `src`; production shows the decorative fallback.
+
+## 2026-09-23 addendum: installer block moves above the FAQ on every service page
+
+Stakeholder direction, given in conversation and not yet confirmed in the source of truth. **Supersedes point 6 above** (and the September 19 and 20 handoff notes) for placement.
+
+- The "Have Questions About Installer Opportunities?" block (the shared `InstallerQuestions` component, same content and image as `/contact/` and `/careers/`) now sits **directly above the FAQ** on all five service pages. It is set once in `ServicePageTemplate`, with no per-page override.
+- Page order is now: related services, installer block, FAQ, quote form, Related Resources. The block no longer appears at the page end, and there is no separate low-emphasis text link after the form.
+- **Exception to the recruitment-below-the-form rule** (CLAUDE.md section 4, and the template header before this change). Recruitment content now appears above the commercial quote form. Commercial and recruitment routes, forms, data, and analytics events stay separate: the block keeps its own recruitment journey and events, and the quote form is still the only form on these pages. Revert by moving `installerBlock` back after the quote section in the template if the stakeholder does not confirm.
+- The quote section on every service page is now a two-column layout with a background image slot. Pages without an approved `quoteBackground` show the dark fallback, with a development-only label.

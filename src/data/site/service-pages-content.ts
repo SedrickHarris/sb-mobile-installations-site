@@ -1,4 +1,5 @@
 import { utilityBar } from "@/data/navigation/site-navigation";
+import { homepageContent } from "@/data/site/homepage-content";
 import { careersHubImages } from "@/data/site/careers-hub-images";
 import { careersLandingContent } from "@/data/site/careers-landing-content";
 import {
@@ -373,6 +374,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
         },
       ],
     },
+    relatedInstallCatalog: true,
     related: [
       "fleet-telematics-installation",
       "eld-installation",
@@ -415,48 +417,202 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "On-site installation",
       "Nationwide service context",
     ],
+    hero: {
+      eyebrow: "On-Site ELD Installation",
+      h1: "Mobile ELD Installation for Commercial Fleets",
+      intro:
+        "SB Mobile Installations provides on-site installation support for ELD and AOBRD hardware in commercial vehicles. We work with fleet operators coordinating installations for one vehicle or a larger fleet project at their location.\n\nWhen requesting a quote, share the equipment being installed, vehicle count, installation locations, and preferred timing. This information helps us understand your project and discuss the next steps.",
+      ctaLabel: "Request an Installation Quote",
+      qualifier:
+        "Tell us about your ELD or AOBRD equipment, fleet size, installation locations, and preferred schedule.",
+    },
+    heroBackgroundImage: {
+      src: "/images/services/eld-installation/hero/sb-mobile-installations-eld-installation-commercial-truck-cab-hero-16x9.webp",
+      width: 3344,
+      height: 1882,
+    },
     definition: {
       h2: "What Is ELD Installation?",
       body: [
-        "ELD installation is the physical mounting, connection, and routing work required to place approved ELD and AOBRD hardware into commercial vehicles.",
-        "ELD and AOBRD are both current equipment categories at SB Mobile Installations. We install and deploy the hardware. We are not an ELD provider or a compliance consultant, and this page does not give compliance or regulatory advice.",
-        "To scope a project, we need the vehicle count, the project locations, and your preferred timing.",
+        "ELD installation is the physical installation of electronic logging device (ELD) hardware in a commercial vehicle. Depending on the equipment and project, installation may also involve AOBRD hardware. SB Mobile Installations provides on-site installation support for fleet projects. To discuss a request, share the equipment type, number of vehicles, installation locations, and preferred timing.",
+      ],
+      footnoteCallout: true,
+      footnotes: [
+        "SB Mobile Installations provides physical installation support. We do not provide ELD service, compliance consulting, or regulatory advice.",
       ],
     },
     scope: {
-      ...installScope("ELD or AOBRD hardware"),
       h2: "What ELD Installation Can Include",
       body: [],
-    },
-    vehiclesBody:
-      "ELD and AOBRD hardware is installed on fleet, commercial, and construction vehicles.",
-    fit: {
-      h2: "When ELD Installation May Be a Fit",
-      body: [],
-      listPanel: true,
       lists: [
         {
-          heading: "This service may be a fit when",
+          style: "labeled",
+          icons: ["mounting", "connection", "routing"],
           items: [
-            "You have approved ELD or AOBRD hardware that needs physical installation",
-            "Your project involves commercial fleet vehicles",
-            "You can describe the vehicle count and the project locations",
+            "Mounting: Physical placement of approved ELD or AOBRD hardware in the vehicle cab.",
+            "Connection: Physical connection of the approved hardware as part of the installation.",
+            "Cable routing: Routing installation-related cables within the vehicle.",
           ],
         },
       ],
-      footnotes: [
-        "These are general signals. They are not compliance, regulatory, or technical advice.",
+    },
+    vehiclesBody:
+      "ELD and AOBRD hardware installation projects can involve different types of commercial vehicles. The vehicle, equipment, and installation requirements depend on the project, so fleet operators should confirm the details for their specific vehicles and devices when requesting a quote.",
+    vehicleContext: {
+      h2: "ELD Installation Across Commercial Vehicle Types",
+      listHeading: "Common vehicle types:",
+      note: "These are examples of common project contexts. They do not mean every ELD or AOBRD device can be installed in every vehicle. Share your vehicle types, equipment, fleet size, installation locations, and preferred timing so SB Mobile Installations can discuss your project.",
+    },
+    fit: {
+      h2: "Explore Related Fleet Installation Services",
+      body: [
+        "If your project includes equipment beyond ELD or AOBRD hardware, explore these related fleet installation services. Each page explains a different type of installation support, so you can find a useful starting point for your request.",
+      ],
+      linksAsButtons: true,
+      links: [
+        {
+          label: "Fleet telematics installation",
+          href: serviceCards["fleet-telematics-installation"].href,
+        },
+        {
+          label: "GPS tracking installation",
+          href: serviceCards["gps-tracking-installation"].href,
+        },
+        {
+          label: "Dashcam and camera installation",
+          href: serviceCards["dashcam-camera-installation"].href,
+        },
+        {
+          label: "Fleet rollout services",
+          href: serviceCards["fleet-rollouts"].href,
+        },
+      ],
+      closing: [
+        "Tell us which equipment you need installed, how many vehicles are involved, and where the vehicles will be available. SB Mobile Installations can discuss your project requirements and next steps.",
       ],
     },
-    nationwideExtra:
-      "Include the number of vehicles receiving ELD or AOBRD hardware and each project location.",
+    midCtaHeading: "Need ELD or AOBRD Hardware Installation Support?",
+    midCtaBody:
+      "SB Mobile Installations provides on-site installation support for approved ELD and AOBRD hardware at commercial vehicle project locations nationwide. Whether your project involves one vehicle or a larger fleet, share a few details so we can understand the scope and discuss next steps.\n\nInclude the equipment being installed, vehicle types and count, project location or locations, and your preferred timing when you request a quote.",
+    midCtaLabel: "Request an Installation Quote",
+    documentationText:
+      "After an ELD or AOBRD hardware installation, photo documentation can provide a visual record of the work completed on each vehicle. Fleet operators can ask about the documentation available for their project when requesting a quote.",
+    nationwideExtra: "Include project locations in the installation request.",
+    nationwideContext: {
+      body: [
+        "SB Mobile Installations provides mobile ELD and AOBRD hardware installation support at customer project locations nationwide. Fleet operators can request service for one vehicle or coordinate a larger installation project.",
+        "To help discuss your project, share the vehicle types and number of vehicles, the ELD or AOBRD equipment involved, where the vehicles will be available, and your preferred timing.",
+      ],
+      links: [{ label: "View installation coverage", href: "/coverage/" }],
+    },
+    relatedSection: {
+      h2: "Related Fleet Installation Services",
+      intro:
+        "Explore related fleet technology installation services from SB Mobile Installations. Choose a service to learn more about the equipment and project support it covers.",
+      cards: [
+        {
+          title: "Fleet Telematics Installation",
+          description:
+            "On-site installation support for fleet telematics equipment, including GPS tracking, ELD and AOBRD hardware, TPMS, dashcams, and other fleet technology.",
+          linkLabel: "Explore fleet telematics installation",
+          href: serviceCards["fleet-telematics-installation"].href,
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Fleet technology cables and hardware inside a commercial vehicle",
+          },
+        },
+        {
+          title: "GPS Tracking Installation",
+          description:
+            "On-site installation of GPS tracking hardware in commercial fleet vehicles.",
+          linkLabel: "Explore GPS tracking installation",
+          href: serviceCards["gps-tracking-installation"].href,
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp",
+            width: 2896,
+            height: 2172,
+            alt: "GPS tracking hardware being mounted under a commercial vehicle dashboard",
+          },
+        },
+        {
+          title: "Dashcam & Camera Installation",
+          description:
+            "Installation support for fleet dashcams and vehicle camera systems.",
+          linkLabel: "Explore dashcam and camera installation",
+          href: serviceCards["dashcam-camera-installation"].href,
+          image: {
+            src: "/images/services/service-cards/sb-mobile-installations-fleet-dashcam-installation-commercial-truck.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Dashcam mounted on the windshield of a commercial truck",
+          },
+        },
+        {
+          title: "Fleet Rollout Services",
+          description:
+            "Installation coordination for projects involving multiple vehicles or locations.",
+          linkLabel: "Explore fleet rollout services",
+          href: serviceCards["fleet-rollouts"].href,
+          image: {
+            src: "/images/services/services-hub/sb-mobile-installations-on-site-fleet-projects-nationwide-commercial-vehicles.webp",
+            width: 3318,
+            height: 1896,
+            alt: "Several commercial fleet vehicles at a project location",
+          },
+        },
+        {
+          title: "All Fleet Installation Services",
+          description:
+            "Browse the full range of fleet technology installation services.",
+          linkLabel: "Explore all fleet installation services",
+          href: shared.related.allCard.href,
+          image: {
+            src: "/images/services/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
+            width: 2896,
+            height: 2172,
+            alt: "Commercial vehicles staged outside a fleet facility",
+          },
+        },
+      ],
+    },
     related: [
       "fleet-telematics-installation",
       "gps-tracking-installation",
+      "dashcam-camera-installation",
       "fleet-rollouts",
     ],
-    faqHeading: "ELD Installation FAQs",
-    quoteH2: "Request an ELD Installation Quote",
+    faqHeading: "ELD Installation Questions and Answers",
+    faqLayout: "columns",
+    resourceCards: [
+      {
+        href: "/resources/",
+        image: {
+          src: "/images/coverage/b-mobile-installations-resources-fleet-installation-reference.webp",
+          width: 3318,
+          height: 1896,
+          alt: "Fleet installation reference materials",
+        },
+      },
+      {
+        href: "/faq/",
+        image: {
+          src: "/images/coverage/sb-mobile-installations-frequently-asked-questions-fleet-electronics.webp",
+          width: 3318,
+          height: 1896,
+          alt: "Fleet electronics components for commercial vehicles",
+        },
+      },
+    ],
+    quoteH2: "Request an ELD or AOBRD Installation Quote",
+    quoteIntro:
+      "Tell us which approved ELD or AOBRD equipment you need installed, the vehicle types and number of vehicles, where they’ll be available, and your preferred timing. SB Mobile Installations provides mobile installation support at customer project locations nationwide. Share your project details so the team can understand the request and discuss next steps.",
+    quoteBackground: {
+      src: "/images/services/eld-installation/sb-mobile-installations-eld-installation-quote-cta-background-commercial-fleet-16x9.webp",
+      width: 3344,
+      height: 1882,
+    },
   },
 
   "dashcam-camera-installation": {
@@ -631,6 +787,9 @@ export function getServicePage(slug: ServiceSlug): ServicePageBundle {
       content: careersLandingContent.contact,
       image: careersHubImages.contact,
     },
+    installCatalog: content.relatedInstallCatalog
+      ? homepageContent.whatWeInstall
+      : undefined,
     relatedCards: content.related.map((related) => serviceCards[related as ServiceSlug]),
   };
 }

@@ -26,6 +26,16 @@ interface ServicesHeroProps {
    */
   readonly backgroundVideo?: { readonly src: string; readonly poster?: string };
   /**
+   * Decorative full-width photo behind the hero, under a separate 65% black
+   * overlay layer. The copy sits directly on it, above the overlay. Paragraphs
+   * in `intro` split on a blank line.
+   */
+  readonly backgroundImage?: {
+    readonly src: string;
+    readonly width: number;
+    readonly height: number;
+  };
+  /**
    * Overlay color over the background video. Defaults to black (existing
    * pages). `navy` uses the dark surface token at 75% for a navy-led hero.
    */
@@ -69,6 +79,7 @@ export function ServicesHero({
   phone,
   image,
   backgroundVideo,
+  backgroundImage,
   overlay = "black",
   audience,
   secondaryLink,
@@ -79,13 +90,40 @@ export function ServicesHero({
   phoneEvent,
 }: ServicesHeroProps) {
   const headingId = `${id}-heading`;
+  const introParagraphs = intro.split("\n\n");
+  const scopeList =
+    scopeItems && scopeItems.length > 0 ? (
+      <ul
+        className={`list-none flex-wrap gap-x-8 gap-y-2 border-t border-[var(--color-border-dark)] p-0 pt-6 text-[length:var(--text-small)] font-semibold text-[var(--color-text-on-dark)]/90 ${backgroundImage ? "mt-8 flex" : "mx-auto mt-10 flex max-w-[1280px]"}`}
+      >
+        {scopeItems.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    ) : null;
 
   return (
     <section
       data-tone="dark"
       aria-labelledby={headingId}
-      className={`${backgroundVideo ? "relative isolate overflow-hidden " : ""}bg-[var(--color-surface-dark)] px-5 py-12 text-[var(--color-text-on-dark)] md:px-6 md:py-20`}
+      className={`${backgroundVideo || backgroundImage ? "relative isolate overflow-hidden " : ""}bg-[var(--color-surface-dark)] px-5 py-12 text-[var(--color-text-on-dark)] md:px-6 md:py-20`}
     >
+      {backgroundImage ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={backgroundImage.src}
+          alt=""
+          aria-hidden="true"
+          width={backgroundImage.width}
+          height={backgroundImage.height}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[85%_center] md:object-center"
+        />
+      ) : null}
+      {backgroundImage ? (
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/65" />
+      ) : null}
       {backgroundVideo ? (
         <>
           {backgroundVideo.poster ? (
@@ -119,7 +157,15 @@ export function ServicesHero({
       <div
         className={`mx-auto max-w-[1280px] ${image ? "grid gap-10 md:grid-cols-2 md:items-center md:gap-16" : ""}`}
       >
-        <div className={image ? "" : "max-w-[780px]"}>
+        <div
+          className={
+            backgroundImage
+              ? "max-w-[720px]"
+              : image
+                ? ""
+                : "max-w-[780px]"
+          }
+        >
           {eyebrow ? (
             <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-text-on-dark)]/90 uppercase">
               {eyebrow}
@@ -131,9 +177,14 @@ export function ServicesHero({
           >
             {h1}
           </h1>
-          <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90">
-            {intro}
-          </p>
+          {introParagraphs.map((paragraph, index) => (
+            <p
+              key={paragraph}
+              className={`${index === 0 ? "mt-5" : "mt-4"} text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-[var(--color-text-on-dark)]/90`}
+            >
+              {paragraph}
+            </p>
+          ))}
           {audience ? (
             <p className="mt-4 text-[length:var(--text-body)] font-semibold text-[var(--color-text-on-dark)]">
               {audience}
@@ -171,18 +222,13 @@ export function ServicesHero({
               {qualifier}
             </p>
           ) : null}
+          {backgroundImage ? scopeList : null}
         </div>
 
         {image ? <ImageSlot slot={image} priority={priorityImage} /> : null}
       </div>
 
-      {scopeItems && scopeItems.length > 0 ? (
-        <ul className="mx-auto mt-10 flex max-w-[1280px] list-none flex-wrap gap-x-8 gap-y-2 border-t border-[var(--color-border-dark)] p-0 pt-6 text-[length:var(--text-small)] font-semibold text-[var(--color-text-on-dark)]/90">
-          {scopeItems.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      ) : null}
+      {backgroundImage ? null : scopeList}
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import type { CommercialInquiryFormCopy } from "@/components/forms/CommercialInquiryForm";
 import type { careersLandingContent } from "@/data/site/careers-landing-content";
 import type { HubImageSlot } from "@/data/site/services-hub-images";
-import type { Cta, FaqItem } from "@/types/content";
+import type { Cta, FaqItem, WhatWeInstallContent } from "@/types/content";
 
 /** Shared content shape for the services hub and each service detail page. */
 export interface ServicePageContent {
@@ -52,6 +52,8 @@ export interface HubList {
   readonly items: readonly string[];
   /** "labeled": each item is "Label: description", shown with a bold label. */
   readonly style?: "bullets" | "checklist" | "labeled";
+  /** Optional decorative icon per item, in item order. Replaces the marker. */
+  readonly icons?: readonly ("mounting" | "connection" | "routing")[];
 }
 
 export interface HubLink {
@@ -71,6 +73,10 @@ export interface HubSplitSection {
   /** Render the footnotes as a visually distinct callout with a left rule. */
   readonly footnoteCallout?: boolean;
   readonly links?: readonly HubLink[];
+  /** Render the links as full-width outlined buttons instead of text links. */
+  readonly linksAsButtons?: boolean;
+  /** Paragraphs shown after the links. */
+  readonly closing?: readonly string[];
   /** Style the first link as primary and any others as secondary (lighter weight). */
   readonly primaryLink?: boolean;
 }
@@ -113,6 +119,7 @@ export interface ServiceTemplateContent {
   };
   /** Optional page-specific list heading and note for the vehicle-context section. */
   readonly vehicleContext?: {
+    readonly h2?: string;
     readonly listHeading?: string;
     readonly note?: string;
   };
@@ -138,8 +145,48 @@ export interface ServiceTemplateContent {
   readonly midCtaHeading?: string;
   /** Button label for the mid-page CTA. Falls back to the bundle's primary CTA label. */
   readonly midCtaLabel?: string;
-  /** Supporting line for the mid-page CTA. Falls back to the shared hero qualifier. */
+  /** Supporting copy for the mid-page CTA. A blank line starts a new paragraph. Falls back to the shared hero qualifier. */
   readonly midCtaBody?: string;
+  /**
+   * Render the homepage "What We Install" cards, unchanged, in the
+   * related-services section, followed by a row of related service links.
+   */
+  readonly relatedInstallCatalog?: boolean;
+  /**
+   * Optional image-card layout for the related-services section, using the
+   * homepage service-card structure. Replaces the shared text cards.
+   */
+  readonly relatedSection?: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly cards: readonly {
+      readonly title: string;
+      readonly description: string;
+      readonly linkLabel: string;
+      readonly href: string;
+      readonly image: {
+        readonly src: string;
+        readonly width: number;
+        readonly height: number;
+        readonly alt: string;
+      };
+    }[];
+  };
+  /**
+   * Optional image cards for the "Related Resources" section, replacing the
+   * shared text links. Titles and hrefs come from the shared resources links.
+   */
+  readonly resourceCards?: readonly {
+    readonly href: string;
+    readonly image: {
+      readonly src: string;
+      readonly width: number;
+      readonly height: number;
+      readonly alt: string;
+    };
+  }[];
+  /** Optional page-specific sentence replacing the shared documentation sentence. */
+  readonly documentationText?: string;
   /**
    * Optional card layout for the documentation band. When present it replaces
    * the shared single-sentence band; the shared link still renders below.
@@ -158,6 +205,14 @@ export interface ServiceTemplateContent {
    * for reduced-motion visitors.
    */
   readonly heroVideo?: { readonly src: string; readonly poster: string };
+  /** Optional unshaded full-width hero photo. Copy sits on a solid panel. */
+  readonly heroBackgroundImage?: {
+    readonly src: string;
+    readonly width: number;
+    readonly height: number;
+  };
+  /** Optional page-specific supporting paragraph for the quote section. */
+  readonly quoteIntro?: string;
   /** Optional decorative background image for the quote section. */
   readonly quoteBackground?: {
     readonly src: string;
@@ -230,6 +285,8 @@ export interface ServicePageBundle {
     readonly content: (typeof careersLandingContent)["contact"];
     readonly image: HubImageSlot;
   };
+  /** Homepage "What We Install" content, when the page opts in via `relatedInstallCatalog`. */
+  readonly installCatalog?: WhatWeInstallContent;
   readonly relatedCards: readonly HubRelatedCard[];
 }
 
