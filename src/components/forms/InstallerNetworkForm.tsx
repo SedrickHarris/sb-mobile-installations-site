@@ -22,7 +22,7 @@ const THANK_YOU_ROUTE = "/careers/installer-network-received/";
  * never shares a submission handler with it. See CLAUDE.md section 4 and
  * plan section 5.
  */
-export function InstallerNetworkForm() {
+export function InstallerNetworkForm({ expectation }: { readonly expectation?: string } = {}) {
   const formId = useId();
   const [fields, setFields] = useState({
     name: "",
@@ -239,8 +239,12 @@ export function InstallerNetworkForm() {
         disabled={submitting}
         className="inline-flex min-h-12 items-center justify-center rounded-md bg-[var(--color-accent-blue-strong)] px-6 py-3 text-base font-semibold text-white transition-[filter] duration-150 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {submitting ? "Sending..." : "Join the Installer Network"}
+        {submitting ? "Sending..." : "Submit Your Interest"}
       </button>
+
+      {expectation ? (
+        <p className="text-[length:var(--text-small)] text-ink-muted">{expectation}</p>
+      ) : null}
 
       <div role="status" aria-live="polite" className="text-[length:var(--text-small)]">
         {status === "error" && errorMessage ? (

@@ -24,7 +24,7 @@ const PATHNAME = INSTALLER_NETWORK_PATH;
 const BREADCRUMBS = [
   { label: "Home", href: "/" },
   { label: "Careers", href: "/careers/" },
-  { label: "Installer Network" },
+  { label: "Mobile Installation Technician" },
 ];
 
 export const metadata: Metadata = buildPageMetadata({
@@ -33,20 +33,27 @@ export const metadata: Metadata = buildPageMetadata({
   pathname: PATHNAME,
 });
 
+const linkClass =
+  "inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4";
+
 /**
- * Installer Network page, in four visual chapters: understand the network,
- * understand the work context, prepare your information, join the network.
+ * Technician-interest landing page for the Installer Network
+ * (`/careers/mobile-installation-technician/`).
  *
- * The Installer Network is a registration for future opportunities. It is
- * separate from the application for the current opening and is never an
- * application. This route keeps its original path because the homepage and
- * other pages already link here. A short section at the top points to the
- * current opening and its application page.
+ * This is an interest page, not a job listing and not an application. The
+ * Installer Network is a registration for future opportunities, separate from
+ * the application for the current opening. The route keeps its original path
+ * because the homepage and other pages already link here.
+ *
+ * Order: hero, context strip, who it is for, what the page is and is not,
+ * service context, requirements and field-work context, the form, FAQ, then
+ * low-emphasis links (current opening, commercial quote, related services).
+ * The commercial form never renders here.
  *
  * Schema is WebPage + BreadcrumbList only. This is not an individual opening
  * page, so it never carries JobPosting (13-schema-markup-plan.md section 14).
- * No FAQPage, and the copy carries no schedule, hours, certification, or
- * platform-brand language. The corporate office address appears once, near the
+ * No FAQPage. The hero visual is the decorative fallback until approved
+ * photography exists. The corporate office address appears once, near the
  * form, from `business.address`.
  */
 export default function InstallerNetworkPage() {
@@ -64,9 +71,14 @@ export default function InstallerNetworkPage() {
 
       <ServicesHero
         id="installer-network"
+        eyebrow="Installer Network"
         h1={installerNetworkContent.h1}
         intro={installerNetworkContent.intro}
         primaryCta={hub.hero.primaryCta}
+        secondaryLink={{
+          label: "Learn how the Installer Network works",
+          href: "#network-answer-heading",
+        }}
         qualifier={hub.hero.qualifier}
         phone={{
           href: utilityBar.phoneHref,
@@ -79,27 +91,68 @@ export default function InstallerNetworkPage() {
         image={careersHubImages.networkHero}
       />
 
-      {/* Pointer to the current opening: a separate journey */}
-      <SplitFeature id="network-current-opening" tone="subtle" content={hub.openings} />
+      {/* Context strip */}
+      <Section tone="subtle" width="site" labelledBy="network-context-heading">
+        <h2
+          id="network-context-heading"
+          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
+        >
+          {hub.contextStrip.h2}
+        </h2>
+        <div className="mt-8">
+          <CardGrid columns={3}>
+            {hub.contextStrip.cards.map((card) => (
+              <Card key={card.title} padding="compact">
+                <span
+                  aria-hidden="true"
+                  className="mb-3 block h-1 w-10 bg-[var(--color-brand-red)]"
+                />
+                <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-[length:var(--text-body)] text-ink-muted">
+                  {card.description}
+                </p>
+              </Card>
+            ))}
+          </CardGrid>
+        </div>
+      </Section>
 
-      {/* Chapter 1: understand the network */}
-      <SplitFeature
-        id="network-answer"
-        eyebrow={hub.chapters.network}
-        content={hub.answer}
-      />
-      <SplitFeature id="network-fit" tone="subtle" content={hub.fit} />
+      <SplitFeature id="network-fit" content={hub.fit} />
 
-      {/* Chapter 2: understand the work context */}
-      <SplitFeature
-        id="network-requirements"
-        eyebrow={hub.chapters.work}
-        content={hub.requirements}
-        slot={careersHubImages.networkRequirements}
-        mediaSide="right"
-      />
+      {/* What the network is, and is not */}
+      <SplitFeature id="network-answer" tone="subtle" content={hub.answer} />
+      <Section tone="subtle" density="compact" labelledBy="network-boundary-heading">
+        <h2 id="network-boundary-heading" className="sr-only">
+          What this page is and is not
+        </h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-md border border-border bg-surface p-6">
+            <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
+              {hub.boundary.isHeading}
+            </h3>
+            <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-[length:var(--text-body)] text-ink-muted">
+              {hub.boundary.isItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-md border border-border bg-surface p-6">
+            <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
+              {hub.boundary.isNotHeading}
+            </h3>
+            <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-[length:var(--text-body)] text-ink-muted">
+              {hub.boundary.isNotItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
 
-      <Section tone="subtle" width="site" labelledBy="network-equipment-heading">
+      {/* Approved service context */}
+      <Section tone="default" width="site" labelledBy="network-equipment-heading">
         <h2
           id="network-equipment-heading"
           className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
@@ -110,7 +163,7 @@ export default function InstallerNetworkPage() {
           {hub.equipment.intro}
         </p>
         <div className="mt-8">
-          <CardGrid columns={2}>
+          <CardGrid columns={3}>
             {hub.equipment.cards.map((card) => (
               <Card key={card.title} padding="compact">
                 <h3 className="text-[length:var(--text-h4)] font-bold text-ink">
@@ -125,34 +178,17 @@ export default function InstallerNetworkPage() {
         </div>
       </Section>
 
-      <SplitFeature
-        id="network-field-work"
-        tone="dark"
-        content={hub.fieldWork}
-        slot={careersHubImages.networkVehicles}
-        mediaSide="left"
-      />
+      <SplitFeature id="network-field-work" tone="subtle" content={hub.fieldWork} />
 
-      {/* Chapter 3: prepare your information */}
-      <SplitFeature
-        id="network-information"
-        tone="subtle"
-        eyebrow={hub.chapters.prepare}
-        content={hub.information}
-      />
+      {/* Stakeholder-approved requirements and form guidance (decision 0004) */}
+      <SplitFeature id="network-requirements" content={hub.requirements} />
+      <SplitFeature id="network-information" tone="subtle" content={hub.information} />
       <SplitFeature id="network-where" content={hub.where} />
       <SplitFeature id="network-after" tone="subtle" content={hub.after} />
 
-      {/* Chapter 4: join the network. Focusable target for the hero CTA anchor. */}
+      {/* Interest form. Focusable target for the hero CTA anchor. */}
       <div id="installer-network-form" tabIndex={-1} className="scroll-mt-24">
-        <Section
-          tone="default"
-          density="spacious"
-          labelledBy="network-join-heading"
-        >
-          <p className="mb-3 text-[length:var(--text-label)] font-semibold tracking-wide text-[var(--color-brand-red)] uppercase">
-            {hub.chapters.join}
-          </p>
+        <Section tone="default" density="spacious" labelledBy="network-join-heading">
           <h2
             id="network-join-heading"
             className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
@@ -166,7 +202,7 @@ export default function InstallerNetworkPage() {
             {hub.join.noGuarantee}
           </p>
           <div className="mt-8">
-            <InstallerNetworkForm />
+            <InstallerNetworkForm expectation={hub.join.expectation} />
           </div>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
             <p className="text-[length:var(--text-body)] text-ink-muted">
@@ -191,6 +227,7 @@ export default function InstallerNetworkPage() {
         content={{ h2: hub.faqHeading, items: installerNetworkContent.faq ?? [] }}
       />
 
+      {/* Low-emphasis links after the technician content */}
       <Section tone="default" density="compact" labelledBy="network-handoff-heading">
         <h2
           id="network-handoff-heading"
@@ -204,12 +241,35 @@ export default function InstallerNetworkPage() {
         <ul className="mt-3 flex list-none flex-col gap-1 p-0">
           {hub.handoff.links.map((item) => (
             <li key={item.href}>
-              <Link
-                href={item.href}
-                className="inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
-              >
+              <Link href={item.href} className={linkClass}>
                 {item.label}
                 <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-8 text-[length:var(--text-h4)] font-bold text-ink">
+          {hub.openings.h2}
+        </h2>
+        <p className="mt-2 text-[length:var(--text-body)] text-ink-muted">
+          {hub.openings.body}
+        </p>
+        <p className="mt-3">
+          <Link href={hub.openings.link.href} className={linkClass}>
+            {hub.openings.link.label}
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </p>
+
+        <h2 className="mt-8 text-[length:var(--text-h4)] font-bold text-ink">
+          {hub.relatedLinks.h2}
+        </h2>
+        <ul className="mt-3 flex list-none flex-col gap-1 p-0">
+          {hub.relatedLinks.links.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className={linkClass}>
+                {item.label}
               </Link>
             </li>
           ))}

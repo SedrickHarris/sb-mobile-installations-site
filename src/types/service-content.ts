@@ -339,8 +339,24 @@ export interface CareersHubPageContent {
     readonly prepare: string;
     readonly join: string;
   };
-  /** Pointer to the current opening and its application. Never an application itself. */
-  readonly openings: HubSplitSection;
+  /** Low-emphasis pointer to the current opening's own page. Never an application itself. */
+  readonly openings: {
+    readonly h2: string;
+    readonly body: string;
+    readonly link: HubLink;
+  };
+  /** Three editorial cards directly under the hero. */
+  readonly contextStrip: {
+    readonly h2: string;
+    readonly cards: readonly CareersEquipmentCard[];
+  };
+  /** "What this page is" and "What this page is not" panel. */
+  readonly boundary: {
+    readonly isHeading: string;
+    readonly isItems: readonly string[];
+    readonly isNotHeading: string;
+    readonly isNotItems: readonly string[];
+  };
   readonly answer: HubSplitSection;
   readonly fit: HubSplitSection;
   readonly requirements: HubSplitSection;
@@ -357,12 +373,19 @@ export interface CareersHubPageContent {
     readonly h2: string;
     readonly intro: string;
     readonly noGuarantee: string;
+    /** Shown directly under the submit button. */
+    readonly expectation: string;
     readonly phoneLead: string;
   };
   readonly faqHeading: string;
   readonly handoff: {
     readonly h2: string;
     readonly body: string;
+    readonly links: readonly HubLink[];
+  };
+  /** Text-link cluster to approved service pages and coverage. */
+  readonly relatedLinks: {
+    readonly h2: string;
     readonly links: readonly HubLink[];
   };
 }

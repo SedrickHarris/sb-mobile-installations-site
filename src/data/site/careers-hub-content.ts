@@ -1,4 +1,4 @@
-import { activeTechnicianJob, APPLY_PATH } from "@/data/jobs";
+import { activeTechnicianJob } from "@/data/jobs";
 import type { CareersHubPageContent } from "@/types/service-content";
 
 /**
@@ -35,18 +35,18 @@ export const pendingEntryLevelFit = {
 } as const;
 
 export const careersHubPageContent: CareersHubPageContent = {
-  metaTitle: "Mobile Fleet Installation Technician Network",
+  metaTitle: "Mobile Installation Technician | Installer Network",
 
   hero: {
     primaryCta: {
-      label: "Join the Installer Network",
+      label: "Share Your Interest",
       href: "#installer-network-form",
       journey: "recruitment",
       event: "cta_installer_network_click",
     },
     callLabel: "Call",
     qualifier:
-      "Joining the Installer Network is an expression of interest, not a job application.",
+      "Sharing your interest is not a job application. It does not indicate a current opening or guarantee future work.",
     scopeItems: [
       "Opt-in Installer Network",
       "Registration for future opportunities",
@@ -63,46 +63,71 @@ export const careersHubPageContent: CareersHubPageContent = {
 
   openings: {
     h2: "Looking for the Current Opening?",
-    body: [
-      "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. To apply, use the application page.",
-      "The Installer Network below is a separate registration for future opportunities. It is not an application for the current opening.",
-    ],
-    links: [
-      { label: "View the current opening", href: activeTechnicianJob.path },
-      { label: "Apply for the current opening", href: APPLY_PATH },
-    ],
+    body: "The current Mobile GPS, ELD, and AOBRD installation technician openings have their own page. The Installer Network is a separate registration.",
+    link: { label: "View the current opening", href: activeTechnicianJob.path },
   },
 
-  answer: {
-    h2: "What Is the SB Mobile Installer Network?",
-    body: [
-      "The SB Mobile Installer Network is a way for qualified technicians to share their mobile installation experience, equipment familiarity, tools, home market, and travel availability for future installation opportunities.",
-      "Joining the network is an expression of interest. It is not an application for an active job opening, and it does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
-      "Technicians engaged through the Installer Network are independent contractors, not employees.",
+  contextStrip: {
+    h2: "Installer Network at a Glance",
+    cards: [
+      {
+        title: "Mobile fleet-installation technicians",
+        description:
+          "The Installer Network is intended for experienced technicians interested in sharing their background with SB Mobile Installations.",
+      },
+      {
+        title: "Commercial vehicle projects",
+        description:
+          "Installation context covers fleet vehicles, commercial vehicles, and construction vehicles.",
+      },
+      {
+        title: "Nationwide project context",
+        description:
+          "SB Mobile Installations provides nationwide mobile installation service at the customer's location.",
+      },
     ],
   },
 
   fit: {
-    h2: "Is the Installer Network a Fit for You?",
-    body: ["These are general signals, not an eligibility decision."],
+    h2: "Who the Installer Network Is For",
+    body: [
+      "This page is for experienced mobile fleet-installation technicians who want to introduce themselves to SB Mobile Installations and share relevant installation experience. It is not a list of current openings or a promise of future work.",
+    ],
     listPanel: true,
     lists: [
       {
-        heading: "This may suit you if",
+        heading: "A good fit if you are",
         items: [
-          "You have installation experience to share, or you are new to mobile installation work",
-          "You are comfortable with on-site work at customer locations",
-          "You are looking for independent contractor work",
+          "An experienced mobile installation technician",
+          "Familiar with commercial-vehicle installation contexts",
+          "Interested in being considered for the Installer Network",
+          "Ready to share your installation background through the interest form",
         ],
       },
-      {
-        heading: "The network may not be the right fit if",
-        items: [
-          "You are looking for guaranteed work, hours, or income",
-          "You are looking for employee status or benefits",
-          "You expect this form to be an application for a specific opening",
-        ],
-      },
+    ],
+  },
+
+  boundary: {
+    isHeading: "What this page is",
+    isItems: [
+      "A way to express interest in the Installer Network",
+      "A place to share relevant technician background",
+      "An information page for experienced mobile installation technicians",
+    ],
+    isNotHeading: "What this page is not",
+    isNotItems: [
+      "A list of active job openings",
+      "An employment offer",
+      "A guarantee of future project availability",
+    ],
+  },
+
+  answer: {
+    h2: "About the SB Mobile Installations Installer Network",
+    body: [
+      "The SB Mobile Installations Installer Network is an opt-in way for experienced mobile fleet-installation technicians to share their information and installation background. Submitting the form below does not indicate that a specific opening is available, and it does not create an employment offer.",
+      "Joining the network is an expression of interest. It is not an application for an active job opening, and it does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
+      "Technicians engaged through the Installer Network are independent contractors, not employees.",
     ],
   },
 
@@ -152,26 +177,30 @@ export const careersHubPageContent: CareersHubPageContent = {
   },
 
   equipment: {
-    h2: "Fleet Technology Installation Experience",
+    h2: "Mobile Fleet Installation Context",
     intro:
-      "SB Mobile Installations installs the equipment categories below. Tell us about your experience with any of them.",
+      "The installation contexts below match the services SB Mobile Installations provides to commercial customers.",
     cards: [
       {
-        title: "GPS Tracking",
-        description: "Installation of GPS tracking hardware.",
+        title: "Fleet Telematics Installation",
+        description: "Installation context for commercial vehicle projects.",
       },
       {
-        title: "ELD and AOBRD",
-        description: "Installation of ELD and AOBRD equipment.",
+        title: "GPS Tracking Installation",
+        description: "Installation context for commercial vehicle projects.",
       },
       {
-        title: "Fleet Dashcams and Video Recorders",
+        title: "ELD Installation",
+        description: "Installation context for commercial vehicle projects.",
+      },
+      {
+        title: "Dashcam & Camera Installation",
         description:
-          "Installation of fleet dashcam and windshield-mounted video recorder equipment.",
+          "Fleet dashcam and windshield-mounted video recorder installation context.",
       },
       {
-        title: "Fleet Management Equipment and TPMS",
-        description: "Installation of fleet management equipment and TPMS.",
+        title: "Fleet Rollout Services",
+        description: "Installation context for commercial vehicle projects.",
       },
     ],
   },
@@ -194,7 +223,7 @@ export const careersHubPageContent: CareersHubPageContent = {
       },
     ],
     footnotes: [
-      "Vehicle examples show the commercial and construction vehicle contexts SB Mobile works in. They do not mean every equipment category is installed in every vehicle type.",
+      "Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
     ],
   },
 
@@ -238,22 +267,33 @@ export const careersHubPageContent: CareersHubPageContent = {
   },
 
   join: {
-    h2: "Join the Installer Network",
+    h2: "Express Interest in the Installer Network",
     intro:
-      "Tell us about your installation experience, tools, home market, and travel availability.",
+      "Share your contact information and relevant mobile fleet-installation background. SB Mobile Installations will use the information you provide to understand your interest in the Installer Network.",
     noGuarantee:
       "Joining the Installer Network is an expression of interest. It does not guarantee employment, a project assignment, compensation, or future work.",
+    expectation:
+      "This form is for Installer Network interest. It does not indicate a current opening or guarantee future work.",
     phoneLead: "Prefer to talk it through? Call",
   },
 
   faqHeading: "Installer Network Questions",
 
   handoff: {
-    h2: "Looking for Fleet Installation Service?",
-    body: "SB Mobile Installations installs fleet technology for commercial customers. Businesses request installation separately from the Installer Network.",
+    h2: "Looking for mobile fleet installation service for your business?",
+    body: "Businesses request installation separately from the Installer Network.",
+    links: [{ label: "Request an installation quote", href: "/contact/" }],
+  },
+
+  relatedLinks: {
+    h2: "Related Services and Coverage",
     links: [
-      { label: "Request an installation quote", href: "/contact/" },
-      { label: "Explore fleet installation services", href: "/services/" },
+      { label: "Fleet Telematics Installation", href: "/services/fleet-telematics-installation/" },
+      { label: "GPS Tracking Installation", href: "/services/gps-tracking-installation/" },
+      { label: "ELD Installation", href: "/services/eld-installation/" },
+      { label: "Dashcam & Camera Installation", href: "/services/dashcam-camera-installation/" },
+      { label: "Fleet Rollout Services", href: "/services/fleet-rollouts/" },
+      { label: "Nationwide mobile installation service", href: "/coverage/" },
     ],
   },
 };

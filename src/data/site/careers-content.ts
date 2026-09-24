@@ -159,18 +159,18 @@ export const careersPageFaq: readonly FaqItem[] = [
  * opportunities, separate from the application for the current opening.
  */
 export const installerNetworkContent: CareersPageContent = {
-  h1: "Join the SB Mobile Installations Installer Network",
+  h1: "Mobile Installation Technician",
   metaDescription:
-    "Register for future installation opportunities with the SB Mobile Installations Installer Network. A separate registration from the application for the current opening. Share your experience, tools, home market, and travel availability.",
+    "Experienced mobile fleet-installation technicians can express interest in the SB Mobile Installations Installer Network. Submitting interest does not indicate a current opening or guarantee future work.",
   intro:
-    "The Installer Network is a registration for future installation opportunities with SB Mobile Installations. It is separate from the application for the current opening, and it is not an application. Share your experience, tools, home market, and travel availability to join.",
+    "SB Mobile Installations is building an Installer Network for experienced mobile fleet-installation technicians. Share your information to express interest and help us understand your installation background.",
   body: [],
   faq: [
     {
       question: "Is the Installer Network an active job opening?",
       answer:
-        "No. The Installer Network is an opt-in, no-guarantee registration for future opportunities, and joining it is not an application for a specific opening. To apply for the current opening, use the application page.",
-      link: { label: "Go to the application page", href: APPLY_PATH },
+        "No. The Installer Network is an opt-in, no-guarantee registration for future opportunities, and joining it is not an application for a specific opening. The current opening has its own page.",
+      link: { label: "View the current opening", href: activeTechnicianJob.path },
     },
     {
       question: "Are Installer Network technicians employees?",
