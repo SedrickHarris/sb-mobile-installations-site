@@ -172,19 +172,6 @@ export interface ServiceTemplateContent {
       };
     }[];
   };
-  /**
-   * Optional image cards for the "Related Resources" section, replacing the
-   * shared text links. Titles and hrefs come from the shared resources links.
-   */
-  readonly resourceCards?: readonly {
-    readonly href: string;
-    readonly image: {
-      readonly src: string;
-      readonly width: number;
-      readonly height: number;
-      readonly alt: string;
-    };
-  }[];
   /** Optional page-specific sentence replacing the shared documentation sentence. */
   readonly documentationText?: string;
   /**
@@ -256,7 +243,18 @@ export interface ServiceTemplateShared {
   };
   readonly related: { readonly h2: string; readonly allCard: HubRelatedCard };
   readonly quote: { readonly intro: string; readonly phoneLead: string };
-  readonly resources: { readonly h2: string; readonly links: readonly HubLink[] };
+  /** Related Resources cards, shared by every service page: link, title, and image. */
+  readonly resources: {
+    readonly h2: string;
+    readonly links: readonly (HubLink & {
+      readonly image: {
+        readonly src: string;
+        readonly width: number;
+        readonly height: number;
+        readonly alt: string;
+      };
+    })[];
+  };
   /** Small label above the H1, shared by the five service pages. */
   readonly heroEyebrow: string;
 }

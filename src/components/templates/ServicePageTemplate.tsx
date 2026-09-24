@@ -465,89 +465,54 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         </Section>
       </div>
 
-      {content.resourceCards ? (
-        <Section
-          tone="subtle"
-          width="site"
-          labelledBy={`${id}-resources-heading`}
-        >
-          <h2
-            id={`${id}-resources-heading`}
-            className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
-          >
-            {shared.resources.h2}
-          </h2>
-          <div className="mt-10">
-            <CardGrid columns={3}>
-              {shared.resources.links.map((item) => {
-                const card = content.resourceCards?.find(
-                  (entry) => entry.href === item.href,
-                );
-                return (
-                  <Card
-                    key={item.href}
-                    as="div"
-                    tone="light"
-                    padding="none"
-                    hover
-                    className="relative flex h-full flex-col"
-                  >
-                    {card ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={card.image.src}
-                        alt={card.image.alt}
-                        width={card.image.width}
-                        height={card.image.height}
-                        loading="lazy"
-                        decoding="async"
-                        className="card-image-zoom aspect-[4/3] h-auto w-full object-cover"
-                      />
-                    ) : null}
-                    <div className="flex flex-1 flex-col p-6">
-                      <h3 className="text-[length:var(--text-h4)] font-semibold text-ink">
-                        <Link
-                          href={item.href}
-                          className="inline-flex min-h-11 items-center gap-2 text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
-                        >
-                          {item.label}
-                          <span aria-hidden="true">&rarr;</span>
-                        </Link>
-                      </h3>
-                    </div>
-                  </Card>
-                );
-              })}
-            </CardGrid>
-          </div>
-        </Section>
-      ) : (
       <Section
         tone="subtle"
-        density="compact"
+        width="site"
         labelledBy={`${id}-resources-heading`}
       >
         <h2
           id={`${id}-resources-heading`}
-          className="text-[length:var(--text-h4)] font-bold text-ink"
+          className="text-[length:var(--text-h2)] leading-[1.12] font-bold text-balance text-ink"
         >
           {shared.resources.h2}
         </h2>
-        <ul className="mt-3 flex list-none flex-col gap-1 p-0">
-          {shared.resources.links.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="inline-flex min-h-11 items-center gap-2 font-semibold text-[var(--color-accent-blue-strong)] underline underline-offset-4"
+        <div className="mt-10">
+          <CardGrid columns={3}>
+            {shared.resources.links.map((item) => (
+              <Card
+                key={item.href}
+                as="div"
+                tone="light"
+                padding="none"
+                hover
+                className="relative flex h-full flex-col"
               >
-                {item.label}
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  width={item.image.width}
+                  height={item.image.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="card-image-zoom aspect-[4/3] h-auto w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-[length:var(--text-h4)] font-semibold text-ink">
+                    <Link
+                      href={item.href}
+                      className="inline-flex min-h-11 items-center gap-2 text-[var(--color-accent-blue-strong)] underline underline-offset-4 after:absolute after:inset-0 after:content-['']"
+                    >
+                      {item.label}
+                      <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  </h3>
+                </div>
+              </Card>
+            ))}
+          </CardGrid>
+        </div>
       </Section>
-      )}
     </>
   );
 }

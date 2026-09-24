@@ -102,8 +102,23 @@ const shared: ServiceTemplateShared = {
       {
         label: "Fleet installation planning resources",
         href: "/resources/",
+        image: {
+          src: "/images/coverage/b-mobile-installations-resources-fleet-installation-reference.webp",
+          width: 3318,
+          height: 1896,
+          alt: "Fleet installation reference materials",
+        },
       },
-      { label: "Fleet installation FAQs", href: "/faq/" },
+      {
+        label: "Fleet installation FAQs",
+        href: "/faq/",
+        image: {
+          src: "/images/coverage/sb-mobile-installations-frequently-asked-questions-fleet-electronics.webp",
+          width: 3318,
+          height: 1896,
+          alt: "Fleet electronics components for commercial vehicles",
+        },
+      },
     ],
   },
 };
@@ -585,26 +600,6 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     ],
     faqHeading: "ELD Installation Questions and Answers",
     faqLayout: "columns",
-    resourceCards: [
-      {
-        href: "/resources/",
-        image: {
-          src: "/images/coverage/b-mobile-installations-resources-fleet-installation-reference.webp",
-          width: 3318,
-          height: 1896,
-          alt: "Fleet installation reference materials",
-        },
-      },
-      {
-        href: "/faq/",
-        image: {
-          src: "/images/coverage/sb-mobile-installations-frequently-asked-questions-fleet-electronics.webp",
-          width: 3318,
-          height: 1896,
-          alt: "Fleet electronics components for commercial vehicles",
-        },
-      },
-    ],
     quoteH2: "Request an ELD or AOBRD Installation Quote",
     quoteIntro:
       "Tell us which approved ELD or AOBRD equipment you need installed, the vehicle types and number of vehicles, where they’ll be available, and your preferred timing. SB Mobile Installations provides mobile installation support at customer project locations nationwide. Share your project details so the team can understand the request and discuss next steps.",
