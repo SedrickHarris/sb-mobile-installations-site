@@ -559,7 +559,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
         {
           title: "Dashcam & Camera Installation",
           description:
-            "Installation support for fleet dashcams and vehicle camera systems.",
+            "Fleet dashcam and windshield-mounted video recorder installation.",
           linkLabel: "Explore dashcam and camera installation",
           href: serviceCards["dashcam-camera-installation"].href,
           image: {
@@ -629,8 +629,8 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       h2: "What Is Dashcam and Camera Installation?",
       body: [
         "Dashcam and camera installation is the physical mounting, connection, and routing work required to place approved fleet dashcam and windshield-mounted video recorder hardware into commercial vehicles.",
-        "SB Mobile Installations installs and deploys this hardware. We are not the video platform vendor, and this page covers installation only.",
-        "To scope a project, we need the vehicle count, the project locations, and your preferred timing.",
+        "SB Mobile Installations installs and deploys this hardware. We are not the video platform vendor. This page describes physical installation context. It does not describe camera features, monitoring, video storage, coaching, platform services, or safety outcomes.",
+        "To scope a project, share your equipment, vehicle count, project locations, and preferred timing.",
       ],
     },
     scope: {
@@ -653,14 +653,29 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
             "You can describe the vehicle count and the project locations",
           ],
         },
+        {
+          heading: "Other request contexts",
+          items: [
+            "Connected fleet hardware more broadly: Fleet Telematics Installation",
+            "GPS tracking hardware: GPS Tracking Installation",
+            "ELD or AOBRD hardware: ELD Installation",
+            "One vehicle or an entire fleet across multiple project locations: Fleet Rollout Services",
+          ],
+        },
       ],
       footnotes: [FIT_NOTE],
     },
+    midCtaHeading:
+      "Need fleet dashcam or video recorder hardware installation support?",
+    midCtaBody:
+      "Tell us about your equipment, vehicle count, project locations, and preferred timing.",
+    midCtaLabel: "Request an Installation Quote",
     nationwideExtra:
       "Include the number of vehicles receiving dashcam or video recorder hardware and each project location.",
     related: [
       "fleet-telematics-installation",
       "gps-tracking-installation",
+      "eld-installation",
       "fleet-rollouts",
     ],
     faqHeading: "Dashcam and Camera Installation FAQs",

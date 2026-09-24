@@ -281,15 +281,37 @@ export const eldInstallationContent: ServicePageContent = {
 export const dashcamCameraInstallationContent: ServicePageContent = {
   h1: "Dashcam & Camera Installation Services",
   metaDescription:
-    "On-site fleet dashcam and windshield-mounted video recorder installation for fleet, commercial, and construction vehicles nationwide.",
+    "Learn about mobile fleet dashcam and video recorder installation for commercial vehicle projects. Request an installation quote and share your equipment, vehicle count, project locations, and preferred timing.",
   intro:
-    "SB Mobile Installations provides mobile installation support for approved fleet dashcam and windshield-mounted video recorder hardware on fleet, commercial, and construction vehicles. Technicians travel to your location. Share your vehicle count, project locations, and preferred timing to start an installation conversation. We install the hardware; we are not the video platform vendor.",
+    "SB Mobile Installations provides mobile installation support for fleet dashcam and windshield-mounted video recorder hardware in commercial vehicle project contexts. We install the hardware; we are not the video platform vendor.",
   body: [],
   faq: [
     {
-      question: "What dashcam and video platforms do you install for?",
+      question: "What is dashcam and camera installation?",
       answer:
-        "We work with the platforms fleets already run on, including Lytx/DriveCam, SmartDrive, Samsara, and Geotab.",
+        "Dashcam and camera installation is the physical installation of approved fleet dashcam and windshield-mounted video recorder hardware in commercial vehicle project contexts.",
+    },
+    {
+      question: "What can dashcam and camera installation include?",
+      answer:
+        "Approved installation scope includes mounting, connection, and routing for fleet dashcam and video recorder hardware, along with installation coordination for one vehicle or an entire fleet.",
+    },
+    {
+      question:
+        "Does SB Mobile Installations provide camera monitoring or video platform services?",
+      answer:
+        "No. SB Mobile Installations is the installer, not the video platform vendor. This page describes physical installation context. It does not describe camera features, monitoring, video storage, coaching, platform services, or safety outcomes.",
+    },
+    {
+      question:
+        "What vehicle types can be part of a dashcam installation project?",
+      answer:
+        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
+    },
+    {
+      question: "Can I request installation at our project location?",
+      answer:
+        "Yes. Nationwide mobile installation service, delivered at the customer's location. Include project locations in the installation request.",
     },
     {
       question: "What is documented after a dashcam installation?",
@@ -297,15 +319,9 @@ export const dashcamCameraInstallationContent: ServicePageContent = {
         "Every installation is photo documented, and you'll receive that documentation automatically.",
     },
     {
-      question:
-        "Should I use the dashcam page or the GPS tracking page?",
+      question: "What should I include in a dashcam installation quote request?",
       answer:
-        "Use this page for fleet dashcam and windshield-mounted video recorder hardware and the GPS Tracking Installation page for GPS tracking hardware. For a project that includes both, start with Fleet Telematics Installation.",
-    },
-    {
-      question: "What should I include when requesting dashcam installation?",
-      answer:
-        "Include your approximate vehicle count, each project location, and your preferred timing, along with the type of dashcam or video recorder hardware.",
+        "Include your equipment, vehicle count, project locations, and preferred timing.",
     },
   ],
 };

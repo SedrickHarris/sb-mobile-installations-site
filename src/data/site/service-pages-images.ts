@@ -280,11 +280,38 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
         "Do not imply installation work is pictured. Never a map or graphic implying coverage, and no city or state identifiers.",
     },
   },
-  "dashcam-camera-installation": slots(
-    "dashcam",
-    "Fleet dashcam or windshield-mounted video recorder being installed",
-    "Describe the hardware shown. No forward-facing or driver-facing wording.",
-  ),
+  // Placeholder slots: no src, so production renders the decorative fallback.
+  // Assets go in public/images/services/dashcam-camera-installation/.
+  "dashcam-camera-installation": {
+    ...slots(
+      "dashcam",
+      "Fleet dashcam or windshield-mounted video recorder being installed",
+      "Suggested file: sb-mobile-installations-dashcam-camera-installation-hero.webp. Describe the hardware shown. No forward-facing, driver-facing, AI, or monitoring wording. No lens view, road footage, driver, cab interior, dashboard, map, platform interface, or device-brand logos.",
+      "sb-mobile-installations-dashcam-camera-installation-vehicle-context.webp",
+    ),
+    definition: {
+      slotId: "service-dashcam-definition",
+      role: "Fleet dashcam or windshield-mounted video recorder hardware being mounted",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "route",
+      alt: "",
+      altGuidance:
+        "Suggested file: sb-mobile-installations-dashcam-camera-installation-hardware-mounting.webp. Describe only the hardware and mounting shown. No device-brand logos, screens, footage, or capability claims.",
+    },
+    scope: {
+      slotId: "service-dashcam-scope",
+      role: "Mounted dashcam or video recorder hardware with neatly routed cabling",
+      aspectRatio: "4 / 3",
+      width: 2896,
+      height: 2172,
+      fallback: "grid",
+      alt: "",
+      altGuidance:
+        "Suggested file: sb-mobile-installations-dashcam-camera-installation-mounting-routing.webp. Describe only what is shown. No people, screens, footage, device-brand logos, or readable text.",
+    },
+  },
   "fleet-rollouts": slots(
     "rollouts",
     "Several commercial vehicles at a project location",
