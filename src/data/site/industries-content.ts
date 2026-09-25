@@ -133,6 +133,86 @@ export const commercialFleetsContent: InformationalPageContent = {
   ],
 };
 
+/**
+ * Structured section copy for the redesigned `/industries/commercial-fleets/`
+ * page. H1, description, intro, and body stay in `commercialFleetsContent`
+ * (approved by the stakeholder). Claim sources:
+ * - Service titles and links: services-hub-content.ts.
+ * - Vehicle categories and examples: docs/01 sections 12.1 and 13.1, decision
+ *   0007. The clarification sentence is the required approved wording.
+ * - Quote information items and CTA qualifier: FAQ hub hero qualifier.
+ * - Nationwide statement: docs/01 section 8.2, exact wording.
+ * - Installer Network prompt and link label: the page brief, approved.
+ * Section H2s are from the page brief. No card summaries are approved, so
+ * service cards carry a title and a link only.
+ */
+export const commercialFleetsPage = {
+  cta: {
+    label: "Request an Installation Quote",
+    href: "#request-quote",
+    journey: "commercial",
+    event: "cta_quote_click",
+  },
+  qualifier:
+    "Tell us about your equipment, vehicle count, project locations, and preferred timing.",
+  services: {
+    h2: "Installation services for commercial fleet contexts",
+    items: [
+      {
+        title: "Fleet Telematics Installation",
+        href: "/services/fleet-telematics-installation/",
+        linkLabel: "View Fleet Telematics Installation",
+      },
+      {
+        title: "GPS Tracking Installation",
+        href: "/services/gps-tracking-installation/",
+        linkLabel: "View GPS Tracking Installation",
+      },
+      {
+        title: "ELD Installation",
+        href: "/services/eld-installation/",
+        linkLabel: "View ELD Installation",
+      },
+      {
+        title: "Dashcam & Camera Installation",
+        href: "/services/dashcam-camera-installation/",
+        linkLabel: "View Dashcam & Camera Installation",
+      },
+      {
+        title: "Fleet Rollout Services",
+        href: "/services/fleet-rollouts/",
+        linkLabel: "View Fleet Rollout Services",
+      },
+    ],
+  },
+  vehicles: {
+    h2: "Installation context for commercial vehicles",
+    categories: ["Fleet vehicles", "Commercial vehicles", "Construction vehicles"],
+    examples:
+      "Examples may include work vans, service trucks, utility vehicles, and heavy-duty trucks.",
+    clarification:
+      "Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
+  },
+  quoteInfo: {
+    h2: "Information to share with your quote request",
+    items: ["Equipment", "Vehicle count", "Project locations", "Preferred timing"],
+  },
+  rollout: {
+    h2: "One vehicle or an entire fleet",
+    nationwide: "Nationwide mobile installation service, delivered at the customer's location.",
+    coverageLabel: "See nationwide coverage",
+    linkLabel: "View Fleet Rollout Services",
+  },
+  documentation: {
+    h2: "Installation documentation",
+  },
+  installerNetwork: {
+    prompt: "Are you an experienced mobile fleet installation technician?",
+    label: "Learn about the SB Mobile Installations Installer Network",
+    href: "/careers/mobile-installation-technician/",
+  },
+} as const;
+
 export const constructionHeavyEquipmentContent: InformationalPageContent = {
   h1: "Mobile Installation for Construction Vehicle Fleets",
   metaDescription:
