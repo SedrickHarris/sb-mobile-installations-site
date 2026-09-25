@@ -15,7 +15,7 @@ import type { ServicePageContent } from "@/types/service-content";
  * Hub h1, metadata, intro, and FAQ. Section copy for the rest of the page
  * lives in `servicesHubPageContent` (services-hub-content.ts). `body` is
  * unused on the hub: the answer block carries the body copy. The FAQ here is
- * distinct from the four service-page FAQs and also feeds `/faq/`.
+ * distinct from the four service-page FAQs. `/faq/` does not import it.
  */
 export const servicesHubContent: ServicePageContent = {
   h1: "Mobile Fleet Technology Installation Services",

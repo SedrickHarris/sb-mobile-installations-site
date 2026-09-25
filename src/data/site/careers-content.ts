@@ -23,7 +23,7 @@ import type { CareersPageContent } from "@/types/service-content";
 /**
  * Careers landing page h1, metadata description, intro, and FAQ. Section copy
  * for the page lives in `careersLandingContent` (careers-landing-content.ts).
- * The FAQ feeds `/faq/`.
+ * `/faq/` no longer imports this FAQ.
  */
 export const careersHubContent: CareersPageContent = {
   h1: "Installer Careers at SB Mobile Installations",
@@ -73,8 +73,8 @@ const { recruitment } = business;
 
 /**
  * FAQ shown on `/careers/` only. `careersHubContent.faq` above is left as is
- * because it feeds `/faq/` and that page's FAQPage schema; this list is
- * separate so expanding the Careers page cannot change that schema.
+ * for historical reasons; this list is separate so expanding the Careers
+ * page does not change it. `/faq/` no longer imports either list.
  *
  * Wording is taken from the approved job record and business data. Rate and
  * travel come from `business.recruitment`, never retyped. Order matters: the
@@ -154,8 +154,8 @@ export const careersPageFaq: readonly FaqItem[] = [
 
 /**
  * Installer Network page h1, metadata description, intro, and FAQ. Section
- * copy lives in `careersHubPageContent` (careers-hub-content.ts). The FAQ
- * feeds `/faq/`. The Installer Network is a registration for future
+ * copy lives in `careersHubPageContent` (careers-hub-content.ts). `/faq/`
+ * does not import this FAQ. The Installer Network is a registration for future
  * opportunities, separate from the application for the current opening.
  */
 export const installerNetworkContent: CareersPageContent = {

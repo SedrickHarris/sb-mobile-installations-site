@@ -563,22 +563,56 @@ export interface InformationalPageContent {
 }
 
 /**
- * Centralized `/faq/` page content. Every question here must already exist,
- * word for word, in another page's approved FAQ content - this page never
- * introduces a new, unreviewed claim, it only re-groups confirmed FAQs
- * with a link back to their source page.
+ * `/faq/` commercial information hub content. Topic bands of approved
+ * questions, a documentation band, a separate Installer Network band, the
+ * commercial quote block, and related links. No FAQPage markup.
  */
-export interface FaqPageItem extends FaqItem {
-  /** The page this FAQ's answer is drawn from and links back to. */
-  readonly sourceHref: string;
-  readonly sourceLabel: string;
+export interface FaqHubBand {
+  readonly id: string;
+  readonly navLabel: string;
+  readonly h2: string;
+  readonly tone: "default" | "subtle";
+  readonly items: readonly FaqItem[];
 }
 
-export interface FaqPageContent {
+export interface FaqHubContent {
   readonly h1: string;
+  readonly metaTitle: string;
   readonly metaDescription: string;
-  readonly intro: string;
-  readonly items: readonly FaqPageItem[];
+  readonly hero: {
+    readonly support: string;
+    readonly cta: {
+      readonly label: string;
+      readonly href: string;
+      readonly journey: "commercial";
+      readonly event: string;
+    };
+    readonly qualifier: string;
+    readonly secondary: HubLink;
+  };
+  readonly topicNav: { readonly label: string };
+  readonly bands: readonly FaqHubBand[];
+  readonly documentation: {
+    readonly id: string;
+    readonly navLabel: string;
+    readonly h2: string;
+    readonly question: string;
+    readonly answer: string;
+  };
+  readonly installerNetwork: {
+    readonly id: string;
+    readonly navLabel: string;
+    readonly h2: string;
+    readonly intro: string;
+    readonly items: readonly FaqItem[];
+  };
+  readonly quote: {
+    readonly h2: string;
+    readonly intro: string;
+    readonly formCopy: { readonly serviceNeed: string; readonly submit: string };
+  };
+  readonly handoff: { readonly question: string; readonly link: HubLink };
+  readonly related: { readonly h2: string; readonly links: readonly HubLink[] };
 }
 
 /**
