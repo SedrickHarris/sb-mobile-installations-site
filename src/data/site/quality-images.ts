@@ -42,13 +42,12 @@ export const qualityImages = {
     slotId: "quality-project-location",
     role: "Authentic approved photo of an on-site installation at a customer location",
     aspectRatio: "4 / 3",
-    width: 3344,
-    height: 1882,
+    width: 2896,
+    height: 2172,
     fallback: "route",
-    src: qualityHeroBackground.src,
-    // The left half of the photo is an empty truck door; crop toward the technician.
-    objectPosition: "85% center",
-    alt: "Technician in a dark cap and navy work shirt kneeling at the open door of a commercial truck cab, connecting equipment to wiring under the dashboard",
+    src: "/images/brand/quality-safety/sb-mobile-installations-quality-safety-on-site-fleet-electronics-installation-4x3.webp",
+    objectPosition: "center",
+    alt: "Technician in a dark cap and navy polo shirt seated in the cab of a white van, mounting a small device on the windshield near the mirror, with parked white semi-trucks visible outside",
     altGuidance:
       "Describe only what is shown. Never a map, an office, a state or city identifier, or any graphic implying coverage.",
   },
