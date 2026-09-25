@@ -225,23 +225,10 @@ export const faqHubContent: FaqHubContent = {
     },
   },
 
-  handoff: {
-    question: "Are you an experienced mobile fleet installation technician?",
-    link: {
-      label: "Learn about the SB Mobile Installations Installer Network",
-      href: INSTALLER_NETWORK_PATH,
-    },
-  },
-
   related: {
     h2: "Related Resources",
     links: [
       { label: "All installation services", href: "/services/" },
-      { label: "Fleet Telematics Installation", href: "/services/fleet-telematics-installation/" },
-      { label: "GPS Tracking Installation", href: "/services/gps-tracking-installation/" },
-      { label: "ELD Installation", href: "/services/eld-installation/" },
-      { label: "Dashcam & Camera Installation", href: "/services/dashcam-camera-installation/" },
-      { label: "Fleet Rollout Installation Services", href: "/services/fleet-rollouts/" },
       { label: "Nationwide mobile installation coverage", href: "/coverage/" },
     ],
   },

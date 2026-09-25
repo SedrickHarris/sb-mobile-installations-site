@@ -17,6 +17,26 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  *
  * `altGuidance` is a note for whoever supplies the file. It is never rendered.
  */
+/**
+ * Decorative full-width hero background. Empty alt and hidden from assistive
+ * tech: the hero text carries the meaning. Sits under a black overlay.
+ */
+export const faqHeroBackground = {
+  src: "/images/brand/faq/hero/sb-mobile-installations-faq-commercial-fleet-facility-background-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
+/**
+ * Decorative background for the quote section. Empty alt and hidden from
+ * assistive tech. Sits under a black overlay.
+ */
+export const faqQuoteBackground = {
+  src: "/images/brand/faq/sb-mobile-installations-faq-quote-commercial-fleet-background-16x9.webp",
+  width: 3344,
+  height: 1882,
+} as const;
+
 export const faqImages = {
   hero: {
     slotId: "faq-hero",

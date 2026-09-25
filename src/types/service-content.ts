@@ -611,7 +611,6 @@ export interface FaqHubContent {
     readonly intro: string;
     readonly formCopy: { readonly serviceNeed: string; readonly submit: string };
   };
-  readonly handoff: { readonly question: string; readonly link: HubLink };
   readonly related: { readonly h2: string; readonly links: readonly HubLink[] };
 }
 

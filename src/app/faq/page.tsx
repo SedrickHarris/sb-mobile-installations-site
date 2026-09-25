@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { InstallerQuestions } from "@/components/content/InstallerQuestions";
+import { InstallCategoryCard } from "@/components/content/WhatWeInstallGrid";
 import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { CardGrid } from "@/components/layout/CardGrid";
 import { Section } from "@/components/layout/Section";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { CtaButton } from "@/components/ui/CtaButton";
-import { ImageSlot } from "@/components/ui/ImageSlot";
+import { careersHubImages } from "@/data/site/careers-hub-images";
+import { careersLandingContent } from "@/data/site/careers-landing-content";
+import { business } from "@/data/site/business";
 import { faqHubContent as page } from "@/data/site/faq-content";
-import { faqImages } from "@/data/site/faq-images";
+import { faqHeroBackground, faqQuoteBackground } from "@/data/site/faq-images";
+import { homepageContent } from "@/data/site/homepage-content";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
 import type { FaqItem } from "@/types/content";
@@ -83,7 +89,7 @@ function QaList({
  * Commercial information hub. Schema is WebPage plus BreadcrumbList only: no
  * FAQPage, QAPage, HowTo, Service, LocalBusiness, or areaServed. The only form
  * is CommercialInquiryForm. The Installer Network appears as a short separate
- * band and a low-emphasis text handoff, never a form.
+ * band of answers, never a form.
  */
 export default function FaqPage() {
   const network = page.installerNetwork;
@@ -107,14 +113,34 @@ export default function FaqPage() {
       />
       <Breadcrumbs items={BREADCRUMBS} />
 
-      {/* Hero: copy first in DOM order, decorative panel after. No photo. */}
+      {/*
+        Hero: single text column over a full-width decorative background photo.
+        Black overlay only (site rule); it scrolls with the section and is
+        never pinned.
+      */}
       <section
         data-tone="dark"
         aria-labelledby="faq-hero-heading"
-        className="bg-[var(--color-surface-dark)] px-5 py-14 text-[var(--color-text-on-dark)] md:px-6 md:py-20"
+        className="relative isolate overflow-hidden bg-[var(--color-surface-dark)] px-5 py-14 text-[var(--color-text-on-dark)] md:px-6 md:py-20"
       >
-        <div className="mx-auto grid max-w-[1280px] gap-10 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:items-center md:gap-14">
-          <div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={faqHeroBackground.src}
+          alt=""
+          aria-hidden="true"
+          width={faqHeroBackground.width}
+          height={faqHeroBackground.height}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center] md:object-center"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-black/55"
+        />
+        <div className="mx-auto max-w-[1280px]">
+          <div className="max-w-[720px]">
             <h1
               id="faq-hero-heading"
               className="text-[length:var(--text-h1)] leading-[1.08] font-bold text-balance"
@@ -137,22 +163,19 @@ export default function FaqPage() {
               </Link>
             </div>
           </div>
-          <div aria-hidden="true" className="hidden md:block">
-            <ImageSlot slot={faqImages.hero} />
-          </div>
         </div>
       </section>
 
-      {/* Topic navigation: plain anchors, two columns on mobile, no horizontal scroll. */}
+      {/* Topic navigation: plain anchors on one line from lg, two or three columns below, no horizontal scroll. */}
       <nav
         aria-label={page.topicNav.label}
-        className="bg-surface-subtle px-5 py-6 md:px-6"
+        className="bg-surface-subtle px-3 py-4 md:px-4"
       >
         <div className="mx-auto max-w-[1280px]">
-          <ul className="grid list-none grid-cols-2 gap-x-4 gap-y-1 p-0 md:grid-cols-3 lg:grid-cols-6">
+          <ul className="grid list-none grid-cols-2 gap-x-4 gap-y-1 p-0 md:grid-cols-3 lg:flex lg:flex-nowrap lg:items-center lg:justify-between lg:gap-x-4">
             {nav.map((item) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} className={textLink}>
+                <a href={`#${item.id}`} className={`${textLink} lg:whitespace-nowrap`}>
                   {item.label}
                 </a>
               </li>
@@ -213,13 +236,43 @@ export default function FaqPage() {
         </Section>
       </div>
 
+      {/*
+        Installer questions: the shared recruitment contact block used on the
+        service pages, /careers/, /contact/, and /our-process/. Separate
+        journey: its links carry the recruitment journey and never lead into the
+        commercial form.
+      */}
+      <InstallerQuestions
+        content={careersLandingContent.contact}
+        image={careersHubImages.contact}
+        headingId="faq-installer-questions-heading"
+        phoneLocation="faq-installer-questions"
+        trackPaths
+      />
+
       {/* Commercial quote form: the primary conversion. */}
       <div id="request-quote" className="scroll-mt-24">
         <section
           data-tone="dark"
           aria-labelledby="faq-quote-heading"
-          className="bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:px-6 md:py-24"
+          className="relative isolate overflow-hidden bg-[var(--color-surface-dark)] px-5 py-16 text-[var(--color-text-on-dark)] md:px-6 md:py-24"
         >
+          {/* Decorative background; scrolls with the section. Black overlay only. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={faqQuoteBackground.src}
+            alt=""
+            aria-hidden="true"
+            width={faqQuoteBackground.width}
+            height={faqQuoteBackground.height}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-black/55"
+          />
           <div className="mx-auto max-w-[1280px]">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-14">
               <div>
@@ -244,27 +297,6 @@ export default function FaqPage() {
         </section>
       </div>
 
-      {/* Low-emphasis Installer Network handoff: text link only, its own journey. */}
-      <Section tone="default" width="site" density="tight" labelledBy="faq-handoff-heading">
-        <p
-          id="faq-handoff-heading"
-          className="text-[length:var(--text-body)] font-semibold text-ink"
-        >
-          {page.handoff.question}
-        </p>
-        <p className="mt-1">
-          <Link
-            href={page.handoff.link.href}
-            data-journey="recruitment"
-            data-event="cta_installer_network_click"
-            className={textLink}
-          >
-            {page.handoff.link.label}
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </p>
-      </Section>
-
       <Section
         tone="subtle"
         width="site"
@@ -274,7 +306,20 @@ export default function FaqPage() {
         <h2 id="faq-related-heading" className={h2Class}>
           {page.related.h2}
         </h2>
-        <ul className="mt-6 flex list-none flex-wrap gap-x-8 gap-y-1 p-0">
+        {/* The same six approved cards as the homepage "What We Install" grid. */}
+        <div className="mt-8">
+          <CardGrid columns={3}>
+            {business.serviceTypes.map((service) => (
+              <InstallCategoryCard
+                key={service}
+                service={service}
+                content={homepageContent.whatWeInstall}
+                id="faq-related"
+              />
+            ))}
+          </CardGrid>
+        </div>
+        <ul className="mt-8 flex list-none flex-wrap gap-x-8 gap-y-1 p-0">
           {page.related.links.map((link) => (
             <li key={link.href}>
               <Link href={link.href} className={textLink}>
