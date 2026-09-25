@@ -24,6 +24,8 @@ import {
 import { qualitySafetyContent as page } from "@/data/site/quality-content";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
+import { TrustStrip } from "@/components/content/TrustStrip";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 
 const PATHNAME = "/quality-safety/";
 const BREADCRUMBS = [{ label: "Home", href: "/" }, { label: "Quality & Safety" }];
@@ -122,6 +124,8 @@ export default function QualitySafetyPage() {
           </div>
         </div>
       </section>
+
+      <TrustStrip content={trustStripContent} />
 
       {/* Scope clarity strip */}
       <Section

@@ -16,6 +16,8 @@ import { Card } from "@/components/ui/Card";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { servicePageSchema } from "@/lib/schema/service-page";
 import type { ServicePageBundle } from "@/types/service-content";
+import { TrustStrip } from "@/components/content/TrustStrip";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 
 interface ServicePageTemplateProps {
   readonly bundle: ServicePageBundle;
@@ -103,6 +105,8 @@ export function ServicePageTemplate({ bundle }: ServicePageTemplateProps) {
         backgroundImage={content.heroBackgroundImage}
         backgroundVideo={content.heroVideo}
       />
+
+      <TrustStrip content={trustStripContent} />
 
       <SplitFeature
         id={`${id}-definition`}

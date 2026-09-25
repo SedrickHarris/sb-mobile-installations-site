@@ -23,6 +23,8 @@ import {
 } from "@/data/site/process-images";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
+import { TrustStrip } from "@/components/content/TrustStrip";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 
 const PATHNAME = "/our-process/";
 const BREADCRUMBS = [{ label: "Home", href: "/" }, { label: "Our Process" }];
@@ -166,6 +168,8 @@ export default function OurProcessPage() {
           </div>
         </div>
       </section>
+
+      <TrustStrip content={trustStripContent} />
 
       {/* Inquiry context: four information categories, not a sequence. */}
       <div id="quote-request-context" className="scroll-mt-24">

@@ -19,6 +19,8 @@ import { industriesHubPageContent as hub } from "@/data/site/industries-hub-cont
 import { industriesHubImages } from "@/data/site/industries-hub-images";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
+import { TrustStrip } from "@/components/content/TrustStrip";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 
 const PATHNAME = "/industries/";
 const BREADCRUMBS = [{ label: "Home", href: "/" }, { label: "Industries" }];
@@ -66,6 +68,8 @@ export default function IndustriesPage() {
             "/images/industries/industries-hub-page/industries-hero/sb-mobile-installations-industries-hub-commercial-fleet-vehicles.webp",
         }}
       />
+
+      <TrustStrip content={trustStripContent} />
 
       <SplitFeature
         id="industries-answer"

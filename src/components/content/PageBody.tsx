@@ -23,6 +23,8 @@ interface PageBodyProps {
   readonly hideHero?: boolean;
   /** Skip the body paragraphs when the page renders its own introduction. Off by default. */
   readonly hideBody?: boolean;
+  /** Rendered directly after the hero section, before the body. Used for the trust strip. */
+  readonly afterHero?: ReactNode;
 }
 
 /**
@@ -38,6 +40,7 @@ export function PageBody({
   children,
   hideHero = false,
   hideBody = false,
+  afterHero,
 }: PageBodyProps) {
   const headingId = `${id}-heading`;
 
@@ -56,6 +59,8 @@ export function PageBody({
           </p>
         </Section>
       )}
+
+      {afterHero}
 
       {hideBody ? null : (
         <Section tone="subtle" width="reading">

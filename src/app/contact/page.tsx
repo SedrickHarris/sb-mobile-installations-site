@@ -19,6 +19,8 @@ import { careersLandingContent } from "@/data/site/careers-landing-content";
 import { contactContent as page } from "@/data/site/contact-content";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
+import { TrustStrip } from "@/components/content/TrustStrip";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 
 const PATHNAME = "/contact/";
 const BREADCRUMBS = [{ label: "Home", href: "/" }, { label: "Contact" }];
@@ -66,6 +68,8 @@ export default function ContactPage() {
         phoneLocation="contact-hero"
         backgroundVideo={page.hero.video}
       />
+
+      <TrustStrip content={trustStripContent} />
 
       {/*
         Installer questions: the same shared block as /careers/, placed directly

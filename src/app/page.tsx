@@ -19,6 +19,8 @@ import { JsonLd } from "@/components/schema/JsonLd";
 import { homepageContent } from "@/data/site/homepage-content";
 import { homepageMetadata } from "@/lib/metadata/homepage";
 import { homepageSchema } from "@/lib/schema/homepage";
+import { TrustStrip } from "@/components/content/TrustStrip";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 
 export const metadata = homepageMetadata;
 
@@ -53,6 +55,8 @@ export default function HomePage() {
 
       <>
         <HomeHero content={homepageContent.hero} />
+
+        <TrustStrip content={trustStripContent} />
 
         <AnswerBlock content={homepageContent.directAnswer} image={introImage} />
 

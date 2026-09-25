@@ -22,6 +22,8 @@ import {
 import { AnalyticsEvent } from "@/lib/analytics/events";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
+import { TrustStrip } from "@/components/content/TrustStrip";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 
 const PATHNAME = "/coverage/";
 const BREADCRUMBS = [{ label: "Home", href: "/" }, { label: "Coverage" }];
@@ -72,6 +74,8 @@ export default function CoveragePage() {
         backgroundVideo={coverageHeroVideo}
         image={coverageImages.hero}
       />
+
+      <TrustStrip content={trustStripContent} />
 
       <SplitFeature
         id="coverage-intro"

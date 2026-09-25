@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 import { PageBody } from "@/components/content/PageBody";
+import { TrustStrip } from "@/components/content/TrustStrip";
 import { CommercialInquiryForm } from "@/components/forms/CommercialInquiryForm";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { commercialFleetsContent } from "@/data/site/industries-content";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 import { webPageSchema } from "@/lib/schema/webpage";
 
@@ -34,7 +36,7 @@ export default function CommercialFleetsPage() {
       />
       <Breadcrumbs items={BREADCRUMBS} />
 
-      <PageBody id="commercial-fleets" content={commercialFleetsContent}>
+      <PageBody id="commercial-fleets" content={commercialFleetsContent} afterHero={<TrustStrip content={trustStripContent} />}>
         <h2 className="text-[length:var(--text-h3)] font-bold text-ink">
           Request an Installation Quote
         </h2>

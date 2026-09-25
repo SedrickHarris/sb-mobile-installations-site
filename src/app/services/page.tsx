@@ -22,6 +22,8 @@ import {
   servicePageSchema,
   UMBRELLA_SERVICE_TYPE,
 } from "@/lib/schema/service-page";
+import { TrustStrip } from "@/components/content/TrustStrip";
+import { trustStripContent } from "@/data/site/trust-strip-content";
 
 const PATHNAME = "/services/";
 const BREADCRUMBS = [{ label: "Home", href: "/" }, { label: "Services" }];
@@ -66,6 +68,8 @@ export default function ServicesPage() {
             "/images/services/services-hub/services-hub-hero/sb-mobile-installations-services-hub-commercial-fleet-installation-background.webp",
         }}
       />
+
+      <TrustStrip content={trustStripContent} />
 
       <SplitFeature
         id="services-answer"
