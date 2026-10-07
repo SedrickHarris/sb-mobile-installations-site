@@ -42,7 +42,7 @@ export function Footer() {
   return (
     <footer className="border-t-4 border-t-[var(--color-brand-red)] bg-surface-subtle">
       <div className="mx-auto max-w-[1280px] px-5 py-10 md:px-6 md:py-12">
-        <div className="grid gap-8 lg:grid-cols-[minmax(180px,1.3fr)_repeat(4,minmax(0,1fr))] lg:gap-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(240px,1.3fr)_repeat(4,minmax(0,1fr))] lg:gap-10">
           <div>
             <Link
               href="/"
@@ -55,7 +55,7 @@ export function Footer() {
                 alt={business.name}
                 width={1200}
                 height={360}
-                className="h-auto w-[120px] max-w-full md:w-[140px]"
+                className="h-auto w-[200px] max-w-full md:w-[240px]"
               />
             </Link>
 

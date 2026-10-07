@@ -74,7 +74,7 @@ export function Header() {
             alt="Ultimate Fleet GPS"
             width={1200}
             height={360}
-            className="h-auto w-[120px] max-w-full lg:w-[150px]"
+            className="h-auto w-[190px] max-w-full lg:w-[250px]"
           />
         </Link>
 
