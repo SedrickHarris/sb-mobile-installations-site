@@ -175,7 +175,7 @@ export const contactContent = {
      * as the existing `serviceNeed` field; no payload field is added.
      */
     form: {
-      name: "Name",
+      name: "Full name",
       email: "Business email",
       phone: "Phone",
       company: "Company or organization",

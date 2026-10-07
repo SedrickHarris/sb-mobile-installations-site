@@ -82,7 +82,7 @@ const EMPTY: Fields = {
 
 function validate(fields: Fields): Errors {
   const errors: Errors = {};
-  if (!fields.name.trim()) errors.name = "Enter your name.";
+  if (!fields.name.trim()) errors.name = "Enter your full name.";
   if (!/^\S+@\S+\.\S+$/.test(fields.email.trim())) {
     errors.email = "Enter a valid email address.";
   }
@@ -308,7 +308,7 @@ export function ApplicationForm() {
           Your contact information
         </legend>
 
-        <Field label="Name" id={fieldId("name")} error={errors.name} errorId={errorId("name")} required>
+        <Field label="Full name" id={fieldId("name")} error={errors.name} errorId={errorId("name")} required>
           <input
             id={fieldId("name")}
             name="name"

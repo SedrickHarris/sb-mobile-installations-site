@@ -39,7 +39,7 @@ type ResolvedCopy = Required<
   Pick<CommercialInquiryFormCopy, "descriptionPlaceholder" | "privacyLink">;
 
 const defaultCopy: ResolvedCopy = {
-  name: "Name",
+  name: "Full name",
   email: "Email",
   phone: "Phone",
   company: "Company",

@@ -120,7 +120,7 @@ export function InstallerNetworkForm({
         />
       </div>
 
-      <Field label="Name" htmlFor={`${formId}-name`} required>
+      <Field label="Full name" htmlFor={`${formId}-name`} required>
         <input
           id={`${formId}-name`}
           name="name"
