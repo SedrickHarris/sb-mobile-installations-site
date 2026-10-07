@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Operating instructions for Claude and Claude Code in the SB Mobile Installations
+Operating instructions for Claude and Claude Code in the Ultimate Fleet GPS
 repository. Read this before any implementation work.
 
 ## 1. Source of truth
@@ -114,7 +114,7 @@ covered by this rule.
 
 ## 3.2 Public name
 
-The public-facing company name is `SB Mobile Installations`. Use `SB Mobile Installations, LLC`
+The public-facing company name is `Ultimate Fleet GPS`. Use the registered legal entity name
 only where the legal entity is required, such as internal documentation or legally
 appropriate employment and contractor disclosures, and identify each such use as legally
 required (`docs/01-business-source-of-truth.md` section 4.2). Its one source is
@@ -165,8 +165,8 @@ exist. Each active opening needs its own stable job record and canonical URL, an
 with no `validThrough` because no closing date is published. Populate a property only when
 the value is verified, not merely because the vocabulary allows it.
 
-Never turn a recruiting market into a physical office. The corporate office address (8907 N
-175th Ave, Waddell, AZ 85355) is approved for the footer, contact page, careers pages, legal
+Never turn a recruiting market into a physical office. The corporate office address (4539 N. 22nd St. #6225,
+Phoenix, AZ 85016) is approved for the footer, contact page, careers pages, legal
 pages, `Organization` schema, and eligible `JobPosting` schema (`docs/01` sections 5.3 and 33).
 Never describe it as a walk-in installation facility or a guarantee of local service
 availability. Do not publish any other street address or exact site location without approval.

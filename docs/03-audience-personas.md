@@ -1,8 +1,8 @@
-# SB Mobile Installations Audience Personas
+# Ultimate Fleet GPS Audience Personas
 
 **Document:** `03-audience-personas.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary audience:** Qualified mobile installer candidates  
 **Secondary audience:** Commercial prospects and strategic partners  
 **Status:** Strategic discovery draft  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines the priority audiences for the SB Mobile Installations website and translates their needs into content, search, user-experience, and conversion requirements.
+This document defines the priority audiences for the Ultimate Fleet GPS website and translates their needs into content, search, user-experience, and conversion requirements.
 
 It is intended to guide:
 
@@ -857,7 +857,7 @@ A company seeking subcontracted installation capacity, territory support, overfl
 
 ### Primary questions
 
-- Does SB Mobile Installations subcontract?
+- Does Ultimate Fleet GPS subcontract?
 - Which markets and skills are available?
 - How are technicians screened and managed?
 - How are confidentiality and customer communication handled?
@@ -1142,7 +1142,7 @@ Candidate and commercial records must never enter the same undifferentiated pipe
 - use plain language;
 - avoid generic superlatives;
 - keep contact information consistent;
-- identify SB Mobile Installations clearly;
+- identify Ultimate Fleet GPS clearly;
 - answer the primary question early;
 - provide a relevant next step; and
 - reflect current operating reality.

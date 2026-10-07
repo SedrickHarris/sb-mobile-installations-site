@@ -1,8 +1,8 @@
-# SB Mobile Installations Recruitment Strategy
+# Ultimate Fleet GPS Recruitment Strategy
 
 **Document:** 28-recruitment-strategy.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Primary objective:** Attract, qualify, and route capable mobile installation candidates.  
 **Secondary objective:** Maintain an installer network between active hiring cycles.  

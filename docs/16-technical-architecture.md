@@ -1,10 +1,10 @@
-# SB Mobile Installations Technical Architecture
+# Ultimate Fleet GPS Technical Architecture
 
 **Document:** `16-technical-architecture.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
-**Production domain:** `https://sbmobileinstallations.com/` pending final DNS confirmation  
+**Production domain:** `https://ultimatefleetgps.net/` pending final DNS confirmation  
 **Primary technical outcome:** A fast, secure, accessible, maintainable recruitment-first website  
 **Hosting model:** Next.js static export on Cloudflare Pages with separate serverless integrations where required  
 **Status:** Architecture and implementation draft  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines the technical architecture for the SB Mobile Installations website and its supporting recruitment and commercial systems.
+This document defines the technical architecture for the Ultimate Fleet GPS website and its supporting recruitment and commercial systems.
 
 It governs:
 
@@ -504,7 +504,7 @@ type BusinessProfile = {
 
 - Only verified values can render on production pages or schema.
 - Missing values remain absent rather than being inferred.
-- No relationship between SB Mobile Installations, LLC and Doral Transport LLC exists (`01-business-source-of-truth.md` section 4.1), so none is represented. Any future relationship must be represented only after written approval.
+- No relationship between Ultimate Fleet GPS and Doral Transport LLC exists (`01-business-source-of-truth.md` section 4.1), so none is represented. Any future relationship must be represented only after written approval.
 - Recruiting markets and commercial service areas use separate registries.
 - A place mentioned in content does not automatically become a verified office or local-business location.
 - Business facts must include verification status, source reference, and approval date in the internal record or source-of-truth documentation.
@@ -2010,7 +2010,7 @@ The following must be resolved before the affected implementation launches:
 21. Are any authenticated installer features in launch scope?
 22. Are any translations in launch scope?
 23. Is Cloudflare Images or another image service justified?
-24. What is the approved relationship between SB Mobile Installations, LLC and Doral Transport LLC? Resolved September 10, 2026: none exists (`01-business-source-of-truth.md` section 4.1).
+24. What is the approved relationship between Ultimate Fleet GPS and Doral Transport LLC? Resolved September 10, 2026: none exists (`01-business-source-of-truth.md` section 4.1).
 
 Unresolved decisions must remain explicit blockers or use clearly isolated test fixtures. Production code must not silently choose legal, recruiting, data-handling, or business facts.
 

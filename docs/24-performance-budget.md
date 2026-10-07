@@ -1,8 +1,8 @@
-# SB Mobile Installations Performance Budget
+# Ultimate Fleet GPS Performance Budget
 
 **Document:** 24-performance-budget.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Framework:** Next.js App Router, TypeScript, Tailwind CSS  
 **Hosting:** Cloudflare Pages static export  
 **Primary objective:** Keep recruitment, job discovery, and application paths fast and reliable on mobile connections.  
@@ -14,7 +14,7 @@
 
 ## 1. Purpose
 
-This document establishes measurable performance targets and the review process for the SB Mobile Installations website.
+This document establishes measurable performance targets and the review process for the Ultimate Fleet GPS website.
 
 It works with:
 
@@ -403,7 +403,7 @@ The prior zero-font-cost assumption (system-font stack only) is replaced. `src/l
 
 ## 23b. Logo asset, September 18, 2026
 
-The header loads one image: `sb-mobile-installations-logo-red.svg`, 14 KB, displayed at 120-150 px wide with explicit width and height (no layout shift). It replaces an 82 KB WebP. Fonts and JavaScript are unchanged.
+The header loads one image: `ultimate-fleet-gps-primary-logo.svg`, about 1 KB, displayed at 120-150 px wide with explicit width and height (no layout shift). It replaces an 82 KB WebP. Fonts and JavaScript are unchanged.
 
 ## 24. Maintenance
 

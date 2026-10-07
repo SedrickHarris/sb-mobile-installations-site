@@ -1,8 +1,8 @@
-# SB Mobile Installations Quality Assurance Checklist
+# Ultimate Fleet GPS Quality Assurance Checklist
 
 **Document:** 25-quality-assurance-checklist.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Framework:** Next.js App Router, TypeScript, Tailwind CSS  
 **Hosting:** Cloudflare Pages static export  
 **Primary objective:** Verify that every published page is accurate, usable, discoverable, fast, accessible, and conversion-ready.  

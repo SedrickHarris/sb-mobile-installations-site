@@ -1,8 +1,8 @@
-# SB Mobile Installations Component Inventory
+# Ultimate Fleet GPS Component Inventory
 
 **Document:** `20-component-inventory.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Framework:** Next.js App Router, TypeScript, and Tailwind CSS  
 **Rendering model:** Static export with minimal client-side interaction  
@@ -17,7 +17,7 @@
 
 ## 1. Purpose
 
-This document defines the reusable components and page-template assemblies required to build the SB Mobile Installations website.
+This document defines the reusable components and page-template assemblies required to build the Ultimate Fleet GPS website.
 
 It governs:
 
@@ -2707,7 +2707,7 @@ New components added to the inventory:
 - `WhatWeInstallGrid` — sourced from `business.serviceTypes`, never a hardcoded list. Each card holds the service title (h3), a descriptive paragraph, an optional visible "Use cases" unordered list, and an optional qualification note (AOBRD), all from `homepageContent.whatWeInstall.cards`. Cards are equal height with a decorative image on top and are not links.
 - `WhoWeServeGrid` — eyebrow, heading, intro, three vehicle-type cards (fleet, commercial, construction vehicles), and a closing support paragraph with one commercial CTA. Each card has a vehicle-type h3 title, a unique explanatory paragraph, a visible "Use cases" label with a six-item unordered list, an image with intrinsic width and height and alt text describing only what the photo shows, and an optional internal link (label, href, and optional existing analytics event; no new event names). Card links and the section CTA are commercial only: they route to approved commercial routes (`/services/`, `/contact/`) and never to recruitment or Installer Network routes, and the block carries no employment, contractor, or active-job language. All content is server-rendered; all copy from `homepageContent.whoWeServe`.
 - `WhyChooseUsSplit` — compact proof strip of four confirmed facts (in business since 2011, every installation photo documented, fleet/commercial/construction vehicles, independent contractor technicians), as a list of short labels with a decorative red rule. It carries no benefit headings, which live only in `TrustSection`, so each benefit heading appears once on the homepage. The h2 is visually hidden to name the strip. Server-rendered; all copy from `homepageContent.whyChooseUs`.
-- `TrustSection` — homepage "Why SB Mobile Installations" block: h2, intro, decorative image in a two-column intro (image left, text first in the DOM), four compact benefit cards (h3 title, paragraph), an h3 fleet-manager list, a commercial CTA panel (quote CTA plus a descriptive services link), and one visually secondary Installer Network link below a divider. The quote CTA and the technician link are separate journeys with separate routes and events. Server-rendered; all copy from `homepageContent.trust`; no FAQ content is repeated. `ContentSection` remains the generic heading, paragraph, and CTA block used by the commercial section.
+- `TrustSection` — homepage "Why Ultimate Fleet GPS" block: h2, intro, decorative image in a two-column intro (image left, text first in the DOM), four compact benefit cards (h3 title, paragraph), an h3 fleet-manager list, a commercial CTA panel (quote CTA plus a descriptive services link), and one visually secondary Installer Network link below a divider. The quote CTA and the technician link are separate journeys with separate routes and events. Server-rendered; all copy from `homepageContent.trust`; no FAQ content is repeated. `ContentSection` remains the generic heading, paragraph, and CTA block used by the commercial section.
 - `DeploymentProcessSteps` — ordered process, no guaranteed response times.
 - `LargeRolloutCallout` — dark-navy tone, "one vehicle or an entire fleet" framing.
 - `RecruitingBanner` (`src/components/careers/RecruitingBanner.tsx`) — visually distinct dark two-column recruitment feature block (primary CTA, in-flow disclosure panel, optional decorative image, gradient fallback).

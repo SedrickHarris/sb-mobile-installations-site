@@ -1,3 +1,5 @@
+> **Superseded 2026-10-07:** the canonical business telephone number is now (928) 393-8049 (see `01-business-source-of-truth.md`). The record below is kept as history.
+
 # Decision 0001: Canonical business telephone number
 
 **Date:** September 10, 2026

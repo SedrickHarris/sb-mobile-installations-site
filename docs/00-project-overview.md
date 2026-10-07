@@ -1,10 +1,10 @@
-# SB Mobile Installations Website Rebuild
+# Ultimate Fleet GPS Website Rebuild
 
 ## Project Overview
 
 **Document:** 00-project-overview.md  
-**Project:** SB Mobile Installations Website Rebuild  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website Rebuild  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Status:** Foundational draft  
 **Version:** 0.2  
@@ -14,7 +14,7 @@
 
 ## 1. Document purpose
 
-This document defines the purpose, scope, strategy, operating assumptions, and intended outcomes of the SB Mobile Installations website rebuild. It provides the high-level direction for research, content development, information architecture, design, implementation, deployment, search optimization, and conversion measurement.
+This document defines the purpose, scope, strategy, operating assumptions, and intended outcomes of the Ultimate Fleet GPS website rebuild. It provides the high-level direction for research, content development, information architecture, design, implementation, deployment, search optimization, and conversion measurement.
 
 This overview is a strategic foundation, not the final authority for every business fact. Verified company information will be maintained in `01-business-source-of-truth.md`. Approved services, industries, audiences, technologies, locations, routes, and page states will be maintained in their respective canonical registries.
 
@@ -24,11 +24,11 @@ When this document conflicts with a verified business fact or a later approved d
 
 ## 2. Executive summary
 
-SB Mobile Installations, LLC provides mobile electronic equipment installation services for commercial vehicles, fleet vehicles, construction vehicles, and related mobile assets. The existing website presents the company primarily as a provider of GPS equipment installation and service with mobile technicians available throughout the United States.
+Ultimate Fleet GPS provides mobile electronic equipment installation services for commercial vehicles, fleet vehicles, construction vehicles, and related mobile assets. The existing website presents the company primarily as a provider of GPS equipment installation and service with mobile technicians available throughout the United States.
 
 The available company content also indicates technician experience with electronic logging devices, fleet-management equipment, vehicle camera systems, tire-pressure monitoring equipment, and related 12-volt and 24-volt vehicle electronics. That broader capability is not currently organized or explained effectively for prospective customers.
 
-The new website will reposition SB Mobile Installations as a credible commercial fleet-technology installation and deployment partner. It will explain what the company installs, who it serves, how projects are coordinated, how installation quality is verified, and how prospective customers can request a quote or discuss a deployment.
+The new website will reposition Ultimate Fleet GPS as a credible commercial fleet-technology installation and deployment partner. It will explain what the company installs, who it serves, how projects are coordinated, how installation quality is verified, and how prospective customers can request a quote or discuss a deployment.
 
 The website will support national commercial search intent while also creating a controlled framework for verified state, metro, industry, audience, technology, and matrix content. Page creation, production deployment, public availability, and search indexation will remain separate decisions. The project will not automatically publish every possible service, industry, technology, or geographic combination.
 
@@ -40,7 +40,7 @@ The website will be built with Next.js App Router, TypeScript, and Tailwind CSS.
 
 ### 3.1 Working business category
 
-SB Mobile Installations operates within the following overlapping business categories:
+Ultimate Fleet GPS operates within the following overlapping business categories:
 
 - Mobile fleet-technology installation
 - Commercial vehicle electronics installation
@@ -56,7 +56,7 @@ These categories are working classifications. Each service must be verified befo
 
 ### 3.2 Working business model
 
-The available content suggests that SB Mobile Installations uses mobile technicians who travel to customer locations, fleet yards, construction sites, or approved shop locations to complete equipment installations.
+The available content suggests that Ultimate Fleet GPS uses mobile technicians who travel to customer locations, fleet yards, construction sites, or approved shop locations to complete equipment installations.
 
 The company may serve customers directly or may operate as an installation partner for telematics providers, equipment manufacturers, resellers, fleet-management companies, and project coordinators. These potential relationships must be confirmed before final positioning or publication.
 
@@ -101,7 +101,7 @@ Much of the most useful capability information is located on the career page rat
 
 The current contact content displays two telephone numbers. The stakeholder confirmed the canonical number on September 10, 2026.
 
-- 623-388-7352 is the verified business telephone number.
+- (928) 393-8049 is the verified business telephone number.
 - 623-338-7352 is rejected as a typographical error and must not be published.
 
 See `01-business-source-of-truth.md` section 5.1. Correct the rejected number wherever it appears in current site content, structured data, citations, directories, and business profiles.
@@ -115,7 +115,7 @@ The existing website does not fully represent the apparent scope, operational ca
 Primary problems include:
 
 - The service offering is not clearly defined.
-- The site does not explain who hires SB Mobile Installations.
+- The site does not explain who hires Ultimate Fleet GPS.
 - Nationwide capability is stated but not supported with a coverage model or deployment explanation.
 - Technical experience is buried in recruiting content.
 - Platform experience is not separated from partnership or authorization status.
@@ -165,10 +165,10 @@ The new site can:
 
 The website should help a prospective customer quickly determine:
 
-- Whether SB Mobile installs the required equipment.
-- Whether SB Mobile works with the customer’s vehicle types.
+- Whether Ultimate Fleet GPS installs the required equipment.
+- Whether Ultimate Fleet GPS works with the customer’s vehicle types.
 - Whether technicians can reach the required location or locations.
-- Whether SB Mobile can support the size and timeline of the project.
+- Whether Ultimate Fleet GPS can support the size and timeline of the project.
 - How installations are scheduled and completed.
 - How installation quality and functionality are verified.
 - What information is needed to request a quote.
@@ -301,7 +301,7 @@ The website will be organized around distinct customer and search intents.
 
 ### 10.2 Service pages
 
-Service pages will explain what equipment or installation work SB Mobile provides.
+Service pages will explain what equipment or installation work Ultimate Fleet GPS provides.
 
 Preferred pattern:
 
@@ -451,7 +451,7 @@ The primary customer conversion will be:
 
 - Discuss a Fleet Deployment
 - Check Technician Coverage
-- Call SB Mobile Installations
+- Call Ultimate Fleet GPS
 - Submit Project Information
 - Apply as a Mobile Technician
 
@@ -802,7 +802,7 @@ The project will be successful when the website:
 
 - Accurately represents the verified business.
 - Clearly explains the company’s services and deployment process.
-- Helps target customers determine whether SB Mobile fits their project.
+- Helps target customers determine whether Ultimate Fleet GPS fits their project.
 - Provides a strong path to request a quote.
 - Separates customer conversion from technician recruiting.
 - Establishes a technically sound, scalable page architecture.

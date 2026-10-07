@@ -1,8 +1,8 @@
-# SB Mobile Installations Recruitment Operations and Automation
+# Ultimate Fleet GPS Recruitment Operations and Automation
 
 **Document:** 31-recruitment-operations-automation.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary objective:** Create dependable recruitment operations around the website while keeping human approval in control of hiring decisions.  
 **Status:** Working operations standard  
 **Version:** 0.1  

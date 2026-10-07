@@ -1,8 +1,8 @@
-# SB Mobile Installations GitHub Workflow
+# Ultimate Fleet GPS GitHub Workflow
 
 **Document:** `18-github-workflow.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Default and production branch:** `main`  
 **Deployment integration:** GitHub to Cloudflare Pages  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines how the SB Mobile Installations repository will be owned, configured, edited, reviewed, tested, merged, released, deployed, secured, and maintained in GitHub.
+This document defines how the Ultimate Fleet GPS repository will be owned, configured, edited, reviewed, tested, merged, released, deployed, secured, and maintained in GitHub.
 
 It governs:
 
@@ -110,7 +110,7 @@ https://github.com/SedrickHarris/sb-mobile-installations-site.git
 ### Required ownership model
 
 - The repository owner retains administrative control.
-- SB Mobile Installations receives durable access or an agreed handoff path appropriate to the service agreement.
+- Ultimate Fleet GPS receives durable access or an agreed handoff path appropriate to the service agreement.
 - Sirius Systems Digital Marketing receives the access required to build and maintain the project.
 - Developers receive the lowest role needed for assigned work.
 - Recruiting and content reviewers do not require write access unless they edit source directly.
@@ -1279,7 +1279,7 @@ The commit message, or the pull request when one is used, must describe security
 Changes to these values require an approval reference:
 
 - business or legal name;
-- any relationship between SB Mobile Installations, LLC and another entity, including Doral Transport LLC (none exists; `01-business-source-of-truth.md` section 4.1);
+- any relationship between Ultimate Fleet GPS and another entity, including Doral Transport LLC (none exists; `01-business-source-of-truth.md` section 4.1);
 - phone, email, address, and hours;
 - verified offices and service areas;
 - hiring or contracting entity;

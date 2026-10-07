@@ -1,12 +1,12 @@
-# SB Mobile Installations Cloudflare Pages Deployment Plan
+# Ultimate Fleet GPS Cloudflare Pages Deployment Plan
 
 **Document:** `17-cloudflare-deployment.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Hosting target:** Cloudflare Pages  
 **Application output:** Next.js static export  
-**Production domain:** `https://sbmobileinstallations.com/` pending final DNS and canonical-host approval  
+**Production domain:** `https://ultimatefleetgps.net/` pending final DNS and canonical-host approval  
 **Production branch:** `main`  
 **Status:** Deployment and operations draft  
 **Version:** 0.1  
@@ -16,7 +16,7 @@
 
 ## 1. Purpose
 
-This document defines how the SB Mobile Installations website will be built, previewed, validated, deployed, connected to its production domain, monitored, and rolled back on Cloudflare Pages.
+This document defines how the Ultimate Fleet GPS website will be built, previewed, validated, deployed, connected to its production domain, monitored, and rolled back on Cloudflare Pages.
 
 It governs:
 
@@ -53,7 +53,7 @@ The deployment system is successful when:
 - production analytics does not collect preview traffic;
 - failed builds do not replace the working production deployment;
 - a known-good release can be restored quickly; and
-- SB Mobile Installations retains durable control of the Cloudflare account, domain, DNS, and production project.
+- Ultimate Fleet GPS retains durable control of the Cloudflare account, domain, DNS, and production project.
 
 ---
 
@@ -115,7 +115,7 @@ Platform features and limits change. Verify current official documentation befor
 
 ### Required ownership model
 
-- The production Cloudflare account must be controlled by SB Mobile Installations or another explicitly approved business owner.
+- The production Cloudflare account must be controlled by Ultimate Fleet GPS or another explicitly approved business owner.
 - The DNS zone and Pages project should be in the same approved business account where practical.
 - Sirius Systems Digital Marketing receives the minimum role required to configure and maintain the project.
 - Individual developer accounts must not be the only production administrators.
@@ -153,13 +153,13 @@ Use stable, descriptive names.
 |---|---|
 | Pages project | `sb-mobile-installations-site` |
 | Production branch | `main` |
-| Custom domain | `sbmobileinstallations.com` or approved canonical host |
+| Custom domain | `ultimatefleetgps.net` or approved canonical host |
 | Preview environment | Cloudflare-generated branch and commit deployments |
-| Form Worker | `sb-mobile-installations-forms` if an owned backend is selected |
-| Turnstile widget | `sb-mobile-installations-public-forms` |
+| Form Worker | `ultimate-fleet-gps-forms` if an owned backend is selected |
+| Turnstile widget | `ultimate-fleet-gps-public-forms` |
 | Analytics site | Canonical production domain |
 
-Resource names are operational identifiers. They imply no relationship between SB Mobile Installations, LLC and Doral Transport LLC, and none exists (`01-business-source-of-truth.md` section 4.1).
+Resource names are operational identifiers. They imply no relationship between Ultimate Fleet GPS and Doral Transport LLC, and none exists (`01-business-source-of-truth.md` section 4.1).
 
 ---
 
@@ -587,11 +587,11 @@ Do not redirect all wildcard preview hostnames to production, because that would
 
 Choose one canonical host:
 
-**Recommended:** `https://sbmobileinstallations.com/`
+**Recommended:** `https://ultimatefleetgps.net/`
 
 Alternate:
 
-`https://www.sbmobileinstallations.com/`
+`https://www.ultimatefleetgps.net/`
 
 The final choice must consider the current live site, backlinks, Search Console properties, business profiles, email/DNS setup, and existing canonical use.
 
@@ -1011,7 +1011,7 @@ The Pages deployment may render and submit public forms, but it cannot safely ho
 
 Potential backend origins include:
 
-- `https://forms.sbmobileinstallations.com/`; or
+- `https://forms.ultimatefleetgps.net/`; or
 - a same-domain route proxied to a Worker through an approved zone rule.
 
 The final choice must consider CSP, CORS, cookies, logging, DNS, monitoring, and operational ownership.

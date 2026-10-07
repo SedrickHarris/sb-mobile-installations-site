@@ -1,8 +1,8 @@
-# SB Mobile Installations Job Content Schema Specification
+# Ultimate Fleet GPS Job Content Schema Specification
 
 **Document:** 30-job-content-schema-specification.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary objective:** Maintain one validated job record that can safely drive pages, structured data, platform postings, forms, and reporting.  
 **Status:** Working data specification  
 **Version:** 0.1  
@@ -360,7 +360,7 @@ Location data must distinguish:
 - service area; and
 - candidate residence requirement.
 
-Never transform a recruiting market into a physical office. The approved corporate office (Waddell, Arizona; `01-business-source-of-truth.md` section 5.3) is a company office, not a work location, recruiting market, or walk-in facility. It may appear as the organization address where approved, and it must not be used as `jobLocation` for field work. Possible shop locations may appear only inside a specific assignment's record. Never publish any other street address or exact site location unless approved and necessary. How `jobLocation` and `applicantLocationRequirements` represent nationwide field work is not decided and must be settled before any JobPosting is generated (`13-schema-markup-plan.md` sections 18 to 20).
+Never transform a recruiting market into a physical office. The approved corporate office (Phoenix, Arizona; `01-business-source-of-truth.md` section 5.3) is a company office, not a work location, recruiting market, or walk-in facility. It may appear as the organization address where approved, and it must not be used as `jobLocation` for field work. Possible shop locations may appear only inside a specific assignment's record. Never publish any other street address or exact site location unless approved and necessary. How `jobLocation` and `applicantLocationRequirements` represent nationwide field work is not decided and must be settled before any JobPosting is generated (`13-schema-markup-plan.md` sections 18 to 20).
 
 ---
 

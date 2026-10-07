@@ -1,8 +1,8 @@
-# SB Mobile Installations Conversion Strategy
+# Ultimate Fleet GPS Conversion Strategy
 
 **Document:** `14-conversion-strategy.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary conversion outcome:** Qualified installer application and activation  
 **Secondary conversion outcome:** Qualified commercial inquiry and opportunity creation  
 **Status:** Strategy and implementation draft  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines how the SB Mobile Installations website will turn relevant visitors into qualified installer candidates, installer-network members, referral partners, and commercial opportunities.
+This document defines how the Ultimate Fleet GPS website will turn relevant visitors into qualified installer candidates, installer-network members, referral partners, and commercial opportunities.
 
 It governs:
 
@@ -42,7 +42,7 @@ The strategy prioritizes meaningful downstream outcomes over button clicks, raw 
 
 ### Primary business outcome
 
-Attract, qualify, and activate installers who fit verified SB Mobile Installations opportunities.
+Attract, qualify, and activate installers who fit verified Ultimate Fleet GPS opportunities.
 
 ### Supporting recruitment outcomes
 
@@ -109,7 +109,7 @@ The primary recruitment metric is not an application. It is a qualified, approve
 The following must be confirmed before forms and automations launch:
 
 - public business and hiring entity names;
-- relationship between SB Mobile Installations, LLC and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
+- relationship between Ultimate Fleet GPS and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
 - active roles and markets;
 - employment or contractor classification;
 - compensation, expenses, tools, vehicle, travel, schedule, and availability terms;
@@ -332,7 +332,7 @@ The homepage may present both pathways, but recruitment remains visually and str
 2. **Request a Quote** when the quote process is approved
 3. **Explore Installation Services**
 4. **Review the Installation Process**
-5. **Contact SB Mobile Installations**
+5. **Contact Ultimate Fleet GPS**
 
 ### Referral
 

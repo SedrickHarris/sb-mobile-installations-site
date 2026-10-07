@@ -1,8 +1,8 @@
-# SB Mobile Installations Accessibility Standards
+# Ultimate Fleet GPS Accessibility Standards
 
 **Document:** 23-accessibility-standards.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Framework:** Next.js App Router, TypeScript, Tailwind CSS  
 **Hosting:** Cloudflare Pages static export  
 **Target:** WCAG 2.2 Level AA for public pages  
@@ -16,7 +16,7 @@
 
 ## 1. Purpose
 
-This document defines the accessibility requirements for the SB Mobile Installations website. It converts the component inventory and design system into testable behavior for candidates, installer-network contacts, commercial buyers, and general visitors.
+This document defines the accessibility requirements for the Ultimate Fleet GPS website. It converts the component inventory and design system into testable behavior for candidates, installer-network contacts, commercial buyers, and general visitors.
 
 Accessibility is part of the product contract. It is not a final visual polish step.
 

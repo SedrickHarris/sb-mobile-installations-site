@@ -1,8 +1,8 @@
-# SB Mobile Installations Post-Launch Growth Plan
+# Ultimate Fleet GPS Post-Launch Growth Plan
 
 **Document:** 27-post-launch-growth-plan.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Framework:** Next.js App Router, TypeScript, Tailwind CSS  
 **Hosting:** Cloudflare Pages static export  
 **Primary objective:** Build a reliable flow of qualified installer candidates while developing sustainable organic and commercial visibility.  

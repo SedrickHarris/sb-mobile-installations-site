@@ -1,9 +1,9 @@
-# SB Mobile Installations URL Strategy
+# Ultimate Fleet GPS URL Strategy
 
 **Document:** `08-url-strategy.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
-**Primary domain:** `sbmobileinstallations.com`  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
+**Primary domain:** `ultimatefleetgps.net`  
 **Status:** Technical and editorial strategy draft  
 **Version:** 0.1  
 **Last updated:** September 9, 2026
@@ -12,7 +12,7 @@
 
 ## 1. Purpose
 
-This document defines how public, preview, utility, dynamic, migrated, archived, and retired URLs will be created and managed for the SB Mobile Installations website.
+This document defines how public, preview, utility, dynamic, migrated, archived, and retired URLs will be created and managed for the Ultimate Fleet GPS website.
 
 It governs:
 
@@ -73,23 +73,23 @@ Recruitment URLs belong under `/careers/`. Commercial services, resources, forms
 
 ### Recommended production origin
 
-`https://sbmobileinstallations.com/`
+`https://ultimatefleetgps.net/`
 
 ### Canonical host
 
 Use the non-`www` host:
 
-`sbmobileinstallations.com`
+`ultimatefleetgps.net`
 
 ### Redirect host
 
 Redirect:
 
-`https://www.sbmobileinstallations.com/*`
+`https://www.ultimatefleetgps.net/*`
 
 to:
 
-`https://sbmobileinstallations.com/*`
+`https://ultimatefleetgps.net/*`
 
 ### Protocol
 
@@ -97,7 +97,7 @@ Use HTTPS exclusively. Redirect HTTP requests to the canonical HTTPS URL.
 
 ### Approval condition
 
-Confirm that `sbmobileinstallations.com` will remain the production domain and that the project has access to its DNS, Cloudflare configuration, and existing redirect requirements before launch.
+Confirm that `ultimatefleetgps.net` will remain the production domain and that the project has access to its DNS, Cloudflare configuration, and existing redirect requirements before launch.
 
 ---
 
@@ -105,7 +105,7 @@ Confirm that `sbmobileinstallations.com` will remain the production domain and t
 
 ### Recommended format
 
-`https://sbmobileinstallations.com/careers/mobile-installers/`
+`https://ultimatefleetgps.net/careers/mobile-installers/`
 
 ### Standards
 
@@ -922,7 +922,7 @@ Every indexable page should reference its preferred absolute URL.
 
 Example:
 
-`https://sbmobileinstallations.com/careers/mobile-installers/`
+`https://ultimatefleetgps.net/careers/mobile-installers/`
 
 ### Parameterized URLs
 

@@ -1,8 +1,8 @@
-# SB Mobile Installations Site Architecture
+# Ultimate Fleet GPS Site Architecture
 
 **Document:** `07-site-architecture.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary website outcome:** Attract and convert qualified installer candidates  
 **Secondary website outcome:** Establish commercial credibility and generate qualified customer inquiries  
 **Status:** Strategic architecture draft  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines the structural organization of the SB Mobile Installations website.
+This document defines the structural organization of the Ultimate Fleet GPS website.
 
 It governs:
 
@@ -196,7 +196,7 @@ The homepage establishes the business and routes visitors into the correct audie
 6. **Current openings:** verified active jobs only
 7. **Installer requirements:** qualification preview
 8. **Commercial services:** verified capability overview
-9. **Why work with or for SB Mobile:** audience-appropriate proof
+9. **Why work with or for Ultimate Fleet GPS:** audience-appropriate proof
 10. **Coverage explanation:** verified markets and mobile-service model
 11. **FAQs:** selected candidate and commercial questions with clear labels
 12. **Final pathways:** apply, join network, or request commercial information
@@ -655,7 +655,7 @@ Conditional.
 
 ### Alternative
 
-If no company program exists, publish honest educational resources about qualifications and preparation without presenting them as SB Mobile training.
+If no company program exists, publish honest educational resources about qualifications and preparation without presenting them as Ultimate Fleet GPS training.
 
 ---
 

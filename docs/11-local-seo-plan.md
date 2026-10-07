@@ -1,8 +1,8 @@
-# SB Mobile Installations Local SEO Plan
+# Ultimate Fleet GPS Local SEO Plan
 
 **Document:** `11-local-seo-plan.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary business outcome:** Attract and convert qualified installer candidates  
 **Secondary business outcome:** Generate qualified commercial inquiries  
 **Status:** Strategy and implementation draft  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines how SB Mobile Installations will build an accurate, durable local-search presence across its website, search platforms, maps, directories, reviews, and market-specific content.
+This document defines how Ultimate Fleet GPS will build an accurate, durable local-search presence across its website, search platforms, maps, directories, reviews, and market-specific content.
 
 The plan supports two distinct journeys:
 
@@ -59,7 +59,7 @@ The business source of truth currently records the following as pending verifica
 - approved customer-facing service areas;
 - active recruiting markets;
 - active job locations;
-- relationship between SB Mobile Installations, LLC and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1); and
+- relationship between Ultimate Fleet GPS and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1); and
 - which entity recruits, contracts, employs, pays, supervises, and serves customers.
 
 A third-party association with Goodyear, Arizona is evidence for investigation only. It must not be published as a location, address, service area, citation, or structured-data fact until approved.
@@ -112,7 +112,7 @@ Commercial local intent and candidate job intent require different pages, calls 
 
 ### 5.6 Owner-controlled assets
 
-SB Mobile Installations should own primary accounts and grant Sirius Systems or another approved partner manager access. Credentials must not depend on an individual contractor's personal account.
+Ultimate Fleet GPS should own primary accounts and grant Sirius Systems or another approved partner manager access. Credentials must not depend on an individual contractor's personal account.
 
 ---
 
@@ -163,7 +163,7 @@ Before changing any platform, complete an eligibility audit for each possible lo
 3. Is it staffed by the business during stated hours?
 4. Is it a real operational base rather than a mailbox, virtual office, temporary site, or lead-generation location?
 5. Should the address display publicly, or should it be hidden for a service-area business?
-6. Does this location represent SB Mobile Installations or a different legal entity?
+6. Does this location represent Ultimate Fleet GPS or a different legal entity?
 7. Is there another profile for the same business and location?
 8. Does the website support the same facts?
 
@@ -184,9 +184,9 @@ Create a controlled local entity record before platform implementation.
 | Latitude and longitude | Verified map coordinates |
 | Primary phone | Business-controlled, monitored number |
 | Secondary phones | Approved purpose and platform use |
-| Primary domain | `https://sbmobileinstallations.com/` |
+| Primary domain | `https://ultimatefleetgps.net/` |
 | Location URL | Approved canonical landing page |
-| Careers URL | `https://sbmobileinstallations.com/careers/` |
+| Careers URL | `https://ultimatefleetgps.net/careers/` |
 | Primary category | Most specific accurate platform category |
 | Additional categories | Only verified material business activities |
 | Services | Approved customer-facing services |
@@ -222,7 +222,7 @@ Do not create a second profile simply because access to an existing eligible pro
 
 ### 9.2 Ownership model
 
-- SB Mobile Installations retains primary ownership.
+- Ultimate Fleet GPS retains primary ownership.
 - Sirius Systems receives manager access required for approved work.
 - At least two company-controlled administrators should be documented.
 - Use role-based business accounts when available.
@@ -794,12 +794,12 @@ Best for genuine user questions. FAQ markup does not guarantee a rich result and
 
 Potential questions include:
 
-- Does SB Mobile Installations serve my market?
-- Does SB Mobile Installations have an office in this city?
+- Does Ultimate Fleet GPS serve my market?
+- Does Ultimate Fleet GPS have an office in this city?
 - Where do mobile installers perform the work?
 - Are installer jobs available near me?
 - How much travel does a mobile installer role require?
-- Can SB Mobile Installations coordinate multi-location fleet deployments?
+- Can Ultimate Fleet GPS coordinate multi-location fleet deployments?
 
 Answers must reflect current verified operations.
 
@@ -1269,7 +1269,7 @@ The initial local SEO foundation is complete when:
 ## 41. Open Decisions
 
 - What is the canonical public business name?
-- What is the confirmed relationship between SB Mobile Installations, LLC and Doral Transport LLC? Resolved September 10, 2026: none exists (`01-business-source-of-truth.md` section 4.1).
+- What is the confirmed relationship between Ultimate Fleet GPS and Doral Transport LLC? Resolved September 10, 2026: none exists (`01-business-source-of-truth.md` section 4.1).
 - Which entity provides commercial services?
 - Which entity recruits or contracts installers?
 - What is the verified primary phone number?

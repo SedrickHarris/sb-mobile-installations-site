@@ -1,8 +1,8 @@
-# SB Mobile Installations Launch Checklist
+# Ultimate Fleet GPS Launch Checklist
 
 **Document:** 26-launch-checklist.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Framework:** Next.js App Router, TypeScript, Tailwind CSS  
 **Hosting:** Cloudflare Pages static export  
@@ -406,7 +406,7 @@ The application flow is built and tested against a simulated endpoint. It must n
 - [ ] The homepage banner button reads "Apply for the Current Opening" and opens `/careers/apply/`, not the Installer Network page.
 - [ ] Counsel has reviewed the background-check consent wording, the privacy policy's description of the three forms, the terms of use, and the use of the registered entity name in the legal notices.
 - [ ] The owner has confirmed that `datePosted` `2026-07-01` means July 1, 2026 and not 7 January 2026.
-- [ ] The production domain `sbmobileinstallations.com` points at the new deployment (it still serves the previous site).
+- [ ] The production domain `ultimatefleetgps.net` points at the new deployment (it still serves the previous site).
 
 Already verified locally in a real browser against a simulated endpoint: validation errors with focus management, success and redirect, a 500 response, a dropped connection, a request that hangs (timeout at 20 seconds), a missing endpoint, honeypot handling, blocked browser storage, and no analytics event carrying personal data. A visit to the confirmation URL that did not follow a confirmed submission shows a neutral message and never claims receipt.
 

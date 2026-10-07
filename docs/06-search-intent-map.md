@@ -1,8 +1,8 @@
-# SB Mobile Installations Search Intent Map
+# Ultimate Fleet GPS Search Intent Map
 
 **Document:** `06-search-intent-map.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary focus:** Installer recruitment intent  
 **Secondary focus:** Commercial installation intent  
 **Status:** Strategic planning draft  
@@ -92,7 +92,7 @@ Mixed-intent pages must clarify the intended path immediately and offer a second
 
 | Intent code | Intent type | Searcher need | Example |
 |---|---|---|---|
-| NAV | Navigational | Reach a known company or page | SB Mobile Installations careers |
+| NAV | Navigational | Reach a known company or page | Ultimate Fleet GPS careers |
 | JOB | Active job | Find a real available position | telematics installer jobs Phoenix |
 | ROLE | Role exploration | Understand the occupation | what does a mobile installer do |
 | QUAL | Qualification | Determine eligibility | GPS installer requirements |
@@ -107,7 +107,7 @@ Mixed-intent pages must clarify the intended path immediately and offer a second
 | GEO | Geographic | Find a local job, service, or coverage area | GPS installer jobs near me |
 | COMP | Comparison | Compare roles, services, or approaches | telematics installer vs 12-volt technician |
 | INFO | Informational | Learn without immediate transactional intent | what is fleet telematics |
-| TRUST | Validation | Verify company legitimacy or reputation | SB Mobile Installations reviews |
+| TRUST | Validation | Verify company legitimacy or reputation | Ultimate Fleet GPS reviews |
 
 ---
 
@@ -131,14 +131,14 @@ SEO should be measured beyond the initial visit. The primary recruitment outcome
 
 | Query pattern | Intent | Searcher expectation | Primary URL | Primary CTA |
 |---|---|---|---|---|
-| SB Mobile Installations careers | NAV / ROLE | Official employer and opportunity overview | `/careers/` | View Current Openings |
-| SB Mobile Installations jobs | NAV / JOB | Current verified openings | `/careers/jobs/` | View or Apply |
-| SB Mobile installer jobs | NAV / JOB | Installer roles specifically | `/careers/mobile-installers/` or jobs index based on SERP validation | View Current Openings |
-| SB Mobile Installations application | NAV / JOB | Official application path | Job-specific page or `/careers/apply/` | Apply |
-| SB Mobile Installations contractor | TRUST / TERM | Engagement model and legitimacy | Careers FAQ or verified role page | Review Opportunities |
-| SB Mobile Installations pay | TRUST / TERM | Compensation expectations | Active job page when approved | View Job Details |
-| SB Mobile Installations reviews | TRUST | Employer or company reputation | About, careers proof, and accurate external profile ecosystem | View Opportunities |
-| SB Mobile Installations phone number | NAV | Correct company contact | `/contact/` | Call or Contact |
+| Ultimate Fleet GPS careers | NAV / ROLE | Official employer and opportunity overview | `/careers/` | View Current Openings |
+| Ultimate Fleet GPS jobs | NAV / JOB | Current verified openings | `/careers/jobs/` | View or Apply |
+| Ultimate Fleet GPS installer jobs | NAV / JOB | Installer roles specifically | `/careers/mobile-installers/` or jobs index based on SERP validation | View Current Openings |
+| Ultimate Fleet GPS application | NAV / JOB | Official application path | Job-specific page or `/careers/apply/` | Apply |
+| Ultimate Fleet GPS contractor | TRUST / TERM | Engagement model and legitimacy | Careers FAQ or verified role page | Review Opportunities |
+| Ultimate Fleet GPS pay | TRUST / TERM | Compensation expectations | Active job page when approved | View Job Details |
+| Ultimate Fleet GPS reviews | TRUST | Employer or company reputation | About, careers proof, and accurate external profile ecosystem | View Opportunities |
+| Ultimate Fleet GPS phone number | NAV | Correct company contact | `/contact/` | Call or Contact |
 
 ### Content requirement
 
@@ -206,7 +206,7 @@ Index only while the opening is valid. Closing, expiration, removal, redirect, a
 
 ### Primary query families
 
-- SB Mobile Installations careers
+- Ultimate Fleet GPS careers
 - mobile installer careers
 - fleet technology careers
 - telematics installation careers
@@ -576,7 +576,7 @@ Do not imply guaranteed assignments, income, schedules, or payment timing withou
 
 ### Primary destination
 
-`/careers/installer-training/` only when SB Mobile has a verified training program.
+`/careers/installer-training/` only when Ultimate Fleet GPS has a verified training program.
 
 ### Alternative destination
 
@@ -1305,7 +1305,7 @@ Use these fields for the maintained registry:
 - Which markets should use installer-network outreach only?
 - Which engagement classifications are approved?
 - Which compensation and travel terms can be displayed?
-- Does SB Mobile offer verified training?
+- Does Ultimate Fleet GPS offer verified training?
 - Which commercial services are approved?
 - Which equipment and platforms may be named?
 - Which geographies have verified commercial capacity?

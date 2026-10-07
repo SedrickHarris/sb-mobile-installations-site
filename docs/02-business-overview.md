@@ -1,21 +1,21 @@
-# SB Mobile Installations Business Overview
+# Ultimate Fleet GPS Business Overview
 
 **Document:** `02-business-overview.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary outcome:** Attract and convert qualified mobile installer candidates  
 **Secondary outcome:** Establish commercial credibility and support future customer acquisition  
 **Status:** Strategic discovery draft  
 **Version:** 0.1  
 **Last updated:** September 19, 2026
 
-> **Update, September 19, 2026.** Recruitment is now an active model, not evergreen only. Several current Mobile GPS/ELD/AOBRD Installation Technician openings exist for independent contractors, applications are accepted nationwide, and starting compensation is `$1,600 per week` as a starting rate, never guaranteed income. The corporate office at 8907 N 175th Ave, Waddell, AZ 85355 may be published on approved surfaces and is not a walk-in facility. The homepage stays commercial-led, and the Careers pages are the primary recruitment funnel. The authoritative record is `01-business-source-of-truth.md` section 33. Where this overview conflicts with it, the source of truth governs.
+> **Update, September 19, 2026.** Recruitment is now an active model, not evergreen only. Several current Mobile GPS/ELD/AOBRD Installation Technician openings exist for independent contractors, applications are accepted nationwide, and starting compensation is `$1,600 per week` as a starting rate, never guaranteed income. The corporate office at 4539 N. 22nd St. #6225, Phoenix, AZ 85016 may be published on approved surfaces and is not a walk-in facility. The homepage stays commercial-led, and the Careers pages are the primary recruitment funnel. The authoritative record is `01-business-source-of-truth.md` section 33. Where this overview conflicts with it, the source of truth governs.
 
 ---
 
 ## 1. Purpose
 
-This document provides a practical strategic overview of SB Mobile Installations for use in website planning, content development, recruiting, search optimization, design, and conversion strategy.
+This document provides a practical strategic overview of Ultimate Fleet GPS for use in website planning, content development, recruiting, search optimization, design, and conversion strategy.
 
 It defines:
 
@@ -34,7 +34,7 @@ This document does not replace `01-business-source-of-truth.md`. The source-of-t
 
 ## 2. Executive Business Summary
 
-SB Mobile Installations appears to provide mobile installation and related field services for electronic equipment used in fleet, commercial, and construction vehicles.
+Ultimate Fleet GPS appears to provide mobile installation and related field services for electronic equipment used in fleet, commercial, and construction vehicles.
 
 Existing website and recruiting content indicate experience involving:
 
@@ -66,9 +66,9 @@ The recruiting objective is primary. Commercial content remains important becaus
 
 ### 3.1 Working public identity
 
-The working public name is **SB Mobile Installations**.
+The working public name is **Ultimate Fleet GPS**.
 
-The existing website identifies the business as **SB Mobile Installations, LLC** and also uses **SB Mobile** as a shortened name.
+The existing website identifies the business as **Ultimate Fleet GPS** and also uses **Ultimate Fleet GPS** as a shortened name.
 
 Before publication, the company must confirm:
 
@@ -85,7 +85,7 @@ Before publication, the company must confirm:
 
 ### 3.2 Entity relationship (resolved)
 
-**Resolved September 10, 2026.** The client confirmed that SB Mobile Installations, LLC is the sole operating entity and that no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). This question no longer blocks careers, application, privacy, payment, or contractor language. The checklist below is kept for history and for any future entity change.
+**Resolved September 10, 2026.** The client confirmed that Ultimate Fleet GPS is the sole operating entity and that no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). This question no longer blocks careers, application, privacy, payment, or contractor language. The checklist below is kept for history and for any future entity change.
 
 The website must clearly identify:
 
@@ -124,7 +124,7 @@ Each element requires confirmation before it is presented as an established comp
 Based on existing recruiting content, a typical installation workflow may include:
 
 1. A customer, provider, or project coordinator defines the installation requirement.
-2. SB Mobile Installations schedules an approved technician.
+2. Ultimate Fleet GPS schedules an approved technician.
 3. Equipment, installation instructions, and approved connection procedures are provided.
 4. The technician travels to the customer, fleet, or yard location, or to a shop location where a specific assignment involves one.
 5. The technician gains appropriate access to the vehicle and installs the equipment.
@@ -177,7 +177,7 @@ The desired conversion is not simply a submitted form.
 
 The full recruitment conversion path is:
 
-1. Candidate discovers SB Mobile Installations.
+1. Candidate discovers Ultimate Fleet GPS.
 2. Candidate evaluates company and opportunity credibility.
 3. Candidate reviews the work and requirements.
 4. Candidate views a real opening or joins the installer network.
@@ -410,7 +410,7 @@ Recruitment content references experience with technology brands or systems incl
 - Verizon Connect; and
 - related GPS, ELD, camera, and TPMS equipment.
 
-This information may help describe desired applicant experience. It does not prove that SB Mobile Installations is an authorized installer, certified provider, reseller, dealer, partner, or representative of any named company.
+This information may help describe desired applicant experience. It does not prove that Ultimate Fleet GPS is an authorized installer, certified provider, reseller, dealer, partner, or representative of any named company.
 
 Platform names and logos require factual review, trademark-aware presentation, and written confirmation of the permitted relationship language.
 
@@ -526,7 +526,7 @@ This connects recruitment growth to responsible commercial expansion.
 
 ## 14. Competitive Positioning
 
-SB Mobile Installations may compete for talent and commercial work against:
+Ultimate Fleet GPS may compete for talent and commercial work against:
 
 - national installation networks;
 - regional field-service companies;
@@ -607,7 +607,7 @@ The content voice should be:
 
 #### Primary message
 
-SB Mobile Installations is seeking qualified mobile installers for fleet-technology installation opportunities.
+Ultimate Fleet GPS is seeking qualified mobile installers for fleet-technology installation opportunities.
 
 **Status:** Project direction. A specific opportunity must still be verified before it is presented as active.
 
@@ -619,7 +619,7 @@ Experienced GPS, ELD, telematics, automotive-electrical, and 12-volt technicians
 
 #### Supporting commercial message
 
-SB Mobile Installations provides mobile electronic equipment installation for fleet and construction vehicles.
+Ultimate Fleet GPS provides mobile electronic equipment installation for fleet and construction vehicles.
 
 **Status:** Closely reflects existing website statements; final publication requires company review.
 
@@ -905,7 +905,7 @@ Before launch, obtain approved answers for:
 ### Identity and governance
 
 - legal and public business names;
-- SB Mobile Installations and Doral Transport relationship (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
+- Ultimate Fleet GPS and Doral Transport relationship (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
 - recruiting, contracting, payment, supervision, and data-controller entities;
 - authorized content and job approvers;
 - canonical phone, email, address, and hours; and

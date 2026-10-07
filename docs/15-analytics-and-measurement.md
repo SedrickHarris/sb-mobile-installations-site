@@ -1,8 +1,8 @@
-# SB Mobile Installations Analytics and Measurement Plan
+# Ultimate Fleet GPS Analytics and Measurement Plan
 
 **Document:** `15-analytics-and-measurement.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary measurement outcome:** Qualified applicants who become activated installers  
 **Secondary measurement outcome:** Qualified commercial opportunities and resulting business value  
 **Status:** Strategy and implementation draft  
@@ -17,7 +17,7 @@
 
 ## 1. Purpose
 
-This document defines how SB Mobile Installations will measure website visibility, visitor behavior, candidate conversion, recruiting quality, installer activation, local presence, commercial conversion, and business value.
+This document defines how Ultimate Fleet GPS will measure website visibility, visitor behavior, candidate conversion, recruiting quality, installer activation, local presence, commercial conversion, and business value.
 
 It governs:
 
@@ -275,7 +275,7 @@ When sources disagree:
 
 ### Required ownership model
 
-- SB Mobile Installations should own or have durable administrator access to production properties.
+- Ultimate Fleet GPS should own or have durable administrator access to production properties.
 - Sirius Systems Digital Marketing receives the least privilege needed to configure, validate, and report.
 - Do not create production properties under an individual contractor's personal account as the only owner.
 - Maintain at least two business-controlled administrators where the platform permits it.
@@ -873,7 +873,7 @@ For each approved observation, record:
 - date;
 - prompt version;
 - location/account context when known;
-- whether SB Mobile Installations was named;
+- whether Ultimate Fleet GPS was named;
 - cited URL or source when shown;
 - accuracy of the representation;
 - competitor/source context; and
@@ -1420,7 +1420,7 @@ The following require business approval:
 
 1. What exact event defines an activated installer?
 2. Which organization is the hiring or contracting entity for each role?
-3. What is the approved relationship between SB Mobile Installations, LLC and Doral Transport LLC? Resolved September 10, 2026: none exists (`01-business-source-of-truth.md` section 4.1).
+3. What is the approved relationship between Ultimate Fleet GPS and Doral Transport LLC? Resolved September 10, 2026: none exists (`01-business-source-of-truth.md` section 4.1).
 4. Which ATS or recruiting CRM will own applicant records?
 5. Which commercial CRM will own inquiries and opportunities?
 6. Will applications be onsite, embedded, or hosted externally?

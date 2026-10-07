@@ -1,8 +1,8 @@
-# SB Mobile Installations Design System
+# Ultimate Fleet GPS Design System
 
 **Document:** 21-design-system.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Framework:** Next.js App Router, TypeScript, Tailwind CSS  
 **Hosting:** Cloudflare Pages static export  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines the visual language, interaction rules, content presentation patterns, and implementation constraints for the SB Mobile Installations website.
+This document defines the visual language, interaction rules, content presentation patterns, and implementation constraints for the Ultimate Fleet GPS website.
 
 It works with:
 
@@ -33,7 +33,7 @@ The system is intentionally practical. It should help candidates decide whether 
 
 Every approved page should make these questions easier to answer:
 
-1. What does SB Mobile Installations do?
+1. What does Ultimate Fleet GPS do?
 2. Is this page for an installer candidate, an installer-network contact, or a commercial buyer?
 3. What is the next appropriate action?
 4. What facts are verified, and what remains subject to review?
@@ -183,9 +183,9 @@ Responsive headings should scale with clamp() but remain readable at narrow widt
 
 ### 4.3 Favicon and app icons
 
-**Source:** `sb-mobile-installations-monogram-white.png`, composited on a solid `color-brand` tile. The brand kit assigns the monogram to favicon use.
+**Source:** `ultimate-fleet-gps-favicon.svg` (white pin on a solid brand-red tile). The brand kit assigns the monogram to favicon use.
 
-The file named `sb-mobile-installations-favicon-512.png` is **not used and must not be used**. Despite the name it is 512x202, not square, and is one of the lossy exports that carries 176 shades of what is a one-color mark.
+The file named `ultimate-fleet-gps-favicon-512.png` is **not used and must not be used**. Despite the name it is 512x202, not square, and is one of the lossy exports that carries 176 shades of what is a one-color mark.
 
 **Treatment.** White mark on a red tile, not black on white. The tile is opaque, so the icon holds its shape on light and dark browser chrome alike; a white tile disappears into light chrome. Red and white is also the kit's stated preference for high-contrast applications. At 32px the white-on-red counters survive downsampling marginally better than black-on-white.
 
@@ -373,7 +373,7 @@ Card variants include recruitment pathway, active job, installer-network, servic
 | Destructive | Only for an actual destructive operation |
 | Disabled | Temporary unavailable state, never decoration |
 
-Prefer specific labels such as View Current Openings, Apply for This Opening, Join the Installer Network, Review Installer Requirements, Discuss a Commercial Project, and Contact SB Mobile Installations.
+Prefer specific labels such as View Current Openings, Apply for This Opening, Join the Installer Network, Review Installer Requirements, Discuss a Commercial Project, and Contact Ultimate Fleet GPS.
 
 Avoid vague labels such as Learn More, Submit, or Get Started when a specific action can be named.
 
@@ -663,7 +663,7 @@ The removed `--color-brand`, `--color-brand-dark`, `--color-brand-soft` names ar
 | `#FFFFFF` on `#00688A` | primary CTA (unchanged) | 6.27 | passes |
 | `#9D174D` on `#FFFFFF` | error token (unchanged) | 7.88 | passes |
 
-**Logo.** Header uses `public/images/brand/logos/sb-mobile-installations-logo-red.svg` (viewBox 1540x779, 14 KB, fill `#B50202`) on the light header row via a plain `img` with intrinsic dimensions, displayed at 120 px (mobile) and 150 px (desktop). `#B50202` on white measures about 7.1:1, in line with `#B40000`. No reverse logo is deployed; the red logo is never placed on navy. The earlier `logo-red.webp` fallback is superseded and no longer referenced. The brand-kit PDF, PNG exports, white reverse, preview renders, and `primary-logo` are not used and stay untracked. The PDF could not be rendered in this environment, so no claim rests on it.
+**Logo.** Header uses `public/images/brand/logos/ultimate-fleet-gps-primary-logo.svg` (viewBox 1200x360, about 1 KB, fill `#B50202`) on the light header row via a plain `img` with intrinsic dimensions, displayed at 120 px (mobile) and 150 px (desktop). `#B50202` on white measures about 7.1:1, in line with `#B40000`. No reverse logo is deployed; the red logo is never placed on navy. The earlier `logo-red.webp` fallback is superseded and no longer referenced. The brand-kit PDF, PNG exports, white reverse, preview renders, and `primary-logo` are not used and stay untracked. The PDF could not be rendered in this environment, so no claim rests on it.
 
 ## 28. Maintenance
 

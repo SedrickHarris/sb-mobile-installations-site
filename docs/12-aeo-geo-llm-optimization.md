@@ -1,8 +1,8 @@
-# SB Mobile Installations AEO, GEO, and LLM Optimization Plan
+# Ultimate Fleet GPS AEO, GEO, and LLM Optimization Plan
 
 **Document:** `12-aeo-geo-llm-optimization.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary outcome:** Qualified installer discovery and application conversion  
 **Secondary outcome:** Qualified commercial discovery and inquiry conversion  
 **Status:** Search and content standards draft  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines how SB Mobile Installations will make its public information easy for traditional search engines, answer engines, generative search systems, and large-language-model search experiences to discover, understand, verify, cite, and connect to a useful next action.
+This document defines how Ultimate Fleet GPS will make its public information easy for traditional search engines, answer engines, generative search systems, and large-language-model search experiences to discover, understand, verify, cite, and connect to a useful next action.
 
 It governs:
 
@@ -57,7 +57,7 @@ Preparing public content for discovery and use by search experiences that use la
 
 ### Citation
 
-A visible reference or link from an answer system to an SB Mobile Installations page. A brand mention without a source link is tracked separately.
+A visible reference or link from an answer system to an Ultimate Fleet GPS page. A brand mention without a source link is tracked separately.
 
 ### Answer unit
 
@@ -75,7 +75,7 @@ The goal is not to make the company appear in the largest possible number of AI-
 
 ### Recruitment outcome
 
-Make SB Mobile Installations a reliable source for questions about:
+Make Ultimate Fleet GPS a reliable source for questions about:
 
 - mobile installer work;
 - GPS, ELD, telematics, and 12-volt installer qualifications;
@@ -87,7 +87,7 @@ Make SB Mobile Installations a reliable source for questions about:
 
 ### Commercial outcome
 
-Make SB Mobile Installations a reliable source for questions about:
+Make Ultimate Fleet GPS a reliable source for questions about:
 
 - mobile fleet technology installation;
 - multi-location deployment planning;
@@ -119,7 +119,7 @@ The following remain subject to the business source of truth and specific regist
 - case studies; and
 - performance claims.
 
-Resolved September 10, 2026: no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Entity, employment, contracting, payment, supervision, and schema statements use SB Mobile Installations, the sole operating entity, and never reference Doral Transport LLC.
+Resolved September 10, 2026: no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Entity, employment, contracting, payment, supervision, and schema statements use Ultimate Fleet GPS, the sole operating entity, and never reference Doral Transport LLC.
 
 ---
 
@@ -278,7 +278,7 @@ Each pillar must link to supporting pages, and supporting pages must link back t
 
 Search and answer systems should be able to distinguish:
 
-- SB Mobile Installations, LLC;
+- Ultimate Fleet GPS;
 - any separate hiring, contracting, or payment entity;
 - individual active jobs;
 - evergreen installer roles;
@@ -340,11 +340,11 @@ Use a concise opening answer when the question permits one.
 
 ### Recruitment example
 
-> A mobile telematics installer installs, connects, tests, and documents approved fleet technology at customer sites, fleet yards, or shops. Exact duties, travel, and equipment vary by verified SB Mobile Installations opportunity, so candidates should review the active job page before applying.
+> A mobile telematics installer installs, connects, tests, and documents approved fleet technology at customer sites, fleet yards, or shops. Exact duties, travel, and equipment vary by verified Ultimate Fleet GPS opportunity, so candidates should review the active job page before applying.
 
 ### Commercial example
 
-> Mobile fleet installation brings qualified installation support to the vehicles or operating sites involved in a deployment. Availability, equipment scope, vehicle types, and market coverage must be confirmed for each SB Mobile Installations project.
+> Mobile fleet installation brings qualified installation support to the vehicles or operating sites involved in a deployment. Availability, equipment scope, vehicle types, and market coverage must be confirmed for each Ultimate Fleet GPS project.
 
 Examples are editorial patterns, not approved operational claims beyond the business source of truth.
 
@@ -407,7 +407,7 @@ Potential comparisons include:
 - single-site versus multi-location deployment; and
 - commercial service area versus recruiting market.
 
-Each comparison must state that actual SB Mobile Installations job or service terms come from the applicable verified page.
+Each comparison must state that actual Ultimate Fleet GPS job or service terms come from the applicable verified page.
 
 ---
 
@@ -473,7 +473,7 @@ Job-board copies, scraped directories, AI responses, competitor pages, and unsou
 
 ## 19. First-Party Information Strategy
 
-Answer systems have little reason to cite another generic summary. SB Mobile Installations should publish useful information that comes from real operations.
+Answer systems have little reason to cite another generic summary. Ultimate Fleet GPS should publish useful information that comes from real operations.
 
 Potential first-party assets include:
 
@@ -858,7 +858,7 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-Sitemap: https://sbmobileinstallations.com/sitemap.xml
+Sitemap: https://ultimatefleetgps.net/sitemap.xml
 ```
 
 Rules for `GPTBot`, `Applebot-Extended`, and other training-related controls require explicit approval. Do not publish conflicting blanket rules without testing precedence.
@@ -1141,7 +1141,7 @@ Do not force the visitor to reread a generic introduction before reaching the ci
 
 Track a controlled prompt set across approved platforms:
 
-- whether SB Mobile Installations appears;
+- whether Ultimate Fleet GPS appears;
 - whether the company is described accurately;
 - whether a source link appears;
 - which URL is cited;
@@ -1209,8 +1209,8 @@ Maintain a versioned set of realistic prompts.
 - Can 12-volt installation skills transfer to fleet telematics work?
 - What tools do mobile fleet installers use?
 - How much travel can field installer work require?
-- Are there active SB Mobile Installations installer jobs in `[market]`?
-- How do I apply to SB Mobile Installations?
+- Are there active Ultimate Fleet GPS installer jobs in `[market]`?
+- How do I apply to Ultimate Fleet GPS?
 - What is the difference between an active job and the installer network?
 
 ### Commercial examples
@@ -1219,7 +1219,7 @@ Maintain a versioned set of realistic prompts.
 - How should a fleet prepare vehicles for telematics installation?
 - How are multi-location fleet installations coordinated?
 - What testing and documentation should follow installation?
-- Does SB Mobile Installations serve `[market]`?
+- Does Ultimate Fleet GPS serve `[market]`?
 - Who provides mobile fleet installation for `[approved use case]`?
 
 Do not publish or test unapproved location, compensation, certification, customer, or technology claims.

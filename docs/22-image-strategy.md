@@ -1,8 +1,8 @@
-# SB Mobile Installations Image Strategy
+# Ultimate Fleet GPS Image Strategy
 
 **Document:** 22-image-strategy.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Framework:** Next.js App Router, TypeScript, Tailwind CSS  
 **Hosting:** Cloudflare Pages static export  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document governs image planning, production, naming, storage, optimization, accessibility, rights, and page placement for the SB Mobile Installations website.
+This document governs image planning, production, naming, storage, optimization, accessibility, rights, and page placement for the Ultimate Fleet GPS website.
 
 It works with:
 
@@ -211,14 +211,14 @@ Use lowercase, descriptive, hyphen-separated filenames.
 
 Recommended pattern:
 
-sb-mobile-installations-[audience-or-service]-[subject]-[context]-[orientation].[ext]
+ultimate-fleet-gps-[audience-or-service]-[subject]-[context]-[orientation].[ext]
 
 Examples:
 
-- sb-mobile-installations-careers-mobile-installer-equipment-field-work.webp
-- sb-mobile-installations-current-openings-installer-work-vehicle-context.webp
-- sb-mobile-installations-commercial-fleet-installation-equipment.webp
-- sb-mobile-installations-installer-network-future-opportunities.webp
+- ultimate-fleet-gps-careers-mobile-installer-equipment-field-work.webp
+- ultimate-fleet-gps-current-openings-installer-work-vehicle-context.webp
+- ultimate-fleet-gps-commercial-fleet-installation-equipment.webp
+- ultimate-fleet-gps-installer-network-future-opportunities.webp
 
 Rules:
 

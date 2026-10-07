@@ -1,0 +1,24 @@
+ULTIMATE FLEET GPS — LOGO ASSET GUIDE
+
+Brand palette sampled from the supplied SB Mobile Installations logo files:
+Signal red  #C20101
+Near black  #111111
+White       #FFFFFF
+
+Logo concept: a location pin containing a curved route and endpoint, paired with a bold, all-caps wordmark. The exact wording is set as editable SVG text.
+
+VECTOR MASTERS
+- ultimate-fleet-gps-primary-logo.svg: horizontal logo for white or light backgrounds.
+- ultimate-fleet-gps-reversed-logo.svg: horizontal logo for dark backgrounds.
+- ultimate-fleet-gps-stacked-logo.svg: centered stacked logo for square or narrow placements.
+- ultimate-fleet-gps-black-logo.svg: one-color black logo for light backgrounds.
+- ultimate-fleet-gps-icon.svg: standalone full-color route-and-pin mark.
+- ultimate-fleet-gps-favicon.svg: square favicon artwork with red background.
+
+RASTER EXPORTS
+- Matching transparent PNG files are provided for the primary, reversed, stacked, black, and icon variants.
+- ultimate-fleet-gps-favicon-512.png: 512 px favicon PNG.
+- ultimate-fleet-gps-favicon.ico: multi-size browser icon (16, 32, 48, 64, 128, and 256 px).
+- ultimate-fleet-gps-brand-overview.png and .svg: visual comparison of the primary, reversed, and stacked variants.
+
+Use SVG for production scaling. The editable wordmark uses Montserrat ExtraBold (800), with sans-serif fallback; the PNG exports use DejaVu Sans Bold as the available local rendering fallback. Convert SVG text to outlines with Montserrat ExtraBold when preparing final print/vendor artwork.

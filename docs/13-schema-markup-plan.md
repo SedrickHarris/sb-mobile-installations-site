@@ -1,8 +1,8 @@
-# SB Mobile Installations Schema Markup Plan
+# Ultimate Fleet GPS Schema Markup Plan
 
 **Document:** `13-schema-markup-plan.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary schema outcome:** Accurate job, organization, and content understanding  
 **Secondary schema outcome:** Eligible enhanced search presentation and entity clarity  
 **Status:** Technical and governance draft  
@@ -13,7 +13,7 @@
 
 ## 1. Purpose
 
-This document defines how structured data will be selected, modeled, generated, validated, published, monitored, updated, and removed across the SB Mobile Installations website.
+This document defines how structured data will be selected, modeled, generated, validated, published, monitored, updated, and removed across the Ultimate Fleet GPS website.
 
 It governs:
 
@@ -119,7 +119,7 @@ The following must be resolved before the full entity graph can be finalized:
 
 - canonical public business name;
 - verified legal name;
-- relationship between SB Mobile Installations, LLC and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
+- relationship between Ultimate Fleet GPS and Doral Transport LLC (resolved September 10, 2026: none exists; `01-business-source-of-truth.md` section 4.1);
 - hiring, employing, or contracting organization;
 - canonical primary phone;
 - canonical address and public-display status;
@@ -160,9 +160,9 @@ Use absolute production URLs as stable identifiers.
 ### Global identifiers
 
 ```text
-https://sbmobileinstallations.com/#organization
-https://sbmobileinstallations.com/#website
-https://sbmobileinstallations.com/#logo
+https://ultimatefleetgps.net/#organization
+https://ultimatefleetgps.net/#website
+https://ultimatefleetgps.net/#logo
 ```
 
 ### Page identifiers
@@ -278,10 +278,10 @@ Use `Organization` until a more specific accurate subtype is verified.
 ### Rules
 
 - `name` must match the approved public identity.
-- `legalName` is not published. The public name is SB Mobile Installations. The registered legal name appears in structured data only if a separate written approval names that surface (`01-business-source-of-truth.md` section 4.2).
+- `legalName` is not published. The public name is Ultimate Fleet GPS. The registered legal name appears in structured data only if a separate written approval names that surface (`01-business-source-of-truth.md` section 4.2).
 - Do not use `alternateName` for keyword phrases.
 - Use international phone format.
-- The approved corporate office address (8907 N 175th Ave, Waddell, AZ 85355; `01-business-source-of-truth.md` section 5.3) may be included in `Organization` as a `PostalAddress`. Do not describe it as a walk-in location, and do not use it to justify `LocalBusiness` or `areaServed`. The shared `Organization` node now carries it (`organization.ts`), with `addressCountry` `US` and no `areaServed`.
+- The approved corporate office address (4539 N. 22nd St. #6225, Phoenix, AZ 85016; `01-business-source-of-truth.md` section 5.3) may be included in `Organization` as a `PostalAddress`. Do not describe it as a walk-in location, and do not use it to justify `LocalBusiness` or `areaServed`. The shared `Organization` node now carries it (`organization.ts`), with `addressCountry` `US` and no `areaServed`.
 - Use `sameAs` only for official profiles representing the same entity.
 - Do not include job-board listing URLs, random directories, or unrelated partner pages in `sameAs`.
 - Do not publish employee count, founding date, NAICS code, tax ID, DUNS, or other identifiers without approval.
@@ -298,9 +298,9 @@ Use one `WebSite` entity on the homepage.
 
 ### Recommended properties
 
-- `@id`: `https://sbmobileinstallations.com/#website`
+- `@id`: `https://ultimatefleetgps.net/#website`
 - `@type`: `WebSite`
-- `url`: `https://sbmobileinstallations.com/`
+- `url`: `https://ultimatefleetgps.net/`
 - `name`: approved site name
 - `alternateName`: approved concise alternative, if genuinely used
 - `publisher`: organization reference
@@ -517,7 +517,7 @@ Required discovery must determine which entity:
 - owns the application data; and
 - appears on candidate agreements.
 
-The hiring entity is SB Mobile Installations, which `01-business-source-of-truth.md` section 4.1 records as the sole operating entity. Use `name`: SB Mobile Installations, without "LLC", unless a written approval requires the registered form for a specific legal disclosure (section 4.2 of that document). Do not substitute another entity.
+The hiring entity is Ultimate Fleet GPS, which `01-business-source-of-truth.md` section 4.1 records as the sole operating entity. Use `name`: Ultimate Fleet GPS, without "LLC", unless a written approval requires the registered form for a specific legal disclosure (section 4.2 of that document). Do not substitute another entity.
 
 ### Recommended object
 
@@ -667,7 +667,7 @@ This structure is illustrative. It must be populated from an approved job record
 {
   "@context": "https://schema.org",
   "@type": "JobPosting",
-  "@id": "https://sbmobileinstallations.com/careers/jobs/approved-job-slug/#jobposting",
+  "@id": "https://ultimatefleetgps.net/careers/jobs/approved-job-slug/#jobposting",
   "title": "Approved Role Title",
   "description": "<p>Approved complete job description.</p>",
   "identifier": {
@@ -681,8 +681,8 @@ This structure is illustrative. It must be populated from an approved job record
   "hiringOrganization": {
     "@type": "Organization",
     "name": "Verified Hiring Organization",
-    "sameAs": "https://sbmobileinstallations.com/",
-    "logo": "https://sbmobileinstallations.com/images/approved-logo.png"
+    "sameAs": "https://ultimatefleetgps.net/",
+    "logo": "https://ultimatefleetgps.net/images/approved-logo.png"
   },
   "jobLocation": {
     "@type": "Place",
@@ -892,7 +892,7 @@ Potential fields:
 - `copyrightNotice`
 - `license`
 
-Do not claim ownership, copyright, creator, or licensing terms that are not documented. Do not mark stock or AI-generated imagery as actual SB Mobile Installations work, staff, customers, or facilities.
+Do not claim ownership, copyright, creator, or licensing terms that are not documented. Do not mark stock or AI-generated imagery as actual Ultimate Fleet GPS work, staff, customers, or facilities.
 
 ---
 
@@ -943,7 +943,7 @@ Do not add `Review` or `AggregateRating` to organization or local-business pages
 - marking testimonials as reviews when required fields and policies are not met; and
 - hiding negative data to create a misleading aggregate.
 
-`EmployerAggregateRating` is not appropriate for the employer's own website unless the site independently gathers ratings about other employers and meets Google's requirements. Do not implement it for SB Mobile Installations.
+`EmployerAggregateRating` is not appropriate for the employer's own website unless the site independently gathers ratings about other employers and meets Google's requirements. Do not implement it for Ultimate Fleet GPS.
 
 ---
 
@@ -1188,7 +1188,7 @@ When sources conflict, schema generation must stop or omit the disputed field. D
 
 ### Production
 
-- Use `https://sbmobileinstallations.com/` canonical identifiers.
+- Use `https://ultimatefleetgps.net/` canonical identifiers.
 - Fail deployment on invalid required job data.
 - Exclude drafts, closed jobs, and unapproved entities.
 - Verify JSON-LD in the rendered HTML.
@@ -1503,7 +1503,7 @@ No schema generator or AI tool may become the authority for a business fact.
 
 - What is the approved public business name?
 - What is the verified legal name?
-- How are SB Mobile Installations, LLC and Doral Transport LLC related? Resolved September 10, 2026: they are not related (`01-business-source-of-truth.md` section 4.1).
+- How are Ultimate Fleet GPS and Doral Transport LLC related? Resolved September 10, 2026: they are not related (`01-business-source-of-truth.md` section 4.1).
 - Which entity is the hiring or contracting organization?
 - What organization and website names should Google associate with the domain?
 - Which phone, email, address, and official profiles are canonical?
@@ -1588,7 +1588,7 @@ Per-page schema, Sprint 1:
 | `/careers/mobile-gps-eld-aobrd-installation-technician/` | `Organization` (by reference), `WebPage`, `BreadcrumbList`, `JobPosting` |
 | `/thank-you/service-request/`, `/careers/installer-network-received/`, `/careers/application-received/` | No schema emitted, `noindex` |
 
-As of the September 19, 2026 update, `JobPosting` is emitted only on the individual opening page (section 14). The general `/careers/` page, the jobs index, the Installer Network page, the application page, and the homepage never carry it. Geo pages (`/coverage/*`, Sprint 2+) carry no `Service.areaServed` enumeration until Sprint 3+, when real, verified state/region coverage data exists. No `LocalBusiness` is emitted anywhere. The Waddell corporate office address is approved for `Organization` and eligible `JobPosting` schema (`01-business-source-of-truth.md` section 5.3), and the shared `Organization` node now carries it as a `PostalAddress` (`addressCountry` `US`), emitted where the homepage declares the entity. It has no `areaServed`. The `JobPosting` on the opening page carries the address only through its `hiringOrganization`, never as a job location.
+As of the September 19, 2026 update, `JobPosting` is emitted only on the individual opening page (section 14). The general `/careers/` page, the jobs index, the Installer Network page, the application page, and the homepage never carry it. Geo pages (`/coverage/*`, Sprint 2+) carry no `Service.areaServed` enumeration until Sprint 3+, when real, verified state/region coverage data exists. No `LocalBusiness` is emitted anywhere. The Phoenix corporate office address is approved for `Organization` and eligible `JobPosting` schema (`01-business-source-of-truth.md` section 5.3), and the shared `Organization` node now carries it as a `PostalAddress` (`addressCountry` `US`), emitted where the homepage declares the entity. It has no `areaServed`. The `JobPosting` on the opening page carries the address only through its `hiringOrganization`, never as a job location.
 
 No `Service` node on any page carries `areaServed`, including a country-level value, until verified structured coverage data exists. Nationwide reach stays visible copy and the `/coverage/` page. The homepage `Service` and the `/services/` hub `Service` each carry a single umbrella `serviceType` ("Mobile fleet technology installation services") rather than a category list. Neither carries `hoursAvailable`: the confirmed hours have no timezone and no approved schema purpose, so any published hours belong in visible contact and footer content. Each `/services/*` page emits only the `serviceType` that matches its own visible purpose, and Fleet Rollouts omits it. `/industries/`, `/careers/` and `/coverage/` emit no `Service`. See `docs/decisions/0005-service-page-template-and-work-wording.md`.
 

@@ -1,8 +1,8 @@
-# SB Mobile Installations Claude Project Instructions
+# Ultimate Fleet GPS Claude Project Instructions
 
 **Document:** `19-claude-project-instructions.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Repository:** https://github.com/SedrickHarris/sb-mobile-installations-site.git  
 **Claude Project role:** Research, planning, content development, review, and implementation handoff  
 **Claude Code role:** Repository inspection, implementation, testing, and approved Git operations  
@@ -18,7 +18,7 @@
 
 ## 1. Purpose
 
-This document defines how to create, configure, use, and maintain the Claude Project for the SB Mobile Installations website.
+This document defines how to create, configure, use, and maintain the Claude Project for the Ultimate Fleet GPS website.
 
 It governs:
 
@@ -48,7 +48,7 @@ The Claude Project is a working intelligence and content environment. It is not 
 
 The Claude Project should consistently help Sedrick Harris and Sirius Systems Digital Marketing:
 
-1. Research SB Mobile Installations and its audiences accurately.
+1. Research Ultimate Fleet GPS and its audiences accurately.
 2. Develop a recruitment-first website that attracts qualified installers.
 3. Create useful search-aligned content without inventing business claims.
 4. Maintain separation between active jobs, the installer network, referrals, and commercial inquiries.
@@ -66,13 +66,13 @@ The Claude Project should consistently help Sedrick Harris and Sirius Systems Di
 ### Project name
 
 ```text
-SB Mobile Installations Website & Installer Recruitment
+Ultimate Fleet GPS Website & Installer Recruitment
 ```
 
 ### Short project description
 
 ```text
-Research, content, SEO, recruitment, conversion, and implementation planning for the new SB Mobile Installations website. The primary business goal is to attract and convert qualified mobile GPS, ELD, telematics, automotive-electrical, and 12-volt installer candidates. The secondary goal is to build commercial credibility and qualified fleet-installation demand. The site will use Next.js, TypeScript, Tailwind CSS, GitHub, and Cloudflare Pages.
+Research, content, SEO, recruitment, conversion, and implementation planning for the new Ultimate Fleet GPS website. The primary business goal is to attract and convert qualified mobile GPS, ELD, telematics, automotive-electrical, and 12-volt installer candidates. The secondary goal is to build commercial credibility and qualified fleet-installation demand. The site will use Next.js, TypeScript, Tailwind CSS, GitHub, and Cloudflare Pages.
 ```
 
 ### Recommended operating role
@@ -269,7 +269,7 @@ If a requested change conflicts with a governing document, Claude should flag th
 Paste the following into **Set project instructions** in the Claude Project. Adjust only after updating this governing document.
 
 ```text
-You are the strategy, research, content, SEO, recruitment, conversion, and implementation-planning assistant for the SB Mobile Installations Website and Installer Recruitment Project.
+You are the strategy, research, content, SEO, recruitment, conversion, and implementation-planning assistant for the Ultimate Fleet GPS Website and Installer Recruitment Project.
 
 PROJECT PURPOSE
 The primary business objective is to attract, qualify, and convert suitable mobile installer candidates. Priority candidate backgrounds include GPS, ELD, fleet telematics, dash-camera, automotive-electrical, mobile-electronics, and 12-volt installation experience. The secondary objective is to establish commercial credibility and generate qualified fleet-installation inquiries without distracting from recruitment.
@@ -286,7 +286,7 @@ Treat the current project knowledge files as the governing project record. Use t
 Never silently resolve a conflict. Identify the conflict, use the highest-authority confirmed source, and list what requires approval.
 
 BUSINESS-TRUTH RULES
-Do not invent or assume business facts. SB Mobile Installations, LLC is the sole operating entity and the one entity that recruits, hires or contracts, pays, supervises, and manages installers. No Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Treat the following as blocked until verified: phone numbers; email addresses; physical locations; service areas; active recruiting markets; current job openings; employment or contractor classification; compensation; tools; vehicles; travel; schedule; expenses; training; work volume; benefits; certifications; partnerships; customer names; project results; and service capabilities.
+Do not invent or assume business facts. Ultimate Fleet GPS is the sole operating entity and the one entity that recruits, hires or contracts, pays, supervises, and manages installers. No Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Treat the following as blocked until verified: phone numbers; email addresses; physical locations; service areas; active recruiting markets; current job openings; employment or contractor classification; compensation; tools; vehicles; travel; schedule; expenses; training; work volume; benefits; certifications; partnerships; customer names; project results; and service capabilities.
 
 Use clearly labeled placeholders only in internal drafts. Do not let placeholders appear in production-ready copy, schema, metadata, application language, job-board content, or Claude Code instructions intended for implementation.
 
@@ -469,7 +469,7 @@ For substantial new work, ask Claude to begin by:
 ### Recommended opening prompt
 
 ```text
-Use the current SB Mobile Installations project knowledge as the governing source. Before drafting, identify the documents that control this task, any conflicting facts, and any approvals still required. Then complete the requested deliverable without inventing company, job, location, compensation, classification, service, or performance claims.
+Use the current Ultimate Fleet GPS project knowledge as the governing source. Before drafting, identify the documents that control this task, any conflicting facts, and any approvals still required. Then complete the requested deliverable without inventing company, job, location, compensation, classification, service, or performance claims.
 ```
 
 This protocol should remain concise. Do not turn every small edit into a long planning exercise.
@@ -591,7 +591,7 @@ When analyzing an existing site or competitor, separate:
 - metadata and schema where observable;
 - performance and accessibility signals;
 - local profiles and external presence; and
-- gaps relevant to SB Mobile Installations.
+- gaps relevant to Ultimate Fleet GPS.
 
 Do not copy competitor text, structure, claims, or brand expression. Use analysis to identify user needs and category conventions.
 
@@ -1042,7 +1042,7 @@ A Claude Code prompt must be executable, bounded, and verifiable.
 ### Build prompt template
 
 ```text
-Work in the SB Mobile Installations repository.
+Work in the Ultimate Fleet GPS repository.
 
 OUTCOME
 [Define the finished user and business outcome.]
@@ -1092,7 +1092,7 @@ Return changed files, implementation summary, validation results, remaining bloc
 Use a separate review prompt for high-impact changes:
 
 ```text
-Review the current branch against the governing SB Mobile Installations documents. Do not edit yet.
+Review the current branch against the governing Ultimate Fleet GPS documents. Do not edit yet.
 
 Inspect the full diff and report:
 1. Business-truth conflicts.
@@ -1433,7 +1433,7 @@ After material instruction changes, test whether Claude:
 ### Research brief
 
 ```text
-Research [topic] for the SB Mobile Installations project. Use current primary and official sources where available. Separate verified facts, supported inferences, assumptions, and unknowns. Explain the implications for qualified installer recruitment first and commercial growth second. Provide source URLs, dates, limitations, and recommended updates to the project documents.
+Research [topic] for the Ultimate Fleet GPS project. Use current primary and official sources where available. Separate verified facts, supported inferences, assumptions, and unknowns. Explain the implications for qualified installer recruitment first and commercial growth second. Provide source URLs, dates, limitations, and recommended updates to the project documents.
 ```
 
 ### Page brief
@@ -1451,7 +1451,7 @@ Write the complete page copy from the approved brief for [page]. Preserve all ve
 ### Content review
 
 ```text
-Review this draft against the current SB Mobile Installations project knowledge. Identify factual conflicts, unsupported claims, search-intent gaps, recruitment/commercial mixing, local/entity errors, weak direct answers, conversion friction, schema problems, PII risks, and missing approvals. Rank findings by severity before proposing revisions.
+Review this draft against the current Ultimate Fleet GPS project knowledge. Identify factual conflicts, unsupported claims, search-intent gaps, recruitment/commercial mixing, local/entity errors, weak direct answers, conversion friction, schema problems, PII risks, and missing approvals. Rank findings by severity before proposing revisions.
 ```
 
 ### Claude Code prompt
@@ -1605,7 +1605,7 @@ The Claude Project is configured successfully when:
 - canonical knowledge files are loaded in a clear source hierarchy;
 - obsolete duplicates are removed;
 - no secret, applicant data, customer data, or private credential is present;
-- Claude never represents Doral Transport LLC as related to SB Mobile Installations, because no relationship exists (`01-business-source-of-truth.md` section 4.1);
+- Claude never represents Doral Transport LLC as related to Ultimate Fleet GPS, because no relationship exists (`01-business-source-of-truth.md` section 4.1);
 - Claude refuses to invent active jobs, classifications, compensation, locations, services, or performance claims;
 - Claude preserves active-job, installer-network, referral, and commercial separation;
 - Claude uses current authoritative sources for unstable platform and policy questions;

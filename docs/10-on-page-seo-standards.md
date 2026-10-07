@@ -1,8 +1,8 @@
-# SB Mobile Installations On-Page SEO Standards
+# Ultimate Fleet GPS On-Page SEO Standards
 
 **Document:** `10-on-page-seo-standards.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary SEO outcome:** Qualified installer discovery and conversion  
 **Secondary SEO outcome:** Qualified commercial discovery and conversion  
 **Status:** Technical and editorial standards draft  
@@ -13,7 +13,7 @@
 
 ## 1. Purpose
 
-This document defines the page-level search optimization standards for the SB Mobile Installations website.
+This document defines the page-level search optimization standards for the Ultimate Fleet GPS website.
 
 It governs:
 
@@ -142,18 +142,18 @@ Aim for approximately 45 to 60 characters when possible, but do not force a titl
 
 | Page family | Pattern |
 |---|---|
-| Homepage | Mobile Installer Careers & Fleet Installation \| SB Mobile |
-| Careers hub | Installer Careers \| SB Mobile Installations |
-| Jobs index | Current Installer Openings \| SB Mobile Installations |
-| Active job | [Approved Job Title] – [Location] \| SB Mobile |
-| Role | Mobile Installer Careers \| SB Mobile Installations |
-| Requirements | Mobile Installer Requirements \| SB Mobile |
-| Assignment process | How Installer Assignments Work \| SB Mobile |
-| Installer network | Join the Installer Network \| SB Mobile |
-| Service | [Verified Service] \| SB Mobile Installations |
-| Service area | [Verified Service Category] in [Market] \| SB Mobile |
-| Resource | [Direct Topic or Question] \| SB Mobile |
-| About | About SB Mobile Installations |
+| Homepage | Mobile Installer Careers & Fleet Installation \| Ultimate Fleet GPS |
+| Careers hub | Installer Careers \| Ultimate Fleet GPS |
+| Jobs index | Current Installer Openings \| Ultimate Fleet GPS |
+| Active job | [Approved Job Title] – [Location] \| Ultimate Fleet GPS |
+| Role | Mobile Installer Careers \| Ultimate Fleet GPS |
+| Requirements | Mobile Installer Requirements \| Ultimate Fleet GPS |
+| Assignment process | How Installer Assignments Work \| Ultimate Fleet GPS |
+| Installer network | Join the Installer Network \| Ultimate Fleet GPS |
+| Service | [Verified Service] \| Ultimate Fleet GPS |
+| Service area | [Verified Service Category] in [Market] \| Ultimate Fleet GPS |
+| Resource | [Direct Topic or Question] \| Ultimate Fleet GPS |
+| About | About Ultimate Fleet GPS |
 
 These are drafting patterns, not approved final titles.
 
@@ -190,11 +190,11 @@ Aim for approximately 140 to 165 characters when practical. This is an editorial
 
 ### Recruitment description pattern
 
-> Review the role, location, installer requirements, travel expectations, and application steps for this verified SB Mobile Installations opening.
+> Review the role, location, installer requirements, travel expectations, and application steps for this verified Ultimate Fleet GPS opening.
 
 ### Commercial description pattern
 
-> Learn how SB Mobile Installations supports verified fleet equipment installation projects, including planning, on-site work, testing, and documentation.
+> Learn how Ultimate Fleet GPS supports verified fleet equipment installation projects, including planning, on-site work, testing, and documentation.
 
 ### Avoid
 
@@ -221,7 +221,7 @@ Aim for approximately 140 to 165 characters when practical. This is an editorial
 
 ### Examples
 
-- Mobile Installer Careers at SB Mobile Installations
+- Mobile Installer Careers at Ultimate Fleet GPS
 - Current Installer Openings
 - Mobile Installation Technician in Phoenix, Arizona
 - Mobile Installer Requirements
@@ -393,7 +393,7 @@ Every recruitment page must distinguish:
 ### Requirements
 
 - Use the approved organization name.
-- Do not use SB Mobile Installations and Doral Transport LLC interchangeably. No relationship exists (`01-business-source-of-truth.md` section 4.1).
+- Do not use Ultimate Fleet GPS and Doral Transport LLC interchangeably. No relationship exists (`01-business-source-of-truth.md` section 4.1).
 - State classification at the job level.
 - Identify active status accurately.
 - Avoid using “employee,” “contractor,” or “subcontractor” generically.
@@ -808,7 +808,7 @@ Place relevant images near the content they support.
 
 ### Truth requirement
 
-Do not present stock or AI imagery as SB Mobile work, staff, customers, facilities, or equipment relationships.
+Do not present stock or AI imagery as Ultimate Fleet GPS work, staff, customers, facilities, or equipment relationships.
 
 ---
 
@@ -1005,7 +1005,7 @@ Use a typed `metadata` export for stable pages.
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Installer Careers | SB Mobile Installations",
+  title: "Installer Careers | Ultimate Fleet GPS",
   description:
     "Review current mobile installer openings, requirements, assignment information, and future installer-network opportunities.",
   alternates: {

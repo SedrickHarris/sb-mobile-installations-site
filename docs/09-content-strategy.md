@@ -1,8 +1,8 @@
-# SB Mobile Installations Content Strategy
+# Ultimate Fleet GPS Content Strategy
 
 **Document:** `09-content-strategy.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary content objective:** Attract, qualify, and convert installer candidates  
 **Secondary content objective:** Build commercial credibility and qualified demand  
 **Status:** Strategic content draft  
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines how SB Mobile Installations will plan, research, write, review, publish, measure, update, and retire website content.
+This document defines how Ultimate Fleet GPS will plan, research, write, review, publish, measure, update, and retire website content.
 
 It governs:
 
@@ -47,7 +47,7 @@ The website content must serve three connected business functions.
 
 Content should help relevant candidates:
 
-- discover SB Mobile Installations;
+- discover Ultimate Fleet GPS;
 - understand the work;
 - evaluate company and opportunity credibility;
 - determine whether their experience fits;
@@ -344,7 +344,7 @@ Core content:
 
 ### Primary audience
 
-Installer candidates evaluating SB Mobile Installations.
+Installer candidates evaluating Ultimate Fleet GPS.
 
 ### Primary intent
 
@@ -637,7 +637,7 @@ Publish only questions with approved, useful answers. “Contact us” should no
 
 ### Objective
 
-Build organic recruitment visibility and candidate trust before the candidate searches for SB Mobile by name.
+Build organic recruitment visibility and candidate trust before the candidate searches for Ultimate Fleet GPS by name.
 
 ### Initial resource cluster
 
@@ -1024,7 +1024,7 @@ Do not infer outcomes or disclose confidential project information.
 
 ### Entity requirement
 
-Resolved September 10, 2026: no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Company, recruiting, application, privacy, agreement, and payment content no longer waits on this question. Do not represent Doral Transport LLC as related to SB Mobile Installations.
+Resolved September 10, 2026: no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Company, recruiting, application, privacy, agreement, and payment content no longer waits on this question. Do not represent Doral Transport LLC as related to Ultimate Fleet GPS.
 
 ---
 
@@ -1069,7 +1069,7 @@ Resolved September 10, 2026: no Doral Transport LLC relationship exists (`01-bus
 
 ### Primary message
 
-Qualified mobile installers can review current SB Mobile Installations opportunities and learn what the work requires.
+Qualified mobile installers can review current Ultimate Fleet GPS opportunities and learn what the work requires.
 
 ### Supporting messages
 
@@ -1101,7 +1101,7 @@ Qualified mobile installers can review current SB Mobile Installations opportuni
 
 ### Working primary message
 
-SB Mobile Installations provides mobile electronic equipment installation for fleet and construction vehicles.
+Ultimate Fleet GPS provides mobile electronic equipment installation for fleet and construction vehicles.
 
 This closely reflects existing website content but requires final company approval.
 
@@ -1354,7 +1354,7 @@ Detailed markup requirements belong in `13-schema-markup-plan.md` and `30-job-co
 2. Request a Quote
 3. Explore Services
 4. Review the Installation Process
-5. Contact SB Mobile Installations
+5. Contact Ultimate Fleet GPS
 
 ### CTA rules
 

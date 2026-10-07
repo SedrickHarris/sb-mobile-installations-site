@@ -1,8 +1,8 @@
-# SB Mobile Installations Keyword Research
+# Ultimate Fleet GPS Keyword Research
 
 **Document:** `05-keyword-research.md`  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary focus:** Installer recruitment search demand  
 **Secondary focus:** Commercial installation search demand  
 **Status:** Qualitative research and validation framework  
@@ -14,7 +14,7 @@
 
 ## 1. Purpose
 
-This document defines the initial keyword and topic framework for the SB Mobile Installations website.
+This document defines the initial keyword and topic framework for the Ultimate Fleet GPS website.
 
 It supports:
 
@@ -43,7 +43,7 @@ Recruitment is the primary business objective. Commercial keywords remain import
 
 This is a qualitative keyword framework based on:
 
-- the existing SB Mobile Installations website;
+- the existing Ultimate Fleet GPS website;
 - existing recruiting language;
 - the approved project strategy;
 - audience-persona research;
@@ -123,7 +123,7 @@ Specific, accurate phrases are more strategically useful than high-level terms t
 
 | Intent | Candidate example | Commercial example | Preferred destination |
 |---|---|---|---|
-| Navigational | SB Mobile Installations careers | SB Mobile Installations contact | Branded page |
+| Navigational | Ultimate Fleet GPS careers | Ultimate Fleet GPS contact | Branded page |
 | Active transactional | telematics installer jobs near me | fleet GPS installation company | Active job or service page |
 | Market transactional | GPS installer jobs Phoenix | telematics installation Phoenix | Verified market page or job page |
 | Role evaluation | what does a mobile installer do | what does a telematics installer do | Role or resource page |
@@ -154,8 +154,8 @@ These support the immediate business objective and careers architecture:
 - automotive electrical installer jobs
 - traveling installation technician jobs
 - installer jobs plus verified market
-- SB Mobile Installations careers
-- SB Mobile Installations jobs
+- Ultimate Fleet GPS careers
+- Ultimate Fleet GPS jobs
 
 ### Priority 1: Qualification and consideration terms
 
@@ -595,22 +595,22 @@ Do not target entry-level, training, apprenticeship, certification, or paid-trai
 
 ### Priority branded phrases
 
-- SB Mobile Installations careers
-- SB Mobile Installations jobs
-- SB Mobile jobs
-- SB Mobile installer jobs
-- SB Mobile Installations application
-- SB Mobile Installations contractor
-- SB Mobile Installations reviews
-- SB Mobile Installations pay
-- SB Mobile Installations interview
-- SB Mobile Installations phone number
+- Ultimate Fleet GPS careers
+- Ultimate Fleet GPS jobs
+- Ultimate Fleet GPS jobs
+- Ultimate Fleet GPS installer jobs
+- Ultimate Fleet GPS application
+- Ultimate Fleet GPS contractor
+- Ultimate Fleet GPS reviews
+- Ultimate Fleet GPS pay
+- Ultimate Fleet GPS interview
+- Ultimate Fleet GPS phone number
 
 ### Entity-sensitive phrases
 
 - Doral Transport jobs
 - Doral Transport installer jobs
-- Doral Transport SB Mobile Installations
+- Doral Transport Ultimate Fleet GPS
 
 Resolved September 10, 2026: no Doral Transport LLC relationship exists (`01-business-source-of-truth.md` section 4.1). Do not target these phrases or imply an association through them.
 
@@ -853,7 +853,7 @@ Potential modifiers include:
 
 ### Publication rule
 
-An industry keyword becomes a page target only when SB Mobile has verified experience, operational fit, buyer demand, useful distinct content, and an appropriate conversion path.
+An industry keyword becomes a page target only when Ultimate Fleet GPS has verified experience, operational fit, buyer demand, useful distinct content, and an appropriate conversion path.
 
 ---
 
@@ -1043,8 +1043,8 @@ Pages should use explicit, supportable statements that answer entity and relatio
 
 Examples of the information architecture—not approved final claims—include:
 
-- SB Mobile Installations is a mobile electronic equipment installation company.
-- SB Mobile Installations recruits technicians with relevant GPS, ELD, telematics, 12-volt, and vehicle-electrical experience.
+- Ultimate Fleet GPS is a mobile electronic equipment installation company.
+- Ultimate Fleet GPS recruits technicians with relevant GPS, ELD, telematics, 12-volt, and vehicle-electrical experience.
 - Active installer opportunities are listed on the current openings page.
 - The installer network is for future opportunities and does not guarantee work.
 - Mobile installers may work at customer, fleet, yard, or shop locations depending on the assignment.
@@ -1060,13 +1060,13 @@ LLM readiness depends on clarity, consistency, evidence, crawlability, and entit
 
 | Page | Primary keyword theme | Secondary themes | Status |
 |---|---|---|---|
-| `/careers/` | SB Mobile Installations careers | installer jobs, company opportunities | Launch priority |
+| `/careers/` | Ultimate Fleet GPS careers | installer jobs, company opportunities | Launch priority |
 | `/careers/mobile-installers/` | mobile installer jobs | telematics, GPS, ELD, 12-volt installer careers | Launch priority |
-| `/careers/jobs/` | SB Mobile Installations jobs | current installer openings | Launch priority |
+| `/careers/jobs/` | Ultimate Fleet GPS jobs | current installer openings | Launch priority |
 | `/careers/jobs/[job-slug]/` | exact job title plus location | role, skill, travel, engagement type | Active jobs only |
 | `/careers/installer-requirements/` | mobile installer requirements | telematics qualifications, tools, experience | Launch priority |
 | `/careers/how-assignments-work/` | how mobile installer assignments work | travel, scheduling, documentation | Launch priority |
-| `/careers/apply/` | apply for installer jobs | SB Mobile application | Launch priority; avoid thin standalone indexing if job-linked flow is better |
+| `/careers/apply/` | apply for installer jobs | Ultimate Fleet GPS application | Launch priority; avoid thin standalone indexing if job-linked flow is better |
 | `/careers/faqs/` | mobile installer FAQ | candidate questions | Launch priority |
 | `/careers/join-our-installer-network/` | join installer network | future telematics installer opportunities | Launch priority; no JobPosting schema |
 | `/careers/installer-training/` | telematics installer training | GPS installer training, 12-volt skills | Conditional on verified program |
@@ -1121,22 +1121,22 @@ These are working patterns, not final copy.
 
 ### Careers hub
 
-**Title pattern:** Installer Careers | SB Mobile Installations  
+**Title pattern:** Installer Careers | Ultimate Fleet GPS  
 **Description direction:** Review current mobile installer openings, requirements, assignment information, and future installer-network opportunities.
 
 ### Role page
 
-**Title pattern:** Mobile Installer Careers | SB Mobile Installations  
+**Title pattern:** Mobile Installer Careers | Ultimate Fleet GPS  
 **Description direction:** Learn about mobile GPS, ELD, telematics, fleet-equipment, and 12-volt installer opportunities, qualifications, and application steps.
 
 ### Active job page
 
-**Title pattern:** [Approved Job Title] – [Location] | SB Mobile Installations  
+**Title pattern:** [Approved Job Title] – [Location] | Ultimate Fleet GPS  
 **Description direction:** Summarize the real role, location, engagement type, essential qualifications, and direct application path.
 
 ### Service page
 
-**Title pattern:** [Verified Service] | SB Mobile Installations  
+**Title pattern:** [Verified Service] | Ultimate Fleet GPS  
 **Description direction:** Explain who the service is for, what it includes, where it is available, and the relevant project action.
 
 Avoid writing metadata to a fixed character count at the expense of clarity. Review actual search rendering after launch.
@@ -1322,7 +1322,7 @@ Add the following fields after approved tools and data are available:
 | Search volume | Directional demand estimate with source and date |
 | Difficulty | Relative organic competition with source and methodology |
 | CPC | Commercial or recruiting auction signal |
-| Current rank | SB Mobile baseline by device and location |
+| Current rank | Ultimate Fleet GPS baseline by device and location |
 | SERP features | Jobs, local pack, PAA, snippets, video, images, discussions, AI features |
 | Ranking URLs | Current leading pages |
 | Target URL | Approved canonical destination |

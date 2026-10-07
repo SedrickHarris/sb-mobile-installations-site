@@ -1,10 +1,10 @@
-# SB Mobile Installations Recruitment Platform Distribution
+# Ultimate Fleet GPS Recruitment Platform Distribution
 
 **Document:** 29-recruitment-platform-distribution.md  
-**Project:** SB Mobile Installations Website and Installer Recruitment Project  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website and Installer Recruitment Project  
+**Business:** Ultimate Fleet GPS  
 **Primary objective:** Distribute accurate installer opportunities to qualified candidates through appropriate recruitment channels.  
-**Canonical source:** The approved SB Mobile Installations job record and website job page  
+**Canonical source:** The approved Ultimate Fleet GPS job record and website job page  
 **Status:** Working distribution standard  
 **Version:** 0.1  
 **Last updated:** September 10, 2026

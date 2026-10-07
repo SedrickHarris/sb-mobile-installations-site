@@ -1,8 +1,8 @@
-# SB Mobile Installations Business Source of Truth
+# Ultimate Fleet GPS Business Source of Truth
 
 **Document:** 01-business-source-of-truth.md  
-**Project:** SB Mobile Installations Website Rebuild  
-**Business:** SB Mobile Installations, LLC  
+**Project:** Ultimate Fleet GPS Website Rebuild  
+**Business:** Ultimate Fleet GPS  
 **Status:** Discovery draft  
 **Version:** 0.9  
 **Last updated:** September 19, 2026
@@ -11,7 +11,7 @@
 
 ## 1. Purpose
 
-This document is the canonical source for business facts used throughout the SB Mobile Installations website project. It exists to prevent assumptions, legacy language, recruiting requirements, third-party information, and proposed marketing ideas from becoming unsupported public claims.
+This document is the canonical source for business facts used throughout the Ultimate Fleet GPS website project. It exists to prevent assumptions, legacy language, recruiting requirements, third-party information, and proposed marketing ideas from becoming unsupported public claims.
 
 Use this document before writing or approving:
 
@@ -42,7 +42,7 @@ If a fact is not approved here or in a more specific canonical registry, treat i
 
 When sources conflict, use the following order:
 
-1. Written confirmation from an authorized SB Mobile Installations representative
+1. Written confirmation from an authorized Ultimate Fleet GPS representative
 2. Approved contracts, licenses, certifications, policies, and internal company records
 3. Approved canonical project registries
 4. Current official company website content
@@ -75,10 +75,10 @@ Lower-priority sources may identify facts that require verification. They do not
 
 | Field | Current value | Status | Notes |
 | --- | --- | --- | --- |
-| Legal business name | SB Mobile Installations, LLC | Approved. Internal, with a limited legal-disclosure use | Client confirmed as the sole operating entity. It is not the public name. See sections 4.2 and 33.5 |
-| Public-facing name | SB Mobile Installations | Approved | Stakeholder confirmed September 10, 2026 as the only name used publicly. See section 4.2 |
-| Abbreviated name | SB Mobile | Existing website statement | Existing homepage uses this shortened form |
-| Current website | https://sbmobileinstallations.com/ | Approved for current-site reference | Confirm this will remain the production domain |
+| Legal business name | Ultimate Fleet GPS (legal entity suffix unconfirmed) | Approved. Internal, with a limited legal-disclosure use | Client confirmed as the sole operating entity. It is not the public name. See sections 4.2 and 33.5 |
+| Public-facing name | Ultimate Fleet GPS | Approved | Stakeholder confirmed September 10, 2026 as the only name used publicly. See section 4.2 |
+| Abbreviated name | Ultimate Fleet GPS | Existing website statement | Existing homepage uses this shortened form |
+| Current website | https://ultimatefleetgps.net/ | Approved for current-site reference | Confirm this will remain the production domain |
 | New repository | https://github.com/SedrickHarris/sb-mobile-installations-site.git | Approved project fact | New website repository |
 | Entity type | Limited liability company | Existing website statement | Based on the displayed company name; legal state and status remain unverified |
 | Years in business | In business since 2011 | Approved | Client confirmed 2026-09-18, superseding the prior "15 years" duration phrasing. See section 25 for approved wording |
@@ -86,24 +86,24 @@ Lower-priority sources may identify facts that require verification. They do not
 | Founder | Unknown | Pending verification | Do not publish |
 | Owner | Unknown | Pending verification | Do not publish third-party names without confirmation |
 | Leadership | Unknown | Pending verification | Needed for About and entity content |
-| Corporate office | 8907 N 175th Ave, Waddell, AZ 85355 | Approved September 19, 2026 (supersedes the September 10, 2026 no-address record) | May be published on the approved surfaces only. Not a walk-in facility. See sections 5.3 and 33.4 |
+| Corporate office | 4539 N. 22nd St. #6225, Phoenix, AZ 85016 | Approved September 19, 2026 (supersedes the September 10, 2026 no-address record) | May be published on the approved surfaces only. Not a walk-in facility. See sections 5.3 and 33.4 |
 | Customer-facing office | None | Approved | No walk-in location. The corporate office is not a customer-facing or walk-in installation facility. See section 5.3 |
 
 ### 4.1 Sole operating entity
 
-SB Mobile Installations, LLC is the sole operating entity referenced throughout the website.
+Ultimate Fleet GPS is the sole operating entity referenced throughout the website.
 
 **Status:** Approved. Client confirmed.
 
 There is no Doral Transport LLC relationship to document. Do not represent Doral Transport LLC as a parent, affiliate, employer, contracting entity, hiring entity, or operating company, and do not present the two names as interchangeable.
 
-One entity is responsible for recruiting, hiring or contracting, payment, supervision, and installer management. Use SB Mobile Installations as the organization name in public company copy, forms, and structured data. Use SB Mobile Installations, LLC only where the legal entity is required, such as internal documentation or legally appropriate employment and contractor disclosures. See sections 4.2 and 33.5.
+One entity is responsible for recruiting, hiring or contracting, payment, supervision, and installer management. Use Ultimate Fleet GPS as the organization name in public company copy, forms, and structured data. Use Ultimate Fleet GPS only where the legal entity is required, such as internal documentation or legally appropriate employment and contractor disclosures. See sections 4.2 and 33.5.
 
 Several other project documents described this relationship as unresolved. They were updated on September 19, 2026 to mark it resolved: `02`, `05`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, and `19`.
 
 ### 4.2 The public name never carries "LLC"
 
-**The public company name is SB Mobile Installations. It never carries "LLC".**
+**The public company name is Ultimate Fleet GPS. It never carries "LLC".**
 
 **Status:** Approved. Stakeholder confirmed September 10, 2026.
 
@@ -115,9 +115,9 @@ This note exists so a future review does not re-flag the change as unauthorized.
 
 This is a project-wide content rule, not a page-level preference. It applies to every customer-facing surface, which includes page copy, headings, navigation, footers, legal pages, metadata, structured data values, alt text, form labels, error messages, email templates, and job postings.
 
-The registered entity remains SB Mobile Installations, LLC, and section 4 records it as a business fact. That form stays internal. Do not publish it, and do not reintroduce it through a schema `legalName` property, an Open Graph `siteName`, or a copyright line.
+The registered entity remains Ultimate Fleet GPS, and section 4 records it as a business fact. That form stays internal. Do not publish it, and do not reintroduce it through a schema `legalName` property, an Open Graph `siteName`, or a copyright line.
 
-**Approved limited exception, September 19, 2026.** The registered entity may appear where the legal entity is required, such as internal documentation and legally appropriate employment and contractor disclosures. Each such use must be identified as legally required before it is published. The exception does not change the public name. Page copy, headings, navigation, footers, metadata, `Organization` `name`, `hiringOrganization` `name`, Open Graph `siteName`, alt text, form labels, and job posting titles keep using SB Mobile Installations without "LLC". Do not publish `legalName`, and do not add "LLC" to a copyright line, unless a separate written approval names that surface. This exception was stated by the project owner on September 19, 2026 and narrows the earlier statement that the rule has no approval path.
+**Approved limited exception, September 19, 2026.** The registered entity may appear where the legal entity is required, such as internal documentation and legally appropriate employment and contractor disclosures. Each such use must be identified as legally required before it is published. The exception does not change the public name. Page copy, headings, navigation, footers, metadata, `Organization` `name`, `hiringOrganization` `name`, Open Graph `siteName`, alt text, form labels, and job posting titles keep using Ultimate Fleet GPS without "LLC". Do not publish `legalName`, and do not add "LLC" to a copyright line, unless a separate written approval names that surface. This exception was stated by the project owner on September 19, 2026 and narrows the earlier statement that the rule has no approval path.
 
 Internal project documents in `docs/` are not customer-facing and may name the registered entity where the legal fact is the point, as this section does.
 
@@ -133,10 +133,10 @@ The brand kit supplied on September 10, 2026 gives the same instruction under it
 
 | Number | Source observation | Status | Required action |
 | --- | --- | --- | --- |
-| 623-388-7352 | Displayed on the homepage, contact page, career page, and external recruiting listing | Verified | Approved as the canonical business telephone number |
+| (928) 393-8049 | Displayed on the homepage, contact page, career page, and external recruiting listing | Verified | Approved as the canonical business telephone number |
 | 623-338-7352 | Displayed on the current contact page | Rejected | Do not publish. Treat as a typographical error and correct wherever it appears |
 
-**623-388-7352 is the canonical business telephone number.** Stakeholder confirmed
+**(928) 393-8049 is the canonical business telephone number.** Stakeholder confirmed
 on September 10, 2026.
 
 Use this number consistently across website copy, metadata, structured data,
@@ -161,17 +161,17 @@ Do not invent departmental email addresses.
 
 ### 5.3 Address
 
-**The corporate office is 8907 N 175th Ave, Waddell, AZ 85355.**
+**The corporate office is 4539 N. 22nd St. #6225, Phoenix, AZ 85016.**
 
 **Status:** Approved September 19, 2026. This supersedes the September 10, 2026 record that the company publishes no address (see the verification log in section 29).
 
-SB Mobile Installations operates a mobile-only installation model. Service is delivered at the customer's location. The Waddell address is the corporate office. It is not a walk-in installation facility, not a customer-facing service location, and not a guarantee of local service availability.
+Ultimate Fleet GPS operates a mobile-only installation model. Service is delivered at the customer's location. The Phoenix address is the corporate office. It is not a walk-in installation facility, not a customer-facing service location, and not a guarantee of local service availability.
 
-Approved publication surfaces for the Waddell address: the website footer, the contact page, careers pages, legal pages, `Organization` structured data, and eligible `JobPosting` structured data. Any other surface needs separate approval.
+Approved publication surfaces for the Phoenix address: the website footer, the contact page, careers pages, legal pages, `Organization` structured data, and eligible `JobPosting` structured data. Any other surface needs separate approval.
 
 Consequences:
 
-- Do not describe the Waddell address as a walk-in facility, an installation shop, or a place where customers or candidates can visit for service.
+- Do not describe the Phoenix address as a walk-in facility, an installation shop, or a place where customers or candidates can visit for service.
 - Do not present the address as evidence of local service in Arizona or any other market. Nationwide reach stays reach, not physical presence. See section 8.4.
 - Publishing the address does not make the business eligible for a storefront-style Google Business Profile listing. No Google Business Profile, Bing Places, or Apple Business Connect profile is approved, and any future profile work needs its own decision.
 - `LocalBusiness` structured data is not approved. Use `Organization` for entity markup, with the address only as approved above. See `13-schema-markup-plan.md`.
@@ -206,7 +206,7 @@ The time zone and any holiday exceptions remain unconfirmed. Confirm both before
 
 ### 6.1 Current website description
 
-The existing homepage states that SB Mobile provides mobile electronic equipment installation services and has qualified mobile technicians throughout the United States.
+The existing homepage states that Ultimate Fleet GPS provides mobile electronic equipment installation services and has qualified mobile technicians throughout the United States.
 
 It specifically presents:
 
@@ -221,7 +221,7 @@ These are existing website statements. They should be preserved accurately durin
 
 ### 6.2 Working internal description
 
-SB Mobile Installations appears to provide on-site installation and related field services for GPS, electronic logging, fleet-management, video, and other mobile electronic equipment used in fleet and construction vehicles.
+Ultimate Fleet GPS appears to provide on-site installation and related field services for GPS, electronic logging, fleet-management, video, and other mobile electronic equipment used in fleet and construction vehicles.
 
 **Status:** Inferred from customer-facing and recruiting content.
 
@@ -307,7 +307,7 @@ Confirm which customer types are current, desired, and supportable before develo
 
 ### 7.4 Equipment sales
 
-It is unknown whether SB Mobile:
+It is unknown whether Ultimate Fleet GPS:
 
 - Sells equipment
 - Resells equipment
@@ -336,7 +336,7 @@ The homepage states that technicians are located throughout the United States an
 
 **Status:** Approved. Client confirmed.
 
-SB Mobile Installations serves customers nationwide through mobile technicians who travel to the customer's location. Nationwide service reach may be stated in website copy, metadata, and structured data as an approved fact.
+Ultimate Fleet GPS serves customers nationwide through mobile technicians who travel to the customer's location. Nationwide service reach may be stated in website copy, metadata, and structured data as an approved fact.
 
 **This is a geographic fact only.** Project capacity is a separate confirmed fact recorded in section 11.1. The two are independent and must not be conflated. Confirming one says nothing about the other, and a future content pass should check each against its own section rather than re-flagging one while verifying the other.
 
@@ -401,7 +401,7 @@ The current customer-facing website explicitly presents the following:
 
 **Status:** Approved. Stakeholder confirmed September 10, 2026.
 
-> Confirmed by stakeholder, September 10, 2026. SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment. Technicians work with platforms including Lytx/DriveCam, SmartDrive, Zonar, LoJack, Interlock, PeopleNet, Trimble, Omnitracs, Samsara, Geotab, CalAmp, and Verizon Connect, plus dashcam and windshield-mounted video recorder installations. Source: stakeholder confirmation of a company-authored Glassdoor job posting's accuracy to current operations.
+> Confirmed by stakeholder, September 10, 2026. Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment. Technicians work with platforms including Lytx/DriveCam, SmartDrive, Zonar, LoJack, Interlock, PeopleNet, Trimble, Omnitracs, Samsara, Geotab, CalAmp, and Verizon Connect, plus dashcam and windshield-mounted video recorder installations. Source: stakeholder confirmation of a company-authored Glassdoor job posting's accuracy to current operations.
 
 This supersedes the narrower GPS-only scope that previously constrained public copy and structured data. The equipment categories above may now be stated as current services in customer-facing copy, metadata, and structured data.
 
@@ -479,7 +479,7 @@ No proposed service is approved merely because it appears in this table.
 
 ### 11.1 Confirmed project capacity range
 
-**SB Mobile Installations handles projects ranging from a single vehicle to an entire fleet.**
+**Ultimate Fleet GPS handles projects ranging from a single vehicle to an entire fleet.**
 
 **Status:** Approved. Stakeholder confirmed September 10, 2026.
 
@@ -513,7 +513,7 @@ Those remain unconfirmed. The general guardrail in section 25 is unchanged and s
 
 **Status:** Approved for fleet, commercial, and construction vehicles.
 
-> Confirmed by stakeholder, September 10, 2026: SB Mobile Installations serves fleet, commercial, and construction vehicles.
+> Confirmed by stakeholder, September 10, 2026: Ultimate Fleet GPS serves fleet, commercial, and construction vehicles.
 
 Passenger vehicles were not named in the confirmation and stay unverified. Do not widen the published vehicle list beyond fleet, commercial, and construction.
 
@@ -593,7 +593,7 @@ The confirmation establishes that technicians work with these platforms. It esta
 
 ### Usage restrictions
 
-Do not state or imply that SB Mobile is:
+Do not state or imply that Ultimate Fleet GPS is:
 
 - An official partner
 - An authorized installer
@@ -648,7 +648,7 @@ The current career content seeks applicants with experience in:
 
 **Status:** Recruiting evidence.
 
-These qualifications describe desired technician experience. They do not prove that every technician holds every competency, that every capability is available in every market, or that SB Mobile provides general automotive electrical repair.
+These qualifications describe desired technician experience. They do not prove that every technician holds every competency, that every capability is available in every market, or that Ultimate Fleet GPS provides general automotive electrical repair.
 
 Do not market general automotive repair, stereo installation, panel repair, or broad electrical repair as customer services without confirmation.
 
@@ -664,7 +664,7 @@ The current career page states that MECP is preferred.
 
 This does not establish that:
 
-- SB Mobile is MECP certified.
+- Ultimate Fleet GPS is MECP certified.
 - Every technician is MECP certified.
 - MECP certification is mandatory.
 - The company has an official MECP partnership.
@@ -770,7 +770,7 @@ Every other item in the section 17 list stays unconfirmed. Confirming the docume
 
 ### Existing statements
 
-The homepage says that SB Mobile strives to provide good customer service and meet customer needs.
+The homepage says that Ultimate Fleet GPS strives to provide good customer service and meet customer needs.
 
 The recruiting content expects technicians to:
 
@@ -950,11 +950,11 @@ The following wording closely reflects current website statements and may be use
 
 ### Company description
 
-> SB Mobile Installations provides mobile electronic equipment installation services for fleet and construction vehicles.
+> Ultimate Fleet GPS provides mobile electronic equipment installation services for fleet and construction vehicles.
 
 ### GPS service
 
-> SB Mobile Installations provides installation and service for GPS equipment.
+> Ultimate Fleet GPS provides installation and service for GPS equipment.
 
 ### Mobile service
 
@@ -970,7 +970,7 @@ Client confirmed the founding year as 2011 on 2026-09-18, superseding the earlie
 
 > In business since 2011
 
-Acceptable variations include "SB Mobile Installations has been in business since 2011" and "serving fleets since 2011". Use the specific year rather than a vague equivalent. "Decades of experience" remains prohibited under section 26 as an unsupported superlative.
+Acceptable variations include "Ultimate Fleet GPS has been in business since 2011" and "serving fleets since 2011". Use the specific year rather than a vague equivalent. "Decades of experience" remains prohibited under section 26 as an unsupported superlative.
 
 Do not also state a duration figure (e.g. "15 years") alongside the founding year without recomputing it against the current date - prefer the founding-year form alone.
 
@@ -978,7 +978,7 @@ Do not also state a duration figure (e.g. "15 years") alongside the founding yea
 
 Stakeholder confirmed September 10, 2026. Approved for use in copy. See section 9.1.
 
-> SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment on fleet, commercial, and construction vehicles.
+> Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, and fleet management equipment on fleet, commercial, and construction vehicles.
 
 ### Vehicle scope
 
@@ -1038,7 +1038,7 @@ Project-size language is part of this caveat. Phrasing such as “one vehicle or
 
 ## 26. Prohibited wording until supported
 
-**"SB Mobile Installations, LLC" as the public name.** The public name never carries "LLC". The only exception is a legally required disclosure identified and approved as such (section 4.2). See section 4.2.
+**"Ultimate Fleet GPS" as the public name.** The public name never carries "LLC". The only exception is a legally required disclosure identified and approved as such (section 4.2). See section 4.2.
 
 Do not use the following claims without documentation and approval:
 
@@ -1209,6 +1209,7 @@ Use this table to record approved updates.
 | 2026-09-19 | Corporate office | No published address | 8907 N 175th Ave, Waddell, AZ 85355, approved for the footer, contact page, careers pages, legal pages, `Organization` schema, and eligible `JobPosting` schema | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Not a walk-in facility or a local service guarantee. Supersedes the 2026-09-10 address row. Shop locations only for specific assignments |
 | 2026-09-19 | Entity name in legal disclosures | "LLC" never published | Public name stays SB Mobile Installations. The registered entity may appear where legally required | Project owner instruction, September 19, 2026 | Stakeholder (relayed by the project owner) | Narrows the 2026-09-10 public name row. See section 4.2 |
 | 2026-09-19 | Active careers architecture | Not implemented | Job record, opening page, jobs index, application page and form, and confirmation page exist. `JobPosting` only on the opening page | Implementation of the owner's 2026-09-19 update plan | Project owner | Endpoint acceptance of application submissions is not verified. See section 33.7 and `decisions/0006` |
+| 2026-10-07 | Company name, telephone, corporate office | SB Mobile Installations, 623-388-7352, 8907 N 175th Ave, Waddell, AZ 85355 | Ultimate Fleet GPS, (928) 393-8049, 4539 N. 22nd St. #6225, Phoenix, AZ 85016, ultimatefleetgps.net | Project owner instruction in the build thread | Project owner | Stakeholder approval given in the build thread on 2026-10-07 and recorded here. Legal entity suffix unconfirmed. Production domain changed to ultimatefleetgps.net (also approved 2026-10-07). Schema logo approved 2026-10-07: ultimate-fleet-gps-primary-logo.svg. Older sections of this document and other docs still carry the previous values as history |
 
 ---
 
@@ -1239,7 +1240,7 @@ At this stage, the project has enough evidence to begin architecture, research, 
 - No published address, mobile-only operating model (superseded September 19, 2026; see below)
 - Business hours, Monday to Friday, 8:00 AM to 6:00 PM
 - Nationwide service reach
-- SB Mobile Installations, LLC as the sole operating entity
+- Ultimate Fleet GPS as the sole operating entity
 - Worker classification: technicians are independent contractors, not employees
 - Client decision not to publish licenses, certifications, insurance, reviews, or ratings
 
@@ -1252,7 +1253,7 @@ At this stage, the project has enough evidence to begin architecture, research, 
 - The expired posting's shop-location language is retired as a general statement (narrowed September 19, 2026: shops may be mentioned only for specific assignments)
 - Project capacity range: a single vehicle through an entire fleet, a fact distinct from nationwide reach
 - Photo documentation sent to every customer automatically, without being requested
-- Public company name: SB Mobile Installations, with "LLC" never part of the public name (limited legal-disclosure exception recorded September 19, 2026)
+- Public company name: Ultimate Fleet GPS, with "LLC" never part of the public name (limited legal-disclosure exception recorded September 19, 2026)
 
 ### Confirmed as of September 19, 2026
 
@@ -1263,7 +1264,7 @@ At this stage, the project has enough evidence to begin architecture, research, 
 - Applicant requirements: own personal vehicle, tools, and travel resources; valid driver's license; smartphone for installation data submission and photos; background check
 - No prior installation experience required; training will be provided
 - MECP and the listed platforms as preferred applicant experience only
-- Corporate office at 8907 N 175th Ave, Waddell, AZ 85355, publishable on the approved surfaces, not a walk-in facility
+- Corporate office at 4539 N. 22nd St. #6225, Phoenix, AZ 85016, publishable on the approved surfaces, not a walk-in facility
 - The homepage stays commercial-led; the Careers pages are the primary recruitment funnel
 
 ### Still required before launch
@@ -1353,16 +1354,16 @@ Limits:
 
 ### 33.4 Corporate office
 
-The corporate office is 8907 N 175th Ave, Waddell, AZ 85355. See section 5.3 for the full rules.
+The corporate office is 4539 N. 22nd St. #6225, Phoenix, AZ 85016. See section 5.3 for the full rules.
 
 - Approved surfaces: the website footer, the contact page, careers pages, legal pages, `Organization` schema, and eligible `JobPosting` schema.
 - It is not a walk-in installation facility and not a guarantee of local service availability.
 - Possible shop locations may be mentioned only in the context of a specific assignment.
-- The homepage is not an approved surface for the address, so the address is not published there. On September 19, 2026 the homepage wording that said the company has no physical office was replaced, in the About paragraph and in the FAQ (now "Do you have a walk-in installation location?"), with statements that there is no walk-in installation facility. The same update changed the homepage recruiting wording to say that current openings exist, without a pay figure. The banner's primary button is now "Apply for the Current Opening" to `/careers/apply/`, and the Installer Network is a separate secondary link, so the word "apply" never sends a visitor to a registration form. The homepage FAQ also feeds the `FAQPage` structured data. The address now appears on every approved surface except JobPosting schema, always read from `business.address` in `business.ts` and never typed into a page: the footer, the contact page, the Careers hub, the Installer Network role page, and the legal pages, as plain text labelled "Corporate office" (through the shared `CorporateOffice` component, or through the legal contact notice), and the `Organization` structured data as a `PostalAddress`. The `Organization` node carries no `areaServed`. The contact notices in the privacy policy and terms of use identify the registered entity, SB Mobile Installations, LLC, as the one place the entity name appears on the public site, subject to attorney review (section 4.2); the accessibility statement uses the public name. The `JobPosting` schema on the opening page carries the address through its `hiringOrganization`, which is the shared `Organization` node, and does not use it as a job location. Comment-only notes that said no address is published were updated to match. Statements that there is no walk-in facility (for example in `process-content.ts`) remain accurate.
+- The homepage is not an approved surface for the address, so the address is not published there. On September 19, 2026 the homepage wording that said the company has no physical office was replaced, in the About paragraph and in the FAQ (now "Do you have a walk-in installation location?"), with statements that there is no walk-in installation facility. The same update changed the homepage recruiting wording to say that current openings exist, without a pay figure. The banner's primary button is now "Apply for the Current Opening" to `/careers/apply/`, and the Installer Network is a separate secondary link, so the word "apply" never sends a visitor to a registration form. The homepage FAQ also feeds the `FAQPage` structured data. The address now appears on every approved surface except JobPosting schema, always read from `business.address` in `business.ts` and never typed into a page: the footer, the contact page, the Careers hub, the Installer Network role page, and the legal pages, as plain text labelled "Corporate office" (through the shared `CorporateOffice` component, or through the legal contact notice), and the `Organization` structured data as a `PostalAddress`. The `Organization` node carries no `areaServed`. The contact notices in the privacy policy and terms of use identify the registered entity, Ultimate Fleet GPS, as the one place the entity name appears on the public site, subject to attorney review (section 4.2); the accessibility statement uses the public name. The `JobPosting` schema on the opening page carries the address through its `hiringOrganization`, which is the shared `Organization` node, and does not use it as a job location. Comment-only notes that said no address is published were updated to match. Statements that there is no walk-in facility (for example in `process-content.ts`) remain accurate.
 
 ### 33.5 Public name and entity
 
-The public-facing name is SB Mobile Installations. Use SB Mobile Installations, LLC only where the legal entity is required, such as internal documentation or legally appropriate employment and contractor disclosures, and identify each such use as legally required (section 4.2).
+The public-facing name is Ultimate Fleet GPS. Use Ultimate Fleet GPS only where the legal entity is required, such as internal documentation or legally appropriate employment and contractor disclosures, and identify each such use as legally required (section 4.2).
 
 ### 33.6 Journeys and site roles
 
@@ -1385,7 +1386,7 @@ The homepage remains commercial-led (section 32). The Careers pages are the prim
 
 ### 33.8 Statements superseded by this section
 
-- "No published address" and "no address to publish" (sections 4, 5.3, 29, and 31, dated September 10, 2026): superseded by the Waddell corporate office.
+- "No published address" and "no address to publish" (sections 4, 5.3, 29, and 31, dated September 10, 2026): superseded by the Phoenix corporate office.
 - "No physical office or shop exists" (sections 5.3, 29, and 31): narrowed. Shops may be mentioned only for specific assignments.
 - "Compensation was not asked about and was not confirmed" and the September 10, 2026 instruction not to treat the `$1,600 per week` figure as current: superseded for the current openings.
 - "Do not carry compensation, schedule, travel percentage, classification, or benefits into the new careers content" (section 19): superseded for compensation and travel. Schedule and benefits remain unapproved.
