@@ -12,6 +12,6 @@ import { buildPageMetadata } from "@/lib/metadata/build-page-metadata";
 export const homepageMetadata: Metadata = buildPageMetadata({
   title: homepageContent.hero.h1,
   description:
-    "SB Mobile Installations is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country.",
+    "Ultimate Fleet GPS is a mobile installation company that provides on-site GPS, ELD, and fleet electronics installation for fleet, commercial, and construction vehicles nationwide, and connects independent contractor technicians with installation work across the country.",
   pathname: "/",
 });

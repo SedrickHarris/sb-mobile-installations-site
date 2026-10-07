@@ -6,7 +6,7 @@ import { business } from "@/data/site/business";
  *
  * Fact-only and minimal: name, url, telephone, and the corporate office
  * address (approved 2026-09-19, 01-business-source-of-truth.md section 33.4).
- * Nothing else (logo, sameAs, areaServed, founding date, email, legalName)
+ * Plus the approved logo (2026-10-07, `business.logoPath`). Nothing else (sameAs, areaServed, founding date, email, legalName)
  * until that specific fact is confirmed and approved. See
  * docs/_claims-inventory.md and 13-schema-markup-plan.md section 58a.
  *
@@ -23,6 +23,7 @@ export function organizationNode() {
     name: business.name,
     url: business.url,
     telephone: business.telephone,
+    logo: `${business.url}${business.logoPath}`,
     address: {
       "@type": "PostalAddress",
       streetAddress: business.address.streetAddress,

@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 
 import { SITE_NAME, SITE_URL } from "@/lib/metadata/base";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_TYPE } from "@/lib/metadata/page-defaults";
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_ALT,
+  DEFAULT_OG_IMAGE_SIZE,
+  DEFAULT_OG_TYPE,
+} from "@/lib/metadata/page-defaults";
 
 export type PageMetadataInput = {
   title: string;
@@ -30,6 +35,7 @@ export function buildPageMetadata({
   type = DEFAULT_OG_TYPE,
 }: PageMetadataInput): Metadata {
   const url = `${SITE_URL}${pathname}`;
+  const isDefaultImage = image !== undefined && image === DEFAULT_OG_IMAGE;
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -42,10 +48,22 @@ export function buildPageMetadata({
       siteName: SITE_NAME,
       title,
       description,
-      ...(image ? { images: [{ url: image }] } : {}),
+      ...(image
+        ? {
+            images: [
+              isDefaultImage
+                ? {
+                    url: image,
+                    ...DEFAULT_OG_IMAGE_SIZE,
+                    alt: DEFAULT_OG_IMAGE_ALT,
+                  }
+                : { url: image },
+            ],
+          }
+        : {}),
     },
     twitter: {
-      card: "summary_large_image",
+      card: isDefaultImage ? "summary" : "summary_large_image",
       title,
       description,
       ...(image ? { images: [image] } : {}),

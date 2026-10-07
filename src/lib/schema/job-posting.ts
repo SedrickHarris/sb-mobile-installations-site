@@ -19,7 +19,7 @@ import type { JobRecord } from "@/types/jobs";
  * Deliberately absent:
  * - `validThrough`: no closing date is published, and none is invented.
  * - `jobLocation`: the work is nationwide field work with no single location,
- *   and the Waddell corporate office is not a work location. Nationwide
+ *   and the Phoenix corporate office is not a work location. Nationwide
  *   applicants are expressed with `applicantLocationRequirements`. Google may
  *   report a missing `jobLocation` for this posting type. Whether to add one
  *   is an open decision (docs/01 section 33.9), not something to guess.

@@ -27,7 +27,7 @@ import { UMBRELLA_SERVICE_TYPE } from "@/lib/schema/service-page";
  *   Review          no reviews exist
  *   JobPosting      the homepage is never an opening page; JobPosting belongs
  *                   only on an individual active-opening page
- *   logo            no approved value
+ *   sameAs          no approved profiles
  *
  * The Organization node carries the approved corporate office address (see
  * organization.ts). It is not a service market, so no areaServed accompanies
