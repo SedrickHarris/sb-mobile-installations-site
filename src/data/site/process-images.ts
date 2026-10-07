@@ -8,7 +8,7 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * element, no preload, no label) and a labelled dashed placeholder in local
  * development only. See ImageSlot. To fill a slot: set `src`, `width`,
  * `height`, and confirm `alt`. Files go in `public/images/brand/our-process/`,
- * named `sb-mobile-installations-our-process-<subject>-<ratio>.webp`.
+ * named `ultimate-fleet-gps-our-process-<subject>-<ratio>.webp`.
  *
  * Do not use generic stock, and no map, dashboard, dispatch board, fleet
  * tracker, checklist, report, or portal imagery. Those imply scheduling,
@@ -26,7 +26,7 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * tech: the hero text carries the meaning. Sits under a black overlay.
  */
 export const processHeroBackground = {
-  src: "/images/brand/our-process/hero/sb-mobile-installations-our-process-commercial-fleet-installation-hero-background-16x9.webp",
+  src: "/images/brand/our-process/hero/ultimate-fleet-gps-our-process-commercial-fleet-installation-hero-background-16x9.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -36,7 +36,7 @@ export const processHeroBackground = {
  * assistive tech. Sits under a black overlay.
  */
 export const processQuoteBackground = {
-  src: "/images/brand/our-process/sb-mobile-installations-our-process-installation-quote-commercial-fleet-background-16x9.webp",
+  src: "/images/brand/our-process/ultimate-fleet-gps-our-process-installation-quote-commercial-fleet-background-16x9.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -49,7 +49,7 @@ export const processImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/brand/our-process/sb-mobile-installations-our-process-commercial-vehicle-types-fleet-context-4x3.webp",
+    src: "/images/brand/our-process/ultimate-fleet-gps-our-process-commercial-vehicle-types-fleet-context-4x3.webp",
     // The vehicles sit in the middle band of the frame; keep that band in view if cropped.
     objectPosition: "center 45%",
     alt: "A white cargo van, a white service truck with a utility body, and a dark gray SUV parked side by side outside a commercial building with garage doors",
@@ -63,7 +63,7 @@ export const processImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/brand/our-process/sb-mobile-installations-our-process-fleet-installation-photo-documentation-4x3.webp",
+    src: "/images/brand/our-process/ultimate-fleet-gps-our-process-fleet-installation-photo-documentation-4x3.webp",
     objectPosition: "center",
     alt: "Hands in a navy work shirt holding a smartphone to photograph a small black device mounted under the dashboard of a commercial vehicle",
     altGuidance:

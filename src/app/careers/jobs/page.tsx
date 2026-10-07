@@ -13,7 +13,7 @@ import { careersPageSchema } from "@/lib/schema/careers-page";
 
 const H1 = "Current Installer Openings";
 const DESCRIPTION =
-  "Current installer openings at SB Mobile Installations. Independent contractor work, nationwide applicants accepted, no prior installation experience required, and training provided.";
+  "Current installer openings at Ultimate Fleet GPS. Independent contractor work, nationwide applicants accepted, no prior installation experience required, and training provided.";
 const BREADCRUMBS = [
   { label: "Home", href: "/" },
   { label: "Careers", href: "/careers/" },

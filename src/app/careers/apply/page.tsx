@@ -18,7 +18,7 @@ import { careersPageSchema } from "@/lib/schema/careers-page";
 
 const H1 = "Apply for the Current Opening";
 const DESCRIPTION =
-  "Apply for the current Mobile GPS, ELD, and AOBRD installation technician opening at SB Mobile Installations. Applicants are accepted nationwide.";
+  "Apply for the current Mobile GPS, ELD, and AOBRD installation technician opening at Ultimate Fleet GPS. Applicants are accepted nationwide.";
 const BREADCRUMBS = [
   { label: "Home", href: "/" },
   { label: "Careers", href: "/careers/" },

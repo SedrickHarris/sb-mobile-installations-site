@@ -10,7 +10,7 @@ export const recruitingSectionMedia: {
   readonly poster: string;
 } | null = {
   video:
-    "/images/why-choose-us/sb-mobile-installations-technician-career-opportunity.mp4",
+    "/images/why-choose-us/ultimate-fleet-gps-technician-career-opportunity.mp4",
   poster:
-    "/images/why-choose-us/sb-mobile-installations-technician-career-opportunity.webp",
+    "/images/why-choose-us/ultimate-fleet-gps-technician-career-opportunity.webp",
 };

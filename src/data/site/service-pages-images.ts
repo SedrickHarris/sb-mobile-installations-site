@@ -75,8 +75,8 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
     ...slots(
     "telematics",
     "Connected fleet hardware being installed in a commercial vehicle",
-    "Suggested file: sb-mobile-installations-fleet-telematics-installation-hero.webp. Describe the hardware and vehicle actually shown. No device-brand logos, platform logos or dashboards, maps, pins, state outlines, stock technician imagery, readable plates, or customer signage.",
-    "sb-mobile-installations-fleet-telematics-vehicle-context.webp",
+    "Suggested file: ultimate-fleet-gps-fleet-telematics-installation-hero.webp. Describe the hardware and vehicle actually shown. No device-brand logos, platform logos or dashboards, maps, pins, state outlines, stock technician imagery, readable plates, or customer signage.",
+    "ultimate-fleet-gps-fleet-telematics-vehicle-context.webp",
     ),
     context: {
       slotId: "service-telematics-context",
@@ -85,7 +85,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${SERVICE_PHOTO_DIR}/fleet-telematics-installation/sb-mobile-installations-commercial-vehicle-installation-context.webp`,
+      src: `${SERVICE_PHOTO_DIR}/fleet-telematics-installation/ultimate-fleet-gps-commercial-vehicle-installation-context.webp`,
       alt: "Commercial fleet vehicles in a service yard, including a work van, utility service trucks, and a heavy-duty truck",
       altGuidance:
         "Describe only what is shown. Confirmed vehicle examples only. No trailers, pickups, buses, or heavy equipment.",
@@ -97,7 +97,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      src: `${SERVICE_PHOTO_DIR}/service-cards/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp`,
+      src: `${SERVICE_PHOTO_DIR}/service-cards/ultimate-fleet-gps-gps-tracking-installation-commercial-vehicle.webp`,
       alt: "Gloved hands mounting a black fleet hardware unit and connecting its wiring under a commercial vehicle dashboard",
       altGuidance:
         "Describe only what is shown. No device-brand logos, no compliance or capability claims.",
@@ -109,7 +109,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: "/images/services/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
+      src: "/images/services/services-hub/ultimate-fleet-gps-services-hub-commercial-vehicle-installation-support.webp",
       alt: "A cargo van, utility truck, dump truck, and tractor truck staged outside a commercial fleet facility",
       altGuidance:
         "Describe only what is shown. No brand or coverage claims. Shows vehicle types beyond the approved vehicle examples, so it is not used in the vehicle-context section.",
@@ -121,7 +121,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      src: "/images/coverage/sb-mobile-installations-coverage-fleet-electronics-staging-equipment-v2.webp",
+      src: "/images/coverage/ultimate-fleet-gps-coverage-fleet-electronics-staging-equipment-v2.webp",
       alt: "Fleet electronics, cabling, and mounting hardware laid out on a workbench in front of a cargo van, utility trucks, and a tractor truck at a commercial facility",
       altGuidance:
         "Describe only what is shown. Never a map or graphic implying state-level coverage, and no city or state identifiers.",
@@ -133,7 +133,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${SERVICE_PHOTO_DIR}/service-cards/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp`,
+      src: `${SERVICE_PHOTO_DIR}/service-cards/ultimate-fleet-gps-fleet-management-equipment-installation-commercial-vehicle.webp`,
       alt: "Technician routing fleet-electronics cables inside a commercial service vehicle",
       altGuidance:
         "Describe only what is shown. No device-brand logos, no compliance or capability claims.",
@@ -143,8 +143,8 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
     ...slots(
       "gps",
       "GPS tracking hardware being installed in a commercial vehicle",
-      "Suggested file: sb-mobile-installations-gps-tracking-installation-hero.webp. Abstract navy fleet grid and route line motif only until an approved image exists. No maps, pins, boundaries, dashboards, device-brand logos, or customer information.",
-      "sb-mobile-installations-gps-tracking-installation-vehicle-context.webp",
+      "Suggested file: ultimate-fleet-gps-gps-tracking-installation-hero.webp. Abstract navy fleet grid and route line motif only until an approved image exists. No maps, pins, boundaries, dashboards, device-brand logos, or customer information.",
+      "ultimate-fleet-gps-gps-tracking-installation-vehicle-context.webp",
     ),
     context: {
       slotId: "service-gps-context",
@@ -153,7 +153,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${GPS_DIR}/sb-mobile-installations-commercial-vehicle-installation-context-2.webp`,
+      src: `${GPS_DIR}/ultimate-fleet-gps-commercial-vehicle-installation-context-2.webp`,
       alt: "Commercial fleet vehicles that may require GPS tracking installation",
       altGuidance:
         "Describe only what is shown. Confirmed vehicle examples only. No trailers, pickups, buses, or heavy equipment.",
@@ -167,10 +167,10 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${GPS_DIR}/sb-mobile-installations-what-is-gps-tracking-installation.webp`,
+      src: `${GPS_DIR}/ultimate-fleet-gps-what-is-gps-tracking-installation.webp`,
       alt: "GPS tracking device mounted inside a commercial van with wiring routed through protective conduit",
       altGuidance:
-        "Suggested file: sb-mobile-installations-gps-tracking-installation-hardware-mounting.webp. Describe only the hardware and vehicle shown. No device-brand logos, screens, or capability claims.",
+        "Suggested file: ultimate-fleet-gps-gps-tracking-installation-hardware-mounting.webp. Describe only the hardware and vehicle shown. No device-brand logos, screens, or capability claims.",
     },
     scope: {
       slotId: "service-gps-scope",
@@ -179,10 +179,10 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${GPS_DIR}/sb-mobile-installations-gps-tracking-installation-components.webp`,
+      src: `${GPS_DIR}/ultimate-fleet-gps-gps-tracking-installation-components.webp`,
       alt: "GPS tracking device and fuse block mounted inside a commercial van with wiring routed through protective conduit",
       altGuidance:
-        "Suggested file: sb-mobile-installations-gps-tracking-installation-device-mounting-wiring.webp. Secured GPS device, clean power connection, neatly routed and protected wiring inside a commercial vehicle. Suggested alt: GPS tracking device with organized wiring installed in a commercial vehicle. No people or hands, screens, readouts, tracking data, logos, or readable text.",
+        "Suggested file: ultimate-fleet-gps-gps-tracking-installation-device-mounting-wiring.webp. Secured GPS device, clean power connection, neatly routed and protected wiring inside a commercial vehicle. Suggested alt: GPS tracking device with organized wiring installed in a commercial vehicle. No people or hands, screens, readouts, tracking data, logos, or readable text.",
     },
     fit: {
       slotId: "service-gps-fit",
@@ -191,7 +191,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${GPS_DIR}/sb-mobile-installations-related-fleet-installation-services.webp`,
+      src: `${GPS_DIR}/ultimate-fleet-gps-related-fleet-installation-services.webp`,
       alt: "Fleet electronics and vehicle installation equipment prepared for commercial deployment",
       altGuidance:
         "Describe only what is shown. No dashboard imagery, readable plates, or customer signage.",
@@ -203,7 +203,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      src: `${GPS_DIR}/sb-mobile-installations-mobile-installation-project-location.webp`,
+      src: `${GPS_DIR}/ultimate-fleet-gps-mobile-installation-project-location.webp`,
       alt: "Mobile fleet installation service vehicle at a commercial project location",
       altGuidance:
         "Describe only what is shown. Never a map or graphic implying coverage, and no city or state identifiers.",
@@ -216,8 +216,8 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
     ...slots(
       "eld",
       "ELD or AOBRD hardware being installed in a commercial truck cab",
-      "Suggested file: sb-mobile-installations-eld-installation-hero.webp. Describe what is shown. Never call AOBRD legacy. No compliance claims in the alt text, no tablet or driver-log screens.",
-      "sb-mobile-installations-eld-installation-vehicle-context.webp",
+      "Suggested file: ultimate-fleet-gps-eld-installation-hero.webp. Describe what is shown. Never call AOBRD legacy. No compliance claims in the alt text, no tablet or driver-log screens.",
+      "ultimate-fleet-gps-eld-installation-vehicle-context.webp",
     ),
     context: {
       slotId: "service-eld-context",
@@ -226,7 +226,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: "/images/services/eld-installation/sb-mobile-installations-eld-aobrd-commercial-fleet-vehicle-types-4x3.webp",
+      src: "/images/services/eld-installation/ultimate-fleet-gps-eld-aobrd-commercial-fleet-vehicle-types-4x3.webp",
       alt: "Commercial fleet vehicles including a work van, service truck, utility vehicle, and heavy-duty truck",
       altGuidance:
         "Describe only what is shown. Confirmed vehicle examples only. No trailers, pickups, buses, or heavy equipment. Do not imply every pictured vehicle has ELD hardware installed.",
@@ -238,7 +238,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 3344,
       height: 1882,
       fallback: "route",
-      src: "/images/services/eld-installation/hero/sb-mobile-installations-eld-installation-commercial-truck-cab-hero-16x9.webp",
+      src: "/images/services/eld-installation/hero/ultimate-fleet-gps-eld-installation-commercial-truck-cab-hero-16x9.webp",
       alt: "ELD device mounted near the dashboard inside a commercial truck cab",
       altGuidance:
         "Uses the approved hero photo. Describe only what is shown. Never call AOBRD legacy. No device-brand logos, driver logs, or compliance claims.",
@@ -250,7 +250,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: "/images/services/eld-installation/sb-mobile-installations-eld-installation-mounting-cable-routing-commercial-truck-cab-4x3.webp",
+      src: "/images/services/eld-installation/ultimate-fleet-gps-eld-installation-mounting-cable-routing-commercial-truck-cab-4x3.webp",
       alt: "ELD device mounted near a truck dashboard with a neatly routed cable",
       altGuidance:
         "Describe only what is shown. No device-brand logos, screens, driver logs, or compliance claims.",
@@ -262,7 +262,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: "/images/services/eld-installation/sb-mobile-installations-commercial-fleet-service-yard-related-services-4x3.webp",
+      src: "/images/services/eld-installation/ultimate-fleet-gps-commercial-fleet-service-yard-related-services-4x3.webp",
       alt: "Commercial vehicles staged at a fleet service facility",
       altGuidance:
         "Describe only what is shown, without implying the pictured vehicles have equipment installed. No readable plates or customer signage.",
@@ -274,7 +274,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      src: "/images/services/eld-installation/sb-mobile-installations-mobile-eld-installation-commercial-project-location-4x3.webp",
+      src: "/images/services/eld-installation/ultimate-fleet-gps-mobile-eld-installation-commercial-project-location-4x3.webp",
       alt: "Commercial fleet vehicle at a customer project location",
       altGuidance:
         "Do not imply installation work is pictured. Never a map or graphic implying coverage, and no city or state identifiers.",
@@ -286,8 +286,8 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
     ...slots(
       "dashcam",
       "Fleet dashcam or windshield-mounted video recorder being installed",
-      "Suggested file: sb-mobile-installations-dashcam-camera-installation-hero.webp. Describe the hardware shown. No forward-facing, driver-facing, AI, or monitoring wording. No lens view, road footage, driver, cab interior, dashboard, map, platform interface, or device-brand logos.",
-      "sb-mobile-installations-dashcam-camera-installation-vehicle-context.webp",
+      "Suggested file: ultimate-fleet-gps-dashcam-camera-installation-hero.webp. Describe the hardware shown. No forward-facing, driver-facing, AI, or monitoring wording. No lens view, road footage, driver, cab interior, dashboard, map, platform interface, or device-brand logos.",
+      "ultimate-fleet-gps-dashcam-camera-installation-vehicle-context.webp",
     ),
     context: {
       slotId: "service-dashcam-context",
@@ -296,7 +296,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/sb-mobile-installations-commercial-work-van-dashcam-installation-context-4x3.webp`,
+      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/ultimate-fleet-gps-commercial-work-van-dashcam-installation-context-4x3.webp`,
       alt: "Commercial work van cab with a dashcam mounted at the top of the windshield",
       altGuidance:
         "Uses the approved work van photo. Describe only what is shown. Do not imply every pictured vehicle type has a dashcam installed. No device-brand logos, footage, or capability claims.",
@@ -308,10 +308,10 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 3344,
       height: 1882,
       fallback: "route",
-      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/hero/sb-mobile-installations-commercial-dashcam-truck-cab-hero-background-16x9.webp`,
+      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/hero/ultimate-fleet-gps-commercial-dashcam-truck-cab-hero-background-16x9.webp`,
       alt: "Commercial truck cab with a compact dashcam mounted on the windshield",
       altGuidance:
-        "Uses the approved hero background photo. Describe only what is shown. No device-brand logos, footage, or capability claims. Original placeholder note: sb-mobile-installations-dashcam-camera-installation-hardware-mounting.webp. Describe only the hardware and mounting shown. No device-brand logos, screens, footage, or capability claims.",
+        "Uses the approved hero background photo. Describe only what is shown. No device-brand logos, footage, or capability claims. Original placeholder note: ultimate-fleet-gps-dashcam-camera-installation-hardware-mounting.webp. Describe only the hardware and mounting shown. No device-brand logos, screens, footage, or capability claims.",
     },
     scope: {
       slotId: "service-dashcam-scope",
@@ -320,7 +320,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/sb-mobile-installations-commercial-dashcam-mounting-cable-routing-4x3.webp`,
+      src: `${SERVICE_PHOTO_DIR}/dashcam-camera-installation/ultimate-fleet-gps-commercial-dashcam-mounting-cable-routing-4x3.webp`,
       alt: "Dashcam mounted at the top of a commercial vehicle windshield with its cable routed along the headliner",
       altGuidance:
         "Uses the approved mounting and cable routing photo. Describe only what is shown. No device-brand logos, footage, or capability claims.",
@@ -334,7 +334,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       "rollouts",
       "Several commercial vehicles at a project location",
       "Describe the vehicles and setting shown. No map, state outline, city label, pin, dispatch or dashboard view, platform logo, or customer-site information.",
-      "sb-mobile-installations-fleet-rollout-vehicle-context.webp",
+      "ultimate-fleet-gps-fleet-rollout-vehicle-context.webp",
     ),
     context: {
       slotId: "service-rollouts-context",
@@ -343,7 +343,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-commercial-work-van-service-section-4x3.webp`,
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/ultimate-fleet-gps-fleet-rollout-commercial-work-van-service-section-4x3.webp`,
       alt: "White commercial work van parked outside a commercial facility, with the cab and dashboard visible through the windshield",
       altGuidance:
         "Uses the approved work van photo. Describe only what is shown. Confirmed vehicle example only. Do not imply every vehicle type supports every hardware category, and no device-brand logos or capability claims.",
@@ -355,7 +355,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-commercial-vehicles-service-section-4x3.webp`,
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/ultimate-fleet-gps-fleet-rollout-commercial-vehicles-service-section-4x3.webp`,
       alt: "Commercial vans and utility service trucks parked in a row at a commercial facility",
       altGuidance:
         "Uses the approved service-section photo. Describe only what is shown. No map, no coverage or capacity implication, no customer signage or readable plates.",
@@ -367,7 +367,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-gps-hardware-commercial-vehicle-4x3.webp`,
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/ultimate-fleet-gps-fleet-rollout-gps-hardware-commercial-vehicle-4x3.webp`,
       alt: "GPS tracking device, mounting bracket, wiring harness, fasteners, cable ties, and hand tools laid out on the step of a commercial truck",
       altGuidance:
         "Uses the approved hardware photo. Describe only what is shown. No device-brand logos, screens, or capability claims.",
@@ -379,7 +379,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "grid",
-      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-commercial-vehicles-fleet-facility-4x3.webp`,
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/ultimate-fleet-gps-fleet-rollout-commercial-vehicles-fleet-facility-4x3.webp`,
       alt: "Commercial cargo vans and utility service trucks parked in rows outside a fleet facility",
       altGuidance:
         "Uses the approved fleet facility photo. Describe only what is shown, without implying installation work is pictured. No readable plates or customer signage.",
@@ -391,7 +391,7 @@ export const servicePagesImages: Record<ServiceSlug, ServiceImageSet> = {
       width: 2896,
       height: 2172,
       fallback: "route",
-      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/sb-mobile-installations-fleet-rollout-multiple-project-locations-commercial-vehicles-4x3.webp`,
+      src: `${SERVICE_PHOTO_DIR}/fleet-rollouts/ultimate-fleet-gps-fleet-rollout-multiple-project-locations-commercial-vehicles-4x3.webp`,
       alt: "Commercial service trucks and cargo vans parked outside a large commercial facility with loading docks",
       altGuidance:
         "Uses the approved project locations photo. Describe only what is shown. Never a map or graphic implying coverage, and no city or state identifiers.",

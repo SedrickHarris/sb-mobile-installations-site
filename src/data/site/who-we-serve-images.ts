@@ -13,19 +13,19 @@ export const whoWeServeImages: Record<
   WhoWeServeCard["image"]
 > = {
   fleet: {
-    src: "/images/why-choose-us/sb-mobile-installations-coordinated-commercial-fleet-yard-service-vehicles.webp",
+    src: "/images/why-choose-us/ultimate-fleet-gps-coordinated-commercial-fleet-yard-service-vehicles.webp",
     alt: "Commercial fleet vans and service vehicles in an organized fleet yard.",
     width: 3318,
     height: 1896,
   },
   commercial: {
-    src: "/images/why-choose-us/sb-mobile-installations-varied-commercial-vehicles-service-facility.webp",
+    src: "/images/why-choose-us/ultimate-fleet-gps-varied-commercial-vehicles-service-facility.webp",
     alt: "Delivery vans, utility trucks, and commercial vehicles at a service facility.",
     width: 3318,
     height: 1896,
   },
   construction: {
-    src: "/images/why-choose-us/sb-mobile-installations-construction-vocational-fleet-vehicles-jobsite.webp",
+    src: "/images/why-choose-us/ultimate-fleet-gps-construction-vocational-fleet-vehicles-jobsite.webp",
     alt: "Construction equipment and vocational vehicles staged at a construction site.",
     width: 3318,
     height: 1896,

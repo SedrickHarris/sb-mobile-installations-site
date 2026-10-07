@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title"><title id="title">Ultimate Fleet GPS favicon</title>
+<rect width="512" height="512" rx="112" fill="#C20101"/>
+<g transform="translate(102 40) scale(1.2)">
+ <path d="M128 10C62.8 10 10 62.8 10 128c0 83.4 118 226 118 226s118-142.6 118-226C246 62.8 193.2 10 128 10Z" fill="#FFFFFF"/>
+ <circle cx="128" cy="116" r="68" fill="#C20101"/>
+ <path d="M115 176c8-20 14-39 20-57 7-21 16-41 34-59" fill="none" stroke="#FFFFFF" stroke-width="21" stroke-linecap="round"/>
+ <path d="M127 147l6-17m14-34 6-14" fill="none" stroke="#C20101" stroke-width="7" stroke-linecap="round"/>
+ <circle cx="168" cy="57" r="12" fill="#111111" stroke="#FFFFFF" stroke-width="5"/>
+</g></svg>

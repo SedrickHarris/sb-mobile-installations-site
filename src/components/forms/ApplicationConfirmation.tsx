@@ -56,7 +56,7 @@ export function ApplicationConfirmation() {
           Application Received
         </h1>
         <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-          Thank you for applying for the {job.title} opening at SB Mobile
+          Thank you for applying for the {job.title} opening at Ultimate Fleet GPS
           Installations. We have received your application.
         </p>
         <p className="mt-4 text-[length:var(--text-body)] text-ink-muted">

@@ -5,7 +5,7 @@
  */
 export const finalCtaMedia = {
   video:
-    "/images/why-choose-us/sb-mobile-installations-final-cta-commercial-fleet-service-vehicle.mp4",
+    "/images/why-choose-us/ultimate-fleet-gps-final-cta-commercial-fleet-service-vehicle.mp4",
   poster:
-    "/images/why-choose-us/sb-mobile-installations-final-cta-commercial-fleet-service-vehicle.png",
+    "/images/why-choose-us/ultimate-fleet-gps-final-cta-commercial-fleet-service-vehicle.png",
 } as const;

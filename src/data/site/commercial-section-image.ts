@@ -4,4 +4,4 @@
  * public/images/why-choose-us.
  */
 export const commercialSectionImage =
-  "/images/why-choose-us/sb-mobile-installations-fleet-electronics-installation-capabilities-commercial-vehicles.webp";
+  "/images/why-choose-us/ultimate-fleet-gps-fleet-electronics-installation-capabilities-commercial-vehicles.webp";

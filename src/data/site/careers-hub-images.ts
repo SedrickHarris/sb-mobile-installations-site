@@ -25,9 +25,9 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * plays muted.
  */
 export const careersHeroVideo = {
-  src: "/images/careers/homepage-hero/sb-mobile-installations-careers-fleet-installation-tools-hero-v2.mp4",
+  src: "/images/careers/homepage-hero/ultimate-fleet-gps-careers-fleet-installation-tools-hero-v2.mp4",
   poster:
-    "/images/careers/homepage-hero/sb-mobile-installations-careers-fleet-installation-tools-hero.webp",
+    "/images/careers/homepage-hero/ultimate-fleet-gps-careers-fleet-installation-tools-hero.webp",
 } as const;
 
 /**
@@ -36,7 +36,7 @@ export const careersHeroVideo = {
  * (right-weighted) keeps the subject visible while copy sits on the navy left.
  */
 export const networkHeroBackground = {
-  src: "/images/careers/mobile-installation-technician/hero/sb-mobile-installations-installer-network-technician-commercial-van-hero-16x9.webp",
+  src: "/images/careers/mobile-installation-technician/hero/ultimate-fleet-gps-installer-network-technician-commercial-van-hero-16x9.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -47,7 +47,7 @@ export const networkHeroBackground = {
  * plain van wall and floor behind the copy instead of the busy tool cases.
  */
 export const networkFitBackground = {
-  src: "/images/careers/mobile-installation-technician/sb-mobile-installations-fleet-electronics-tools-commercial-van-background-16x9.webp",
+  src: "/images/careers/mobile-installation-technician/ultimate-fleet-gps-fleet-electronics-tools-commercial-van-background-16x9.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -58,7 +58,7 @@ export const networkFitBackground = {
  * dark van wall behind the copy and the tool storage at the edges.
  */
 export const networkInformationBackground = {
-  src: "/images/careers/mobile-installation-technician/sb-mobile-installations-organized-fleet-electronics-workspace-van-background-16x9.webp",
+  src: "/images/careers/mobile-installation-technician/ultimate-fleet-gps-organized-fleet-electronics-workspace-van-background-16x9.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -77,7 +77,7 @@ export const careersHubImages = {
   },
   fieldWork: {
     slotId: "careers-hub-field-work",
-    src: "/images/careers/sb-mobile-installations-current-opening-technician-fleet-electronics-installation-v2.webp",
+    src: "/images/careers/ultimate-fleet-gps-current-opening-technician-fleet-electronics-installation-v2.webp",
     role: "Field work in a commercial vehicle environment",
     aspectRatio: "4 / 3",
     width: 2896,
@@ -89,7 +89,7 @@ export const careersHubImages = {
   },
   networkAbout: {
     slotId: "careers-network-about",
-    src: "/images/careers/mobile-installation-technician/sb-mobile-installations-installer-network-van-workspace-tools-components-4x3.webp",
+    src: "/images/careers/mobile-installation-technician/ultimate-fleet-gps-installer-network-van-workspace-tools-components-4x3.webp",
     role: "Installer Network overview beside About the Installer Network",
     aspectRatio: "4 / 3",
     width: 2896,
@@ -108,7 +108,7 @@ export const careersHubImages = {
     fallback: "grid",
     alt: "",
     altGuidance:
-      "Suggested file: sb-mobile-installations-installer-network-vehicle-installation.webp. Interior panel or wiring work. No equipment brand visible. Do not imply a training program.",
+      "Suggested file: ultimate-fleet-gps-installer-network-vehicle-installation.webp. Interior panel or wiring work. No equipment brand visible. Do not imply a training program.",
   },
   networkVehicles: {
     slotId: "careers-network-vehicles",
@@ -119,11 +119,11 @@ export const careersHubImages = {
     fallback: "route",
     alt: "",
     altGuidance:
-      "Suggested file: sb-mobile-installations-installer-network-fleet-vehicles.webp. Fleet vehicles in a lot. No license plates, no customer signage, no implied nationwide map.",
+      "Suggested file: ultimate-fleet-gps-installer-network-fleet-vehicles.webp. Fleet vehicles in a lot. No license plates, no customer signage, no implied nationwide map.",
   },
   networkBand: {
     slotId: "careers-network-band",
-    src: "/images/careers/sb-mobile-installations-careers-recruitment-contact-installation-toolkit.webp",
+    src: "/images/careers/ultimate-fleet-gps-careers-recruitment-contact-installation-toolkit.webp",
     role: "Installer Network band on the Careers page",
     aspectRatio: "7 / 4",
     width: 3318,
@@ -131,11 +131,11 @@ export const careersHubImages = {
     fallback: "route",
     alt: "",
     altGuidance:
-      "Suggested file: sb-mobile-installations-installer-network-future-opportunities.webp. Unbranded fleet vehicle, organized installation tools, wiring harnesses, multimeter, or mounting components in a clean fleet-yard setting. No logos, plates, readable text, maps, pins, customer information, or anything implying a current assignment.",
+      "Suggested file: ultimate-fleet-gps-installer-network-future-opportunities.webp. Unbranded fleet vehicle, organized installation tools, wiring harnesses, multimeter, or mounting components in a clean fleet-yard setting. No logos, plates, readable text, maps, pins, customer information, or anything implying a current assignment.",
   },
   contact: {
     slotId: "careers-contact",
-    src: "/images/careers/sb-mobile-installations-installer-network-tool-case-fleet-yard-4x3.webp",
+    src: "/images/careers/ultimate-fleet-gps-installer-network-tool-case-fleet-yard-4x3.webp",
     role: "Recruitment contact block on the Careers page",
     aspectRatio: "4 / 3",
     width: 2896,
@@ -147,7 +147,7 @@ export const careersHubImages = {
   },
   commercialHandoff: {
     slotId: "careers-commercial-handoff",
-    src: "/images/careers/sb-mobile-installations-careers-fleet-installation-handoff-equipment.webp",
+    src: "/images/careers/ultimate-fleet-gps-careers-fleet-installation-handoff-equipment.webp",
     role: "Commercial fleet installation handoff on the Careers page",
     aspectRatio: "7 / 4",
     width: 3318,
@@ -155,6 +155,6 @@ export const careersHubImages = {
     fallback: "route",
     alt: "",
     altGuidance:
-      "Suggested file: sb-mobile-installations-careers-fleet-installation-handoff-equipment.webp. Unbranded commercial fleet vehicle in a clean fleet yard with an organized installation case or equipment in the foreground. No people required. No logos, plates, readable text, maps, pins, customer information, recruitment imagery, or damaged vehicles.",
+      "Suggested file: ultimate-fleet-gps-careers-fleet-installation-handoff-equipment.webp. Unbranded commercial fleet vehicle in a clean fleet yard with an organized installation case or equipment in the foreground. No people required. No logos, plates, readable text, maps, pins, customer information, recruitment imagery, or damaged vehicles.",
   },
 } as const satisfies Record<string, HubImageSlot>;

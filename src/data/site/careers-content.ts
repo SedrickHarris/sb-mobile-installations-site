@@ -26,17 +26,17 @@ import type { CareersPageContent } from "@/types/service-content";
  * `/faq/` no longer imports this FAQ.
  */
 export const careersHubContent: CareersPageContent = {
-  h1: "Installer Careers at SB Mobile Installations",
+  h1: "Installer Careers at Ultimate Fleet GPS",
   metaDescription:
     "Current openings for Mobile GPS, ELD, and AOBRD installation technicians. Independent contractor work, nationwide applicants accepted, no prior installation experience required, and training provided.",
   intro:
-    "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. This is independent contractor field work, applicants are accepted nationwide, and no prior installation experience is required. Training is provided.",
+    "Ultimate Fleet GPS has current openings for Mobile GPS, ELD, and AOBRD installation technicians. This is independent contractor field work, applicants are accepted nationwide, and no prior installation experience is required. Training is provided.",
   body: [],
   faq: [
     {
       question: "Are there current installer openings?",
       answer:
-        "Yes. SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. Applicants are accepted nationwide, and no closing date is currently published.",
+        "Yes. Ultimate Fleet GPS has current openings for Mobile GPS, ELD, and AOBRD installation technicians. Applicants are accepted nationwide, and no closing date is currently published.",
       link: {
         label: "View the current opening",
         href: activeTechnicianJob.path,
@@ -64,7 +64,7 @@ export const careersHubContent: CareersPageContent = {
       question: "How can a business request fleet installation services?",
       answer:
         "Businesses request fleet installation services separately from installer careers. Visit the contact page to request an installation quote.",
-      link: { label: "Contact SB Mobile Installations", href: "/contact/" },
+      link: { label: "Contact Ultimate Fleet GPS", href: "/contact/" },
     },
   ],
 };
@@ -85,7 +85,7 @@ export const careersPageFaq: readonly FaqItem[] = [
   {
     question: "Are there current installer openings?",
     answer:
-      "Yes. SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. Applicants are accepted nationwide, and no closing date is currently published.",
+      "Yes. Ultimate Fleet GPS has current openings for Mobile GPS, ELD, and AOBRD installation technicians. Applicants are accepted nationwide, and no closing date is currently published.",
     link: { label: "View the current opening", href: activeTechnicianJob.path },
   },
   {
@@ -148,7 +148,7 @@ export const careersPageFaq: readonly FaqItem[] = [
     question: "How can a business request fleet installation services?",
     answer:
       "Businesses request fleet installation services separately from installer careers. Visit the contact page to request an installation quote.",
-    link: { label: "Contact SB Mobile Installations", href: "/contact/" },
+    link: { label: "Contact Ultimate Fleet GPS", href: "/contact/" },
   },
 ];
 
@@ -161,9 +161,9 @@ export const careersPageFaq: readonly FaqItem[] = [
 export const installerNetworkContent: CareersPageContent = {
   h1: "Mobile Installation Technician",
   metaDescription:
-    "Experienced mobile fleet-installation technicians can express interest in the SB Mobile Installations Installer Network. Submitting interest does not indicate a current opening or guarantee future work.",
+    "Experienced mobile fleet-installation technicians can express interest in the Ultimate Fleet GPS Installer Network. Submitting interest does not indicate a current opening or guarantee future work.",
   intro:
-    "SB Mobile Installations is building an Installer Network for experienced mobile fleet-installation technicians. Share your information to express interest and help us understand your installation background.",
+    "Ultimate Fleet GPS is building an Installer Network for experienced mobile fleet-installation technicians. Share your information to express interest and help us understand your installation background.",
   body: [],
   faq: [
     {
@@ -178,9 +178,9 @@ export const installerNetworkContent: CareersPageContent = {
         "No. Technicians engaged through the Installer Network are independent contractors, not employees.",
     },
     {
-      question: "What is the SB Mobile Installer Network?",
+      question: "What is the Ultimate Fleet GPS Installer Network?",
       answer:
-        "The SB Mobile Installer Network is a way for technicians to share their mobile installation experience, tools, home market, and travel availability for future installation opportunities. It is a registration, not an application for a job.",
+        "The Ultimate Fleet GPS Installer Network is a way for technicians to share their mobile installation experience, tools, home market, and travel availability for future installation opportunities. It is a registration, not an application for a job.",
     },
     {
       question: "What information should I include in my Installer Network form?",
@@ -213,14 +213,14 @@ export const installerNetworkContent: CareersPageContent = {
         "Experience installing GPS tracking, ELD, AOBRD, dashcam, and other fleet equipment in vehicles is helpful. Experience with 12 and 24 volt electrical systems or removing vehicle panels is also welcome. None of it is required, and you can share whatever related background you have.",
     },
     {
-      question: "What tools should I tell SB Mobile about?",
+      question: "What tools should I tell Ultimate Fleet GPS about?",
       answer:
         "The form asks which tools you currently own. This question is optional. List the tools you use for installation work.",
     },
     {
       question: "Can I share a specific market or region?",
       answer:
-        "Yes. The form asks for your home market or region and your travel and coverage-region availability. Listing a market or region does not mean SB Mobile has active work there, and joining does not guarantee an assignment.",
+        "Yes. The form asks for your home market or region and your travel and coverage-region availability. Listing a market or region does not mean Ultimate Fleet GPS has active work there, and joining does not guarantee an assignment.",
     },
     {
       question: "What platform experience should I include?",
@@ -236,7 +236,7 @@ export const installerNetworkContent: CareersPageContent = {
       question: "How can a business request fleet installation services?",
       answer:
         "Businesses request fleet installation services separately from the Installer Network. Visit the contact page to request an installation quote.",
-      link: { label: "Contact SB Mobile Installations", href: "/contact/" },
+      link: { label: "Contact Ultimate Fleet GPS", href: "/contact/" },
     },
   ],
 };

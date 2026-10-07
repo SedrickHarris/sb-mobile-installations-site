@@ -114,7 +114,7 @@ const shared: ServiceTemplateShared = {
         label: "Fleet installation FAQs",
         href: "/faq/",
         image: {
-          src: "/images/coverage/sb-mobile-installations-frequently-asked-questions-fleet-electronics.webp",
+          src: "/images/coverage/ultimate-fleet-gps-frequently-asked-questions-fleet-electronics.webp",
           width: 3318,
           height: 1896,
           alt: "Fleet electronics components for commercial vehicles",
@@ -246,7 +246,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     definition: {
       h2: "What Is Fleet Telematics Installation?",
       body: [
-        "Fleet telematics installation is the physical mounting, connection, and routing work required to place approved connected fleet hardware into commercial vehicles. SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment. To scope a project, we need to know the equipment, the vehicle count, the project locations, and your preferred timing.",
+        "Fleet telematics installation is the physical mounting, connection, and routing work required to place approved connected fleet hardware into commercial vehicles. Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment. To scope a project, we need to know the equipment, the vehicle count, the project locations, and your preferred timing.",
       ],
     },
     scope: {
@@ -287,12 +287,12 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     quoteH2: "Request a Fleet Telematics Installation Quote",
     documentationCards: DOCUMENTATION_CARDS,
     heroVideo: {
-      src: "/images/services/fleet-telematics-installation/hero/sb-mobile-installations-fleet-telematics-installation-hero.mp4",
+      src: "/images/services/fleet-telematics-installation/hero/ultimate-fleet-gps-fleet-telematics-installation-hero.mp4",
       poster:
-        "/images/services/fleet-telematics-installation/hero/sb-mobile-installations-fleet-telematics-installation-hero.webp",
+        "/images/services/fleet-telematics-installation/hero/ultimate-fleet-gps-fleet-telematics-installation-hero.webp",
     },
     quoteBackground: {
-      src: "/images/services/fleet-telematics-installation/sb-mobile-installations-fleet-telematics-quote-light-background.webp",
+      src: "/images/services/fleet-telematics-installation/ultimate-fleet-gps-fleet-telematics-quote-light-background.webp",
       width: 3344,
       height: 1882,
     },
@@ -312,7 +312,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       nextHeading: "What Happens Next",
       nextSteps: [
         "Submit your project details through the form.",
-        "SB Mobile Installations reviews the information provided.",
+        "Ultimate Fleet GPS reviews the information provided.",
         "The team follows up to discuss project scope, installation needs, and coordination details.",
       ],
     },
@@ -327,7 +327,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "On-site GPS device installation for commercial vehicles and equipment",
     ],
     heroBackgroundImage: {
-      src: "/images/services/gps-tracking-installation/hero/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp",
+      src: "/images/services/gps-tracking-installation/hero/ultimate-fleet-gps-gps-tracking-installation-commercial-vehicle.webp",
       width: 3344,
       height: 1882,
     },
@@ -335,7 +335,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       eyebrow: "Mobile GPS Tracking Installation for Commercial Fleets",
       h1: "GPS Tracking Installation for Commercial Fleets",
       intro:
-        "SB Mobile Installations provides on-site GPS tracking device installation for commercial fleets, work vehicles, trucks, equipment, and other business assets. Our mobile installation teams support multi-vehicle deployments at your location.",
+        "Ultimate Fleet GPS provides on-site GPS tracking device installation for commercial fleets, work vehicles, trucks, equipment, and other business assets. Our mobile installation teams support multi-vehicle deployments at your location.",
       ctaLabel: "Request a GPS Installation Quote",
       qualifier:
         "Share your device type, vehicle or equipment count, project locations, and preferred installation timing.",
@@ -343,8 +343,8 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     definition: {
       h2: "What Is GPS Tracking Installation?",
       body: [
-        "GPS tracking installation is the professional installation of a GPS tracking device and related wiring in a commercial vehicle. SB Mobile Installations helps fleet operators and businesses install the GPS tracking hardware selected for the project, including mounting, connection, and routing, at the project location. This page covers physical installation only.",
-        "Installation requests may involve one vehicle, multiple fleet vehicles, or an entire fleet, including commercial and construction vehicles. When requesting service, provide the device type, vehicle count, project locations, and preferred installation timing so SB Mobile Installations can understand the installation request.",
+        "GPS tracking installation is the professional installation of a GPS tracking device and related wiring in a commercial vehicle. Ultimate Fleet GPS helps fleet operators and businesses install the GPS tracking hardware selected for the project, including mounting, connection, and routing, at the project location. This page covers physical installation only.",
+        "Installation requests may involve one vehicle, multiple fleet vehicles, or an entire fleet, including commercial and construction vehicles. When requesting service, provide the device type, vehicle count, project locations, and preferred installation timing so Ultimate Fleet GPS can understand the installation request.",
       ],
     },
     scope: {
@@ -368,7 +368,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "GPS tracking installation projects may involve different types of commercial vehicles. The appropriate installation approach depends on the vehicle, device, available power connections, and project requirements.",
     vehicleContext: {
       listHeading: "Common vehicle applications",
-      note: "Vehicle applications vary by project. Include the device, vehicle type, equipment, project location, and installation requirements with your request so SB Mobile Installations can understand the installation request.",
+      note: "Vehicle applications vary by project. Include the device, vehicle type, equipment, project location, and installation requirements with your request so Ultimate Fleet GPS can understand the installation request.",
     },
     fit: {
       h2: "Explore Related Fleet Installation Services",
@@ -403,8 +403,8 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "Include your project locations in the installation request.",
     nationwideContext: {
       body: [
-        "SB Mobile Installations provides mobile installation support at customer-designated project locations for commercial vehicles and multi-vehicle deployments.",
-        "Include each project location, vehicle or equipment count, device type, and preferred timing in your request so SB Mobile Installations can understand the installation requirements.",
+        "Ultimate Fleet GPS provides mobile installation support at customer-designated project locations for commercial vehicles and multi-vehicle deployments.",
+        "Include each project location, vehicle or equipment count, device type, and preferred timing in your request so Ultimate Fleet GPS can understand the installation requirements.",
       ],
       links: [
         {
@@ -429,14 +429,14 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     quoteH2: "Request GPS Tracking Installation Support",
     quoteAlignTop: true,
     quoteBackground: {
-      src: "/images/services/gps-tracking-installation/sb-mobile-installations-gps-tracking-quote-request-fleet-yard-background.webp",
+      src: "/images/services/gps-tracking-installation/ultimate-fleet-gps-gps-tracking-quote-request-fleet-yard-background.webp",
       width: 3344,
       height: 1882,
     },
     quoteServiceNeedLabel: "Device or equipment type",
     quoteGuide: {
       intro:
-        "Planning a GPS tracking installation for commercial vehicles? Share your project details so SB Mobile Installations can understand the equipment, vehicle count, locations, and timing involved.",
+        "Planning a GPS tracking installation for commercial vehicles? Share your project details so Ultimate Fleet GPS can understand the equipment, vehicle count, locations, and timing involved.",
       support:
         "The more information you provide, the easier it is to understand the installation requirements.",
       includeHeading: "Include the following details when available:",
@@ -464,24 +464,24 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       eyebrow: "On-Site ELD Installation",
       h1: "Mobile ELD Installation for Commercial Fleets",
       intro:
-        "SB Mobile Installations provides on-site installation support for ELD and AOBRD hardware in commercial vehicles. We work with fleet operators coordinating installations for one vehicle or a larger fleet project at their location.\n\nWhen requesting a quote, share the equipment being installed, vehicle count, installation locations, and preferred timing. This information helps us understand your project and discuss the next steps.",
+        "Ultimate Fleet GPS provides on-site installation support for ELD and AOBRD hardware in commercial vehicles. We work with fleet operators coordinating installations for one vehicle or a larger fleet project at their location.\n\nWhen requesting a quote, share the equipment being installed, vehicle count, installation locations, and preferred timing. This information helps us understand your project and discuss the next steps.",
       ctaLabel: "Request an Installation Quote",
       qualifier:
         "Tell us about your ELD or AOBRD equipment, fleet size, installation locations, and preferred schedule.",
     },
     heroBackgroundImage: {
-      src: "/images/services/eld-installation/hero/sb-mobile-installations-eld-installation-commercial-truck-cab-hero-16x9.webp",
+      src: "/images/services/eld-installation/hero/ultimate-fleet-gps-eld-installation-commercial-truck-cab-hero-16x9.webp",
       width: 3344,
       height: 1882,
     },
     definition: {
       h2: "What Is ELD Installation?",
       body: [
-        "ELD installation is the physical installation of electronic logging device (ELD) hardware in a commercial vehicle. Depending on the equipment and project, installation may also involve AOBRD hardware. SB Mobile Installations provides on-site installation support for fleet projects. To discuss a request, share the equipment type, number of vehicles, installation locations, and preferred timing.",
+        "ELD installation is the physical installation of electronic logging device (ELD) hardware in a commercial vehicle. Depending on the equipment and project, installation may also involve AOBRD hardware. Ultimate Fleet GPS provides on-site installation support for fleet projects. To discuss a request, share the equipment type, number of vehicles, installation locations, and preferred timing.",
       ],
       footnoteCallout: true,
       footnotes: [
-        "SB Mobile Installations provides physical installation support. We do not provide ELD service, compliance consulting, or regulatory advice.",
+        "Ultimate Fleet GPS provides physical installation support. We do not provide ELD service, compliance consulting, or regulatory advice.",
       ],
     },
     scope: {
@@ -504,7 +504,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     vehicleContext: {
       h2: "ELD Installation Across Commercial Vehicle Types",
       listHeading: "Common vehicle types:",
-      note: "These are examples of common project contexts. They do not mean every ELD or AOBRD device can be installed in every vehicle. Share your vehicle types, equipment, fleet size, installation locations, and preferred timing so SB Mobile Installations can discuss your project.",
+      note: "These are examples of common project contexts. They do not mean every ELD or AOBRD device can be installed in every vehicle. Share your vehicle types, equipment, fleet size, installation locations, and preferred timing so Ultimate Fleet GPS can discuss your project.",
     },
     fit: {
       h2: "Explore Related Fleet Installation Services",
@@ -531,19 +531,19 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
         },
       ],
       closing: [
-        "Tell us which equipment you need installed, how many vehicles are involved, and where the vehicles will be available. SB Mobile Installations can discuss your project requirements and next steps.",
+        "Tell us which equipment you need installed, how many vehicles are involved, and where the vehicles will be available. Ultimate Fleet GPS can discuss your project requirements and next steps.",
       ],
     },
     midCtaHeading: "Need ELD or AOBRD Hardware Installation Support?",
     midCtaBody:
-      "SB Mobile Installations provides on-site installation support for approved ELD and AOBRD hardware at commercial vehicle project locations nationwide. Whether your project involves one vehicle or a larger fleet, share a few details so we can understand the scope and discuss next steps.\n\nInclude the equipment being installed, vehicle types and count, project location or locations, and your preferred timing when you request a quote.",
+      "Ultimate Fleet GPS provides on-site installation support for approved ELD and AOBRD hardware at commercial vehicle project locations nationwide. Whether your project involves one vehicle or a larger fleet, share a few details so we can understand the scope and discuss next steps.\n\nInclude the equipment being installed, vehicle types and count, project location or locations, and your preferred timing when you request a quote.",
     midCtaLabel: "Request an Installation Quote",
     documentationText:
       "After an ELD or AOBRD hardware installation, photo documentation can provide a visual record of the work completed on each vehicle. Fleet operators can ask about the documentation available for their project when requesting a quote.",
     nationwideExtra: "Include project locations in the installation request.",
     nationwideContext: {
       body: [
-        "SB Mobile Installations provides mobile ELD and AOBRD hardware installation support at customer project locations nationwide. Fleet operators can request service for one vehicle or coordinate a larger installation project.",
+        "Ultimate Fleet GPS provides mobile ELD and AOBRD hardware installation support at customer project locations nationwide. Fleet operators can request service for one vehicle or coordinate a larger installation project.",
         "To help discuss your project, share the vehicle types and number of vehicles, the ELD or AOBRD equipment involved, where the vehicles will be available, and your preferred timing.",
       ],
       links: [{ label: "View installation coverage", href: "/coverage/" }],
@@ -551,7 +551,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     relatedSection: {
       h2: "Related Fleet Installation Services",
       intro:
-        "Explore related fleet technology installation services from SB Mobile Installations. Choose a service to learn more about the equipment and project support it covers.",
+        "Explore related fleet technology installation services from Ultimate Fleet GPS. Choose a service to learn more about the equipment and project support it covers.",
       cards: [
         {
           title: "Fleet Telematics Installation",
@@ -560,7 +560,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore fleet telematics installation",
           href: serviceCards["fleet-telematics-installation"].href,
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-fleet-management-equipment-installation-commercial-vehicle.webp",
             width: 2896,
             height: 2172,
             alt: "Fleet technology cables and hardware inside a commercial vehicle",
@@ -573,7 +573,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore GPS tracking installation",
           href: serviceCards["gps-tracking-installation"].href,
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-gps-tracking-installation-commercial-vehicle.webp",
             width: 2896,
             height: 2172,
             alt: "GPS tracking hardware being mounted under a commercial vehicle dashboard",
@@ -586,7 +586,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore dashcam and camera installation",
           href: serviceCards["dashcam-camera-installation"].href,
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-fleet-dashcam-installation-commercial-truck.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-fleet-dashcam-installation-commercial-truck.webp",
             width: 2896,
             height: 2172,
             alt: "Dashcam mounted on the windshield of a commercial truck",
@@ -599,7 +599,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore fleet rollout services",
           href: serviceCards["fleet-rollouts"].href,
           image: {
-            src: "/images/services/services-hub/sb-mobile-installations-on-site-fleet-projects-nationwide-commercial-vehicles.webp",
+            src: "/images/services/services-hub/ultimate-fleet-gps-on-site-fleet-projects-nationwide-commercial-vehicles.webp",
             width: 3318,
             height: 1896,
             alt: "Several commercial fleet vehicles at a project location",
@@ -612,7 +612,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore all fleet installation services",
           href: shared.related.allCard.href,
           image: {
-            src: "/images/services/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
+            src: "/images/services/services-hub/ultimate-fleet-gps-services-hub-commercial-vehicle-installation-support.webp",
             width: 2896,
             height: 2172,
             alt: "Commercial vehicles staged outside a fleet facility",
@@ -630,9 +630,9 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     faqLayout: "columns",
     quoteH2: "Request an ELD or AOBRD Installation Quote",
     quoteIntro:
-      "Tell us which approved ELD or AOBRD equipment you need installed, the vehicle types and number of vehicles, where they’ll be available, and your preferred timing. SB Mobile Installations provides mobile installation support at customer project locations nationwide. Share your project details so the team can understand the request and discuss next steps.",
+      "Tell us which approved ELD or AOBRD equipment you need installed, the vehicle types and number of vehicles, where they’ll be available, and your preferred timing. Ultimate Fleet GPS provides mobile installation support at customer project locations nationwide. Share your project details so the team can understand the request and discuss next steps.",
     quoteBackground: {
-      src: "/images/services/eld-installation/sb-mobile-installations-eld-installation-quote-cta-background-commercial-fleet-16x9.webp",
+      src: "/images/services/eld-installation/ultimate-fleet-gps-eld-installation-quote-cta-background-commercial-fleet-16x9.webp",
       width: 3344,
       height: 1882,
     },
@@ -649,21 +649,21 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "Nationwide installation service",
     ],
     heroBackgroundImage: {
-      src: "/images/services/dashcam-camera-installation/hero/sb-mobile-installations-commercial-dashcam-truck-cab-hero-background-16x9.webp",
+      src: "/images/services/dashcam-camera-installation/hero/ultimate-fleet-gps-commercial-dashcam-truck-cab-hero-background-16x9.webp",
       width: 3344,
       height: 1882,
     },
     hero: {
       h1: "Commercial Dashcam and Camera Installation",
       intro:
-        "SB Mobile Installations provides on-site installation of dashcams and windshield-mounted video recorder hardware for commercial and fleet vehicles. We install the hardware; we are not the video platform vendor.",
+        "Ultimate Fleet GPS provides on-site installation of dashcams and windshield-mounted video recorder hardware for commercial and fleet vehicles. We install the hardware; we are not the video platform vendor.",
       ctaLabel: "Request an Installation Quote",
     },
     definition: {
       h2: "What Is Dashcam and Camera Installation?",
       body: [
         "Dashcam and camera installation is the physical mounting, connection, and routing work required to place approved fleet dashcam and windshield-mounted video recorder hardware into commercial vehicles.",
-        "SB Mobile Installations installs and deploys this hardware. We are not the video platform vendor.",
+        "Ultimate Fleet GPS installs and deploys this hardware. We are not the video platform vendor.",
         "This page covers physical installation. It does not describe camera features, monitoring, video storage, coaching, platform services, or safety outcomes.",
         "To scope a project, share your equipment, vehicle count, project locations, and preferred timing.",
       ],
@@ -700,7 +700,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       footnotes: [FIT_NOTE],
     },
     fitBackground: {
-      src: "/images/services/dashcam-camera-installation/sb-mobile-installations-commercial-fleet-vehicles-service-fit-background-16x9.webp",
+      src: "/images/services/dashcam-camera-installation/ultimate-fleet-gps-commercial-fleet-vehicles-service-fit-background-16x9.webp",
       width: 3344,
       height: 1882,
     },
@@ -746,7 +746,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "Include the number of vehicles receiving dashcam or video recorder hardware and each project location.",
     nationwideContext: {
       body: [
-        "SB Mobile Installations provides nationwide mobile installation at the customer's location.",
+        "Ultimate Fleet GPS provides nationwide mobile installation at the customer's location.",
         "Include the number of vehicles receiving dashcam or video recorder hardware and the project location or locations in your installation request.",
       ],
       links: shared.nationwide.links,
@@ -754,7 +754,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     relatedSection: {
       h2: "Related Fleet Installation Services",
       intro:
-        "Explore related fleet technology installation services from SB Mobile Installations. Choose a service to learn more about the equipment and project support it covers.",
+        "Explore related fleet technology installation services from Ultimate Fleet GPS. Choose a service to learn more about the equipment and project support it covers.",
       cards: [
         {
           title: "Fleet Telematics Installation",
@@ -763,7 +763,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore fleet telematics installation",
           href: serviceCards["fleet-telematics-installation"].href,
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-fleet-management-equipment-installation-commercial-vehicle.webp",
             width: 2896,
             height: 2172,
             alt: "Fleet technology cables and hardware inside a commercial vehicle",
@@ -776,7 +776,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore GPS tracking installation",
           href: serviceCards["gps-tracking-installation"].href,
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-gps-tracking-installation-commercial-vehicle.webp",
             width: 2896,
             height: 2172,
             alt: "GPS tracking hardware being mounted under a commercial vehicle dashboard",
@@ -788,7 +788,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore ELD installation",
           href: serviceCards["eld-installation"].href,
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-eld-installation-commercial-truck-cab.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-eld-installation-commercial-truck-cab.webp",
             width: 2896,
             height: 2172,
             alt: "Technician mounting an in-cab device on the dashboard of a commercial truck",
@@ -801,7 +801,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore fleet rollout services",
           href: serviceCards["fleet-rollouts"].href,
           image: {
-            src: "/images/services/services-hub/sb-mobile-installations-on-site-fleet-projects-nationwide-commercial-vehicles.webp",
+            src: "/images/services/services-hub/ultimate-fleet-gps-on-site-fleet-projects-nationwide-commercial-vehicles.webp",
             width: 3318,
             height: 1896,
             alt: "Several commercial fleet vehicles at a project location",
@@ -814,7 +814,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
           linkLabel: "Explore all fleet installation services",
           href: shared.related.allCard.href,
           image: {
-            src: "/images/services/services-hub/sb-mobile-installations-services-hub-commercial-vehicle-installation-support.webp",
+            src: "/images/services/services-hub/ultimate-fleet-gps-services-hub-commercial-vehicle-installation-support.webp",
             width: 2896,
             height: 2172,
             alt: "Commercial vehicles staged outside a fleet facility",
@@ -832,7 +832,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     faqLayout: "columns",
     quoteH2: "Request a Dashcam and Camera Installation Quote",
     quoteBackground: {
-      src: "/images/services/dashcam-camera-installation/sb-mobile-installations-dashcam-camera-quote-commercial-fleet-background-16x9.webp",
+      src: "/images/services/dashcam-camera-installation/ultimate-fleet-gps-dashcam-camera-quote-commercial-fleet-background-16x9.webp",
       width: 3344,
       height: 1882,
     },
@@ -848,13 +848,13 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
       "Multiple project locations",
     ],
     heroBackgroundImage: {
-      src: "/images/services/fleet-rollouts/hero/sb-mobile-installations-fleet-rollout-commercial-vehicles-hero-background-16x9.webp",
+      src: "/images/services/fleet-rollouts/hero/ultimate-fleet-gps-fleet-rollout-commercial-vehicles-hero-background-16x9.webp",
       width: 3344,
       height: 1882,
     },
     hero: {
       intro:
-        "SB Mobile Installations provides on-site installation support for fleet technology deployments, from a single vehicle to multiple vehicles across project locations.",
+        "Ultimate Fleet GPS provides on-site installation support for fleet technology deployments, from a single vehicle to multiple vehicles across project locations.",
       ctaLabel: "Request an Installation Quote",
       qualifier:
         "Tell us your equipment, vehicle count, project locations, and preferred timing so we can understand your installation request.",
@@ -933,12 +933,12 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     relatedSection: {
       h2: "Related Fleet Installation Services",
       intro:
-        "Explore related fleet technology installation services from SB Mobile Installations.",
+        "Explore related fleet technology installation services from Ultimate Fleet GPS.",
       cards: [
         {
           ...serviceCards["fleet-telematics-installation"],
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-fleet-management-equipment-installation-commercial-vehicle.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-fleet-management-equipment-installation-commercial-vehicle.webp",
             width: 2896,
             height: 2172,
             alt: "Fleet technology cables and hardware inside a commercial vehicle",
@@ -947,7 +947,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
         {
           ...serviceCards["gps-tracking-installation"],
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-gps-tracking-installation-commercial-vehicle.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-gps-tracking-installation-commercial-vehicle.webp",
             width: 2896,
             height: 2172,
             alt: "GPS tracking hardware being mounted under a commercial vehicle dashboard",
@@ -956,7 +956,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
         {
           ...serviceCards["eld-installation"],
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-eld-installation-commercial-truck-cab.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-eld-installation-commercial-truck-cab.webp",
             width: 2896,
             height: 2172,
             alt: "Technician mounting an in-cab device on the dashboard of a commercial truck",
@@ -965,7 +965,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
         {
           ...serviceCards["dashcam-camera-installation"],
           image: {
-            src: "/images/services/service-cards/sb-mobile-installations-fleet-dashcam-installation-commercial-truck.webp",
+            src: "/images/services/service-cards/ultimate-fleet-gps-fleet-dashcam-installation-commercial-truck.webp",
             width: 2896,
             height: 2172,
             alt: "Fleet dashcam mounted in a commercial truck",
@@ -983,7 +983,7 @@ const contents: Record<ServiceSlug, ServiceTemplateContent> = {
     faqLayout: "columns",
     quoteH2: "Request an Installation Quote",
     quoteBackground: {
-      src: "/images/services/fleet-rollouts/sb-mobile-installations-fleet-rollout-quote-background-commercial-fleet-vehicles-16x9.webp",
+      src: "/images/services/fleet-rollouts/ultimate-fleet-gps-fleet-rollout-quote-background-commercial-fleet-vehicles-16x9.webp",
       width: 3344,
       height: 1882,
     },

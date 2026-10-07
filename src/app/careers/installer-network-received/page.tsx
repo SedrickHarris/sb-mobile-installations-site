@@ -26,7 +26,7 @@ export default function InstallerNetworkReceivedPage() {
         Installer Network Interest Received
       </h1>
       <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-        Thank you for your interest in the SB Mobile Installations Installer
+        Thank you for your interest in the Ultimate Fleet GPS Installer
         Network. This does not guarantee contact, an interview, employment,
         a contract, an assignment, a schedule, work volume, or pay.
       </p>

@@ -31,7 +31,7 @@ const NATIONWIDE_SENTENCE =
 
 export const qualitySafetyContent = {
   h1: "Quality & Safety",
-  // The layout title template appends " | SB Mobile Installations".
+  // The layout title template appends " | Ultimate Fleet GPS".
   metaTitle: "Quality & Safety | Mobile Fleet Installation",
   metaDescription:
     "Nationwide mobile installation service, delivered at the customer's location. Every installation is photo documented, and you'll receive that documentation automatically.",
@@ -39,7 +39,7 @@ export const qualitySafetyContent = {
   hero: {
     eyebrow: "INSTALLATION QUALITY & SAFETY",
     paragraphs: [
-      "SB Mobile Installations provides on-site fleet-electronics installation for commercial and fleet vehicles across the United States. Before work begins, project details help define the approved equipment, vehicle types, installation scope, locations, and schedule.",
+      "Ultimate Fleet GPS provides on-site fleet-electronics installation for commercial and fleet vehicles across the United States. Before work begins, project details help define the approved equipment, vehicle types, installation scope, locations, and schedule.",
       "Installers follow the approved project requirements and document completed work. Photo documentation gives fleet teams a record of the installation for review and project coordination.",
     ],
     cta: {
@@ -94,7 +94,7 @@ export const qualitySafetyContent = {
 
   vehicles: {
     h2: "Installation Context for Commercial Vehicles",
-    lead: "SB Mobile Installations provides mobile installation service for approved fleet-technology projects involving commercial vehicles. Common project contexts include work vans, service trucks, utility vehicles, heavy-duty trucks, fleet vehicles, and construction vehicles.",
+    lead: "Ultimate Fleet GPS provides mobile installation service for approved fleet-technology projects involving commercial vehicles. Common project contexts include work vans, service trucks, utility vehicles, heavy-duty trucks, fleet vehicles, and construction vehicles.",
     body: "The vehicle type and approved equipment help define the installation scope for each project. Share the vehicle details and equipment requirements when requesting a quote so the project can be reviewed in context.",
     note: "These vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.",
   },
@@ -102,14 +102,14 @@ export const qualitySafetyContent = {
   projectLocation: {
     h2: "Mobile Installation at Your Project Location",
     body: [
-      "Mobile installation lets fleet teams coordinate equipment installation at a customer-designated location. SB Mobile Installations provides nationwide on-site installation service for commercial vehicles.",
+      "Mobile installation lets fleet teams coordinate equipment installation at a customer-designated location. Ultimate Fleet GPS provides nationwide on-site installation service for commercial vehicles.",
       "Before scheduling, share the equipment being installed, the vehicle types and number of vehicles, the project locations, and your preferred timing. These details help define the installation scope and support coordination for your project.",
     ],
   },
 
   projectInfo: {
     h2: "Installation Scope and Project Information",
-    body: "SB Mobile Installations provides mobile installation service for approved commercial fleet-technology installation contexts. Details about equipment, vehicle count, project locations, and preferred timing can be shared when requesting an installation quote.",
+    body: "Ultimate Fleet GPS provides mobile installation service for approved commercial fleet-technology installation contexts. Details about equipment, vehicle count, project locations, and preferred timing can be shared when requesting an installation quote.",
     discussHeading: "What we can discuss",
     discussItems: [
       "Equipment",
@@ -126,16 +126,16 @@ export const qualitySafetyContent = {
         question:
           "What information should I include when requesting a fleet installation quote?",
         answer:
-          "Share the equipment to be installed, the number and types of vehicles, project locations, and your preferred timing. These details help SB Mobile Installations understand the requested project scope.",
+          "Share the equipment to be installed, the number and types of vehicles, project locations, and your preferred timing. These details help Ultimate Fleet GPS understand the requested project scope.",
       },
       {
-        question: "Where does SB Mobile Installations provide service?",
+        question: "Where does Ultimate Fleet GPS provide service?",
         answer:
-          "SB Mobile Installations provides nationwide mobile installation service at customer locations. Share the project locations when requesting a quote so the service requirements can be reviewed.",
+          "Ultimate Fleet GPS provides nationwide mobile installation service at customer locations. Share the project locations when requesting a quote so the service requirements can be reviewed.",
       },
       {
         question:
-          "What types of fleet equipment can SB Mobile Installations install?",
+          "What types of fleet equipment can Ultimate Fleet GPS install?",
         answer:
           "Installation services include GPS tracking, ELD, AOBRD, TPMS, fleet dashcams, and fleet management equipment. The equipment requested and vehicle details help define the installation scope for each project.",
       },
@@ -156,14 +156,14 @@ export const qualitySafetyContent = {
           "Documentation practices may depend on the project. Ask about documentation when requesting a quote so the expected records can be confirmed for your installation.",
       },
       {
-        question: "Does SB Mobile Installations provide ELD compliance or legal advice?",
+        question: "Does Ultimate Fleet GPS provide ELD compliance or legal advice?",
         answer:
           "No. Information about ELD installation describes the physical installation context. It does not provide compliance guidance or legal advice. For compliance questions, consult the relevant regulator or a qualified advisor.",
       },
       {
         question: "How do I request an installation quote?",
         answer:
-          "Use the installation quote form and include the equipment, vehicle count and types, project locations, and preferred timing. SB Mobile Installations can review those details to understand the project request.",
+          "Use the installation quote form and include the equipment, vehicle count and types, project locations, and preferred timing. Ultimate Fleet GPS can review those details to understand the project request.",
       },
     ],
   },
@@ -187,7 +187,7 @@ export const qualitySafetyContent = {
     // (business.serviceTypes); only the remaining text links live here.
     links: [
       { label: "Nationwide fleet installation coverage", href: "/coverage/" },
-      { label: "Contact SB Mobile Installations", href: "/contact/" },
+      { label: "Contact Ultimate Fleet GPS", href: "/contact/" },
     ],
   },
 } as const;

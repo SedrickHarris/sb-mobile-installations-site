@@ -27,7 +27,7 @@ export const industriesHubImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/industries/industries-hub-page/sb-mobile-installations-industries-hub-commercial-fleet-staging-area-v2.webp",
+    src: "/images/industries/industries-hub-page/ultimate-fleet-gps-industries-hub-commercial-fleet-staging-area-v2.webp",
     alt: "Commercial fleet vehicles parked at a fleet facility",
     altGuidance:
       "Describe only what is shown. No trade branding, no third-party logos, and no vertical implied beyond confirmed categories.",
@@ -39,7 +39,7 @@ export const industriesHubImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/industries/industries-hub-page/sb-mobile-installations-industries-commercial-fleet-project-planning.webp",
+    src: "/images/industries/industries-hub-page/ultimate-fleet-gps-industries-commercial-fleet-project-planning.webp",
     alt: "Commercial vans and trucks staged outside a fleet facility",
     altGuidance:
       "Describe only what is shown. No trade branding, no third-party logos, no readable text, and no geographic claim.",
@@ -51,7 +51,7 @@ export const industriesHubImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/industries/industries-hub-page/sb-mobile-installations-industries-project-details-installation-planning.webp",
+    src: "/images/industries/industries-hub-page/ultimate-fleet-gps-industries-project-details-installation-planning.webp",
     alt: "Commercial vans and trucks arranged in an organized fleet staging area",
     altGuidance:
       "Describe only what is shown. No trade branding, no third-party logos, no readable text, and no geographic claim.",
@@ -63,7 +63,7 @@ export const industriesHubImages = {
     width: 3318,
     height: 1896,
     fallback: "route",
-    src: "/images/industries/industries-hub-page/sb-mobile-installations-nationwide-mobile-installation-support-commercial-fleet.webp",
+    src: "/images/industries/industries-hub-page/ultimate-fleet-gps-nationwide-mobile-installation-support-commercial-fleet.webp",
     alt: "Commercial trucks and a van staged in a fleet yard at dusk",
     altGuidance:
       "Describe only what is shown. Never a map or any graphic implying state-level coverage, and no city or state identifiers.",

@@ -6,7 +6,7 @@ import { termsOfUse } from "@/data/site/legal-content";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
-    "Terms of Use for the SB Mobile Installations website. This page has not yet been reviewed by an attorney.",
+    "Terms of Use for the Ultimate Fleet GPS website. This page has not yet been reviewed by an attorney.",
   alternates: { canonical: "/terms/" },
 };
 

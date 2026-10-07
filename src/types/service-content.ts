@@ -616,7 +616,7 @@ export interface FaqHubContent {
 
 /**
  * `/resources/` hub + article content. Educational operational guidance
- * only, never a claim about SB Mobile's own stats, history, or performance.
+ * only, never a claim about Ultimate Fleet GPS's own stats, history, or performance.
  * Every article carries `editorialNote` verbatim in its rendered body - see
  * plan section "Sprint 2 - Credibility pages" for the required wording.
  */

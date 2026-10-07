@@ -22,20 +22,20 @@ export const servicesHubContent: ServicePageContent = {
   metaDescription:
     "On-site GPS tracking, ELD, dashcam, and fleet management equipment installation for fleet, commercial, and construction vehicles nationwide. Request a quote.",
   intro:
-    "SB Mobile Installations provides on-site installation of GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment for fleet, commercial, and construction vehicles nationwide. Technicians travel directly to your location - one vehicle or an entire fleet.",
+    "Ultimate Fleet GPS provides on-site installation of GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment for fleet, commercial, and construction vehicles nationwide. Technicians travel directly to your location - one vehicle or an entire fleet.",
   body: [],
   faq: [
     {
       question:
-        "What types of fleet technology installation services does SB Mobile Installations provide?",
+        "What types of fleet technology installation services does Ultimate Fleet GPS provide?",
       answer:
-        "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on fleet, commercial, and construction vehicles. Service pages cover fleet telematics, GPS tracking, ELD, dashcam and camera installation, and fleet rollouts.",
+        "Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on fleet, commercial, and construction vehicles. Service pages cover fleet telematics, GPS tracking, ELD, dashcam and camera installation, and fleet rollouts.",
     },
     {
       question:
-        "Is SB Mobile Installations the platform vendor for the equipment it installs?",
+        "Is Ultimate Fleet GPS the platform vendor for the equipment it installs?",
       answer:
-        "No. SB Mobile Installations installs and deploys hardware for the platforms fleets already run on. We are an installation and deployment partner, not the platform vendor.",
+        "No. Ultimate Fleet GPS installs and deploys hardware for the platforms fleets already run on. We are an installation and deployment partner, not the platform vendor.",
     },
     {
       question: "Where does installation take place?",
@@ -50,14 +50,14 @@ export const servicesHubContent: ServicePageContent = {
     },
     {
       question:
-        "Can SB Mobile Installations help with multi-vehicle installation projects?",
+        "Can Ultimate Fleet GPS help with multi-vehicle installation projects?",
       answer:
-        "Yes. SB Mobile Installations coordinates installation projects of any size, from one vehicle to an entire fleet.",
+        "Yes. Ultimate Fleet GPS coordinates installation projects of any size, from one vehicle to an entire fleet.",
     },
     {
       question: "Can installations be coordinated across multiple locations?",
       answer:
-        "Yes. SB Mobile Installations coordinates multi-location projects nationwide, with technicians traveling directly to each location.",
+        "Yes. Ultimate Fleet GPS coordinates multi-location projects nationwide, with technicians traveling directly to each location.",
     },
     {
       question:
@@ -68,7 +68,7 @@ export const servicesHubContent: ServicePageContent = {
     {
       question: "How do we discuss a nationwide fleet installation project?",
       answer:
-        "Submit an installation quote request with your equipment, vehicle count, and project locations, or call during business hours, Monday through Friday, 8:00 AM to 6:00 PM. SB Mobile Installations will follow up to coordinate scheduling.",
+        "Submit an installation quote request with your equipment, vehicle count, and project locations, or call during business hours, Monday through Friday, 8:00 AM to 6:00 PM. Ultimate Fleet GPS will follow up to coordinate scheduling.",
     },
     {
       question: "How can installation technicians find installer openings?",
@@ -87,20 +87,20 @@ export const fleetTelematicsInstallationContent: ServicePageContent = {
   metaDescription:
     "Learn about mobile fleet telematics installation for commercial vehicle projects. Request an installation quote and share your equipment, vehicle count, project locations, and preferred timing.",
   intro:
-    "SB Mobile Installations provides mobile installation support for approved connected fleet hardware, including GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment, on fleet, commercial, and construction vehicles. Technicians travel to your location. Share your equipment, vehicle count, project locations, and preferred timing to start an installation conversation.",
+    "Ultimate Fleet GPS provides mobile installation support for approved connected fleet hardware, including GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment, on fleet, commercial, and construction vehicles. Technicians travel to your location. Share your equipment, vehicle count, project locations, and preferred timing to start an installation conversation.",
   body: [],
   faq: [
     {
       question:
         "Does this service cover ELD and AOBRD together?",
       answer:
-        "SB Mobile Installations can install approved ELD, AOBRD, and related fleet hardware included in a project. The appropriate equipment and installation scope depend on the approved hardware and project requirements.",
+        "Ultimate Fleet GPS can install approved ELD, AOBRD, and related fleet hardware included in a project. The appropriate equipment and installation scope depend on the approved hardware and project requirements.",
     },
     {
       question:
         "Are you the platform vendor for the equipment you install?",
       answer:
-        "SB Mobile Installations provides installation support for approved fleet hardware. The equipment platform, hardware selection, and software relationship remain separate from the installation service.",
+        "Ultimate Fleet GPS provides installation support for approved fleet hardware. The equipment platform, hardware selection, and software relationship remain separate from the installation service.",
     },
     {
       question:
@@ -124,7 +124,7 @@ export const fleetTelematicsInstallationContent: ServicePageContent = {
       question:
         "Can I request installation at our project location?",
       answer:
-        "Yes. Include the project location or locations, vehicle count, and preferred timeline when requesting an installation quote. SB Mobile Installations provides mobile installation service at the customer’s project location when the project requirements are appropriate.",
+        "Yes. Include the project location or locations, vehicle count, and preferred timeline when requesting an installation quote. Ultimate Fleet GPS provides mobile installation service at the customer’s project location when the project requirements are appropriate.",
     },
     {
       question:
@@ -158,7 +158,7 @@ export const gpsTrackingInstallationContent: ServicePageContent = {
   metaDescription:
     "Learn about mobile GPS tracking installation for commercial vehicle projects. Request an installation quote and share your equipment, vehicle count, project locations, and preferred timing.",
   intro:
-    "SB Mobile Installations provides mobile GPS tracking hardware installation support for commercial vehicle projects.",
+    "Ultimate Fleet GPS provides mobile GPS tracking hardware installation support for commercial vehicle projects.",
   body: [],
   faq: [
     {
@@ -175,12 +175,12 @@ export const gpsTrackingInstallationContent: ServicePageContent = {
       question:
         "What vehicle types can be part of a GPS tracking installation project?",
       answer:
-        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle applications vary by project. Include the device, vehicle type, project location, and installation requirements with your request so SB Mobile Installations can understand the installation request.",
+        "Common project contexts include work vans, service trucks, utility vehicles, and heavy-duty trucks. Vehicle applications vary by project. Include the device, vehicle type, project location, and installation requirements with your request so Ultimate Fleet GPS can understand the installation request.",
     },
     {
       question: "Can I request installation at our project location?",
       answer:
-        "Nationwide mobile installation service, delivered at the customer's location. Include each project location, vehicle or equipment count, device type, and preferred timing in your request so SB Mobile Installations can understand the installation requirements.",
+        "Nationwide mobile installation service, delivered at the customer's location. Include each project location, vehicle or equipment count, device type, and preferred timing in your request so Ultimate Fleet GPS can understand the installation requirements.",
     },
     {
       question:
@@ -203,16 +203,16 @@ export const gpsTrackingInstallationContent: ServicePageContent = {
     {
       question: "Can GPS tracking devices be installed across multiple vehicles?",
       answer:
-        "Yes. A project can involve one vehicle, multiple vehicles, or an entire fleet, across more than one project location. Include the total vehicle count, vehicle types, project locations, device information, and preferred timing so SB Mobile Installations can understand the project.",
+        "Yes. A project can involve one vehicle, multiple vehicles, or an entire fleet, across more than one project location. Include the total vehicle count, vehicle types, project locations, device information, and preferred timing so Ultimate Fleet GPS can understand the project.",
       link: {
         label: "Fleet Rollout Services",
         href: "/services/fleet-rollouts/",
       },
     },
     {
-      question: "Does SB Mobile Installations provide the GPS tracking software?",
+      question: "Does Ultimate Fleet GPS provide the GPS tracking software?",
       answer:
-        "SB Mobile Installations provides physical installation support for GPS tracking hardware. This page covers installation only and does not describe GPS software, monitoring platforms, or data plans.",
+        "Ultimate Fleet GPS provides physical installation support for GPS tracking hardware. This page covers installation only and does not describe GPS software, monitoring platforms, or data plans.",
     },
     {
       question: "Is installation documentation available after the installation?",
@@ -232,7 +232,7 @@ export const eldInstallationContent: ServicePageContent = {
   metaDescription:
     "Learn about mobile ELD and AOBRD hardware installation for commercial vehicle projects. Request an installation quote and share your equipment, vehicle count, project locations, and preferred timing.",
   intro:
-    "SB Mobile Installations provides mobile installation support for ELD and AOBRD hardware in commercial vehicle project contexts.",
+    "Ultimate Fleet GPS provides mobile installation support for ELD and AOBRD hardware in commercial vehicle project contexts.",
   body: [],
   faq: [
     {
@@ -241,9 +241,9 @@ export const eldInstallationContent: ServicePageContent = {
         "ELD installation is the physical installation of approved electronic logging device hardware in a commercial vehicle. The work may include mounting, connection, and cable routing, depending on the equipment and project requirements.",
     },
     {
-      question: "Does SB Mobile Installations provide ELD compliance advice?",
+      question: "Does Ultimate Fleet GPS provide ELD compliance advice?",
       answer:
-        "No. SB Mobile Installations provides physical installation support for approved ELD and AOBRD hardware. The company does not provide ELD compliance or regulatory advice.",
+        "No. Ultimate Fleet GPS provides physical installation support for approved ELD and AOBRD hardware. The company does not provide ELD compliance or regulatory advice.",
     },
     {
       question: "What can ELD installation include?",
@@ -258,7 +258,7 @@ export const eldInstallationContent: ServicePageContent = {
     {
       question: "Can I request ELD installation at our project location?",
       answer:
-        "Yes. SB Mobile Installations provides mobile installation support at customer project locations nationwide. Share where the vehicles will be available when you request a quote.",
+        "Yes. Ultimate Fleet GPS provides mobile installation support at customer project locations nationwide. Share where the vehicles will be available when you request a quote.",
     },
     {
       question: "What should I include in an ELD installation quote request?",
@@ -283,13 +283,13 @@ export const dashcamCameraInstallationContent: ServicePageContent = {
   metaDescription:
     "Learn about mobile fleet dashcam and video recorder installation for commercial vehicle projects. Request an installation quote and share your equipment, vehicle count, project locations, and preferred timing.",
   intro:
-    "SB Mobile Installations provides mobile installation support for fleet dashcam and windshield-mounted video recorder hardware in commercial vehicle project contexts. We install the hardware; we are not the video platform vendor.",
+    "Ultimate Fleet GPS provides mobile installation support for fleet dashcam and windshield-mounted video recorder hardware in commercial vehicle project contexts. We install the hardware; we are not the video platform vendor.",
   body: [],
   faq: [
     {
       question: "What is commercial dashcam installation?",
       answer:
-        "Commercial dashcam installation is the physical installation of fleet dashcam or windshield-mounted video recorder hardware in a commercial vehicle. SB Mobile Installations installs the hardware; the work does not include providing the camera’s video platform.",
+        "Commercial dashcam installation is the physical installation of fleet dashcam or windshield-mounted video recorder hardware in a commercial vehicle. Ultimate Fleet GPS installs the hardware; the work does not include providing the camera’s video platform.",
     },
     {
       question: "What can dashcam installation include?",
@@ -297,9 +297,9 @@ export const dashcamCameraInstallationContent: ServicePageContent = {
         "Depending on the approved hardware and vehicle, installation may include mounting the camera, connecting it, and routing its cables within the vehicle. The exact work depends on the equipment and project requirements.",
     },
     {
-      question: "Does SB Mobile Installations provide camera monitoring or video platform services?",
+      question: "Does Ultimate Fleet GPS provide camera monitoring or video platform services?",
       answer:
-        "No. SB Mobile Installations installs dashcam and video recorder hardware. We are not the video platform vendor and do not provide camera monitoring, video storage, coaching, or platform services.",
+        "No. Ultimate Fleet GPS installs dashcam and video recorder hardware. We are not the video platform vendor and do not provide camera monitoring, video storage, coaching, or platform services.",
     },
     {
       question: "What types of vehicles can be included in a dashcam installation project?",
@@ -309,17 +309,17 @@ export const dashcamCameraInstallationContent: ServicePageContent = {
     {
       question: "Can dashcams be installed at my project location?",
       answer:
-        "SB Mobile Installations provides nationwide mobile installation at the customer’s location. For a project inquiry, share the project location, vehicle count, equipment, and preferred timing.",
+        "Ultimate Fleet GPS provides nationwide mobile installation at the customer’s location. For a project inquiry, share the project location, vehicle count, equipment, and preferred timing.",
     },
     {
       question: "What installation documentation will I receive?",
       answer:
-        "SB Mobile Installations’ current service information states that installations are photo documented and that documentation is sent automatically. Confirm that this process applies to your project when requesting a quote.",
+        "Ultimate Fleet GPS’s current service information states that installations are photo documented and that documentation is sent automatically. Confirm that this process applies to your project when requesting a quote.",
     },
     {
       question: "What should I include in a dashcam installation quote request?",
       answer:
-        "Include the equipment type or model, the number and types of vehicles, each project location, and your preferred timing. These details help SB Mobile Installations understand the installation request.",
+        "Include the equipment type or model, the number and types of vehicles, each project location, and your preferred timing. These details help Ultimate Fleet GPS understand the installation request.",
     },
   ],
 };

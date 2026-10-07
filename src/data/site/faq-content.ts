@@ -28,14 +28,14 @@ import type { FaqHubContent } from "@/types/service-content";
  */
 
 const NATIONWIDE_SENTENCE =
-  "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location.";
+  "Ultimate Fleet GPS provides nationwide mobile installation service, delivered at the customer's location.";
 
 const CLARIFICATION =
   "Vehicle examples describe common project contexts. They do not mean every approved hardware category is installed in every vehicle type.";
 
 export const faqHubContent: FaqHubContent = {
   h1: "Frequently Asked Questions",
-  // The layout title template appends " | SB Mobile Installations".
+  // The layout title template appends " | Ultimate Fleet GPS".
   metaTitle: "Frequently Asked Questions",
   metaDescription:
     "Answers about commercial mobile fleet installation, approved service categories, installation quote requests, nationwide mobile installation service delivered at the customer's location, and installation photo documentation.",
@@ -74,7 +74,7 @@ export const faqHubContent: FaqHubContent = {
         {
           question: "What does Fleet Telematics Installation refer to?",
           answer:
-            "Fleet Telematics Installation is an approved commercial installation service category for SB Mobile Installations.",
+            "Fleet Telematics Installation is an approved commercial installation service category for Ultimate Fleet GPS.",
           link: {
             label: "Fleet Telematics Installation",
             href: "/services/fleet-telematics-installation/",
@@ -83,7 +83,7 @@ export const faqHubContent: FaqHubContent = {
         {
           question: "What does GPS Tracking Installation refer to?",
           answer:
-            "GPS Tracking Installation is an approved commercial installation service category for SB Mobile Installations.",
+            "GPS Tracking Installation is an approved commercial installation service category for Ultimate Fleet GPS.",
           link: {
             label: "GPS Tracking Installation",
             href: "/services/gps-tracking-installation/",
@@ -92,7 +92,7 @@ export const faqHubContent: FaqHubContent = {
         {
           question: "What does ELD Installation refer to?",
           answer:
-            "ELD content describes physical installation context. SB Mobile Installations is not described as an ELD provider or compliance consultant.",
+            "ELD content describes physical installation context. Ultimate Fleet GPS is not described as an ELD provider or compliance consultant.",
           link: { label: "ELD Installation", href: "/services/eld-installation/" },
         },
         {
@@ -127,7 +127,7 @@ export const faqHubContent: FaqHubContent = {
         {
           question: "Who can request an installation quote?",
           answer:
-            "The SB Mobile Installations commercial quote path is designed for fleet managers, commercial operators, project coordinators, and approved hardware or deployment contacts.",
+            "The Ultimate Fleet GPS commercial quote path is designed for fleet managers, commercial operators, project coordinators, and approved hardware or deployment contacts.",
         },
         {
           question: "Can I ask about one vehicle or an entire fleet?",
@@ -165,7 +165,7 @@ export const faqHubContent: FaqHubContent = {
       tone: "default",
       items: [
         {
-          question: "Where does SB Mobile Installations provide mobile installation service?",
+          question: "Where does Ultimate Fleet GPS provide mobile installation service?",
           answer: NATIONWIDE_SENTENCE,
         },
         {
@@ -194,9 +194,9 @@ export const faqHubContent: FaqHubContent = {
       "These answers are for technicians. They are separate from commercial quote requests.",
     items: [
       {
-        question: "What is the SB Mobile Installations Installer Network?",
+        question: "What is the Ultimate Fleet GPS Installer Network?",
         answer:
-          "The Installer Network is an opt-in path for experienced mobile fleet-installation technicians to share their information and installation background with SB Mobile Installations.",
+          "The Installer Network is an opt-in path for experienced mobile fleet-installation technicians to share their information and installation background with Ultimate Fleet GPS.",
       },
       {
         question: "Is the Installer Network an application for a job?",
@@ -206,9 +206,9 @@ export const faqHubContent: FaqHubContent = {
       },
       {
         question: "How can an experienced technician express interest?",
-        answer: "Learn about the SB Mobile Installations Installer Network.",
+        answer: "Learn about the Ultimate Fleet GPS Installer Network.",
         link: {
-          label: "SB Mobile Installations Installer Network",
+          label: "Ultimate Fleet GPS Installer Network",
           href: INSTALLER_NETWORK_PATH,
         },
       },

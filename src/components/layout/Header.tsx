@@ -13,7 +13,7 @@ import {
  * Global site header.
  *
  * Brand mark is the full-color red logo on the light header row (the navy
- * utility bar carries no logo). Source: sb-mobile-installations-logo-red.svg,
+ * utility bar carries no logo). Source: ultimate-fleet-gps-primary-logo.svg,
  * viewBox 1540x779, 14 KB, fill #b50202, shown at 120-150 px wide. Plain img
  * because static export does not use Next image optimization. The thin red top border is decorative only.
  *
@@ -65,15 +65,15 @@ export function Header() {
       <div className="mx-auto flex max-w-[1280px] flex-wrap items-center gap-x-8 gap-y-4 px-5 py-4 md:px-6">
         <Link
           href="/"
-          aria-label="SB Mobile Installations"
+          aria-label="Ultimate Fleet GPS"
           className="inline-flex items-center rounded-sm p-1"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/brand/logos/sb-mobile-installations-logo-red.svg"
-            alt="SB Mobile Installations"
-            width={1540}
-            height={779}
+            src="/images/brand/logos/ultimate-fleet-gps-primary-logo.svg"
+            alt="Ultimate Fleet GPS"
+            width={1200}
+            height={360}
             className="h-auto w-[120px] max-w-full lg:w-[150px]"
           />
         </Link>

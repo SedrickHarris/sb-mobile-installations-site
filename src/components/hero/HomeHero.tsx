@@ -2,9 +2,9 @@ import { CtaPair } from "@/components/ui/CtaPair";
 import type { HeroContent } from "@/types/content";
 
 const HERO_VIDEO =
-  "/images/home/sb-mobile-installations-commercial-fleet-technology-installation-hero.mp4";
+  "/images/home/ultimate-fleet-gps-commercial-fleet-technology-installation-hero.mp4";
 const HERO_POSTER =
-  "/images/home/sb-mobile-installations-commercial-fleet-technology-installation-hero.webp";
+  "/images/home/ultimate-fleet-gps-commercial-fleet-technology-installation-hero.webp";
 
 interface HomeHeroProps {
   readonly content: HeroContent;

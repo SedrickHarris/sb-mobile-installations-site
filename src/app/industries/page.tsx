@@ -63,9 +63,9 @@ export default function IndustriesPage() {
         secondaryLink={hub.hero.secondaryLink}
         scopeItems={hub.hero.scopeItems}
         backgroundVideo={{
-          src: "/images/industries/industries-hub-page/industries-hero/sb-mobile-installations-industries-hub-commercial-fleet-vehicles.mp4",
+          src: "/images/industries/industries-hub-page/industries-hero/ultimate-fleet-gps-industries-hub-commercial-fleet-vehicles.mp4",
           poster:
-            "/images/industries/industries-hub-page/industries-hero/sb-mobile-installations-industries-hub-commercial-fleet-vehicles.webp",
+            "/images/industries/industries-hub-page/industries-hero/ultimate-fleet-gps-industries-hub-commercial-fleet-vehicles.webp",
         }}
       />
 
@@ -190,7 +190,7 @@ export default function IndustriesPage() {
           {/* Decorative background photo under a 55% black overlay. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/industries/industries-hub-page/sb-mobile-installations-industries-hub-final-cta-commercial-fleet-yard.webp"
+            src="/images/industries/industries-hub-page/ultimate-fleet-gps-industries-hub-final-cta-commercial-fleet-yard.webp"
             alt=""
             aria-hidden="true"
             width={3344}

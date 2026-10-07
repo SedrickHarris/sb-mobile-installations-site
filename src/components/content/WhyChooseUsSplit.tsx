@@ -10,7 +10,7 @@ interface WhyChooseUsSplitProps {
  * Compact proof strip of confirmed facts: in business since 2011, photo
  * documentation, vehicle scope, and contractor engagement.
  *
- * Deliberately carries no benefit headings: the "Why SB Mobile Installations"
+ * Deliberately carries no benefit headings: the "Why Ultimate Fleet GPS"
  * section (`TrustSection`) owns those, so each benefit heading appears once on
  * the homepage. The h2 is visually hidden so the strip still has an accessible
  * name in the heading outline. Subtle tone, so it reads as its own band after

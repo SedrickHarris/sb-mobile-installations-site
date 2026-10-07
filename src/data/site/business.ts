@@ -13,11 +13,11 @@ export const business = {
    * as prohibited wording. It applies to every customer-facing surface: page
    * copy, legal pages, metadata, and structured data values.
    *
-   * The registered entity is still SB Mobile Installations, LLC, held in
+   * The registered entity is still Ultimate Fleet GPS, held in
    * `legalEntityName` below for legal disclosures only. It is never used as the
    * public name and is never emitted in structured data.
    */
-  name: "SB Mobile Installations",
+  name: "Ultimate Fleet GPS",
 
   /**
    * Sections 4.2 and 33.5. The registered legal entity, for legal and
@@ -27,17 +27,23 @@ export const business = {
    * text, form labels, or job posting titles, and never a `legalName`,
    * `name`, or `hiringOrganization` value in structured data.
    */
-  legalEntityName: "SB Mobile Installations, LLC",
+  legalEntityName: "Ultimate Fleet GPS",
 
   /**
    * Production domain. Section 4 records this as approved for current-site
    * reference and still asks to confirm it remains the production domain.
    * Overridable per environment without a code change.
    */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sbmobileinstallations.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ultimatefleetgps.net",
+
+  /**
+   * Schema logo path, approved 2026-10-07: the primary horizontal logo. Used
+   * only as the Organization `logo` value, as an absolute URL built from `url`.
+   */
+  logoPath: "/images/brand/logos/ultimate-fleet-gps-primary-logo.svg",
 
   /** Section 5.1. Canonical, stakeholder confirmed 2026-09-10. */
-  telephone: "623-388-7352",
+  telephone: "(928) 393-8049",
 
   /**
    * Section 5.3 and 33.4. Corporate office, approved 2026-09-19.
@@ -50,10 +56,10 @@ export const business = {
    * LocalBusiness schema.
    */
   address: {
-    streetAddress: "8907 N 175th Ave",
-    addressLocality: "Waddell",
+    streetAddress: "4539 N. 22nd St. #6225",
+    addressLocality: "Phoenix",
     addressRegion: "AZ",
-    postalCode: "85355",
+    postalCode: "85016",
     addressCountry: "US",
   },
 

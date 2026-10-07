@@ -51,10 +51,10 @@ export function Footer() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/brand/logos/sb-mobile-installations-logo-red.svg"
+                src="/images/brand/logos/ultimate-fleet-gps-primary-logo.svg"
                 alt={business.name}
-                width={1540}
-                height={779}
+                width={1200}
+                height={360}
                 className="h-auto w-[120px] max-w-full md:w-[140px]"
               />
             </Link>

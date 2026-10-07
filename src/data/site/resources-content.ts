@@ -4,7 +4,7 @@ import type { ResourceArticleContent } from "@/types/service-content";
  * `/resources/` hub + article content.
  *
  * General operational guidance for fleet managers and technicians planning
- * an installation project - not claims about SB Mobile Installations' own
+ * an installation project - not claims about Ultimate Fleet GPS's own
  * stats, history, or performance beyond what docs/01 already confirms
  * (in business since 2011, photo documentation, nationwide reach, project capacity range).
  * Every article carries `editorialNote`, rendered verbatim near the top of
@@ -12,7 +12,7 @@ import type { ResourceArticleContent } from "@/types/service-content";
  * regulatory, safety, compliance, device-manufacturer, or
  * fleet-management-system advice." ELD-related content specifically avoids
  * any statement that a process guarantees regulatory compliance, and does
- * not characterize SB Mobile Installations as an ELD provider or compliance
+ * not characterize Ultimate Fleet GPS as an ELD provider or compliance
  * consultant, consistent with src/data/site/services-content.ts.
  */
 
@@ -70,7 +70,7 @@ export const resourceArticles: readonly ResourceArticleContent[] = [
       "Confirm which vehicles need ELD or AOBRD hardware installed or replaced, and whether any vehicles are being upgraded from one device type to another.",
       "Confirm vehicle access and electrical-system details relevant to installation, such as engine connector type, so installation scheduling accounts for any vehicle-specific requirements.",
       "Plan installation timing around vehicle availability, the same way any other fleet electronics installation is scheduled.",
-      "After installation, confirm that the hardware is functioning and that any required data submission or documentation for the installation itself is complete. Regulatory compliance obligations for ELD use are a separate matter between the fleet and the applicable regulatory authority, and this checklist does not address them. SB Mobile Installations installs and deploys ELD and AOBRD hardware; it is not an ELD provider or a compliance consultant.",
+      "After installation, confirm that the hardware is functioning and that any required data submission or documentation for the installation itself is complete. Regulatory compliance obligations for ELD use are a separate matter between the fleet and the applicable regulatory authority, and this checklist does not address them. Ultimate Fleet GPS installs and deploys ELD and AOBRD hardware; it is not an ELD provider or a compliance consultant.",
     ],
   },
   {

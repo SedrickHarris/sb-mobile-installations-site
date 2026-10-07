@@ -21,7 +21,7 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * tech: the hero text carries the meaning. Sits under a black overlay.
  */
 export const qualityHeroBackground = {
-  src: "/images/brand/quality-safety/hero/sb-mobile-installations-quality-safety-fleet-electronics-installation-documentation-hero-16x9.webp",
+  src: "/images/brand/quality-safety/hero/ultimate-fleet-gps-quality-safety-fleet-electronics-installation-documentation-hero-16x9.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -32,7 +32,7 @@ export const qualityHeroBackground = {
  * brand/quality-safety/, one level above the hero folder.
  */
 export const qualityQuoteBackground = {
-  src: "/images/brand/quality-safety/sb-mobile-installations-quality-safety-installation-quote-fleet-background-16x9.webp",
+  src: "/images/brand/quality-safety/ultimate-fleet-gps-quality-safety-installation-quote-fleet-background-16x9.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -45,7 +45,7 @@ export const qualityImages = {
     width: 2896,
     height: 2172,
     fallback: "route",
-    src: "/images/brand/quality-safety/sb-mobile-installations-quality-safety-on-site-fleet-electronics-installation-4x3.webp",
+    src: "/images/brand/quality-safety/ultimate-fleet-gps-quality-safety-on-site-fleet-electronics-installation-4x3.webp",
     objectPosition: "center",
     alt: "Technician in a dark cap and navy polo shirt seated in the cab of a white van, mounting a small device on the windshield near the mirror, with parked white semi-trucks visible outside",
     altGuidance:
@@ -59,7 +59,7 @@ export const qualityImages = {
     height: 2172,
     fallback: "grid",
     // The file sits in brand/quality-safety/, one level above the hero folder.
-    src: "/images/brand/quality-safety/sb-mobile-installations-quality-safety-commercial-fleet-vehicle-types-4x3.webp",
+    src: "/images/brand/quality-safety/ultimate-fleet-gps-quality-safety-commercial-fleet-vehicle-types-4x3.webp",
     // The vehicles sit in the middle band of the frame; keep that band in view if cropped.
     objectPosition: "center 60%",
     alt: "A white cargo van, a white service truck with a utility body, and a navy heavy-duty truck parked side by side outside a commercial building",

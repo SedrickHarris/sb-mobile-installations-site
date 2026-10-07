@@ -26,7 +26,7 @@ export default function ServiceRequestThankYouPage() {
         Request Received
       </h1>
       <p className="mt-5 text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-ink-muted">
-        Thank you for reaching out to SB Mobile Installations. We&apos;ve
+        Thank you for reaching out to Ultimate Fleet GPS. We&apos;ve
         received your installation service request and will follow up.
       </p>
       <p className="mt-6 text-[length:var(--text-body)] text-ink">

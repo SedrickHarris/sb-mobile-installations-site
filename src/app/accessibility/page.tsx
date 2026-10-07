@@ -6,7 +6,7 @@ import { accessibilityStatement } from "@/data/site/legal-content";
 export const metadata: Metadata = {
   title: "Accessibility Statement",
   description:
-    "Accessibility Statement for the SB Mobile Installations website. This page has not yet been reviewed by an attorney.",
+    "Accessibility Statement for the Ultimate Fleet GPS website. This page has not yet been reviewed by an attorney.",
   alternates: { canonical: "/accessibility/" },
 };
 

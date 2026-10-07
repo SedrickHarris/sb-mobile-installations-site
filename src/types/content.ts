@@ -169,7 +169,7 @@ export interface WhoWeServeContent {
 }
 
 /**
- * "Why SB Mobile Installations" block: h2, intro, four benefit blocks, a
+ * "Why Ultimate Fleet GPS" block: h2, intro, four benefit blocks, a
  * fleet-manager list, a commercial CTA panel, and one visually secondary
  * Installer Network link. Customer and technician journeys never share a
  * route or analytics event.
@@ -201,7 +201,7 @@ export interface DifferentiatorItem {
 
 /**
  * Compact proof strip of confirmed facts. The benefit headings live in the
- * "Why SB Mobile Installations" section (`TrustContent`), so they appear once
+ * "Why Ultimate Fleet GPS" section (`TrustContent`), so they appear once
  * on the homepage.
  */
 export interface WhyChooseUsContent {
@@ -300,7 +300,7 @@ export interface NationwideCoverageContent {
     /** Direct answer first, then the request-framing sentence. */
     readonly paragraphs: readonly string[];
     readonly primaryCta: Cta;
-    /** Prefix for the phone button label, e.g. "Call SB Mobile Installations". */
+    /** Prefix for the phone button label, e.g. "Call Ultimate Fleet GPS". */
     readonly callLabel: string;
     /** Optional. The row renders only when two or more items exist. */
     readonly trustItems?: readonly string[];

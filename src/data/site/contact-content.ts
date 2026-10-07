@@ -22,21 +22,21 @@ const QUOTE_CTA: Cta = {
 export const contactContent = {
   metaTitle: "Request a Fleet Installation Quote",
   metaDescription:
-    "Request a commercial fleet installation quote. Share your equipment, vehicle count, project locations, and preferred timing with SB Mobile Installations.",
+    "Request a commercial fleet installation quote. Share your equipment, vehicle count, project locations, and preferred timing with Ultimate Fleet GPS.",
 
   h1: "Request a Fleet Installation Quote",
 
   hero: {
     eyebrow: "COMMERCIAL INSTALLATION REQUESTS",
     intro:
-      "Tell us about your vehicles, equipment, installation locations, project size, and preferred timing. SB Mobile Installations provides nationwide, on-site installation support for GPS, ELD, AOBRD, dashcam, TPMS, and other fleet-electronics equipment.",
+      "Tell us about your vehicles, equipment, installation locations, project size, and preferred timing. Ultimate Fleet GPS provides nationwide, on-site installation support for GPS, ELD, AOBRD, dashcam, TPMS, and other fleet-electronics equipment.",
     audience:
       "For fleet operators, commercial vehicle owners, equipment dealers, and project teams.",
     primaryCta: QUOTE_CTA,
-    callLabel: "Call SB Mobile Installations at",
+    callLabel: "Call Ultimate Fleet GPS at",
     /** Decorative background video. No poster: the fallback is solid navy. */
     video: {
-      src: "/images/contact/hero/sb-mobile-installations-contact-commercial-fleet-hero.mp4",
+      src: "/images/contact/hero/ultimate-fleet-gps-contact-commercial-fleet-hero.mp4",
     },
   },
 
@@ -137,13 +137,13 @@ export const contactContent = {
     h2: "Mobile Fleet Installation at Your Project Location",
     /** Stakeholder-supplied copy; see the flags in the task report. */
     paragraphs: [
-      "SB Mobile Installations provides on-site installation support at customer-designated locations nationwide. Whether you need equipment installed at a fleet yard, facility, job site, dealership, or other approved project location, share your vehicle count, equipment requirements, locations, and preferred timing with our team.",
+      "Ultimate Fleet GPS provides on-site installation support at customer-designated locations nationwide. Whether you need equipment installed at a fleet yard, facility, job site, dealership, or other approved project location, share your vehicle count, equipment requirements, locations, and preferred timing with our team.",
       "Our field-service model is designed to support individual vehicle installations, multi-vehicle projects, and coordinated deployments across multiple locations.",
     ],
     image: {
       slotId: "contact-project-location",
       role: "Project-location photo beside the nationwide installation copy on the Contact page",
-      src: "/images/contact/sb-mobile-installations-contact-project-location-fleet-installation.webp",
+      src: "/images/contact/ultimate-fleet-gps-contact-project-location-fleet-installation.webp",
       aspectRatio: "4 / 3",
       width: 2896,
       height: 2172,
@@ -165,7 +165,7 @@ export const contactContent = {
     phoneLead: "Need help by phone?",
     /** Decorative dark circuit-line background. No text or photography in the file. */
     backgroundImage: {
-      src: "/images/contact/sb-mobile-installations-contact-fleet-installation-quote-background.webp",
+      src: "/images/contact/ultimate-fleet-gps-contact-fleet-installation-quote-background.webp",
       width: 3344,
       height: 1882,
     },
@@ -195,7 +195,7 @@ export const contactContent = {
       timeline: "Preferred installation timeline",
       description: "Tell us about your project",
       consent:
-        "I consent to SB Mobile Installations contacting me about this installation project.",
+        "I consent to Ultimate Fleet GPS contacting me about this installation project.",
       privacyLink: { label: "Read our Privacy Policy", href: "/privacy-policy/" },
       submit: "Request a Fleet Installation Quote",
     },
@@ -209,16 +209,16 @@ export const contactContent = {
    */
   office: {
     h2: "Corporate Office",
-    body: "This is the corporate office for SB Mobile Installations. Installation services are delivered at customer-designated project locations nationwide.",
+    body: "This is the corporate office for Ultimate Fleet GPS. Installation services are delivered at customer-designated project locations nationwide.",
     image: {
       slotId: "contact-office-location",
       role: "Location graphic beside the corporate office address on the Contact page",
-      src: "/images/contact/sb-mobile-installations-contact-office-location-graphic.webp",
+      src: "/images/contact/ultimate-fleet-gps-contact-office-location-graphic.webp",
       aspectRatio: "4 / 3",
       width: 2896,
       height: 2172,
       fallback: "grid",
-      alt: "Abstract location graphic representing the SB Mobile Installations corporate office in Waddell, Arizona",
+      alt: "Abstract location graphic representing the Ultimate Fleet GPS corporate office in Phoenix, Arizona",
       altGuidance:
         "Stylized location pin on a light background. Not a map. Keep alt accurate to what is shown.",
     } satisfies HubImageSlot,
@@ -227,14 +227,14 @@ export const contactContent = {
   helpful: {
     h2: "Fleet Installation Information and Resources",
     intro:
-      "Learn more about planning, coordinating, and preparing for a commercial fleet-electronics installation project with SB Mobile Installations.",
+      "Learn more about planning, coordinating, and preparing for a commercial fleet-electronics installation project with Ultimate Fleet GPS.",
     /** Stakeholder-supplied card copy. Routes are the canonical informational pages. */
     items: [
       {
         title: "Our Installation Process",
         href: "/our-process/",
         description:
-          "Learn how SB Mobile Installations coordinates equipment, vehicles, project locations, scheduling, and field-installation requirements for commercial fleet projects.",
+          "Learn how Ultimate Fleet GPS coordinates equipment, vehicles, project locations, scheduling, and field-installation requirements for commercial fleet projects.",
         linkLabel: "View Our Installation Process",
       },
       {

@@ -111,7 +111,7 @@ export const careersLandingContent: CareersLandingContent = {
   opening: {
     h2: "Current Opening: Mobile GPS, ELD, and AOBRD Installation Technician",
     summary:
-      "SB Mobile Installations has current openings for this role. Applicants are accepted nationwide.",
+      "Ultimate Fleet GPS has current openings for this role. Applicants are accepted nationwide.",
     highlights: [
       experienceFact,
       trainingFact.charAt(0).toUpperCase() + trainingFact.slice(1),
@@ -153,7 +153,7 @@ export const careersLandingContent: CareersLandingContent = {
   contact: {
     eyebrow: "Installer Careers",
     h2: "Have Questions About Installer Opportunities?",
-    body: "Have questions about the current Mobile GPS, ELD, and AOBRD Installation Technician opening, the application process, or the Installer Network? Call SB Mobile Installations during the listed business hours for general assistance.",
+    body: "Have questions about the current Mobile GPS, ELD, and AOBRD Installation Technician opening, the application process, or the Installer Network? Call Ultimate Fleet GPS during the listed business hours for general assistance.",
     clarification:
       "Phone support does not replace the application process, and calling does not guarantee contact, an interview, a contract, an assignment, a schedule, work volume, or pay.",
     hours: "Monday-Friday, 8:00 AM-6:00 PM",
@@ -175,7 +175,7 @@ export const careersLandingContent: CareersLandingContent = {
   handoff: {
     h2: "Need Fleet Installation Services?",
     paragraphs: [
-      "SB Mobile Installations provides on-site installation of GPS tracking systems, ELD and AOBRD equipment, fleet dashcams, and other commercial vehicle electronics for fleet and commercial vehicle operators.",
+      "Ultimate Fleet GPS provides on-site installation of GPS tracking systems, ELD and AOBRD equipment, fleet dashcams, and other commercial vehicle electronics for fleet and commercial vehicle operators.",
       "We install fleet electronics on work vans, service vehicles, delivery vehicles, utility vehicles, and other vehicles managed as part of a commercial fleet. To begin, share the equipment, approximate vehicle count, project location or locations, and preferred timing in an installation quote request.",
     ],
     services: business.serviceTypes,

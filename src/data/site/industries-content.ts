@@ -47,17 +47,17 @@ export const industriesHubContent: InformationalPageContent = {
   metaDescription:
     "On-site GPS, ELD, dashcam, and fleet equipment installation for commercial fleets and construction vehicles nationwide. Request an installation quote.",
   intro:
-    "SB Mobile Installations provides on-site fleet technology installation for fleet, commercial, and construction vehicles nationwide. Explore the fleet environments our installation services support, then choose a starting point for your project.",
+    "Ultimate Fleet GPS provides on-site fleet technology installation for fleet, commercial, and construction vehicles nationwide. Explore the fleet environments our installation services support, then choose a starting point for your project.",
   body: [],
   faq: [
     {
       question:
         "What types of commercial operations can request fleet installation support?",
       answer:
-        "SB Mobile Installations provides installation support for commercial fleets, logistics and delivery vehicles, field-service vehicles, construction vehicles, work vans, utility vehicles, and other approved commercial vehicle environments.",
+        "Ultimate Fleet GPS provides installation support for commercial fleets, logistics and delivery vehicles, field-service vehicles, construction vehicles, work vans, utility vehicles, and other approved commercial vehicle environments.",
     },
     {
-      question: "What types of fleet technology can SB Mobile Installations install?",
+      question: "What types of fleet technology can Ultimate Fleet GPS install?",
       answer:
         "Installation support may include GPS tracking, ELD and AOBRD systems, TPMS, fleet dashcams, and fleet-management equipment. The appropriate installation path depends on the equipment, vehicle type, project scope, and deployment requirements.",
     },
@@ -83,10 +83,10 @@ export const industriesHubContent: InformationalPageContent = {
     {
       question: "What information should I include in a fleet installation request?",
       answer:
-        "Include the vehicle type, equipment type, number of vehicles, project locations, operating schedule, and preferred timeline. You do not need to have every detail finalized before contacting SB Mobile Installations. Share the information available so the project scope can be discussed.",
+        "Include the vehicle type, equipment type, number of vehicles, project locations, operating schedule, and preferred timeline. You do not need to have every detail finalized before contacting Ultimate Fleet GPS. Share the information available so the project scope can be discussed.",
     },
     {
-      question: "Can SB Mobile Installations support a single vehicle installation?",
+      question: "Can Ultimate Fleet GPS support a single vehicle installation?",
       answer:
         "Single-vehicle installation requests may be reviewed alongside larger fleet projects. Include the vehicle type, equipment, project location, and preferred timeline so the appropriate installation path can be determined.",
     },
@@ -99,16 +99,16 @@ export const industriesHubContent: InformationalPageContent = {
     {
       question: "Can a technology provider discuss a hardware deployment program?",
       answer:
-        "Yes. Technology providers can use the Technology Provider Deployment Support page to describe a commercial vehicle hardware deployment project. SB Mobile Installations provides physical installation and deployment support; it is not the underlying technology platform, hardware manufacturer, or compliance consultant.",
+        "Yes. Technology providers can use the Technology Provider Deployment Support page to describe a commercial vehicle hardware deployment project. Ultimate Fleet GPS provides physical installation and deployment support; it is not the underlying technology platform, hardware manufacturer, or compliance consultant.",
       link: {
         label: "Technology Provider Deployment Support",
         href: "/industries/telematics-technology-providers/",
       },
     },
     {
-      question: "Does SB Mobile Installations provide nationwide mobile installation support?",
+      question: "Does Ultimate Fleet GPS provide nationwide mobile installation support?",
       answer:
-        "SB Mobile Installations provides nationwide mobile fleet installation support for qualified commercial vehicle projects. Project coordination depends on the vehicle types, equipment, locations, access requirements, timeline, and other details included in the installation request.",
+        "Ultimate Fleet GPS provides nationwide mobile fleet installation support for qualified commercial vehicle projects. Project coordination depends on the vehicle types, equipment, locations, access requirements, timeline, and other details included in the installation request.",
     },
   ],
 };
@@ -118,9 +118,9 @@ export const commercialFleetsContent: InformationalPageContent = {
   metaDescription:
     "On-site GPS, ELD, and fleet electronics installation for commercial fleet vehicles nationwide. Technicians travel directly to your location, one vehicle or an entire fleet.",
   intro:
-    "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on commercial fleet vehicles, with technicians traveling directly to your location nationwide.",
+    "Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on commercial fleet vehicles, with technicians traveling directly to your location nationwide.",
   body: [
-    "Commercial fleet customers are a core, confirmed part of SB Mobile Installations' vehicle scope, alongside fleet and construction vehicles.",
+    "Commercial fleet customers are a core, confirmed part of Ultimate Fleet GPS's vehicle scope, alongside fleet and construction vehicles.",
     "Installation is coordinated on-site at your location, Monday through Friday, 8:00 AM to 6:00 PM, for projects of any size, one vehicle or an entire fleet, nationwide.",
     "Every installation is photo documented, and you'll receive that documentation automatically.",
   ],
@@ -128,7 +128,7 @@ export const commercialFleetsContent: InformationalPageContent = {
     {
       question: "What equipment can you install on our commercial fleet?",
       answer:
-        "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on commercial fleet vehicles.",
+        "Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on commercial fleet vehicles.",
     },
   ],
 };
@@ -208,7 +208,7 @@ export const commercialFleetsPage = {
   },
   installerNetwork: {
     prompt: "Are you an experienced mobile fleet installation technician?",
-    label: "Learn about the SB Mobile Installations Installer Network",
+    label: "Learn about the Ultimate Fleet GPS Installer Network",
     href: "/careers/mobile-installation-technician/",
   },
 } as const;
@@ -218,10 +218,10 @@ export const constructionHeavyEquipmentContent: InformationalPageContent = {
   metaDescription:
     "On-site GPS, ELD, and fleet electronics installation for construction vehicles nationwide. Technicians travel directly to your location.",
   intro:
-    "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on construction vehicles, with technicians traveling directly to your location nationwide.",
+    "Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on construction vehicles, with technicians traveling directly to your location nationwide.",
   body: [
-    "Construction vehicles are one of SB Mobile Installations' three confirmed vehicle categories, alongside fleet and commercial vehicles.",
-    "This page describes installation on construction vehicles. It does not describe installation on non-vehicle heavy equipment; that broader scope is not a confirmed SB Mobile Installations service.",
+    "Construction vehicles are one of Ultimate Fleet GPS's three confirmed vehicle categories, alongside fleet and commercial vehicles.",
+    "This page describes installation on construction vehicles. It does not describe installation on non-vehicle heavy equipment; that broader scope is not a confirmed Ultimate Fleet GPS service.",
     "Installation is coordinated on-site at your location, Monday through Friday, 8:00 AM to 6:00 PM, for projects of any size, one vehicle or an entire fleet, nationwide.",
     "Every installation is photo documented, and you'll receive that documentation automatically.",
   ],
@@ -229,7 +229,7 @@ export const constructionHeavyEquipmentContent: InformationalPageContent = {
     {
       question: "Do you install equipment on heavy equipment, not just vehicles?",
       answer:
-        "SB Mobile Installations' confirmed construction scope covers construction vehicles. Installation on non-vehicle heavy equipment is not a confirmed service.",
+        "Ultimate Fleet GPS's confirmed construction scope covers construction vehicles. Installation on non-vehicle heavy equipment is not a confirmed service.",
     },
   ],
 };
@@ -239,9 +239,9 @@ export const logisticsDeliveryFleetsContent: InformationalPageContent = {
   metaDescription:
     "On-site GPS, ELD, and fleet electronics installation for logistics and delivery fleet vehicles nationwide. Technicians travel directly to your location.",
   intro:
-    "Logistics and delivery operations that run commercial fleet vehicles are supported under SB Mobile Installations' confirmed commercial fleet vehicle scope, with technicians traveling directly to your location nationwide.",
+    "Logistics and delivery operations that run commercial fleet vehicles are supported under Ultimate Fleet GPS's confirmed commercial fleet vehicle scope, with technicians traveling directly to your location nationwide.",
   body: [
-    "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on commercial fleet vehicles used in logistics and delivery operations.",
+    "Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on commercial fleet vehicles used in logistics and delivery operations.",
     "Installation is coordinated on-site at your location, Monday through Friday, 8:00 AM to 6:00 PM, for projects of any size, one vehicle or an entire fleet, nationwide.",
     "Every installation is photo documented, and you'll receive that documentation automatically.",
   ],
@@ -252,9 +252,9 @@ export const fieldServiceFleetsContent: InformationalPageContent = {
   metaDescription:
     "On-site GPS, ELD, and fleet electronics installation for field service fleet vehicles nationwide. Technicians travel directly to your location.",
   intro:
-    "Field service operations that run commercial fleet vehicles are supported under SB Mobile Installations' confirmed commercial fleet vehicle scope, with technicians traveling directly to your location nationwide.",
+    "Field service operations that run commercial fleet vehicles are supported under Ultimate Fleet GPS's confirmed commercial fleet vehicle scope, with technicians traveling directly to your location nationwide.",
   body: [
-    "SB Mobile Installations installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on commercial fleet vehicles used in field service operations.",
+    "Ultimate Fleet GPS installs GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment on commercial fleet vehicles used in field service operations.",
     "Installation is coordinated on-site at your location, Monday through Friday, 8:00 AM to 6:00 PM, for projects of any size, one vehicle or an entire fleet, nationwide.",
     "Every installation is photo documented, and you'll receive that documentation automatically.",
   ],
@@ -263,19 +263,19 @@ export const fieldServiceFleetsContent: InformationalPageContent = {
 export const telematicsTechnologyProvidersContent: InformationalPageContent = {
   h1: "Field Installation Partner for Telematics and Technology Providers",
   metaDescription:
-    "SB Mobile Installations provides field installation support for telematics and fleet-technology hardware, working with the platforms fleets already run on, nationwide.",
+    "Ultimate Fleet GPS provides field installation support for telematics and fleet-technology hardware, working with the platforms fleets already run on, nationwide.",
   intro:
-    "SB Mobile Installations provides field installation support for telematics and fleet-technology hardware providers, working with the platforms fleets already run on.",
+    "Ultimate Fleet GPS provides field installation support for telematics and fleet-technology hardware providers, working with the platforms fleets already run on.",
   body: [
     "We work with the platforms fleets already run on, including Samsara, Geotab, Verizon Connect, and others our technicians already know. This describes installation experience with that equipment. It does not state or imply an official partnership, authorization, certification, reseller, or dealer relationship with any platform.",
-    "SB Mobile Installations installs and deploys hardware on-site at the customer's location nationwide, one vehicle or an entire fleet, for GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment.",
+    "Ultimate Fleet GPS installs and deploys hardware on-site at the customer's location nationwide, one vehicle or an entire fleet, for GPS tracking, ELD, AOBRD, TPMS, fleet dashcam, and fleet management equipment.",
     "Every installation is photo documented, and that documentation is delivered automatically.",
   ],
   faq: [
     {
       question: "Are you an authorized or certified installer for a specific platform?",
       answer:
-        "No. SB Mobile Installations installs and deploys hardware for the platforms fleets already run on. This describes installation experience, not an official partnership, authorization, certification, reseller, or dealer relationship.",
+        "No. Ultimate Fleet GPS installs and deploys hardware for the platforms fleets already run on. This describes installation experience, not an official partnership, authorization, certification, reseller, or dealer relationship.",
     },
   ],
 };

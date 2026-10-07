@@ -39,7 +39,7 @@ export const activeTechnicianJob: JobRecord = {
   datePosted: "2026-07-01",
   metaDescription: `Current opening for Mobile GPS, ELD, and AOBRD installation technicians. Independent contractor work, nationwide applicants accepted, no prior installation experience required, and training provided. Starting rate ${rate}.`,
   intro:
-    "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. This is independent contractor field work, and applicants are accepted nationwide.",
+    "Ultimate Fleet GPS has current openings for Mobile GPS, ELD, and AOBRD installation technicians. This is independent contractor field work, and applicants are accepted nationwide.",
   heroScopeItems: [
     "Independent contractor work",
     "Nationwide applicants accepted",
@@ -51,7 +51,7 @@ export const activeTechnicianJob: JobRecord = {
     {
       h2: "About This Opening",
       body: [
-        "SB Mobile Installations has current openings for Mobile GPS, ELD, and AOBRD installation technicians. Applicants are accepted nationwide, and no closing date is currently published.",
+        "Ultimate Fleet GPS has current openings for Mobile GPS, ELD, and AOBRD installation technicians. Applicants are accepted nationwide, and no closing date is currently published.",
         "This is independent contractor work, not employee employment.",
       ],
       lists: [{ heading: "Opening details", items: summaryFacts }],

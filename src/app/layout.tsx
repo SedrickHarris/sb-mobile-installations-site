@@ -10,22 +10,13 @@ import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "SB Mobile Installations",
-    template: "%s | SB Mobile Installations",
+    default: "Ultimate Fleet GPS",
+    template: "%s | Ultimate Fleet GPS",
   },
   /*
-    Icons are built from sb-mobile-installations-monogram-white.png, the clean
-    single-color export, composited on a solid brand-red tile. The brand kit
-    assigns the monogram to favicon use.
-
-    The file named favicon-512 in the brand kit is not used. It is 512x202, not
-    square, and is one of the lossy exports carrying 176 shades of a one-color
-    mark.
-
-    The mark is 2.54:1 with no baked-in clear space, so squaring it leaves the
-    glyph at a third of the tile height. It resolves from 32px up. At 16px it
-    is not legible, which no color or crop choice fixes. See section 4.3 of
-    21-design-system.md.
+    Icons are rasterized from ultimate-fleet-gps-favicon.svg in the brand kit
+    (white pin on a solid brand-red tile). favicon.ico is the kit's multi-size
+    export.
   */
   icons: {
     icon: [

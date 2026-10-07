@@ -18,7 +18,7 @@ const textLinkClasses =
   "inline-flex min-h-11 items-center font-semibold underline underline-offset-4";
 
 /**
- * Homepage "Why SB Mobile Installations" block.
+ * Homepage "Why Ultimate Fleet GPS" block.
  *
  * Two-column intro (image left, text right; the text comes first in the DOM
  * so reading order survives the single-column collapse), then four compact

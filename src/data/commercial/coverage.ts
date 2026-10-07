@@ -46,7 +46,7 @@ const SERVICE_CARDS = SERVICE_CARD_ORDER.map((slug) => getServiceCard(slug));
 const FLEET_ROLLOUT_CARD = getServiceCard("fleet-rollouts");
 
 const AVAILABILITY_SENTENCE =
-  "Share your project details so SB Mobile Installations can determine whether the request fits the available service context.";
+  "Share your project details so Ultimate Fleet GPS can determine whether the request fits the available service context.";
 
 /** "a, b, and c" for three or more items; "a and b" for two. */
 function joinWithAnd(items: readonly string[]): string {
@@ -78,7 +78,7 @@ export const coverage = {
         journey: "commercial",
         event: "cta_quote_click",
       },
-      callLabel: "Call SB Mobile Installations",
+      callLabel: "Call Ultimate Fleet GPS",
       // "In business since 2011" is confirmed (docs/_claims-inventory.md row 11),
       // but a one-item trust row reads as isolated, so no trust row renders.
     },
@@ -88,7 +88,7 @@ export const coverage = {
     introSection: {
       h2: "Nationwide Mobile Installation Support for Fleet and Commercial Vehicles",
       body: [
-        "SB Mobile Installations provides nationwide mobile fleet installation services for fleet operators, commercial vehicle owners, and construction companies. Installation support is coordinated at the customer's approved location, including fleet yards, commercial vehicle sites, construction operations, and other project locations.",
+        "Ultimate Fleet GPS provides nationwide mobile fleet installation services for fleet operators, commercial vehicle owners, and construction companies. Installation support is coordinated at the customer's approved location, including fleet yards, commercial vehicle sites, construction operations, and other project locations.",
         "Our installation scope includes GPS tracking systems, ELD and AOBRD equipment, fleet dashcams, TPMS, and other commercial vehicle electronics. Projects can range from a single vehicle to a larger fleet deployment, depending on the equipment, vehicle types, site conditions, and project requirements.",
         "Mobile coordination helps reduce the need to move vehicles to a walk-in facility. Project details, equipment requirements, scheduling, and site logistics are reviewed before installation so the work can be organized around the customer's operational needs.",
       ],
@@ -135,7 +135,7 @@ export const coverage = {
           description: "Include your preferred timing.",
         },
       ],
-      note: "Share these details so SB Mobile Installations can understand the equipment, vehicles, locations, and timing connected to your installation request.",
+      note: "Share these details so Ultimate Fleet GPS can understand the equipment, vehicles, locations, and timing connected to your installation request.",
       link: { label: "Request an Installation Quote", href: "#request-quote" },
     },
     services: {
@@ -158,9 +158,9 @@ export const coverage = {
       note: vehicleContext.note,
     },
     explore: {
-      h2: "Explore How SB Mobile Works",
+      h2: "Explore How Ultimate Fleet GPS Works",
       intro:
-        "Learn more about SB Mobile Installations, the services available for fleet and commercial vehicle projects, and the information that can help you evaluate an installation request.",
+        "Learn more about Ultimate Fleet GPS, the services available for fleet and commercial vehicle projects, and the information that can help you evaluate an installation request.",
       // Routes verified against src/app. Images are in public/images/coverage.
       cards: [
         {
@@ -170,7 +170,7 @@ export const coverage = {
           linkLabel: "Explore our process",
           href: "/our-process/",
           image: {
-            src: "/images/coverage/sb-mobile-installations-our-process-fleet-installation-request-pathway.webp",
+            src: "/images/coverage/ultimate-fleet-gps-our-process-fleet-installation-request-pathway.webp",
             width: 3318,
             height: 1896,
           },
@@ -178,11 +178,11 @@ export const coverage = {
         {
           title: "Quality & Safety",
           description:
-            "Review the quality and safety information available from SB Mobile Installations.",
+            "Review the quality and safety information available from Ultimate Fleet GPS.",
           linkLabel: "Explore quality and safety",
           href: "/quality-safety/",
           image: {
-            src: "/images/coverage/sb-mobile-installations-quality-safety-fleet-installation-components.webp",
+            src: "/images/coverage/ultimate-fleet-gps-quality-safety-fleet-installation-components.webp",
             width: 1659,
             height: 948,
           },
@@ -194,7 +194,7 @@ export const coverage = {
           linkLabel: "Explore fleet installation services",
           href: "/services/",
           image: {
-            src: "/images/coverage/sb-mobile-installations-fleet-installation-services-commercial-vehicle-electronics.webp",
+            src: "/images/coverage/ultimate-fleet-gps-fleet-installation-services-commercial-vehicle-electronics.webp",
             width: 3318,
             height: 1896,
           },
@@ -206,7 +206,7 @@ export const coverage = {
           linkLabel: "Explore industries",
           href: "/industries/",
           image: {
-            src: "/images/coverage/sb-mobile-installations-industries-commercial-vehicle-contexts.webp",
+            src: "/images/coverage/ultimate-fleet-gps-industries-commercial-vehicle-contexts.webp",
             width: 3318,
             height: 1896,
           },
@@ -218,7 +218,7 @@ export const coverage = {
           linkLabel: "Explore frequently asked questions",
           href: "/faq/",
           image: {
-            src: "/images/coverage/sb-mobile-installations-frequently-asked-questions-fleet-electronics.webp",
+            src: "/images/coverage/ultimate-fleet-gps-frequently-asked-questions-fleet-electronics.webp",
             width: 3318,
             height: 1896,
           },
@@ -243,7 +243,7 @@ export const coverage = {
     faq: [
       {
         question:
-          "Does SB Mobile Installations provide mobile installation service nationwide?",
+          "Does Ultimate Fleet GPS provide mobile installation service nationwide?",
         answer: `Nationwide mobile installation service is delivered at the customer's location. Share your equipment, vehicle count, project locations, and preferred timing to discuss an installation request. ${AVAILABILITY_SENTENCE}`,
       },
       {
@@ -267,7 +267,7 @@ export const coverage = {
         answer: `Common project contexts include ${VEHICLE_EXAMPLE_LIST}. ${vehicleContext.note}`,
       },
       {
-        question: "What equipment can SB Mobile Installations install?",
+        question: "What equipment can Ultimate Fleet GPS install?",
         // Stakeholder-supplied wording. The category names follow the service
         // taxonomy (service-pages-content.ts); AOBRD is part of the ELD card.
         answer:
@@ -276,7 +276,7 @@ export const coverage = {
       {
         question: "Can mobile installation be discussed for one vehicle?",
         answer:
-          "Yes. Installation requests may involve one vehicle or an entire fleet. Include the equipment, vehicle type, project location, and preferred timing so SB Mobile Installations can determine whether the request fits the available service context.",
+          "Yes. Installation requests may involve one vehicle or an entire fleet. Include the equipment, vehicle type, project location, and preferred timing so Ultimate Fleet GPS can determine whether the request fits the available service context.",
       },
       {
         question: "Do technicians travel to the customer's location?",
@@ -290,7 +290,7 @@ export const coverage = {
     quote: {
       h2: "Request a Mobile Installation Quote",
       intro:
-        "Tell us about your equipment, vehicle count, project locations, and preferred timing. SB Mobile Installations will review the details to determine whether your request fits the available installation service context.",
+        "Tell us about your equipment, vehicle count, project locations, and preferred timing. Ultimate Fleet GPS will review the details to determine whether your request fits the available installation service context.",
       support:
         "Include the equipment or service needed, the number of vehicles or assets, relevant project locations, and any scheduling details that may help us understand the request.",
       nextHeading: "What happens next?",
@@ -314,7 +314,7 @@ export const coverage = {
     handoff: {
       eyebrow: "INSTALLER NETWORK",
       h2: "Interested in Mobile Installation Work?",
-      body: "Experience with mobile fleet installation is helpful, but it is not required to learn about the SB Mobile Installations Installer Network. Review the network information, expectations, and available next steps to determine whether it may be a fit for you.",
+      body: "Experience with mobile fleet installation is helpful, but it is not required to learn about the Ultimate Fleet GPS Installer Network. Review the network information, expectations, and available next steps to determine whether it may be a fit for you.",
       disclosure: `${NETWORK_DISCLOSURE.expressionOfInterest} ${NETWORK_DISCLOSURE.contractor}`,
       link: {
         label: "Learn About the Installer Network",

@@ -33,7 +33,7 @@ const CLARIFICATION =
 
 export const ourProcessContent = {
   h1: "Our Nationwide Fleet Installation Process",
-  // The layout title template appends " | SB Mobile Installations".
+  // The layout title template appends " | Ultimate Fleet GPS".
   metaTitle: "Our Process | Mobile Fleet Installation",
   metaDescription:
     "Learn what to include in an installation quote request: equipment, vehicle count, project locations, and preferred timing. Nationwide mobile installation service, delivered at the customer's location, with automatic photo documentation.",
@@ -41,8 +41,8 @@ export const ourProcessContent = {
   hero: {
     eyebrow: "NATIONWIDE MOBILE FLEET INSTALLATION",
     support: [
-      "Start by telling us about your equipment, vehicle count, project locations, and preferred timing. SB Mobile Installations reviews that information so the request can be understood and next steps can be discussed.",
-      "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location, for one vehicle or an entire fleet.",
+      "Start by telling us about your equipment, vehicle count, project locations, and preferred timing. Ultimate Fleet GPS reviews that information so the request can be understood and next steps can be discussed.",
+      "Ultimate Fleet GPS provides nationwide mobile installation service, delivered at the customer's location, for one vehicle or an entire fleet.",
     ],
     cta: {
       label: "Request an Installation Quote",
@@ -126,9 +126,9 @@ export const ourProcessContent = {
       },
       {
         question:
-          "Where does SB Mobile Installations provide installation service?",
+          "Where does Ultimate Fleet GPS provide installation service?",
         answer:
-          "SB Mobile Installations provides nationwide mobile installation service, delivered at the customer's location.",
+          "Ultimate Fleet GPS provides nationwide mobile installation service, delivered at the customer's location.",
       },
       {
         question:
@@ -138,7 +138,7 @@ export const ourProcessContent = {
       },
       {
         question:
-          "Can SB Mobile Installations support one vehicle or an entire fleet?",
+          "Can Ultimate Fleet GPS support one vehicle or an entire fleet?",
         answer:
           "Fleet rollout installation services can be discussed for one vehicle or an entire fleet, including multiple project locations.",
       },

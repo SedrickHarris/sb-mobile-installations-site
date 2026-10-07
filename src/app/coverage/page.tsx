@@ -420,7 +420,7 @@ export default function CoveragePage() {
                   </p>
                   <PhoneButton
                     href={utilityBar.phoneHref}
-                    label={`Call SB Mobile Installations at ${utilityBar.phoneLabel}`}
+                    label={`Call Ultimate Fleet GPS at ${utilityBar.phoneLabel}`}
                     location="coverage-quote"
                     className="border-white/60 bg-transparent text-white hover:bg-white/10"
                   />

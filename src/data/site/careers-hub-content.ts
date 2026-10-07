@@ -31,7 +31,7 @@ import type { CareersHubPageContent } from "@/types/service-content";
 export const pendingEntryLevelFit = {
   approved: false,
   heading: "New to mobile fleet installation?",
-  body: "You may still share your background if you have hands-on experience in automotive, electrical, mechanical, construction, technical, or related work. Your experience can help SB Mobile Installations understand the skills you may bring to mobile installation work.",
+  body: "You may still share your background if you have hands-on experience in automotive, electrical, mechanical, construction, technical, or related work. Your experience can help Ultimate Fleet GPS understand the skills you may bring to mobile installation work.",
 } as const;
 
 export const careersHubPageContent: CareersHubPageContent = {
@@ -41,7 +41,7 @@ export const careersHubPageContent: CareersHubPageContent = {
     eyebrow: "Installer Network",
     h1: "Join the Mobile Fleet Installation Technician Network",
     intro:
-      "SB Mobile Installations connects independent mobile installation technicians with potential fleet-electronics installation opportunities. If you have experience installing GPS tracking, ELDs, dashcams, TPMS, or related equipment in commercial vehicles, share your background and the areas where you’re available to work.",
+      "Ultimate Fleet GPS connects independent mobile installation technicians with potential fleet-electronics installation opportunities. If you have experience installing GPS tracking, ELDs, dashcams, TPMS, or related equipment in commercial vehicles, share your background and the areas where you’re available to work.",
     primaryCta: {
       label: "Share Your Interest",
       href: "#installer-network-form",
@@ -72,7 +72,7 @@ export const careersHubPageContent: CareersHubPageContent = {
         icon: "technician",
         title: "Who is the network for?",
         description:
-          "Experienced mobile fleet-installation technicians who want to share their background and availability with SB Mobile Installations.",
+          "Experienced mobile fleet-installation technicians who want to share their background and availability with Ultimate Fleet GPS.",
       },
       {
         icon: "vehicle",
@@ -84,7 +84,7 @@ export const careersHubPageContent: CareersHubPageContent = {
         icon: "location",
         title: "Where may projects take place?",
         description:
-          "SB Mobile Installations provides nationwide mobile installation service at the customer's location. Opportunities depend on project needs and technician fit, and are not guaranteed.",
+          "Ultimate Fleet GPS provides nationwide mobile installation service at the customer's location. Opportunities depend on project needs and technician fit, and are not guaranteed.",
       },
     ],
   },
@@ -92,7 +92,7 @@ export const careersHubPageContent: CareersHubPageContent = {
   fit: {
     h2: "Who the Installer Network Is For",
     body: [
-      "This page is for experienced mobile fleet-installation technicians who want to introduce themselves to SB Mobile Installations and share relevant installation experience. It is not a list of current openings or a promise of future work.",
+      "This page is for experienced mobile fleet-installation technicians who want to introduce themselves to Ultimate Fleet GPS and share relevant installation experience. It is not a list of current openings or a promise of future work.",
     ],
     listPanel: true,
     lists: [
@@ -110,7 +110,7 @@ export const careersHubPageContent: CareersHubPageContent = {
 
   noExperience: {
     title: "No Experience Required",
-    body: "Some current SB Mobile Installations openings accept applicants with no prior installation experience, and training is provided. Check each opening's requirements and apply through the Current Openings page. Installer Network registration is separate and does not apply for a job.",
+    body: "Some current Ultimate Fleet GPS openings accept applicants with no prior installation experience, and training is provided. Check each opening's requirements and apply through the Current Openings page. Installer Network registration is separate and does not apply for a job.",
     link: { label: "View Current Openings", href: JOBS_INDEX_PATH },
   },
 
@@ -130,9 +130,9 @@ export const careersHubPageContent: CareersHubPageContent = {
   },
 
   answer: {
-    h2: "About the SB Mobile Installations Installer Network",
+    h2: "About the Ultimate Fleet GPS Installer Network",
     body: [
-      "The SB Mobile Installations Installer Network is an opt-in way for experienced mobile fleet-installation technicians to share their information and installation background. Submitting the form below does not create an employment offer.",
+      "The Ultimate Fleet GPS Installer Network is an opt-in way for experienced mobile fleet-installation technicians to share their information and installation background. Submitting the form below does not create an employment offer.",
       "Joining the network is an expression of interest. It is not an application for an active job opening, and it does not guarantee contact, an interview, employment, a contract, an assignment, a schedule, work volume, or pay.",
       "Technicians engaged through the Installer Network are independent contractors, not employees.",
     ],
@@ -184,20 +184,20 @@ export const careersHubPageContent: CareersHubPageContent = {
   equipment: {
     h2: "Mobile Fleet Installation Context",
     intro:
-      "These service areas show the types of commercial vehicle installation work SB Mobile Installations provides. They may help technicians identify experience that is relevant when sharing their background with the Installer Network. Inclusion here does not indicate that work is currently available or guarantee future projects.",
+      "These service areas show the types of commercial vehicle installation work Ultimate Fleet GPS provides. They may help technicians identify experience that is relevant when sharing their background with the Installer Network. Inclusion here does not indicate that work is currently available or guarantee future projects.",
   },
 
   fieldWork: {
     h2: "On-Site Installation Environments for Commercial Fleets",
     intro:
-      "SB Mobile Installations provides nationwide mobile installation services at customer locations where fleet vehicles are based or scheduled for service. Installation work is completed on-site, and each installation is documented with photos.",
+      "Ultimate Fleet GPS provides nationwide mobile installation services at customer locations where fleet vehicles are based or scheduled for service. Installation work is completed on-site, and each installation is documented with photos.",
     cards: [
       {
         title: "Work Vans",
         description:
           "Commercial work vans may be scheduled for mobile fleet-electronics installation at a customer location.",
         image: {
-          src: "/images/careers/mobile-installation-technician/sb-mobile-installations-commercial-work-van-fleet-vehicle-4x3.webp",
+          src: "/images/careers/mobile-installation-technician/ultimate-fleet-gps-commercial-work-van-fleet-vehicle-4x3.webp",
           width: 2896,
           height: 2172,
           alt: "White commercial cargo work van parked in a fleet lot beside a warehouse building",
@@ -208,7 +208,7 @@ export const careersHubPageContent: CareersHubPageContent = {
         description:
           "Service trucks are another common commercial-vehicle context for on-site installation work.",
         image: {
-          src: "/images/careers/mobile-installation-technician/sb-mobile-installations-commercial-service-truck-fleet-vehicle-4x3.webp",
+          src: "/images/careers/mobile-installation-technician/ultimate-fleet-gps-commercial-service-truck-fleet-vehicle-4x3.webp",
           width: 2896,
           height: 2172,
           alt: "White commercial service truck with an enclosed utility body parked in front of a garage building",
@@ -219,7 +219,7 @@ export const careersHubPageContent: CareersHubPageContent = {
         description:
           "Utility fleet vehicles may require installation work based on the vehicle, equipment, and project requirements.",
         image: {
-          src: "/images/careers/mobile-installation-technician/sb-mobile-installations-commercial-utility-fleet-vehicle-4x3.webp",
+          src: "/images/careers/mobile-installation-technician/ultimate-fleet-gps-commercial-utility-fleet-vehicle-4x3.webp",
           width: 2896,
           height: 2172,
           alt: "White commercial utility truck with a side-access storage body parked in a fleet yard",
@@ -230,14 +230,14 @@ export const careersHubPageContent: CareersHubPageContent = {
         description:
           "Heavy-duty trucks may be included in commercial installation projects, depending on the equipment and vehicle configuration.",
         image: {
-          src: "/images/careers/mobile-installation-technician/sb-mobile-installations-heavy-duty-commercial-truck-fleet-vehicle-4x3.webp",
+          src: "/images/careers/mobile-installation-technician/ultimate-fleet-gps-heavy-duty-commercial-truck-fleet-vehicle-4x3.webp",
           width: 2896,
           height: 2172,
           alt: "White heavy-duty commercial truck tractor parked at a distribution facility with loading docks",
         },
       },
     ],
-    note: "These examples describe the types of vehicles SB Mobile Installations may service. They do not indicate that a particular project is available to Installer Network technicians or guarantee an assignment.",
+    note: "These examples describe the types of vehicles Ultimate Fleet GPS may service. They do not indicate that a particular project is available to Installer Network technicians or guarantee an assignment.",
   },
 
   information: {
@@ -279,7 +279,7 @@ export const careersHubPageContent: CareersHubPageContent = {
   commercial: {
     h2: "Need Mobile Fleet Installation Services for Your Business?",
     body: [
-      "SB Mobile Installations provides on-site installation of fleet technology and electronic equipment for commercial vehicles. Businesses can request service for GPS tracking, ELDs, dashcams, fleet telematics, TPMS, and related fleet equipment.",
+      "Ultimate Fleet GPS provides on-site installation of fleet technology and electronic equipment for commercial vehicles. Businesses can request service for GPS tracking, ELDs, dashcams, fleet telematics, TPMS, and related fleet equipment.",
       "Share your equipment needs, vehicle or asset count, project locations, and preferred timing. Our team will review the project details to understand the installation scope and service fit. Use this form for business installation requests. Technicians interested in joining the Installer Network should use the separate Installer Network interest form.",
     ],
     cta: {

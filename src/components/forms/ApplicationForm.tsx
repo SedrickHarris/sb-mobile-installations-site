@@ -527,7 +527,7 @@ export function ApplicationForm() {
           checked={fields.privacyConsent}
           onChange={(v) => update("privacyConsent", v)}
         >
-          I consent to SB Mobile Installations using the information in this
+          I consent to Ultimate Fleet GPS using the information in this
           form to consider my application. See the{" "}
           <Link href="/privacy-policy/" className="font-semibold underline">
             Privacy Policy

@@ -9,9 +9,9 @@ import type { HubImageSlot } from "@/data/site/services-hub-images";
  * WebP made from the reviewed still; the video always plays muted.
  */
 export const coverageHeroVideo = {
-  src: "/images/coverage/coverage-hero/sb-mobile-installations-coverage-nationwide-fleet-support-hero.mp4",
+  src: "/images/coverage/coverage-hero/ultimate-fleet-gps-coverage-nationwide-fleet-support-hero.mp4",
   poster:
-    "/images/coverage/coverage-hero/sb-mobile-installations-coverage-nationwide-fleet-support-hero.webp",
+    "/images/coverage/coverage-hero/ultimate-fleet-gps-coverage-nationwide-fleet-support-hero.webp",
   posterWidth: 1920,
   posterHeight: 1081,
 } as const;
@@ -23,7 +23,7 @@ export const coverageHeroVideo = {
  * pinned). No map, pin, logo, readable text, or place label.
  */
 export const vehicleContextBackground = {
-  src: "/images/coverage/sb-mobile-installations-vehicle-context-fleet-electronics-background.webp",
+  src: "/images/coverage/ultimate-fleet-gps-vehicle-context-fleet-electronics-background.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -35,7 +35,7 @@ export const vehicleContextBackground = {
  * pinned. Empty alt: the section copy carries the meaning.
  */
 export const quoteBackground = {
-  src: "/images/coverage/sb-mobile-installations-careers-mobile-installer-dashboard-installation-hero.webp",
+  src: "/images/coverage/ultimate-fleet-gps-careers-mobile-installer-dashboard-installation-hero.webp",
   width: 3344,
   height: 1882,
 } as const;
@@ -76,7 +76,7 @@ export const coverageImages = {
     width: 3318,
     height: 1896,
     fallback: "grid",
-    src: "/images/coverage/sb-mobile-installations-installer-network-fleet-installation-pathway.webp",
+    src: "/images/coverage/ultimate-fleet-gps-installer-network-fleet-installation-pathway.webp",
     alt: "",
     altGuidance:
       "Decorative unless it shows something the text does not say. Do not imply employment, guaranteed work, openings, or a location.",
@@ -89,7 +89,7 @@ export const coverageImages = {
     width: 2896,
     height: 2172,
     fallback: "grid",
-    src: "/images/coverage/sb-mobile-installations-coverage-fleet-electronics-staging-equipment-v2.webp",
+    src: "/images/coverage/ultimate-fleet-gps-coverage-fleet-electronics-staging-equipment-v2.webp",
     alt: "Fleet electronics equipment, including a dashcam, a display, a tire pressure sensor, and wiring, laid out on a table in front of a work van and service trucks",
     altGuidance:
       "Describe only what is shown. No people, logos, readable text, map, pin, city or state label, or implied local office. Do not describe the setting as a customer location, because the photo does not establish that.",
